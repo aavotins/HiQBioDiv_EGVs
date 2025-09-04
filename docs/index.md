@@ -95,5 +95,7 @@ Within reason, the material describes all data sets used and provides metadata r
 
 4. [Ecogeographical variables](#Chapter4) (A. Avotiņš)
 
+5. [Data accessibility](#Chapter5) (A. Avotiņš)
+
 
 
