@@ -1,57 +1,30 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
+author: "Andris Avotiņš"
 date: "2025-09-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+csl: elsevier-harvard.csl
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+  Description of the geodata used and the geoprocessing workflows employed to 
+  create ecogeographical variables (EGVs) for species distribution modelling 
+  describing Latvia, 2024.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: aavotins/HiQBioDiv_EGVs
+url: https://aavotins.github.io/HiQBioDiv_EGVs/
 ---
 
-# About
-
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
-
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
 
 
-``` r
-bookdown::render_book()
-```
 
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+# Preface {-}
 
-## Preview book
+Welcome! This book documents the geodata and processing workflows used to create
+ecogeographical variables (EGVs) for species distribution modelling in Latvia (2024).
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-
-``` r
-bookdown::serve_book()
-```
-
+- Repo: [aavotins/HiQBioDiv_EGVs](https://github.com/aavotins/HiQBioDiv_EGVs)
+- Cite as needed using `book.bib`.
 
 

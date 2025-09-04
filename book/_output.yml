@@ -1,12 +1,13 @@
 bookdown::gitbook:
   css: style.css
+  code_folding: hide
   config:
     toc:
       before: |
         <li><a href="./">HiQBioDiv EGVs</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/aavotins/HiQBioDiv_EGVs/edit/BRANCH/%s
+    edit: https://github.com/aavotins/HiQBioDiv_EGVs/edit/main/book/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
