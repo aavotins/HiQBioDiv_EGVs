@@ -6,4 +6,4 @@ Here, we provide a detailed description of the geodata used and the geoprocessin
 
 The geodata, processing workflows, and exact R commands used to prepare all the EGVs are detailed in the {bookdown} [document](https://aavotins.github.io/HiQBioDiv_EGVs/). The [Data](./Data/Geodata/) directory contains a file tree structure with placeholder *.md files. Recreating this structure, filling the directories with data and executing command lines will replicate our work. Another option for replicating the file tree structure is to clone the [template](https://github.com/aavotins/HiQBioDiv_FileTree) repository. Regardless of the option chosen, it is the user's responsibility to acquire the geodata itself.
 
-Our workflows rely heavily on the R package [{egv_workflows}](), which we created specifically for this purpose and which is guaranteed to work with a dedicated [container]() even long after the project ends.
+Our workflows rely heavily on the R package [{egvtools}](), which we created specifically for this purpose and which is guaranteed to work with a dedicated [container]() even long after the project ends.
