@@ -25,9 +25,11 @@ in line with *geodata products* as dealing with border misalignment or decission
 order of spatial overlay as well as simple geoprocessing is much faster with raster 
 data.
 
-- **ecogeographical variables** (EGVs) - this is the final product describing 
-environment. These are standartised values at high-resolution (we use 1 ha cells) 
-raster layers. Each layer contains values representing environment withing the 
+- **ecogeographical variables** (EGVs) - this is the final product of the workflow 
+describing environment for statistical analysis (e.g. *species distribution modelling*) 
+and is suitable for publishing due to standadisation of the values. In other terms, these are 
+standardised landscape ecological variables as high-resolution (we use 1 ha cells) 
+raster layers. Each layer contains values representing environment within the 
 cells footprint or a summary of focal neighbours. In our case every layer is of 
 quantitative data, describing natural quantity (i.e., timber volume in the 
 analysis cell, mean annual temperature), or quantified information of 
