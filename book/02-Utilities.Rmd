@@ -116,4 +116,23 @@ radii and rasterizes them onto a common template grid.
 
 ## Other utility functions {#Ch02.02}
 
-Other handy functions repeatedly used, not included in {egvtools}
+Other handy functions repeatedly used, not included in {egvtools} are stored 
+in `UtilityFunctions.R` file, located next to `.Rproj` file. 
+
+- `ensure_multipolygons()` - rather agressive function to 
+create `MULTIPOLYGON` geometries from `GEOMETRYCOLLECTION`
+
+```{r,eval=FALSE}
+ensure_multipolygons <- function(X) {
+  library(sf)
+  library(gdalUtilities)
+  
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+```
+

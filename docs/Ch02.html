@@ -259,8 +259,7 @@ guards coordinate reference system and how it is stored, while also guarding
 spatial cover, resolution, coordinate reference system, exact pixel matching, etc.
 Creation of layers with default background values is faster than recreating them
 several times in workflows preparing EGVs;</p></li>
-</ul>
-<p>-<a href="">polygon2input()</a> — rasterize polygons to input layers. Handles only polygon data,
+<li><p><a href="">polygon2input()</a> — rasterize polygons to input layers. Handles only polygon data,
 other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer
 built from the template (so grids normally match). Projection is optional
@@ -269,8 +268,7 @@ may optionally restrict the result with a raster mask (restrict_to) using numeri
 values or bracketed range strings (e.g., “(0,5]”, “[10,)”). Remaining NA cells
 can be filled by covering with a background raster (background_raster) or a
 constant (background_value). For large rasters, heavy steps (projection/mask/cover)
-can stream to disk via terra_todisk=TRUE.</p>
-<ul>
+can stream to disk via terra_todisk=TRUE.</p></li>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/input2egv.html">input2egv()</a> — normalize/align
 a fine-resolution input raster to a (coarser) EGV template, optionally cover missing values and/or fill gaps (IDW via Whitebox), and write the result to disk. Designed for large runs: fast gap counting (inside template footprint only), optional filling, tuned GDAL write options, and controlled terra memory/temp behavior.</p></li>
 <li><p><a href="">downscale2egv()</a> — downscale coarse rasters to a template grid (CRS,
@@ -296,7 +294,25 @@ radii and rasterizes them onto a common template grid.</p></li>
 </div>
 <div id="Ch02.02" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Other utility functions<a href="Ch02.html#Ch02.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Other handy functions repeatedly used, not included in {egvtools}</p>
+<p>Other handy functions repeatedly used, not included in {egvtools} are stored
+in <code>UtilityFunctions.R</code> file, located next to <code>.Rproj</code> file.</p>
+<ul>
+<li><code>ensure_multipolygons()</code> - rather agressive function to
+create <code>MULTIPOLYGON</code> geometries from <code>GEOMETRYCOLLECTION</code></li>
+</ul>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Ch02.html#cb3-1" tabindex="-1"></a>ensure_multipolygons <span class="ot">&lt;-</span> <span class="cf">function</span>(X) {</span>
+<span id="cb3-2"><a href="Ch02.html#cb3-2" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb3-3"><a href="Ch02.html#cb3-3" tabindex="-1"></a>  <span class="fu">library</span>(gdalUtilities)</span>
+<span id="cb3-4"><a href="Ch02.html#cb3-4" tabindex="-1"></a>  </span>
+<span id="cb3-5"><a href="Ch02.html#cb3-5" tabindex="-1"></a>  tmp1 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
+<span id="cb3-6"><a href="Ch02.html#cb3-6" tabindex="-1"></a>  tmp2 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
+<span id="cb3-7"><a href="Ch02.html#cb3-7" tabindex="-1"></a>  <span class="fu">st_write</span>(X, tmp1)</span>
+<span id="cb3-8"><a href="Ch02.html#cb3-8" tabindex="-1"></a>  <span class="fu">ogr2ogr</span>(tmp1, tmp2, <span class="at">f =</span> <span class="st">&quot;GPKG&quot;</span>, <span class="at">nlt =</span> <span class="st">&quot;MULTIPOLYGON&quot;</span>)</span>
+<span id="cb3-9"><a href="Ch02.html#cb3-9" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">st_read</span>(tmp2)</span>
+<span id="cb3-10"><a href="Ch02.html#cb3-10" tabindex="-1"></a>  <span class="fu">st_sf</span>(<span class="fu">st_drop_geometry</span>(X), <span class="at">geom =</span> <span class="fu">st_geometry</span>(Y))</span>
+<span id="cb3-11"><a href="Ch02.html#cb3-11" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 
 </div>
 </div>

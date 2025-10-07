@@ -79,7 +79,7 @@ spatial cover, resolution, coordinate reference system, exact pixel matching, et
 Creation of layers with default background values is faster than recreating them 
 several times in workflows preparing EGVs;
 
--[polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
+- [polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
 other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to 
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer 
 built from the template (so grids normally match). Projection is optional 
@@ -117,4 +117,24 @@ radii and rasterizes them onto a common template grid.
 
 ## Other utility functions {#Ch02.02}
 
-Other handy functions repeatedly used, not included in {egvtools}
+Other handy functions repeatedly used, not included in {egvtools} are stored 
+in `UtilityFunctions.R` file, located next to `.Rproj` file. 
+
+- `ensure_multipolygons()` - rather agressive function to 
+create `MULTIPOLYGON` geometries from `GEOMETRYCOLLECTION`
+
+
+``` r
+ensure_multipolygons <- function(X) {
+  library(sf)
+  library(gdalUtilities)
+  
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+```
+
