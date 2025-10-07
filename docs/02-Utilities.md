@@ -28,6 +28,8 @@ Package can be installed from [GitHub](https://github.com/aavotins/egvtools) wit
 pak::pak("aavotins/egvtools")
 ```
 
+<br>
+
 or obtained as a [Docker container](https://hub.docker.com/repository/docker/aavotins/hiqbiodiv-container/general) with all the necessary system and software dependencies.
 
 
@@ -138,3 +140,5 @@ ensure_multipolygons <- function(X) {
 }
 ```
 
+
+<br>

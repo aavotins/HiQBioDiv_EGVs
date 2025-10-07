@@ -26,6 +26,8 @@ download_vector_templates(
 )
 ```
 
+<br>
+
 Once template vector data are downloaded and unarchived, they need to be tiled:
 
 1. Analysis grid is tiled in `tks50km` pages
@@ -42,6 +44,7 @@ tile_vector_grid(
 )
 ```
 
+<br>
 
 
 2. Point files are tiled and buffered. In workflows creating EGVs described in this document, 
@@ -72,6 +75,7 @@ tiled_buffers(
 )
 ```
 
+<br>
 
 ## Raster data  {#Ch03.02}
 
@@ -94,3 +98,5 @@ download_raster_templates(
 )
 ```
 
+
+<br>
