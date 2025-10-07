@@ -190,46 +190,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Ch01" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Terminology and acronyms<a href="Ch01.html#Ch01" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Even though every data that are or can be georeferenced may be
-considered <em>geodata</em>, in this material we try to seperately use following
-terms in their particular order in our workflows:</p>
+<p>Athough all georeferenced data can be considered <em>geodata</em>, in this material we
+use the following terms in the order listed below in our workflows:</p>
 <ul>
-<li><p><strong>raw geodata</strong> - considered raw data as obtained for harmonized description
-of the environment. It may be tables with coordinates, raster of vector data.
-Literally anything that can or has been used for creation of <em>ecogeographical variables</em>
-without or with only slight processing.</p></li>
-<li><p><strong>geodata product</strong> - processed <em>raw geodata</em> that needed heavy modifications, e.g. 
-spatial overlayrs and combinations of different sets of <em>raw geodata</em> to be used
-as <em>input data</em>. In this document <em>geodata products</em> are categorical
-raster layers matching CRS and pixel locations of <em>input data</em>. When splitted by
-categories, they become <em>input data</em>. The processing step of creating <em>geodata products</em>
-is necessary when decidions of spatial overlay order are important, e.g. in one high
-resolution pixel there can be only water or forest, if the edge between water and
+<li><p><strong>raw geodata</strong> - considered as raw data obtained for a harmonised description
+of the environment. This may include tables with coordinates, raster or vector data.
+It can be anything that has been or can be used to create <em>ecogeographical variables</em>,
+with or without slight processing.</p></li>
+<li><p><strong>geodata product</strong> - processed <em>raw geodata</em> that have undegone heavy modifications, e.g. 
+spatial overlays and combinations of different sets of <em>raw geodata</em>, and are used
+as <em>input data</em>. In this document, <em>geodata products</em> are categorical
+raster layers that match the <em>CRS</em> and the pixel locations of <em>input data</em>. When
+split by categories, they become <em>input data</em>. The processing step of creating <em>geodata products</em>
+is necessary when decisions about the order of spatial overlays are important. For example,
+in a high-resolution pixel, there can only be water or forest, if the edge between water and
 forest need to be calculated.</p></li>
-<li><p><strong>input data</strong> or <strong>input layers</strong> - very-high resolution (multiple from the one
-used for <em>ecogeographical variables</em>) raster data, that are direct input in creation
-of most of the <em>ecogeographical variables</em>. Creation of such layers ir particularly useful
-in line with <em>geodata products</em> as dealing with border misalignment or decissions of
-order of spatial overlay as well as simple geoprocessing is much faster with raster
+<li><p><strong>input data</strong> or <strong>input layers</strong> - very-high resolution (multiple times higher than that
+used for <em>ecogeographical variables</em>) raster data that are the direct input for the creation
+of most of the <em>ecogeographical variables</em>. The creation of such layers is particularly useful
+alongside <em>geodata products</em>, as dealing with border misalignment or decisions regarding the
+order of spatial overlays, as well as simple geoprocessing, is much faster with raster
 data.</p></li>
 <li><p><strong>ecogeographical variables</strong> (EGVs) - this is the final product of the workflow
-describing environment for statistical analysis (e.g. <em>species distribution modelling</em>)
-and is suitable for publishing due to standadisation of the values. In other terms, these are
-standardised landscape ecological variables as high-resolution (we use 1 ha cells)
-raster layers. Each layer contains values representing environment within the
-cells footprint or a summary of focal neighbours. In our case every layer is of
-quantitative data, describing natural quantity (i.e., timber volume in the
-analysis cell, mean annual temperature), or quantified information of
-categories (e.g., fraction of class area at analysis cell or some neighbourhood,
-number of pixels creating an edge of some class or between two classes in the
-analysis cell or some neighbourhood). Each layers values are standardised - from
+describing environment for statistical analysis (e.g. <em>species distribution modelling</em>).
+They are suitable also for publishing due to standadisation of the values. In other
+words, these are standardised landscape ecological variables in the for of
+high-resolution raster layers (we use 1 ha cells). Each layer contains values
+representing the environment within the cell footprint or a summary of focal
+neighbours. In our case, each layer is of quantitative data describing a natural
+quantity (e.g. timber volume, mean annual temperature), or quantified information of
+categories (e.g. the fraction of class’s area in an analysis cell or some neighbourhood,
+the number of pixels creating an edge of a certain class or between two classes in the
+analysis cell or some neighbourhood). The values of each layer are standardised - from
 every cells value layers mean is subtracted and then every cells value is divided
-by layers root mean square error. Therefore the values are more suitable for
-modelling and layers can be made publically available as they directly do not
+by layers root mean square error. Therefore, the values are more suitable for
+modelling, and the layers can be made publicly available as they do not directly
 provide exact sensitive information.</p></li>
 </ul>
-<p>In this material we use <em>species ditribution modelling</em> as a more used term, that
-is synonymous to <em>ecological niche analysis</em> and <em>ecological niche modelling</em>.</p>
+<p>In this material, we use the term <em>species distribution modelling</em> as a more used term, that
+is synonymous with <em>ecological niche analysis</em> and <em>ecological niche modelling</em>.</p>
 <p>Acronyms:</p>
 <p><strong>CRS</strong> - coordinate reference system</p>
 <p><strong>EGV</strong> - ecogeoraphical variables</p>
