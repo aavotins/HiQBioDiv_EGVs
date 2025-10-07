@@ -159,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="Ch02.html"><a href="Ch02.html#Ch02.01"><i class="fa fa-check"></i><b>2.1</b> R package egvtools</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="Ch02.html"><a href="Ch02.html#Ch02.01.01"><i class="fa fa-check"></i><b>2.1.1</b> Reproduction only functions</a></li>
-<li class="chapter" data-level="2.1.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.01.02"><i class="fa fa-check"></i><b>2.1.2</b> General purpose workflows</a></li>
+<li class="chapter" data-level="2.1.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.01.02"><i class="fa fa-check"></i><b>2.1.2</b> General purpose functions</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.02"><i class="fa fa-check"></i><b>2.2</b> Other utility functions</a></li>
 </ul></li>
@@ -194,20 +194,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Ch02" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Utilities<a href="Ch02.html#Ch02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter describes utility functions used in this material and shortly
-describes an R package {egvtools}, that was purposfully created for this work.</p>
+<p>This chapter provides a brief description of the utility functions used in this
+material. Most of these functions are packaged in the R package {egvtools}, which
+was created specifically for this work.</p>
 <div id="Ch02.01" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> R package egvtools<a href="Ch02.html#Ch02.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R packaged purposfully created for this work</p>
+<p>{egvtools} provides a coherent set of wrappers and utilities that facilitate the
+reproducible and efficient creation of large-scale EGVs on real datasets. The
+package relies on robust building blocks — {terra}, {sf}, {sfarrow}, {exactextractr}
+and {whitebox} — and standardises input/output, naming conventions and multi-scale
+zonal statistics, ensuring that the pipelines are repeatable across machines and
+projects.</p>
+<p>The package was developed for the project ‘HiQBioDiv: High-resolution
+quantification of biodiversity for conservation and management’, which was
+funded by the Latvian Council of Science (Ref. No. VPP-VARAM-DABA-2024/1-0002),
+to simplify our work and to facilitate the reproduction of our results. Five of
+the functions are strictly for replication, while others are useful for a wider
+audience.</p>
+<p>Package can be installed from <a href="https://github.com/aavotins/egvtools">GitHub</a> with:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Ch02.html#cb2-1" tabindex="-1"></a><span class="co"># install.packages(&quot;pak&quot;)</span></span>
+<span id="cb2-2"><a href="Ch02.html#cb2-2" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>)</span></code></pre></div>
+</details>
+<p>or obtained as a <a href="https://hub.docker.com/repository/docker/aavotins/hiqbiodiv-container/general">Docker container</a> with all the necessary system and software dependencies.</p>
 <div id="Ch02.01.01" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Reproduction only functions<a href="Ch02.html#Ch02.01.01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>These functions are small wrappers, that helps potential users to recreate out
-working environments - template files and their location in the file tree.</p>
+<p>These functions are small wrappers, that helps to recreate our
+working environments - template files and their locations in the file tree.</p>
+<p>These functions are:</p>
+<ul>
+<li><p><a href="https://aavotins.github.io/egvtools/reference/download_raster_templates.html"><code>download_raster_templates()</code></a> — fetch template rasters from Zenodo repository
+and place them in user specified location on disk, or by default - the
+one we used. By default this functions links
+to <a href="https://zenodo.org/records/14497070">version 2.0.0</a> of the dataset;</p></li>
+<li><p><a href="https://aavotins.github.io/egvtools/reference/download_vector_templates.html"><code>download_vector_templates()</code></a> - fetch template vector grids/points from Zenodo
+repository and place them in user specified location on disk, or by default - the
+one we used. By default this functions links
+to <a href="https://zenodo.org/records/14277114">version 1.0.1</a> of the dataset.</p></li>
+</ul>
 </div>
 <div id="Ch02.01.02" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> General purpose workflows<a href="Ch02.html#Ch02.01.02" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.1.2</span> General purpose functions<a href="Ch02.html#Ch02.01.02" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each of those functions are small workflows themselves, that can be combined
-into larger workflows and used more widely, that for Latvia.</p>
+into larger workflows and used more widely, than for Latvia.</p>
+<ul>
+<li><p><a href="https://aavotins.github.io/egvtools/reference/tile_vector_grid.html"><code>tile_vector_grid()</code></a> — tile template (vector) grid for chunked processing. The function internally is linked to our file naming
+convention. As long as it is maintained, function can be used to create tiled grid
+from any {sfarrow} parquet grid file;</p></li>
+<li><p><a href="https://aavotins.github.io/egvtools/reference/tiled_buffers.html"><code>tiled_buffers()</code></a> —
+precompute buffered tiles for multiple radii around
+points. The function internally is linked to our file naming
+convention. As long as it is maintained, function can be used to create tiled
+polygons with buffers around points from any {sfarrow} parquet grid file. There
+are three buffering modes: <strong>dense</strong> (buffers the best-matching pts100*.parquet
+(prefers pts100_sauzeme.parquet) for each tile by radii_dense (default: 500,
+1250, 3000, 10000 m ensuring that every analysis grid cell has desired buffer.
+Computationally heavy in the following workflows), <strong>sparse</strong> (uses a file to
+radius mapping and is highly generalizable.
+<strong>In our workflows we used this mode with default mapping</strong>),
+and <strong>specified</strong> (the same as sparse, but with one single
+point file);</p></li>
+</ul>
 </div>
 </div>
 <div id="Ch02.02" class="section level2 hasAnchor" number="2.2">
