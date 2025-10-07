@@ -19,9 +19,9 @@ meži" (Latvian State Forests) "Improvement of the monitoring of the northern
 goshawk *Accipiter gentilis* and creation of a spatial model of habitat 
 suitability" (Latvian State Forests document No. 5-5.5.1_000r_101_23_27_6);
 
-- State research program "Development of research specified in the Biodiversity 
+- most importantly **State research program "Development of research specified in the Biodiversity 
 Priority Action Program" project "High-resolution quantification of biodiversity 
-for nature conservation and management: HiQBioDiv" (VPP-VARAM-DABA-2024/1-0002).
+for nature conservation and management: HiQBioDiv" (VPP-VARAM-DABA-2024/1-0002)**.
 
 The material was developed in R using {bookdown}. The data processing and analysis 
 described in the content was mainly performed in R, and one of the main reasons for 
