@@ -27,6 +27,9 @@ download_vector_templates(
 ```
 
 <br>
+<br>
+
+
 
 Once template vector data are downloaded and unarchived, they need to be tiled:
 
@@ -45,6 +48,9 @@ tile_vector_grid(
 ```
 
 <br>
+<br>
+
+
 
 
 2. Point files are tiled and buffered. In workflows creating EGVs described in this document, 
@@ -76,6 +82,9 @@ tiled_buffers(
 ```
 
 <br>
+<br>
+
+
 
 ## Raster data  {#Ch03.02}
 
@@ -99,4 +108,3 @@ download_raster_templates(
 ```
 
 
-<br>

@@ -67,7 +67,7 @@ path="./path/file/tree/object.extension")
 ```
 
 <br>
-
+<br>
 
 In the example above, the first line creates an object ("object") that is the result of a function ("function()"). The function has three arguments ("arguments1", "arguments2" and "path") separated by commas (as with all function arguments in R). The third argument is the path in the file tree (it is on a new line but is a continuation of the function on the previous line, because the parentheses are not closed), which is indicated by an equal sign (and quotation marks) followed by this path (note the beginning "./", which indicates a relative path - the location in the file tree is relative to the project location).
 

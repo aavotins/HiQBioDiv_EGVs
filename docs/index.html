@@ -237,7 +237,8 @@ To a lesser extent, it also serves to demonstrate the results and ensure their a
 <span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="at">path=</span><span class="st">&quot;./path/file/tree/object.extension&quot;</span>)</span>
 <span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="co"># comment</span></span></code></pre></div>
 </details>
-<p><br></p>
+<p><br>
+<br></p>
 <p>In the example above, the first line creates an object (“object”) that is the result of a function (“function()”). The function has three arguments (“arguments1”, “arguments2” and “path”) separated by commas (as with all function arguments in R). The third argument is the path in the file tree (it is on a new line but is a continuation of the function on the previous line, because the parentheses are not closed), which is indicated by an equal sign (and quotation marks) followed by this path (note the beginning “./”, which indicates a relative path - the location in the file tree is relative to the project location).</p>
 <p>The second line of the example above is a comment - everything after “#” is a comment. Anything in a command line before “#” must be an executable function or object. A comment can contain anything and be on the same line as an executable function (at the end of it).</p>
 <p>Command lines are the most important part of this material for reproducibility. However, the person using them must ensure the availability of input data and maintain correct paths in the file tree.</p>
