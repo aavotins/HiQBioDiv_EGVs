@@ -78,7 +78,7 @@ spatial cover, resolution, coordinate reference system, exact pixel matching, et
 Creation of layers with default background values is faster than recreating them 
 several times in workflows preparing EGVs;
 
--[polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
+- [polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
 other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to 
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer 
 built from the template (so grids normally match). Projection is optional 
