@@ -168,7 +168,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="Ch03.html"><a href="Ch03.html#Ch03.01"><i class="fa fa-check"></i><b>3.1</b> Vector data</a></li>
 <li class="chapter" data-level="3.2" data-path="Ch03.html"><a href="Ch03.html#Ch03.02"><i class="fa fa-check"></i><b>3.2</b> Raster data</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="Ch04.html"><a href="Ch04.html"><i class="fa fa-check"></i><b>4</b> RawGeodata</a></li>
+<li class="chapter" data-level="4" data-path="Ch04.html"><a href="Ch04.html"><i class="fa fa-check"></i><b>4</b> Raw geodata</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#state-forest-services-state-forest-registry-ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Services State Forest Registry (Ch04.01)</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="Ch05.html"><a href="Ch05.html"><i class="fa fa-check"></i><b>5</b> Geodata products</a></li>
 <li class="chapter" data-level="6" data-path="Ch06.html"><a href="Ch06.html"><i class="fa fa-check"></i><b>6</b> Ecogeographical variables</a></li>
 <li class="chapter" data-level="7" data-path="Ch07.html"><a href="Ch07.html"><i class="fa fa-check"></i><b>7</b> Data accessibility</a></li>
@@ -194,15 +197,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Ch03" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Templates and utilities<a href="Ch03.html#Ch03" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter defines template files used for harmonized georeferenced data creation,
-necessary for species distribution modelling (SDM).</p>
+<p>This chapter defines template files. They define the analysis space and ensure
+harmonisation of georeferenced data creation, and facilitate connection with
+other Latvian geodata.</p>
 <div id="Ch03.01" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Vector data<a href="Ch03.html#Ch03.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Vector data</p>
+<p>Baseline template (or reference) vector grid and point files are publically available
+at <a href="https://zenodo.org/records/14277114">HiQBioDiv’s Zenodo repository</a>. Command lines
+and data used to create these files are documented at
+the HiQBioDiv main code repository’s <a href="https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Vector.R">file</a>.</p>
+<p>The easiest way to obtain these files is to run determined
+function <code>download_vector_templates()</code> from {egvtools}.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Ch03.html#cb4-1" tabindex="-1"></a><span class="fu">download_vector_templates</span>(</span>
+<span id="cb4-2"><a href="Ch03.html#cb4-2" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14277114/files-archive&quot;</span>,</span>
+<span id="cb4-3"><a href="Ch03.html#cb4-3" tabindex="-1"></a>  <span class="at">grid_dir =</span> <span class="st">&quot;./Templates/TemplateGrids&quot;</span>,</span>
+<span id="cb4-4"><a href="Ch03.html#cb4-4" tabindex="-1"></a>  <span class="at">points_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
+<span id="cb4-5"><a href="Ch03.html#cb4-5" tabindex="-1"></a>  <span class="at">gpkg_dir =</span> <span class="st">&quot;./Templates&quot;</span>,</span>
+<span id="cb4-6"><a href="Ch03.html#cb4-6" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-7"><a href="Ch03.html#cb4-7" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-8"><a href="Ch03.html#cb4-8" tabindex="-1"></a>)</span></code></pre></div>
+</details>
+<p>Once template vector data are downloaded and unarchived, they need to be tiled:</p>
+<ol style="list-style-type: decimal">
+<li>Analysis grid is tiled in <code>tks50km</code> pages</li>
+</ol>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Ch03.html#cb5-1" tabindex="-1"></a><span class="fu">tile_vector_grid</span>(</span>
+<span id="cb5-2"><a href="Ch03.html#cb5-2" tabindex="-1"></a>  <span class="at">grid_path =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb5-3"><a href="Ch03.html#cb5-3" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGrids/lapas&quot;</span>,</span>
+<span id="cb5-4"><a href="Ch03.html#cb5-4" tabindex="-1"></a>  <span class="at">tile_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb5-5"><a href="Ch03.html#cb5-5" tabindex="-1"></a>  <span class="at">chunk_size =</span> <span class="dv">50000</span><span class="dt">L</span>,</span>
+<span id="cb5-6"><a href="Ch03.html#cb5-6" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-7"><a href="Ch03.html#cb5-7" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-8"><a href="Ch03.html#cb5-8" tabindex="-1"></a>)</span></code></pre></div>
+</details>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Point files are tiled and buffered. In workflows creating EGVs described in this document,
+we used “sparse” grid:</p>
+<ul>
+<li><p>500m buffers around every 100m grids center;</p></li>
+<li><p>1250m buffers around every 100m grids center;</p></li>
+<li><p>3000m buffers around every 300m grids center (to speed up neighbourhood analysis ~9 times, while loosing &lt;0.001% of precission);</p></li>
+<li><p>10000m buffers around every 1000m grids center (to speed up neighbourhood analysis ~100 times, while loosing &lt;0.001% of precission)</p></li>
+</ul></li>
+</ol>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Ch03.html#cb6-1" tabindex="-1"></a><span class="fu">tiled_buffers</span>(</span>
+<span id="cb6-2"><a href="Ch03.html#cb6-2" tabindex="-1"></a>  <span class="at">in_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
+<span id="cb6-3"><a href="Ch03.html#cb6-3" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints/lapas&quot;</span>,</span>
+<span id="cb6-4"><a href="Ch03.html#cb6-4" tabindex="-1"></a>  <span class="at">buffer_mode =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb6-5"><a href="Ch03.html#cb6-5" tabindex="-1"></a>  <span class="at">mapping_sparse =</span> <span class="fu">list</span>(<span class="at">pts100_sauzeme.parquet =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1250</span>), <span class="at">pts300_sauzeme.parquet =</span></span>
+<span id="cb6-6"><a href="Ch03.html#cb6-6" tabindex="-1"></a>    <span class="dv">3000</span>, <span class="at">pts1000_sauzeme.parquet =</span> <span class="dv">10000</span>),</span>
+<span id="cb6-7"><a href="Ch03.html#cb6-7" tabindex="-1"></a>  <span class="at">split_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb6-8"><a href="Ch03.html#cb6-8" tabindex="-1"></a>  <span class="at">n_workers =</span> <span class="dv">4</span>,</span>
+<span id="cb6-9"><a href="Ch03.html#cb6-9" tabindex="-1"></a>  <span class="at">os_type =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-10"><a href="Ch03.html#cb6-10" tabindex="-1"></a>  <span class="at">future_max_mem_gb =</span> <span class="dv">4</span>,</span>
+<span id="cb6-11"><a href="Ch03.html#cb6-11" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-12"><a href="Ch03.html#cb6-12" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-13"><a href="Ch03.html#cb6-13" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 </div>
 <div id="Ch03.02" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Raster data<a href="Ch03.html#Ch03.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Raster data</p>
+<p>Baseline template (or reference) raster grid and point files are publically available
+at <a href="https://zenodo.org/records/14497070">HiQBioDiv’s Zenodo repository</a>. Command lines
+and data used to create these files are documented at
+the HiQBioDiv main code repository’s <a href="https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Raster.R">file</a>.</p>
+<p>The easiest way to obtain these files is to run determined
+function <code>download_raster_templates()</code> from {egvtools}.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Ch03.html#cb7-1" tabindex="-1"></a><span class="fu">download_raster_templates</span>(</span>
+<span id="cb7-2"><a href="Ch03.html#cb7-2" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14497070/files-archive&quot;</span>,</span>
+<span id="cb7-3"><a href="Ch03.html#cb7-3" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters&quot;</span>,</span>
+<span id="cb7-4"><a href="Ch03.html#cb7-4" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-5"><a href="Ch03.html#cb7-5" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb7-6"><a href="Ch03.html#cb7-6" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 
 </div>
 </div>

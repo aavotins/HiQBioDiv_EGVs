@@ -1,14 +1,96 @@
 # Templates and utilities {#Ch03}
 
-This chapter defines template files used for harmonized georeferenced data creation, 
-necessary for species distribution modelling (SDM).
+This chapter defines template files. They define the analysis space and ensure 
+harmonisation of georeferenced data creation, and facilitate connection with 
+other Latvian geodata.
 
 ## Vector data  {#Ch03.01}
 
-Vector data
+Baseline template (or reference) vector grid and point files are publically available 
+at [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14277114). Command lines 
+and data used to create these files are documented at 
+the HiQBioDiv main code repository's [file](https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Vector.R).
+
+The easiest way to obtain these files is to run determined 
+function `download_vector_templates()` from {egvtools}.
+
+
+``` r
+download_vector_templates(
+  url = "https://zenodo.org/api/records/14277114/files-archive",
+  grid_dir = "./Templates/TemplateGrids",
+  points_dir = "./Templates/TemplateGridPoints",
+  gpkg_dir = "./Templates",
+  overwrite = FALSE,
+  quiet = FALSE
+)
+```
+
+Once template vector data are downloaded and unarchived, they need to be tiled:
+
+1. Analysis grid is tiled in `tks50km` pages
+
+
+``` r
+tile_vector_grid(
+  grid_path = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  out_dir = "./Templates/TemplateGrids/lapas",
+  tile_field = "tks50km",
+  chunk_size = 50000L,
+  overwrite = FALSE,
+  quiet = FALSE
+)
+```
+
+
+
+2. Point files are tiled and buffered. In workflows creating EGVs described in this document, 
+we used "sparse" grid:
+
+    - 500m buffers around every 100m grids center;
+    
+    - 1250m buffers around every 100m grids center;
+    
+    - 3000m buffers around every 300m grids center (to speed up neighbourhood analysis ~9 times, while loosing <0.001% of precission);
+    
+    - 10000m buffers around every 1000m grids center (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
+
+
+``` r
+tiled_buffers(
+  in_dir = "./Templates/TemplateGridPoints",
+  out_dir = "./Templates/TemplateGridPoints/lapas",
+  buffer_mode = "sparse",
+  mapping_sparse = list(pts100_sauzeme.parquet = c(500, 1250), pts300_sauzeme.parquet =
+    3000, pts1000_sauzeme.parquet = 10000),
+  split_field = "tks50km",
+  n_workers = 4,
+  os_type = NULL,
+  future_max_mem_gb = 4,
+  overwrite = FALSE,
+  quiet = FALSE
+)
+```
 
 
 ## Raster data  {#Ch03.02}
 
-Raster data
+
+Baseline template (or reference) raster grid and point files are publically available 
+at [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14497070). Command lines 
+and data used to create these files are documented at 
+the HiQBioDiv main code repository's [file](https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Raster.R).
+
+The easiest way to obtain these files is to run determined 
+function `download_raster_templates()` from {egvtools}.
+
+
+``` r
+download_raster_templates(
+  url = "https://zenodo.org/api/records/14497070/files-archive",
+  out_dir = "./Templates/TemplateRasters",
+  overwrite = FALSE,
+  quiet = FALSE
+)
+```
 
