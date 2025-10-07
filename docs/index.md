@@ -1,7 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
 author: "Andris Avotiņš"
-date: "2025-09-04"
+date: "2025-10-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -87,15 +87,20 @@ Within reason, the material describes all data sets used and provides metadata r
 
 ## Outline {.unnumbered}
 
-1. [Template files](#Chapter1) (A. Avotiņš)
+1. [Terminology and acronyms](#Ch01)
 
-2. [Geodata](#Chapter2) (A. Avotiņš)
+2. [Utilities](#Ch02)
 
-3. [Geodata products](#Chapter3) (A. Avotiņš)
+3. [Template files](#Ch03)
 
-4. [Ecogeographical variables](#Chapter4) (A. Avotiņš)
+4. [Raw geodata](#Ch04)
 
-5. [Data accessibility](#Chapter5) (A. Avotiņš)
+5. [Geodata products](#Ch05)
+
+6. [Ecogeographical variables](#Ch06)
+
+7. [Data accessibility](#Ch07)
+
 
 
 

@@ -1,0 +1,13 @@
+# Utilities {#Ch02}
+
+This chapter describes utility functions - stored in specifically for this work created r package and others
+
+## R package egvtools  {#Ch02.01}
+
+R packaged purposfully created for this work
+
+
+
+## Other utility functions {#Ch02.02}
+
+Other handy functions repeatedly used, not included in {egvtools}

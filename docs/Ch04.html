@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024</title>
+  <title>4 RawGeodata | High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024</title>
   <meta name="description" content="<p>Description of the geodata used and the geoprocessing workflows employed to
 create ecogeographical variables (EGVs) for species distribution modelling
 describing Latvia, 2024.</p>" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024" />
+  <meta property="og:title" content="4 RawGeodata | High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>Description of the geodata used and the geoprocessing workflows employed to
@@ -19,7 +19,7 @@ describing Latvia, 2024.</p>" />
   <meta name="github-repo" content="aavotins/HiQBioDiv_EGVs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024" />
+  <meta name="twitter:title" content="4 RawGeodata | High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024" />
   
   <meta name="twitter:description" content="<p>Description of the geodata used and the geoprocessing workflows employed to
 create ecogeographical variables (EGVs) for species distribution modelling
@@ -36,8 +36,8 @@ describing Latvia, 2024.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="Ch01.html"/>
+<link rel="prev" href="Ch03.html"/>
+<link rel="next" href="Ch05.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -188,81 +188,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024</h1>
-<p class="author"><em>Andris Avotiņš</em></p>
-<p class="date"><em>2025-10-07</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered hasAnchor">
-<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome! This book documents the geodata and processing workflows used to create
-ecogeographical variables (EGVs) for species distribution modelling in Latvia (2024).</p>
-<p>This material has been developed to present the results of three projects implemented at the University of Latvia, which are deeply rooted in species distribution modeling, and, more importantly, to demonstrate and explain the work process and decisions made in order to ensure their repeatability and reproducibility. These projects are:</p>
-<ul>
-<li><p>The project “Preparation of a geospatial data layer covering existing
-protected areas for the implementation of the EU Biodiversity Strategy 2030” (No. 1-08/73/2023), funded by the Latvian Environmental Protection Fund Administration
-;</p></li>
-<li><p>Scientific research service project commissioned by AS “Latvijas valsts meži” (Latvian State Forests) “Improvement of the monitoring of the northern goshawk <em>Accipiter gentilis</em> and creation of a spatial model of habitat suitability” (Latvian State Forests document No. 5-5.5.1_000r_101_23_27_6);</p></li>
-<li><p>State research program “Development of research specified in the Biodiversity Priority Action Program” project “High-resolution quantification of biodiversity for nature conservation and management: HiQBioDiv” (VPP-VARAM-DABA-2024/1-0002).</p></li>
-</ul>
-<p>The material was developed in R using {bookdown}. The data processing and analysis described in the content was mainly performed in R, and one of the main reasons for creating this material was to transfer the information necessary for reproducing the work using verified command lines. A desirable side effect is to promote openness and reproducibility in scientific practice and practical science.</p>
-<ul>
-<li>Repo: <a href="https://github.com/aavotins/HiQBioDiv_EGVs">aavotins/HiQBioDiv_EGVs</a></li>
-<li>Cite as needed using <code>book/book.bib</code>.</li>
-</ul>
-<div id="about-this-material" class="section level2 unnumbered hasAnchor">
-<h2>About this material<a href="index.html#about-this-material" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This material <strong>is not</strong>:</p>
-<ul>
-<li><p><em>an introduction to R or other programming languages</em>. On the contrary, it will be most useful to those who already understand how to use command lines. However, it will also be informative for other users regarding the approaches used;</p></li>
-<li><p><em>a tutorial on geoprocessing</em>. This material summarizes the approaches that, at the time of its development, were known to the authors as the most effective (in terms of processing time, RAM and hard disk space, performance guarantees, and reliability), but they are certainly not the only ones possible;</p></li>
-<li><p><em>copy/paste ready product</em>. Although the use and publication of command lines tends to be intended for these purposes, in a situation where large amounts of data and, at least in part, restricted access data are used for the work, this is simply not possible. However, by ensuring data availability and placement in accordance with the file structure of this project (availabe at <code>root/Data</code> or by forking <a href="https://github.com/aavotins/HiQBioDiv_FileTree">template repository</a>), the command lines will be repeatable without changes and will produce the same results.</p></li>
-</ul>
-<p>This material <strong>has been</strong> prepared to provide a reproducible workflow, describing the decisions made and solutions implemented in the preparation of ecogeographical variables for species distribution (habitat suitability) modeling for biodiversity conservation planning.
-To a lesser extent, it also serves to demonstrate the results and ensure their accessibility.</p>
-<p>For the most part, this material consists of:</p>
-<ul>
-<li><p><em>explanatory text</em>, which is recognizable as text;</p></li>
-<li><p><em>command lines</em>, which are hidden by default to make the text easier to read. The locations of the command lines can be identified by the “|&gt; Code” visible on the left side of the page, just below this paragraph. Clicking on it will open the code area, where the text on a gray background is command lines, for example:</p></li>
-</ul>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>object<span class="ot">=</span><span class="cf">function</span>(arguments1,arguments2,</span>
-<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="at">path=</span><span class="st">&quot;./path/file/tree/object.extension&quot;</span>)</span>
-<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="co"># comment</span></span></code></pre></div>
-</details>
-<p><br></p>
-<p>In the example above, the first line creates an object (“object”) that is the result of a function (“function()”). The function has three arguments (“arguments1”, “arguments2” and “path”) separated by commas (as with all function arguments in R). The third argument is the path in the file tree (it is on a new line but is a continuation of the function on the previous line, because the parentheses are not closed), which is indicated by an equal sign (and quotation marks) followed by this path (note the beginning “./”, which indicates a relative path - the location in the file tree is relative to the project location).</p>
-<p>The second line of the example above is a comment - everything after “#” is a comment. Anything in a command line before “#” must be an executable function or object. A comment can contain anything and be on the same line as an executable function (at the end of it).</p>
-<p>Command lines are the most important part of this material for reproducibility. However, the person using them must ensure the availability of input data and maintain correct paths in the file tree.</p>
-<p>Command lines can also be found in text, for example, <code># comment as a command line in text</code>.</p>
-<p>Sometimes I will refer to R packages in the text, I will put them in curly brackets, for example, {package}.</p>
-<ul>
-<li><p><em>graphics</em> - various diagrams that describe the workflow or data characteristics;</p></li>
-<li><p><em>links to other resources</em>, especially to higher-level products and results created within the project, but also to input data, if it is publicly available. The results are intended for practical use.</p></li>
-</ul>
-<p>Within reason, the material describes all data sets used and provides metadata related to ensuring reproducibility. Since not all data sets are freely available, they are not published as such, but in all cases information is provided on how they were obtained for the development of this project.</p>
-</div>
-<div id="outline" class="section level2 unnumbered hasAnchor">
-<h2>Outline<a href="index.html#outline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><p><a href="Ch01.html#Ch01">Terminology and acronyms</a></p></li>
-<li><p><a href="Ch02.html#Ch02">Utilities</a></p></li>
-<li><p><a href="Ch03.html#Ch03">Template files</a></p></li>
-<li><p><a href="Ch04.html#Ch04">Raw geodata</a></p></li>
-<li><p><a href="Ch05.html#Ch05">Geodata products</a></p></li>
-<li><p><a href="Ch06.html#Ch06">Ecogeographical variables</a></p></li>
-<li><p><a href="Ch07.html#Ch07">Data accessibility</a></p></li>
-</ol>
+<div id="Ch04" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> RawGeodata<a href="Ch04.html#Ch04" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Every dataset used in creation of egvs</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="Ch01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Ch03.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Ch05.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -293,7 +230,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/aavotins/HiQBioDiv_EGVs/edit/main/book/index.Rmd",
+    "link": "https://github.com/aavotins/HiQBioDiv_EGVs/edit/main/book/04-RawGeodata.Rmd",
     "text": "Edit"
   },
   "history": {
