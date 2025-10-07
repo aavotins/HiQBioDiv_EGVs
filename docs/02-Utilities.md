@@ -68,13 +68,52 @@ are three buffering modes: **dense** (buffers the best-matching pts100\*.parquet
 (prefers pts100_sauzeme.parquet) for each tile by radii_dense (default: 500, 
 1250, 3000, 10000 m ensuring that every analysis grid cell has desired buffer. 
 Computationally heavy in the following workflows), **sparse** (uses a file to 
-radius mapping and is highly generalizable. 
-**In our workflows we used this mode with default mapping**), 
+radius mapping and is highly generalizable), 
 and **specified** (the same as sparse, but with one single 
-point file);
+point file). **In our workflows we used the sparse mode with default mapping**;
 
+- [create_backgrounds()](https://aavotins.github.io/egvtools/reference/create_backgrounds.html) — a wrapper 
+around `terra::ifel()` to build consistent background rasters. This function better 
+guards coordinate reference system and how it is stored, while also guarding 
+spatial cover, resolution, coordinate reference system, exact pixel matching, etc. 
+Creation of layers with default background values is faster than recreating them 
+several times in workflows preparing EGVs;
 
+-[polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
+other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to 
+a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer 
+built from the template (so grids normally match). Projection is optional 
+(project_mode). Missing values are counted only over valid template cells. User 
+may optionally restrict the result with a raster mask (restrict_to) using numeric 
+values or bracketed range strings (e.g., "(0,5]", "[10,)"). Remaining NA cells 
+can be filled by covering with a background raster (background_raster) or a 
+constant (background_value). For large rasters, heavy steps (projection/mask/cover) 
+can stream to disk via terra_todisk=TRUE.
 
+- [input2egv()](https://aavotins.github.io/egvtools/reference/input2egv.html) — normalize/align 
+a fine-resolution input raster to a (coarser) EGV template, optionally cover missing values and/or fill gaps (IDW via Whitebox), and write the result to disk. Designed for large runs: fast gap counting (inside template footprint only), optional filling, tuned GDAL write options, and controlled terra memory/temp behavior.
+
+- [downscale2egv()]() — downscale coarse rasters to a template grid (CRS, 
+resolution, extent), masks to the template footprint, and optionally: (1) fills 
+NoData gaps using WhiteboxTools' IDW-based fill_missing_data, and (2) applies 
+IDW smoothing to reduce blockiness from low-resolution inputs. 
+
+- [distance2egv()](https://aavotins.github.io/egvtools/reference/distance2egv.html) — computes 
+Euclidean distance (in map units) from cells matching a set of class values in 
+an input raster to all cells of an EGV template grid, then writes a Float32 
+GeoTIFF aligned to the template. Designed to work with rasters produced 
+by `polygon2input()`.
+
+- [landscape_function()](https://aavotins.github.io/egvtools/reference/landscape_function.html) — computes a {landscapemetrics} metric (default "lsm_l_shdi"), optionally with extra lm_args, 
+that yields one value per zone and per input layer. Runs tile-by-tile (by 
+tile_field), writes per-tile rasters, merges to final per-layer GeoTIFF(s), 
+then performs gap analysis (NA count within the template footprint and optional 
+maximum gap width) and optional IDW gap filling via WhiteboxTools. Returns a 
+compact data.frame with per-layer stats and timing.
+
+- [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
+summary statistics from raster layers using buffered polygon zones of multiple 
+radii and rasterizes them onto a common template grid.
 
 ## Other utility functions {#Ch02.02}
 
