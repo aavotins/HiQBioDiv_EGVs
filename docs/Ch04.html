@@ -131,6 +131,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -193,8 +216,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.13" data-path="Ch04.html"><a href="Ch04.html#Ch04.13"><i class="fa fa-check"></i><b>4.13</b> Sentinel-2 indices</a></li>
 <li class="chapter" data-level="4.14" data-path="Ch04.html"><a href="Ch04.html#Ch04.14"><i class="fa fa-check"></i><b>4.14</b> Waste and garbage disposal sites, landfills</a></li>
 <li class="chapter" data-level="4.15" data-path="Ch04.html"><a href="Ch04.html#Ch04.15"><i class="fa fa-check"></i><b>4.15</b> Digital elevation/terrain models</a></li>
-<li class="chapter" data-level="4.16" data-path="Ch04.html"><a href="Ch04.html#Ch04.16"><i class="fa fa-check"></i><b>4.16</b> Nature Conservation Agency’s data</a></li>
-<li class="chapter" data-level="4.17" data-path="Ch04.html"><a href="Ch04.html#Ch04.17"><i class="fa fa-check"></i><b>4.17</b> Latvian Exclusive Economic Zone polygon</a></li>
+<li class="chapter" data-level="4.16" data-path="Ch04.html"><a href="Ch04.html#Ch04.16"><i class="fa fa-check"></i><b>4.16</b> Latvian Exclusive Economic Zone polygon</a></li>
+<li class="chapter" data-level="4.17" data-path="Ch04.html"><a href="Ch04.html#Ch04.17"><i class="fa fa-check"></i><b>4.17</b> Nature Conservation Agency’s data</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="Ch05.html"><a href="Ch05.html"><i class="fa fa-check"></i><b>5</b> Geodata products</a>
 <ul>
@@ -297,15 +320,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Ch04.11" class="section level2 hasAnchor" number="4.11">
 <h2><span class="header-section-number">4.11</span> CHELSA v2.1<a href="Ch04.html#Ch04.11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>krā <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span></p>
 </div>
 <div id="Ch04.12" class="section level2 hasAnchor" number="4.12">
 <h2><span class="header-section-number">4.12</span> HydroClim data<a href="Ch04.html#Ch04.12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>krā <span class="citation">(<a href="#ref-HidroClim">Domisch et al., 2015</a>)</span></p>
 </div>
 <div id="Ch04.13" class="section level2 hasAnchor" number="4.13">
 <h2><span class="header-section-number">4.13</span> Sentinel-2 indices<a href="Ch04.html#Ch04.13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>The European Space Agency (ESA) Copernicus program’s Sentinel-2 mission is a
+constellation of two (three since 09/05/2024) identical satellites orbiting in
+the same orbit. The first satellite, Sentinel-2A, entered its orbit and
+underwent calibration tests on 2015-06-23, the second (Sentinel-2B) on 2017-03-07,
+with the first images available earlier. Each satellite captures high-resolution
+images (from 10 m (at the equator) pixel resolution) in 13 spectral channels
+with a return time of up to 5 days (more frequently closer to the poles) (<a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2" class="uri">https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2</a>). The
+data from this mission is freely available, including on the Google Earth Engine
+platform <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span> for various large-scale pre-processing and analysis. We use
+the harmonized Level-2A (<a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED#description" class="uri">https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED#description</a>) product, applying a cloud mask that includes not only cloud filtering but also
+shadow filtering, so that for each filtered (cloud and seasonal - from April to
+October and from 2020 to 2024) to calculate the normalized difference vegetation
+index (NDVI), the normalized difference moisture index (NDMI), and the
+normalized difference water index (NDWI) as well as various metrics.
+A <a href="https://code.earthengine.google.com/78024b3354cccb526159fd865b214771">replication script</a>
+can be used to prepare the data. To use this script,
+you need a <a href="">GEE account and project</a>
+and sufficient space on Google Drive. When executing the command lines, the
+following files will be offered for download:</p>
+<ul>
+<li><p><code>NDVI_median-ST-[runtag, 20250820 by default]</code> - NDVI short-term median (2020-2024) of annual medians (April to October)</p></li>
+<li><p><code>NDVI_p25-ST-[runtag, 20250820 by default]</code> - NDVI short-term median (2020-2024) of annual 25th percentiles (April to October)</p></li>
+<li><p><code>NDVI_p75-ST-[runtag, 20250820 by default]</code>- NDVI short-term median (2020-2024) of annual 75th percentiles (April to October)</p></li>
+<li><p><code>NDVI_iqr-ST-[runtag, 20250820 by default]</code> - NDVI short-term median (2020-2024) of inter-quartile ranges (April to October)</p></li>
+<li><p><code>NDVI_median-LY-[runtag, 20250820 by default]</code> - NDVI last-years (2024) median (April to October)</p></li>
+<li><p><code>NDMI_median-ST-[runtag, 20250820 by default]</code> - NDMI short-term median (2020-2024) of annual medians (April to October)</p></li>
+<li><p><code>NDMI_p25-ST-[runtag, 20250820 by default]</code> - NDMI short-term median (2020-2024) of annual 25th percentiles (April to October)</p></li>
+<li><p><code>NDMI_p75-ST-[runtag, 20250820 by default]</code> - NDMI short-term median (2020-2024) of annual 75th percentiles (April to October)</p></li>
+<li><p><code>NDMI_iqr-ST-[runtag, 20250820 by default]</code> - NDMI short-term median (2020-2024) of inter-quartile ranges (April to October)</p></li>
+<li><p><code>NDMI_median-LY-[runtag, 20250820 by default]</code> - NDMI last-years (2024) median (April to October)</p></li>
+<li><p><code>NDWI_median-ST-[runtag, 20250820 by default]</code> - NDMI short-term median (2020-2024) of annual medians (April to October)</p></li>
+<li><p><code>NDWI_p25-ST-[runtag, 20250820 by default]</code> - NDWI short-term median (2020-2024) of annual 25th percentiles (April to October)</p></li>
+<li><p><code>NDWI_p75-ST-[runtag, 20250820 by default]</code> - NDWI short-term median (2020-2024) of annual 75th percentiles (April to October)</p></li>
+<li><p><code>NDWI_iqr-ST-[runtag, 20250820 by default]</code> - NDWI short-term median (2020-2024) of inter-quartile ranges (April to October)</p></li>
+<li><p><code>NDWI_median-LY-[runtag, 20250820 by default]</code> - NDWI last-years (2024) median (April to October)</p></li>
+</ul>
+<p>After executing the command line and preparing the results in Google Drive, it
+can be seen that each layer covering the whole of Latvia is divided into
+several tiles. This is because the layers are encoded as Float and exceed 4 GB
+in size before GeoTIFF compression. All of these files need to be downloaded, and
+the following R commands combine them, ensuring that the coordinate systems
+and pixels match the reference raster.</p>
 </div>
 <div id="Ch04.14" class="section level2 hasAnchor" number="4.14">
 <h2><span class="header-section-number">4.14</span> Waste and garbage disposal sites, landfills<a href="Ch04.html#Ch04.14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -324,16 +388,56 @@ and <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2
 </div>
 <div id="Ch04.15" class="section level2 hasAnchor" number="4.15">
 <h2><span class="header-section-number">4.15</span> Digital elevation/terrain models<a href="Ch04.html#Ch04.15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>With the publication of continuous aerial laser scanning data for the territory of Latvia (<a href="https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0" class="uri">https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0</a>), various
+high-resolution (1 m and higher) digital surface models (DSM) and
+digital elevation models (DEM) have been developed. Since the input data is the
+same in all cases, the values of these (corresponding) models are identical
+across almost the entire territory of the country. However, airborne laser
+scanning data (1) is not available for the entire territory of the country,
+and (2) there are differences between the models in terms of filling (availability
+of values) outside inland waters and (3) filling of water bodies themselves.
+However, for areas covered by data on land, the values are almost
+identical (Pearson’s correlation coefficients between the DEMs developed
+by LU ĢZZF, LVMI Silava, and LĢIA are greater than 0.999999).</p>
+<p>The arithmetic mean between the DEMs developed by LU ĢZZF and LVMI Silava,
+prepared in the LU project “Improvement of sustainable soil resource management
+in agriculture,” was used as the base DEM. The resolution of this DEM is 1 m,
+which is not necessary for species distribution modeling input data, therefore
+the layer is designed to correspond to the reference 10 m raster.</p>
+<p>When comparing the projected DEM with the reference, there are clearly
+distinguishable areas where there is no data. This has been solved by using
+the DEM with a resolution of 10 m developed by Māris Nartišs (LU ĢZZF) in 2018,
+which covers the entire territory of Latvia without gaps. To prevent sharp
+edges from forming in the fill areas (smooth transitions), an arithmetic mean
+layer was created, covering the entire territory of Latvia and matching the
+reference raster.</p>
+<p>A slope layer has also been created from this raster, which is designed in
+accordance with the reference. The slope is expressed in degrees and calculated
+using the 8-neighbor approach. The same applies to the aspect or slope
+direction.</p>
 </div>
 <div id="Ch04.16" class="section level2 hasAnchor" number="4.16">
-<h2><span class="header-section-number">4.16</span> Nature Conservation Agency’s data<a href="Ch04.html#Ch04.16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>vai tiešām izmantoju?</p>
+<h2><span class="header-section-number">4.16</span> Latvian Exclusive Economic Zone polygon<a href="Ch04.html#Ch04.16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The waters of Latvia’s Exclusive Economic Zone were obtained from
+the <a href="https://maps.helcom.fi/website/mapservice/?datasetID=ae58c373-674c-45d1-be0f-1ff69a59f9ba">HELCOM map and data service</a>. After downloading, this line file was
+analogically connected to the coastline file obtained from the same resource.</p>
 </div>
 <div id="Ch04.17" class="section level2 hasAnchor" number="4.17">
-<h2><span class="header-section-number">4.17</span> Latvian Exclusive Economic Zone polygon<a href="Ch04.html#Ch04.17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">4.17</span> Nature Conservation Agency’s data<a href="Ch04.html#Ch04.17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>vai tiešām izmantoju?</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-HidroClim" class="csl-entry">
+Domisch, S., Amatulli, G., Jetz, W., 2015. Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution. Scientific Data 2:150073, 1–13. <a href="https://doi.org/10.1038/sdata.2015.73">https://doi.org/10.1038/sdata.2015.73</a>
+</div>
+<div id="ref-GEEpaper" class="csl-entry">
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. <span>Google</span> <span>Earth</span> <span>Engine</span>: <span class="nocase">Planetary-scale</span> geospatial analysis for everyone. Remote Sensing of Environment 202, 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+</div>
+<div id="ref-CHELSA" class="csl-entry">
+Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P., Kessler, M., 2017. <span>Data</span> <span>Descriptor</span>: <span>Climatologies</span> at high resolution for the earth’s land surface areas. Scientific Data 4:170122. <a href="https://doi.org/10.1038/sdata.2017.122">https://doi.org/10.1038/sdata.2017.122</a>
 </div>
 </div>
             </section>

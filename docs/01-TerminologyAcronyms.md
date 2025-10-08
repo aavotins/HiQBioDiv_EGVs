@@ -52,3 +52,9 @@ Acronyms:
 **SDM** - species distribution modelling
 
 **SDMs** - species distribution models
+
+**NDMI** - normalized difference moisture index
+
+**NDVI** - normalized difference vegetation index
+
+**NDWI** - normalized difference water index

@@ -37,7 +37,7 @@ Once template vector data are downloaded and unarchived, they need to be tiled:
 ``` r
 tile_vector_grid(
   grid_path = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
-  out_dir = "./Templates/TemplateGrids/lapas",
+  out_dir = "./Templates/TemplateGrids/tiles",
   tile_field = "tks50km",
   chunk_size = 50000L,
   overwrite = FALSE,
@@ -46,7 +46,11 @@ tile_vector_grid(
 ```
 
 
-
+Expect to see warning:
+`This is an initial implementation of Parquet/Feather file support and geo metadata. This is tracking version 0.1.0
+of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata specification may change and does not
+yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to
+rewrite your Parquet/Feather files.`
 
 
 2. Point files are tiled and buffered. In workflows creating EGVs described in this document, 
@@ -64,7 +68,7 @@ we used "sparse" grid:
 ``` r
 tiled_buffers(
   in_dir = "./Templates/TemplateGridPoints",
-  out_dir = "./Templates/TemplateGridPoints/lapas",
+  out_dir = "./Templates/TemplateGridPoints/tiles",
   buffer_mode = "sparse",
   mapping_sparse = list(pts100_sauzeme.parquet = c(500, 1250), pts300_sauzeme.parquet =
     3000, pts1000_sauzeme.parquet = 10000),
@@ -77,7 +81,11 @@ tiled_buffers(
 )
 ```
 
-
+Expect to see warning:
+`This is an initial implementation of Parquet/Feather file support and geo metadata. This is tracking version 0.1.0
+of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata specification may change and does not
+yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to
+rewrite your Parquet/Feather files.`
 
 
 ## Raster data  {#Ch03.02}

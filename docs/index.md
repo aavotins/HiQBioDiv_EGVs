@@ -4,7 +4,7 @@ author: "Andris Avotiņš"
 date: "2025-10-08"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, packages.bib, refs.bib]
 csl: elsevier-harvard.csl
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |

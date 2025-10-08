@@ -72,16 +72,75 @@ krā
 
 ## CHELSA v2.1 {#Ch04.11}
 
-krā
+krā [@CHELSA]
 
 ## HydroClim data {#Ch04.12}
 
-krā
+krā [@HidroClim]
 
 
 ## Sentinel-2 indices {#Ch04.13}
 
-krā
+The European Space Agency (ESA) Copernicus program's Sentinel-2 mission is a 
+constellation of two (three since 09/05/2024) identical satellites orbiting in 
+the same orbit. The first satellite, Sentinel-2A, entered its orbit and 
+underwent calibration tests on 2015-06-23, the second (Sentinel-2B) on 2017-03-07, 
+with the first images available earlier. Each satellite captures high-resolution 
+images (from 10 m (at the equator) pixel resolution) in 13 spectral channels 
+with a return time of up to 5 days (more frequently closer to the poles) (https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2). The 
+data from this mission is freely available, including on the Google Earth Engine 
+platform [@GEEpaper] for various large-scale pre-processing and analysis. We use 
+the harmonized Level-2A (https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED#description) product, applying a cloud mask that includes not only cloud filtering but also 
+shadow filtering, so that for each filtered (cloud and seasonal - from April to 
+October and from 2020 to 2024) to calculate the normalized difference vegetation 
+index (NDVI), the normalized difference moisture index (NDMI), and the 
+normalized difference water index (NDWI) as well as various metrics. 
+A [replication script](https://code.earthengine.google.com/78024b3354cccb526159fd865b214771) 
+can be used to prepare the data. To use this script, 
+you need a [GEE account and project]() 
+and sufficient space on Google Drive. When executing the command lines, the 
+following files will be offered for download:
+
+- `NDVI_median-ST-[runtag, 20250820 by default]` - NDVI short-term median (2020-2024) of annual medians (April to October)
+
+- `NDVI_p25-ST-[runtag, 20250820 by default]` - NDVI short-term median (2020-2024) of annual 25th percentiles (April to October)
+
+- `NDVI_p75-ST-[runtag, 20250820 by default]`- NDVI short-term median (2020-2024) of annual 75th percentiles (April to October)
+
+- `NDVI_iqr-ST-[runtag, 20250820 by default]` - NDVI short-term median (2020-2024) of inter-quartile ranges (April to October)
+
+- `NDVI_median-LY-[runtag, 20250820 by default]` - NDVI last-years (2024) median (April to October)
+
+- `NDMI_median-ST-[runtag, 20250820 by default]` - NDMI short-term median (2020-2024) of annual medians (April to October)
+
+- `NDMI_p25-ST-[runtag, 20250820 by default]` - NDMI short-term median (2020-2024) of annual 25th percentiles (April to October)
+
+- `NDMI_p75-ST-[runtag, 20250820 by default]` - NDMI short-term median (2020-2024) of annual 75th percentiles (April to October)
+
+- `NDMI_iqr-ST-[runtag, 20250820 by default]` - NDMI short-term median (2020-2024) of inter-quartile ranges (April to October)
+
+- `NDMI_median-LY-[runtag, 20250820 by default]` - NDMI last-years (2024) median (April to October)
+
+- `NDWI_median-ST-[runtag, 20250820 by default]` - NDMI short-term median (2020-2024) of annual medians (April to October)
+
+- `NDWI_p25-ST-[runtag, 20250820 by default]` - NDWI short-term median (2020-2024) of annual 25th percentiles (April to October)
+
+- `NDWI_p75-ST-[runtag, 20250820 by default]` - NDWI short-term median (2020-2024) of annual 75th percentiles (April to October)
+
+- `NDWI_iqr-ST-[runtag, 20250820 by default]` - NDWI short-term median (2020-2024) of inter-quartile ranges (April to October)
+
+- `NDWI_median-LY-[runtag, 20250820 by default]` - NDWI last-years (2024) median (April to October)
+
+After executing the command line and preparing the results in Google Drive, it 
+can be seen that each layer covering the whole of Latvia is divided into 
+several tiles. This is because the layers are encoded as Float and exceed 4 GB 
+in size before GeoTIFF compression. All of these files need to be downloaded, and 
+the following R commands combine them, ensuring that the coordinate systems 
+and pixels match the reference raster.
+
+```{r,eval=FALSE}
+
+```
 
 
 ## Waste and garbage disposal sites, landfills {#Ch04.14}
@@ -104,15 +163,52 @@ and [added](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/20
 
 ## Digital elevation/terrain models {#Ch04.15}
 
-krā
+With the publication of continuous aerial laser scanning data for the territory of Latvia (https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0), various 
+high-resolution (1 m and higher) digital surface models (DSM) and 
+digital elevation models (DEM) have been developed. Since the input data is the 
+same in all cases, the values of these (corresponding) models are identical 
+across almost the entire territory of the country. However, airborne laser 
+scanning data (1) is not available for the entire territory of the country, 
+and (2) there are differences between the models in terms of filling (availability 
+of values) outside inland waters and (3) filling of water bodies themselves. 
+However, for areas covered by data on land, the values are almost 
+identical (Pearson's correlation coefficients between the DEMs developed 
+by LU ĢZZF, LVMI Silava, and LĢIA are greater than 0.999999).
+
+The arithmetic mean between the DEMs developed by LU ĢZZF and LVMI Silava, 
+prepared in the LU project "Improvement of sustainable soil resource management 
+in agriculture," was used as the base DEM. The resolution of this DEM is 1 m, 
+which is not necessary for species distribution modeling input data, therefore 
+the layer is designed to correspond to the reference 10 m raster.
+
+When comparing the projected DEM with the reference, there are clearly 
+distinguishable areas where there is no data. This has been solved by using 
+the DEM with a resolution of 10 m developed by Māris Nartišs (LU ĢZZF) in 2018, 
+which covers the entire territory of Latvia without gaps. To prevent sharp 
+edges from forming in the fill areas (smooth transitions), an arithmetic mean 
+layer was created, covering the entire territory of Latvia and matching the 
+reference raster.
+
+A slope layer has also been created from this raster, which is designed in 
+accordance with the reference. The slope is expressed in degrees and calculated 
+using the 8-neighbor approach. The same applies to the aspect or slope 
+direction.
+
+```{r,eval=FALSE}
+
+```
 
 
 
-## Nature Conservation Agency's data {#Ch04.16}
+## Latvian Exclusive Economic Zone polygon {#Ch04.16}
+
+The waters of Latvia's Exclusive Economic Zone were obtained from 
+the [HELCOM map and data service](https://maps.helcom.fi/website/mapservice/?datasetID=ae58c373-674c-45d1-be0f-1ff69a59f9ba). After downloading, this line file was 
+analogically connected to the coastline file obtained from the same resource.
+
+
+## Nature Conservation Agency's data {#Ch04.17}
 
 vai tiešām izmantoju?
 
 
-## Latvian Exclusive Economic Zone polygon {#Ch04.17}
-
-vai tiešām izmantoju?
