@@ -84,6 +84,8 @@ of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata spe
 yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to
 rewrite your Parquet/Feather files.`
 
+Apperance of file `pts300_r3000_NA.parquet`, i.e. without a tile number, is expected, 
+due to slight mismatch of 300 m grid with the 50 km one.
 
 ## Raster data  {#Ch03.02}
 

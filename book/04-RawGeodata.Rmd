@@ -74,9 +74,20 @@ krā
 
 krā [@CHELSA]
 
+https://chelsa-climate.org/
+
+https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf
+
+
+
 ## HydroClim data {#Ch04.12}
 
 krā [@HidroClim]
+
+https://zenodo.org/records/5089529
+
+https://datadryad.org/dataset/doi:10.5061/dryad.dv920
+
 
 
 ## Sentinel-2 indices {#Ch04.13}
