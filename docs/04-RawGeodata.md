@@ -2,6 +2,117 @@
 
 This chapter describes raw geodata used and the preliminary processing conducted on them.
 
-## State Forest Services State Forest Registry (Ch04.01)
+## State Forest Service's State Forest Registry (Ch04.01)
 
 krā
+
+## Rural Support Service's information on declared fields (Ch04.02)
+
+krā
+
+## Melioration Cadaster (Ch04.03)
+
+krā
+
+## TopographicMap (Ch04.04)
+
+krā
+
+
+## Corine Land Cover 2018 (Ch04.05)
+
+krā
+
+
+## Publicly available LVM data (Ch04.06)
+
+krā
+
+
+## Soil data (Ch04.07)
+
+krā
+
+### Soil chemistry (Ch04.07.01)
+
+krā
+
+### Soil texture Europe (Ch04.07.02)
+
+krā
+
+### Soil texture LIZ (Ch04.07.03)
+
+krā
+
+### Soil texture Quaternary (Ch04.07.04)
+
+krā
+
+### Organic soils SILAVA (Ch04.07.05)
+
+krā
+
+### Organic soils LU (Ch04.07.06)
+
+krā
+
+## Dynamic World data (Ch04.08)
+
+krā
+
+
+## The Global Forest Watch (Ch04.09)
+
+krā
+
+## Palsar (Ch04.10)
+
+krā
+
+## CHELSA v2.1 (Ch04.11)
+
+krā
+
+## HydroClim data (Ch04.12)
+
+krā
+
+
+## Sentinel-2 indices (Ch04.13)
+
+krā
+
+
+## Waste and garbage disposal sites, landfills (Ch04.14)
+
+Information on landfills has been compiled from [VARAM](https://www.varam.gov.lv/sites/varam/files/content/files/atkritumu_poligoni_lv_karte.pdf) and 
+Latvian Environment, Geology and Meteorology Center 
+["Report on landfills in Latvia in 2023"](https://videscentrs.lvgmc.lv/files/Vide/Atkritumi_un_radiacijas_objekti/Nr_3_parskats_par_atkritumiem/3Atkritumi_kopsavilkums_2023.pdf) listed landfills and their addresses. The coordinates required 
+for the preparation of EGVs were found by combining the 
+resources https://www.google.com/maps and https://balticmaps.eu/. In addition to 
+the resources mentioned above, an object was added at the address 
+"Dardedzes C, Mārupes pag., Mārupes nov., Latvia, LV-2166".
+
+In addition, information from the [State Environmental Service on 
+separated waste and deposit packaging collection points](https://skiroviegli.lv/#/) 
+was used, exporting it to an Excel file.
+
+Both data sets were combined into a single file 
+and [added](../Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) to this material.
+
+
+## Digital elevation/terrain models (Ch04.15)
+
+krā
+
+
+
+## Nature Conservation Agency's data (Ch04.16)
+
+vai tiešām izmantoju?
+
+
+## Latvian Exclusive Economic Zone polygon (Ch04.17)
+
+vai tiešām izmantoju?

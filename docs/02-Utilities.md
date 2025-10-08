@@ -28,8 +28,6 @@ Package can be installed from [GitHub](https://github.com/aavotins/egvtools) wit
 pak::pak("aavotins/egvtools")
 ```
 
-<br>
-<br>
 
 
 

@@ -26,8 +26,6 @@ download_vector_templates(
 )
 ```
 
-<br>
-<br>
 
 
 
@@ -47,8 +45,6 @@ tile_vector_grid(
 )
 ```
 
-<br>
-<br>
 
 
 
@@ -81,8 +77,6 @@ tiled_buffers(
 )
 ```
 
-<br>
-<br>
 
 
 
