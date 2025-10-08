@@ -99,7 +99,7 @@ separated waste and deposit packaging collection points](https://skiroviegli.lv/
 was used, exporting it to an Excel file.
 
 Both data sets were combined into a single file 
-and [added](./Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) to this material.
+and [added](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) to this material.
 
 
 ## Digital elevation/terrain models (Ch04.15)
