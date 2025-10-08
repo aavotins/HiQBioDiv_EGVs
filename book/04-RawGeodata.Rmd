@@ -2,89 +2,89 @@
 
 This chapter describes raw geodata used and the preliminary processing conducted on them.
 
-## State Forest Service's State Forest Registry (Ch04.01)
+## State Forest Service's State Forest Registry {Ch04.01}
 
 krā
 
-## Rural Support Service's information on declared fields (Ch04.02)
+## Rural Support Service's information on declared fields {Ch04.02}
 
 krā
 
-## Melioration Cadaster (Ch04.03)
+## Melioration Cadaster {Ch04.03}
 
 krā
 
-## TopographicMap (Ch04.04)
-
-krā
-
-
-## Corine Land Cover 2018 (Ch04.05)
+## TopographicMap {Ch04.04}
 
 krā
 
 
-## Publicly available LVM data (Ch04.06)
+## Corine Land Cover 2018 {Ch04.05}
 
 krā
 
 
-## Soil data (Ch04.07)
-
-krā
-
-### Soil chemistry (Ch04.07.01)
-
-krā
-
-### Soil texture Europe (Ch04.07.02)
-
-krā
-
-### Soil texture LIZ (Ch04.07.03)
-
-krā
-
-### Soil texture Quaternary (Ch04.07.04)
-
-krā
-
-### Organic soils SILAVA (Ch04.07.05)
-
-krā
-
-### Organic soils LU (Ch04.07.06)
-
-krā
-
-## Dynamic World data (Ch04.08)
+## Publicly available LVM data {Ch04.06}
 
 krā
 
 
-## The Global Forest Watch (Ch04.09)
+## Soil data {Ch04.07}
 
 krā
 
-## Palsar (Ch04.10)
+### Soil chemistry {Ch04.07.01}
 
 krā
 
-## CHELSA v2.1 (Ch04.11)
+### Soil texture Europe {Ch04.07.02}
 
 krā
 
-## HydroClim data (Ch04.12)
+### Soil texture LIZ {Ch04.07.03}
+
+krā
+
+### Soil texture Quaternary {Ch04.07.04}
+
+krā
+
+### Organic soils SILAVA {Ch04.07.05}
+
+krā
+
+### Organic soils LU {Ch04.07.06}
+
+krā
+
+## Dynamic World data {Ch04.08}
 
 krā
 
 
-## Sentinel-2 indices (Ch04.13)
+## The Global Forest Watch {Ch04.09}
+
+krā
+
+## Palsar {Ch04.10}
+
+krā
+
+## CHELSA v2.1 {Ch04.11}
+
+krā
+
+## HydroClim data {Ch04.12}
 
 krā
 
 
-## Waste and garbage disposal sites, landfills (Ch04.14)
+## Sentinel-2 indices {Ch04.13}
+
+krā
+
+
+## Waste and garbage disposal sites, landfills {Ch04.14}
 
 Information on landfills has been compiled from [VARAM](https://www.varam.gov.lv/sites/varam/files/content/files/atkritumu_poligoni_lv_karte.pdf) and 
 Latvian Environment, Geology and Meteorology Center 
@@ -102,17 +102,17 @@ Both data sets were combined into a single file
 and [added](Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) to this material.
 
 
-## Digital elevation/terrain models (Ch04.15)
+## Digital elevation/terrain models {Ch04.15}
 
 krā
 
 
 
-## Nature Conservation Agency's data (Ch04.16)
+## Nature Conservation Agency's data {Ch04.16}
 
 vai tiešām izmantoju?
 
 
-## Latvian Exclusive Economic Zone polygon (Ch04.17)
+## Latvian Exclusive Economic Zone polygon {Ch04.17}
 
 vai tiešām izmantoju?
