@@ -121,7 +121,7 @@ radii and rasterizes them onto a common template grid.
 ## Other utility functions {#Ch02.02}
 
 Other handy functions repeatedly used, not included in {egvtools} are stored 
-in `UtilityFunctions.R` file, located next to `.Rproj` file. 
+in `02.02_UtilityFunctions.R` file, located in `Data/RScipts_final`. 
 
 - `ensure_multipolygons()` - rather agressive function to 
 create `MULTIPOLYGON` geometries from `GEOMETRYCOLLECTION`
