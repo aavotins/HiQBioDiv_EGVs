@@ -148,7 +148,7 @@ several tiles. This is because the layers are encoded as Float and exceed 4 GB
 in size before GeoTIFF compression. All of these files need to be downloaded and 
 located at `Geodata/S2indices/RAW`. The following R commands combine them, 
 ensuring the coordinate systems and its naming, and pixels match the reference 
-raster, while renaming files to \verb|EO_[index_]-[term: ST or LY][statistic]|.
+raster, while renaming files to ``EO_[index_]-[term: ST or LY][statistic]``.
 
 ```{r,eval=FALSE}
 
