@@ -16,6 +16,8 @@ function `download_vector_templates()` from {egvtools}.
 
 
 ``` r
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 download_vector_templates(
   url = "https://zenodo.org/api/records/14277114/files-archive",
   grid_dir = "./Templates/TemplateGrids",
@@ -35,6 +37,8 @@ Once template vector data are downloaded and unarchived, they need to be tiled:
 
 
 ``` r
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 tile_vector_grid(
   grid_path = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
   out_dir = "./Templates/TemplateGrids/tiles",
@@ -66,6 +70,8 @@ we used "sparse" grid:
 
 
 ``` r
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 tiled_buffers(
   in_dir = "./Templates/TemplateGridPoints",
   out_dir = "./Templates/TemplateGridPoints/tiles",
@@ -103,6 +109,8 @@ function `download_raster_templates()` from {egvtools}.
 
 
 ``` r
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 download_raster_templates(
   url = "https://zenodo.org/api/records/14497070/files-archive",
   out_dir = "./Templates/TemplateRasters",

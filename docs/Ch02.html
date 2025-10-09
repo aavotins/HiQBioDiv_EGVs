@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-08" />
+<meta name="date" content="2025-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -354,23 +354,26 @@ radii and rasterizes them onto a common template grid.</p></li>
 <div id="Ch02.02" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Other utility functions<a href="Ch02.html#Ch02.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Other handy functions repeatedly used, not included in {egvtools} are stored
-in <code>02.02_UtilityFunctions.R</code> file, located in <code>Data/RScipts_final</code>.</p>
+in <code>egvs02.02_UtilityFunctions.R</code> file, located in <code>Data/RScipts_final</code>.</p>
 <ul>
 <li><code>ensure_multipolygons()</code> - rather agressive function to
 create <code>MULTIPOLYGON</code> geometries from <code>GEOMETRYCOLLECTION</code></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Ch02.html#cb3-1" tabindex="-1"></a>ensure_multipolygons <span class="ot">&lt;-</span> <span class="cf">function</span>(X) {</span>
-<span id="cb3-2"><a href="Ch02.html#cb3-2" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
-<span id="cb3-3"><a href="Ch02.html#cb3-3" tabindex="-1"></a>  <span class="fu">library</span>(gdalUtilities)</span>
-<span id="cb3-4"><a href="Ch02.html#cb3-4" tabindex="-1"></a>  </span>
-<span id="cb3-5"><a href="Ch02.html#cb3-5" tabindex="-1"></a>  tmp1 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
-<span id="cb3-6"><a href="Ch02.html#cb3-6" tabindex="-1"></a>  tmp2 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
-<span id="cb3-7"><a href="Ch02.html#cb3-7" tabindex="-1"></a>  <span class="fu">st_write</span>(X, tmp1)</span>
-<span id="cb3-8"><a href="Ch02.html#cb3-8" tabindex="-1"></a>  <span class="fu">ogr2ogr</span>(tmp1, tmp2, <span class="at">f =</span> <span class="st">&quot;GPKG&quot;</span>, <span class="at">nlt =</span> <span class="st">&quot;MULTIPOLYGON&quot;</span>)</span>
-<span id="cb3-9"><a href="Ch02.html#cb3-9" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">st_read</span>(tmp2)</span>
-<span id="cb3-10"><a href="Ch02.html#cb3-10" tabindex="-1"></a>  <span class="fu">st_sf</span>(<span class="fu">st_drop_geometry</span>(X), <span class="at">geom =</span> <span class="fu">st_geometry</span>(Y))</span>
-<span id="cb3-11"><a href="Ch02.html#cb3-11" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Ch02.html#cb3-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb3-2"><a href="Ch02.html#cb3-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)) {<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>); <span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb3-3"><a href="Ch02.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="Ch02.html#cb3-4" tabindex="-1"></a>ensure_multipolygons <span class="ot">&lt;-</span> <span class="cf">function</span>(X) {</span>
+<span id="cb3-5"><a href="Ch02.html#cb3-5" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb3-6"><a href="Ch02.html#cb3-6" tabindex="-1"></a>  <span class="fu">library</span>(gdalUtilities)</span>
+<span id="cb3-7"><a href="Ch02.html#cb3-7" tabindex="-1"></a>  </span>
+<span id="cb3-8"><a href="Ch02.html#cb3-8" tabindex="-1"></a>  tmp1 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
+<span id="cb3-9"><a href="Ch02.html#cb3-9" tabindex="-1"></a>  tmp2 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.gpkg&quot;</span>)</span>
+<span id="cb3-10"><a href="Ch02.html#cb3-10" tabindex="-1"></a>  <span class="fu">st_write</span>(X, tmp1)</span>
+<span id="cb3-11"><a href="Ch02.html#cb3-11" tabindex="-1"></a>  <span class="fu">ogr2ogr</span>(tmp1, tmp2, <span class="at">f =</span> <span class="st">&quot;GPKG&quot;</span>, <span class="at">nlt =</span> <span class="st">&quot;MULTIPOLYGON&quot;</span>)</span>
+<span id="cb3-12"><a href="Ch02.html#cb3-12" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="fu">st_read</span>(tmp2)</span>
+<span id="cb3-13"><a href="Ch02.html#cb3-13" tabindex="-1"></a>  <span class="fu">st_sf</span>(<span class="fu">st_drop_geometry</span>(X), <span class="at">geom =</span> <span class="fu">st_geometry</span>(Y))</span>
+<span id="cb3-14"><a href="Ch02.html#cb3-14" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 
 </div>

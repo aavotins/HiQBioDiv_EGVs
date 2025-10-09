@@ -15,6 +15,8 @@ The easiest way to obtain these files is to run determined
 function `download_vector_templates()` from {egvtools}.
 
 ```{r,eval=FALSE}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 download_vector_templates(
   url = "https://zenodo.org/api/records/14277114/files-archive",
   grid_dir = "./Templates/TemplateGrids",
@@ -33,6 +35,8 @@ Once template vector data are downloaded and unarchived, they need to be tiled:
 1. Analysis grid is tiled in `tks50km` pages
 
 ```{r,eval=FALSE}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 tile_vector_grid(
   grid_path = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
   out_dir = "./Templates/TemplateGrids/tiles",
@@ -63,6 +67,8 @@ we used "sparse" grid:
     - 10000m buffers around every 1000m grids center (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
 
 ```{r,eval=FALSE}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 tiled_buffers(
   in_dir = "./Templates/TemplateGridPoints",
   out_dir = "./Templates/TemplateGridPoints/tiles",
@@ -99,6 +105,8 @@ The easiest way to obtain these files is to run determined
 function `download_raster_templates()` from {egvtools}.
 
 ```{r,eval=FALSE}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
 download_raster_templates(
   url = "https://zenodo.org/api/records/14497070/files-archive",
   out_dir = "./Templates/TemplateRasters",

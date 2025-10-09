@@ -1,4 +1,7 @@
 # ensure_multipolygons ----
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(gdalUtilities)) {install.packages("gdalUtilities"); require(gdalUtilities)}
+
 
 ensure_multipolygons <- function(X) {
   library(sf)
