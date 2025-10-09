@@ -101,7 +101,7 @@ Within reason, the material describes all data sets used and provides metadata r
 
 6. [Ecogeographical variables](#Ch06)
 
-7. [Data accessibility](#Ch07)
+7. [Data access](#Ch07)
 
 
 

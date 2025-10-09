@@ -2,3 +2,4530 @@
 
 Creation procedures of every EGV.
 
+
+## Climate_CHELASAv2.1-bio1_cell	{#ch06.001}	Climate_CHELASAv2.1-bio1_cell.tif	egv_1	Mean annual daily mean air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio10_cell	{#ch06.002}	Climate_CHELASAv2.1-bio10_cell.tif	egv_2	Mean daily mean air temperatures (°C) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio11_cell	{#ch06.003}	Climate_CHELASAv2.1-bio11_cell.tif	egv_3	Mean daily mean air temperatures (°C) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio12_cell	{#ch06.004}	Climate_CHELASAv2.1-bio12_cell.tif	egv_4	Annual precipitation amount (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio13_cell	{#ch06.005}	Climate_CHELASAv2.1-bio13_cell.tif	egv_5	Precipitation amount (kg m⁻² month⁻¹) of the wettest month (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio14_cell	{#ch06.006}	Climate_CHELASAv2.1-bio14_cell.tif	egv_6	Precipitation amount (kg m⁻² month⁻¹) of the driest month (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio15_cell	{#ch06.007}	Climate_CHELASAv2.1-bio15_cell.tif	egv_7	Precipitation seasonality (kg m⁻²) (CHELSA v2.1) within the analysis cell (1 ha)	Nokrišņu sezonalitāte (kg m⁻²) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio16_cell	{#ch06.008}	Climate_CHELASAv2.1-bio16_cell.tif	egv_8	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio17_cell	{#ch06.009}	Climate_CHELASAv2.1-bio17_cell.tif	egv_9	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio18_cell	{#ch06.010}	Climate_CHELASAv2.1-bio18_cell.tif	egv_10	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio19_cell	{#ch06.011}	Climate_CHELASAv2.1-bio19_cell.tif	egv_11	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio2_cell	{#ch06.012}	Climate_CHELASAv2.1-bio2_cell.tif	egv_12	Mean diurnal air temperature range (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio3_cell	{#ch06.013}	Climate_CHELASAv2.1-bio3_cell.tif	egv_13	Isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Izotermalitāte (attiecība starp diennakts un gada temperatūras svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio4_cell	{#ch06.014}	Climate_CHELASAv2.1-bio4_cell.tif	egv_14	Temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)	Temperatūru sezonalitāte (mēneša vidējo temperatūru standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio5_cell	{#ch06.015}	Climate_CHELASAv2.1-bio5_cell.tif	egv_15	Mean daily maximum air temperature (°C) of the warmest month (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio6_cell	{#ch06.016}	Climate_CHELASAv2.1-bio6_cell.tif	egv_16	Mean daily minimum air temperature (°C) of the coldest month (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio7_cell	{#ch06.017}	Climate_CHELASAv2.1-bio7_cell.tif	egv_17	Annual range of air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio8_cell	{#ch06.018}	Climate_CHELASAv2.1-bio8_cell.tif	egv_18	Mean daily mean air temperatures (°C) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-bio9_cell	{#ch06.019}	Climate_CHELASAv2.1-bio9_cell.tif	egv_19	Mean daily mean air temperatures (°C) of the driest quartet (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-clt-max_cell	{#ch06.020}	Climate_CHELASAv2.1-clt-max_cell.tif	egv_20	Maximum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-clt-mean_cell	{#ch06.021}	Climate_CHELASAv2.1-clt-mean_cell.tif	egv_21	Mean monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-clt-min_cell	{#ch06.022}	Climate_CHELASAv2.1-clt-min_cell.tif	egv_22	Minimum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-clt-range_cell	{#ch06.023}	Climate_CHELASAv2.1-clt-range_cell.tif	egv_23	Annual range of monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada mākoņu seguma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-cmi-max_cell	{#ch06.024}	Climate_CHELASAv2.1-cmi-max_cell.tif	egv_24	Maximum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-cmi-mean_cell	{#ch06.025}	Climate_CHELASAv2.1-cmi-mean_cell.tif	egv_25	Mean monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-cmi-min_cell	{#ch06.026}	Climate_CHELASAv2.1-cmi-min_cell.tif	egv_26	Minimum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-cmi-range_cell	{#ch06.027}	Climate_CHELASAv2.1-cmi-range_cell.tif	egv_27	Annual range of monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-fcf_cell	{#ch06.028}	Climate_CHELASAv2.1-fcf_cell.tif	egv_28	Frost change frequency (number of events in which tmin or tmax go above or below 0°C) (CHELSA v2.1) within the analysis cell (1 ha)	Sasalšanas gadījumu biežums (zemākā vai augstākā temperatūra šķērso 0°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-fgd_cell	{#ch06.029}	Climate_CHELASAv2.1-fgd_cell.tif	egv_29	First day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdd0_cell	{#ch06.030}	Climate_CHELASAv2.1-gdd0_cell.tif	egv_30	Growing degree days heat sum above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdd10_cell	{#ch06.031}	Climate_CHELASAv2.1-gdd10_cell.tif	egv_31	Growing degree days heat sum above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdd5_cell	{#ch06.032}	Climate_CHELASAv2.1-gdd5_cell.tif	egv_32	Growing degree days heat sum above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gddlgd0_cell	{#ch06.033}	Climate_CHELASAv2.1-gddlgd0_cell.tif	egv_33	Last growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gddlgd10_cell	{#ch06.034}	Climate_CHELASAv2.1-gddlgd10_cell.tif	egv_34	Last growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gddlgd5_cell	{#ch06.035}	Climate_CHELASAv2.1-gddlgd5_cell.tif	egv_35	Last growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdgfgd0_cell	{#ch06.036}	Climate_CHELASAv2.1-gdgfgd0_cell.tif	egv_36	First growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdgfgd10_cell	{#ch06.037}	Climate_CHELASAv2.1-gdgfgd10_cell.tif	egv_37	First growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gdgfgd5_cell	{#ch06.038}	Climate_CHELASAv2.1-gdgfgd5_cell.tif	egv_38	First growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gsl_cell	{#ch06.039}	Climate_CHELASAv2.1-gsl_cell.tif	egv_39	Length of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas garums (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gsp_cell	{#ch06.040}	Climate_CHELASAv2.1-gsp_cell.tif	egv_40	Accumulated precipitation amount (kg m⁻² year⁻¹) on growing season days (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonā (TREELIM) uzkrātais nokrišņu daudzums (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-gst_cell	{#ch06.041}	Climate_CHELASAv2.1-gst_cell.tif	egv_41	Mean temperature of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-hurs-max_cell	{#ch06.042}	Climate_CHELASAv2.1-hurs-max_cell.tif	egv_42	Maximum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-hurs-mean_cell	{#ch06.043}	Climate_CHELASAv2.1-hurs-mean_cell.tif	egv_43	Mean monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-hurs-min_cell	{#ch06.044}	Climate_CHELASAv2.1-hurs-min_cell.tif	egv_44	Minimum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-hurs-range_cell	{#ch06.045}	Climate_CHELASAv2.1-hurs-range_cell.tif	egv_45	Annual range of monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-lgd_cell	{#ch06.046}	Climate_CHELASAv2.1-lgd_cell.tif	egv_46	Last day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-ngd0_cell	{#ch06.047}	Climate_CHELASAv2.1-ngd0_cell.tif	egv_47	Number of days at which 2m air temperature > 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-ngd10_cell	{#ch06.048}	Climate_CHELASAv2.1-ngd10_cell.tif	egv_48	Number of days at which 2m air temperature > 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-ngd5_cell	{#ch06.049}	Climate_CHELASAv2.1-ngd5_cell.tif	egv_49	Number of days at which 2m air temperature > 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-npp_cell	{#ch06.050}	Climate_CHELASAv2.1-npp_cell.tif	egv_50	Net primary productivity (g C m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Neto primārā produkcija (g C m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-pet-penman-max_cell	{#ch06.051}	Climate_CHELASAv2.1-pet-penman-max_cell.tif	egv_51	Maximum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-pet-penman-mean_cell	{#ch06.052}	Climate_CHELASAv2.1-pet-penman-mean_cell.tif	egv_52	Mean monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-pet-penman-min_cell	{#ch06.053}	Climate_CHELASAv2.1-pet-penman-min_cell.tif	egv_53	Minimum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-pet-penman-range_cell	{#ch06.054}	Climate_CHELASAv2.1-pet-penman-range_cell.tif	egv_54	Annual range of monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-rsds-max_cell	{#ch06.055}	Climate_CHELASAv2.1-rsds-max_cell.tif	egv_55	Maximum monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+## Climate_CHELASAv2.1-rsds-mean_cell	{#ch06.056}	Climate_CHELASAv2.1-rsds-mean_cell.tif	egv_56	Mean monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-rsds-min_cell	{#ch06.057}	Climate_CHELASAv2.1-rsds-min_cell.tif	egv_57	Minimum monthly surface shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-rsds-range_cell	{#ch06.058}	Climate_CHELASAv2.1-rsds-range_cell.tif	egv_58	Annual range of monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-scd_cell	{#ch06.059}	Climate_CHELASAv2.1-scd_cell.tif	egv_59	Number of days with snow cover (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Dienu ar sniega segu skaits. (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-sfcWind-max_cell	{#ch06.060}	Climate_CHELASAv2.1-sfcWind-max_cell.tif	egv_60	Maximum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-sfcWind-mean_cell	{#ch06.061}	Climate_CHELASAv2.1-sfcWind-mean_cell.tif	egv_61	Mean monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-sfcWind-min_cell	{#ch06.062}	Climate_CHELASAv2.1-sfcWind-min_cell.tif	egv_62	Minimum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-sfcWind-range_cell	{#ch06.063}	Climate_CHELASAv2.1-sfcWind-range_cell.tif	egv_63	Annual range of monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-swb_cell	{#ch06.064}	Climate_CHELASAv2.1-swb_cell.tif	egv_64	Site water balance (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens bilance (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-swe_cell	{#ch06.065}	Climate_CHELASAv2.1-swe_cell.tif	egv_65	Snow water equivalent (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens ekvivalents sniegā (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-vpd-max_cell	{#ch06.066}	Climate_CHELASAv2.1-vpd-max_cell.tif	egv_66	Maximum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-vpd-mean_cell	{#ch06.067}	Climate_CHELASAv2.1-vpd-mean_cell.tif	egv_67	Mean monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-vpd-min_cell	{#ch06.068}	Climate_CHELASAv2.1-vpd-min_cell.tif	egv_68	Minimum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## Climate_CHELASAv2.1-vpd-range_cell	{#ch06.069}	Climate_CHELASAv2.1-vpd-range_cell.tif	egv_69	Annual range of monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_01-max_cell	{#ch06.070}	HydroClim_01-max_cell.tif	egv_70	Maximum per subcatchment upstream mean annual air temperature (°C) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā vidējā gaisa temperatūra augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_02-max_cell	{#ch06.071}	HydroClim_02-max_cell.tif	egv_71	Maximum per subcatchment upstream mean diurnal air temperature range (°C) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā diennakts gaisa temperatūras amplitūda augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_03-max_cell	{#ch06.072}	HydroClim_03-max_cell.tif	egv_72	Maximum per subcatchment upstream isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā izotermalitāte augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_04-max_cell	{#ch06.073}	HydroClim_04-max_cell.tif	egv_73	Maximum per subcatchment upstream temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā temperatūras sezonalitāte augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_05-max_cell	{#ch06.074}	HydroClim_05-max_cell.tif	egv_74	Maximum per subcatchment upstream mean daily maximum air temperature (°C) of the warmest month (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_06-min_cell	{#ch06.075}	HydroClim_06-min_cell.tif	egv_75	Minimum per subcatchment upstream mean daily minimum air temperature (°C) of the coldest month (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_07-max_cell	{#ch06.076}	HydroClim_07-max_cell.tif	egv_76	Maximum per subcatchment upstream annual range of air temperature (°C) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces gada gaisa temperatūru amplitūda (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_08-max_cell	{#ch06.077}	HydroClim_08-max_cell.tif	egv_77	Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the wettest quarter (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra mitrākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_09-min_cell	{#ch06.078}	HydroClim_09-min_cell.tif	egv_78	Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the driest quartet (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_10-max_cell	{#ch06.079}	HydroClim_10-max_cell.tif	egv_79	Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the warmest quartet (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra siltākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_11-min_cell	{#ch06.080}	HydroClim_11-min_cell.tif	egv_80	Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the coldest quartet (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_12-max_cell	{#ch06.081}	HydroClim_12-max_cell.tif	egv_81	Maximum per subcatchment upstream annual precipitation amount (kg m⁻² year⁻¹) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums gadā (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_13-max_cell	{#ch06.082}	HydroClim_13-max_cell.tif	egv_82	Maximum per subcatchment upstream precipitation amount (kg m⁻² year⁻¹) of the wettest month (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums mitrākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_14-max_cell	{#ch06.083}	HydroClim_14-max_cell.tif	egv_83	Maximum per subcatchment upstream precipitation amount (kg m⁻² year⁻¹) of the driest month (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums sausākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_15-max_cell	{#ch06.084}	HydroClim_15-max_cell.tif	egv_84	Maximum per subcatchment upstream precipitation seasonality (kg m⁻²) (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzuma sezonalitāte (kg m⁻²) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_16-max_cell	{#ch06.085}	HydroClim_16-max_cell.tif	egv_85	Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the wettest quarter (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_17-max_cell	{#ch06.086}	HydroClim_17-max_cell.tif	egv_86	Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the driest quarter (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_18-max_cell	{#ch06.087}	HydroClim_18-max_cell.tif	egv_87	Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the warmest quarter (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## HydroClim_19-max_cell	{#ch06.088}	HydroClim_19-max_cell.tif	egv_88	Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the coldest quarter (HydroClim) within the analysis cell (1 ha)	Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Builtup_cell	{#ch06.089}	Distance_Builtup_cell.tif	egv_89	Distance to Built-Up features, average within the analysis cell (1 ha)	Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_ForestInside_cell	{#ch06.090}	Distance_ForestInside_cell.tif	egv_90	Distance to Forest Edge Inside Forests, average within the analysis cell (1 ha)	Attālums līdz meža malai tā iekšienē, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_GrasslandPermanent_cell	{#ch06.091}	Distance_GrasslandPermanent_cell.tif	egv_91	Distance to Permanent Grasslands, average within the analysis cell (1 ha)	Attālums līdz ilggadīgiem zālājiem, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Landfill_cell	{#ch06.092}	Distance_Landfill_cell.tif	egv_92	Distance to Landfills, average within the analysis cell (1 ha)	Attālums līdz atkritumu poligoniem, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Sea_cell	{#ch06.093}	Distance_Sea_cell.tif	egv_93	Distance to Sea, average within the analysis cell (1 ha)	Attālums līdz jūrai, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Trees_cell	{#ch06.094}	Distance_Trees_cell.tif	egv_94	Distance to Trees, average within the analysis cell (1 ha)	Attālums līdz kokiem, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Waste_cell	{#ch06.095}	Distance_Waste_cell.tif	egv_95	Distance to Waste disposal sites, average within the analysis cell (1 ha)	Attālums līdz atkritumu šķirošanas un uzglabāšanas vietām, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_Water_cell	{#ch06.096}	Distance_Water_cell.tif	egv_96	Distance to Waterbodies, average within the analysis cell (1 ha)	Attālums līdz ūdenstilpēn, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Distance_WaterInside_cell	{#ch06.097}	Distance_WaterInside_cell.tif	egv_97	Distance to Waterbody Edge Inside Waterbody, average within the analysis cell (1 ha)	Attālums līdz ūdenstilpes malai tās iekšienē, vidējais analīzes šūnā (1 ha)
+
+
+
+
+## Diversity_Farmland_r500	{#ch06.098}	Diversity_Farmland_r500.tif	egv_98	Average farmland class α-diversity of 500 m grid cells within the 0.5 km landscape	Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
+
+
+
+
+## Diversity_Farmland_r1250	{#ch06.099}	Diversity_Farmland_r1250.tif	egv_99	Average farmland class α-diversity of 500 m grid cells within the 1.25 km landscape	Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
+
+
+
+
+## Diversity_Farmland_r3000	{#ch06.100}	Diversity_Farmland_r3000.tif	egv_100	Average farmland class α-diversity of 500 m grid cells within the 3 km landscape	Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
+
+
+
+
+## Diversity_Farmland_r10000	{#ch06.101}	Diversity_Farmland_r10000.tif	egv_101	Average farmland class α-diversity of 500 m grid cells within the 10 km landscape	Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
+
+
+
+
+## Diversity_Forest_r500	{#ch06.102}	Diversity_Forest_r500.tif	egv_102	Average forest class α-diversity of 500 m grid cells within the 0.5 km landscape	Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
+
+
+
+
+## Diversity_Forest_r1250	{#ch06.103}	Diversity_Forest_r1250.tif	egv_103	Average forest class α-diversity of 500 m grid cells within the 1.25 km landscape	Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
+
+
+
+
+## Diversity_Forest_r3000	{#ch06.104}	Diversity_Forest_r3000.tif	egv_104	Average forest class α-diversity of 500 m grid cells within the 3 km landscape	Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
+
+
+
+
+## Diversity_Forest_r10000	{#ch06.105}	Diversity_Forest_r10000.tif	egv_105	Average forest class α-diversity of 500 m grid cells within the 10 km landscape	Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
+
+
+
+
+## Diversity_Total_r500	{#ch06.106}	Diversity_Total_r500.tif	egv_106	Average combined landscape α-diversity of 500 m grid cells within the 0.5 km landscape	Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
+
+
+
+
+## Diversity_Total_r1250	{#ch06.107}	Diversity_Total_r1250.tif	egv_107	Average combined landscape α-diversity of 500 m grid cells within the 1.25 km landscape	Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
+
+
+
+
+## Diversity_Total_r3000	{#ch06.108}	Diversity_Total_r3000.tif	egv_108	Average combined landscape α-diversity of 500 m grid cells within the 3 km landscape	Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
+
+
+
+
+## Diversity_Total_r10000	{#ch06.109}	Diversity_Total_r10000.tif	egv_109	Average combined landscape α-diversity of 500 m grid cells within the 10 km landscape	Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
+
+
+
+
+## Edges_Bogs-Trees_cell	{#ch06.110}	Edges_Bogs-Trees_cell.tif	egv_110	Edge pixels of Bogs, Mires bordering with Trees within the analysis cell (1 ha)	Purvu malas ar kokiem garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Bogs-Trees_r500	{#ch06.111}	Edges_Bogs-Trees_r500.tif	egv_111	Edge pixels of Bogs, Mires bordering with Trees within the 0.5 km landscape	Purvu malas ar kokiem garums 0,5 km ainavā
+
+
+
+
+## Edges_Bogs-Trees_r1250	{#ch06.112}	Edges_Bogs-Trees_r1250.tif	egv_112	Edge pixels of Bogs, Mires bordering with Trees within the 1.25 km landscape	Purvu malas ar kokiem garums 1,25 km ainavā
+
+
+
+
+## Edges_Bogs-Trees_r3000	{#ch06.113}	Edges_Bogs-Trees_r3000.tif	egv_113	Edge pixels of Bogs, Mires bordering with Trees within the 3 km landscape	Purvu malas ar kokiem garums 3 km ainavā
+
+
+
+
+## Edges_Bogs-Trees_r10000	{#ch06.114}	Edges_Bogs-Trees_r10000.tif	egv_114	Edge pixels of Bogs, Mires bordering with Trees within the 10 km landscape	Purvu malas ar kokiem garums 10 km ainavā
+
+
+
+
+## Edges_Bogs-Water_cell	{#ch06.115}	Edges_Bogs-Water_cell.tif	egv_115	Edge pixels of Bogs, Mires bordering with Water within the analysis cell (1 ha)	Purvu malas ar ūdeni garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Bogs-Water_r500	{#ch06.116}	Edges_Bogs-Water_r500.tif	egv_116	Edge pixels of Bogs, Mires bordering with Water within the 0.5 km landscape	Purvu malas ar ūdeni garums 0,5 km ainavā
+
+
+
+
+## Edges_Bogs-Water_r1250	{#ch06.117}	Edges_Bogs-Water_r1250.tif	egv_117	Edge pixels of Bogs, Mires bordering with Water within the 1.25 km landscape	Purvu malas ar ūdeni garums 1,25 km ainavā
+
+
+
+
+## Edges_Bogs-Water_r3000	{#ch06.118}	Edges_Bogs-Water_r3000.tif	egv_118	Edge pixels of Bogs, Mires bordering with Water within the 3 km landscape	Purvu malas ar ūdeni garums 3 km ainavā
+
+
+
+
+## Edges_Bogs-Water_r10000	{#ch06.119}	Edges_Bogs-Water_r10000.tif	egv_119	Edge pixels of Bogs, Mires bordering with Water within the 10 km landscape	Purvu malas ar ūdeni garums 10 km ainavā
+
+
+
+
+## Edges_Farmland-Builtup_cell	{#ch06.120}	Edges_Farmland-Builtup_cell.tif	egv_120	Edge pixels of Farmland bordering with Built-Up areas within the analysis cell (1 ha)	Lauksaimniecības zemju malas ar apbūvi garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Farmland-Builtup_r500	{#ch06.121}	Edges_Farmland-Builtup_r500.tif	egv_121	Edge pixels of Farmland bordering with Built-Up areas within the 0.5 km landscape	Lauksaimniecības zemju malas ar apbūvi garums 0,5 km ainavā
+
+
+
+
+## Edges_Farmland-Builtup_r1250	{#ch06.122}	Edges_Farmland-Builtup_r1250.tif	egv_122	Edge pixels of Farmland bordering with Built-Up areas within the 1.25 km landscape	Lauksaimniecības zemju malas ar apbūvi garums 1,25 km ainavā
+
+
+
+
+## Edges_Farmland-Builtup_r3000	{#ch06.123}	Edges_Farmland-Builtup_r3000.tif	egv_123	Edge pixels of Farmland bordering with Built-Up areas within the 3 km landscape	Lauksaimniecības zemju malas ar apbūvi garums 3 km ainavā
+
+
+
+
+## Edges_Farmland-Builtup_r10000	{#ch06.124}	Edges_Farmland-Builtup_r10000.tif	egv_124	Edge pixels of Farmland bordering with Built-Up areas within the 10 km landscape	Lauksaimniecības zemju malas ar apbūvi garums 10 km ainavā
+
+
+
+
+## Edges_Trees-Builtup_cell	{#ch06.125}	Edges_Trees-Builtup_cell.tif	egv_125	Edge pixels of Trees bordering with Built-Up areas within the analysis cell (1 ha)	Koku malas ar apbūvi garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Trees-Builtup_r500	{#ch06.126}	Edges_Trees-Builtup_r500.tif	egv_126	Edge pixels of Trees bordering with Built-Up areas within the 0.5 km landscape	Koku malas ar apbūvi garums 0,5 km ainavā
+
+
+
+
+## Edges_Trees-Builtup_r1250	{#ch06.127}	Edges_Trees-Builtup_r1250.tif	egv_127	Edge pixels of Trees bordering with Built-Up areas within the 1.25 km landscape	Koku malas ar apbūvi garums 1,25 km ainavā
+
+
+
+
+## Edges_Trees-Builtup_r3000	{#ch06.128}	Edges_Trees-Builtup_r3000.tif	egv_128	Edge pixels of Trees bordering with Built-Up areas within the 3 km landscape	Koku malas ar apbūvi garums 3 km ainavā
+
+
+
+
+## Edges_Trees-Builtup_r10000	{#ch06.129}	Edges_Trees-Builtup_r10000.tif	egv_129	Edge pixels of Trees bordering with Built-Up areas within the 10 km landscape	Koku malas ar apbūvi garums 10 km ainavā
+
+
+
+
+## Edges_CropsFallow_cell	{#ch06.130}	Edges_CropsFallow_cell.tif	egv_130	Edge pixels of Cropland, Fallow land within the analysis cell (1 ha)	Aramzemju malas garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_CropsFallow_r500	{#ch06.131}	Edges_CropsFallow_r500.tif	egv_131	Edge pixels of Cropland, Fallow land within the 0.5 km landscape	Aramzemju malas garums 0,5 km ainavā
+
+
+
+
+## Edges_CropsFallow_r1250	{#ch06.132}	Edges_CropsFallow_r1250.tif	egv_132	Edge pixels of Cropland, Fallow land within the 1.25 km landscape	Aramzemju malas garums 1,25 km ainavā
+
+
+
+
+## Edges_CropsFallow_r3000	{#ch06.133}	Edges_CropsFallow_r3000.tif	egv_133	Edge pixels of Cropland, Fallow land within the 3 km landscape	Aramzemju malas garums 3 km ainavā
+
+
+
+
+## Edges_CropsFallow_r10000	{#ch06.134}	Edges_CropsFallow_r10000.tif	egv_134	Edge pixels of Cropland, Fallow land within the 10 km landscape	Aramzemju malas garums 10 km ainavā
+
+
+
+
+## Edges_FarmlandShrubs-Trees_cell	{#ch06.135}	Edges_FarmlandShrubs-Trees_cell.tif	egv_135	Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the analysis cell (1 ha)	Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_FarmlandShrubs-Trees_r500	{#ch06.136}	Edges_FarmlandShrubs-Trees_r500.tif	egv_136	Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 0.5 km landscape	Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 0,5 km ainavā
+
+
+
+
+## Edges_FarmlandShrubs-Trees_r1250	{#ch06.137}	Edges_FarmlandShrubs-Trees_r1250.tif	egv_137	Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 1.25 km landscape	Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 1,25 km ainavā
+
+
+
+
+## Edges_FarmlandShrubs-Trees_r3000	{#ch06.138}	Edges_FarmlandShrubs-Trees_r3000.tif	egv_138	Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 3 km landscape	Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 3 km ainavā
+
+
+
+
+## Edges_FarmlandShrubs-Trees_r10000	{#ch06.139}	Edges_FarmlandShrubs-Trees_r10000.tif	egv_139	Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 10 km landscape	Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 10 km ainavā
+
+
+
+
+## Edges_Grasslands_cell	{#ch06.140}	Edges_Grasslands_cell.tif	egv_140	Edge pixels of Grassland within the analysis cell (1 ha)	Zālāju malas garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Grasslands_r500	{#ch06.141}	Edges_Grasslands_r500.tif	egv_141	Edge pixels of Grassland within the 0.5 km landscape	Zālāju malas garums 0,5 km ainavā
+
+
+
+
+## Edges_Grasslands_r1250	{#ch06.142}	Edges_Grasslands_r1250.tif	egv_142	Edge pixels of Grassland within the 1.25 km landscape	Zālāju malas garums 1,25 km ainavā
+
+
+
+
+## Edges_Grasslands_r3000	{#ch06.143}	Edges_Grasslands_r3000.tif	egv_143	Edge pixels of Grassland within the 3 km landscape	Zālāju malas garums 3 km ainavā
+
+
+
+
+## Edges_Grasslands_r10000	{#ch06.144}	Edges_Grasslands_r10000.tif	egv_144	Edge pixels of Grassland within the 10 km landscape	Zālāju malas garums 10 km ainavā
+
+
+
+
+## Edges_OldForests_cell	{#ch06.145}	Edges_OldForests_cell.tif	egv_145	Edge pixels of Forests Over Rotation Age within the analysis cell (1 ha)	Pieaugušo un pāraugušo mežaudžu malas garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_OldForests_r500	{#ch06.146}	Edges_OldForests_r500.tif	egv_146	Edge pixels of Forests Over Rotation Age within the 0.5 km landscape	Pieaugušo un pāraugušo mežaudžu malas garums 0,5 km ainavā
+
+
+
+
+## Edges_OldForests_r1250	{#ch06.147}	Edges_OldForests_r1250.tif	egv_147	Edge pixels of Forests Over Rotation Age within the 1.25 km landscape	Pieaugušo un pāraugušo mežaudžu malas garums 1,25 km ainavā
+
+
+
+
+## Edges_OldForests_r3000	{#ch06.148}	Edges_OldForests_r3000.tif	egv_148	Edge pixels of Forests Over Rotation Age within the 3 km landscape	Pieaugušo un pāraugušo mežaudžu malas garums 3 km ainavā
+
+
+
+
+## Edges_OldForests_r10000	{#ch06.149}	Edges_OldForests_r10000.tif	egv_149	Edge pixels of Forests Over Rotation Age within the 10 km landscape	Pieaugušo un pāraugušo mežaudžu malas garums 10 km ainavā
+
+
+
+
+## Edges_Roads_cell	{#ch06.150}	Edges_Roads_cell.tif	egv_150	Edge pixels of Roads within the analysis cell (1 ha)	Ceļu malas garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Roads_r500	{#ch06.151}	Edges_Roads_r500.tif	egv_151	Edge pixels of Roads within the 0.5 km landscape	Ceļu malas garums 0,5 km ainavā
+
+
+
+
+## Edges_Roads_r1250	{#ch06.152}	Edges_Roads_r1250.tif	egv_152	Edge pixels of Roads within the 1.25 km landscape	Ceļu malas garums 1,25 km ainavā
+
+
+
+
+## Edges_Roads_r3000	{#ch06.153}	Edges_Roads_r3000.tif	egv_153	Edge pixels of Roads within the 3 km landscape	Ceļu malas garums 3 km ainavā
+
+
+
+
+## Edges_Roads_r10000	{#ch06.154}	Edges_Roads_r10000.tif	egv_154	Edge pixels of Roads within the 10 km landscape	Ceļu malas garums 10 km ainavā
+
+
+
+
+## Edges_Trees_cell	{#ch06.155}	Edges_Trees_cell.tif	egv_155	Edge pixels of Trees within the analysis cell (1 ha)	Koku malas garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Trees_r500	{#ch06.156}	Edges_Trees_r500.tif	egv_156	Edge pixels of Trees within the 0.5 km landscape	Koku malas garums 0,5 km ainavā
+
+
+
+
+## Edges_Trees_r1250	{#ch06.157}	Edges_Trees_r1250.tif	egv_157	Edge pixels of Trees within the 1.25 km landscape	Koku malas garums 1,25 km ainavā
+
+
+
+
+## Edges_Trees_r3000	{#ch06.158}	Edges_Trees_r3000.tif	egv_158	Edge pixels of Trees within the 3 km landscape	Koku malas garums 3 km ainavā
+
+
+
+
+## Edges_Trees_r10000	{#ch06.159}	Edges_Trees_r10000.tif	egv_159	Edge pixels of Trees within the 10 km landscape	Koku malas garums 10 km ainavā
+
+
+
+
+## Edges_Water_cell	{#ch06.160}	Edges_Water_cell.tif	egv_160	Edge pixels of Water within the analysis cell (1 ha)	Ūdenstilpju malas garums nalīzes šūnā (1 ha)
+
+
+
+
+## Edges_Water_r500	{#ch06.161}	Edges_Water_r500.tif	egv_161	Edge pixels of Water within the 0.5 km landscape	Ūdenstilpju malas garums 0,5 km ainavā
+
+
+
+
+## Edges_Water_r1250	{#ch06.162}	Edges_Water_r1250.tif	egv_162	Edge pixels of Water within the 1.25 km landscape	Ūdenstilpju malas garums 1,25 km ainavā
+
+
+
+
+## Edges_Water_r3000	{#ch06.163}	Edges_Water_r3000.tif	egv_163	Edge pixels of Water within the 3 km landscape	Ūdenstilpju malas garums 3 km ainavā
+
+
+
+
+## Edges_Water_r10000	{#ch06.164}	Edges_Water_r10000.tif	egv_164	Edge pixels of Water within the 10 km landscape	Ūdenstilpju malas garums 10 km ainavā
+
+
+
+
+## Edges_Water-Farmland_cell	{#ch06.165}	Edges_Water-Farmland_cell.tif	egv_165	Edge pixels of Water bordering with Farmland within the analysis cell (1 ha)	Ūdenstilpu malas ar lauksaimniecības zemēm garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Water-Farmland_r500	{#ch06.166}	Edges_Water-Farmland_r500.tif	egv_166	Edge pixels of Water bordering with Farmland within the 0.5 km landscape	Ūdenstilpu malas ar lauksaimniecības zemēm garums 0,5 km ainavā
+
+
+
+
+## Edges_Water-Farmland_r1250	{#ch06.167}	Edges_Water-Farmland_r1250.tif	egv_167	Edge pixels of Water bordering with Farmland within the 1.25 km landscape	Ūdenstilpu malas ar lauksaimniecības zemēm garums 1,25 km ainavā
+
+
+
+
+## Edges_Water-Farmland_r3000	{#ch06.168}	Edges_Water-Farmland_r3000.tif	egv_168	Edge pixels of Water bordering with Farmland within the 3 km landscape	Ūdenstilpu malas ar lauksaimniecības zemēm garums 3 km ainavā
+
+
+
+
+## Edges_Water-Farmland_r10000	{#ch06.169}	Edges_Water-Farmland_r10000.tif	egv_169	Edge pixels of Water bordering with Farmland within the 10 km landscape	Ūdenstilpu malas ar lauksaimniecības zemēm garums 10 km ainavā
+
+
+
+
+## Edges_Water-Grassland_cell	{#ch06.170}	Edges_Water-Grassland_cell.tif	egv_170	Edge pixels of Water bordering with Grassland within the analysis cell (1 ha)	Ūdenstilpu malas ar zālājiem garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_Water-Grassland_r500	{#ch06.171}	Edges_Water-Grassland_r500.tif	egv_171	Edge pixels of Water bordering with Grassland within the 0.5 km landscape	Ūdenstilpu malas ar zālājiem garums 0,5 km ainavā
+
+
+
+
+## Edges_Water-Grassland_r1250	{#ch06.172}	Edges_Water-Grassland_r1250.tif	egv_172	Edge pixels of Water bordering with Grassland within the 1.25 km landscape	Ūdenstilpu malas ar zālājiem garums 1,25 km ainavā
+
+
+
+
+## Edges_Water-Grassland_r3000	{#ch06.173}	Edges_Water-Grassland_r3000.tif	egv_173	Edge pixels of Water bordering with Grassland within the 3 km landscape	Ūdenstilpu malas ar zālājiem garums 3 km ainavā
+
+
+
+
+## Edges_Water-Grassland_r10000	{#ch06.174}	Edges_Water-Grassland_r10000.tif	egv_174	Edge pixels of Water bordering with Grassland within the 10 km landscape	Ūdenstilpu malas ar zālājiem garums 10 km ainavā
+
+
+
+
+## Edges_ReedSedgeRushBeds-Water_cell	{#ch06.175}	Edges_ReedSedgeRushBeds-Water_cell.tif	egv_175	Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the analysis cell (1 ha)	Niedrāju, grīslāju, meldrāju malas ar ūdeni garums analīzes šūnā (1 ha)
+
+
+
+
+## Edges_ReedSedgeRushBeds-Water_r500	{#ch06.176}	Edges_ReedSedgeRushBeds-Water_r500.tif	egv_176	Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 0.5 km landscape	Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 0,5 km ainavā
+
+
+
+
+## Edges_ReedSedgeRushBeds-Water_r1250	{#ch06.177}	Edges_ReedSedgeRushBeds-Water_r1250.tif	egv_177	Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 1.25 km landscape	Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 1,25 km ainavā
+
+
+
+
+## Edges_ReedSedgeRushBeds-Water_r3000	{#ch06.178}	Edges_ReedSedgeRushBeds-Water_r3000.tif	egv_178	Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 3 km landscape	Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 3 km ainavā
+
+
+
+
+## Edges_ReedSedgeRushBeds-Water_r10000	{#ch06.179}	Edges_ReedSedgeRushBeds-Water_r10000.tif	egv_179	Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 10 km landscape	Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 10 km ainavā
+
+
+
+
+## FarmlandCrops_CropsAll_cell	{#ch06.180}	FarmlandCrops_CropsAll_cell.tif	egv_180	Fractional cover of Crops (all types) within the analysis cell (1 ha)	Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+## FarmlandCrops_CropsAll_r500	{#ch06.181}	FarmlandCrops_CropsAll_r500.tif	egv_181	Fractional cover of Crops (all types) within the 0.5 km landscape	Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsAll_r1250	{#ch06.182}	FarmlandCrops_CropsAll_r1250.tif	egv_182	Fractional cover of Crops (all types) within the 1.25 km landscape	Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsAll_r3000	{#ch06.183}	FarmlandCrops_CropsAll_r3000.tif	egv_183	Fractional cover of Crops (all types) within the 3 km landscape	Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsAll_r10000	{#ch06.184}	FarmlandCrops_CropsAll_r10000.tif	egv_184	Fractional cover of Crops (all types) within the 10 km landscape	Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsHoed_cell	{#ch06.185}	FarmlandCrops_CropsHoed_cell.tif	egv_185	Fractional cover of Hoed Crops within the analysis cell (1 ha)	Vagu un rušināmkultūru platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_CropsHoed_r500	{#ch06.186}	FarmlandCrops_CropsHoed_r500.tif	egv_186	Fractional cover of Hoed Crops within the 0.5 km landscape	Vagu un rušināmkultūru platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsHoed_r1250	{#ch06.187}	FarmlandCrops_CropsHoed_r1250.tif	egv_187	Fractional cover of Hoed Crops within the 1.25 km landscape	Vagu un rušināmkultūru platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsHoed_r3000	{#ch06.188}	FarmlandCrops_CropsHoed_r3000.tif	egv_188	Fractional cover of Hoed Crops within the 3 km landscape	Vagu un rušināmkultūru platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsHoed_r10000	{#ch06.189}	FarmlandCrops_CropsHoed_r10000.tif	egv_189	Fractional cover of Hoed Crops within the 10 km landscape	Vagu un rušināmkultūru platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsOther_cell	{#ch06.190}	FarmlandCrops_CropsOther_cell.tif	egv_190	Fractional cover of Other Crops within the analysis cell (1 ha)	Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_CropsOther_r500	{#ch06.191}	FarmlandCrops_CropsOther_r500.tif	egv_191	Fractional cover of Other Crops within the 0.5 km landscape	Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsOther_r1250	{#ch06.192}	FarmlandCrops_CropsOther_r1250.tif	egv_192	Fractional cover of Other Crops within the 1.25 km landscape	Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsOther_r3000	{#ch06.193}	FarmlandCrops_CropsOther_r3000.tif	egv_193	Fractional cover of Other Crops within the 3 km landscape	Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsOther_r10000	{#ch06.194}	FarmlandCrops_CropsOther_r10000.tif	egv_194	Fractional cover of Other Crops within the 10 km landscape	Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsSpring_cell	{#ch06.195}	FarmlandCrops_CropsSpring_cell.tif	egv_195	Fractional cover of Spring Sown Crops within the analysis cell (1 ha)	Vasarāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_CropsSpring_r500	{#ch06.196}	FarmlandCrops_CropsSpring_r500.tif	egv_196	Fractional cover of Spring Sown Crops within the 0.5 km landscape	Vasarāju aramzemēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsSpring_r1250	{#ch06.197}	FarmlandCrops_CropsSpring_r1250.tif	egv_197	Fractional cover of Spring Sown Crops within the 1.25 km landscape	Vasarāju aramzemēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsSpring_r3000	{#ch06.198}	FarmlandCrops_CropsSpring_r3000.tif	egv_198	Fractional cover of Spring Sown Crops within the 3 km landscape	Vasarāju aramzemēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsSpring_r10000	{#ch06.199}	FarmlandCrops_CropsSpring_r10000.tif	egv_199	Fractional cover of Spring Sown Crops within the 10 km landscape	Vasarāju aramzemēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsWinter_cell	{#ch06.200}	FarmlandCrops_CropsWinter_cell.tif	egv_200	Fractional cover of Winter Crops within the analysis cell (1 ha)	Ziemāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_CropsWinter_r500	{#ch06.201}	FarmlandCrops_CropsWinter_r500.tif	egv_201	Fractional cover of Winter Crops within the 0.5 km landscape	Ziemāju aramzemēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsWinter_r1250	{#ch06.202}	FarmlandCrops_CropsWinter_r1250.tif	egv_202	Fractional cover of Winter Crops within the 1.25 km landscape	Ziemāju aramzemēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsWinter_r3000	{#ch06.203}	FarmlandCrops_CropsWinter_r3000.tif	egv_203	Fractional cover of Winter Crops within the 3 km landscape	Ziemāju aramzemēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_CropsWinter_r10000	{#ch06.204}	FarmlandCrops_CropsWinter_r10000.tif	egv_204	Fractional cover of Winter Crops within the 10 km landscape	Ziemāju aramzemēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapeseedsSpring_cell	{#ch06.205}	FarmlandCrops_RapeseedsSpring_cell.tif	egv_205	Fractional cover of Spring Sown Rapeseed, Turnip, Corn within the analysis cell (1 ha)	Vasaras rapša, ripša, kukurūzas platība analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_RapeseedsSpring_r500	{#ch06.206}	FarmlandCrops_RapeseedsSpring_r500.tif	egv_206	Fractional cover of Spring Sown Rapeseed, Turnip, Corn within the 0.5 km landscape	Vasaras rapša, ripša, kukurūzas platība 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapeseedsSpring_r1250	{#ch06.207}	FarmlandCrops_RapeseedsSpring_r1250.tif	egv_207	Fractional cover of Spring Sown Rapeseed, Turnip, Corn within the 1.25 km landscape	Vasaras rapša, ripša, kukurūzas platība 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapeseedsSpring_r3000	{#ch06.208}	FarmlandCrops_RapeseedsSpring_r3000.tif	egv_208	Fractional cover of Spring Sown Rapeseed, Turnip, Corn within the 3 km landscape	Vasaras rapša, ripša, kukurūzas platība 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapeseedsSpring_r10000	{#ch06.209}	FarmlandCrops_RapeseedsSpring_r10000.tif	egv_209	Fractional cover of Spring Sown Rapeseed, Turnip, Corn within the 10 km landscape	Vasaras rapša, ripša, kukurūzas platība 10 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapseedsWinter_cell	{#ch06.210}	FarmlandCrops_RapseedsWinter_cell.tif	egv_210	Fractional cover of Winter Rapeseed, Turnip within the analysis cell (1 ha)	Ziemas rapša, ripša platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandCrops_RapseedsWinter_r500	{#ch06.211}	FarmlandCrops_RapseedsWinter_r500.tif	egv_211	Fractional cover of Winter Rapeseed, Turnip within the 0.5 km landscape	Ziemas rapša, ripša platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapseedsWinter_r1250	{#ch06.212}	FarmlandCrops_RapseedsWinter_r1250.tif	egv_212	Fractional cover of Winter Rapeseed, Turnip within the 1.25 km landscape	Ziemas rapša, ripša platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapseedsWinter_r3000	{#ch06.213}	FarmlandCrops_RapseedsWinter_r3000.tif	egv_213	Fractional cover of Winter Rapeseed, Turnip within the 3 km landscape	Ziemas rapša, ripša platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandCrops_RapseedsWinter_r10000	{#ch06.214}	FarmlandCrops_RapseedsWinter_r10000.tif	egv_214	Fractional cover of Winter Rapeseed, Turnip within the 10 km landscape	Ziemas rapša, ripša platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAbandoned_cell	{#ch06.215}	FarmlandGrassland_GrasslandsAbandoned_cell.tif	egv_215	Fractional cover of Abandoned Grassland within the analysis cell (1 ha)	Neapsaimniekotu zālāju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAbandoned_r500	{#ch06.216}	FarmlandGrassland_GrasslandsAbandoned_r500.tif	egv_216	Fractional cover of Abandoned Grassland within the 0.5 km landscape	Neapsaimniekotu zālāju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAbandoned_r1250	{#ch06.217}	FarmlandGrassland_GrasslandsAbandoned_r1250.tif	egv_217	Fractional cover of Abandoned Grassland within the 1.25 km landscape	Neapsaimniekotu zālāju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAbandoned_r3000	{#ch06.218}	FarmlandGrassland_GrasslandsAbandoned_r3000.tif	egv_218	Fractional cover of Abandoned Grassland within the 3 km landscape	Neapsaimniekotu zālāju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAbandoned_r10000	{#ch06.219}	FarmlandGrassland_GrasslandsAbandoned_r10000.tif	egv_219	Fractional cover of Abandoned Grassland within the 10 km landscape	Neapsaimniekotu zālāju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAll_cell	{#ch06.220}	FarmlandGrassland_GrasslandsAll_cell.tif	egv_220	Fractional cover of any Grassland within the analysis cell (1 ha)	Zālāju (visu veidu) platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAll_r500	{#ch06.221}	FarmlandGrassland_GrasslandsAll_r500.tif	egv_221	Fractional cover of any Grassland within the 0.5 km landscape	Zālāju (visu veidu) platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAll_r1250	{#ch06.222}	FarmlandGrassland_GrasslandsAll_r1250.tif	egv_222	Fractional cover of any Grassland within the 1.25 km landscape	Zālāju (visu veidu) platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAll_r3000	{#ch06.223}	FarmlandGrassland_GrasslandsAll_r3000.tif	egv_223	Fractional cover of any Grassland within the 3 km landscape	Zālāju (visu veidu) platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsAll_r10000	{#ch06.224}	FarmlandGrassland_GrasslandsAll_r10000.tif	egv_224	Fractional cover of any Grassland within the 10 km landscape	Zālāju (visu veidu) platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsPermanent_cell	{#ch06.225}	FarmlandGrassland_GrasslandsPermanent_cell.tif	egv_225	Fractional cover of Permanent Grassland within the analysis cell (1 ha)	Ilggadīgu zālāju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsPermanent_r500	{#ch06.226}	FarmlandGrassland_GrasslandsPermanent_r500.tif	egv_226	Fractional cover of Permanent Grassland within the 0.5 km landscape	Ilggadīgu zālāju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsPermanent_r1250	{#ch06.227}	FarmlandGrassland_GrasslandsPermanent_r1250.tif	egv_227	Fractional cover of Permanent Grassland within the 1.25 km landscape	Ilggadīgu zālāju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsPermanent_r3000	{#ch06.228}	FarmlandGrassland_GrasslandsPermanent_r3000.tif	egv_228	Fractional cover of Permanent Grassland within the 3 km landscape	Ilggadīgu zālāju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsPermanent_r10000	{#ch06.229}	FarmlandGrassland_GrasslandsPermanent_r10000.tif	egv_229	Fractional cover of Permanent Grassland within the 10 km landscape	Ilggadīgu zālāju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsTemporary_cell	{#ch06.230}	FarmlandGrassland_GrasslandsTemporary_cell.tif	egv_230	Fractional cover of Temporary Grassland within the analysis cell (1 ha)	Zālāju-aramzemē platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsTemporary_r500	{#ch06.231}	FarmlandGrassland_GrasslandsTemporary_r500.tif	egv_231	Fractional cover of Temporary Grassland within the 0.5 km landscape	Zālāju-aramzemē platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsTemporary_r1250	{#ch06.232}	FarmlandGrassland_GrasslandsTemporary_r1250.tif	egv_232	Fractional cover of Temporary Grassland within the 1.25 km landscape	Zālāju-aramzemē platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsTemporary_r3000	{#ch06.233}	FarmlandGrassland_GrasslandsTemporary_r3000.tif	egv_233	Fractional cover of Temporary Grassland within the 3 km landscape	Zālāju-aramzemē platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandGrassland_GrasslandsTemporary_r10000	{#ch06.234}	FarmlandGrassland_GrasslandsTemporary_r10000.tif	egv_234	Fractional cover of Temporary Grassland within the 10 km landscape	Zālāju-aramzemē platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandParcels_FieldsActive_cell	{#ch06.235}	FarmlandParcels_FieldsActive_cell.tif	egv_235	Fractional cover of Agricultural Land Parcels within the analysis cell (1 ha)	Lauku bloku platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandParcels_FieldsActive_r500	{#ch06.236}	FarmlandParcels_FieldsActive_r500.tif	egv_236	Fractional cover of Agricultural Land Parcels within the 0.5 km landscape	Lauku bloku platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandParcels_FieldsActive_r1250	{#ch06.237}	FarmlandParcels_FieldsActive_r1250.tif	egv_237	Fractional cover of Agricultural Land Parcels within the 1.25 km landscape	Lauku bloku platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandParcels_FieldsActive_r3000	{#ch06.238}	FarmlandParcels_FieldsActive_r3000.tif	egv_238	Fractional cover of Agricultural Land Parcels within the 3 km landscape	Lauku bloku platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandParcels_FieldsActive_r10000	{#ch06.239}	FarmlandParcels_FieldsActive_r10000.tif	egv_239	Fractional cover of Agricultural Land Parcels within the 10 km landscape	Lauku bloku platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallow_cell	{#ch06.240}	FarmlandPloughed_CropsFallow_cell.tif	egv_240	Fractional cover of Crop-, Fallow- Land within the analysis cell (1 ha)	Aramzemju, papuvju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallow_r500	{#ch06.241}	FarmlandPloughed_CropsFallow_r500.tif	egv_241	Fractional cover of Crop-, Fallow- Land within the 0.5 km landscape	Aramzemju, papuvju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallow_r1250	{#ch06.242}	FarmlandPloughed_CropsFallow_r1250.tif	egv_242	Fractional cover of Crop-, Fallow- Land within the 1.25 km landscape	Aramzemju, papuvju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallow_r3000	{#ch06.243}	FarmlandPloughed_CropsFallow_r3000.tif	egv_243	Fractional cover of Crop-, Fallow- Land within the 3 km landscape	Aramzemju, papuvju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallow_r10000	{#ch06.244}	FarmlandPloughed_CropsFallow_r10000.tif	egv_244	Fractional cover of Crop-, Fallow- Land within the 10 km landscape	Aramzemju, papuvju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallowTempGrass_cell	{#ch06.245}	FarmlandPloughed_CropsFallowTempGrass_cell.tif	egv_245	Fractional cover of Crop-, Fallow-, Temporary Grass- Lands within the analysis cell (1 ha)	Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallowTempGrass_r500	{#ch06.246}	FarmlandPloughed_CropsFallowTempGrass_r500.tif	egv_246	Fractional cover of Crop-, Fallow-, Temporary Grass- Lands within the 0.5 km landscape	Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallowTempGrass_r1250	{#ch06.247}	FarmlandPloughed_CropsFallowTempGrass_r1250.tif	egv_247	Fractional cover of Crop-, Fallow-, Temporary Grass- Lands within the 1.25 km landscape	Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallowTempGrass_r3000	{#ch06.248}	FarmlandPloughed_CropsFallowTempGrass_r3000.tif	egv_248	Fractional cover of Crop-, Fallow-, Temporary Grass- Lands within the 3 km landscape	Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_CropsFallowTempGrass_r10000	{#ch06.249}	FarmlandPloughed_CropsFallowTempGrass_r10000.tif	egv_249	Fractional cover of Crop-, Fallow-, Temporary Grass- Lands within the 10 km landscape	Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_Fallow_cell	{#ch06.250}	FarmlandPloughed_Fallow_cell.tif	egv_250	Fractional cover of Fallow Land within the analysis cell (1 ha)	Papuvju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandPloughed_Fallow_r500	{#ch06.251}	FarmlandPloughed_Fallow_r500.tif	egv_251	Fractional cover of Fallow Land within the 0.5 km landscape	Papuvju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_Fallow_r1250	{#ch06.252}	FarmlandPloughed_Fallow_r1250.tif	egv_252	Fractional cover of Fallow Land within the 1.25 km landscape	Papuvju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_Fallow_r3000	{#ch06.253}	FarmlandPloughed_Fallow_r3000.tif	egv_253	Fractional cover of Fallow Land within the 3 km landscape	Papuvju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandPloughed_Fallow_r10000	{#ch06.254}	FarmlandPloughed_Fallow_r10000.tif	egv_254	Fractional cover of Fallow Land within the 10 km landscape	Papuvju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandSubsidies_BiologicalSubsidies_cell	{#ch06.255}	FarmlandSubsidies_BiologicalSubsidies_cell.tif	egv_255	Fractional cover of Farmland receiving Subsidies for Biological Agriculture within the analysis cell (1 ha)	Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandSubsidies_BiologicalSubsidies_r500	{#ch06.256}	FarmlandSubsidies_BiologicalSubsidies_r500.tif	egv_256	Fractional cover of Farmland receiving Subsidies for Biological Agriculture within the 0.5 km landscape	Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandSubsidies_BiologicalSubsidies_r1250	{#ch06.257}	FarmlandSubsidies_BiologicalSubsidies_r1250.tif	egv_257	Fractional cover of Farmland receiving Subsidies for Biological Agriculture within the 1.25 km landscape	Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandSubsidies_BiologicalSubsidies_r3000	{#ch06.258}	FarmlandSubsidies_BiologicalSubsidies_r3000.tif	egv_258	Fractional cover of Farmland receiving Subsidies for Biological Agriculture within the 3 km landscape	Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandSubsidies_BiologicalSubsidies_r10000	{#ch06.259}	FarmlandSubsidies_BiologicalSubsidies_r10000.tif	egv_259	Fractional cover of Farmland receiving Subsidies for Biological Agriculture within the 10 km landscape	Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_PermanentCrops_cell	{#ch06.260}	FarmlandTrees_PermanentCrops_cell.tif	egv_260	Fractional cover of Permanent Crops within the analysis cell (1 ha)	Augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandTrees_PermanentCrops_r500	{#ch06.261}	FarmlandTrees_PermanentCrops_r500.tif	egv_261	Fractional cover of Permanent Crops within the 0.5 km landscape	Augļudārzu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_PermanentCrops_r1250	{#ch06.262}	FarmlandTrees_PermanentCrops_r1250.tif	egv_262	Fractional cover of Permanent Crops within the 1.25 km landscape	Augļudārzu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_PermanentCrops_r3000	{#ch06.263}	FarmlandTrees_PermanentCrops_r3000.tif	egv_263	Fractional cover of Permanent Crops within the 3 km landscape	Augļudārzu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_PermanentCrops_r10000	{#ch06.264}	FarmlandTrees_PermanentCrops_r10000.tif	egv_264	Fractional cover of Permanent Crops within the 10 km landscape	Augļudārzu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_ShortRotationCoppice_cell	{#ch06.265}	FarmlandTrees_ShortRotationCoppice_cell.tif	egv_265	Fractional cover of Short-rotation Coppice and Other Woody Energy Crops within the analysis cell (1 ha)	Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## FarmlandTrees_ShortRotationCoppice_r500	{#ch06.266}	FarmlandTrees_ShortRotationCoppice_r500.tif	egv_266	Fractional cover of Short-rotation Coppice and Other Woody Energy Crops within the 0.5 km landscape	Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_ShortRotationCoppice_r1250	{#ch06.267}	FarmlandTrees_ShortRotationCoppice_r1250.tif	egv_267	Fractional cover of Short-rotation Coppice and Other Woody Energy Crops within the 1.25 km landscape	Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_ShortRotationCoppice_r3000	{#ch06.268}	FarmlandTrees_ShortRotationCoppice_r3000.tif	egv_268	Fractional cover of Short-rotation Coppice and Other Woody Energy Crops within the 3 km landscape	Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## FarmlandTrees_ShortRotationCoppice_r10000	{#ch06.269}	FarmlandTrees_ShortRotationCoppice_r10000.tif	egv_269	Fractional cover of Short-rotation Coppice and Other Woody Energy Crops within the 10 km landscape	Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsAge_ClearcutsLowStands_cell	{#ch06.270}	ForestsAge_ClearcutsLowStands_cell.tif	egv_270	Fractional cover of Clear-Cutts and Stands lower than 5 m within the analysis cell (1 ha)	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsAge_ClearcutsLowStands_r500	{#ch06.271}	ForestsAge_ClearcutsLowStands_r500.tif	egv_271	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 0.5 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsAge_ClearcutsLowStands_r1250	{#ch06.272}	ForestsAge_ClearcutsLowStands_r1250.tif	egv_272	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 1.25 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsAge_ClearcutsLowStands_r3000	{#ch06.273}	ForestsAge_ClearcutsLowStands_r3000.tif	egv_273	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 3 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsAge_ClearcutsLowStands_r10000	{#ch06.274}	ForestsAge_ClearcutsLowStands_r10000.tif	egv_274	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 10 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsAge_Middle_cell	{#ch06.275}	ForestsAge_Middle_cell.tif	egv_275	Fractional cover of Middle-Aged Forests within the analysis cell (1 ha)	Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsAge_Middle_r500	{#ch06.276}	ForestsAge_Middle_r500.tif	egv_276	Fractional cover of Middle-Aged Forests within the 0.5 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsAge_Middle_r1250	{#ch06.277}	ForestsAge_Middle_r1250.tif	egv_277	Fractional cover of Middle-Aged Forests within the 1.25 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsAge_Middle_r3000	{#ch06.278}	ForestsAge_Middle_r3000.tif	egv_278	Fractional cover of Middle-Aged Forests within the 3 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsAge_Middle_r10000	{#ch06.279}	ForestsAge_Middle_r10000.tif	egv_279	Fractional cover of Middle-Aged Forests within the 10 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsAge_Old_cell	{#ch06.280}	ForestsAge_Old_cell.tif	egv_280	Fractional cover of Old (over rotation age) Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsAge_Old_r500	{#ch06.281}	ForestsAge_Old_r500.tif	egv_281	Fractional cover of Old (over rotation age) Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsAge_Old_r1250	{#ch06.282}	ForestsAge_Old_r1250.tif	egv_282	Fractional cover of Old (over rotation age) Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsAge_Old_r3000	{#ch06.283}	ForestsAge_Old_r3000.tif	egv_283	Fractional cover of Old (over rotation age) Forests within the 3 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsAge_Old_r10000	{#ch06.284}	ForestsAge_Old_r10000.tif	egv_284	Fractional cover of Old (over rotation age) Forests within the 10 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsAge_YoungTallStandsShrubs_cell	{#ch06.285}	ForestsAge_YoungTallStandsShrubs_cell.tif	egv_285	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the analysis cell (1 ha)	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsAge_YoungTallStandsShrubs_r500	{#ch06.286}	ForestsAge_YoungTallStandsShrubs_r500.tif	egv_286	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 0.5 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsAge_YoungTallStandsShrubs_r1250	{#ch06.287}	ForestsAge_YoungTallStandsShrubs_r1250.tif	egv_287	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 1.25 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsAge_YoungTallStandsShrubs_r3000	{#ch06.288}	ForestsAge_YoungTallStandsShrubs_r3000.tif	egv_288	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 3 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsAge_YoungTallStandsShrubs_r10000	{#ch06.289}	ForestsAge_YoungTallStandsShrubs_r10000.tif	egv_289	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 10 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsQuant_AgeProp-average_cell	{#ch06.290}	ForestsQuant_AgeProp-average_cell.tif	egv_290	Average stand age relative to rotation age within the analysis cell (1 ha)	Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_DominantDiameter-max_cell	{#ch06.291}	ForestsQuant_DominantDiameter-max_cell.tif	egv_291	Dominant tree trunk diameter, maximum within the analysis cell (1 ha)	Koku stumbra diametrs, valdaudzes maksimālais analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_LargestDiameter-max_cell	{#ch06.292}	ForestsQuant_LargestDiameter-max_cell.tif	egv_292	Largest tree trunk diameter within the analysis cell (1 ha)	Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_TimeSinceDisturbance-average_cell	{#ch06.293}	ForestsQuant_TimeSinceDisturbance-average_cell.tif	egv_293	Time since last disturbance affecting tree growing within the analysis cell (1 ha)	Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeAspen-sum_cell	{#ch06.294}	ForestsQuant_VolumeAspen-sum_cell.tif	egv_294	Timber volume of Aspens, Poplars within the analysis cell (1 ha)	Apšu, papeļu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeBirch-sum_cell	{#ch06.295}	ForestsQuant_VolumeBirch-sum_cell.tif	egv_295	Timber volume of Birches within the analysis cell (1 ha)	Bērzu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeBlackAlder-sum_cell	{#ch06.296}	ForestsQuant_VolumeBlackAlder-sum_cell.tif	egv_296	Timber volume of Black Alder within the analysis cell (1 ha)	Melnalkšņu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeBorealDeciduousOther-sum_cell	{#ch06.297}	ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif	egv_297	Timber volume of Other Boreal Deciduous trees within the analysis cell (1 ha)	Citu šaurlapju krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeBorealDeciduousTotal-sum_cell	{#ch06.298}	ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif	egv_298	Timber volume of Boreal Deciduous trees within the analysis cell (1 ha)	Šaurlapju krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeConiferous-sum_cell	{#ch06.299}	ForestsQuant_VolumeConiferous-sum_cell.tif	egv_299	Timber volume of Coniferous trees within the analysis cell (1 ha)	Skujkoku krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeOak-sum_cell	{#ch06.300}	ForestsQuant_VolumeOak-sum_cell.tif	egv_300	Timber volume of Oaks within the analysis cell (1 ha)	Ozolu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeOakMaple-sum_cell	{#ch06.301}	ForestsQuant_VolumeOakMaple-sum_cell.tif	egv_301	Timber volume of Oaks, Maples within the analysis cell (1 ha)	Ozolu, kļavu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumePine-sum_cell	{#ch06.302}	ForestsQuant_VolumePine-sum_cell.tif	egv_302	Timber volume of Pines within the analysis cell (1 ha)	Priežu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeSpruce-sum_cell	{#ch06.303}	ForestsQuant_VolumeSpruce-sum_cell.tif	egv_303	Timber volume of Spruces within the analysis cell (1 ha)	Egļu krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell	{#ch06.304}	ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif	egv_304	Timber volume of Temperate Deciduous trees within the analysis cell (1 ha)	Platlapju krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeTemperateWithoutOak-sum_cell	{#ch06.305}	ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif	egv_305	Timber volume of Temperate Deciduous trees (without oaks) within the analysis cell (1 ha)	Paltlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell	{#ch06.306}	ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif	egv_306	Timber volume of Temperate Deciduous trees (without oaks, maples) within the analysis cell (1 ha)	Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsQuant_VolumeTotal-sum_cell	{#ch06.307}	ForestsQuant_VolumeTotal-sum_cell.tif	egv_307	Timber volume within the analysis cell (1 ha)	Kopējā krāja analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_EutrophicDrained_cell	{#ch06.308}	ForestsSoil_EutrophicDrained_cell.tif	egv_308	Fractional cover of Drained Eutrophic Forests within the analysis cell (1 ha)	Susinātu eitrofu mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_EutrophicDrained_r500	{#ch06.309}	ForestsSoil_EutrophicDrained_r500.tif	egv_309	Fractional cover of Drained Eutrophic Forests within the 0.5 km landscape	Susinātu eitrofu mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicDrained_r1250	{#ch06.310}	ForestsSoil_EutrophicDrained_r1250.tif	egv_310	Fractional cover of Drained Eutrophic Forests within the 1.25 km landscape	Susinātu eitrofu mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicDrained_r3000	{#ch06.311}	ForestsSoil_EutrophicDrained_r3000.tif	egv_311	Fractional cover of Drained Eutrophic Forests within the 3 km landscape	Susinātu eitrofu mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicDrained_r10000	{#ch06.312}	ForestsSoil_EutrophicDrained_r10000.tif	egv_312	Fractional cover of Drained Eutrophic Forests within the 10 km landscape	Susinātu eitrofu mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicMineral_cell	{#ch06.313}	ForestsSoil_EutrophicMineral_cell.tif	egv_313	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_EutrophicMineral_r500	{#ch06.314}	ForestsSoil_EutrophicMineral_r500.tif	egv_314	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicMineral_r1250	{#ch06.315}	ForestsSoil_EutrophicMineral_r1250.tif	egv_315	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicMineral_r3000	{#ch06.316}	ForestsSoil_EutrophicMineral_r3000.tif	egv_316	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 3 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicMineral_r10000	{#ch06.317}	ForestsSoil_EutrophicMineral_r10000.tif	egv_317	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 10 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicOrganic_cell	{#ch06.318}	ForestsSoil_EutrophicOrganic_cell.tif	egv_318	Fractional cover of Eutrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_EutrophicOrganic_r500	{#ch06.319}	ForestsSoil_EutrophicOrganic_r500.tif	egv_319	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 0.5 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicOrganic_r1250	{#ch06.320}	ForestsSoil_EutrophicOrganic_r1250.tif	egv_320	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 1.25 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicOrganic_r3000	{#ch06.321}	ForestsSoil_EutrophicOrganic_r3000.tif	egv_321	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 3 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_EutrophicOrganic_r10000	{#ch06.322}	ForestsSoil_EutrophicOrganic_r10000.tif	egv_322	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 10 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_MesotrophicMineral_cell	{#ch06.323}	ForestsSoil_MesotrophicMineral_cell.tif	egv_323	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Mezotrofu mežu minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_MesotrophicMineral_r500	{#ch06.324}	ForestsSoil_MesotrophicMineral_r500.tif	egv_324	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_MesotrophicMineral_r1250	{#ch06.325}	ForestsSoil_MesotrophicMineral_r1250.tif	egv_325	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_MesotrophicMineral_r3000	{#ch06.326}	ForestsSoil_MesotrophicMineral_r3000.tif	egv_326	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 3 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_MesotrophicMineral_r10000	{#ch06.327}	ForestsSoil_MesotrophicMineral_r10000.tif	egv_327	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 10 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicDrained_cell	{#ch06.328}	ForestsSoil_OligotrophicDrained_cell.tif	egv_328	Fractional cover of Drained Oligotrophic Forests within the analysis cell (1 ha)	Susinātu oligotrofu mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_OligotrophicDrained_r500	{#ch06.329}	ForestsSoil_OligotrophicDrained_r500.tif	egv_329	Fractional cover of Drained Oligotrophic Forests within the 0.5 km landscape	Susinātu oligotrofu mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicDrained_r1250	{#ch06.330}	ForestsSoil_OligotrophicDrained_r1250.tif	egv_330	Fractional cover of Drained Oligotrophic Forests within the 1.25 km landscape	Susinātu oligotrofu mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicDrained_r3000	{#ch06.331}	ForestsSoil_OligotrophicDrained_r3000.tif	egv_331	Fractional cover of Drained Oligotrophic Forests within the 3 km landscape	Susinātu oligotrofu mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicDrained_r10000	{#ch06.332}	ForestsSoil_OligotrophicDrained_r10000.tif	egv_332	Fractional cover of Drained Oligotrophic Forests within the 10 km landscape	Susinātu oligotrofu mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicMineral_cell	{#ch06.333}	ForestsSoil_OligotrophicMineral_cell.tif	egv_333	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_OligotrophicMineral_r500	{#ch06.334}	ForestsSoil_OligotrophicMineral_r500.tif	egv_334	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicMineral_r1250	{#ch06.335}	ForestsSoil_OligotrophicMineral_r1250.tif	egv_335	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicMineral_r3000	{#ch06.336}	ForestsSoil_OligotrophicMineral_r3000.tif	egv_336	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 3 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicMineral_r10000	{#ch06.337}	ForestsSoil_OligotrophicMineral_r10000.tif	egv_337	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 10 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicOrganic_cell	{#ch06.338}	ForestsSoil_OligotrophicOrganic_cell.tif	egv_338	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsSoil_OligotrophicOrganic_r500	{#ch06.339}	ForestsSoil_OligotrophicOrganic_r500.tif	egv_339	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 0.5 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicOrganic_r1250	{#ch06.340}	ForestsSoil_OligotrophicOrganic_r1250.tif	egv_340	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 1.25 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicOrganic_r3000	{#ch06.341}	ForestsSoil_OligotrophicOrganic_r3000.tif	egv_341	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 3 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsSoil_OligotrophicOrganic_r10000	{#ch06.342}	ForestsSoil_OligotrophicOrganic_r10000.tif	egv_342	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 10 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousOld_cell	{#ch06.343}	ForestsTreesAge_BorealDeciduousOld_cell.tif	egv_343	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousOld_r500	{#ch06.344}	ForestsTreesAge_BorealDeciduousOld_r500.tif	egv_344	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousOld_r1250	{#ch06.345}	ForestsTreesAge_BorealDeciduousOld_r1250.tif	egv_345	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousOld_r3000	{#ch06.346}	ForestsTreesAge_BorealDeciduousOld_r3000.tif	egv_346	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 3 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousOld_r10000	{#ch06.347}	ForestsTreesAge_BorealDeciduousOld_r10000.tif	egv_347	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 10 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousYoung_cell	{#ch06.348}	ForestsTreesAge_BorealDeciduousYoung_cell.tif	egv_348	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousYoung_r500	{#ch06.349}	ForestsTreesAge_BorealDeciduousYoung_r500.tif	egv_349	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousYoung_r1250	{#ch06.350}	ForestsTreesAge_BorealDeciduousYoung_r1250.tif	egv_350	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousYoung_r3000	{#ch06.351}	ForestsTreesAge_BorealDeciduousYoung_r3000.tif	egv_351	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_BorealDeciduousYoung_r10000	{#ch06.352}	ForestsTreesAge_BorealDeciduousYoung_r10000.tif	egv_352	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousOld_cell	{#ch06.353}	ForestsTreesAge_ConiferousOld_cell.tif	egv_353	Fractional cover of Old (over rotation age) Coniferous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousOld_r500	{#ch06.354}	ForestsTreesAge_ConiferousOld_r500.tif	egv_354	Fractional cover of Old (over rotation age) Coniferous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousOld_r1250	{#ch06.355}	ForestsTreesAge_ConiferousOld_r1250.tif	egv_355	Fractional cover of Old (over rotation age) Coniferous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousOld_r3000	{#ch06.356}	ForestsTreesAge_ConiferousOld_r3000.tif	egv_356	Fractional cover of Old (over rotation age) Coniferous Forests within the 3 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousOld_r10000	{#ch06.357}	ForestsTreesAge_ConiferousOld_r10000.tif	egv_357	Fractional cover of Old (over rotation age) Coniferous Forests within the 10 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousYoung_cell	{#ch06.358}	ForestsTreesAge_ConiferousYoung_cell.tif	egv_358	Fractional cover of Young (pre-rotation age) Coniferous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousYoung_r500	{#ch06.359}	ForestsTreesAge_ConiferousYoung_r500.tif	egv_359	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousYoung_r1250	{#ch06.360}	ForestsTreesAge_ConiferousYoung_r1250.tif	egv_360	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousYoung_r3000	{#ch06.361}	ForestsTreesAge_ConiferousYoung_r3000.tif	egv_361	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_ConiferousYoung_r10000	{#ch06.362}	ForestsTreesAge_ConiferousYoung_r10000.tif	egv_362	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedOld_cell	{#ch06.363}	ForestsTreesAge_MixedOld_cell.tif	egv_363	Fractional cover of Old (over rotation age) Mixed Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_MixedOld_r500	{#ch06.364}	ForestsTreesAge_MixedOld_r500.tif	egv_364	Fractional cover of Old (over rotation age) Mixed Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedOld_r1250	{#ch06.365}	ForestsTreesAge_MixedOld_r1250.tif	egv_365	Fractional cover of Old (over rotation age) Mixed Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedOld_r3000	{#ch06.366}	ForestsTreesAge_MixedOld_r3000.tif	egv_366	Fractional cover of Old (over rotation age) Mixed Forests within the 3 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedOld_r10000	{#ch06.367}	ForestsTreesAge_MixedOld_r10000.tif	egv_367	Fractional cover of Old (over rotation age) Mixed Forests within the 10 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedYoung_cell	{#ch06.368}	ForestsTreesAge_MixedYoung_cell.tif	egv_368	Fractional cover of Young (pre-rotation age) Mixed Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_MixedYoung_r500	{#ch06.369}	ForestsTreesAge_MixedYoung_r500.tif	egv_369	Fractional cover of Young (pre-rotation age) Mixed Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedYoung_r1250	{#ch06.370}	ForestsTreesAge_MixedYoung_r1250.tif	egv_370	Fractional cover of Young (pre-rotation age) Mixed Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedYoung_r3000	{#ch06.371}	ForestsTreesAge_MixedYoung_r3000.tif	egv_371	Fractional cover of Young (pre-rotation age) Mixed Forests within the 3 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_MixedYoung_r10000	{#ch06.372}	ForestsTreesAge_MixedYoung_r10000.tif	egv_372	Fractional cover of Young (pre-rotation age) Mixed Forests within the 10 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousOld_cell	{#ch06.373}	ForestsTreesAge_TemperateDeciduousOld_cell.tif	egv_373	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousOld_r500	{#ch06.374}	ForestsTreesAge_TemperateDeciduousOld_r500.tif	egv_374	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousOld_r1250	{#ch06.375}	ForestsTreesAge_TemperateDeciduousOld_r1250.tif	egv_375	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousOld_r3000	{#ch06.376}	ForestsTreesAge_TemperateDeciduousOld_r3000.tif	egv_376	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 3 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousOld_r10000	{#ch06.377}	ForestsTreesAge_TemperateDeciduousOld_r10000.tif	egv_377	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 10 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousYoung_cell	{#ch06.378}	ForestsTreesAge_TemperateDeciduousYoung_cell.tif	egv_378	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousYoung_r500	{#ch06.379}	ForestsTreesAge_TemperateDeciduousYoung_r500.tif	egv_379	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousYoung_r1250	{#ch06.380}	ForestsTreesAge_TemperateDeciduousYoung_r1250.tif	egv_380	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousYoung_r3000	{#ch06.381}	ForestsTreesAge_TemperateDeciduousYoung_r3000.tif	egv_381	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTreesAge_TemperateDeciduousYoung_r10000	{#ch06.382}	ForestsTreesAge_TemperateDeciduousYoung_r10000.tif	egv_382	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTrees_BorealDeciduous_cell	{#ch06.383}	ForestsTrees_BorealDeciduous_cell.tif	egv_383	Fractional cover of Boeral Deciduous Forests within the analysis cell (1 ha)	Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTrees_BorealDeciduous_r500	{#ch06.384}	ForestsTrees_BorealDeciduous_r500.tif	egv_384	Fractional cover of Boreal Deciduous Forests within the 0.5 km landscape	Šaurlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTrees_BorealDeciduous_r1250	{#ch06.385}	ForestsTrees_BorealDeciduous_r1250.tif	egv_385	Fractional cover of Boreal Deciduous Forests within the 1.25 km landscape	Šaurlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTrees_BorealDeciduous_r3000	{#ch06.386}	ForestsTrees_BorealDeciduous_r3000.tif	egv_386	Fractional cover of Boreal Deciduous Forests within the 3 km landscape	Šaurlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTrees_BorealDeciduous_r10000	{#ch06.387}	ForestsTrees_BorealDeciduous_r10000.tif	egv_387	Fractional cover of Boreal Deciduous Forests within the 10 km landscape	Šaurlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Coniferous_cell	{#ch06.388}	ForestsTrees_Coniferous_cell.tif	egv_388	Fractional cover of Coniferous Forests within the analysis cell (1 ha)	Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTrees_Coniferous_r500	{#ch06.389}	ForestsTrees_Coniferous_r500.tif	egv_389	Fractional cover of Coniferous Forests within the 0.5 km landscape	Skujkoku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Coniferous_r1250	{#ch06.390}	ForestsTrees_Coniferous_r1250.tif	egv_390	Fractional cover of Coniferous Forests within the 1.25 km landscape	Skujkoku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Coniferous_r3000	{#ch06.391}	ForestsTrees_Coniferous_r3000.tif	egv_391	Fractional cover of Coniferous Forests within the 3 km landscape	Skujkoku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Coniferous_r10000	{#ch06.392}	ForestsTrees_Coniferous_r10000.tif	egv_392	Fractional cover of Coniferous Forests within the 10 km landscape	Skujkoku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Mixed_cell	{#ch06.393}	ForestsTrees_Mixed_cell.tif	egv_393	Fractional cover of Mixed Forests within the analysis cell (1 ha)	Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTrees_Mixed_r500	{#ch06.394}	ForestsTrees_Mixed_r500.tif	egv_394	Fractional cover of Mixed Forests within the 0.5 km landscape	Jauktu koku mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Mixed_r1250	{#ch06.395}	ForestsTrees_Mixed_r1250.tif	egv_395	Fractional cover of Mixed Forests within the 1.25 km landscape	Jauktu koku mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Mixed_r3000	{#ch06.396}	ForestsTrees_Mixed_r3000.tif	egv_396	Fractional cover of Mixed Forests within the 3 km landscape	Jauktu koku mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTrees_Mixed_r10000	{#ch06.397}	ForestsTrees_Mixed_r10000.tif	egv_397	Fractional cover of Mixed Forests within the 10 km landscape	Jauktu koku mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## ForestsTrees_TemperateDeciduous_cell	{#ch06.398}	ForestsTrees_TemperateDeciduous_cell.tif	egv_398	Fractional cover of Temperate Deciduous Forests within the analysis cell (1 ha)	Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## ForestsTrees_TemperateDeciduous_r500	{#ch06.399}	ForestsTrees_TemperateDeciduous_r500.tif	egv_399	Fractional cover of Temperate Deciduous Forests within the 0.5 km landscape	Platlapju mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## ForestsTrees_TemperateDeciduous_r1250	{#ch06.400}	ForestsTrees_TemperateDeciduous_r1250.tif	egv_400	Fractional cover of Temperate Deciduous Forests within the 1.25 km landscape	Platlapju mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## ForestsTrees_TemperateDeciduous_r3000	{#ch06.401}	ForestsTrees_TemperateDeciduous_r3000.tif	egv_401	Fractional cover of Temperate Deciduous Forests within the 3 km landscape	Platlapju mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## ForestsTrees_TemperateDeciduous_r10000	{#ch06.402}	ForestsTrees_TemperateDeciduous_r10000.tif	egv_402	Fractional cover of Temperate Deciduous Forests within the 10 km landscape	Platlapju mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_AllotmentGardens_cell	{#ch06.403}	General_AllotmentGardens_cell.tif	egv_403	Fractional cover of Allotment gardens within the analysis cell (1 ha)	Vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_AllotmentGardens_r500	{#ch06.404}	General_AllotmentGardens_r500.tif	egv_404	Fractional cover of Allotment gardens within the 0.5 km landscape	Vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_AllotmentGardens_r1250	{#ch06.405}	General_AllotmentGardens_r1250.tif	egv_405	Fractional cover of Allotment gardens within the 1.25 km landscape	Vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_AllotmentGardens_r3000	{#ch06.406}	General_AllotmentGardens_r3000.tif	egv_406	Fractional cover of Allotment gardens within the 3 km landscape	Vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_AllotmentGardens_r10000	{#ch06.407}	General_AllotmentGardens_r10000.tif	egv_407	Fractional cover of Allotment gardens within the 10 km landscape	Vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_BareSoilQuarry_cell	{#ch06.408}	General_BareSoilQuarry_cell.tif	egv_408	Fractional cover of areas with Bare Soil, Quarries within the analysis cell (1 ha)	Atklātas augsnes un karjeru platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_BareSoilQuarry_r500	{#ch06.409}	General_BareSoilQuarry_r500.tif	egv_409	Fractional cover of areas with Bare Soil, Quarries within the 0.5 km landscape	Atklātas augsnes un karjeru platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_BareSoilQuarry_r1250	{#ch06.410}	General_BareSoilQuarry_r1250.tif	egv_410	Fractional cover of areas with Bare Soil, Quarries within the 1.25 km landscape	Atklātas augsnes un karjeru platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_BareSoilQuarry_r3000	{#ch06.411}	General_BareSoilQuarry_r3000.tif	egv_411	Fractional cover of areas with Bare Soil, Quarries within the 3 km landscape	Atklātas augsnes un karjeru platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_BareSoilQuarry_r10000	{#ch06.412}	General_BareSoilQuarry_r10000.tif	egv_412	Fractional cover of areas with Bare Soil, Quarries within the 10 km landscape	Atklātas augsnes un karjeru platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_Builtup_cell	{#ch06.413}	General_Builtup_cell.tif	egv_413	Fractional cover of Built-Up areas within the analysis cell (1 ha)	Apbūves platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_Builtup_r500	{#ch06.414}	General_Builtup_r500.tif	egv_414	Fractional cover of Built-Up areas within the 0.5 km landscape	Apbūves platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_Builtup_r1250	{#ch06.415}	General_Builtup_r1250.tif	egv_415	Fractional cover of Built-Up areas within the 1.25 km landscape	Apbūves platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_Builtup_r3000	{#ch06.416}	General_Builtup_r3000.tif	egv_416	Fractional cover of Built-Up areas within the 3 km landscape	Apbūves platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_Builtup_r10000	{#ch06.417}	General_Builtup_r10000.tif	egv_417	Fractional cover of Built-Up areas within the 10 km landscape	Apbūves platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_Farmland_cell	{#ch06.418}	General_Farmland_cell.tif	egv_418	Fractional cover of Farmland within the analysis cell (1 ha)	Lauksaimniecībā izmantojamo zemju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_Farmland_r500	{#ch06.419}	General_Farmland_r500.tif	egv_419	Fractional cover of Farmland within the 0.5 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_Farmland_r1250	{#ch06.420}	General_Farmland_r1250.tif	egv_420	Fractional cover of Farmland within the 1.25 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_Farmland_r3000	{#ch06.421}	General_Farmland_r3000.tif	egv_421	Fractional cover of Farmland within the 3 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_Farmland_r10000	{#ch06.422}	General_Farmland_r10000.tif	egv_422	Fractional cover of Farmland within the 10 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_ForestsWithoutInventory_cell	{#ch06.423}	General_ForestsWithoutInventory_cell.tif	egv_423	Fractional cover of Forests Without Inventory within the analysis cell (1 ha)	Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_ForestsWithoutInventory_r500	{#ch06.424}	General_ForestsWithoutInventory_r500.tif	egv_424	Fractional cover of Forests Without Inventory within the 0.5 km landscape	Netaksēto mežu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_ForestsWithoutInventory_r1250	{#ch06.425}	General_ForestsWithoutInventory_r1250.tif	egv_425	Fractional cover of Forests Without Inventory within the 1.25 km landscape	Netaksēto mežu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_ForestsWithoutInventory_r3000	{#ch06.426}	General_ForestsWithoutInventory_r3000.tif	egv_426	Fractional cover of Forests Without Inventory within the 3 km landscape	Netaksēto mežu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_ForestsWithoutInventory_r10000	{#ch06.427}	General_ForestsWithoutInventory_r10000.tif	egv_427	Fractional cover of Forests Without Inventory within the 10 km landscape	Netaksēto mežu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_GardensOrchards_cell	{#ch06.428}	General_GardensOrchards_cell.tif	egv_428	Fractional cover of Allotment gardens, Orchards within the analysis cell (1 ha)	Vasarnīcu kompleksu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_GardensOrchards_r500	{#ch06.429}	General_GardensOrchards_r500.tif	egv_429	Fractional cover of Allotment gardens, Orchards within the 0.5 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_GardensOrchards_r1250	{#ch06.430}	General_GardensOrchards_r1250.tif	egv_430	Fractional cover of Allotment gardens, Orchards within the 1.25 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_GardensOrchards_r3000	{#ch06.431}	General_GardensOrchards_r3000.tif	egv_431	Fractional cover of Allotment gardens, Orchards within the 3 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_GardensOrchards_r10000	{#ch06.432}	General_GardensOrchards_r10000.tif	egv_432	Fractional cover of Allotment gardens, Orchards within the 10 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_Roads_cell	{#ch06.433}	General_Roads_cell.tif	egv_433	Fractional cover of Roads within the analysis cell (1 ha)	Ceļu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_ShrubsOrchards_cell	{#ch06.434}	General_ShrubsOrchards_cell.tif	egv_434	Fractional cover of Shrubs, Young stands, Orchards within the analysis cell (1 ha)	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_ShrubsOrchards_r500	{#ch06.435}	General_ShrubsOrchards_r500.tif	egv_435	Fractional cover of Shrubs, Young stands, Orchards within the 0.5 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchards_r1250	{#ch06.436}	General_ShrubsOrchards_r1250.tif	egv_436	Fractional cover of Shrubs, Young stands, Orchards within the 1.25 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchards_r3000	{#ch06.437}	General_ShrubsOrchards_r3000.tif	egv_437	Fractional cover of Shrubs, Young stands, Orchards within the 3 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchards_r10000	{#ch06.438}	General_ShrubsOrchards_r10000.tif	egv_438	Fractional cover of Shrubs, Young stands, Orchards within the 10 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchardsGardens_cell	{#ch06.439}	General_ShrubsOrchardsGardens_cell.tif	egv_439	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the analysis cell (1 ha)	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_ShrubsOrchardsGardens_r500	{#ch06.440}	General_ShrubsOrchardsGardens_r500.tif	egv_440	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 0.5 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchardsGardens_r1250	{#ch06.441}	General_ShrubsOrchardsGardens_r1250.tif	egv_441	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 1.25 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchardsGardens_r3000	{#ch06.442}	General_ShrubsOrchardsGardens_r3000.tif	egv_442	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 3 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_ShrubsOrchardsGardens_r10000	{#ch06.443}	General_ShrubsOrchardsGardens_r10000.tif	egv_443	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 10 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_SwampsMiresBogsHelophytes_cell	{#ch06.444}	General_SwampsMiresBogsHelophytes_cell.tif	egv_444	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the analysis cell (1 ha)	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_SwampsMiresBogsHelophytes_r500	{#ch06.445}	General_SwampsMiresBogsHelophytes_r500.tif	egv_445	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 0.5 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_SwampsMiresBogsHelophytes_r1250	{#ch06.446}	General_SwampsMiresBogsHelophytes_r1250.tif	egv_446	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 1.25 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_SwampsMiresBogsHelophytes_r3000	{#ch06.447}	General_SwampsMiresBogsHelophytes_r3000.tif	egv_447	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 3 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_SwampsMiresBogsHelophytes_r10000	{#ch06.448}	General_SwampsMiresBogsHelophytes_r10000.tif	egv_448	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 10 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_Trees_cell	{#ch06.449}	General_Trees_cell.tif	egv_449	Fractional cover of Trees, Shrubs, Clear-cuts within the analysis cell (1 ha)	Koku, krūmu un izcirtumu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_Trees_r500	{#ch06.450}	General_Trees_r500.tif	egv_450	Fractional cover of Trees, Shrubs, Clear-cuts within the 0.5 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_Trees_r1250	{#ch06.451}	General_Trees_r1250.tif	egv_451	Fractional cover of Trees, Shrubs, Clear-cuts within the 1.25 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_Trees_r3000	{#ch06.452}	General_Trees_r3000.tif	egv_452	Fractional cover of Trees, Shrubs, Clear-cuts within the 3 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_Trees_r10000	{#ch06.453}	General_Trees_r10000.tif	egv_453	Fractional cover of Trees, Shrubs, Clear-cuts within the 10 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_TreesOutsideForests_cell	{#ch06.454}	General_TreesOutsideForests_cell.tif	egv_454	Fractional cover of Tree covered areas Outside Forests within the analysis cell (1 ha)	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_TreesOutsideForests_r500	{#ch06.455}	General_TreesOutsideForests_r500.tif	egv_455	Fractional cover of Tree covered areas Outside Forests within the 0.5 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_TreesOutsideForests_r1250	{#ch06.456}	General_TreesOutsideForests_r1250.tif	egv_456	Fractional cover of Tree covered areas Outside Forests within the 1.25 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_TreesOutsideForests_r3000	{#ch06.457}	General_TreesOutsideForests_r3000.tif	egv_457	Fractional cover of Tree covered areas Outside Forests within the 3 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_TreesOutsideForests_r10000	{#ch06.458}	General_TreesOutsideForests_r10000.tif	egv_458	Fractional cover of Tree covered areas Outside Forests within the 10 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## General_Water_cell	{#ch06.459}	General_Water_cell.tif	egv_459	Fractional cover of Waterbodies within the analysis cell (1 ha)	Ūdenstilpju platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## General_Water_r500	{#ch06.460}	General_Water_r500.tif	egv_460	Fractional cover of Waterbodies within the 0.5 km landscape	Ūdenstilpju platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## General_Water_r1250	{#ch06.461}	General_Water_r1250.tif	egv_461	Fractional cover of Waterbodies within the 1.25 km landscape	Ūdenstilpju platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## General_Water_r3000	{#ch06.462}	General_Water_r3000.tif	egv_462	Fractional cover of Waterbodies within the 3 km landscape	Ūdenstilpju platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## General_Water_r10000	{#ch06.463}	General_Water_r10000.tif	egv_463	Fractional cover of Waterbodies within the 10 km landscape	Ūdenstilpju platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## Wetlands_Bogs_cell	{#ch06.464}	Wetlands_Bogs_cell.tif	egv_464	Fractional cover of Raised Bogs within the analysis cell (1 ha)	Augsto purvu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## Wetlands_Bogs_r500	{#ch06.465}	Wetlands_Bogs_r500.tif	egv_465	Fractional cover of Raised Bogs within the 0.5 km landscape	Augsto purvu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## Wetlands_Bogs_r1250	{#ch06.466}	Wetlands_Bogs_r1250.tif	egv_466	Fractional cover of Raised Bogs within the 1.25 km landscape	Augsto purvu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## Wetlands_Bogs_r3000	{#ch06.467}	Wetlands_Bogs_r3000.tif	egv_467	Fractional cover of Raised Bogs within the 3 km landscape	Augsto purvu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## Wetlands_Bogs_r10000	{#ch06.468}	Wetlands_Bogs_r10000.tif	egv_468	Fractional cover of Raised Bogs within the 10 km landscape	Augsto purvu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## Wetlands_Mires_cell	{#ch06.469}	Wetlands_Mires_cell.tif	egv_469	Fractional cover of Transitional Mires within the analysis cell (1 ha)	Pārejas purvu platības īpatsvars analīzes šūnā (1 ha)
+
+
+
+
+
+
+## Wetlands_Mires_r500	{#ch06.470}	Wetlands_Mires_r500.tif	egv_470	Fractional cover of Transitional Mires within the 0.5 km landscape	Pārejas purvu platības īpatsvars 0,5 km ainavā
+
+
+
+
+
+
+## Wetlands_Mires_r1250	{#ch06.471}	Wetlands_Mires_r1250.tif	egv_471	Fractional cover of Transitional Mires within the 1.25 km landscape	Pārejas purvu platības īpatsvars 1,25 km ainavā
+
+
+
+
+
+
+## Wetlands_Mires_r3000	{#ch06.472}	Wetlands_Mires_r3000.tif	egv_472	Fractional cover of Transitional Mires within the 3 km landscape	Pārejas purvu platības īpatsvars 3 km ainavā
+
+
+
+
+
+
+## Wetlands_Mires_r10000	{#ch06.473}	Wetlands_Mires_r10000.tif	egv_473	Fractional cover of Transitional Mires within the 10 km landscape	Pārejas purvu platības īpatsvars 10 km ainavā
+
+
+
+
+
+
+## Wetlands_ReedSedgeRushBeds_cell	{#ch06.474}
+
+**filename:** `Wetlands_ReedSedgeRushBeds_cell.tif`	
+
+**layername:** `egv_474`	
+
+**English name:** Fractional cover of Reed-, Sedge-, Rush-, Beds within the analysis cell (1 ha)	
+
+**Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_ReedSedgeRushBeds_r500	{#ch06.475}
+
+**filename:** `Wetlands_ReedSedgeRushBeds_r500.tif`	
+
+**layername:** `egv_475`	
+
+**English name:** Fractional cover of Reed-, Sedge-, Rush-, Beds within the 0.5 km landscape	
+
+**Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_ReedSedgeRushBeds_r1250	{#ch06.476}
+
+**filename:** `Wetlands_ReedSedgeRushBeds_r1250.tif`	
+
+**layername:** `egv_476`	
+
+**English name:** Fractional cover of Reed-, Sedge-, Rush-, Beds within the 1.25 km landscape	
+
+**Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_ReedSedgeRushBeds_r3000	{#ch06.477}
+
+**filename:** `Wetlands_ReedSedgeRushBeds_r3000.tif`	
+
+**layername:** `egv_477`	
+
+**English name:** Fractional cover of Reed-, Sedge-, Rush-, Beds within the 3 km landscape	
+
+**Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_ReedSedgeRushBeds_r10000	{#ch06.478}
+
+**filename:** `Wetlands_ReedSedgeRushBeds_r10000.tif`	
+
+**layername:** `egv_478`	
+
+**English name:** Fractional cover of Reed-, Sedge-, Rush-, Beds within the 10 km landscape	
+
+**Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## EO_NDMI-LYmed-average_cell	{#ch06.479}
+
+**filename:** `EO_NDMI-LYmed-average_cell.tif`	
+
+**layername:** `egv_479`	
+
+**English name:** Median vegetation water content (NDMI) for the last year within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējā gada ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDMI-LYmed-average_cell.tif ----
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDMI-LYmed-average_cell.tif",
+                 layername = "egv_479",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDMI-LYmedian-iqr_cell	{#ch06.480}
+
+**filename:** `EO_NDMI-LYmedian-iqr_cell.tif`	
+
+**layername:** `egv_480`	
+
+**English name:** Spatial variability of last year's median vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:**  Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDMI-LYmedian-iqr_cell.tif ----
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_480",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_480",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDMI-LYmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDMI-STiqr-median_cell	{#ch06.481}
+
+**filename:** `EO_NDMI-STiqr-median_cell.tif`	
+
+**layername:** `egv_481`	
+
+**English name:** Average short-term seasonality of vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens satura veģetācijā indeksam (NDMI), vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDMI-STiqr-median_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STiqr.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDMI-STiqr-median_cell.tif",
+                 layername = "egv_481",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDMI-STmedian-average_cell	{#ch06.482}
+
+**filename:** `EO_NDMI-STmedian-average_cell.tif`	
+
+**layername:** `egv_482`	
+
+**English name:** Median short-term vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDMI-STmedian-average_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDMI-STmedian-average_cell.tif",
+                 layername = "egv_482",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDMI-STmedian-iqr_cell	{#ch06.483}
+
+**filename:** `EO_NDMI-STmedian-iqr_cell.tif`	
+
+**layername:** `egv_483`	
+
+**English name:** Spatial variability of short-term median vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+to last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDMI-STmedian-iqr_cell.tif ----
+
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_483",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_483",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDMI-STmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDMI-STp25-min_cell	{#ch06.484}
+
+**filename:** `EO_NDMI-STp25-min_cell.tif`	
+
+**layername:** `egv_484`	
+
+**English name:** Minimum of short-term's 25th percentile vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDMI-STp25-min_cell.tif ----
+
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STp25.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDMI-STp25-min_cell.tif",
+                 layername = "egv_484",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDMI-STp75-max_cell	{#ch06.485}
+
+**filename:** `EO_NDMI-STp75-max_cell.tif`	
+
+**layername:** `egv_485`	
+
+**English name:** Maximum of short-term's 75th percentile vegetation water content (NDMI) within the analysis cell (1 ha)	
+
+**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDMI-STp75-max_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STp75.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDMI-STp75-max_cell.tif",
+                 layername = "egv_485",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDVI-LYmedian-average_cell	{#ch06.486}
+
+**filename:** `EO_NDVI-LYmedian-average_cell.tif`	
+
+**layername:** `egv_486`	
+
+**English name:** Median vegetation index (NDVI) for the last year within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējā gada veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDVI-LYmedian-average_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDVI-LYmedian-average_cell.tif",
+                 layername = "egv_486",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDVI-LYmedian-iqr_cell	{#ch06.487}
+
+**filename:** `EO_NDVI-LYmedian-iqr_cell.tif`	
+
+**layername:** `egv_487`	
+
+**English name:** Spatial variability of last year's median vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:**  Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDVI-LYmedian-iqr_cell.tif ----
+
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_487",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_487",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDVI-LYmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDVI-STiqr-median_cell	{#ch06.488}
+
+**filename:** `EO_NDVI-STiqr-median_cell.tif`	
+
+**layername:** `egv_488`	
+
+**English name:** Average short-term seasonality of vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam veģetācijas indeksam (NDVI), vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDVI-STiqr-median_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STiqr.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDVI-STiqr-median_cell.tif",
+                 layername = "egv_488",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDVI-STmedian-average_cell	{#ch06.489}
+
+**filename:** `EO_NDVI-STmedian-average_cell.tif`	
+
+**layername:** `egv_489`	
+
+**English name:** Median short-term vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDVI-STmedian-average_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDVI-STmedian-average_cell.tif",
+                 layername = "egv_489",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDVI-STmedian-iqr_cell	{#ch06.490}
+
+**filename:** `EO_NDVI-STmedian-iqr_cell.tif`	
+
+**layername:** `egv_490`	
+
+**English name:** Spatial variability of short-term median vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+to last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDVI-STmedian-iqr_cell.tif ----
+
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_490",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_490",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDVI-STmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDVI-STp25-min_cell	{#ch06.491}
+
+**filename:** `EO_NDVI-STp25-min_cell.tif`	
+
+**layername:** `egv_491`	
+
+**English name:** Minimum of short-term's 25th percentile vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDVI-STp25-min_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STp25.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDVI-STp25-min_cell.tif",
+                 layername = "egv_491",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDVI-STp75-max_cell	{#ch06.492}
+
+**filename:** `EO_NDVI-STp75-max_cell.tif`	
+
+**layername:** `egv_492`	
+
+**English name:** Maximum of short-term's 75th percentile vegetation index (NDVI) within the analysis cell (1 ha)	
+
+**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDVI-STp75-max_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STp75.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDVI-STp75-max_cell.tif",
+                 layername = "egv_492",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDWI-LYmedian-average_cell	{#ch06.493}
+
+**filename:** `EO_NDWI-LYmedian-average_cell.tif`	
+
+**layername:** `egv_493`	
+
+**English name:** Median water index (NDWI) for the last year within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējā gada ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDWI-LYmedian-average_cell.tif",
+                 layername = "egv_493",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDWI-LYmedian-iqr_cell	{#ch06.494}
+
+**filename:** `EO_NDWI-LYmedian-iqr_cell.tif`	
+
+**layername:** `egv_494`	
+
+**English name:** Spatial variability of last year's median water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDWI-LYmedian-iqr_cell.tif ----
+
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_494",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-LYmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_494",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDWI-LYmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDWI-STiqr-median_cell	{#ch06.495}
+
+**filename:** `EO_NDWI-STiqr-median_cell.tif`	
+
+**layername:** `egv_495`	
+
+**English name:** Average short-term seasonality of water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens indeksam (NDWI), vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDWI-STiqr-median_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STiqr.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDWI-STiqr-median_cell.tif",
+                 layername = "egv_495",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDWI-STmedian-average_cell	{#ch06.496}
+
+**filename:** `EO_NDWI-STmedian-average_cell.tif`	
+
+**layername:** `egv_496`	
+
+**English name:** Median short-term water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDWI-STmedian-average_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDWI-STmedian-average_cell.tif",
+                 layername = "egv_496",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDWI-STmedian-iqr_cell	{#ch06.497}
+
+**filename:** `EO_NDWI-STmedian-iqr_cell.tif`	
+
+**layername:** `egv_497`	
+
+**English name:** Spatial variability of short-term median water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+to last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDWI-STmedian-iqr_cell.tif ----
+
+p25rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_497",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STmedian.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_497",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/EO_NDWI-STmedian-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
+
+
+## EO_NDWI-STp25-min_cell	{#ch06.498}
+
+**filename:** `EO_NDWI-STp25-min_cell.tif`	
+
+**layername:** `egv_498`	
+
+**English name:** Minimum of short-term's 25th percentile water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# EO_NDWI-STp25-min_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STp25.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDWI-STp25-min_cell.tif",
+                 layername = "egv_498",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## EO_NDWI-STp75-max_cell	{#ch06.499}
+
+**filename:** `EO_NDWI-STp75-max_cell.tif`	
+
+**layername:** `egv_499`	
+
+**English name:** Maximum of short-term's 75th percentile water index (NDWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+
+**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
+calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+
+
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# EO_NDWI-STp75-max_cell.tif ----
+
+egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STp75.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "min",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = "EO_NDWI-STp75-max_cell.tif",
+                 layername = "egv_499",
+                 idw_weight = 2,
+                 plot_gaps = FALSE,
+                 plot_final = FALSE)
+egvrez
+```
+
+
+## SoilChemistry_ESDAC-CN_cell	{#ch06.500}
+
+**filename:** `SoilChemistry_ESDAC-CN_cell.tif`	
+
+**layername:** `egv_500`	
+
+**English name:** Average value of Topsoil Carbon-Nitrogen ratio (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas oglekļa-slāpekļa attiecība (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilChemistry_ESDAC-CaCo3_cell	{#ch06.501}
+
+**filename:** `SoilChemistry_ESDAC-CaCo3_cell.tif`	
+
+**layername:** `egv_501`	
+
+**English name:** Average value of Topsoil Calcium Carbonates Content (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas kalcija karbonātu apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilChemistry_ESDAC-K_cell	{#ch06.502}
+
+**filename:** `SoilChemistry_ESDAC-K_cell.tif`	
+
+**layername:** `egv_502`	
+
+**English name:** Average value of Topsoil Sodium Content (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas kālija apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilChemistry_ESDAC-N_cell	{#ch06.503}
+
+**filename:** `SoilChemistry_ESDAC-N_cell.tif`	
+
+**layername:** `egv_503`	
+
+**English name:** Average value of Topsoil Nitrogen Content (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas slāpekļa apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilChemistry_ESDAC-P_cell	{#ch06.504}
+
+**filename:** `SoilChemistry_ESDAC-P_cell.tif`	
+
+**layername:** `egv_504`	
+
+**English name:** Average value of Topsoil Phosphorous Content (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas fosfora apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilChemistry_ESDAC-phH2O_cell	{#ch06.505}
+
+**filename:** `SoilChemistry_ESDAC-phH2O_cell.tif`	
+
+**layername:** `egv_505`	
+
+**English name:** Average value of Topsoil pH reaction in water (ESDAC v2.0) within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes virskārtas reakcija (pH) ūdens šķīdumā (ESDAC v2.0) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Clay_cell	{#ch06.506}
+
+**filename:** `SoilTexture_Clay_cell.tif`	
+
+**layername:** `egv_506`	
+
+**English name:** Fractional cover of Clay Soils within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Clay_r500	{#ch06.507}
+
+**filename:** `SoilTexture_Clay_r500.tif`	
+
+**layername:** `egv_507`	
+
+**English name:** Fractional cover of Clay Soils within the 0.5 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 0,5 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Clay_r1250	{#ch06.508}
+
+**filename:** `SoilTexture_Clay_r1250.tif`	
+
+**layername:** `egv_508`	
+
+**English name:** Fractional cover of Clay Soils within the 1.25 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 1,25 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Clay_r3000	{#ch06.509}
+
+**filename:** `SoilTexture_Clay_r3000.tif`	
+
+**layername:** `egv_509`	
+
+**English name:** Fractional cover of Clay Soils within the 3 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 3 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Clay_r10000	{#ch06.510}
+
+**filename:** `SoilTexture_Clay_r10000.tif`	
+
+**layername:** `egv_510`	
+
+**English name:** Fractional cover of Clay Soils within the 10 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 10 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Organic_cell	{#ch06.511}
+
+**filename:** `SoilTexture_Organic_cell.tif`	
+
+**layername:** `egv_511`	
+
+**English name:** Fractional cover of Organic Soils within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Organic_r500	{#ch06.512}
+
+**filename:** `SoilTexture_Organic_r500.tif`	
+
+**layername:** `egv_512`	
+
+**English name:** Fractional cover of Organic Soils within the 0.5 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 0,5 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Organic_r1250	{#ch06.513}
+
+**filename:** `SoilTexture_Organic_r1250.tif`	
+
+**layername:** `egv_513`	
+
+**English name:** Fractional cover of Organic Soils within the 1.25 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 1,25 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Organic_r3000	{#ch06.514}
+
+**filename:** `SoilTexture_Organic_r3000.tif`	
+
+**layername:** `egv_514`	
+
+**English name:** Fractional cover of Organic Soils within the 3 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 3 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Organic_r10000	{#ch06.515}
+
+**filename:** `SoilTexture_Organic_r10000.tif`	
+
+**layername:** `egv_515`	
+
+**English name:** Fractional cover of Organic Soils within the 10 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 10 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Sand_cell	{#ch06.516}
+
+**filename:** `SoilTexture_Sand_cell.tif`	
+
+**layername:** `egv_516`	
+
+**English name:** Fractional cover of Sand Soils within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Sand_r500	{#ch06.517}
+
+**filename:** `SoilTexture_Sand_r500.tif`	
+
+**layername:** `egv_517`	
+
+**English name:** Fractional cover of Sand Soils within the 0.5 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 0,5 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Sand_r1250	{#ch06.518}
+
+**filename:** `SoilTexture_Sand_r1250.tif`	
+
+**layername:** `egv_518`	
+
+**English name:** Fractional cover of Sand Soils within the 1.25 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 1,25 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Sand_r3000	{#ch06.519}
+
+**filename:** `SoilTexture_Sand_r3000.tif`	
+
+**layername:** `egv_519`	
+
+**English name:** Fractional cover of Sand Soils within the 3 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 3 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Sand_r10000	{#ch06.520}
+
+**filename:** `SoilTexture_Sand_r10000.tif`	
+
+**layername:** `egv_520`	
+
+**English name:** Fractional cover of Sand Soils within the 10 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 10 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Silt_cell	{#ch06.521}
+
+**filename:** `SoilTexture_Silt_cell.tif`	
+
+**layername:** `egv_521`	
+
+**English name:** Fractional cover of Silt Soils within the analysis cell (1 ha)	
+
+**Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Silt_r500	{#ch06.522}
+
+**filename:** `SoilTexture_Silt_r500.tif`	
+
+**layername:** `egv_522`	
+
+**English name:** Fractional cover of Silt Soils within the 0.5 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 0,5 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Silt_r1250	{#ch06.523}
+
+**filename:** `SoilTexture_Silt_r1250.tif`	
+
+**layername:** `egv_523`	
+
+**English name:** Fractional cover of Silt Soils within the 1.25 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 1,25 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Silt_r3000	{#ch06.524}
+
+**filename:** `SoilTexture_Silt_r3000.tif`	
+
+**layername:** `egv_524`	
+
+**English name:** Fractional cover of Silt Soils within the 3 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 3 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## SoilTexture_Silt_r10000	{#ch06.525}
+
+**filename:** `SoilTexture_Silt_r10000.tif`	
+
+**layername:** `egv_525`	
+
+**English name:** Fractional cover of Silt Soils within the 10 km landscape	
+
+**Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 10 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_ASL-average_cell	{#ch06.526}
+
+**filename:** `Terrain_ASL-average_cell.tif`	
+
+**layername:** `egv_526`	
+
+**English name:** Average value of height Above Sea Level (m) within the analysis cell (1 ha)	
+
+**Latvian name:** Augstums virs jūras līmeņa (m) analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_Aspect-average_cell	{#ch06.527}
+
+**filename:** `Terrain_Aspect-average_cell.tif`	
+
+**layername:** `egv_527`	
+
+**English name:** Average value of Terrain Aspect (degree) within the analysis cell (1 ha)	
+
+**Latvian name:** Nogāzes vidējais vērsuma virziens analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_Aspect-iqr_cell	{#ch06.528}
+
+**filename:** `Terrain_Aspect-iqr_cell.tif`	
+
+**layername:** `egv_528`	
+
+**English name:** Variability of Terrain Aspect (degree) within the analysis cell (1 ha)	
+
+**Latvian name:** Nogāzes vērsuma variabilitāte analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-area_cell	{#ch06.529}
+
+**filename:** `Terrain_DiS-area_cell.tif`	
+
+**layername:** `egv_529`	
+
+**English name:** Fractional cover of Terrain Sinks within the analysis cell (1 ha)	
+
+**Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-area_r500	{#ch06.530}
+
+**filename:** `Terrain_DiS-area_r500.tif`	
+
+**layername:** `egv_530`	
+
+**English name:** Fractional cover of Terrain Sinks within the 0.5 km landscape	
+
+**Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 0,5 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-area_r1250	{#ch06.531}
+
+**filename:** `Terrain_DiS-area_r1250.tif`	
+
+**layername:** `egv_531`	
+
+**English name:** Fractional cover of Terrain Sinks within the 1.25 km landscape	
+
+**Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 1,25 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-area_r3000	{#ch06.532}
+
+**filename:** `Terrain_DiS-area_r3000.tif`	
+
+**layername:** `egv_532`	
+
+**English name:** Fractional cover of Terrain Sinks within the 3 km landscape	
+
+**Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 3 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-area_r10000	{#ch06.533}
+
+**filename:** `Terrain_DiS-area_r10000.tif`	
+
+**layername:** `egv_533`	
+
+**English name:** Fractional cover of Terrain Sinks within the 10 km landscape	
+
+**Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 10 km ainavā
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-max_cell	{#ch06.534}	
+
+**filename:** `Terrain_DiS-max_cell.tif`	
+
+**layername:** `egv_534`	
+
+**English name:** Maximum Depth in Terrain Sink within the analysis cell (1 ha)	
+
+**Latvian name:** Reljefa depresiju lielākais dziļums analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_DiS-mean_cell	{#ch06.535}	
+
+**filename:** `Terrain_DiS-mean_cell.tif`	
+
+**layername:** `egv_535`	
+
+**English name:** Average Depth in Terrain Sink within the analysis cell (1 ha)	
+
+**Latvian name:** Reljefa depresiju vidējais dziļums analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_Slope-average_cell	{#ch06.536}	
+
+**filename:** `Terrain_Slope-average_cell.tif`	
+
+**layername:** `egv_536`	
+
+**English name:** Average value of Terrain Slope (degree) within the analysis cell (1 ha)	
+
+**Latvian name:** Nogāzes slīpuma vidējā vērtība analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_Slope-iqr_cell	{#ch06.537}	
+
+**filename:** `Terrain_Slope-iqr_cell.tif`	
+
+**layername:** `egv_537`	
+
+**English name:** Variability of Terrain Slope (degree) within the analysis cell (1 ha)	
+
+**Latvian name:** Nogāzes slīpuma variabilitāte analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
+## Terrain_TWI-average_cell	{#ch06.538}	
+
+**filename:** `Terrain_TWI-average_cell.tif`	
+
+**layername:** `egv_538`	
+
+**English name:** Average value of Topographic Wetness Index (TWI) within the analysis cell (1 ha)	
+
+**Latvian name:** Topogrāfiskā mitruma indeksa vidējā vērtība analīzes šūnā (1 ha)
+
+**Procedure:**
+
+
+
+
+
+
