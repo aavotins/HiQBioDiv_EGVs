@@ -320,9 +320,61 @@ div.csl-indent {
 </div>
 <div id="Ch04.11" class="section level2 hasAnchor" number="4.11">
 <h2><span class="header-section-number">4.11</span> CHELSA v2.1<a href="Ch04.html#Ch04.11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span></p>
-<p><a href="https://chelsa-climate.org/" class="uri">https://chelsa-climate.org/</a></p>
-<p><a href="https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf" class="uri">https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf</a></p>
+<p>Climatologies at high resolution for the Earth’s land surface areas (CHELSA) is
+30 arc second global downscaled climate data set <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span>. The temperature algorithm
+is based on statistical downscaling of atmospheric temperatures. The precipitation
+algorithm incorporates orographic predictors including wind fields, valley
+exposition, and boundary layer height, with a subsequent bias correction. CHELSA
+climatological data has a similar accuracy as other products for temperature, but
+that its predictions of precipitation patterns are better <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span>. Data are freely
+available for download from <a href="https://chelsa-climate.org/">homepage</a> forwarding
+to download server, providing download links for selected products. There is also technical
+specification available, to decode layer names (<a href="https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf" class="uri">https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf</a>).</p>
+<p>The download links we used together with renaming scheme are <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv">available</a>
+with this document. The following command lines perform download, crop to the
+extent of Latvia (using 1 km vector grid) and saves file for further processing
+described with other <a href="Ch06.html#Ch06">EGVs</a>.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch04.html#cb8-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
+<span id="cb8-2"><a href="Ch04.html#cb8-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb8-3"><a href="Ch04.html#cb8-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb8-4"><a href="Ch04.html#cb8-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb8-5"><a href="Ch04.html#cb8-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb8-6"><a href="Ch04.html#cb8-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(curl)) {<span class="fu">install.packages</span>(<span class="st">&quot;curl&quot;</span>); <span class="fu">require</span>(curl)}</span>
+<span id="cb8-7"><a href="Ch04.html#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="Ch04.html#cb8-8" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb8-9"><a href="Ch04.html#cb8-9" tabindex="-1"></a><span class="co"># 1km grid</span></span>
+<span id="cb8-10"><a href="Ch04.html#cb8-10" tabindex="-1"></a>tikls1km<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Templates/TemplateGrids/tikls1km_sauzeme.parquet&quot;</span>)</span>
+<span id="cb8-11"><a href="Ch04.html#cb8-11" tabindex="-1"></a>telpai<span class="ot">=</span>tikls1km <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="Ch04.html#cb8-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="Ch04.html#cb8-13" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">yes=</span><span class="fu">max</span>(yes)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="Ch04.html#cb8-14" tabindex="-1"></a>  <span class="fu">st_buffer</span>(.,<span class="at">dist=</span><span class="dv">10000</span>)</span>
+<span id="cb8-15"><a href="Ch04.html#cb8-15" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="Ch04.html#cb8-16" tabindex="-1"></a><span class="co"># download and crop ----</span></span>
+<span id="cb8-17"><a href="Ch04.html#cb8-17" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="Ch04.html#cb8-18" tabindex="-1"></a>links_names<span class="ot">=</span><span class="fu">read_csv</span>(<span class="st">&quot;./Geodata/2024/CHELSA/CHELSAdownload_rename.csv&quot;</span>)</span>
+<span id="cb8-19"><a href="Ch04.html#cb8-19" tabindex="-1"></a>links_names<span class="ot">=</span>links_names <span class="sc">%&gt;%</span> </span>
+<span id="cb8-20"><a href="Ch04.html#cb8-20" tabindex="-1"></a>  <span class="fu">filter</span>(todownload<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb8-21"><a href="Ch04.html#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="Ch04.html#cb8-22" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(links_names<span class="sc">$</span>localname)){</span>
+<span id="cb8-23"><a href="Ch04.html#cb8-23" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb8-24"><a href="Ch04.html#cb8-24" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb8-25"><a href="Ch04.html#cb8-25" tabindex="-1"></a>  links<span class="ot">=</span>links_names<span class="sc">$</span>weblocation[i]</span>
+<span id="cb8-26"><a href="Ch04.html#cb8-26" tabindex="-1"></a>  saving1<span class="ot">=</span><span class="st">&quot;./Geodata/2024/CHELSA/draza.tif&quot;</span></span>
+<span id="cb8-27"><a href="Ch04.html#cb8-27" tabindex="-1"></a>  saving2<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/CHELSA/&quot;</span>,links_names<span class="sc">$</span>localname[i])</span>
+<span id="cb8-28"><a href="Ch04.html#cb8-28" tabindex="-1"></a>  </span>
+<span id="cb8-29"><a href="Ch04.html#cb8-29" tabindex="-1"></a>  <span class="fu">curl_download</span>(<span class="at">url=</span>links,<span class="at">destfile =</span> saving1,<span class="at">quiet =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-30"><a href="Ch04.html#cb8-30" tabindex="-1"></a>  fails<span class="ot">=</span><span class="fu">rast</span>(saving1)</span>
+<span id="cb8-31"><a href="Ch04.html#cb8-31" tabindex="-1"></a>  telpa<span class="ot">=</span><span class="fu">st_transform</span>(telpai,<span class="at">crs=</span><span class="fu">st_crs</span>(fails))</span>
+<span id="cb8-32"><a href="Ch04.html#cb8-32" tabindex="-1"></a>  nogriezts<span class="ot">=</span><span class="fu">crop</span>(fails,telpa,</span>
+<span id="cb8-33"><a href="Ch04.html#cb8-33" tabindex="-1"></a>                 <span class="at">filename=</span>saving2,</span>
+<span id="cb8-34"><a href="Ch04.html#cb8-34" tabindex="-1"></a>                 <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb8-35"><a href="Ch04.html#cb8-35" tabindex="-1"></a>  <span class="fu">unlink</span>(saving1)</span>
+<span id="cb8-36"><a href="Ch04.html#cb8-36" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb8-37"><a href="Ch04.html#cb8-37" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
+<span id="cb8-38"><a href="Ch04.html#cb8-38" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb8-39"><a href="Ch04.html#cb8-39" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 <div id="Ch04.12" class="section level2 hasAnchor" number="4.12">
 <h2><span class="header-section-number">4.12</span> HydroClim data<a href="Ch04.html#Ch04.12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -330,53 +382,53 @@ div.csl-indent {
 created for biodiversity analysis at 1 km resolution <span class="citation">(<a href="#ref-HydroClim">Domisch et al., 2015</a>)</span>. Dataset
 contains many different variables along the HydroSHEDS river
 network <span class="citation">(<a href="#ref-HydroSheds">Lehner et al., 2008</a>)</span>, including upstream climate recalculated from
-worldclim <span class="citation">(<a href="#ref-worldclim_hijmans">Hijmans et al., 2005</a>)</span>. We doownloaded (to <code>Geodata/2024/HydroClim/</code>)
+worldclim <span class="citation">(<a href="#ref-worldclim_hijmans">Hijmans et al., 2005</a>)</span>. We downloaded (to <code>Geodata/2024/HydroClim/</code>)
 averaged upstream climate from <a href="https://zenodo.org/records/5089529">Zenodo repository</a>
 (available also from <a href="https://datadryad.org/dataset/doi:10.5061/dryad.dv920">Dryad</a>)
 and cropped to the extent of Latvia and renamed files for further processing
-with the code below.</p>
+with the code below. Renaming scheme is <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv">published with document</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch04.html#cb8-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
-<span id="cb8-2"><a href="Ch04.html#cb8-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
-<span id="cb8-3"><a href="Ch04.html#cb8-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
-<span id="cb8-4"><a href="Ch04.html#cb8-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
-<span id="cb8-5"><a href="Ch04.html#cb8-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
-<span id="cb8-6"><a href="Ch04.html#cb8-6" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="Ch04.html#cb8-7" tabindex="-1"></a><span class="co"># templates ----</span></span>
-<span id="cb8-8"><a href="Ch04.html#cb8-8" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="Ch04.html#cb8-9" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
-<span id="cb8-10"><a href="Ch04.html#cb8-10" tabindex="-1"></a>tikls1km<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Templates/TemplateGrids/tikls1km_sauzeme.parquet&quot;</span>)</span>
-<span id="cb8-11"><a href="Ch04.html#cb8-11" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="Ch04.html#cb8-12" tabindex="-1"></a><span class="co"># reading HydroClim ----</span></span>
-<span id="cb8-13"><a href="Ch04.html#cb8-13" tabindex="-1"></a>videjie<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/HydroClim/hydroclim_average+sum.nc&quot;</span>)</span>
-<span id="cb8-14"><a href="Ch04.html#cb8-14" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="Ch04.html#cb8-15" tabindex="-1"></a><span class="co"># reading dictionary -----</span></span>
-<span id="cb8-16"><a href="Ch04.html#cb8-16" tabindex="-1"></a>slanu_nosaukumi<span class="ot">=</span><span class="fu">read_csv</span>(<span class="st">&quot;./Geodata/2024/HydroClim/HydroClim_renaming.csv&quot;</span>)</span>
-<span id="cb8-17"><a href="Ch04.html#cb8-17" tabindex="-1"></a></span>
-<span id="cb8-18"><a href="Ch04.html#cb8-18" tabindex="-1"></a><span class="co"># cropping ---</span></span>
-<span id="cb8-19"><a href="Ch04.html#cb8-19" tabindex="-1"></a>tikls1km_reproj<span class="ot">=</span><span class="fu">st_transform</span>(tikls1km,<span class="at">crs=</span><span class="fu">st_crs</span>(videjie))</span>
-<span id="cb8-20"><a href="Ch04.html#cb8-20" tabindex="-1"></a>telpai<span class="ot">=</span>tikls1km <span class="sc">%&gt;%</span> </span>
-<span id="cb8-21"><a href="Ch04.html#cb8-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-22"><a href="Ch04.html#cb8-22" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">yes=</span><span class="fu">max</span>(yes)) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-23"><a href="Ch04.html#cb8-23" tabindex="-1"></a>  <span class="fu">st_buffer</span>(.,<span class="at">dist=</span><span class="dv">10000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-24"><a href="Ch04.html#cb8-24" tabindex="-1"></a>  <span class="fu">st_transform</span>(.,<span class="at">crs=</span><span class="fu">st_crs</span>(videjie))</span>
-<span id="cb8-25"><a href="Ch04.html#cb8-25" tabindex="-1"></a>videjie<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">crop</span>(videjie,telpai)</span>
-<span id="cb8-26"><a href="Ch04.html#cb8-26" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="Ch04.html#cb8-27" tabindex="-1"></a><span class="co"># layer names ----</span></span>
-<span id="cb8-28"><a href="Ch04.html#cb8-28" tabindex="-1"></a><span class="fu">names</span>(videjie)<span class="ot">=</span>slanu_nosaukumi<span class="sc">$</span>local_name</span>
-<span id="cb8-29"><a href="Ch04.html#cb8-29" tabindex="-1"></a></span>
-<span id="cb8-30"><a href="Ch04.html#cb8-30" tabindex="-1"></a><span class="co"># saving files ----</span></span>
-<span id="cb8-31"><a href="Ch04.html#cb8-31" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(slanu_nosaukumi<span class="sc">$</span>local_name)){</span>
-<span id="cb8-32"><a href="Ch04.html#cb8-32" tabindex="-1"></a>  nosaukumam<span class="ot">=</span>slanu_nosaukumi<span class="sc">$</span>local_name[i]</span>
-<span id="cb8-33"><a href="Ch04.html#cb8-33" tabindex="-1"></a>  <span class="fu">writeRaster</span>(videjie[[i]],</span>
-<span id="cb8-34"><a href="Ch04.html#cb8-34" tabindex="-1"></a>              <span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/HydroClim/&quot;</span>,nosaukumam),</span>
-<span id="cb8-35"><a href="Ch04.html#cb8-35" tabindex="-1"></a>              <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb8-36"><a href="Ch04.html#cb8-36" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Ch04.html#cb9-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
+<span id="cb9-2"><a href="Ch04.html#cb9-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb9-3"><a href="Ch04.html#cb9-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb9-4"><a href="Ch04.html#cb9-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb9-5"><a href="Ch04.html#cb9-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb9-6"><a href="Ch04.html#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="Ch04.html#cb9-7" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb9-8"><a href="Ch04.html#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="Ch04.html#cb9-9" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb9-10"><a href="Ch04.html#cb9-10" tabindex="-1"></a>tikls1km<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Templates/TemplateGrids/tikls1km_sauzeme.parquet&quot;</span>)</span>
+<span id="cb9-11"><a href="Ch04.html#cb9-11" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="Ch04.html#cb9-12" tabindex="-1"></a><span class="co"># reading HydroClim ----</span></span>
+<span id="cb9-13"><a href="Ch04.html#cb9-13" tabindex="-1"></a>videjie<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/HydroClim/hydroclim_average+sum.nc&quot;</span>)</span>
+<span id="cb9-14"><a href="Ch04.html#cb9-14" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="Ch04.html#cb9-15" tabindex="-1"></a><span class="co"># reading dictionary -----</span></span>
+<span id="cb9-16"><a href="Ch04.html#cb9-16" tabindex="-1"></a>slanu_nosaukumi<span class="ot">=</span><span class="fu">read_csv</span>(<span class="st">&quot;./Geodata/2024/HydroClim/HydroClim_renaming.csv&quot;</span>)</span>
+<span id="cb9-17"><a href="Ch04.html#cb9-17" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="Ch04.html#cb9-18" tabindex="-1"></a><span class="co"># cropping ---</span></span>
+<span id="cb9-19"><a href="Ch04.html#cb9-19" tabindex="-1"></a>tikls1km_reproj<span class="ot">=</span><span class="fu">st_transform</span>(tikls1km,<span class="at">crs=</span><span class="fu">st_crs</span>(videjie))</span>
+<span id="cb9-20"><a href="Ch04.html#cb9-20" tabindex="-1"></a>telpai<span class="ot">=</span>tikls1km <span class="sc">%&gt;%</span> </span>
+<span id="cb9-21"><a href="Ch04.html#cb9-21" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-22"><a href="Ch04.html#cb9-22" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">yes=</span><span class="fu">max</span>(yes)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-23"><a href="Ch04.html#cb9-23" tabindex="-1"></a>  <span class="fu">st_buffer</span>(.,<span class="at">dist=</span><span class="dv">10000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-24"><a href="Ch04.html#cb9-24" tabindex="-1"></a>  <span class="fu">st_transform</span>(.,<span class="at">crs=</span><span class="fu">st_crs</span>(videjie))</span>
+<span id="cb9-25"><a href="Ch04.html#cb9-25" tabindex="-1"></a>videjie<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">crop</span>(videjie,telpai)</span>
+<span id="cb9-26"><a href="Ch04.html#cb9-26" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="Ch04.html#cb9-27" tabindex="-1"></a><span class="co"># layer names ----</span></span>
+<span id="cb9-28"><a href="Ch04.html#cb9-28" tabindex="-1"></a><span class="fu">names</span>(videjie)<span class="ot">=</span>slanu_nosaukumi<span class="sc">$</span>local_name</span>
+<span id="cb9-29"><a href="Ch04.html#cb9-29" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="Ch04.html#cb9-30" tabindex="-1"></a><span class="co"># saving files ----</span></span>
+<span id="cb9-31"><a href="Ch04.html#cb9-31" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(slanu_nosaukumi<span class="sc">$</span>local_name)){</span>
+<span id="cb9-32"><a href="Ch04.html#cb9-32" tabindex="-1"></a>  nosaukumam<span class="ot">=</span>slanu_nosaukumi<span class="sc">$</span>local_name[i]</span>
+<span id="cb9-33"><a href="Ch04.html#cb9-33" tabindex="-1"></a>  <span class="fu">writeRaster</span>(videjie[[i]],</span>
+<span id="cb9-34"><a href="Ch04.html#cb9-34" tabindex="-1"></a>              <span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/HydroClim/&quot;</span>,nosaukumam),</span>
+<span id="cb9-35"><a href="Ch04.html#cb9-35" tabindex="-1"></a>              <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb9-36"><a href="Ch04.html#cb9-36" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 <p>The raster dataset contains values only where large enough rivers are detected
 in HydroSHEDS. However, for species distribution modelling in this project
 we need continuously covered raster surfaces. For necessary geoprocessing to create such surfaces, we downloaded also HydroBASINS <span class="citation">(<a href="#ref-HydroBasins">Lehner and Grill, 2013</a>)</span> <a href="https://www.hydrosheds.org/products/hydrobasins">dataset</a> to <code>Geodata/2024/HydroClim/</code>.
-These procedures were EGV-specific and ar described with other <a href="Ch06.html#Ch06">EGVs</a>.</p>
+These procedures were EGV-specific and are described with other <a href="Ch06.html#Ch06">EGVs</a>.</p>
 </div>
 <div id="Ch04.13" class="section level2 hasAnchor" number="4.13">
 <h2><span class="header-section-number">4.13</span> Sentinel-2 indices<a href="Ch04.html#Ch04.13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -424,59 +476,59 @@ located at <code>Geodata/2024/S2indices/RAW</code>. The following R commands com
 ensuring the coordinate systems and its naming, and pixels match the reference
 raster, while renaming files to <code>EO_[index]-[term: ST or LY][statistic]</code>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Ch04.html#cb9-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
-<span id="cb9-2"><a href="Ch04.html#cb9-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
-<span id="cb9-3"><a href="Ch04.html#cb9-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
-<span id="cb9-4"><a href="Ch04.html#cb9-4" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="Ch04.html#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="Ch04.html#cb9-6" tabindex="-1"></a><span class="co"># 10 m raster template ----</span></span>
-<span id="cb9-7"><a href="Ch04.html#cb9-7" tabindex="-1"></a>template10<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
-<span id="cb9-8"><a href="Ch04.html#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="Ch04.html#cb9-9" tabindex="-1"></a><span class="co"># Fails as exported from GEE ----</span></span>
-<span id="cb9-10"><a href="Ch04.html#cb9-10" tabindex="-1"></a>faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails=</span><span class="fu">list.files</span>(<span class="st">&quot;./Geodata/S2indices/RAW/&quot;</span>))</span>
-<span id="cb9-11"><a href="Ch04.html#cb9-11" tabindex="-1"></a>faili<span class="sc">$</span>celi_sakums<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/S2indices/RAW/&quot;</span>,faili<span class="sc">$</span>fails)</span>
-<span id="cb9-12"><a href="Ch04.html#cb9-12" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="Ch04.html#cb9-13" tabindex="-1"></a>faili<span class="ot">=</span>faili[<span class="sc">-</span><span class="dv">1</span>,]</span>
-<span id="cb9-14"><a href="Ch04.html#cb9-14" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="Ch04.html#cb9-15" tabindex="-1"></a><span class="co"># file names ----</span></span>
-<span id="cb9-16"><a href="Ch04.html#cb9-16" tabindex="-1"></a>faili<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
-<span id="cb9-17"><a href="Ch04.html#cb9-17" tabindex="-1"></a>  <span class="fu">separate</span>(fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;nosaukums&quot;</span>,<span class="st">&quot;vidus&quot;</span>,<span class="st">&quot;beigas&quot;</span>),<span class="at">sep=</span><span class="st">&quot;-&quot;</span>,<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-18"><a href="Ch04.html#cb9-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mosaic_name=</span><span class="fu">paste0</span>(<span class="st">&quot;EO_&quot;</span>,nosaukums,<span class="st">&quot;-&quot;</span>,beigas,<span class="fu">tolower</span>(vidus),<span class="st">&quot;.tif&quot;</span>),</span>
-<span id="cb9-19"><a href="Ch04.html#cb9-19" tabindex="-1"></a>         <span class="at">masaic_cels=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/S2indices/Mosaics/&quot;</span>,mosaic_name))</span>
-<span id="cb9-20"><a href="Ch04.html#cb9-20" tabindex="-1"></a></span>
-<span id="cb9-21"><a href="Ch04.html#cb9-21" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="Ch04.html#cb9-22" tabindex="-1"></a>unikalie<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(faili<span class="sc">$</span>mosaic_name))</span>
-<span id="cb9-23"><a href="Ch04.html#cb9-23" tabindex="-1"></a><span class="fu">min</span>(<span class="fu">table</span>(faili<span class="sc">$</span>mosaic_name))</span>
-<span id="cb9-24"><a href="Ch04.html#cb9-24" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">table</span>(faili<span class="sc">$</span>mosaic_name))</span>
-<span id="cb9-25"><a href="Ch04.html#cb9-25" tabindex="-1"></a></span>
-<span id="cb9-26"><a href="Ch04.html#cb9-26" tabindex="-1"></a><span class="co"># preparation of mosaics ----</span></span>
-<span id="cb9-27"><a href="Ch04.html#cb9-27" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(unikalie)){</span>
-<span id="cb9-28"><a href="Ch04.html#cb9-28" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
-<span id="cb9-29"><a href="Ch04.html#cb9-29" tabindex="-1"></a>  unikalais<span class="ot">=</span>faili <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mosaic_name<span class="sc">==</span>unikalie[i])</span>
-<span id="cb9-30"><a href="Ch04.html#cb9-30" tabindex="-1"></a>  beigu_cels<span class="ot">=</span><span class="fu">unique</span>(unikalais<span class="sc">$</span>masaic_cels)</span>
-<span id="cb9-31"><a href="Ch04.html#cb9-31" tabindex="-1"></a>  </span>
-<span id="cb9-32"><a href="Ch04.html#cb9-32" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb9-33"><a href="Ch04.html#cb9-33" tabindex="-1"></a>  </span>
-<span id="cb9-34"><a href="Ch04.html#cb9-34" tabindex="-1"></a>  <span class="co"># there are exactly 2 tiles per file</span></span>
-<span id="cb9-35"><a href="Ch04.html#cb9-35" tabindex="-1"></a>  viens<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">1</span>])</span>
-<span id="cb9-36"><a href="Ch04.html#cb9-36" tabindex="-1"></a>  divi<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">2</span>])</span>
-<span id="cb9-37"><a href="Ch04.html#cb9-37" tabindex="-1"></a>  </span>
-<span id="cb9-38"><a href="Ch04.html#cb9-38" tabindex="-1"></a>  viens2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(viens,template10)</span>
-<span id="cb9-39"><a href="Ch04.html#cb9-39" tabindex="-1"></a>  divi2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(divi,template10)</span>
-<span id="cb9-40"><a href="Ch04.html#cb9-40" tabindex="-1"></a>  </span>
-<span id="cb9-41"><a href="Ch04.html#cb9-41" tabindex="-1"></a>  mozaika<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(viens2,divi2)</span>
-<span id="cb9-42"><a href="Ch04.html#cb9-42" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,template10,</span>
-<span id="cb9-43"><a href="Ch04.html#cb9-43" tabindex="-1"></a>               <span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb9-44"><a href="Ch04.html#cb9-44" tabindex="-1"></a>               <span class="at">gdal=</span><span class="fu">c</span>(<span class="st">&quot;COMPRESS=LZW&quot;</span>,<span class="st">&quot;TILED=YES&quot;</span>,<span class="st">&quot;BIGTIFF=IF_SAFER&quot;</span>),</span>
-<span id="cb9-45"><a href="Ch04.html#cb9-45" tabindex="-1"></a>               <span class="at">datatype=</span><span class="st">&quot;FLT4S&quot;</span>,</span>
-<span id="cb9-46"><a href="Ch04.html#cb9-46" tabindex="-1"></a>               <span class="at">NAflag=</span><span class="cn">NA</span>)</span>
-<span id="cb9-47"><a href="Ch04.html#cb9-47" tabindex="-1"></a>  </span>
-<span id="cb9-48"><a href="Ch04.html#cb9-48" tabindex="-1"></a>  <span class="fu">plot</span>(maskets,<span class="at">main=</span>unikalie[i])</span>
-<span id="cb9-49"><a href="Ch04.html#cb9-49" tabindex="-1"></a>  <span class="fu">print</span>(beigu_cels)</span>
-<span id="cb9-50"><a href="Ch04.html#cb9-50" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
-<span id="cb9-51"><a href="Ch04.html#cb9-51" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
-<span id="cb9-52"><a href="Ch04.html#cb9-52" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
-<span id="cb9-53"><a href="Ch04.html#cb9-53" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="Ch04.html#cb10-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
+<span id="cb10-2"><a href="Ch04.html#cb10-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb10-3"><a href="Ch04.html#cb10-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb10-4"><a href="Ch04.html#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="Ch04.html#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="Ch04.html#cb10-6" tabindex="-1"></a><span class="co"># 10 m raster template ----</span></span>
+<span id="cb10-7"><a href="Ch04.html#cb10-7" tabindex="-1"></a>template10<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb10-8"><a href="Ch04.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="Ch04.html#cb10-9" tabindex="-1"></a><span class="co"># Fails as exported from GEE ----</span></span>
+<span id="cb10-10"><a href="Ch04.html#cb10-10" tabindex="-1"></a>faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails=</span><span class="fu">list.files</span>(<span class="st">&quot;./Geodata/S2indices/RAW/&quot;</span>))</span>
+<span id="cb10-11"><a href="Ch04.html#cb10-11" tabindex="-1"></a>faili<span class="sc">$</span>celi_sakums<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/S2indices/RAW/&quot;</span>,faili<span class="sc">$</span>fails)</span>
+<span id="cb10-12"><a href="Ch04.html#cb10-12" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="Ch04.html#cb10-13" tabindex="-1"></a>faili<span class="ot">=</span>faili[<span class="sc">-</span><span class="dv">1</span>,]</span>
+<span id="cb10-14"><a href="Ch04.html#cb10-14" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="Ch04.html#cb10-15" tabindex="-1"></a><span class="co"># file names ----</span></span>
+<span id="cb10-16"><a href="Ch04.html#cb10-16" tabindex="-1"></a>faili<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
+<span id="cb10-17"><a href="Ch04.html#cb10-17" tabindex="-1"></a>  <span class="fu">separate</span>(fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;nosaukums&quot;</span>,<span class="st">&quot;vidus&quot;</span>,<span class="st">&quot;beigas&quot;</span>),<span class="at">sep=</span><span class="st">&quot;-&quot;</span>,<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-18"><a href="Ch04.html#cb10-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mosaic_name=</span><span class="fu">paste0</span>(<span class="st">&quot;EO_&quot;</span>,nosaukums,<span class="st">&quot;-&quot;</span>,beigas,<span class="fu">tolower</span>(vidus),<span class="st">&quot;.tif&quot;</span>),</span>
+<span id="cb10-19"><a href="Ch04.html#cb10-19" tabindex="-1"></a>         <span class="at">masaic_cels=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/S2indices/Mosaics/&quot;</span>,mosaic_name))</span>
+<span id="cb10-20"><a href="Ch04.html#cb10-20" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="Ch04.html#cb10-21" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="Ch04.html#cb10-22" tabindex="-1"></a>unikalie<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(faili<span class="sc">$</span>mosaic_name))</span>
+<span id="cb10-23"><a href="Ch04.html#cb10-23" tabindex="-1"></a><span class="fu">min</span>(<span class="fu">table</span>(faili<span class="sc">$</span>mosaic_name))</span>
+<span id="cb10-24"><a href="Ch04.html#cb10-24" tabindex="-1"></a><span class="fu">max</span>(<span class="fu">table</span>(faili<span class="sc">$</span>mosaic_name))</span>
+<span id="cb10-25"><a href="Ch04.html#cb10-25" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="Ch04.html#cb10-26" tabindex="-1"></a><span class="co"># preparation of mosaics ----</span></span>
+<span id="cb10-27"><a href="Ch04.html#cb10-27" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(unikalie)){</span>
+<span id="cb10-28"><a href="Ch04.html#cb10-28" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb10-29"><a href="Ch04.html#cb10-29" tabindex="-1"></a>  unikalais<span class="ot">=</span>faili <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mosaic_name<span class="sc">==</span>unikalie[i])</span>
+<span id="cb10-30"><a href="Ch04.html#cb10-30" tabindex="-1"></a>  beigu_cels<span class="ot">=</span><span class="fu">unique</span>(unikalais<span class="sc">$</span>masaic_cels)</span>
+<span id="cb10-31"><a href="Ch04.html#cb10-31" tabindex="-1"></a>  </span>
+<span id="cb10-32"><a href="Ch04.html#cb10-32" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb10-33"><a href="Ch04.html#cb10-33" tabindex="-1"></a>  </span>
+<span id="cb10-34"><a href="Ch04.html#cb10-34" tabindex="-1"></a>  <span class="co"># there are exactly 2 tiles per file</span></span>
+<span id="cb10-35"><a href="Ch04.html#cb10-35" tabindex="-1"></a>  viens<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">1</span>])</span>
+<span id="cb10-36"><a href="Ch04.html#cb10-36" tabindex="-1"></a>  divi<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">2</span>])</span>
+<span id="cb10-37"><a href="Ch04.html#cb10-37" tabindex="-1"></a>  </span>
+<span id="cb10-38"><a href="Ch04.html#cb10-38" tabindex="-1"></a>  viens2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(viens,template10)</span>
+<span id="cb10-39"><a href="Ch04.html#cb10-39" tabindex="-1"></a>  divi2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(divi,template10)</span>
+<span id="cb10-40"><a href="Ch04.html#cb10-40" tabindex="-1"></a>  </span>
+<span id="cb10-41"><a href="Ch04.html#cb10-41" tabindex="-1"></a>  mozaika<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(viens2,divi2)</span>
+<span id="cb10-42"><a href="Ch04.html#cb10-42" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,template10,</span>
+<span id="cb10-43"><a href="Ch04.html#cb10-43" tabindex="-1"></a>               <span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb10-44"><a href="Ch04.html#cb10-44" tabindex="-1"></a>               <span class="at">gdal=</span><span class="fu">c</span>(<span class="st">&quot;COMPRESS=LZW&quot;</span>,<span class="st">&quot;TILED=YES&quot;</span>,<span class="st">&quot;BIGTIFF=IF_SAFER&quot;</span>),</span>
+<span id="cb10-45"><a href="Ch04.html#cb10-45" tabindex="-1"></a>               <span class="at">datatype=</span><span class="st">&quot;FLT4S&quot;</span>,</span>
+<span id="cb10-46"><a href="Ch04.html#cb10-46" tabindex="-1"></a>               <span class="at">NAflag=</span><span class="cn">NA</span>)</span>
+<span id="cb10-47"><a href="Ch04.html#cb10-47" tabindex="-1"></a>  </span>
+<span id="cb10-48"><a href="Ch04.html#cb10-48" tabindex="-1"></a>  <span class="fu">plot</span>(maskets,<span class="at">main=</span>unikalie[i])</span>
+<span id="cb10-49"><a href="Ch04.html#cb10-49" tabindex="-1"></a>  <span class="fu">print</span>(beigu_cels)</span>
+<span id="cb10-50"><a href="Ch04.html#cb10-50" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb10-51"><a href="Ch04.html#cb10-51" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
+<span id="cb10-52"><a href="Ch04.html#cb10-52" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb10-53"><a href="Ch04.html#cb10-53" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 </div>
 <div id="Ch04.14" class="section level2 hasAnchor" number="4.14">

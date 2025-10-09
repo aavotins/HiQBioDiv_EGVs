@@ -72,11 +72,65 @@ krā
 
 ## CHELSA v2.1 {#Ch04.11}
 
-krā [@CHELSA]
+Climatologies at high resolution for the Earth's land surface areas (CHELSA) is 
+30 arc second global downscaled climate data set [@CHELSA]. The temperature algorithm 
+is based on statistical downscaling of atmospheric temperatures. The precipitation 
+algorithm incorporates orographic predictors including wind fields, valley 
+exposition, and boundary layer height, with a subsequent bias correction. CHELSA 
+climatological data has a similar accuracy as other products for temperature, but 
+that its predictions of precipitation patterns are better [@CHELSA]. Data are freely 
+available for download from [homepage](https://chelsa-climate.org/) forwarding 
+to download server, providing download links for selected products. There is also technical 
+specification available, to decode layer names (https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf).
 
-https://chelsa-climate.org/
+The download links we used together with renaming scheme are [available](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv) 
+with this document. The following command lines perform download, crop to the 
+extent of Latvia (using 1 km vector grid) and saves file for further processing 
+described with other [EGVs](#Ch06).
 
-https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(curl)) {install.packages("curl"); require(curl)}
+
+# templates ----
+# 1km grid
+tikls1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+telpai=tikls1km %>% 
+  mutate(yes=1) %>% 
+  summarise(yes=max(yes)) %>% 
+  st_buffer(.,dist=10000)
+
+# download and crop ----
+
+links_names=read_csv("./Geodata/2024/CHELSA/CHELSAdownload_rename.csv")
+links_names=links_names %>% 
+  filter(todownload==1)
+
+for(i in seq_along(links_names$localname)){
+  print(i)
+  sakums=Sys.time()
+  links=links_names$weblocation[i]
+  saving1="./Geodata/2024/CHELSA/draza.tif"
+  saving2=paste0("./Geodata/2024/CHELSA/",links_names$localname[i])
+  
+  curl_download(url=links,destfile = saving1,quiet = FALSE)
+  fails=rast(saving1)
+  telpa=st_transform(telpai,crs=st_crs(fails))
+  nogriezts=crop(fails,telpa,
+                 filename=saving2,
+                 overwrite=TRUE)
+  unlink(saving1)
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+
+```
+
 
 
 
@@ -86,11 +140,11 @@ HydroClim is a near-global freshwater-specific environmental variable dataset,
 created for biodiversity analysis at 1 km resolution [@HydroClim]. Dataset 
 contains many different variables along the HydroSHEDS river 
 network [@HydroSheds], including upstream climate recalculated from 
-worldclim [@worldclim_hijmans]. We doownloaded (to `Geodata/2024/HydroClim/`) 
+worldclim [@worldclim_hijmans]. We downloaded (to `Geodata/2024/HydroClim/`) 
 averaged upstream climate from [Zenodo repository](https://zenodo.org/records/5089529) 
 (available also from [Dryad](https://datadryad.org/dataset/doi:10.5061/dryad.dv920)) 
 and cropped to the extent of Latvia and renamed files for further processing 
-with the code below.
+with the code below. Renaming scheme is [published with document](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv)
 
 ```{r,eval=FALSE}
 # libs ----
@@ -135,7 +189,7 @@ for(i in seq_along(slanu_nosaukumi$local_name)){
 The raster dataset contains values only where large enough rivers are detected 
 in HydroSHEDS. However, for species distribution modelling in this project 
 we need continuously covered raster surfaces. For necessary geoprocessing to create such surfaces, we downloaded also HydroBASINS [@HydroBasins] [dataset](https://www.hydrosheds.org/products/hydrobasins) to `Geodata/2024/HydroClim/`. 
-These procedures were EGV-specific and ar described with other [EGVs](#Ch06).
+These procedures were EGV-specific and are described with other [EGVs](#Ch06).
 
 ## Sentinel-2 indices {#Ch04.13}
 
