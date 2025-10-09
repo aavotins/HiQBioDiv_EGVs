@@ -82,13 +82,60 @@ https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.p
 
 ## HydroClim data {#Ch04.12}
 
-krā [@HidroClim]
+HydroClim is a near-global freshwater-specific environmental variable dataset, 
+created for biodiversity analysis at 1 km resolution [@HydroClim]. Dataset 
+contains many different variables along the HydroSHEDS river 
+network [@HydroSheds], including upstream climate recalculated from 
+worldclim [@worldclim_hijmans]. We doownloaded (to `Geodata/2024/HydroClim/`) 
+averaged upstream climate from [Zenodo repository](https://zenodo.org/records/5089529) 
+(available also from [Dryad](https://datadryad.org/dataset/doi:10.5061/dryad.dv920)) 
+and cropped to the extent of Latvia and renamed files for further processing 
+with the code below.
 
-https://zenodo.org/records/5089529
+```{r,eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
-https://datadryad.org/dataset/doi:10.5061/dryad.dv920
+# templates ----
 
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+tikls1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
 
+# reading HydroClim ----
+videjie=terra::rast("./Geodata/2024/HydroClim/hydroclim_average+sum.nc")
+
+# reading dictionary -----
+slanu_nosaukumi=read_csv("./Geodata/2024/HydroClim/HydroClim_renaming.csv")
+
+# cropping ---
+tikls1km_reproj=st_transform(tikls1km,crs=st_crs(videjie))
+telpai=tikls1km %>% 
+  mutate(yes=1) %>% 
+  summarise(yes=max(yes)) %>% 
+  st_buffer(.,dist=10000) %>% 
+  st_transform(.,crs=st_crs(videjie))
+videjie=terra::crop(videjie,telpai)
+
+# layer names ----
+names(videjie)=slanu_nosaukumi$local_name
+
+# saving files ----
+for(i in seq_along(slanu_nosaukumi$local_name)){
+  nosaukumam=slanu_nosaukumi$local_name[i]
+  writeRaster(videjie[[i]],
+              paste0("./Geodata/2024/HydroClim/",nosaukumam),
+              overwrite=TRUE)
+}
+
+```
+
+The raster dataset contains values only where large enough rivers are detected 
+in HydroSHEDS. However, for species distribution modelling in this project 
+we need continuously covered raster surfaces. For necessary geoprocessing to create such surfaces, we downloaded also HydroBASINS [@HydroBasins] [dataset](https://www.hydrosheds.org/products/hydrobasins) to `Geodata/2024/HydroClim/`. 
+These procedures were EGV-specific and ar described with other [EGVs](#Ch06).
 
 ## Sentinel-2 indices {#Ch04.13}
 
