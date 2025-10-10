@@ -886,6 +886,18 @@ function <code>download_raster_templates()</code> from {egvtools}.</p>
 <span id="cb7-7"><a href="Ch03.html#cb7-7" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
 <span id="cb7-8"><a href="Ch03.html#cb7-8" tabindex="-1"></a>)</span></code></pre></div>
 </details>
+<p>During EGV creation background covering to deal with missing values may be
+necessary. All the EGVs described in this document can be considered quantities
+of ratio scale, backgrounds with value <code>0</code> are created.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch03.html#cb8-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb8-2"><a href="Ch03.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="Ch03.html#cb8-3" tabindex="-1"></a><span class="fu">create_backgrounds</span>(<span class="at">in_dir=</span><span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
+<span id="cb8-4"><a href="Ch03.html#cb8-4" tabindex="-1"></a>                   <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
+<span id="cb8-5"><a href="Ch03.html#cb8-5" tabindex="-1"></a>                   <span class="at">background_value =</span> <span class="dv">0</span>,</span>
+<span id="cb8-6"><a href="Ch03.html#cb8-6" tabindex="-1"></a>                   <span class="at">out_prefix =</span> <span class="st">&quot;nulls_&quot;</span>,</span>
+<span id="cb8-7"><a href="Ch03.html#cb8-7" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</details>
 
 </div>
 </div>
