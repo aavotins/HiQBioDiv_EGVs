@@ -31,31 +31,342 @@ krā
 
 ## Soil data {#Ch04.07}
 
-krā
+Directory `Geodata/2024/Soils/` contains various soil related datasets that need 
+to be combined (soil texture) or can be used individually (soil chemistry). These 
+datasets and their location in the filetree are documented in following subchapters.
 
 ### Soil chemistry {#Ch04.07.01}
 
-krā
+Data on soil chemistry are obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
+Soil database [@esdac2]. Dataset decribing soil chemistry is derived from [LUCAS 
+2009/2012 topsoil data](https://esdac.jrc.ec.europa.eu/content/chemical-properties-european-scale-based-lucas-topsoil-data). There are several chemical properties available with 
+download, however not all of them are experts chosen for SDM, therefore not used 
+further in this work:
+
+- "P": used;
+
+- "N": used;
+
+- "K": used;
+
+- "CEC": not used;
+
+- "CN": used;
+
+- "pH_CaCl": not used;
+
+- "ph_H2o_ration_ph_CaCl": not used;
+
+- "pH_H2O": used;
+
+- "CaCO3": used.
+
+Files were downloaded to `Geodata/2024/Soils/ESDAC/chemistry/` and no preprocessing 
+was carried out.
 
 ### Soil texture Europe {#Ch04.07.02}
 
-krā
+Data on soil texture are obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
+Soil database [@esdac2]. Dataset is available as [European Soil Database v2 Raster Library 1kmx1km](https://esdac.jrc.ec.europa.eu/content/european-soil-database-v2-raster-library-1kmx1km). There 
+are several properties available with download, `TXT` was used to 
+create [soil texture product](#Ch05.02). Files were downloaded to `eodata/2024/Soils/ESDAC/texture/`. 
+
+During the preprocessing (code below) layer was 
+projected to match 10 m template with "near" as interpolation method, value `0` 
+substituted with `NA` and masked and cropped to template. Result was saved for further 
+processing.
+
+
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# Template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# ESDAC texture ----
+
+sdTEXT=rast("./Geodata/2024/Soils/ESDAC/texture/SoilDatabaseV2_raster/ESDB-Raster-Library-1k-GeoTIFF-20240507/TEXT/TEXT.tif")
+plot(sdTEXT)
+
+sdTEXT=project(sdTEXT,template10,method="near")
+plot(sdTEXT)
+
+sdTEXT=subst(sdTEXT,0,NA)
+plot(sdTEXT)
+
+sdTEXT2=mask(sdTEXT,template10,
+             filename="./RasterGrids_10m/2024/SoilTXT_ESDAC.tif",
+             overwrite=TRUE)
+plot(sdTEXT2)
+```
+
+
 
 ### Soil texture LIZ {#Ch04.07.03}
 
-krā
+Topsoil characteristics in Latvia were mapped in the mid-20th century, almost 
+exclusively in farmlands. With time, data were digitised and combined with some 
+other information creating artefacts. Therefore preprocessing was necessary. The 
+version we used was obtained form project "GOODWATER" C1D1_Deliverable_R2.
+
+Preprocessing included:
+
+- reclassification:
+
+    - we coded as `clay` (3) following labels from field `GrSast` - "M","M1","Mp","M2","sM1","sMp1";
+    
+    - we coded as `silt` (2) following labels from field `GrSast` - "sM", "sMp", "M2", "sM2", "sMp2", "sM3", "sMp3";
+
+    - we coded as `sand` (1) following labels from field `GrSast` - "mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D";
+    
+    - we coded as `organic` (4) following labels from field `GrSast` - "l", "vd", "vj", "n","T";
+    
+    - left others as unclassified.
+    
+- coordinate transformation to epsg:3059;
+
+- invsestigated resulting layer looking for anomalies by scrolling in interactive 
+GIS. Investigations led to exclusion of land parcels from 200 ha.
+
+- rasterization to 10 m template with highest class code prevailing.
+
+File is stored at `Geodata/2024/Soils/TopSoil_LV/`
+
+
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# Template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# Farmland soil texture ----
+
+augsnes=st_read("./Geodata/2024/Soils/TopSoil_LV/soil.gpkg",layer="soilunion")
+
+# calculate parcels area
+augsnes$platiba_ha=as.numeric(st_area(augsnes))/10000
+
+# only parcels with existing information on texture
+tuksas=augsnes %>% 
+  filter(GrSast=="")
+
+# classification
+clay=c("M","M1","Mp","M2","sM1","sMp1")
+silt=c("sM", "sMp", "M2", "sM2", "sMp2", "sM3", "sMp3")
+sand=c("mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D")
+peat=c("l", "vd", "vj", "n","T")
+augsnes=augsnes %>% 
+  mutate(grupas=case_when(GrSast %in% sand~"Sand",
+                          GrSast %in% silt~"Silt",
+                          GrSast %in% clay~"Clay",
+                          GrSast %in% peat~"organika",
+                          .default=NA)) %>% 
+  mutate(grupas_num=case_when(GrSast %in% sand~"1",
+                              GrSast %in% silt~"2",
+                              GrSast %in% clay~"3",
+                              GrSast %in% peat~"4",
+                              .default=NA))
+
+# crs
+augsnes_3059=st_transform(augsnes,crs=3059)
+
+# only existing texture classification
+augsnes_3059=augsnes_3059 %>% 
+  filter(!is.na(grupas_num))
+
+# parcels up to 200 ha
+augsnes_3059small=augsnes_3059 %>% 
+  filter(!is.na(grupas_num)) %>% 
+  filter(platiba_ha<200)
+
+# rasterization
+virsaugsnem2=rasterize(augsnes_3059small,template10,field="grupas_num",fun="max",
+                       filename="./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif",
+                       overwrite=TRUE)
+plot(virsaugsnem2)
+```
+
 
 ### Soil texture Quaternary {#Ch04.07.04}
 
-krā
+Data on Quaternary Geology are digitised and stored by University of Latvia 
+Geology group.
+
+Preprocessing included:
+
+- reclassification:
+
+    - we coded as `sand` (1) following values from field `Litologija` - "smilts", "smilts_aleiritiska", 
+    "smilts_dunjaina", "smilts_grants", "smilts_grants_oli", "smilts_grants_oli_aleirits", "smilts_kudraina", 
+    "smilts_videjgraudaina, malsmilts", "smilts_videjgraudaina"~"Sand";
+    
+    - we coded as `silt` (2) following values from field `Litologija` - "aleirits", "aleirits_malains",
+    "morena", "smilts_aleirits_mals", "smilts_aleirits_sapropelis", "smilts_malaina_dazadgraudaina, malsmilts";
+    
+    - we coded as `clay` (3) following values from field `Litologija` - "mals", "mals_aleiritisks";
+    
+    - we coded as `organic` (4) following values from field `Litologija` - "dunjas", "kudra";
+
+- coordinate transformation to epsg:3059;
+
+- rasterization to 10 m template with highest class code prevailing.
+
+File is stored at `Geodata/2024/Soils/QuaternaryGeology_LV/`
+
+
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# Template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# Quarternary geology ----
+
+kvartars=sfarrow::st_read_parquet("./Geodata/2024/Soils/QuaternaryGeology_LV/Kvartargeologija.parquet")
+
+# reclassification
+kvartars=kvartars %>% 
+  mutate(grupas = case_when(Litologija=="aleirits"~"Silt",
+                            Litologija=="aleirits_malains"~"Silt",
+                            Litologija=="dunjas"~"organika",
+                            Litologija=="kudra"~"organika",
+                            Litologija=="mals"~"Clay",
+                            Litologija=="mals_aleiritisks"~"Clay",
+                            Litologija=="morena"~"Silt",
+                            Litologija=="smilts"~"Sand",
+                            Litologija=="smilts_aleiritiska"~"Sand",
+                            Litologija=="smilts_aleirits_mals"~"Silt",
+                            Litologija=="smilts_aleirits_sapropelis"~"Silt",
+                            Litologija=="smilts_dunjaina"~"Sand",
+                            Litologija=="smilts_grants"~"Sand",
+                            Litologija=="smilts_grants_oli"~"Sand",
+                            Litologija=="smilts_grants_oli_aleirits"~"Sand",
+                            Litologija=="smilts_kudraina"~"Sand",
+                            Litologija=="smilts_malaina_dazadgraudaina, malsmilts"~"Silt",
+                            Litologija=="smilts_videjgraudaina, malsmilts"~"Sand",
+                            Litologija=="smilts_videjgraudaina"~"Sand",
+                            .default=NA))
+# numeric codes
+kvartars=kvartars %>% 
+  mutate(grupas_num=case_when(grupas == "Sand" ~"1",
+                              grupas == "Silt" ~"2",
+                              grupas == "Clay" ~"3",
+                              grupas == "organika" ~"4",
+                              .default=NA))
+
+# crs transformation
+kvartars_3059=st_transform(kvartars,crs=3059)
+
+# nonmissing classes
+kvartars_3059=kvartars_3059 %>% 
+  filter(!is.na(grupas_num))
+
+# rasterization
+apaksaugsnem=rasterize(kvartars_3059,template10,field="grupas_num",fun="max",
+                       filename="./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif",
+                       overwrite=TRUE)
+plot(apaksaugsnem)
+```
+
+
 
 ### Organic soils SILAVA {#Ch04.07.05}
 
-krā
+The distribution of organic soils was modelled by EU LIFE Programme project 
+"Demonstration of climate change mitigation potential of nutrients rich organic 
+soils in Baltic States and Finland" at the scientific institue SILAVA. Results are 
+available from their web service: https://silava.forestradar.com/geoserver/silava
+
+
+Downloaded file was stored at `Geodata/2024/Soils/OrganicSoils_SILAVA/`.
+
+Even tough the layer covers whole of Latvia, it has visible inconsistencies, 
+particularly stripes. These were drawn manually (as vector polygons) and masked 
+out as a part of preprocessing. 
+
+For further soil texture analysis we saved a GeoTIFF file with only presences.
+
+
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# Template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# Organic Soils SILAVA ----
+
+organika_silava=rast("./Geodata/2024/Soils/OrganicSoils_SILAVA/Silava_OrgSoils.tif")
+plot(organika_silava)
+# visible stripes
+
+# only 40+ cm deep
+organika_silava=ifel(organika_silava==2,1,NA)
+organika_silavaLV=project(organika_silava,template10)
+
+# stripes drawn manually, rasterization
+silavas_telpai=st_read("./IevadesDati/Augsnes_COMB/KudraugsnuPrognozes_Silava/stripam.gpkg",
+                       layer="stripam")
+silavas_telpai=st_transform(silavas_telpai,crs=3059)
+silavas_telpai$yes=1
+SilavasTelpa_10=rasterize(silavas_telpai,template10,field="yes")
+
+# presence-only layer without stripes
+silava_BezStripam1=ifel(organika_silavaLV==1&SilavasTelpa_10==1,1,NA)
+silava_BezStripam=mask(silava_BezStripam1,template10)
+plot(silava_BezStripam)
+writeRaster(silava_BezStripam,
+            "./RasterGrids_10m/2024/SoilTXT_OrganicSilava.tif",
+            overwrite=TRUE)
+```
+
 
 ### Organic soils LU {#Ch04.07.06}
 
-krā
+The distribution of organic soils in farmlands was modelled by the University of 
+Latvia project "Improvement of sustainable soil resource management in agriculture".
+
+From all the results we used layer `YN_prognozes_smooth.tif` stored 
+at `Geodata/2024/Soils/OrganicSoils_LU/`.
+
+Preprocessing consisted of projecting the layer to match 10 m template. Both presences 
+and absences were saved for further processing.
+
+
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# Template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# Organic Soils LU ----
+
+
+kudra_norvegi=rast("./Geodata/2024/Soils/OrganicSoils_LU/YN_prognozes_smooth.tif")
+kudra_norvLV=project(kudra_norvegi,template10)
+plot(kudra_norvLV)
+
+writeRaster(kudra_norvLV,
+            "./RasterGrids_10m/2024/SoilTXT_OrganicLU.tif",
+            overwrite=TRUE)
+```
+
+
+
 
 ## Dynamic World data {#Ch04.08}
 
@@ -342,8 +653,8 @@ identical (Pearson's correlation coefficients between the DEMs developed
 by LU ĢZZF, LVMI Silava, and LĢIA are greater than 0.999999).
 
 The arithmetic mean between the DEMs developed by LU ĢZZF and LVMI Silava, 
-prepared in the LU project "Improvement of sustainable soil resource management 
-in agriculture," was used as the base DEM. The resolution of this DEM is 1 m, 
+prepared in the University of Latvia project "Improvement of sustainable soil resource management 
+in agriculture", was used as the base DEM. The resolution of this DEM is 1 m, 
 which is not necessary for species distribution modeling input data, therefore 
 the layer is designed to correspond to the reference 10 m raster.
 

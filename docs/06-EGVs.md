@@ -3,292 +3,292 @@
 Creation procedures of every EGV.
 
 
-## Climate_CHELASAv2.1-bio1_cell	{#ch06.001}	Climate_CHELASAv2.1-bio1_cell.tif	egv_1	Mean annual daily mean air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio1_cell	{#ch06.001}	Climate_CHELSAv2.1-bio1_cell.tif	egv_1	Mean annual daily mean air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio10_cell	{#ch06.002}	Climate_CHELASAv2.1-bio10_cell.tif	egv_2	Mean daily mean air temperatures (°C) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio10_cell	{#ch06.002}	Climate_CHELSAv2.1-bio10_cell.tif	egv_2	Mean daily mean air temperatures (°C) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio11_cell	{#ch06.003}	Climate_CHELASAv2.1-bio11_cell.tif	egv_3	Mean daily mean air temperatures (°C) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio11_cell	{#ch06.003}	Climate_CHELSAv2.1-bio11_cell.tif	egv_3	Mean daily mean air temperatures (°C) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio12_cell	{#ch06.004}	Climate_CHELASAv2.1-bio12_cell.tif	egv_4	Annual precipitation amount (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio12_cell	{#ch06.004}	Climate_CHELSAv2.1-bio12_cell.tif	egv_4	Annual precipitation amount (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio13_cell	{#ch06.005}	Climate_CHELASAv2.1-bio13_cell.tif	egv_5	Precipitation amount (kg m⁻² month⁻¹) of the wettest month (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio13_cell	{#ch06.005}	Climate_CHELSAv2.1-bio13_cell.tif	egv_5	Precipitation amount (kg m⁻² month⁻¹) of the wettest month (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio14_cell	{#ch06.006}	Climate_CHELASAv2.1-bio14_cell.tif	egv_6	Precipitation amount (kg m⁻² month⁻¹) of the driest month (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio14_cell	{#ch06.006}	Climate_CHELSAv2.1-bio14_cell.tif	egv_6	Precipitation amount (kg m⁻² month⁻¹) of the driest month (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio15_cell	{#ch06.007}	Climate_CHELASAv2.1-bio15_cell.tif	egv_7	Precipitation seasonality (kg m⁻²) (CHELSA v2.1) within the analysis cell (1 ha)	Nokrišņu sezonalitāte (kg m⁻²) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio15_cell	{#ch06.007}	Climate_CHELSAv2.1-bio15_cell.tif	egv_7	Precipitation seasonality (kg m⁻²) (CHELSA v2.1) within the analysis cell (1 ha)	Nokrišņu sezonalitāte (kg m⁻²) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio16_cell	{#ch06.008}	Climate_CHELASAv2.1-bio16_cell.tif	egv_8	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio16_cell	{#ch06.008}	Climate_CHELSAv2.1-bio16_cell.tif	egv_8	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio17_cell	{#ch06.009}	Climate_CHELASAv2.1-bio17_cell.tif	egv_9	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio17_cell	{#ch06.009}	Climate_CHELSAv2.1-bio17_cell.tif	egv_9	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio18_cell	{#ch06.010}	Climate_CHELASAv2.1-bio18_cell.tif	egv_10	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio18_cell	{#ch06.010}	Climate_CHELSAv2.1-bio18_cell.tif	egv_10	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio19_cell	{#ch06.011}	Climate_CHELASAv2.1-bio19_cell.tif	egv_11	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio19_cell	{#ch06.011}	Climate_CHELSAv2.1-bio19_cell.tif	egv_11	Mean monthly precipitation amount (kg m⁻² month⁻¹) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio2_cell	{#ch06.012}	Climate_CHELASAv2.1-bio2_cell.tif	egv_12	Mean diurnal air temperature range (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio2_cell	{#ch06.012}	Climate_CHELSAv2.1-bio2_cell.tif	egv_12	Mean diurnal air temperature range (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio3_cell	{#ch06.013}	Climate_CHELASAv2.1-bio3_cell.tif	egv_13	Isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Izotermalitāte (attiecība starp diennakts un gada temperatūras svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio3_cell	{#ch06.013}	Climate_CHELSAv2.1-bio3_cell.tif	egv_13	Isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Izotermalitāte (attiecība starp diennakts un gada temperatūras svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio4_cell	{#ch06.014}	Climate_CHELASAv2.1-bio4_cell.tif	egv_14	Temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)	Temperatūru sezonalitāte (mēneša vidējo temperatūru standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio4_cell	{#ch06.014}	Climate_CHELSAv2.1-bio4_cell.tif	egv_14	Temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)	Temperatūru sezonalitāte (mēneša vidējo temperatūru standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio5_cell	{#ch06.015}	Climate_CHELASAv2.1-bio5_cell.tif	egv_15	Mean daily maximum air temperature (°C) of the warmest month (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio5_cell	{#ch06.015}	Climate_CHELSAv2.1-bio5_cell.tif	egv_15	Mean daily maximum air temperature (°C) of the warmest month (CHELSA v2.1) within the analysis cell (1 ha)	Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio6_cell	{#ch06.016}	Climate_CHELASAv2.1-bio6_cell.tif	egv_16	Mean daily minimum air temperature (°C) of the coldest month (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio6_cell	{#ch06.016}	Climate_CHELSAv2.1-bio6_cell.tif	egv_16	Mean daily minimum air temperature (°C) of the coldest month (CHELSA v2.1) within the analysis cell (1 ha)	Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio7_cell	{#ch06.017}	Climate_CHELASAv2.1-bio7_cell.tif	egv_17	Annual range of air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio7_cell	{#ch06.017}	Climate_CHELSAv2.1-bio7_cell.tif	egv_17	Annual range of air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)	Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio8_cell	{#ch06.018}	Climate_CHELASAv2.1-bio8_cell.tif	egv_18	Mean daily mean air temperatures (°C) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio8_cell	{#ch06.018}	Climate_CHELSAv2.1-bio8_cell.tif	egv_18	Mean daily mean air temperatures (°C) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)	Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-bio9_cell	{#ch06.019}	Climate_CHELASAv2.1-bio9_cell.tif	egv_19	Mean daily mean air temperatures (°C) of the driest quartet (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-bio9_cell	{#ch06.019}	Climate_CHELSAv2.1-bio9_cell.tif	egv_19	Mean daily mean air temperatures (°C) of the driest quartet (CHELSA v2.1) within the analysis cell (1 ha)	Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-clt-max_cell	{#ch06.020}	Climate_CHELASAv2.1-clt-max_cell.tif	egv_20	Maximum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-clt-max_cell	{#ch06.020}	Climate_CHELSAv2.1-clt-max_cell.tif	egv_20	Maximum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-clt-mean_cell	{#ch06.021}	Climate_CHELASAv2.1-clt-mean_cell.tif	egv_21	Mean monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-clt-mean_cell	{#ch06.021}	Climate_CHELSAv2.1-clt-mean_cell.tif	egv_21	Mean monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-clt-min_cell	{#ch06.022}	Climate_CHELASAv2.1-clt-min_cell.tif	egv_22	Minimum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-clt-min_cell	{#ch06.022}	Climate_CHELSAv2.1-clt-min_cell.tif	egv_22	Minimum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-clt-range_cell	{#ch06.023}	Climate_CHELASAv2.1-clt-range_cell.tif	egv_23	Annual range of monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada mākoņu seguma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-clt-range_cell	{#ch06.023}	Climate_CHELSAv2.1-clt-range_cell.tif	egv_23	Annual range of monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada mākoņu seguma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-cmi-max_cell	{#ch06.024}	Climate_CHELASAv2.1-cmi-max_cell.tif	egv_24	Maximum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-cmi-max_cell	{#ch06.024}	Climate_CHELSAv2.1-cmi-max_cell.tif	egv_24	Maximum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-cmi-mean_cell	{#ch06.025}	Climate_CHELASAv2.1-cmi-mean_cell.tif	egv_25	Mean monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-cmi-mean_cell	{#ch06.025}	Climate_CHELSAv2.1-cmi-mean_cell.tif	egv_25	Mean monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-cmi-min_cell	{#ch06.026}	Climate_CHELASAv2.1-cmi-min_cell.tif	egv_26	Minimum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-cmi-min_cell	{#ch06.026}	Climate_CHELSAv2.1-cmi-min_cell.tif	egv_26	Minimum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-cmi-range_cell	{#ch06.027}	Climate_CHELASAv2.1-cmi-range_cell.tif	egv_27	Annual range of monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-cmi-range_cell	{#ch06.027}	Climate_CHELSAv2.1-cmi-range_cell.tif	egv_27	Annual range of monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-fcf_cell	{#ch06.028}	Climate_CHELASAv2.1-fcf_cell.tif	egv_28	Frost change frequency (number of events in which tmin or tmax go above or below 0°C) (CHELSA v2.1) within the analysis cell (1 ha)	Sasalšanas gadījumu biežums (zemākā vai augstākā temperatūra šķērso 0°C) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-fcf_cell	{#ch06.028}	Climate_CHELSAv2.1-fcf_cell.tif	egv_28	Frost change frequency (number of events in which tmin or tmax go above or below 0°C) (CHELSA v2.1) within the analysis cell (1 ha)	Sasalšanas gadījumu biežums (zemākā vai augstākā temperatūra šķērso 0°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-fgd_cell	{#ch06.029}	Climate_CHELASAv2.1-fgd_cell.tif	egv_29	First day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-fgd_cell	{#ch06.029}	Climate_CHELSAv2.1-fgd_cell.tif	egv_29	First day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdd0_cell	{#ch06.030}	Climate_CHELASAv2.1-gdd0_cell.tif	egv_30	Growing degree days heat sum above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdd0_cell	{#ch06.030}	Climate_CHELSAv2.1-gdd0_cell.tif	egv_30	Growing degree days heat sum above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdd10_cell	{#ch06.031}	Climate_CHELASAv2.1-gdd10_cell.tif	egv_31	Growing degree days heat sum above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdd10_cell	{#ch06.031}	Climate_CHELSAv2.1-gdd10_cell.tif	egv_31	Growing degree days heat sum above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdd5_cell	{#ch06.032}	Climate_CHELASAv2.1-gdd5_cell.tif	egv_32	Growing degree days heat sum above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdd5_cell	{#ch06.032}	Climate_CHELSAv2.1-gdd5_cell.tif	egv_32	Growing degree days heat sum above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gddlgd0_cell	{#ch06.033}	Climate_CHELASAv2.1-gddlgd0_cell.tif	egv_33	Last growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gddlgd0_cell	{#ch06.033}	Climate_CHELSAv2.1-gddlgd0_cell.tif	egv_33	Last growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gddlgd10_cell	{#ch06.034}	Climate_CHELASAv2.1-gddlgd10_cell.tif	egv_34	Last growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gddlgd10_cell	{#ch06.034}	Climate_CHELSAv2.1-gddlgd10_cell.tif	egv_34	Last growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gddlgd5_cell	{#ch06.035}	Climate_CHELASAv2.1-gddlgd5_cell.tif	egv_35	Last growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gddlgd5_cell	{#ch06.035}	Climate_CHELSAv2.1-gddlgd5_cell.tif	egv_35	Last growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdgfgd0_cell	{#ch06.036}	Climate_CHELASAv2.1-gdgfgd0_cell.tif	egv_36	First growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdgfgd0_cell	{#ch06.036}	Climate_CHELSAv2.1-gdgfgd0_cell.tif	egv_36	First growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdgfgd10_cell	{#ch06.037}	Climate_CHELASAv2.1-gdgfgd10_cell.tif	egv_37	First growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdgfgd10_cell	{#ch06.037}	Climate_CHELSAv2.1-gdgfgd10_cell.tif	egv_37	First growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gdgfgd5_cell	{#ch06.038}	Climate_CHELASAv2.1-gdgfgd5_cell.tif	egv_38	First growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gdgfgd5_cell	{#ch06.038}	Climate_CHELSAv2.1-gdgfgd5_cell.tif	egv_38	First growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gsl_cell	{#ch06.039}	Climate_CHELASAv2.1-gsl_cell.tif	egv_39	Length of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas garums (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gsl_cell	{#ch06.039}	Climate_CHELSAv2.1-gsl_cell.tif	egv_39	Length of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonas garums (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gsp_cell	{#ch06.040}	Climate_CHELASAv2.1-gsp_cell.tif	egv_40	Accumulated precipitation amount (kg m⁻² year⁻¹) on growing season days (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonā (TREELIM) uzkrātais nokrišņu daudzums (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gsp_cell	{#ch06.040}	Climate_CHELSAv2.1-gsp_cell.tif	egv_40	Accumulated precipitation amount (kg m⁻² year⁻¹) on growing season days (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Veģetācijas sezonā (TREELIM) uzkrātais nokrišņu daudzums (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-gst_cell	{#ch06.041}	Climate_CHELASAv2.1-gst_cell.tif	egv_41	Mean temperature of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-gst_cell	{#ch06.041}	Climate_CHELSAv2.1-gst_cell.tif	egv_41	Mean temperature of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-hurs-max_cell	{#ch06.042}	Climate_CHELASAv2.1-hurs-max_cell.tif	egv_42	Maximum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-hurs-max_cell	{#ch06.042}	Climate_CHELSAv2.1-hurs-max_cell.tif	egv_42	Maximum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-hurs-mean_cell	{#ch06.043}	Climate_CHELASAv2.1-hurs-mean_cell.tif	egv_43	Mean monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-hurs-mean_cell	{#ch06.043}	Climate_CHELSAv2.1-hurs-mean_cell.tif	egv_43	Mean monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-hurs-min_cell	{#ch06.044}	Climate_CHELASAv2.1-hurs-min_cell.tif	egv_44	Minimum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-hurs-min_cell	{#ch06.044}	Climate_CHELSAv2.1-hurs-min_cell.tif	egv_44	Minimum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-hurs-range_cell	{#ch06.045}	Climate_CHELASAv2.1-hurs-range_cell.tif	egv_45	Annual range of monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-hurs-range_cell	{#ch06.045}	Climate_CHELSAv2.1-hurs-range_cell.tif	egv_45	Annual range of monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)	Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-lgd_cell	{#ch06.046}	Climate_CHELASAv2.1-lgd_cell.tif	egv_46	Last day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-lgd_cell	{#ch06.046}	Climate_CHELSAv2.1-lgd_cell.tif	egv_46	Last day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-ngd0_cell	{#ch06.047}	Climate_CHELASAv2.1-ngd0_cell.tif	egv_47	Number of days at which 2m air temperature > 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-ngd0_cell	{#ch06.047}	Climate_CHELSAv2.1-ngd0_cell.tif	egv_47	Number of days at which 2m air temperature > 0°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-ngd10_cell	{#ch06.048}	Climate_CHELASAv2.1-ngd10_cell.tif	egv_48	Number of days at which 2m air temperature > 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-ngd10_cell	{#ch06.048}	Climate_CHELSAv2.1-ngd10_cell.tif	egv_48	Number of days at which 2m air temperature > 10°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-ngd5_cell	{#ch06.049}	Climate_CHELASAv2.1-ngd5_cell.tif	egv_49	Number of days at which 2m air temperature > 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-ngd5_cell	{#ch06.049}	Climate_CHELSAv2.1-ngd5_cell.tif	egv_49	Number of days at which 2m air temperature > 5°C (CHELSA v2.1) within the analysis cell (1 ha)	Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-npp_cell	{#ch06.050}	Climate_CHELASAv2.1-npp_cell.tif	egv_50	Net primary productivity (g C m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Neto primārā produkcija (g C m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-npp_cell	{#ch06.050}	Climate_CHELSAv2.1-npp_cell.tif	egv_50	Net primary productivity (g C m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Neto primārā produkcija (g C m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-pet-penman-max_cell	{#ch06.051}	Climate_CHELASAv2.1-pet-penman-max_cell.tif	egv_51	Maximum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-pet-penman-max_cell	{#ch06.051}	Climate_CHELSAv2.1-pet-penman-max_cell.tif	egv_51	Maximum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-pet-penman-mean_cell	{#ch06.052}	Climate_CHELASAv2.1-pet-penman-mean_cell.tif	egv_52	Mean monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-pet-penman-mean_cell	{#ch06.052}	Climate_CHELSAv2.1-pet-penman-mean_cell.tif	egv_52	Mean monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-pet-penman-min_cell	{#ch06.053}	Climate_CHELASAv2.1-pet-penman-min_cell.tif	egv_53	Minimum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-pet-penman-min_cell	{#ch06.053}	Climate_CHELSAv2.1-pet-penman-min_cell.tif	egv_53	Minimum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-pet-penman-range_cell	{#ch06.054}	Climate_CHELASAv2.1-pet-penman-range_cell.tif	egv_54	Annual range of monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-pet-penman-range_cell	{#ch06.054}	Climate_CHELSAv2.1-pet-penman-range_cell.tif	egv_54	Annual range of monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-rsds-max_cell	{#ch06.055}	Climate_CHELASAv2.1-rsds-max_cell.tif	egv_55	Maximum monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-rsds-max_cell	{#ch06.055}	Climate_CHELSAv2.1-rsds-max_cell.tif	egv_55	Maximum monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
-## Climate_CHELASAv2.1-rsds-mean_cell	{#ch06.056}	Climate_CHELASAv2.1-rsds-mean_cell.tif	egv_56	Mean monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-rsds-mean_cell	{#ch06.056}	Climate_CHELSAv2.1-rsds-mean_cell.tif	egv_56	Mean monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-rsds-min_cell	{#ch06.057}	Climate_CHELASAv2.1-rsds-min_cell.tif	egv_57	Minimum monthly surface shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-rsds-min_cell	{#ch06.057}	Climate_CHELSAv2.1-rsds-min_cell.tif	egv_57	Minimum monthly surface shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-rsds-range_cell	{#ch06.058}	Climate_CHELASAv2.1-rsds-range_cell.tif	egv_58	Annual range of monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-rsds-range_cell	{#ch06.058}	Climate_CHELSAv2.1-rsds-range_cell.tif	egv_58	Annual range of monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-scd_cell	{#ch06.059}	Climate_CHELASAv2.1-scd_cell.tif	egv_59	Number of days with snow cover (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Dienu ar sniega segu skaits. (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-scd_cell	{#ch06.059}	Climate_CHELSAv2.1-scd_cell.tif	egv_59	Number of days with snow cover (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)	Dienu ar sniega segu skaits. (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-sfcWind-max_cell	{#ch06.060}	Climate_CHELASAv2.1-sfcWind-max_cell.tif	egv_60	Maximum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-sfcWind-max_cell	{#ch06.060}	Climate_CHELSAv2.1-sfcWind-max_cell.tif	egv_60	Maximum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-sfcWind-mean_cell	{#ch06.061}	Climate_CHELASAv2.1-sfcWind-mean_cell.tif	egv_61	Mean monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-sfcWind-mean_cell	{#ch06.061}	Climate_CHELSAv2.1-sfcWind-mean_cell.tif	egv_61	Mean monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-sfcWind-min_cell	{#ch06.062}	Climate_CHELASAv2.1-sfcWind-min_cell.tif	egv_62	Minimum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-sfcWind-min_cell	{#ch06.062}	Climate_CHELSAv2.1-sfcWind-min_cell.tif	egv_62	Minimum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-sfcWind-range_cell	{#ch06.063}	Climate_CHELASAv2.1-sfcWind-range_cell.tif	egv_63	Annual range of monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-sfcWind-range_cell	{#ch06.063}	Climate_CHELSAv2.1-sfcWind-range_cell.tif	egv_63	Annual range of monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-swb_cell	{#ch06.064}	Climate_CHELASAv2.1-swb_cell.tif	egv_64	Site water balance (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens bilance (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-swb_cell	{#ch06.064}	Climate_CHELSAv2.1-swb_cell.tif	egv_64	Site water balance (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens bilance (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-swe_cell	{#ch06.065}	Climate_CHELASAv2.1-swe_cell.tif	egv_65	Snow water equivalent (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens ekvivalents sniegā (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-swe_cell	{#ch06.065}	Climate_CHELSAv2.1-swe_cell.tif	egv_65	Snow water equivalent (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)	Ūdens ekvivalents sniegā (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-vpd-max_cell	{#ch06.066}	Climate_CHELASAv2.1-vpd-max_cell.tif	egv_66	Maximum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-vpd-max_cell	{#ch06.066}	Climate_CHELSAv2.1-vpd-max_cell.tif	egv_66	Maximum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-vpd-mean_cell	{#ch06.067}	Climate_CHELASAv2.1-vpd-mean_cell.tif	egv_67	Mean monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-vpd-mean_cell	{#ch06.067}	Climate_CHELSAv2.1-vpd-mean_cell.tif	egv_67	Mean monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-vpd-min_cell	{#ch06.068}	Climate_CHELASAv2.1-vpd-min_cell.tif	egv_68	Minimum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-vpd-min_cell	{#ch06.068}	Climate_CHELSAv2.1-vpd-min_cell.tif	egv_68	Minimum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Minimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
 
-## Climate_CHELASAv2.1-vpd-range_cell	{#ch06.069}	Climate_CHELASAv2.1-vpd-range_cell.tif	egv_69	Annual range of monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
+## Climate_CHELSAv2.1-vpd-range_cell	{#ch06.069}	Climate_CHELSAv2.1-vpd-range_cell.tif	egv_69	Annual range of monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)	Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 
 
@@ -1486,1418 +1486,3640 @@ Creation procedures of every EGV.
 
 
 
-## ForestsAge_ClearcutsLowStands_r1250	{#ch06.272}	ForestsAge_ClearcutsLowStands_r1250.tif	egv_272	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 1.25 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 1,25 km ainavā
+## ForestsAge_ClearcutsLowStands_r1250	{#ch06.272}
 
+**filename:** `ForestsAge_ClearcutsLowStands_r1250.tif`	
 
+**layername:** `egv_272`	
 
+**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 1.25 km landscape	
 
+**Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsAge_ClearcutsLowStands_r3000	{#ch06.273}	ForestsAge_ClearcutsLowStands_r3000.tif	egv_273	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 3 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_ClearcutsLowStands_r3000	{#ch06.273}
 
+**filename:** `ForestsAge_ClearcutsLowStands_r3000.tif`	
 
+**layername:** `egv_273`	
 
-## ForestsAge_ClearcutsLowStands_r10000	{#ch06.274}	ForestsAge_ClearcutsLowStands_r10000.tif	egv_274	Fractional cover of Clear-Cutts and Stands lower than 5 m within the 10 km landscape	Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 3 km landscape	
 
+**Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsAge_Middle_cell	{#ch06.275}	ForestsAge_Middle_cell.tif	egv_275	Fractional cover of Middle-Aged Forests within the analysis cell (1 ha)	Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsAge_ClearcutsLowStands_r10000	{#ch06.274}
 
+**filename:** `ForestsAge_ClearcutsLowStands_r10000.tif`	
 
+**layername:** `egv_274`	
 
+**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 10 km landscape	
 
+**Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsAge_Middle_r500	{#ch06.276}	ForestsAge_Middle_r500.tif	egv_276	Fractional cover of Middle-Aged Forests within the 0.5 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_Middle_cell	{#ch06.275}
 
+**filename:** `ForestsAge_Middle_cell.tif`	
 
+**layername:** `egv_275`	
 
-## ForestsAge_Middle_r1250	{#ch06.277}	ForestsAge_Middle_r1250.tif	egv_277	Fractional cover of Middle-Aged Forests within the 1.25 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Middle-Aged Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsAge_Middle_r3000	{#ch06.278}	ForestsAge_Middle_r3000.tif	egv_278	Fractional cover of Middle-Aged Forests within the 3 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
+## ForestsAge_Middle_r500	{#ch06.276}
 
+**filename:** `ForestsAge_Middle_r500.tif`	
 
+**layername:** `egv_276`	
 
+**English name:** Fractional cover of Middle-Aged Forests within the 0.5 km landscape	
 
+**Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsAge_Middle_r10000	{#ch06.279}	ForestsAge_Middle_r10000.tif	egv_279	Fractional cover of Middle-Aged Forests within the 10 km landscape	Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_Middle_r1250	{#ch06.277}
 
+**filename:** `ForestsAge_Middle_r1250.tif`	
 
+**layername:** `egv_277`	
 
-## ForestsAge_Old_cell	{#ch06.280}	ForestsAge_Old_cell.tif	egv_280	Fractional cover of Old (over rotation age) Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Middle-Aged Forests within the 1.25 km landscape	
 
+**Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsAge_Old_r500	{#ch06.281}	ForestsAge_Old_r500.tif	egv_281	Fractional cover of Old (over rotation age) Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 0,5 km ainavā
+## ForestsAge_Middle_r3000	{#ch06.278}
 
+**filename:** `ForestsAge_Middle_r3000.tif`	
 
+**layername:** `egv_278`	
 
+**English name:** Fractional cover of Middle-Aged Forests within the 3 km landscape	
 
+**Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsAge_Old_r1250	{#ch06.282}	ForestsAge_Old_r1250.tif	egv_282	Fractional cover of Old (over rotation age) Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_Middle_r10000	{#ch06.279}
 
+**filename:** `ForestsAge_Middle_r10000.tif`	
 
+**layername:** `egv_279`	
 
-## ForestsAge_Old_r3000	{#ch06.283}	ForestsAge_Old_r3000.tif	egv_283	Fractional cover of Old (over rotation age) Forests within the 3 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Middle-Aged Forests within the 10 km landscape	
 
+**Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsAge_Old_r10000	{#ch06.284}	ForestsAge_Old_r10000.tif	egv_284	Fractional cover of Old (over rotation age) Forests within the 10 km landscape	Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
+## ForestsAge_Old_cell	{#ch06.280}
 
+**filename:** `ForestsAge_Old_cell.tif`	
 
+**layername:** `egv_280`	
 
+**English name:** Fractional cover of Old (over rotation age) Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsAge_YoungTallStandsShrubs_cell	{#ch06.285}	ForestsAge_YoungTallStandsShrubs_cell.tif	egv_285	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the analysis cell (1 ha)	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_Old_r500	{#ch06.281}
 
+**filename:** `ForestsAge_Old_r500.tif`	
 
+**layername:** `egv_281`	
 
-## ForestsAge_YoungTallStandsShrubs_r500	{#ch06.286}	ForestsAge_YoungTallStandsShrubs_r500.tif	egv_286	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 0.5 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Forests within the 0.5 km landscape		
 
+**Latvian name:** Vecu (kopš cirtmeta)mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsAge_YoungTallStandsShrubs_r1250	{#ch06.287}	ForestsAge_YoungTallStandsShrubs_r1250.tif	egv_287	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 1.25 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25 km ainavā
+## ForestsAge_Old_r1250	{#ch06.282}
 
+**filename:** `ForestsAge_Old_r1250.tif`	
 
+**layername:** `egv_282`	
 
+**English name:** Fractional cover of Old (over rotation age) Forests within the 1.25 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsAge_YoungTallStandsShrubs_r3000	{#ch06.288}	ForestsAge_YoungTallStandsShrubs_r3000.tif	egv_288	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 3 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_Old_r3000	{#ch06.283}
 
+**filename:** `ForestsAge_Old_r3000.tif`	
 
+**layername:** `egv_283`	
 
-## ForestsAge_YoungTallStandsShrubs_r10000	{#ch06.289}	ForestsAge_YoungTallStandsShrubs_r10000.tif	egv_289	Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 10 km landscape	Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Forests within the 3 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_AgeProp-average_cell	{#ch06.290}	ForestsQuant_AgeProp-average_cell.tif	egv_290	Average stand age relative to rotation age within the analysis cell (1 ha)	Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes šūnā (1 ha)
+## ForestsAge_Old_r10000	{#ch06.284}
 
+**filename:** `ForestsAge_Old_r10000.tif`	
 
+**layername:** `egv_284`	
 
+**English name:** Fractional cover of Old (over rotation age) Forests within the 10 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsQuant_DominantDiameter-max_cell	{#ch06.291}	ForestsQuant_DominantDiameter-max_cell.tif	egv_291	Dominant tree trunk diameter, maximum within the analysis cell (1 ha)	Koku stumbra diametrs, valdaudzes maksimālais analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_YoungTallStandsShrubs_cell	{#ch06.285}
 
+**filename:** `ForestsAge_YoungTallStandsShrubs_cell.tif`	
 
+**layername:** `egv_285`	
 
-## ForestsQuant_LargestDiameter-max_cell	{#ch06.292}	ForestsQuant_LargestDiameter-max_cell.tif	egv_292	Largest tree trunk diameter within the analysis cell (1 ha)	Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
+**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the analysis cell (1 ha)	
 
+**Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_TimeSinceDisturbance-average_cell	{#ch06.293}	ForestsQuant_TimeSinceDisturbance-average_cell.tif	egv_293	Time since last disturbance affecting tree growing within the analysis cell (1 ha)	Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes šūnā (1 ha)
+## ForestsAge_YoungTallStandsShrubs_r500	{#ch06.286}
 
+**filename:** `ForestsAge_YoungTallStandsShrubs_r500.tif`	
 
+**layername:** `egv_286`	
 
+**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 0.5 km landscape	
 
+**Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsQuant_VolumeAspen-sum_cell	{#ch06.294}	ForestsQuant_VolumeAspen-sum_cell.tif	egv_294	Timber volume of Aspens, Poplars within the analysis cell (1 ha)	Apšu, papeļu krāja analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_YoungTallStandsShrubs_r1250	{#ch06.287}
 
+**filename:** `ForestsAge_YoungTallStandsShrubs_r1250.tif`	
 
+**layername:** `egv_287`	
 
-## ForestsQuant_VolumeBirch-sum_cell	{#ch06.295}	ForestsQuant_VolumeBirch-sum_cell.tif	egv_295	Timber volume of Birches within the analysis cell (1 ha)	Bērzu krāja analīzes šūnā (1 ha)
+**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 1.25 km landscape	
 
+**Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_VolumeBlackAlder-sum_cell	{#ch06.296}	ForestsQuant_VolumeBlackAlder-sum_cell.tif	egv_296	Timber volume of Black Alder within the analysis cell (1 ha)	Melnalkšņu krāja analīzes šūnā (1 ha)
+## ForestsAge_YoungTallStandsShrubs_r3000	{#ch06.288}
 
+**filename:** `ForestsAge_YoungTallStandsShrubs_r3000.tif`	
 
+**layername:** `egv_288`	
 
+**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 3 km landscape	
 
+**Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsQuant_VolumeBorealDeciduousOther-sum_cell	{#ch06.297}	ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif	egv_297	Timber volume of Other Boreal Deciduous trees within the analysis cell (1 ha)	Citu šaurlapju krāja analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsAge_YoungTallStandsShrubs_r10000	{#ch06.289}
 
+**filename:** `ForestsAge_YoungTallStandsShrubs_r10000.tif`	
 
+**layername:** `egv_289`	
 
-## ForestsQuant_VolumeBorealDeciduousTotal-sum_cell	{#ch06.298}	ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif	egv_298	Timber volume of Boreal Deciduous trees within the analysis cell (1 ha)	Šaurlapju krāja analīzes šūnā (1 ha)
+**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall) within the 10 km landscape	
 
+**Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_VolumeConiferous-sum_cell	{#ch06.299}	ForestsQuant_VolumeConiferous-sum_cell.tif	egv_299	Timber volume of Coniferous trees within the analysis cell (1 ha)	Skujkoku krāja analīzes šūnā (1 ha)
+## ForestsQuant_AgeProp-average_cell	{#ch06.290}
 
+**filename:** `ForestsQuant_AgeProp-average_cell.tif`	
 
+**layername:** `egv_290`	
 
+**English name:** Average stand age relative to rotation age within the analysis cell (1 ha)	
 
+**Latvian name:** Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsQuant_VolumeOak-sum_cell	{#ch06.300}	ForestsQuant_VolumeOak-sum_cell.tif	egv_300	Timber volume of Oaks within the analysis cell (1 ha)	Ozolu krāja analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_DominantDiameter-max_cell	{#ch06.291}
 
+**filename:** `ForestsQuant_DominantDiameter-max_cell.tif`	
 
+**layername:** `egv_291`	
 
-## ForestsQuant_VolumeOakMaple-sum_cell	{#ch06.301}	ForestsQuant_VolumeOakMaple-sum_cell.tif	egv_301	Timber volume of Oaks, Maples within the analysis cell (1 ha)	Ozolu, kļavu krāja analīzes šūnā (1 ha)
+**English name:** Dominant tree trunk diameter, maximum within the analysis cell (1 ha)	
 
+**Latvian name:** Koku stumbra diametrs, valdaudzes maksimālais analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_VolumePine-sum_cell	{#ch06.302}	ForestsQuant_VolumePine-sum_cell.tif	egv_302	Timber volume of Pines within the analysis cell (1 ha)	Priežu krāja analīzes šūnā (1 ha)
+## ForestsQuant_LargestDiameter-max_cell	{#ch06.292}
 
+**filename:** `ForestsQuant_LargestDiameter-max_cell.tif`	
 
+**layername:** `egv_292`	
 
+**English name:** Largest tree trunk diameter within the analysis cell (1 ha)	
 
+**Latvian name:** Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsQuant_VolumeSpruce-sum_cell	{#ch06.303}	ForestsQuant_VolumeSpruce-sum_cell.tif	egv_303	Timber volume of Spruces within the analysis cell (1 ha)	Egļu krāja analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_TimeSinceDisturbance-average_cell	{#ch06.293}
 
+**filename:** `ForestsQuant_TimeSinceDisturbance-average_cell.tif`	
 
+**layername:** `egv_293`	
 
-## ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell	{#ch06.304}	ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif	egv_304	Timber volume of Temperate Deciduous trees within the analysis cell (1 ha)	Platlapju krāja analīzes šūnā (1 ha)
+**English name:** Time since last disturbance affecting tree growing within the analysis cell (1 ha)	
 
+**Latvian name:** Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsQuant_VolumeTemperateWithoutOak-sum_cell	{#ch06.305}	ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif	egv_305	Timber volume of Temperate Deciduous trees (without oaks) within the analysis cell (1 ha)	Paltlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
+## ForestsQuant_VolumeAspen-sum_cell	{#ch06.294}
 
+**filename:** `ForestsQuant_VolumeAspen-sum_cell.tif`	
 
+**layername:** `egv_294`	
 
+**English name:** Timber volume of Aspens, Poplars within the analysis cell (1 ha)	
 
+**Latvian name:** Apšu, papeļu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell	{#ch06.306}	ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif	egv_306	Timber volume of Temperate Deciduous trees (without oaks, maples) within the analysis cell (1 ha)	Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeBirch-sum_cell	{#ch06.295}
 
+**filename:** `ForestsQuant_VolumeBirch-sum_cell.tif`	
 
+**layername:** `egv_295`	
 
-## ForestsQuant_VolumeTotal-sum_cell	{#ch06.307}	ForestsQuant_VolumeTotal-sum_cell.tif	egv_307	Timber volume within the analysis cell (1 ha)	Kopējā krāja analīzes šūnā (1 ha)
+**English name:** Timber volume of Birches within the analysis cell (1 ha)	
 
+**Latvian name:** Bērzu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_EutrophicDrained_cell	{#ch06.308}	ForestsSoil_EutrophicDrained_cell.tif	egv_308	Fractional cover of Drained Eutrophic Forests within the analysis cell (1 ha)	Susinātu eitrofu mežu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsQuant_VolumeBlackAlder-sum_cell	{#ch06.296}
 
+**filename:** `ForestsQuant_VolumeBlackAlder-sum_cell.tif`	
 
+**layername:** `egv_296`	
 
+**English name:** Timber volume of Black Alder within the analysis cell (1 ha)	
 
+**Latvian name:** Melnalkšņu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_EutrophicDrained_r500	{#ch06.309}	ForestsSoil_EutrophicDrained_r500.tif	egv_309	Fractional cover of Drained Eutrophic Forests within the 0.5 km landscape	Susinātu eitrofu mežu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeBorealDeciduousOther-sum_cell	{#ch06.297}
 
+**filename:** `ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif`	
 
+**layername:** `egv_297`	
 
-## ForestsSoil_EutrophicDrained_r1250	{#ch06.310}	ForestsSoil_EutrophicDrained_r1250.tif	egv_310	Fractional cover of Drained Eutrophic Forests within the 1.25 km landscape	Susinātu eitrofu mežu platības īpatsvars 1,25 km ainavā
+**English name:** Timber volume of Other Boreal Deciduous trees within the analysis cell (1 ha)	
 
+**Latvian name:** Citu šaurlapju krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_EutrophicDrained_r3000	{#ch06.311}	ForestsSoil_EutrophicDrained_r3000.tif	egv_311	Fractional cover of Drained Eutrophic Forests within the 3 km landscape	Susinātu eitrofu mežu platības īpatsvars 3 km ainavā
+## ForestsQuant_VolumeBorealDeciduousTotal-sum_cell	{#ch06.298}
 
+**filename:** `ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif`	
 
+**layername:** `egv_298`	
 
+**English name:** Timber volume of Boreal Deciduous trees within the analysis cell (1 ha)	
 
+**Latvian name:** Šaurlapju krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_EutrophicDrained_r10000	{#ch06.312}	ForestsSoil_EutrophicDrained_r10000.tif	egv_312	Fractional cover of Drained Eutrophic Forests within the 10 km landscape	Susinātu eitrofu mežu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeConiferous-sum_cell	{#ch06.299}
 
+**filename:** `ForestsQuant_VolumeConiferous-sum_cell.tif`	
 
+**layername:** `egv_299`	
 
-## ForestsSoil_EutrophicMineral_cell	{#ch06.313}	ForestsSoil_EutrophicMineral_cell.tif	egv_313	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Timber volume of Coniferous trees within the analysis cell (1 ha)	
 
+**Latvian name:** Skujkoku krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_EutrophicMineral_r500	{#ch06.314}	ForestsSoil_EutrophicMineral_r500.tif	egv_314	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
+## ForestsQuant_VolumeOak-sum_cell	{#ch06.300}
 
+**filename:** `ForestsQuant_VolumeOak-sum_cell.tif`	
 
+**layername:** `egv_300`	
 
+**English name:** Timber volume of Oaks within the analysis cell (1 ha)	
 
+**Latvian name:** Ozolu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_EutrophicMineral_r1250	{#ch06.315}	ForestsSoil_EutrophicMineral_r1250.tif	egv_315	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeOakMaple-sum_cell	{#ch06.301}
 
+**filename:** `ForestsQuant_VolumeOakMaple-sum_cell.tif`	
 
+**layername:** `egv_301`	
 
-## ForestsSoil_EutrophicMineral_r3000	{#ch06.316}	ForestsSoil_EutrophicMineral_r3000.tif	egv_316	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 3 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
+**English name:** Timber volume of Oaks, Maples within the analysis cell (1 ha)	
 
+**Latvian name:** Ozolu, kļavu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_EutrophicMineral_r10000	{#ch06.317}	ForestsSoil_EutrophicMineral_r10000.tif	egv_317	Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 10 km landscape	Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
+## ForestsQuant_VolumePine-sum_cell	{#ch06.302}
 
+**filename:** `ForestsQuant_VolumePine-sum_cell.tif`	
 
+**layername:** `egv_302`	
 
+**English name:** Timber volume of Pines within the analysis cell (1 ha)	
 
+**Latvian name:** Priežu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_EutrophicOrganic_cell	{#ch06.318}	ForestsSoil_EutrophicOrganic_cell.tif	egv_318	Fractional cover of Eutrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeSpruce-sum_cell	{#ch06.303}
 
+**filename:** `ForestsQuant_VolumeSpruce-sum_cell.tif`	
 
+**layername:** `egv_303`	
 
-## ForestsSoil_EutrophicOrganic_r500	{#ch06.319}	ForestsSoil_EutrophicOrganic_r500.tif	egv_319	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 0.5 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
+**English name:** Timber volume of Spruces within the analysis cell (1 ha)	
 
+**Latvian name:** Egļu krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_EutrophicOrganic_r1250	{#ch06.320}	ForestsSoil_EutrophicOrganic_r1250.tif	egv_320	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 1.25 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
+## ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell	{#ch06.304}
 
+**filename:** `ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif`	
 
+**layername:** `egv_304`	
 
+**English name:** Timber volume of Temperate Deciduous trees within the analysis cell (1 ha)	
 
+**Latvian name:** Platlapju krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_EutrophicOrganic_r3000	{#ch06.321}	ForestsSoil_EutrophicOrganic_r3000.tif	egv_321	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 3 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeTemperateWithoutOak-sum_cell	{#ch06.305}
 
+**filename:** `ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif`	
 
+**layername:** `egv_305`	
 
-## ForestsSoil_EutrophicOrganic_r10000	{#ch06.322}	ForestsSoil_EutrophicOrganic_r10000.tif	egv_322	Fractional cover of Eutrophic Forests on undrained Organic Soils within the 10 km landscape	Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
+**English name:** Timber volume of Temperate Deciduous trees (without oaks) within the analysis cell (1 ha)	
 
+**Latvian name:** Paltlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_MesotrophicMineral_cell	{#ch06.323}	ForestsSoil_MesotrophicMineral_cell.tif	egv_323	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Mezotrofu mežu minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
+## ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell	{#ch06.306}
 
+**filename:** `ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif`	
 
+**layername:** `egv_306`	
 
+**English name:** Timber volume of Temperate Deciduous trees (without oaks, maples) within the analysis cell (1 ha)	
 
+**Latvian name:** Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_MesotrophicMineral_r500	{#ch06.324}	ForestsSoil_MesotrophicMineral_r500.tif	egv_324	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsQuant_VolumeTotal-sum_cell	{#ch06.307}
 
+**filename:** `ForestsQuant_VolumeTotal-sum_cell.tif`	
 
+**layername:** `egv_307`	
 
-## ForestsSoil_MesotrophicMineral_r1250	{#ch06.325}	ForestsSoil_MesotrophicMineral_r1250.tif	egv_325	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
+**English name:** Timber volume within the analysis cell (1 ha)	
 
+**Latvian name:** Kopējā krāja analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_MesotrophicMineral_r3000	{#ch06.326}	ForestsSoil_MesotrophicMineral_r3000.tif	egv_326	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 3 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
+## ForestsSoil_EutrophicDrained_cell	{#ch06.308}
 
+**filename:** `ForestsSoil_EutrophicDrained_cell.tif`	
 
+**layername:** `egv_308`	
 
+**English name:** Fractional cover of Drained Eutrophic Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Susinātu eitrofu mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_MesotrophicMineral_r10000	{#ch06.327}	ForestsSoil_MesotrophicMineral_r10000.tif	egv_327	Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 10 km landscape	Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicDrained_r500	{#ch06.309}
 
+**filename:** `ForestsSoil_EutrophicDrained_r500.tif`	
 
+**layername:** `egv_309`	
 
-## ForestsSoil_OligotrophicDrained_cell	{#ch06.328}	ForestsSoil_OligotrophicDrained_cell.tif	egv_328	Fractional cover of Drained Oligotrophic Forests within the analysis cell (1 ha)	Susinātu oligotrofu mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Drained Eutrophic Forests within the 0.5 km landscape	
 
+**Latvian name:** Susinātu eitrofu mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_OligotrophicDrained_r500	{#ch06.329}	ForestsSoil_OligotrophicDrained_r500.tif	egv_329	Fractional cover of Drained Oligotrophic Forests within the 0.5 km landscape	Susinātu oligotrofu mežu platības īpatsvars 0,5 km ainavā
+## ForestsSoil_EutrophicDrained_r1250	{#ch06.310}
 
+**filename:** `ForestsSoil_EutrophicDrained_r1250.tif`	
 
+**layername:** `egv_310`	
 
+**English name:** Fractional cover of Drained Eutrophic Forests within the 1.25 km landscape	
 
+**Latvian name:** Susinātu eitrofu mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsSoil_OligotrophicDrained_r1250	{#ch06.330}	ForestsSoil_OligotrophicDrained_r1250.tif	egv_330	Fractional cover of Drained Oligotrophic Forests within the 1.25 km landscape	Susinātu oligotrofu mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicDrained_r3000	{#ch06.311}
 
+**filename:** `ForestsSoil_EutrophicDrained_r3000.tif`	
 
+**layername:** `egv_311`	
 
-## ForestsSoil_OligotrophicDrained_r3000	{#ch06.331}	ForestsSoil_OligotrophicDrained_r3000.tif	egv_331	Fractional cover of Drained Oligotrophic Forests within the 3 km landscape	Susinātu oligotrofu mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Drained Eutrophic Forests within the 3 km landscape	
 
+**Latvian name:** Susinātu eitrofu mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_OligotrophicDrained_r10000	{#ch06.332}	ForestsSoil_OligotrophicDrained_r10000.tif	egv_332	Fractional cover of Drained Oligotrophic Forests within the 10 km landscape	Susinātu oligotrofu mežu platības īpatsvars 10 km ainavā
+## ForestsSoil_EutrophicDrained_r10000	{#ch06.312}
 
+**filename:** `ForestsSoil_EutrophicDrained_r10000.tif`	
 
+**layername:** `egv_312`	
 
+**English name:** Fractional cover of Drained Eutrophic Forests within the 10 km landscape	
 
+**Latvian name:** Susinātu eitrofu mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsSoil_OligotrophicMineral_cell	{#ch06.333}	ForestsSoil_OligotrophicMineral_cell.tif	egv_333	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicMineral_cell	{#ch06.313}
 
+**filename:** `ForestsSoil_EutrophicMineral_cell.tif`	
 
+**layername:** `egv_313`	
 
-## ForestsSoil_OligotrophicMineral_r500	{#ch06.334}	ForestsSoil_OligotrophicMineral_r500.tif	egv_334	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Eutrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	
 
+**Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_OligotrophicMineral_r1250	{#ch06.335}	ForestsSoil_OligotrophicMineral_r1250.tif	egv_335	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
+## ForestsSoil_EutrophicMineral_r500	{#ch06.314}
 
+**filename:** `ForestsSoil_EutrophicMineral_r500.tif`	
 
+**layername:** `egv_314`	
 
+**English name:** Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 0.5 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsSoil_OligotrophicMineral_r3000	{#ch06.336}	ForestsSoil_OligotrophicMineral_r3000.tif	egv_336	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 3 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicMineral_r1250	{#ch06.315}
 
+**filename:** `ForestsSoil_EutrophicMineral_r1250.tif`	
 
+**layername:** `egv_315`	
 
-## ForestsSoil_OligotrophicMineral_r10000	{#ch06.337}	ForestsSoil_OligotrophicMineral_r10000.tif	egv_337	Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 10 km landscape	Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 1.25 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_OligotrophicOrganic_cell	{#ch06.338}	ForestsSoil_OligotrophicOrganic_cell.tif	egv_338	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
+## ForestsSoil_EutrophicMineral_r3000	{#ch06.316}
 
+**filename:** `ForestsSoil_EutrophicMineral_r3000.tif`	
 
+**layername:** `egv_316`	
 
+**English name:** Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 3 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsSoil_OligotrophicOrganic_r500	{#ch06.339}	ForestsSoil_OligotrophicOrganic_r500.tif	egv_339	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 0.5 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicMineral_r10000	{#ch06.317}
 
+**filename:** `ForestsSoil_EutrophicMineral_r10000.tif`	
 
+**layername:** `egv_317`	
 
-## ForestsSoil_OligotrophicOrganic_r1250	{#ch06.340}	ForestsSoil_OligotrophicOrganic_r1250.tif	egv_340	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 1.25 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Eutrophic Forests on undrained Mineral Soils within the 10 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsSoil_OligotrophicOrganic_r3000	{#ch06.341}	ForestsSoil_OligotrophicOrganic_r3000.tif	egv_341	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 3 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
+## ForestsSoil_EutrophicOrganic_cell	{#ch06.318}
 
+**filename:** `ForestsSoil_EutrophicOrganic_cell.tif`	
 
+**layername:** `egv_318`	
 
+**English name:** Fractional cover of Eutrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	
 
+**Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsSoil_OligotrophicOrganic_r10000	{#ch06.342}	ForestsSoil_OligotrophicOrganic_r10000.tif	egv_342	Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 10 km landscape	Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicOrganic_r500	{#ch06.319}
 
+**filename:** `ForestsSoil_EutrophicOrganic_r500.tif`	
 
+**layername:** `egv_319`	
 
-## ForestsTreesAge_BorealDeciduousOld_cell	{#ch06.343}	ForestsTreesAge_BorealDeciduousOld_cell.tif	egv_343	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Eutrophic Forests on undrained Organic Soils within the 0.5 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_BorealDeciduousOld_r500	{#ch06.344}	ForestsTreesAge_BorealDeciduousOld_r500.tif	egv_344	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
+## ForestsSoil_EutrophicOrganic_r1250	{#ch06.320}
 
+**filename:** `ForestsSoil_EutrophicOrganic_r1250.tif`	
 
+**layername:** `egv_320`	
 
+**English name:** Fractional cover of Eutrophic Forests on undrained Organic Soils within the 1.25 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_BorealDeciduousOld_r1250	{#ch06.345}	ForestsTreesAge_BorealDeciduousOld_r1250.tif	egv_345	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_EutrophicOrganic_r3000	{#ch06.321}
 
+**filename:** `ForestsSoil_EutrophicOrganic_r3000.tif`	
 
+**layername:** `egv_321`	
 
-## ForestsTreesAge_BorealDeciduousOld_r3000	{#ch06.346}	ForestsTreesAge_BorealDeciduousOld_r3000.tif	egv_346	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 3 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Eutrophic Forests on undrained Organic Soils within the 3 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_BorealDeciduousOld_r10000	{#ch06.347}	ForestsTreesAge_BorealDeciduousOld_r10000.tif	egv_347	Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 10 km landscape	Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
+## ForestsSoil_EutrophicOrganic_r10000	{#ch06.322}
 
+**filename:** `ForestsSoil_EutrophicOrganic_r10000.tif`	
 
+**layername:** `egv_322`	
 
+**English name:** Fractional cover of Eutrophic Forests on undrained Organic Soils within the 10 km landscape	
 
+**Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_BorealDeciduousYoung_cell	{#ch06.348}	ForestsTreesAge_BorealDeciduousYoung_cell.tif	egv_348	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_MesotrophicMineral_cell	{#ch06.323}
 
+**filename:** `ForestsSoil_MesotrophicMineral_cell.tif`	
 
+**layername:** `egv_323`	
 
-## ForestsTreesAge_BorealDeciduousYoung_r500	{#ch06.349}	ForestsTreesAge_BorealDeciduousYoung_r500.tif	egv_349	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	
 
+**Latvian name:** Mezotrofu mežu minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_BorealDeciduousYoung_r1250	{#ch06.350}	ForestsTreesAge_BorealDeciduousYoung_r1250.tif	egv_350	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
+## ForestsSoil_MesotrophicMineral_r500	{#ch06.324}
 
+**filename:** `ForestsSoil_MesotrophicMineral_r500.tif`	
 
+**layername:** `egv_324`	
 
+**English name:** Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	
 
+**Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_BorealDeciduousYoung_r3000	{#ch06.351}	ForestsTreesAge_BorealDeciduousYoung_r3000.tif	egv_351	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_MesotrophicMineral_r1250	{#ch06.325}
 
+**filename:** `ForestsSoil_MesotrophicMineral_r1250.tif`	
 
+**layername:** `egv_325`	
 
-## ForestsTreesAge_BorealDeciduousYoung_r10000	{#ch06.352}	ForestsTreesAge_BorealDeciduousYoung_r10000.tif	egv_352	Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	
 
+**Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_ConiferousOld_cell	{#ch06.353}	ForestsTreesAge_ConiferousOld_cell.tif	egv_353	Fractional cover of Old (over rotation age) Coniferous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsSoil_MesotrophicMineral_r3000	{#ch06.326}
 
+**filename:** `ForestsSoil_MesotrophicMineral_r3000.tif`	
 
+**layername:** `egv_326`	
 
+**English name:** Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 3 km landscape	
 
+**Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_ConiferousOld_r500	{#ch06.354}	ForestsTreesAge_ConiferousOld_r500.tif	egv_354	Fractional cover of Old (over rotation age) Coniferous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_MesotrophicMineral_r10000	{#ch06.327}
 
+**filename:** `ForestsSoil_MesotrophicMineral_r10000.tif`	
 
+**layername:** `egv_327`	
 
-## ForestsTreesAge_ConiferousOld_r1250	{#ch06.355}	ForestsTreesAge_ConiferousOld_r1250.tif	egv_355	Fractional cover of Old (over rotation age) Coniferous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Mesotrophic Forests on undrained Mineral Soils within the 10 km landscape	
 
+**Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_ConiferousOld_r3000	{#ch06.356}	ForestsTreesAge_ConiferousOld_r3000.tif	egv_356	Fractional cover of Old (over rotation age) Coniferous Forests within the 3 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
+## ForestsSoil_OligotrophicDrained_cell	{#ch06.328}
 
+**filename:** `ForestsSoil_OligotrophicDrained_cell.tif`	
 
+**layername:** `egv_328`	
 
+**English name:** Fractional cover of Drained Oligotrophic Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Susinātu oligotrofu mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsTreesAge_ConiferousOld_r10000	{#ch06.357}	ForestsTreesAge_ConiferousOld_r10000.tif	egv_357	Fractional cover of Old (over rotation age) Coniferous Forests within the 10 km landscape	Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicDrained_r500	{#ch06.329}
 
+**filename:** `ForestsSoil_OligotrophicDrained_r500.tif`	
 
+**layername:** `egv_329`	
 
-## ForestsTreesAge_ConiferousYoung_cell	{#ch06.358}	ForestsTreesAge_ConiferousYoung_cell.tif	egv_358	Fractional cover of Young (pre-rotation age) Coniferous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Drained Oligotrophic Forests within the 0.5 km landscape	
 
+**Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_ConiferousYoung_r500	{#ch06.359}	ForestsTreesAge_ConiferousYoung_r500.tif	egv_359	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
+## ForestsSoil_OligotrophicDrained_r1250	{#ch06.330}
 
+**filename:** `ForestsSoil_OligotrophicDrained_r1250.tif`	
 
+**layername:** `egv_330`	
 
+**English name:** Fractional cover of Drained Oligotrophic Forests within the 1.25 km landscape	
 
+**Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_ConiferousYoung_r1250	{#ch06.360}	ForestsTreesAge_ConiferousYoung_r1250.tif	egv_360	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicDrained_r3000	{#ch06.331}
 
+**filename:** `ForestsSoil_OligotrophicDrained_r3000.tif`	
 
+**layername:** `egv_331`	
 
-## ForestsTreesAge_ConiferousYoung_r3000	{#ch06.361}	ForestsTreesAge_ConiferousYoung_r3000.tif	egv_361	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Drained Oligotrophic Forests within the 3 km landscape	
 
+**Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_ConiferousYoung_r10000	{#ch06.362}	ForestsTreesAge_ConiferousYoung_r10000.tif	egv_362	Fractional cover of Young (pre-rotation age) Coniferous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
+## ForestsSoil_OligotrophicDrained_r10000	{#ch06.332}
 
+**filename:** `ForestsSoil_OligotrophicDrained_r10000.tif`	
 
+**layername:** `egv_332`	
 
+**English name:** Fractional cover of Drained Oligotrophic Forests within the 10 km landscape	
 
+**Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_MixedOld_cell	{#ch06.363}	ForestsTreesAge_MixedOld_cell.tif	egv_363	Fractional cover of Old (over rotation age) Mixed Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicMineral_cell	{#ch06.333}
 
+**filename:** `ForestsSoil_OligotrophicMineral_cell.tif`	
 
+**layername:** `egv_333`	
 
-## ForestsTreesAge_MixedOld_r500	{#ch06.364}	ForestsTreesAge_MixedOld_r500.tif	egv_364	Fractional cover of Old (over rotation age) Mixed Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the analysis cell (1 ha)	
 
+**Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_MixedOld_r1250	{#ch06.365}	ForestsTreesAge_MixedOld_r1250.tif	egv_365	Fractional cover of Old (over rotation age) Mixed Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
+## ForestsSoil_OligotrophicMineral_r500	{#ch06.334}
 
+**filename:** `ForestsSoil_OligotrophicMineral_r500.tif`	
 
+**layername:** `egv_334`	
 
+**English name:** Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 0.5 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_MixedOld_r3000	{#ch06.366}	ForestsTreesAge_MixedOld_r3000.tif	egv_366	Fractional cover of Old (over rotation age) Mixed Forests within the 3 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicMineral_r1250	{#ch06.335}
 
+**filename:** `ForestsSoil_OligotrophicMineral_r1250.tif`	
 
+**layername:** `egv_335`	
 
-## ForestsTreesAge_MixedOld_r10000	{#ch06.367}	ForestsTreesAge_MixedOld_r10000.tif	egv_367	Fractional cover of Old (over rotation age) Mixed Forests within the 10 km landscape	Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 1.25 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_MixedYoung_cell	{#ch06.368}	ForestsTreesAge_MixedYoung_cell.tif	egv_368	Fractional cover of Young (pre-rotation age) Mixed Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsSoil_OligotrophicMineral_r3000	{#ch06.336}
 
+**filename:** `ForestsSoil_OligotrophicMineral_r3000.tif`	
 
+**layername:** `egv_336`	
 
+**English name:** Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 3 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_MixedYoung_r500	{#ch06.369}	ForestsTreesAge_MixedYoung_r500.tif	egv_369	Fractional cover of Young (pre-rotation age) Mixed Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicMineral_r10000	{#ch06.337}
 
+**filename:** `ForestsSoil_OligotrophicMineral_r10000.tif`	
 
+**layername:** `egv_337`	
 
-## ForestsTreesAge_MixedYoung_r1250	{#ch06.370}	ForestsTreesAge_MixedYoung_r1250.tif	egv_370	Fractional cover of Young (pre-rotation age) Mixed Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Oligotrophic Forests on undrained Mineral Soils within the 10 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_MixedYoung_r3000	{#ch06.371}	ForestsTreesAge_MixedYoung_r3000.tif	egv_371	Fractional cover of Young (pre-rotation age) Mixed Forests within the 3 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
+## ForestsSoil_OligotrophicOrganic_cell	{#ch06.338}
 
+**filename:** `ForestsSoil_OligotrophicOrganic_cell.tif`	
 
+**layername:** `egv_338`	
 
+**English name:** Fractional cover of Oligotrophic Forests on undrained Organic Soils within the analysis cell (1 ha)	
 
+**Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsTreesAge_MixedYoung_r10000	{#ch06.372}	ForestsTreesAge_MixedYoung_r10000.tif	egv_372	Fractional cover of Young (pre-rotation age) Mixed Forests within the 10 km landscape	Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicOrganic_r500	{#ch06.339}
 
+**filename:** `ForestsSoil_OligotrophicOrganic_r500.tif`	
 
+**layername:** `egv_339`	
 
-## ForestsTreesAge_TemperateDeciduousOld_cell	{#ch06.373}	ForestsTreesAge_TemperateDeciduousOld_cell.tif	egv_373	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 0.5 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_TemperateDeciduousOld_r500	{#ch06.374}	ForestsTreesAge_TemperateDeciduousOld_r500.tif	egv_374	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 0.5 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
+## ForestsSoil_OligotrophicOrganic_r1250	{#ch06.340}
 
+**filename:** `ForestsSoil_OligotrophicOrganic_r1250.tif`	
 
+**layername:** `egv_340`	
 
+**English name:** Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 1.25 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_TemperateDeciduousOld_r1250	{#ch06.375}	ForestsTreesAge_TemperateDeciduousOld_r1250.tif	egv_375	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 1.25 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsSoil_OligotrophicOrganic_r3000	{#ch06.341}
 
+**filename:** `ForestsSoil_OligotrophicOrganic_r3000.tif`	
 
+**layername:** `egv_341`	
 
-## ForestsTreesAge_TemperateDeciduousOld_r3000	{#ch06.376}	ForestsTreesAge_TemperateDeciduousOld_r3000.tif	egv_376	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 3 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 3 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_TemperateDeciduousOld_r10000	{#ch06.377}	ForestsTreesAge_TemperateDeciduousOld_r10000.tif	egv_377	Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 10 km landscape	Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
+## ForestsSoil_OligotrophicOrganic_r10000	{#ch06.342}
 
+**filename:** `ForestsSoil_OligotrophicOrganic_r10000.tif`	
 
+**layername:** `egv_342`	
 
+**English name:** Fractional cover of Oligotrophic Forests on undrained Organic Soils within the 10 km landscape	
 
+**Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_TemperateDeciduousYoung_cell	{#ch06.378}	ForestsTreesAge_TemperateDeciduousYoung_cell.tif	egv_378	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_BorealDeciduousOld_cell	{#ch06.343}
 
+**filename:** `ForestsTreesAge_BorealDeciduousOld_cell.tif`	
 
+**layername:** `egv_343`	
 
-## ForestsTreesAge_TemperateDeciduousYoung_r500	{#ch06.379}	ForestsTreesAge_TemperateDeciduousYoung_r500.tif	egv_379	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 0.5 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTreesAge_TemperateDeciduousYoung_r1250	{#ch06.380}	ForestsTreesAge_TemperateDeciduousYoung_r1250.tif	egv_380	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 1.25 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
+## ForestsTreesAge_BorealDeciduousOld_r500	{#ch06.344}
 
+**filename:** `ForestsTreesAge_BorealDeciduousOld_r500.tif`	
 
+**layername:** `egv_344`	
 
+**English name:** Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsTreesAge_TemperateDeciduousYoung_r3000	{#ch06.381}	ForestsTreesAge_TemperateDeciduousYoung_r3000.tif	egv_381	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 3 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_BorealDeciduousOld_r1250	{#ch06.345}
 
+**filename:** `ForestsTreesAge_BorealDeciduousOld_r1250.tif`	
 
+**layername:** `egv_345`	
 
-## ForestsTreesAge_TemperateDeciduousYoung_r10000	{#ch06.382}	ForestsTreesAge_TemperateDeciduousYoung_r10000.tif	egv_382	Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 10 km landscape	Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_BorealDeciduous_cell	{#ch06.383}	ForestsTrees_BorealDeciduous_cell.tif	egv_383	Fractional cover of Boeral Deciduous Forests within the analysis cell (1 ha)	Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTreesAge_BorealDeciduousOld_r3000	{#ch06.346}
 
+**filename:** `ForestsTreesAge_BorealDeciduousOld_r3000.tif`	
 
+**layername:** `egv_346`	
 
+**English name:** Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsTrees_BorealDeciduous_r500	{#ch06.384}	ForestsTrees_BorealDeciduous_r500.tif	egv_384	Fractional cover of Boreal Deciduous Forests within the 0.5 km landscape	Šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_BorealDeciduousOld_r10000	{#ch06.347}
 
+**filename:** `ForestsTreesAge_BorealDeciduousOld_r10000.tif`	
 
+**layername:** `egv_347`	
 
-## ForestsTrees_BorealDeciduous_r1250	{#ch06.385}	ForestsTrees_BorealDeciduous_r1250.tif	egv_385	Fractional cover of Boreal Deciduous Forests within the 1.25 km landscape	Šaurlapju mežu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Boreal Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_BorealDeciduous_r3000	{#ch06.386}	ForestsTrees_BorealDeciduous_r3000.tif	egv_386	Fractional cover of Boreal Deciduous Forests within the 3 km landscape	Šaurlapju mežu platības īpatsvars 3 km ainavā
+## ForestsTreesAge_BorealDeciduousYoung_cell	{#ch06.348}
 
+**filename:** `ForestsTreesAge_BorealDeciduousYoung_cell.tif`	
 
+**layername:** `egv_348`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsTrees_BorealDeciduous_r10000	{#ch06.387}	ForestsTrees_BorealDeciduous_r10000.tif	egv_387	Fractional cover of Boreal Deciduous Forests within the 10 km landscape	Šaurlapju mežu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_BorealDeciduousYoung_r500	{#ch06.349}
 
+**filename:** `ForestsTreesAge_BorealDeciduousYoung_r500.tif`	
 
+**layername:** `egv_349`	
 
-## ForestsTrees_Coniferous_cell	{#ch06.388}	ForestsTrees_Coniferous_cell.tif	egv_388	Fractional cover of Coniferous Forests within the analysis cell (1 ha)	Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_Coniferous_r500	{#ch06.389}	ForestsTrees_Coniferous_r500.tif	egv_389	Fractional cover of Coniferous Forests within the 0.5 km landscape	Skujkoku mežu platības īpatsvars 0,5 km ainavā
+## ForestsTreesAge_BorealDeciduousYoung_r1250	{#ch06.350}
 
+**filename:** `ForestsTreesAge_BorealDeciduousYoung_r1250.tif`	
 
+**layername:** `egv_350`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## ForestsTrees_Coniferous_r1250	{#ch06.390}	ForestsTrees_Coniferous_r1250.tif	egv_390	Fractional cover of Coniferous Forests within the 1.25 km landscape	Skujkoku mežu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_BorealDeciduousYoung_r3000	{#ch06.351}
 
+**filename:** `ForestsTreesAge_BorealDeciduousYoung_r3000.tif`	
 
+**layername:** `egv_351`	
 
-## ForestsTrees_Coniferous_r3000	{#ch06.391}	ForestsTrees_Coniferous_r3000.tif	egv_391	Fractional cover of Coniferous Forests within the 3 km landscape	Skujkoku mežu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_Coniferous_r10000	{#ch06.392}	ForestsTrees_Coniferous_r10000.tif	egv_392	Fractional cover of Coniferous Forests within the 10 km landscape	Skujkoku mežu platības īpatsvars 10 km ainavā
+## ForestsTreesAge_BorealDeciduousYoung_r10000	{#ch06.352}
 
+**filename:** `ForestsTreesAge_BorealDeciduousYoung_r10000.tif`	
 
+**layername:** `egv_352`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Boreal Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## ForestsTrees_Mixed_cell	{#ch06.393}	ForestsTrees_Mixed_cell.tif	egv_393	Fractional cover of Mixed Forests within the analysis cell (1 ha)	Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_ConiferousOld_cell	{#ch06.353}
 
+**filename:** `ForestsTreesAge_ConiferousOld_cell.tif`	
 
+**layername:** `egv_353`	
 
-## ForestsTrees_Mixed_r500	{#ch06.394}	ForestsTrees_Mixed_r500.tif	egv_394	Fractional cover of Mixed Forests within the 0.5 km landscape	Jauktu koku mežu platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Coniferous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_Mixed_r1250	{#ch06.395}	ForestsTrees_Mixed_r1250.tif	egv_395	Fractional cover of Mixed Forests within the 1.25 km landscape	Jauktu koku mežu platības īpatsvars 1,25 km ainavā
+## ForestsTreesAge_ConiferousOld_r500	{#ch06.354}
 
+**filename:** `ForestsTreesAge_ConiferousOld_r500.tif`	
 
+**layername:** `egv_354`	
 
+**English name:** Fractional cover of Old (over rotation age) Coniferous Forests within the 0.5 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## ForestsTrees_Mixed_r3000	{#ch06.396}	ForestsTrees_Mixed_r3000.tif	egv_396	Fractional cover of Mixed Forests within the 3 km landscape	Jauktu koku mežu platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_ConiferousOld_r1250	{#ch06.355}
 
+**filename:** `ForestsTreesAge_ConiferousOld_r1250.tif`	
 
+**layername:** `egv_355`	
 
-## ForestsTrees_Mixed_r10000	{#ch06.397}	ForestsTrees_Mixed_r10000.tif	egv_397	Fractional cover of Mixed Forests within the 10 km landscape	Jauktu koku mežu platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Coniferous Forests within the 1.25 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_TemperateDeciduous_cell	{#ch06.398}	ForestsTrees_TemperateDeciduous_cell.tif	egv_398	Fractional cover of Temperate Deciduous Forests within the analysis cell (1 ha)	Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTreesAge_ConiferousOld_r3000	{#ch06.356}
 
+**filename:** `ForestsTreesAge_ConiferousOld_r3000.tif`	
 
+**layername:** `egv_356`	
 
+**English name:** Fractional cover of Old (over rotation age) Coniferous Forests within the 3 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## ForestsTrees_TemperateDeciduous_r500	{#ch06.399}	ForestsTrees_TemperateDeciduous_r500.tif	egv_399	Fractional cover of Temperate Deciduous Forests within the 0.5 km landscape	Platlapju mežu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_ConiferousOld_r10000	{#ch06.357}
 
+**filename:** `ForestsTreesAge_ConiferousOld_r10000.tif`	
 
+**layername:** `egv_357`	
 
-## ForestsTrees_TemperateDeciduous_r1250	{#ch06.400}	ForestsTrees_TemperateDeciduous_r1250.tif	egv_400	Fractional cover of Temperate Deciduous Forests within the 1.25 km landscape	Platlapju mežu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Coniferous Forests within the 10 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## ForestsTrees_TemperateDeciduous_r3000	{#ch06.401}	ForestsTrees_TemperateDeciduous_r3000.tif	egv_401	Fractional cover of Temperate Deciduous Forests within the 3 km landscape	Platlapju mežu platības īpatsvars 3 km ainavā
+## ForestsTreesAge_ConiferousYoung_cell	{#ch06.358}
 
+**filename:** `ForestsTreesAge_ConiferousYoung_cell.tif`	
 
+**layername:** `egv_358`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Coniferous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## ForestsTrees_TemperateDeciduous_r10000	{#ch06.402}	ForestsTrees_TemperateDeciduous_r10000.tif	egv_402	Fractional cover of Temperate Deciduous Forests within the 10 km landscape	Platlapju mežu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_ConiferousYoung_r500	{#ch06.359}
 
+**filename:** `ForestsTreesAge_ConiferousYoung_r500.tif`	
 
+**layername:** `egv_359`	
 
-## General_AllotmentGardens_cell	{#ch06.403}	General_AllotmentGardens_cell.tif	egv_403	Fractional cover of Allotment gardens within the analysis cell (1 ha)	Vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Young (pre-rotation age) Coniferous Forests within the 0.5 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_AllotmentGardens_r500	{#ch06.404}	General_AllotmentGardens_r500.tif	egv_404	Fractional cover of Allotment gardens within the 0.5 km landscape	Vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
+## ForestsTreesAge_ConiferousYoung_r1250	{#ch06.360}
 
+**filename:** `ForestsTreesAge_ConiferousYoung_r1250.tif`	
 
+**layername:** `egv_360`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Coniferous Forests within the 1.25 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## General_AllotmentGardens_r1250	{#ch06.405}	General_AllotmentGardens_r1250.tif	egv_405	Fractional cover of Allotment gardens within the 1.25 km landscape	Vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_ConiferousYoung_r3000	{#ch06.361}
 
+**filename:** `ForestsTreesAge_ConiferousYoung_r3000.tif`	
 
+**layername:** `egv_361`	
 
-## General_AllotmentGardens_r3000	{#ch06.406}	General_AllotmentGardens_r3000.tif	egv_406	Fractional cover of Allotment gardens within the 3 km landscape	Vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Young (pre-rotation age) Coniferous Forests within the 3 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_AllotmentGardens_r10000	{#ch06.407}	General_AllotmentGardens_r10000.tif	egv_407	Fractional cover of Allotment gardens within the 10 km landscape	Vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+## ForestsTreesAge_ConiferousYoung_r10000	{#ch06.362}
 
+**filename:** `ForestsTreesAge_ConiferousYoung_r10000.tif`	
 
+**layername:** `egv_362`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Coniferous Forests within the 10 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## General_BareSoilQuarry_cell	{#ch06.408}	General_BareSoilQuarry_cell.tif	egv_408	Fractional cover of areas with Bare Soil, Quarries within the analysis cell (1 ha)	Atklātas augsnes un karjeru platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_MixedOld_cell	{#ch06.363}
 
+**filename:** `ForestsTreesAge_MixedOld_cell.tif`	
 
+**layername:** `egv_363`	
 
-## General_BareSoilQuarry_r500	{#ch06.409}	General_BareSoilQuarry_r500.tif	egv_409	Fractional cover of areas with Bare Soil, Quarries within the 0.5 km landscape	Atklātas augsnes un karjeru platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Mixed Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_BareSoilQuarry_r1250	{#ch06.410}	General_BareSoilQuarry_r1250.tif	egv_410	Fractional cover of areas with Bare Soil, Quarries within the 1.25 km landscape	Atklātas augsnes un karjeru platības īpatsvars 1,25 km ainavā
+## ForestsTreesAge_MixedOld_r500	{#ch06.364}
 
+**filename:** `ForestsTreesAge_MixedOld_r500.tif`	
 
+**layername:** `egv_364`	
 
+**English name:** Fractional cover of Old (over rotation age) Mixed Forests within the 0.5 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## General_BareSoilQuarry_r3000	{#ch06.411}	General_BareSoilQuarry_r3000.tif	egv_411	Fractional cover of areas with Bare Soil, Quarries within the 3 km landscape	Atklātas augsnes un karjeru platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_MixedOld_r1250	{#ch06.365}
 
+**filename:** `ForestsTreesAge_MixedOld_r1250.tif`	
 
+**layername:** `egv_365`	
 
-## General_BareSoilQuarry_r10000	{#ch06.412}	General_BareSoilQuarry_r10000.tif	egv_412	Fractional cover of areas with Bare Soil, Quarries within the 10 km landscape	Atklātas augsnes un karjeru platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Mixed Forests within the 1.25 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Builtup_cell	{#ch06.413}	General_Builtup_cell.tif	egv_413	Fractional cover of Built-Up areas within the analysis cell (1 ha)	Apbūves platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTreesAge_MixedOld_r3000	{#ch06.366}
 
+**filename:** `ForestsTreesAge_MixedOld_r3000.tif`	
 
+**layername:** `egv_366`	
 
+**English name:** Fractional cover of Old (over rotation age) Mixed Forests within the 3 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## General_Builtup_r500	{#ch06.414}	General_Builtup_r500.tif	egv_414	Fractional cover of Built-Up areas within the 0.5 km landscape	Apbūves platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_MixedOld_r10000	{#ch06.367}
 
+**filename:** `ForestsTreesAge_MixedOld_r10000.tif`	
 
+**layername:** `egv_367`	
 
-## General_Builtup_r1250	{#ch06.415}	General_Builtup_r1250.tif	egv_415	Fractional cover of Built-Up areas within the 1.25 km landscape	Apbūves platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Mixed Forests within the 10 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Builtup_r3000	{#ch06.416}	General_Builtup_r3000.tif	egv_416	Fractional cover of Built-Up areas within the 3 km landscape	Apbūves platības īpatsvars 3 km ainavā
+## ForestsTreesAge_MixedYoung_cell	{#ch06.368}
 
+**filename:** `ForestsTreesAge_MixedYoung_cell.tif`	
 
+**layername:** `egv_368`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Mixed Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## General_Builtup_r10000	{#ch06.417}	General_Builtup_r10000.tif	egv_417	Fractional cover of Built-Up areas within the 10 km landscape	Apbūves platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_MixedYoung_r500	{#ch06.369}
 
+**filename:** `ForestsTreesAge_MixedYoung_r500.tif`	
 
+**layername:** `egv_369`	
 
-## General_Farmland_cell	{#ch06.418}	General_Farmland_cell.tif	egv_418	Fractional cover of Farmland within the analysis cell (1 ha)	Lauksaimniecībā izmantojamo zemju platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Young (pre-rotation age) Mixed Forests within the 0.5 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Farmland_r500	{#ch06.419}	General_Farmland_r500.tif	egv_419	Fractional cover of Farmland within the 0.5 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 0,5 km ainavā
+## ForestsTreesAge_MixedYoung_r1250	{#ch06.370}
 
+**filename:** `ForestsTreesAge_MixedYoung_r1250.tif`	
 
+**layername:** `egv_370`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Mixed Forests within the 1.25 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## General_Farmland_r1250	{#ch06.420}	General_Farmland_r1250.tif	egv_420	Fractional cover of Farmland within the 1.25 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_MixedYoung_r3000	{#ch06.371}
 
+**filename:** `ForestsTreesAge_MixedYoung_r3000.tif`	
 
+**layername:** `egv_371`	
 
-## General_Farmland_r3000	{#ch06.421}	General_Farmland_r3000.tif	egv_421	Fractional cover of Farmland within the 3 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Young (pre-rotation age) Mixed Forests within the 3 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Farmland_r10000	{#ch06.422}	General_Farmland_r10000.tif	egv_422	Fractional cover of Farmland within the 10 km landscape	Lauksaimniecībā izmantojamo zemju platības īpatsvars 10 km ainavā
+## ForestsTreesAge_MixedYoung_r10000	{#ch06.372}
 
+**filename:** `ForestsTreesAge_MixedYoung_r10000.tif`	
 
+**layername:** `egv_372`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Mixed Forests within the 10 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## General_ForestsWithoutInventory_cell	{#ch06.423}	General_ForestsWithoutInventory_cell.tif	egv_423	Fractional cover of Forests Without Inventory within the analysis cell (1 ha)	Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_TemperateDeciduousOld_cell	{#ch06.373}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousOld_cell.tif`	
 
+**layername:** `egv_373`	
 
-## General_ForestsWithoutInventory_r500	{#ch06.424}	General_ForestsWithoutInventory_r500.tif	egv_424	Fractional cover of Forests Without Inventory within the 0.5 km landscape	Netaksēto mežu platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_ForestsWithoutInventory_r1250	{#ch06.425}	General_ForestsWithoutInventory_r1250.tif	egv_425	Fractional cover of Forests Without Inventory within the 1.25 km landscape	Netaksēto mežu platības īpatsvars 1,25 km ainavā
+## ForestsTreesAge_TemperateDeciduousOld_r500	{#ch06.374}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousOld_r500.tif`	
 
+**layername:** `egv_374`	
 
+**English name:** Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## General_ForestsWithoutInventory_r3000	{#ch06.426}	General_ForestsWithoutInventory_r3000.tif	egv_426	Fractional cover of Forests Without Inventory within the 3 km landscape	Netaksēto mežu platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_TemperateDeciduousOld_r1250	{#ch06.375}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousOld_r1250.tif`	
 
+**layername:** `egv_375`	
 
-## General_ForestsWithoutInventory_r10000	{#ch06.427}	General_ForestsWithoutInventory_r10000.tif	egv_427	Fractional cover of Forests Without Inventory within the 10 km landscape	Netaksēto mežu platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_GardensOrchards_cell	{#ch06.428}	General_GardensOrchards_cell.tif	egv_428	Fractional cover of Allotment gardens, Orchards within the analysis cell (1 ha)	Vasarnīcu kompleksu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTreesAge_TemperateDeciduousOld_r3000	{#ch06.376}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousOld_r3000.tif`	
 
+**layername:** `egv_376`	
 
+**English name:** Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## General_GardensOrchards_r500	{#ch06.429}	General_GardensOrchards_r500.tif	egv_429	Fractional cover of Allotment gardens, Orchards within the 0.5 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_TemperateDeciduousOld_r10000	{#ch06.377}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousOld_r10000.tif`	
 
+**layername:** `egv_377`	
 
-## General_GardensOrchards_r1250	{#ch06.430}	General_GardensOrchards_r1250.tif	egv_430	Fractional cover of Allotment gardens, Orchards within the 1.25 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Old (over rotation age) Temperate Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_GardensOrchards_r3000	{#ch06.431}	General_GardensOrchards_r3000.tif	egv_431	Fractional cover of Allotment gardens, Orchards within the 3 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 3 km ainavā
+## ForestsTreesAge_TemperateDeciduousYoung_cell	{#ch06.378}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousYoung_cell.tif`	
 
+**layername:** `egv_378`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## General_GardensOrchards_r10000	{#ch06.432}	General_GardensOrchards_r10000.tif	egv_432	Fractional cover of Allotment gardens, Orchards within the 10 km landscape	Vasarnīcu kompleksu un augļudārzu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_TemperateDeciduousYoung_r500	{#ch06.379}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousYoung_r500.tif`	
 
+**layername:** `egv_379`	
 
-## General_Roads_cell	{#ch06.433}	General_Roads_cell.tif	egv_433	Fractional cover of Roads within the analysis cell (1 ha)	Ceļu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_ShrubsOrchards_cell	{#ch06.434}	General_ShrubsOrchards_cell.tif	egv_434	Fractional cover of Shrubs, Young stands, Orchards within the analysis cell (1 ha)	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTreesAge_TemperateDeciduousYoung_r1250	{#ch06.380}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousYoung_r1250.tif`	
 
+**layername:** `egv_380`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## General_ShrubsOrchards_r500	{#ch06.435}	General_ShrubsOrchards_r500.tif	egv_435	Fractional cover of Shrubs, Young stands, Orchards within the 0.5 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTreesAge_TemperateDeciduousYoung_r3000	{#ch06.381}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousYoung_r3000.tif`	
 
+**layername:** `egv_381`	
 
-## General_ShrubsOrchards_r1250	{#ch06.436}	General_ShrubsOrchards_r1250.tif	egv_436	Fractional cover of Shrubs, Young stands, Orchards within the 1.25 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_ShrubsOrchards_r3000	{#ch06.437}	General_ShrubsOrchards_r3000.tif	egv_437	Fractional cover of Shrubs, Young stands, Orchards within the 3 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 3 km ainavā
+## ForestsTreesAge_TemperateDeciduousYoung_r10000	{#ch06.382}
 
+**filename:** `ForestsTreesAge_TemperateDeciduousYoung_r10000.tif`	
 
+**layername:** `egv_382`	
 
+**English name:** Fractional cover of Young (pre-rotation age) Temperate Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## General_ShrubsOrchards_r10000	{#ch06.438}	General_ShrubsOrchards_r10000.tif	egv_438	Fractional cover of Shrubs, Young stands, Orchards within the 10 km landscape	Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_BorealDeciduous_cell	{#ch06.383}
 
+**filename:** `ForestsTrees_BorealDeciduous_cell.tif`	
 
+**layername:** `egv_383`	
 
-## General_ShrubsOrchardsGardens_cell	{#ch06.439}	General_ShrubsOrchardsGardens_cell.tif	egv_439	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the analysis cell (1 ha)	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Boeral Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_ShrubsOrchardsGardens_r500	{#ch06.440}	General_ShrubsOrchardsGardens_r500.tif	egv_440	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 0.5 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
+## ForestsTrees_BorealDeciduous_r500	{#ch06.384}
 
+**filename:** `ForestsTrees_BorealDeciduous_r500.tif`	
 
+**layername:** `egv_384`	
 
+**English name:** Fractional cover of Boreal Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## General_ShrubsOrchardsGardens_r1250	{#ch06.441}	General_ShrubsOrchardsGardens_r1250.tif	egv_441	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 1.25 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_BorealDeciduous_r1250	{#ch06.385}
 
+**filename:** `ForestsTrees_BorealDeciduous_r1250.tif`	
 
+**layername:** `egv_385`	
 
-## General_ShrubsOrchardsGardens_r3000	{#ch06.442}	General_ShrubsOrchardsGardens_r3000.tif	egv_442	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 3 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Boreal Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_ShrubsOrchardsGardens_r10000	{#ch06.443}	General_ShrubsOrchardsGardens_r10000.tif	egv_443	Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 10 km landscape	Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+## ForestsTrees_BorealDeciduous_r3000	{#ch06.386}
 
+**filename:** `ForestsTrees_BorealDeciduous_r3000.tif`	
 
+**layername:** `egv_386`	
 
+**English name:** Fractional cover of Boreal Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Šaurlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## General_SwampsMiresBogsHelophytes_cell	{#ch06.444}	General_SwampsMiresBogsHelophytes_cell.tif	egv_444	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the analysis cell (1 ha)	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_BorealDeciduous_r10000	{#ch06.387}
 
+**filename:** `ForestsTrees_BorealDeciduous_r10000.tif`	
 
+**layername:** `egv_387`	
 
-## General_SwampsMiresBogsHelophytes_r500	{#ch06.445}	General_SwampsMiresBogsHelophytes_r500.tif	egv_445	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 0.5 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Boreal Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Šaurlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_SwampsMiresBogsHelophytes_r1250	{#ch06.446}	General_SwampsMiresBogsHelophytes_r1250.tif	egv_446	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 1.25 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km ainavā
+## ForestsTrees_Coniferous_cell	{#ch06.388}
 
+**filename:** `ForestsTrees_Coniferous_cell.tif`	
 
+**layername:** `egv_388`	
 
+**English name:** Fractional cover of Coniferous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## General_SwampsMiresBogsHelophytes_r3000	{#ch06.447}	General_SwampsMiresBogsHelophytes_r3000.tif	egv_447	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 3 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_Coniferous_r500	{#ch06.389}
 
+**filename:** `ForestsTrees_Coniferous_r500.tif`	
 
+**layername:** `egv_389`	
 
-## General_SwampsMiresBogsHelophytes_r10000	{#ch06.448}	General_SwampsMiresBogsHelophytes_r10000.tif	egv_448	Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 10 km landscape	Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Coniferous Forests within the 0.5 km landscape	
 
+**Latvian name:** Skujkoku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Trees_cell	{#ch06.449}	General_Trees_cell.tif	egv_449	Fractional cover of Trees, Shrubs, Clear-cuts within the analysis cell (1 ha)	Koku, krūmu un izcirtumu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTrees_Coniferous_r1250	{#ch06.390}
 
+**filename:** `ForestsTrees_Coniferous_r1250.tif`	
 
+**layername:** `egv_390`	
 
+**English name:** Fractional cover of Coniferous Forests within the 1.25 km landscape	
 
+**Latvian name:** Skujkoku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## General_Trees_r500	{#ch06.450}	General_Trees_r500.tif	egv_450	Fractional cover of Trees, Shrubs, Clear-cuts within the 0.5 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_Coniferous_r3000	{#ch06.391}
 
+**filename:** `ForestsTrees_Coniferous_r3000.tif`	
 
+**layername:** `egv_391`	
 
-## General_Trees_r1250	{#ch06.451}	General_Trees_r1250.tif	egv_451	Fractional cover of Trees, Shrubs, Clear-cuts within the 1.25 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Coniferous Forests within the 3 km landscape	
 
+**Latvian name:** Skujkoku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Trees_r3000	{#ch06.452}	General_Trees_r3000.tif	egv_452	Fractional cover of Trees, Shrubs, Clear-cuts within the 3 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 3 km ainavā
+## ForestsTrees_Coniferous_r10000	{#ch06.392}
 
+**filename:** `ForestsTrees_Coniferous_r10000.tif`	
 
+**layername:** `egv_392`	
 
+**English name:** Fractional cover of Coniferous Forests within the 10 km landscape	
 
+**Latvian name:** Skujkoku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## General_Trees_r10000	{#ch06.453}	General_Trees_r10000.tif	egv_453	Fractional cover of Trees, Shrubs, Clear-cuts within the 10 km landscape	Koku, krūmu un izcirtumu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_Mixed_cell	{#ch06.393}
 
+**filename:** `ForestsTrees_Mixed_cell.tif`	
 
+**layername:** `egv_393`	
 
-## General_TreesOutsideForests_cell	{#ch06.454}	General_TreesOutsideForests_cell.tif	egv_454	Fractional cover of Tree covered areas Outside Forests within the analysis cell (1 ha)	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Mixed Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_TreesOutsideForests_r500	{#ch06.455}	General_TreesOutsideForests_r500.tif	egv_455	Fractional cover of Tree covered areas Outside Forests within the 0.5 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 0,5 km ainavā
+## ForestsTrees_Mixed_r500	{#ch06.394}
 
+**filename:** `ForestsTrees_Mixed_r500.tif`	
 
+**layername:** `egv_394`	
 
+**English name:** Fractional cover of Mixed Forests within the 0.5 km landscape	
 
+**Latvian name:** Jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## General_TreesOutsideForests_r1250	{#ch06.456}	General_TreesOutsideForests_r1250.tif	egv_456	Fractional cover of Tree covered areas Outside Forests within the 1.25 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_Mixed_r1250	{#ch06.395}
 
+**filename:** `ForestsTrees_Mixed_r1250.tif`	
 
+**layername:** `egv_395`	
 
-## General_TreesOutsideForests_r3000	{#ch06.457}	General_TreesOutsideForests_r3000.tif	egv_457	Fractional cover of Tree covered areas Outside Forests within the 3 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Mixed Forests within the 1.25 km landscape	
 
+**Latvian name:** Jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_TreesOutsideForests_r10000	{#ch06.458}	General_TreesOutsideForests_r10000.tif	egv_458	Fractional cover of Tree covered areas Outside Forests within the 10 km landscape	Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 10 km ainavā
+## ForestsTrees_Mixed_r3000	{#ch06.396}
 
+**filename:** `ForestsTrees_Mixed_r3000.tif`	
 
+**layername:** `egv_396`	
 
+**English name:** Fractional cover of Mixed Forests within the 3 km landscape	
 
+**Latvian name:** Jauktu koku mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
-## General_Water_cell	{#ch06.459}	General_Water_cell.tif	egv_459	Fractional cover of Waterbodies within the analysis cell (1 ha)	Ūdenstilpju platības īpatsvars analīzes šūnā (1 ha)
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_Mixed_r10000	{#ch06.397}
 
+**filename:** `ForestsTrees_Mixed_r10000.tif`	
 
+**layername:** `egv_397`	
 
-## General_Water_r500	{#ch06.460}	General_Water_r500.tif	egv_460	Fractional cover of Waterbodies within the 0.5 km landscape	Ūdenstilpju platības īpatsvars 0,5 km ainavā
+**English name:** Fractional cover of Mixed Forests within the 10 km landscape	
 
+**Latvian name:** Jauktu koku mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## General_Water_r1250	{#ch06.461}	General_Water_r1250.tif	egv_461	Fractional cover of Waterbodies within the 1.25 km landscape	Ūdenstilpju platības īpatsvars 1,25 km ainavā
+## ForestsTrees_TemperateDeciduous_cell	{#ch06.398}
 
+**filename:** `ForestsTrees_TemperateDeciduous_cell.tif`	
 
+**layername:** `egv_398`	
 
+**English name:** Fractional cover of Temperate Deciduous Forests within the analysis cell (1 ha)	
 
+**Latvian name:** Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
-## General_Water_r3000	{#ch06.462}	General_Water_r3000.tif	egv_462	Fractional cover of Waterbodies within the 3 km landscape	Ūdenstilpju platības īpatsvars 3 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_TemperateDeciduous_r500	{#ch06.399}
 
+**filename:** `ForestsTrees_TemperateDeciduous_r500.tif`	
 
+**layername:** `egv_399`	
 
-## General_Water_r10000	{#ch06.463}	General_Water_r10000.tif	egv_463	Fractional cover of Waterbodies within the 10 km landscape	Ūdenstilpju platības īpatsvars 10 km ainavā
+**English name:** Fractional cover of Temperate Deciduous Forests within the 0.5 km landscape	
 
+**Latvian name:** Platlapju mežu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## Wetlands_Bogs_cell	{#ch06.464}	Wetlands_Bogs_cell.tif	egv_464	Fractional cover of Raised Bogs within the analysis cell (1 ha)	Augsto purvu platības īpatsvars analīzes šūnā (1 ha)
+## ForestsTrees_TemperateDeciduous_r1250	{#ch06.400}
 
+**filename:** `ForestsTrees_TemperateDeciduous_r1250.tif`	
 
+**layername:** `egv_400`	
 
+**English name:** Fractional cover of Temperate Deciduous Forests within the 1.25 km landscape	
 
+**Latvian name:** Platlapju mežu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
-## Wetlands_Bogs_r500	{#ch06.465}	Wetlands_Bogs_r500.tif	egv_465	Fractional cover of Raised Bogs within the 0.5 km landscape	Augsto purvu platības īpatsvars 0,5 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## ForestsTrees_TemperateDeciduous_r3000	{#ch06.401}
 
+**filename:** `ForestsTrees_TemperateDeciduous_r3000.tif`	
 
+**layername:** `egv_401`	
 
-## Wetlands_Bogs_r1250	{#ch06.466}	Wetlands_Bogs_r1250.tif	egv_466	Fractional cover of Raised Bogs within the 1.25 km landscape	Augsto purvu platības īpatsvars 1,25 km ainavā
+**English name:** Fractional cover of Temperate Deciduous Forests within the 3 km landscape	
 
+**Latvian name:** Platlapju mežu platības īpatsvars 3 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## Wetlands_Bogs_r3000	{#ch06.467}	Wetlands_Bogs_r3000.tif	egv_467	Fractional cover of Raised Bogs within the 3 km landscape	Augsto purvu platības īpatsvars 3 km ainavā
+## ForestsTrees_TemperateDeciduous_r10000	{#ch06.402}
 
+**filename:** `ForestsTrees_TemperateDeciduous_r10000.tif`	
 
+**layername:** `egv_402`	
 
+**English name:** Fractional cover of Temperate Deciduous Forests within the 10 km landscape	
 
+**Latvian name:** Platlapju mežu platības īpatsvars 10 km ainavā
 
+**Procedure:** 
 
-## Wetlands_Bogs_r10000	{#ch06.468}	Wetlands_Bogs_r10000.tif	egv_468	Fractional cover of Raised Bogs within the 10 km landscape	Augsto purvu platības īpatsvars 10 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## General_AllotmentGardens_cell	{#ch06.403}
 
+**filename:** `General_AllotmentGardens_cell.tif`	
 
+**layername:** `egv_403`	
 
-## Wetlands_Mires_cell	{#ch06.469}	Wetlands_Mires_cell.tif	egv_469	Fractional cover of Transitional Mires within the analysis cell (1 ha)	Pārejas purvu platības īpatsvars analīzes šūnā (1 ha)
+**English name:** Fractional cover of Allotment gardens within the analysis cell (1 ha)	
 
+**Latvian name:** Vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## Wetlands_Mires_r500	{#ch06.470}	Wetlands_Mires_r500.tif	egv_470	Fractional cover of Transitional Mires within the 0.5 km landscape	Pārejas purvu platības īpatsvars 0,5 km ainavā
+## General_AllotmentGardens_r500	{#ch06.404}
 
+**filename:** `General_AllotmentGardens_r500.tif`	
 
+**layername:** `egv_404`	
 
+**English name:** Fractional cover of Allotment gardens within the 0.5 km landscape	
 
+**Latvian name:** Vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
 
+**Procedure:** 
 
-## Wetlands_Mires_r1250	{#ch06.471}	Wetlands_Mires_r1250.tif	egv_471	Fractional cover of Transitional Mires within the 1.25 km landscape	Pārejas purvu platības īpatsvars 1,25 km ainavā
 
+``` r
+# libs ----
+```
 
 
+## General_AllotmentGardens_r1250	{#ch06.405}
 
+**filename:** `General_AllotmentGardens_r1250.tif`	
 
+**layername:** `egv_405`	
 
-## Wetlands_Mires_r3000	{#ch06.472}	Wetlands_Mires_r3000.tif	egv_472	Fractional cover of Transitional Mires within the 3 km landscape	Pārejas purvu platības īpatsvars 3 km ainavā
+**English name:** Fractional cover of Allotment gardens within the 1.25 km landscape	
 
+**Latvian name:** Vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
 
+**Procedure:** 
 
 
+``` r
+# libs ----
+```
 
 
-## Wetlands_Mires_r10000	{#ch06.473}	Wetlands_Mires_r10000.tif	egv_473	Fractional cover of Transitional Mires within the 10 km landscape	Pārejas purvu platības īpatsvars 10 km ainavā
+## General_AllotmentGardens_r3000	{#ch06.406}
 
+**filename:** `General_AllotmentGardens_r3000.tif`	
 
+**layername:** `egv_406`	
 
+**English name:** Fractional cover of Allotment gardens within the 3 km landscape	
 
+**Latvian name:** Vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_AllotmentGardens_r10000	{#ch06.407}
+
+**filename:** `General_AllotmentGardens_r10000.tif`	
+
+**layername:** `egv_407`	
+
+**English name:** Fractional cover of Allotment gardens within the 10 km landscape	
+
+**Latvian name:** Vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_BareSoilQuarry_cell	{#ch06.408}
+
+**filename:** `General_BareSoilQuarry_cell.tif`	
+
+**layername:** `egv_408`	
+
+**English name:** Fractional cover of areas with Bare Soil, Quarries within the analysis cell (1 ha)	
+
+**Latvian name:** Atklātas augsnes un karjeru platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_BareSoilQuarry_r500	{#ch06.409}
+
+**filename:** `General_BareSoilQuarry_r500.tif`	
+
+**layername:** `egv_409`	
+
+**English name:** Fractional cover of areas with Bare Soil, Quarries within the 0.5 km landscape	
+
+**Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_BareSoilQuarry_r1250	{#ch06.410}
+
+**filename:** `General_BareSoilQuarry_r1250.tif`	
+
+**layername:** `egv_410`	
+
+**English name:** Fractional cover of areas with Bare Soil, Quarries within the 1.25 km landscape	
+
+**Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_BareSoilQuarry_r3000	{#ch06.411}
+
+**filename:** `General_BareSoilQuarry_r3000.tif`	
+
+**layername:** `egv_411`	
+
+**English name:** Fractional cover of areas with Bare Soil, Quarries within the 3 km landscape	
+
+**Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_BareSoilQuarry_r10000	{#ch06.412}
+
+**filename:** `General_BareSoilQuarry_r10000.tif`	
+
+**layername:** `egv_412`	
+
+**English name:** Fractional cover of areas with Bare Soil, Quarries within the 10 km landscape	
+
+**Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Builtup_cell	{#ch06.413}
+
+**filename:** `General_Builtup_cell.tif`	
+
+**layername:** `egv_413`	
+
+**English name:** Fractional cover of Built-Up areas within the analysis cell (1 ha)	
+
+**Latvian name:** Apbūves platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Builtup_r500	{#ch06.414}
+
+**filename:** `General_Builtup_r500.tif`	
+
+**layername:** `egv_414`	
+
+**English name:** Fractional cover of Built-Up areas within the 0.5 km landscape	
+
+**Latvian name:** Apbūves platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Builtup_r1250	{#ch06.415}
+
+**filename:** `General_Builtup_r1250.tif`	
+
+**layername:** `egv_415`	
+
+**English name:** Fractional cover of Built-Up areas within the 1.25 km landscape	
+
+**Latvian name:** Apbūves platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Builtup_r3000	{#ch06.416}
+
+**filename:** `General_Builtup_r3000.tif`	
+
+**layername:** `egv_416`	
+
+**English name:** Fractional cover of Built-Up areas within the 3 km landscape	
+
+**Latvian name:** Apbūves platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Builtup_r10000	{#ch06.417}
+
+**filename:** `General_Builtup_r10000.tif`	
+
+**layername:** `egv_417`	
+
+**English name:** Fractional cover of Built-Up areas within the 10 km landscape	
+
+**Latvian name:** Apbūves platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Farmland_cell	{#ch06.418}
+
+**filename:** `General_Farmland_cell.tif`	
+
+**layername:** `egv_418`	
+
+**English name:** Fractional cover of Farmland within the analysis cell (1 ha)	
+
+**Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Farmland_r500	{#ch06.419}
+
+**filename:** `General_Farmland_r500.tif`	
+
+**layername:** `egv_419`	
+
+**English name:** Fractional cover of Farmland within the 0.5 km landscape	
+
+**Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Farmland_r1250	{#ch06.420}
+
+**filename:** `General_Farmland_r1250.tif`	
+
+**layername:** `egv_420`	
+
+**English name:** Fractional cover of Farmland within the 1.25 km landscape	
+
+**Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Farmland_r3000	{#ch06.421}
+
+**filename:** `General_Farmland_r3000.tif`	
+
+**layername:** `egv_421`	
+
+**English name:** Fractional cover of Farmland within the 3 km landscape	
+
+**Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Farmland_r10000	{#ch06.422}
+
+**filename:** `General_Farmland_r10000.tif`	
+
+**layername:** `egv_422`	
+
+**English name:** Fractional cover of Farmland within the 10 km landscape	
+
+**Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ForestsWithoutInventory_cell	{#ch06.423}
+
+**filename:** `General_ForestsWithoutInventory_cell.tif`	
+
+**layername:** `egv_423`	
+
+**English name:** Fractional cover of Forests Without Inventory within the analysis cell (1 ha)	
+
+**Latvian name:** Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ForestsWithoutInventory_r500	{#ch06.424}
+
+**filename:** `General_ForestsWithoutInventory_r500.tif`	
+
+**layername:** `egv_424`	
+
+**English name:** Fractional cover of Forests Without Inventory within the 0.5 km landscape	
+
+**Latvian name:** Netaksēto mežu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ForestsWithoutInventory_r1250	{#ch06.425}
+
+**filename:** `General_ForestsWithoutInventory_r1250.tif`	
+
+**layername:** `egv_425`	
+
+**English name:** Fractional cover of Forests Without Inventory within the 1.25 km landscape	
+
+**Latvian name:** Netaksēto mežu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ForestsWithoutInventory_r3000	{#ch06.426}
+
+**filename:** `General_ForestsWithoutInventory_r3000.tif`	
+
+**layername:** `egv_426`	
+
+**English name:** Fractional cover of Forests Without Inventory within the 3 km landscape	
+
+**Latvian name:** Netaksēto mežu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ForestsWithoutInventory_r10000	{#ch06.427}
+
+**filename:** `General_ForestsWithoutInventory_r10000.tif`	
+
+**layername:** `egv_427`	
+
+**English name:** Fractional cover of Forests Without Inventory within the 10 km landscape	
+
+**Latvian name:** Netaksēto mežu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_GardensOrchards_cell	{#ch06.428}
+
+**filename:** `General_GardensOrchards_cell.tif`	
+
+**layername:** `egv_428`	
+
+**English name:** Fractional cover of Allotment gardens, Orchards within the analysis cell (1 ha)	
+
+**Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_GardensOrchards_r500	{#ch06.429}
+
+**filename:** `General_GardensOrchards_r500.tif`	
+
+**layername:** `egv_429`	
+
+**English name:** Fractional cover of Allotment gardens, Orchards within the 0.5 km landscape	
+
+**Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_GardensOrchards_r1250	{#ch06.430}
+
+**filename:** `General_GardensOrchards_r1250.tif`	
+
+**layername:** `egv_430`	
+
+**English name:** Fractional cover of Allotment gardens, Orchards within the 1.25 km landscape	
+
+**Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_GardensOrchards_r3000	{#ch06.431}
+
+**filename:** `General_GardensOrchards_r3000.tif`	
+
+**layername:** `egv_431`	
+
+**English name:** Fractional cover of Allotment gardens, Orchards within the 3 km landscape	
+
+**Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_GardensOrchards_r10000	{#ch06.432}
+
+**filename:** `General_GardensOrchards_r10000.tif`	
+
+**layername:** `egv_432`	
+
+**English name:** Fractional cover of Allotment gardens, Orchards within the 10 km landscape	
+
+**Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Roads_cell	{#ch06.433}
+
+**filename:** `General_Roads_cell.tif`	
+
+**layername:** `egv_433`	
+
+**English name:** Fractional cover of Roads within the analysis cell (1 ha)	
+
+**Latvian name:** Ceļu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchards_cell	{#ch06.434}
+
+**filename:** `General_ShrubsOrchards_cell.tif`	
+
+**layername:** `egv_434`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards within the analysis cell (1 ha)	
+
+**Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchards_r500	{#ch06.435}
+
+**filename:** `General_ShrubsOrchards_r500.tif`	
+
+**layername:** `egv_435`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards within the 0.5 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchards_r1250	{#ch06.436}
+
+**filename:** `General_ShrubsOrchards_r1250.tif`	
+
+**layername:** `egv_436`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards within the 1.25 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchards_r3000	{#ch06.437}
+
+**filename:** `General_ShrubsOrchards_r3000.tif`	
+
+**layername:** `egv_437`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards within the 3 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchards_r10000	{#ch06.438}
+
+**filename:** `General_ShrubsOrchards_r10000.tif`	
+
+**layername:** `egv_438`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards within the 10 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchardsGardens_cell	{#ch06.439}
+
+**filename:** `General_ShrubsOrchardsGardens_cell.tif`	
+
+**layername:** `egv_439`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the analysis cell (1 ha)	
+
+**Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchardsGardens_r500	{#ch06.440}
+
+**filename:** `General_ShrubsOrchardsGardens_r500.tif`	
+
+**layername:** `egv_440`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 0.5 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchardsGardens_r1250	{#ch06.441}
+
+**filename:** `General_ShrubsOrchardsGardens_r1250.tif`	
+
+**layername:** `egv_441`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 1.25 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchardsGardens_r3000	{#ch06.442}
+
+**filename:** `General_ShrubsOrchardsGardens_r3000.tif`	
+
+**layername:** `egv_442`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 3 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_ShrubsOrchardsGardens_r10000	{#ch06.443}
+
+**filename:** `General_ShrubsOrchardsGardens_r10000.tif`	
+
+**layername:** `egv_443`	
+
+**English name:** Fractional cover of Shrubs, Young stands, Orchards, Allotment gardens within the 10 km landscape	
+
+**Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_SwampsMiresBogsHelophytes_cell	{#ch06.444}
+
+**filename:** `General_SwampsMiresBogsHelophytes_cell.tif`	
+
+**layername:** `egv_444`	
+
+**English name:** Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the analysis cell (1 ha)	
+
+**Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_SwampsMiresBogsHelophytes_r500	{#ch06.445}
+
+**filename:** `General_SwampsMiresBogsHelophytes_r500.tif`	
+
+**layername:** `egv_445`	
+
+**English name:** Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 0.5 km landscape	
+
+**Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_SwampsMiresBogsHelophytes_r1250	{#ch06.446}
+
+**filename:** `General_SwampsMiresBogsHelophytes_r1250.tif`	
+
+**layername:** `egv_446`	
+
+**English name:** Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 1.25 km landscape	
+
+**Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_SwampsMiresBogsHelophytes_r3000	{#ch06.447}
+
+**filename:** `General_SwampsMiresBogsHelophytes_r3000.tif`	
+
+**layername:** `egv_447`	
+
+**English name:** Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 3 km landscape	
+
+**Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_SwampsMiresBogsHelophytes_r10000	{#ch06.448}
+
+**filename:** `General_SwampsMiresBogsHelophytes_r10000.tif`	
+
+**layername:** `egv_448`	
+
+**English name:** Fractional cover of Swamps, Mires, Bogs, Reed-, Sedge-, Rush- Beds within the 10 km landscape	
+
+**Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Trees_cell	{#ch06.449}
+
+**filename:** `General_Trees_cell.tif`	
+
+**layername:** `egv_449`	
+
+**English name:** Fractional cover of Trees, Shrubs, Clear-cuts within the analysis cell (1 ha)	
+
+**Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Trees_r500	{#ch06.450}
+
+**filename:** `General_Trees_r500.tif`	
+
+**layername:** `egv_450`	
+
+**English name:** Fractional cover of Trees, Shrubs, Clear-cuts within the 0.5 km landscape	
+
+**Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Trees_r1250	{#ch06.451}
+
+**filename:** `General_Trees_r1250.tif`	
+
+**layername:** `egv_451`	
+
+**English name:** Fractional cover of Trees, Shrubs, Clear-cuts within the 1.25 km landscape	
+
+**Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Trees_r3000	{#ch06.452}
+
+**filename:** `General_Trees_r3000.tif`	
+
+**layername:** `egv_452`	
+
+**English name:** Fractional cover of Trees, Shrubs, Clear-cuts within the 3 km landscape	
+
+**Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Trees_r10000	{#ch06.453}
+
+**filename:** `General_Trees_r10000.tif`	
+
+**layername:** `egv_453`	
+
+**English name:** Fractional cover of Trees, Shrubs, Clear-cuts within the 10 km landscape	
+
+**Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_TreesOutsideForests_cell	{#ch06.454}
+
+**filename:** `General_TreesOutsideForests_cell.tif`	
+
+**layername:** `egv_454`	
+
+**English name:** Fractional cover of Tree covered areas Outside Forests within the analysis cell (1 ha)	
+
+**Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_TreesOutsideForests_r500	{#ch06.455}
+
+**filename:** `General_TreesOutsideForests_r500.tif`	
+
+**layername:** `egv_455`	
+
+**English name:** Fractional cover of Tree covered areas Outside Forests within the 0.5 km landscape	
+
+**Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_TreesOutsideForests_r1250	{#ch06.456}
+
+**filename:** `General_TreesOutsideForests_r1250.tif`	
+
+**layername:** `egv_456`	
+
+**English name:** Fractional cover of Tree covered areas Outside Forests within the 1.25 km landscape	
+
+**Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_TreesOutsideForests_r3000	{#ch06.457}
+
+**filename:** `General_TreesOutsideForests_r3000.tif`	
+
+**layername:** `egv_457`	
+
+**English name:** Fractional cover of Tree covered areas Outside Forests within the 3 km landscape	
+
+**Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_TreesOutsideForests_r10000	{#ch06.458}
+
+**filename:** `General_TreesOutsideForests_r10000.tif`	
+
+**layername:** `egv_458`	
+
+**English name:** Fractional cover of Tree covered areas Outside Forests within the 10 km landscape	
+
+**Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Water_cell	{#ch06.459}
+
+**filename:** `General_Water_cell.tif`	
+
+**layername:** `egv_459`	
+
+**English name:** Fractional cover of Waterbodies within the analysis cell (1 ha)	
+
+**Latvian name:** Ūdenstilpju platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Water_r500	{#ch06.460}
+
+**filename:** `General_Water_r500.tif`	
+
+**layername:** `egv_460`	
+
+**English name:** Fractional cover of Waterbodies within the 0.5 km landscape	
+
+**Latvian name:** Ūdenstilpju platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Water_r1250	{#ch06.461}
+
+**filename:** `General_Water_r1250.tif`	
+
+**layername:** `egv_461`	
+
+**English name:** Fractional cover of Waterbodies within the 1.25 km landscape	
+
+**Latvian name:** Ūdenstilpju platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Water_r3000	{#ch06.462}
+
+**filename:** `General_Water_r3000.tif`	
+
+**layername:** `egv_462`	
+
+**English name:** Fractional cover of Waterbodies within the 3 km landscape	
+
+**Latvian name:** Ūdenstilpju platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## General_Water_r10000	{#ch06.463}
+
+**filename:** `General_Water_r10000.tif`	
+
+**layername:** `egv_463`	
+
+**English name:** Fractional cover of Waterbodies within the 10 km landscape	
+
+**Latvian name:** Ūdenstilpju platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Bogs_cell	{#ch06.464}
+
+**filename:** `Wetlands_Bogs_cell.tif`	
+
+**layername:** `egv_464`	
+
+**English name:** Fractional cover of Raised Bogs within the analysis cell (1 ha)	
+
+**Latvian name:** Augsto purvu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Bogs_r500	{#ch06.465}
+
+**filename:** `Wetlands_Bogs_r500.tif`	
+
+**layername:** `egv_465`	
+
+**English name:** Fractional cover of Raised Bogs within the 0.5 km landscape	
+
+**Latvian name:** Augsto purvu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Bogs_r1250	{#ch06.466}
+
+**filename:** `Wetlands_Bogs_r1250.tif`	
+
+**layername:** `egv_466`	
+
+**English name:** Fractional cover of Raised Bogs within the 1.25 km landscape	
+
+**Latvian name:** Augsto purvu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Bogs_r3000	{#ch06.467}
+
+**filename:** `Wetlands_Bogs_r3000.tif`	
+
+**layername:** `egv_467`	
+
+**English name:** Fractional cover of Raised Bogs within the 3 km landscape	
+
+**Latvian name:** Augsto purvu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Bogs_r10000	{#ch06.468}
+
+**filename:** `Wetlands_Bogs_r10000.tif`	
+
+**layername:** `egv_468`	
+
+**English name:** Fractional cover of Raised Bogs within the 10 km landscape	
+
+**Latvian name:** Augsto purvu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Mires_cell	{#ch06.469}
+
+**filename:** `Wetlands_Mires_cell.tif`	
+
+**layername:** `egv_469`	
+
+**English name:** Fractional cover of Transitional Mires within the analysis cell (1 ha)	
+
+**Latvian name:** Pārejas purvu platības īpatsvars analīzes šūnā (1 ha)
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Mires_r500	{#ch06.470}
+
+**filename:** `Wetlands_Mires_r500.tif`	
+
+**layername:** `egv_470`	
+
+**English name:** Fractional cover of Transitional Mires within the 0.5 km landscape	
+
+**Latvian name:** Pārejas purvu platības īpatsvars 0,5 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Mires_r1250	{#ch06.471}
+
+**filename:** `Wetlands_Mires_r1250.tif`	
+
+**layername:** `egv_471`	
+
+**English name:** Fractional cover of Transitional Mires within the 1.25 km landscape	
+
+**Latvian name:** Pārejas purvu platības īpatsvars 1,25 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Mires_r3000	{#ch06.472}
+
+**filename:** `Wetlands_Mires_r3000.tif`	
+
+**layername:** `egv_472`	
+
+**English name:** Fractional cover of Transitional Mires within the 3 km landscape	
+
+**Latvian name:** Pārejas purvu platības īpatsvars 3 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
+
+
+## Wetlands_Mires_r10000	{#ch06.473}
+
+**filename:** `Wetlands_Mires_r10000.tif`	
+
+**layername:** `egv_473`	
+
+**English name:** Fractional cover of Transitional Mires within the 10 km landscape	
+
+**Latvian name:** Pārejas purvu platības īpatsvars 10 km ainavā
+
+**Procedure:** 
+
+
+``` r
+# libs ----
+```
 
 
 ## Wetlands_ReedSedgeRushBeds_cell	{#ch06.474}
