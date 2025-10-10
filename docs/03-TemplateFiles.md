@@ -121,7 +121,7 @@ download_raster_templates(
 
 During EGV creation background covering to deal with missing values may be 
 necessary. All the EGVs described in this document can be considered quantities 
-of ratio scale, backgrounds with value `0` are created.
+of ratio scale, therefore backgrounds with value `0` are created.
 
 
 ``` r

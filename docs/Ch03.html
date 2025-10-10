@@ -888,7 +888,7 @@ function <code>download_raster_templates()</code> from {egvtools}.</p>
 </details>
 <p>During EGV creation background covering to deal with missing values may be
 necessary. All the EGVs described in this document can be considered quantities
-of ratio scale, backgrounds with value <code>0</code> are created.</p>
+of ratio scale, therefore backgrounds with value <code>0</code> are created.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch03.html#cb8-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
 <span id="cb8-2"><a href="Ch03.html#cb8-2" tabindex="-1"></a></span>
