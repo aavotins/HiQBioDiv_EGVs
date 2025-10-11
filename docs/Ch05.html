@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-11" />
+<meta name="date" content="2025-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,6 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.14" data-path="Ch04.html"><a href="Ch04.html#Ch04.14"><i class="fa fa-check"></i><b>4.14</b> Waste and garbage disposal sites, landfills</a></li>
 <li class="chapter" data-level="4.15" data-path="Ch04.html"><a href="Ch04.html#Ch04.15"><i class="fa fa-check"></i><b>4.15</b> Digital elevation/terrain models</a></li>
 <li class="chapter" data-level="4.16" data-path="Ch04.html"><a href="Ch04.html#Ch04.16"><i class="fa fa-check"></i><b>4.16</b> Latvian Exclusive Economic Zone polygon</a></li>
+<li class="chapter" data-level="4.17" data-path="Ch04.html"><a href="Ch04.html#Ch04.17"><i class="fa fa-check"></i><b>4.17</b> Bogs and Mires: EDI</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="Ch05.html"><a href="Ch05.html"><i class="fa fa-check"></i><b>5</b> Geodata products</a>
 <ul>
@@ -802,7 +803,53 @@ to be spatially restricted to certain locations. This chapter describes these ge
 products and procedures involved in creating them.</p>
 <div id="Ch05.01" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Terrain products<a href="Ch05.html#Ch05.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>In order to develop part of the relief-related EGV, such as the topographic
+moisture index (TWI) and non-drainage depressions, it is necessary to address
+water flow in the environment. This is a multi-step procedure that is logical
+and reliable in mountainous areas and environments with little hydrological
+impact. However, in the context of Latvia, this is challenging. These challenges
+can be addressed in various ways. For example, if reliable (accurate) information
+on the exact locations of rivers and ditches were available, it could be
+incorporated into the terrain. Unfortunately, there is no sufficiently
+accurate information available. Therefore, information about transport
+structures from the <a href="Ch04.html#Ch04.03">Melioration Cadastre Information System database</a>, bridges
+from the <a href="Ch04.html#Ch04.04">topographic map</a> and transport structures and bridges
+from <a href="Ch04.html#Ch04.06">LVM Open Data</a> was used to address the challenges -
+information about the minimum height above sea level was incorporated into the
+DEM to be used further in a 30 m buffer around these locations.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="Ch05.html#cb27-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb27-2"><a href="Ch05.html#cb27-2" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="Ch05.html#cb27-3" tabindex="-1"></a><span class="co"># arī LVM</span></span></code></pre></div>
+</details>
+<p>This DEM was then used for geoprocessing to find terrain depressions and
+determine the topographic wetness index (TWI). First, terrain depressions were
+calculated, assuming that all runoff that should be known is known and taken
+into account (adjusted DEM values - previous code area). Then, the topographic
+wetness index was prepared and the search for non-runoff depressions was repeated:</p>
+<ol style="list-style-type: decimal">
+<li><p>to calculate the topographic wetness index, the terrain depressions without
+runoff were reviewed, allowing up to ten cell breaks in places of lower
+resistance, the rest were filled in;</p></li>
+<li><p>precise drainage depressions and their depth layers were prepared after
+incorporating flow breaks;</p></li>
+<li><p>for additional security, the result of the first step was repeated to
+search for and fill in relief depressions <span class="citation">(<a href="#ref-WangLiu2006">Wang and Liu, 2006</a>)</span>;</p></li>
+<li><p>the result of the third step was used to determine the specific catchment
+area using d-infinity flow division;</p></li>
+<li><p>by combining the specific catchment area layer with the slope layer,
+the topographic wetness index was calculated. A graphical evaluation revealed
+individual extreme values, which were limited to <strong>20</strong>.</p></li>
+</ol>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="Ch05.html#cb28-1" tabindex="-1"></a><span class="co"># Libs</span></span></code></pre></div>
+</details>
+<p>Since the initial DEM input was created by filling in water bodies using
+interpolation methods, the water bodies show a pronounced terrain, which needs
+to be removed. This is done by inserting average values into these polygons.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="Ch05.html#cb29-1" tabindex="-1"></a><span class="co"># Libs</span></span></code></pre></div>
+</details>
 </div>
 <div id="Ch05.02" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Soil texture product<a href="Ch05.html#Ch05.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -825,59 +872,92 @@ was overlaid by <a href="Ch04.html#Ch04.07.06">Organic soils as modelled by Univ
 saved for EGV creation.</p></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="Ch05.html#cb26-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
-<span id="cb26-2"><a href="Ch05.html#cb26-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
-<span id="cb26-3"><a href="Ch05.html#cb26-3" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="Ch05.html#cb26-4" tabindex="-1"></a><span class="co"># step 1</span></span>
-<span id="cb26-5"><a href="Ch05.html#cb26-5" tabindex="-1"></a>step1<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>)</span>
-<span id="cb26-6"><a href="Ch05.html#cb26-6" tabindex="-1"></a>step1x<span class="ot">=</span><span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,</span>
-<span id="cb26-7"><a href="Ch05.html#cb26-7" tabindex="-1"></a>            <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">2</span>,<span class="dv">2</span>,</span>
-<span id="cb26-8"><a href="Ch05.html#cb26-8" tabindex="-1"></a>                 <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">3</span>,<span class="dv">2</span>,</span>
-<span id="cb26-9"><a href="Ch05.html#cb26-9" tabindex="-1"></a>                      <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">4</span>,<span class="dv">3</span>,</span>
-<span id="cb26-10"><a href="Ch05.html#cb26-10" tabindex="-1"></a>                           <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">8</span>,<span class="dv">4</span>,<span class="cn">NA</span>)))))</span>
-<span id="cb26-11"><a href="Ch05.html#cb26-11" tabindex="-1"></a><span class="fu">plot</span>(step1x)</span>
-<span id="cb26-12"><a href="Ch05.html#cb26-12" tabindex="-1"></a>step1xy<span class="ot">=</span><span class="fu">as.numeric</span>(step1x)</span>
-<span id="cb26-13"><a href="Ch05.html#cb26-13" tabindex="-1"></a><span class="fu">plot</span>(step1xy)</span>
-<span id="cb26-14"><a href="Ch05.html#cb26-14" tabindex="-1"></a></span>
-<span id="cb26-15"><a href="Ch05.html#cb26-15" tabindex="-1"></a></span>
-<span id="cb26-16"><a href="Ch05.html#cb26-16" tabindex="-1"></a><span class="co"># step 2</span></span>
-<span id="cb26-17"><a href="Ch05.html#cb26-17" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif&quot;</span>)</span>
-<span id="cb26-18"><a href="Ch05.html#cb26-18" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">as.numeric</span>(step2a)<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb26-19"><a href="Ch05.html#cb26-19" tabindex="-1"></a><span class="fu">plot</span>(step2a)</span>
-<span id="cb26-20"><a href="Ch05.html#cb26-20" tabindex="-1"></a></span>
-<span id="cb26-21"><a href="Ch05.html#cb26-21" tabindex="-1"></a>step2<span class="ot">=</span><span class="fu">cover</span>(step2a,step1x)</span>
-<span id="cb26-22"><a href="Ch05.html#cb26-22" tabindex="-1"></a><span class="fu">plot</span>(step2)</span>
-<span id="cb26-23"><a href="Ch05.html#cb26-23" tabindex="-1"></a></span>
-<span id="cb26-24"><a href="Ch05.html#cb26-24" tabindex="-1"></a><span class="co"># step 3</span></span>
-<span id="cb26-25"><a href="Ch05.html#cb26-25" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif&quot;</span>)</span>
-<span id="cb26-26"><a href="Ch05.html#cb26-26" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">as.numeric</span>(step3a)<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb26-27"><a href="Ch05.html#cb26-27" tabindex="-1"></a><span class="fu">plot</span>(step3a)</span>
-<span id="cb26-28"><a href="Ch05.html#cb26-28" tabindex="-1"></a></span>
-<span id="cb26-29"><a href="Ch05.html#cb26-29" tabindex="-1"></a>step3<span class="ot">=</span><span class="fu">cover</span>(step3a,step2)</span>
-<span id="cb26-30"><a href="Ch05.html#cb26-30" tabindex="-1"></a><span class="fu">plot</span>(step3)</span>
-<span id="cb26-31"><a href="Ch05.html#cb26-31" tabindex="-1"></a></span>
-<span id="cb26-32"><a href="Ch05.html#cb26-32" tabindex="-1"></a><span class="co"># step 4</span></span>
-<span id="cb26-33"><a href="Ch05.html#cb26-33" tabindex="-1"></a>step4a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicLU.tif&quot;</span>)</span>
-<span id="cb26-34"><a href="Ch05.html#cb26-34" tabindex="-1"></a>step4b<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicSilava.tif&quot;</span>)</span>
-<span id="cb26-35"><a href="Ch05.html#cb26-35" tabindex="-1"></a></span>
-<span id="cb26-36"><a href="Ch05.html#cb26-36" tabindex="-1"></a>step4c<span class="ot">=</span><span class="fu">cover</span>(step4a,step4b)</span>
-<span id="cb26-37"><a href="Ch05.html#cb26-37" tabindex="-1"></a></span>
-<span id="cb26-38"><a href="Ch05.html#cb26-38" tabindex="-1"></a>step4<span class="ot">=</span><span class="fu">ifel</span>(step4c<span class="sc">==</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-39"><a href="Ch05.html#cb26-39" tabindex="-1"></a><span class="fu">plot</span>(step4)</span>
-<span id="cb26-40"><a href="Ch05.html#cb26-40" tabindex="-1"></a></span>
-<span id="cb26-41"><a href="Ch05.html#cb26-41" tabindex="-1"></a><span class="co"># step 5</span></span>
-<span id="cb26-42"><a href="Ch05.html#cb26-42" tabindex="-1"></a></span>
-<span id="cb26-43"><a href="Ch05.html#cb26-43" tabindex="-1"></a>step5<span class="ot">=</span><span class="fu">cover</span>(step4,step3)</span>
-<span id="cb26-44"><a href="Ch05.html#cb26-44" tabindex="-1"></a><span class="fu">plot</span>(step5)</span>
-<span id="cb26-45"><a href="Ch05.html#cb26-45" tabindex="-1"></a></span>
-<span id="cb26-46"><a href="Ch05.html#cb26-46" tabindex="-1"></a><span class="fu">writeRaster</span>(step5,</span>
-<span id="cb26-47"><a href="Ch05.html#cb26-47" tabindex="-1"></a>           <span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_combined.tif&quot;</span>,</span>
-<span id="cb26-48"><a href="Ch05.html#cb26-48" tabindex="-1"></a>           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="Ch05.html#cb30-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
+<span id="cb30-2"><a href="Ch05.html#cb30-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb30-3"><a href="Ch05.html#cb30-3" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="Ch05.html#cb30-4" tabindex="-1"></a><span class="co"># step 1</span></span>
+<span id="cb30-5"><a href="Ch05.html#cb30-5" tabindex="-1"></a>step1<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>)</span>
+<span id="cb30-6"><a href="Ch05.html#cb30-6" tabindex="-1"></a>step1x<span class="ot">=</span><span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,</span>
+<span id="cb30-7"><a href="Ch05.html#cb30-7" tabindex="-1"></a>            <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">2</span>,<span class="dv">2</span>,</span>
+<span id="cb30-8"><a href="Ch05.html#cb30-8" tabindex="-1"></a>                 <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">3</span>,<span class="dv">2</span>,</span>
+<span id="cb30-9"><a href="Ch05.html#cb30-9" tabindex="-1"></a>                      <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">4</span>,<span class="dv">3</span>,</span>
+<span id="cb30-10"><a href="Ch05.html#cb30-10" tabindex="-1"></a>                           <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">8</span>,<span class="dv">4</span>,<span class="cn">NA</span>)))))</span>
+<span id="cb30-11"><a href="Ch05.html#cb30-11" tabindex="-1"></a><span class="fu">plot</span>(step1x)</span>
+<span id="cb30-12"><a href="Ch05.html#cb30-12" tabindex="-1"></a>step1xy<span class="ot">=</span><span class="fu">as.numeric</span>(step1x)</span>
+<span id="cb30-13"><a href="Ch05.html#cb30-13" tabindex="-1"></a><span class="fu">plot</span>(step1xy)</span>
+<span id="cb30-14"><a href="Ch05.html#cb30-14" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="Ch05.html#cb30-15" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="Ch05.html#cb30-16" tabindex="-1"></a><span class="co"># step 2</span></span>
+<span id="cb30-17"><a href="Ch05.html#cb30-17" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif&quot;</span>)</span>
+<span id="cb30-18"><a href="Ch05.html#cb30-18" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">as.numeric</span>(step2a)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb30-19"><a href="Ch05.html#cb30-19" tabindex="-1"></a><span class="fu">plot</span>(step2a)</span>
+<span id="cb30-20"><a href="Ch05.html#cb30-20" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="Ch05.html#cb30-21" tabindex="-1"></a>step2<span class="ot">=</span><span class="fu">cover</span>(step2a,step1x)</span>
+<span id="cb30-22"><a href="Ch05.html#cb30-22" tabindex="-1"></a><span class="fu">plot</span>(step2)</span>
+<span id="cb30-23"><a href="Ch05.html#cb30-23" tabindex="-1"></a></span>
+<span id="cb30-24"><a href="Ch05.html#cb30-24" tabindex="-1"></a><span class="co"># step 3</span></span>
+<span id="cb30-25"><a href="Ch05.html#cb30-25" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif&quot;</span>)</span>
+<span id="cb30-26"><a href="Ch05.html#cb30-26" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">as.numeric</span>(step3a)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb30-27"><a href="Ch05.html#cb30-27" tabindex="-1"></a><span class="fu">plot</span>(step3a)</span>
+<span id="cb30-28"><a href="Ch05.html#cb30-28" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="Ch05.html#cb30-29" tabindex="-1"></a>step3<span class="ot">=</span><span class="fu">cover</span>(step3a,step2)</span>
+<span id="cb30-30"><a href="Ch05.html#cb30-30" tabindex="-1"></a><span class="fu">plot</span>(step3)</span>
+<span id="cb30-31"><a href="Ch05.html#cb30-31" tabindex="-1"></a></span>
+<span id="cb30-32"><a href="Ch05.html#cb30-32" tabindex="-1"></a><span class="co"># step 4</span></span>
+<span id="cb30-33"><a href="Ch05.html#cb30-33" tabindex="-1"></a>step4a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicLU.tif&quot;</span>)</span>
+<span id="cb30-34"><a href="Ch05.html#cb30-34" tabindex="-1"></a>step4b<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicSilava.tif&quot;</span>)</span>
+<span id="cb30-35"><a href="Ch05.html#cb30-35" tabindex="-1"></a></span>
+<span id="cb30-36"><a href="Ch05.html#cb30-36" tabindex="-1"></a>step4c<span class="ot">=</span><span class="fu">cover</span>(step4a,step4b)</span>
+<span id="cb30-37"><a href="Ch05.html#cb30-37" tabindex="-1"></a></span>
+<span id="cb30-38"><a href="Ch05.html#cb30-38" tabindex="-1"></a>step4<span class="ot">=</span><span class="fu">ifel</span>(step4c<span class="sc">==</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="cn">NA</span>)</span>
+<span id="cb30-39"><a href="Ch05.html#cb30-39" tabindex="-1"></a><span class="fu">plot</span>(step4)</span>
+<span id="cb30-40"><a href="Ch05.html#cb30-40" tabindex="-1"></a></span>
+<span id="cb30-41"><a href="Ch05.html#cb30-41" tabindex="-1"></a><span class="co"># step 5</span></span>
+<span id="cb30-42"><a href="Ch05.html#cb30-42" tabindex="-1"></a></span>
+<span id="cb30-43"><a href="Ch05.html#cb30-43" tabindex="-1"></a>step5<span class="ot">=</span><span class="fu">cover</span>(step4,step3)</span>
+<span id="cb30-44"><a href="Ch05.html#cb30-44" tabindex="-1"></a><span class="fu">plot</span>(step5)</span>
+<span id="cb30-45"><a href="Ch05.html#cb30-45" tabindex="-1"></a></span>
+<span id="cb30-46"><a href="Ch05.html#cb30-46" tabindex="-1"></a><span class="fu">writeRaster</span>(step5,</span>
+<span id="cb30-47"><a href="Ch05.html#cb30-47" tabindex="-1"></a>           <span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_combined.tif&quot;</span>,</span>
+<span id="cb30-48"><a href="Ch05.html#cb30-48" tabindex="-1"></a>           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.03" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Landscape classification<a href="Ch05.html#Ch05.03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>krā</p>
+<p>In this exercise, “landscape” refers to the representation of different types
+of land cover and land use classes, where the order in which these classes are
+drawn is important, because spatial data from different sources often have
+mismatched boundaries, which requires addressing both their overlap (1) and
+filling in gaps where there is no database information (2), and the choice of
+how to emphasize objects with certain processing, such as buffering, because
+some elements that are important for characterizing the environment (especially
+edge effects) may be so small or so poorly positioned that they disappear during
+the rasterization process (3). The general landscape layer also serves as a
+mask for the preparation of further environmental descriptions. This section
+describes the development of a general (simple) landscape and, in the following
+document, its enrichment with more specific environmental eco-geographical
+variables. The general landscape is stored in the file <code>Ainava_vienk_mask.tif</code>,
+in which the classes and the procedure for their creation are described in the
+following list:</p>
+<ul>
+<li><p>class <code>100</code> - <strong>roads</strong>: roads from various sources, <strong>filled in sequence</strong> -
+dominates classes with higher values so that relatively small objects are not
+lost and information about edges is provided. The following have been
+combined to create this class:</p>
+<ul>
+<li><p>layers <code>RoadA_COMB</code> and <code>RoadL_COMB</code> (except smallest size groups) from
+<a href="Ch04.html#Ch04.04">topographic map</a>, buffered by 10 m before rasterization;</p></li>
+<li><p><a href="Ch04.html#Ch04.06">LVM open data</a> layers <code>LVM_MEZA_AUTOCELI</code>, <code>LVM_ATTISTAMIE_AUTOCELI</code>,
+<code>LVM_APGRIESANAS_LAUKUMI</code>, <code>LVM_IZMAINISANAS_VIETAS</code> and <code>LVM_NOBRAUKTUVES</code>
+buffered by 10 m;</p></li>
+<li><p>information from the State Forest Register on natural roads has not
+been used, as these do not usually form a continuous break in the canopy.
+Information on roads from this register is also available in other
+resources and has not been duplicated.</p></li>
+</ul></li>
+</ul>
+<p>The command lines below create a layer with landscape class <code>100</code>, which is
+saved in the file <code>SimpleLandscape_class100_celi.tif</code> for further work.</p>
 </div>
 <div id="Ch05.04" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Landscape diversity<a href="Ch05.html#Ch05.04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -895,6 +975,12 @@ saved for EGV creation.</p></li>
 <p>krā</p>
 
 </div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-WangLiu2006" class="csl-entry">
+Wang, L., Liu, H., 2006. An efficient method for identifying and filling surface depressions in digital elevation models for hydrologic analysis and modelling. International Journal of Geographical Information Science 20, 193–213. <a href="https://doi.org/10.1080/13658810500433453">https://doi.org/10.1080/13658810500433453</a>
 </div>
 </div>
             </section>

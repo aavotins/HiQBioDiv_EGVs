@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-11" />
+<meta name="date" content="2025-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,6 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.14" data-path="Ch04.html"><a href="Ch04.html#Ch04.14"><i class="fa fa-check"></i><b>4.14</b> Waste and garbage disposal sites, landfills</a></li>
 <li class="chapter" data-level="4.15" data-path="Ch04.html"><a href="Ch04.html#Ch04.15"><i class="fa fa-check"></i><b>4.15</b> Digital elevation/terrain models</a></li>
 <li class="chapter" data-level="4.16" data-path="Ch04.html"><a href="Ch04.html#Ch04.16"><i class="fa fa-check"></i><b>4.16</b> Latvian Exclusive Economic Zone polygon</a></li>
+<li class="chapter" data-level="4.17" data-path="Ch04.html"><a href="Ch04.html#Ch04.17"><i class="fa fa-check"></i><b>4.17</b> Bogs and Mires: EDI</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="Ch05.html"><a href="Ch05.html"><i class="fa fa-check"></i><b>5</b> Geodata products</a>
 <ul>
@@ -3596,6 +3597,80 @@ direction.</p>
 <p>The waters of Latvia’s Exclusive Economic Zone were obtained from
 the <a href="https://maps.helcom.fi/website/mapservice/?datasetID=ae58c373-674c-45d1-be0f-1ff69a59f9ba">HELCOM map and data service</a>. After downloading, this line file was
 analogically connected to the coastline file obtained from the same resource.</p>
+</div>
+<div id="Ch04.17" class="section level2 hasAnchor" number="4.17">
+<h2><span class="header-section-number">4.17</span> Bogs and Mires: EDI<a href="Ch04.html#Ch04.17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data (training and classification) used in project “Remote Sensing and Machine
+Learning for Peatland Habitat Monitoring (PurvEO)” by Institute of electronics
+and computer science are stored at <code>Geodata/2024/Bogs_EDI</code>.</p>
+<p>Preprocessing combines this information to create two layers:</p>
+<ul>
+<li><p><code>EDI_BogsYN.tif</code>: training and classification results on open raised bogs (EU
+protected habitat codes 7110 and 7120) and locations where on of those overlaps
+with transitional mires (EU protected habitat code 7140);</p></li>
+<li><p><code>EDI_TransitionalMiresYN.tif</code>: training and classification results on
+transitional mires (EU protected habitat code 7140) with no overlap with open
+rised bogs.</p></li>
+</ul>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="Ch04.html#cb26-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb26-2"><a href="Ch04.html#cb26-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb26-3"><a href="Ch04.html#cb26-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb26-4"><a href="Ch04.html#cb26-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb26-5"><a href="Ch04.html#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="Ch04.html#cb26-6" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="Ch04.html#cb26-7" tabindex="-1"></a><span class="co"># Templates ----</span></span>
+<span id="cb26-8"><a href="Ch04.html#cb26-8" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="Ch04.html#cb26-9" tabindex="-1"></a>template10<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb26-10"><a href="Ch04.html#cb26-10" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb26-11"><a href="Ch04.html#cb26-11" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="Ch04.html#cb26-12" tabindex="-1"></a>nulles10<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/nulls_LV10m_10km.tif&quot;</span>)</span>
+<span id="cb26-13"><a href="Ch04.html#cb26-13" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="Ch04.html#cb26-14" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="Ch04.html#cb26-15" tabindex="-1"></a><span class="co"># Bogs ----</span></span>
+<span id="cb26-16"><a href="Ch04.html#cb26-16" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="Ch04.html#cb26-17" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="Ch04.html#cb26-18" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif&quot;</span>)</span>
+<span id="cb26-19"><a href="Ch04.html#cb26-19" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">ifel</span>(neatklata71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-20"><a href="Ch04.html#cb26-20" tabindex="-1"></a><span class="fu">plot</span>(neatklata71107120)</span>
+<span id="cb26-21"><a href="Ch04.html#cb26-21" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7140.tif&quot;</span>)</span>
+<span id="cb26-22"><a href="Ch04.html#cb26-22" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">ifel</span>(neatklata7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-23"><a href="Ch04.html#cb26-23" tabindex="-1"></a></span>
+<span id="cb26-24"><a href="Ch04.html#cb26-24" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7110_7120.tif&quot;</span>)</span>
+<span id="cb26-25"><a href="Ch04.html#cb26-25" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">ifel</span>(raskturiga71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-26"><a href="Ch04.html#cb26-26" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7140.tif&quot;</span>)</span>
+<span id="cb26-27"><a href="Ch04.html#cb26-27" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">ifel</span>(raksturiga7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-28"><a href="Ch04.html#cb26-28" tabindex="-1"></a></span>
+<span id="cb26-29"><a href="Ch04.html#cb26-29" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7110_7120.tif&quot;</span>)</span>
+<span id="cb26-30"><a href="Ch04.html#cb26-30" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">ifel</span>(labels71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-31"><a href="Ch04.html#cb26-31" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7140.tif&quot;</span>)</span>
+<span id="cb26-32"><a href="Ch04.html#cb26-32" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">ifel</span>(labels7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-33"><a href="Ch04.html#cb26-33" tabindex="-1"></a></span>
+<span id="cb26-34"><a href="Ch04.html#cb26-34" tabindex="-1"></a>augstie<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata71107120,raskturiga71107120),labels71107120)</span>
+<span id="cb26-35"><a href="Ch04.html#cb26-35" tabindex="-1"></a>parejas<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata7140,raksturiga7140),labels7140)</span>
+<span id="cb26-36"><a href="Ch04.html#cb26-36" tabindex="-1"></a>tikai_parejas<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,<span class="cn">NA</span>,parejas)</span>
+<span id="cb26-37"><a href="Ch04.html#cb26-37" tabindex="-1"></a>sunainie<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,parejas,<span class="cn">NA</span>)</span>
+<span id="cb26-38"><a href="Ch04.html#cb26-38" tabindex="-1"></a></span>
+<span id="cb26-39"><a href="Ch04.html#cb26-39" tabindex="-1"></a>sunu_purvi<span class="ot">=</span><span class="fu">cover</span>(augstie,sunainie)</span>
+<span id="cb26-40"><a href="Ch04.html#cb26-40" tabindex="-1"></a></span>
+<span id="cb26-41"><a href="Ch04.html#cb26-41" tabindex="-1"></a>sunu_proj<span class="ot">=</span><span class="fu">project</span>(sunu_purvi,template10)</span>
+<span id="cb26-42"><a href="Ch04.html#cb26-42" tabindex="-1"></a>sunuYN<span class="ot">=</span><span class="fu">cover</span>(sunu_proj,nulles10)</span>
+<span id="cb26-43"><a href="Ch04.html#cb26-43" tabindex="-1"></a><span class="fu">plot</span>(sunuYN)</span>
+<span id="cb26-44"><a href="Ch04.html#cb26-44" tabindex="-1"></a><span class="fu">writeRaster</span>(sunuYN,</span>
+<span id="cb26-45"><a href="Ch04.html#cb26-45" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb26-46"><a href="Ch04.html#cb26-46" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
+<span id="cb26-47"><a href="Ch04.html#cb26-47" tabindex="-1"></a></span>
+<span id="cb26-48"><a href="Ch04.html#cb26-48" tabindex="-1"></a></span>
+<span id="cb26-49"><a href="Ch04.html#cb26-49" tabindex="-1"></a></span>
+<span id="cb26-50"><a href="Ch04.html#cb26-50" tabindex="-1"></a><span class="co"># Transitional mires ----</span></span>
+<span id="cb26-51"><a href="Ch04.html#cb26-51" tabindex="-1"></a></span>
+<span id="cb26-52"><a href="Ch04.html#cb26-52" tabindex="-1"></a>parejas_proj<span class="ot">=</span><span class="fu">project</span>(tikai_parejas,template10)</span>
+<span id="cb26-53"><a href="Ch04.html#cb26-53" tabindex="-1"></a>parejasYN<span class="ot">=</span><span class="fu">cover</span>(parejas_proj,nulles10)</span>
+<span id="cb26-54"><a href="Ch04.html#cb26-54" tabindex="-1"></a><span class="fu">plot</span>(parejasYN)</span>
+<span id="cb26-55"><a href="Ch04.html#cb26-55" tabindex="-1"></a><span class="fu">writeRaster</span>(parejasYN,</span>
+<span id="cb26-56"><a href="Ch04.html#cb26-56" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb26-57"><a href="Ch04.html#cb26-57" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span></code></pre></div>
+</details>
 
 </div>
 </div>
