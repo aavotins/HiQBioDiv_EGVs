@@ -957,7 +957,892 @@ resources and has not been duplicated.</p></li>
 </ul></li>
 </ul>
 <p>The command lines below create a layer with landscape class <code>100</code>, which is
-saved in the file <code>SimpleLandscape_class100_celi.tif</code> for further work.</p>
+saved in the file <code>SimpleLandscape_class100_celi.tif</code> for further processing.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="Ch05.html#cb31-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb31-2"><a href="Ch05.html#cb31-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb31-3"><a href="Ch05.html#cb31-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb31-4"><a href="Ch05.html#cb31-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb31-5"><a href="Ch05.html#cb31-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb31-6"><a href="Ch05.html#cb31-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb31-7"><a href="Ch05.html#cb31-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb31-8"><a href="Ch05.html#cb31-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb31-9"><a href="Ch05.html#cb31-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb31-10"><a href="Ch05.html#cb31-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb31-11"><a href="Ch05.html#cb31-11" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="Ch05.html#cb31-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb31-13"><a href="Ch05.html#cb31-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb31-14"><a href="Ch05.html#cb31-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb31-15"><a href="Ch05.html#cb31-15" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="Ch05.html#cb31-16" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="Ch05.html#cb31-17" tabindex="-1"></a><span class="co"># class 100 ----</span></span>
+<span id="cb31-18"><a href="Ch05.html#cb31-18" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="Ch05.html#cb31-19" tabindex="-1"></a><span class="co">#poly</span></span>
+<span id="cb31-20"><a href="Ch05.html#cb31-20" tabindex="-1"></a>celi_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/RoadA_COMB.parquet&quot;</span>)</span>
+<span id="cb31-21"><a href="Ch05.html#cb31-21" tabindex="-1"></a>celi_topo<span class="ot">=</span>celi_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb31-22"><a href="Ch05.html#cb31-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-23"><a href="Ch05.html#cb31-23" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-24"><a href="Ch05.html#cb31-24" tabindex="-1"></a>ctb<span class="ot">=</span><span class="fu">st_buffer</span>(celi_topo,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb31-25"><a href="Ch05.html#cb31-25" tabindex="-1"></a>r_celi_topo<span class="ot">=</span><span class="fu">fasterize</span>(ctb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb31-26"><a href="Ch05.html#cb31-26" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="Ch05.html#cb31-27" tabindex="-1"></a><span class="co"># pts</span></span>
+<span id="cb31-28"><a href="Ch05.html#cb31-28" tabindex="-1"></a>nobrauktuves<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_NOBRAUKTUVES/LVM_NOBRAUKTUVES_Shape.shp&quot;</span>)</span>
+<span id="cb31-29"><a href="Ch05.html#cb31-29" tabindex="-1"></a>nobrauktuves<span class="ot">=</span>nobrauktuves <span class="sc">%&gt;%</span> </span>
+<span id="cb31-30"><a href="Ch05.html#cb31-30" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-31"><a href="Ch05.html#cb31-31" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-32"><a href="Ch05.html#cb31-32" tabindex="-1"></a>izmainisanas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_IZMAINISANAS_VIETAS/LVM_IZMAINISANAS_VIETAS_Shape.shp&quot;</span>)</span>
+<span id="cb31-33"><a href="Ch05.html#cb31-33" tabindex="-1"></a>izmainisanas<span class="ot">=</span>izmainisanas <span class="sc">%&gt;%</span> </span>
+<span id="cb31-34"><a href="Ch05.html#cb31-34" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-35"><a href="Ch05.html#cb31-35" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-36"><a href="Ch05.html#cb31-36" tabindex="-1"></a>apgriesanas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_APGRIESANAS_LAUKUMI/LVM_APGRIESANAS_LAUKUMI_Shape.shp&quot;</span>)</span>
+<span id="cb31-37"><a href="Ch05.html#cb31-37" tabindex="-1"></a>apgriesanas<span class="ot">=</span>apgriesanas <span class="sc">%&gt;%</span> </span>
+<span id="cb31-38"><a href="Ch05.html#cb31-38" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-39"><a href="Ch05.html#cb31-39" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-40"><a href="Ch05.html#cb31-40" tabindex="-1"></a>cp<span class="ot">=</span><span class="fu">rbind</span>(nobrauktuves,izmainisanas,apgriesanas)</span>
+<span id="cb31-41"><a href="Ch05.html#cb31-41" tabindex="-1"></a>cpb<span class="ot">=</span><span class="fu">st_buffer</span>(cp,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb31-42"><a href="Ch05.html#cb31-42" tabindex="-1"></a>r_celi_pts<span class="ot">=</span><span class="fu">fasterize</span>(cpb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb31-43"><a href="Ch05.html#cb31-43" tabindex="-1"></a></span>
+<span id="cb31-44"><a href="Ch05.html#cb31-44" tabindex="-1"></a></span>
+<span id="cb31-45"><a href="Ch05.html#cb31-45" tabindex="-1"></a><span class="co"># lines</span></span>
+<span id="cb31-46"><a href="Ch05.html#cb31-46" tabindex="-1"></a>meza_autoceli<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_MEZA_AUTOCELI/LVM_MEZA_AUTOCELI_Shape.shp&quot;</span>)</span>
+<span id="cb31-47"><a href="Ch05.html#cb31-47" tabindex="-1"></a>meza_autoceli<span class="ot">=</span>meza_autoceli <span class="sc">%&gt;%</span> </span>
+<span id="cb31-48"><a href="Ch05.html#cb31-48" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-49"><a href="Ch05.html#cb31-49" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-50"><a href="Ch05.html#cb31-50" tabindex="-1"></a>attistamie<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_ATTISTAMIE_AUTOCELI/LVM_ATTISTAMIE_AUTOCELI_Shape.shp&quot;</span>)</span>
+<span id="cb31-51"><a href="Ch05.html#cb31-51" tabindex="-1"></a>attistamie<span class="ot">=</span>attistamie <span class="sc">%&gt;%</span> </span>
+<span id="cb31-52"><a href="Ch05.html#cb31-52" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-53"><a href="Ch05.html#cb31-53" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-54"><a href="Ch05.html#cb31-54" tabindex="-1"></a>topo_lines<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/RoadL_COMB.parquet&quot;</span>)</span>
+<span id="cb31-55"><a href="Ch05.html#cb31-55" tabindex="-1"></a>topo_lines<span class="ot">=</span>topo_lines <span class="sc">%&gt;%</span> </span>
+<span id="cb31-56"><a href="Ch05.html#cb31-56" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-57"><a href="Ch05.html#cb31-57" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-58"><a href="Ch05.html#cb31-58" tabindex="-1"></a>cl<span class="ot">=</span><span class="fu">bind_rows</span>(meza_autoceli,attistamie,topo_lines)</span>
+<span id="cb31-59"><a href="Ch05.html#cb31-59" tabindex="-1"></a>cl<span class="ot">=</span>cl <span class="sc">%&gt;%</span> </span>
+<span id="cb31-60"><a href="Ch05.html#cb31-60" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb31-61"><a href="Ch05.html#cb31-61" tabindex="-1"></a>clb<span class="ot">=</span><span class="fu">st_buffer</span>(cl,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb31-62"><a href="Ch05.html#cb31-62" tabindex="-1"></a>r_celi_lines<span class="ot">=</span><span class="fu">fasterize</span>(clb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb31-63"><a href="Ch05.html#cb31-63" tabindex="-1"></a></span>
+<span id="cb31-64"><a href="Ch05.html#cb31-64" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb31-65"><a href="Ch05.html#cb31-65" tabindex="-1"></a><span class="fu">rm</span>(apgriesanas)</span>
+<span id="cb31-66"><a href="Ch05.html#cb31-66" tabindex="-1"></a><span class="fu">rm</span>(attistamie)</span>
+<span id="cb31-67"><a href="Ch05.html#cb31-67" tabindex="-1"></a><span class="fu">rm</span>(celi_topo)</span>
+<span id="cb31-68"><a href="Ch05.html#cb31-68" tabindex="-1"></a><span class="fu">rm</span>(topo_lines)</span>
+<span id="cb31-69"><a href="Ch05.html#cb31-69" tabindex="-1"></a><span class="fu">rm</span>(ctb)</span>
+<span id="cb31-70"><a href="Ch05.html#cb31-70" tabindex="-1"></a><span class="fu">rm</span>(cl)</span>
+<span id="cb31-71"><a href="Ch05.html#cb31-71" tabindex="-1"></a><span class="fu">rm</span>(clb)</span>
+<span id="cb31-72"><a href="Ch05.html#cb31-72" tabindex="-1"></a><span class="fu">rm</span>(cp)</span>
+<span id="cb31-73"><a href="Ch05.html#cb31-73" tabindex="-1"></a><span class="fu">rm</span>(cpb)</span>
+<span id="cb31-74"><a href="Ch05.html#cb31-74" tabindex="-1"></a><span class="fu">rm</span>(izmainisanas)</span>
+<span id="cb31-75"><a href="Ch05.html#cb31-75" tabindex="-1"></a><span class="fu">rm</span>(meza_autoceli)</span>
+<span id="cb31-76"><a href="Ch05.html#cb31-76" tabindex="-1"></a><span class="fu">rm</span>(nobrauktuves)</span>
+<span id="cb31-77"><a href="Ch05.html#cb31-77" tabindex="-1"></a></span>
+<span id="cb31-78"><a href="Ch05.html#cb31-78" tabindex="-1"></a><span class="co"># to terra</span></span>
+<span id="cb31-79"><a href="Ch05.html#cb31-79" tabindex="-1"></a>t_celi_topo<span class="ot">=</span><span class="fu">rast</span>(r_celi_topo)</span>
+<span id="cb31-80"><a href="Ch05.html#cb31-80" tabindex="-1"></a>t_celi_pts<span class="ot">=</span><span class="fu">rast</span>(r_celi_pts)</span>
+<span id="cb31-81"><a href="Ch05.html#cb31-81" tabindex="-1"></a>t_celi_lines<span class="ot">=</span><span class="fu">rast</span>(r_celi_lines)</span>
+<span id="cb31-82"><a href="Ch05.html#cb31-82" tabindex="-1"></a></span>
+<span id="cb31-83"><a href="Ch05.html#cb31-83" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb31-84"><a href="Ch05.html#cb31-84" tabindex="-1"></a><span class="fu">rm</span>(r_celi_lines)</span>
+<span id="cb31-85"><a href="Ch05.html#cb31-85" tabindex="-1"></a><span class="fu">rm</span>(r_celi_pts)</span>
+<span id="cb31-86"><a href="Ch05.html#cb31-86" tabindex="-1"></a><span class="fu">rm</span>(r_celi_topo)</span>
+<span id="cb31-87"><a href="Ch05.html#cb31-87" tabindex="-1"></a></span>
+<span id="cb31-88"><a href="Ch05.html#cb31-88" tabindex="-1"></a><span class="co"># union</span></span>
+<span id="cb31-89"><a href="Ch05.html#cb31-89" tabindex="-1"></a><span class="fu">plot</span>(t_celi_topo)</span>
+<span id="cb31-90"><a href="Ch05.html#cb31-90" tabindex="-1"></a></span>
+<span id="cb31-91"><a href="Ch05.html#cb31-91" tabindex="-1"></a>road_union1<span class="ot">=</span><span class="fu">cover</span>(t_celi_topo,t_celi_pts)</span>
+<span id="cb31-92"><a href="Ch05.html#cb31-92" tabindex="-1"></a>road_union2<span class="ot">=</span><span class="fu">cover</span>(road_union1,t_celi_lines,</span>
+<span id="cb31-93"><a href="Ch05.html#cb31-93" tabindex="-1"></a>                  <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif&quot;</span>,</span>
+<span id="cb31-94"><a href="Ch05.html#cb31-94" tabindex="-1"></a>                  <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb31-95"><a href="Ch05.html#cb31-95" tabindex="-1"></a></span>
+<span id="cb31-96"><a href="Ch05.html#cb31-96" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb31-97"><a href="Ch05.html#cb31-97" tabindex="-1"></a><span class="fu">rm</span>(t_celi_topo)</span>
+<span id="cb31-98"><a href="Ch05.html#cb31-98" tabindex="-1"></a><span class="fu">rm</span>(t_celi_pts)</span>
+<span id="cb31-99"><a href="Ch05.html#cb31-99" tabindex="-1"></a><span class="fu">rm</span>(t_celi_lines)</span>
+<span id="cb31-100"><a href="Ch05.html#cb31-100" tabindex="-1"></a><span class="fu">rm</span>(road_union1)</span>
+<span id="cb31-101"><a href="Ch05.html#cb31-101" tabindex="-1"></a><span class="fu">rm</span>(road_union2)</span></code></pre></div>
+</details>
+<p>200</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="Ch05.html#cb32-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb32-2"><a href="Ch05.html#cb32-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb32-3"><a href="Ch05.html#cb32-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb32-4"><a href="Ch05.html#cb32-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb32-5"><a href="Ch05.html#cb32-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb32-6"><a href="Ch05.html#cb32-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb32-7"><a href="Ch05.html#cb32-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb32-8"><a href="Ch05.html#cb32-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb32-9"><a href="Ch05.html#cb32-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb32-10"><a href="Ch05.html#cb32-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb32-11"><a href="Ch05.html#cb32-11" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="Ch05.html#cb32-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb32-13"><a href="Ch05.html#cb32-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb32-14"><a href="Ch05.html#cb32-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb32-15"><a href="Ch05.html#cb32-15" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="Ch05.html#cb32-16" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="Ch05.html#cb32-17" tabindex="-1"></a><span class="co"># class 200 ----</span></span>
+<span id="cb32-18"><a href="Ch05.html#cb32-18" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="Ch05.html#cb32-19" tabindex="-1"></a><span class="co"># topo</span></span>
+<span id="cb32-20"><a href="Ch05.html#cb32-20" tabindex="-1"></a>topo_udens_poly<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
+<span id="cb32-21"><a href="Ch05.html#cb32-21" tabindex="-1"></a>topo_udens_poly<span class="ot">=</span>topo_udens_poly <span class="sc">%&gt;%</span> </span>
+<span id="cb32-22"><a href="Ch05.html#cb32-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">200</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-23"><a href="Ch05.html#cb32-23" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-24"><a href="Ch05.html#cb32-24" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs=</span><span class="dv">3059</span>)</span>
+<span id="cb32-25"><a href="Ch05.html#cb32-25" tabindex="-1"></a>topo_udens_lines<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/HidroL_COMB.parquet&quot;</span>)</span>
+<span id="cb32-26"><a href="Ch05.html#cb32-26" tabindex="-1"></a>topo_udens_lines<span class="ot">=</span>topo_udens_lines <span class="sc">%&gt;%</span> </span>
+<span id="cb32-27"><a href="Ch05.html#cb32-27" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">200</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-28"><a href="Ch05.html#cb32-28" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-29"><a href="Ch05.html#cb32-29" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-30"><a href="Ch05.html#cb32-30" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs=</span><span class="dv">3059</span>)</span>
+<span id="cb32-31"><a href="Ch05.html#cb32-31" tabindex="-1"></a>topo_udens<span class="ot">=</span><span class="fu">rbind</span>(topo_udens_poly,topo_udens_lines)</span>
+<span id="cb32-32"><a href="Ch05.html#cb32-32" tabindex="-1"></a>r_topo_udens<span class="ot">=</span><span class="fu">fasterize</span>(topo_udens,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb32-33"><a href="Ch05.html#cb32-33" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_topo_udens,</span>
+<span id="cb32-34"><a href="Ch05.html#cb32-34" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_topo.tif&quot;</span>,</span>
+<span id="cb32-35"><a href="Ch05.html#cb32-35" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb32-36"><a href="Ch05.html#cb32-36" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb32-37"><a href="Ch05.html#cb32-37" tabindex="-1"></a><span class="fu">rm</span>(topo_udens_lines)</span>
+<span id="cb32-38"><a href="Ch05.html#cb32-38" tabindex="-1"></a><span class="fu">rm</span>(topo_udens_poly)</span>
+<span id="cb32-39"><a href="Ch05.html#cb32-39" tabindex="-1"></a><span class="fu">rm</span>(topo_udens)</span>
+<span id="cb32-40"><a href="Ch05.html#cb32-40" tabindex="-1"></a><span class="fu">rm</span>(r_topo_udens)</span>
+<span id="cb32-41"><a href="Ch05.html#cb32-41" tabindex="-1"></a></span>
+<span id="cb32-42"><a href="Ch05.html#cb32-42" tabindex="-1"></a><span class="co"># mkis</span></span>
+<span id="cb32-43"><a href="Ch05.html#cb32-43" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>)</span>
+<span id="cb32-44"><a href="Ch05.html#cb32-44" tabindex="-1"></a>mkis_gravji<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;Gravji&quot;</span>)</span>
+<span id="cb32-45"><a href="Ch05.html#cb32-45" tabindex="-1"></a></span>
+<span id="cb32-46"><a href="Ch05.html#cb32-46" tabindex="-1"></a>mkis_gravji<span class="ot">=</span>mkis_gravji <span class="sc">%&gt;%</span> </span>
+<span id="cb32-47"><a href="Ch05.html#cb32-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">200</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-48"><a href="Ch05.html#cb32-48" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-49"><a href="Ch05.html#cb32-49" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb32-50"><a href="Ch05.html#cb32-50" tabindex="-1"></a>r_mkis_udens<span class="ot">=</span><span class="fu">fasterize</span>(mkis_gravji,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb32-51"><a href="Ch05.html#cb32-51" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_mkis_udens,</span>
+<span id="cb32-52"><a href="Ch05.html#cb32-52" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_mkis.tif&quot;</span>,</span>
+<span id="cb32-53"><a href="Ch05.html#cb32-53" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb32-54"><a href="Ch05.html#cb32-54" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb32-55"><a href="Ch05.html#cb32-55" tabindex="-1"></a><span class="fu">rm</span>(mkis_gravji)</span>
+<span id="cb32-56"><a href="Ch05.html#cb32-56" tabindex="-1"></a><span class="fu">rm</span>(mkis_gravji2)</span>
+<span id="cb32-57"><a href="Ch05.html#cb32-57" tabindex="-1"></a><span class="fu">rm</span>(mkis_gravji3)</span>
+<span id="cb32-58"><a href="Ch05.html#cb32-58" tabindex="-1"></a><span class="fu">rm</span>(r_mkis_udens)</span>
+<span id="cb32-59"><a href="Ch05.html#cb32-59" tabindex="-1"></a></span>
+<span id="cb32-60"><a href="Ch05.html#cb32-60" tabindex="-1"></a><span class="co"># lvm</span></span>
+<span id="cb32-61"><a href="Ch05.html#cb32-61" tabindex="-1"></a>lvm_gravji<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_GRAVJI/LVM_GRAVJI_Shape.shp&quot;</span>)</span>
+<span id="cb32-62"><a href="Ch05.html#cb32-62" tabindex="-1"></a>lvm_gravji<span class="ot">=</span>lvm_gravji <span class="sc">%&gt;%</span> </span>
+<span id="cb32-63"><a href="Ch05.html#cb32-63" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">200</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-64"><a href="Ch05.html#cb32-64" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-65"><a href="Ch05.html#cb32-65" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb32-66"><a href="Ch05.html#cb32-66" tabindex="-1"></a>r_lvm_gravji<span class="ot">=</span><span class="fu">fasterize</span>(lvm_gravji,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb32-67"><a href="Ch05.html#cb32-67" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_lvm_gravji,</span>
+<span id="cb32-68"><a href="Ch05.html#cb32-68" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif&quot;</span>,</span>
+<span id="cb32-69"><a href="Ch05.html#cb32-69" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb32-70"><a href="Ch05.html#cb32-70" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb32-71"><a href="Ch05.html#cb32-71" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb32-72"><a href="Ch05.html#cb32-72" tabindex="-1"></a><span class="fu">rm</span>(lvm_gravji)</span>
+<span id="cb32-73"><a href="Ch05.html#cb32-73" tabindex="-1"></a><span class="fu">rm</span>(r_lvm_gravji)</span>
+<span id="cb32-74"><a href="Ch05.html#cb32-74" tabindex="-1"></a></span>
+<span id="cb32-75"><a href="Ch05.html#cb32-75" tabindex="-1"></a></span>
+<span id="cb32-76"><a href="Ch05.html#cb32-76" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb32-77"><a href="Ch05.html#cb32-77" tabindex="-1"></a>a200<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_topo.tif&quot;</span>)</span>
+<span id="cb32-78"><a href="Ch05.html#cb32-78" tabindex="-1"></a>b200<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_mkis.tif&quot;</span>)</span>
+<span id="cb32-79"><a href="Ch05.html#cb32-79" tabindex="-1"></a>c200<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif&quot;</span>)</span>
+<span id="cb32-80"><a href="Ch05.html#cb32-80" tabindex="-1"></a></span>
+<span id="cb32-81"><a href="Ch05.html#cb32-81" tabindex="-1"></a>udens_cover1<span class="ot">=</span><span class="fu">cover</span>(a200,b200)</span>
+<span id="cb32-82"><a href="Ch05.html#cb32-82" tabindex="-1"></a>udens_cover2<span class="ot">=</span><span class="fu">cover</span>(udens_cover1,c200,</span>
+<span id="cb32-83"><a href="Ch05.html#cb32-83" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif&quot;</span>,</span>
+<span id="cb32-84"><a href="Ch05.html#cb32-84" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb32-85"><a href="Ch05.html#cb32-85" tabindex="-1"></a></span>
+<span id="cb32-86"><a href="Ch05.html#cb32-86" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb32-87"><a href="Ch05.html#cb32-87" tabindex="-1"></a><span class="fu">rm</span>(a200)</span>
+<span id="cb32-88"><a href="Ch05.html#cb32-88" tabindex="-1"></a><span class="fu">rm</span>(b200)</span>
+<span id="cb32-89"><a href="Ch05.html#cb32-89" tabindex="-1"></a><span class="fu">rm</span>(c200)</span>
+<span id="cb32-90"><a href="Ch05.html#cb32-90" tabindex="-1"></a><span class="fu">rm</span>(udens_cover1)</span>
+<span id="cb32-91"><a href="Ch05.html#cb32-91" tabindex="-1"></a><span class="fu">rm</span>(udens_cover2)</span>
+<span id="cb32-92"><a href="Ch05.html#cb32-92" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_topo.tif&quot;</span>)</span>
+<span id="cb32-93"><a href="Ch05.html#cb32-93" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_mkis.tif&quot;</span>)</span>
+<span id="cb32-94"><a href="Ch05.html#cb32-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p>300</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="Ch05.html#cb33-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb33-2"><a href="Ch05.html#cb33-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb33-3"><a href="Ch05.html#cb33-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb33-4"><a href="Ch05.html#cb33-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb33-5"><a href="Ch05.html#cb33-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb33-6"><a href="Ch05.html#cb33-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb33-7"><a href="Ch05.html#cb33-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb33-8"><a href="Ch05.html#cb33-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb33-9"><a href="Ch05.html#cb33-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb33-10"><a href="Ch05.html#cb33-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb33-11"><a href="Ch05.html#cb33-11" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="Ch05.html#cb33-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb33-13"><a href="Ch05.html#cb33-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb33-14"><a href="Ch05.html#cb33-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb33-15"><a href="Ch05.html#cb33-15" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="Ch05.html#cb33-16" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="Ch05.html#cb33-17" tabindex="-1"></a><span class="co"># class 300 ----</span></span>
+<span id="cb33-18"><a href="Ch05.html#cb33-18" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="Ch05.html#cb33-19" tabindex="-1"></a><span class="co"># lad</span></span>
+<span id="cb33-20"><a href="Ch05.html#cb33-20" tabindex="-1"></a>lad_klasem<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Geodata/2024/LAD/KulturuKodi_2024.xlsx&quot;</span>)</span>
+<span id="cb33-21"><a href="Ch05.html#cb33-21" tabindex="-1"></a>lad<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
+<span id="cb33-22"><a href="Ch05.html#cb33-22" tabindex="-1"></a></span>
+<span id="cb33-23"><a href="Ch05.html#cb33-23" tabindex="-1"></a></span>
+<span id="cb33-24"><a href="Ch05.html#cb33-24" tabindex="-1"></a><span class="do">## arable</span></span>
+<span id="cb33-25"><a href="Ch05.html#cb33-25" tabindex="-1"></a>amazemem<span class="ot">=</span>lad_klasem <span class="sc">%&gt;%</span> </span>
+<span id="cb33-26"><a href="Ch05.html#cb33-26" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(SDM_grupa_sakums,<span class="st">&quot;aramz&quot;</span>))</span>
+<span id="cb33-27"><a href="Ch05.html#cb33-27" tabindex="-1"></a>aramzemes<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb33-28"><a href="Ch05.html#cb33-28" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> amazemem<span class="sc">$</span>kods) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-29"><a href="Ch05.html#cb33-29" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">310</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-30"><a href="Ch05.html#cb33-30" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb33-31"><a href="Ch05.html#cb33-31" tabindex="-1"></a>r_aramzemes_lad<span class="ot">=</span><span class="fu">fasterize</span>(aramzemes,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb33-32"><a href="Ch05.html#cb33-32" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_aramzemes_lad,</span>
+<span id="cb33-33"><a href="Ch05.html#cb33-33" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class310_aramzemes_lad.tif&quot;</span>,</span>
+<span id="cb33-34"><a href="Ch05.html#cb33-34" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb33-35"><a href="Ch05.html#cb33-35" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb33-36"><a href="Ch05.html#cb33-36" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb33-37"><a href="Ch05.html#cb33-37" tabindex="-1"></a><span class="fu">rm</span>(amazemem)</span>
+<span id="cb33-38"><a href="Ch05.html#cb33-38" tabindex="-1"></a><span class="fu">rm</span>(aramzemes)</span>
+<span id="cb33-39"><a href="Ch05.html#cb33-39" tabindex="-1"></a><span class="fu">rm</span>(r_aramzemes_lad)</span>
+<span id="cb33-40"><a href="Ch05.html#cb33-40" tabindex="-1"></a></span>
+<span id="cb33-41"><a href="Ch05.html#cb33-41" tabindex="-1"></a></span>
+<span id="cb33-42"><a href="Ch05.html#cb33-42" tabindex="-1"></a><span class="do">## fallow</span></span>
+<span id="cb33-43"><a href="Ch05.html#cb33-43" tabindex="-1"></a>papuvem<span class="ot">=</span>lad_klasem <span class="sc">%&gt;%</span> </span>
+<span id="cb33-44"><a href="Ch05.html#cb33-44" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(SDM_grupa_sakums,<span class="st">&quot;papuv&quot;</span>))</span>
+<span id="cb33-45"><a href="Ch05.html#cb33-45" tabindex="-1"></a>papuves<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb33-46"><a href="Ch05.html#cb33-46" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> papuvem<span class="sc">$</span>kods) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-47"><a href="Ch05.html#cb33-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">320</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-48"><a href="Ch05.html#cb33-48" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb33-49"><a href="Ch05.html#cb33-49" tabindex="-1"></a>r_papuves_lad<span class="ot">=</span><span class="fu">fasterize</span>(papuves,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb33-50"><a href="Ch05.html#cb33-50" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_papuves_lad,</span>
+<span id="cb33-51"><a href="Ch05.html#cb33-51" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif&quot;</span>,</span>
+<span id="cb33-52"><a href="Ch05.html#cb33-52" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb33-53"><a href="Ch05.html#cb33-53" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb33-54"><a href="Ch05.html#cb33-54" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb33-55"><a href="Ch05.html#cb33-55" tabindex="-1"></a><span class="fu">rm</span>(papuvem)</span>
+<span id="cb33-56"><a href="Ch05.html#cb33-56" tabindex="-1"></a><span class="fu">rm</span>(papuves)</span>
+<span id="cb33-57"><a href="Ch05.html#cb33-57" tabindex="-1"></a><span class="fu">rm</span>(r_papuves_lad)</span>
+<span id="cb33-58"><a href="Ch05.html#cb33-58" tabindex="-1"></a></span>
+<span id="cb33-59"><a href="Ch05.html#cb33-59" tabindex="-1"></a><span class="do">## grassland</span></span>
+<span id="cb33-60"><a href="Ch05.html#cb33-60" tabindex="-1"></a>zalajiem<span class="ot">=</span>lad_klasem <span class="sc">%&gt;%</span> </span>
+<span id="cb33-61"><a href="Ch05.html#cb33-61" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(SDM_grupa_sakums,<span class="st">&quot;zālā&quot;</span>))</span>
+<span id="cb33-62"><a href="Ch05.html#cb33-62" tabindex="-1"></a>zalaji<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb33-63"><a href="Ch05.html#cb33-63" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> zalajiem<span class="sc">$</span>kods) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-64"><a href="Ch05.html#cb33-64" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">330</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-65"><a href="Ch05.html#cb33-65" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb33-66"><a href="Ch05.html#cb33-66" tabindex="-1"></a>r_zalaji_lad<span class="ot">=</span><span class="fu">fasterize</span>(zalaji,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb33-67"><a href="Ch05.html#cb33-67" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_zalaji_lad,</span>
+<span id="cb33-68"><a href="Ch05.html#cb33-68" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>,</span>
+<span id="cb33-69"><a href="Ch05.html#cb33-69" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb33-70"><a href="Ch05.html#cb33-70" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb33-71"><a href="Ch05.html#cb33-71" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb33-72"><a href="Ch05.html#cb33-72" tabindex="-1"></a><span class="fu">rm</span>(zalajiem)</span>
+<span id="cb33-73"><a href="Ch05.html#cb33-73" tabindex="-1"></a><span class="fu">rm</span>(zalaji)</span>
+<span id="cb33-74"><a href="Ch05.html#cb33-74" tabindex="-1"></a><span class="fu">rm</span>(r_zalaji_lad)</span>
+<span id="cb33-75"><a href="Ch05.html#cb33-75" tabindex="-1"></a></span>
+<span id="cb33-76"><a href="Ch05.html#cb33-76" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb33-77"><a href="Ch05.html#cb33-77" tabindex="-1"></a>a300<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class310_aramzemes_lad.tif&quot;</span>)</span>
+<span id="cb33-78"><a href="Ch05.html#cb33-78" tabindex="-1"></a>b300<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif&quot;</span>)</span>
+<span id="cb33-79"><a href="Ch05.html#cb33-79" tabindex="-1"></a>c300<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span>
+<span id="cb33-80"><a href="Ch05.html#cb33-80" tabindex="-1"></a></span>
+<span id="cb33-81"><a href="Ch05.html#cb33-81" tabindex="-1"></a>farmland_cover1<span class="ot">=</span><span class="fu">cover</span>(a300,b300)</span>
+<span id="cb33-82"><a href="Ch05.html#cb33-82" tabindex="-1"></a>farmland_cover2<span class="ot">=</span><span class="fu">cover</span>(farmland_cover1,c300,</span>
+<span id="cb33-83"><a href="Ch05.html#cb33-83" tabindex="-1"></a>                          <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif&quot;</span>,</span>
+<span id="cb33-84"><a href="Ch05.html#cb33-84" tabindex="-1"></a>                          <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb33-85"><a href="Ch05.html#cb33-85" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb33-86"><a href="Ch05.html#cb33-86" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb33-87"><a href="Ch05.html#cb33-87" tabindex="-1"></a><span class="fu">rm</span>(lad_klasem)</span>
+<span id="cb33-88"><a href="Ch05.html#cb33-88" tabindex="-1"></a><span class="fu">rm</span>(a300)</span>
+<span id="cb33-89"><a href="Ch05.html#cb33-89" tabindex="-1"></a><span class="fu">rm</span>(b300)</span>
+<span id="cb33-90"><a href="Ch05.html#cb33-90" tabindex="-1"></a><span class="fu">rm</span>(c300)</span>
+<span id="cb33-91"><a href="Ch05.html#cb33-91" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover1)</span>
+<span id="cb33-92"><a href="Ch05.html#cb33-92" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover2)</span>
+<span id="cb33-93"><a href="Ch05.html#cb33-93" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class310_aramzemes_lad.tif&quot;</span>)</span>
+<span id="cb33-94"><a href="Ch05.html#cb33-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif&quot;</span>)</span>
+<span id="cb33-95"><a href="Ch05.html#cb33-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p>400</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="Ch05.html#cb34-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb34-2"><a href="Ch05.html#cb34-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb34-3"><a href="Ch05.html#cb34-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb34-4"><a href="Ch05.html#cb34-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb34-5"><a href="Ch05.html#cb34-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb34-6"><a href="Ch05.html#cb34-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb34-7"><a href="Ch05.html#cb34-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb34-8"><a href="Ch05.html#cb34-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb34-9"><a href="Ch05.html#cb34-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb34-10"><a href="Ch05.html#cb34-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb34-11"><a href="Ch05.html#cb34-11" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="Ch05.html#cb34-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb34-13"><a href="Ch05.html#cb34-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb34-14"><a href="Ch05.html#cb34-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb34-15"><a href="Ch05.html#cb34-15" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="Ch05.html#cb34-16" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="Ch05.html#cb34-17" tabindex="-1"></a><span class="co"># class 400 ----</span></span>
+<span id="cb34-18"><a href="Ch05.html#cb34-18" tabindex="-1"></a></span>
+<span id="cb34-19"><a href="Ch05.html#cb34-19" tabindex="-1"></a><span class="co"># topo</span></span>
+<span id="cb34-20"><a href="Ch05.html#cb34-20" tabindex="-1"></a>darzini_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb34-21"><a href="Ch05.html#cb34-21" tabindex="-1"></a><span class="fu">table</span>(darzini_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb34-22"><a href="Ch05.html#cb34-22" tabindex="-1"></a>darzini_topo<span class="ot">=</span>darzini_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb34-23"><a href="Ch05.html#cb34-23" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Augludarzs&quot;</span>,<span class="st">&quot;poligons_Augļudārzs&quot;</span>,<span class="st">&quot;poligons_Sakņudārzs&quot;</span>,</span>
+<span id="cb34-24"><a href="Ch05.html#cb34-24" tabindex="-1"></a>                      <span class="st">&quot;poligons_Ogulājs&quot;</span>,<span class="st">&quot;poligons_Ogulajs&quot;</span>,<span class="st">&quot;poligons_Saknudarzs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-25"><a href="Ch05.html#cb34-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">410</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-26"><a href="Ch05.html#cb34-26" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb34-27"><a href="Ch05.html#cb34-27" tabindex="-1"></a>r_darzini_topo<span class="ot">=</span><span class="fu">fasterize</span>(darzini_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb34-28"><a href="Ch05.html#cb34-28" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_darzini_topo,</span>
+<span id="cb34-29"><a href="Ch05.html#cb34-29" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif&quot;</span>,</span>
+<span id="cb34-30"><a href="Ch05.html#cb34-30" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb34-31"><a href="Ch05.html#cb34-31" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb34-32"><a href="Ch05.html#cb34-32" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb34-33"><a href="Ch05.html#cb34-33" tabindex="-1"></a><span class="fu">rm</span>(darzini_topo)</span>
+<span id="cb34-34"><a href="Ch05.html#cb34-34" tabindex="-1"></a><span class="fu">rm</span>(r_darzini_topo)</span>
+<span id="cb34-35"><a href="Ch05.html#cb34-35" tabindex="-1"></a></span>
+<span id="cb34-36"><a href="Ch05.html#cb34-36" tabindex="-1"></a><span class="co"># lad</span></span>
+<span id="cb34-37"><a href="Ch05.html#cb34-37" tabindex="-1"></a>lad_klasem<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Geodata/2024/LAD/KulturuKodi_2024.xlsx&quot;</span>)</span>
+<span id="cb34-38"><a href="Ch05.html#cb34-38" tabindex="-1"></a><span class="fu">table</span>(lad_klasem<span class="sc">$</span>SDM_grupa_sakums,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb34-39"><a href="Ch05.html#cb34-39" tabindex="-1"></a>augludarziem<span class="ot">=</span>lad_klasem <span class="sc">%&gt;%</span> </span>
+<span id="cb34-40"><a href="Ch05.html#cb34-40" tabindex="-1"></a>  <span class="fu">filter</span>(SDM_grupa_sakums<span class="sc">==</span><span class="st">&quot;augļudārzi&quot;</span>)</span>
+<span id="cb34-41"><a href="Ch05.html#cb34-41" tabindex="-1"></a>lad<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
+<span id="cb34-42"><a href="Ch05.html#cb34-42" tabindex="-1"></a>lad<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb34-43"><a href="Ch05.html#cb34-43" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> augludarziem<span class="sc">$</span>kods) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-44"><a href="Ch05.html#cb34-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">420</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-45"><a href="Ch05.html#cb34-45" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb34-46"><a href="Ch05.html#cb34-46" tabindex="-1"></a>r_darzini_lad<span class="ot">=</span><span class="fu">fasterize</span>(lad,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb34-47"><a href="Ch05.html#cb34-47" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_darzini_lad,</span>
+<span id="cb34-48"><a href="Ch05.html#cb34-48" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>,</span>
+<span id="cb34-49"><a href="Ch05.html#cb34-49" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb34-50"><a href="Ch05.html#cb34-50" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb34-51"><a href="Ch05.html#cb34-51" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb34-52"><a href="Ch05.html#cb34-52" tabindex="-1"></a><span class="fu">rm</span>(lad_klasem)</span>
+<span id="cb34-53"><a href="Ch05.html#cb34-53" tabindex="-1"></a><span class="fu">rm</span>(augludarziem)</span>
+<span id="cb34-54"><a href="Ch05.html#cb34-54" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb34-55"><a href="Ch05.html#cb34-55" tabindex="-1"></a><span class="fu">rm</span>(r_darzini_lad)</span>
+<span id="cb34-56"><a href="Ch05.html#cb34-56" tabindex="-1"></a></span>
+<span id="cb34-57"><a href="Ch05.html#cb34-57" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb34-58"><a href="Ch05.html#cb34-58" tabindex="-1"></a>a400<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif&quot;</span>)</span>
+<span id="cb34-59"><a href="Ch05.html#cb34-59" tabindex="-1"></a>b400<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span>
+<span id="cb34-60"><a href="Ch05.html#cb34-60" tabindex="-1"></a></span>
+<span id="cb34-61"><a href="Ch05.html#cb34-61" tabindex="-1"></a>allotment_cover<span class="ot">=</span><span class="fu">cover</span>(a400,b400,</span>
+<span id="cb34-62"><a href="Ch05.html#cb34-62" tabindex="-1"></a>                     <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif&quot;</span>,</span>
+<span id="cb34-63"><a href="Ch05.html#cb34-63" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb34-64"><a href="Ch05.html#cb34-64" tabindex="-1"></a></span>
+<span id="cb34-65"><a href="Ch05.html#cb34-65" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb34-66"><a href="Ch05.html#cb34-66" tabindex="-1"></a><span class="fu">rm</span>(a400)</span>
+<span id="cb34-67"><a href="Ch05.html#cb34-67" tabindex="-1"></a><span class="fu">rm</span>(b400)</span>
+<span id="cb34-68"><a href="Ch05.html#cb34-68" tabindex="-1"></a><span class="fu">rm</span>(allotment_cover)</span>
+<span id="cb34-69"><a href="Ch05.html#cb34-69" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif&quot;</span>)</span>
+<span id="cb34-70"><a href="Ch05.html#cb34-70" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p>500</p>
+<p>600</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="Ch05.html#cb35-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb35-2"><a href="Ch05.html#cb35-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb35-3"><a href="Ch05.html#cb35-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb35-4"><a href="Ch05.html#cb35-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb35-5"><a href="Ch05.html#cb35-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb35-6"><a href="Ch05.html#cb35-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb35-7"><a href="Ch05.html#cb35-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb35-8"><a href="Ch05.html#cb35-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb35-9"><a href="Ch05.html#cb35-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb35-10"><a href="Ch05.html#cb35-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb35-11"><a href="Ch05.html#cb35-11" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="Ch05.html#cb35-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb35-13"><a href="Ch05.html#cb35-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb35-14"><a href="Ch05.html#cb35-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb35-15"><a href="Ch05.html#cb35-15" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="Ch05.html#cb35-16" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="Ch05.html#cb35-17" tabindex="-1"></a><span class="co"># class 600 ----</span></span>
+<span id="cb35-18"><a href="Ch05.html#cb35-18" tabindex="-1"></a></span>
+<span id="cb35-19"><a href="Ch05.html#cb35-19" tabindex="-1"></a><span class="co"># mvr </span></span>
+<span id="cb35-20"><a href="Ch05.html#cb35-20" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb35-21"><a href="Ch05.html#cb35-21" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="Ch05.html#cb35-22" tabindex="-1"></a><span class="co"># clearcuts</span></span>
+<span id="cb35-23"><a href="Ch05.html#cb35-23" tabindex="-1"></a>izcirtumi<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb35-24"><a href="Ch05.html#cb35-24" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;12&quot;</span>,<span class="st">&quot;14&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-25"><a href="Ch05.html#cb35-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">610</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-26"><a href="Ch05.html#cb35-26" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-27"><a href="Ch05.html#cb35-27" tabindex="-1"></a>r_izcirtumi_mvr<span class="ot">=</span><span class="fu">fasterize</span>(izcirtumi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-28"><a href="Ch05.html#cb35-28" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_izcirtumi_mvr,</span>
+<span id="cb35-29"><a href="Ch05.html#cb35-29" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif&quot;</span>,</span>
+<span id="cb35-30"><a href="Ch05.html#cb35-30" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-31"><a href="Ch05.html#cb35-31" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-32"><a href="Ch05.html#cb35-32" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-33"><a href="Ch05.html#cb35-33" tabindex="-1"></a><span class="fu">rm</span>(izcirtumi)</span>
+<span id="cb35-34"><a href="Ch05.html#cb35-34" tabindex="-1"></a><span class="fu">rm</span>(r_izcirtumi_mvr)</span>
+<span id="cb35-35"><a href="Ch05.html#cb35-35" tabindex="-1"></a></span>
+<span id="cb35-36"><a href="Ch05.html#cb35-36" tabindex="-1"></a><span class="co"># low stands</span></span>
+<span id="cb35-37"><a href="Ch05.html#cb35-37" tabindex="-1"></a><span class="co"># also zkat 16</span></span>
+<span id="cb35-38"><a href="Ch05.html#cb35-38" tabindex="-1"></a>zemas_audzes<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb35-39"><a href="Ch05.html#cb35-39" tabindex="-1"></a>  <span class="fu">filter</span>((zkat <span class="sc">==</span><span class="st">&quot;10&quot;</span> <span class="sc">&amp;</span> h10<span class="sc">&lt;</span><span class="dv">5</span>)<span class="sc">|</span>zkat<span class="sc">==</span><span class="st">&quot;16&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-40"><a href="Ch05.html#cb35-40" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-41"><a href="Ch05.html#cb35-41" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-42"><a href="Ch05.html#cb35-42" tabindex="-1"></a>r_zemas_mvr<span class="ot">=</span><span class="fu">fasterize</span>(zemas_audzes,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-43"><a href="Ch05.html#cb35-43" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_zemas_mvr,</span>
+<span id="cb35-44"><a href="Ch05.html#cb35-44" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif&quot;</span>,</span>
+<span id="cb35-45"><a href="Ch05.html#cb35-45" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-46"><a href="Ch05.html#cb35-46" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-47"><a href="Ch05.html#cb35-47" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-48"><a href="Ch05.html#cb35-48" tabindex="-1"></a><span class="fu">rm</span>(zemas_audzes)</span>
+<span id="cb35-49"><a href="Ch05.html#cb35-49" tabindex="-1"></a><span class="fu">rm</span>(r_zemas_mvr)</span>
+<span id="cb35-50"><a href="Ch05.html#cb35-50" tabindex="-1"></a></span>
+<span id="cb35-51"><a href="Ch05.html#cb35-51" tabindex="-1"></a></span>
+<span id="cb35-52"><a href="Ch05.html#cb35-52" tabindex="-1"></a><span class="co"># high stands</span></span>
+<span id="cb35-53"><a href="Ch05.html#cb35-53" tabindex="-1"></a>augstas_audzes<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb35-54"><a href="Ch05.html#cb35-54" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">==</span><span class="st">&quot;10&quot;</span> <span class="sc">&amp;</span> h10<span class="sc">&gt;=</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-55"><a href="Ch05.html#cb35-55" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">630</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-56"><a href="Ch05.html#cb35-56" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-57"><a href="Ch05.html#cb35-57" tabindex="-1"></a>r_augstas_mvr<span class="ot">=</span><span class="fu">fasterize</span>(augstas_audzes,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-58"><a href="Ch05.html#cb35-58" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_augstas_mvr,</span>
+<span id="cb35-59"><a href="Ch05.html#cb35-59" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_augstas_mvr.tif&quot;</span>,</span>
+<span id="cb35-60"><a href="Ch05.html#cb35-60" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-61"><a href="Ch05.html#cb35-61" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-62"><a href="Ch05.html#cb35-62" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-63"><a href="Ch05.html#cb35-63" tabindex="-1"></a><span class="fu">rm</span>(augstas_audzes)</span>
+<span id="cb35-64"><a href="Ch05.html#cb35-64" tabindex="-1"></a><span class="fu">rm</span>(r_augstas_mvr)</span>
+<span id="cb35-65"><a href="Ch05.html#cb35-65" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb35-66"><a href="Ch05.html#cb35-66" tabindex="-1"></a></span>
+<span id="cb35-67"><a href="Ch05.html#cb35-67" tabindex="-1"></a><span class="co"># tcl - since 2020</span></span>
+<span id="cb35-68"><a href="Ch05.html#cb35-68" tabindex="-1"></a>tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif&quot;</span>)</span>
+<span id="cb35-69"><a href="Ch05.html#cb35-69" tabindex="-1"></a>tcl2<span class="ot">=</span><span class="fu">ifel</span>(tcl<span class="sc">&lt;</span><span class="dv">20</span>,<span class="cn">NA</span>,<span class="dv">610</span>,</span>
+<span id="cb35-70"><a href="Ch05.html#cb35-70" tabindex="-1"></a>          <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_TCL.tif&quot;</span>,</span>
+<span id="cb35-71"><a href="Ch05.html#cb35-71" tabindex="-1"></a>          <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-72"><a href="Ch05.html#cb35-72" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-73"><a href="Ch05.html#cb35-73" tabindex="-1"></a><span class="fu">rm</span>(tcl)</span>
+<span id="cb35-74"><a href="Ch05.html#cb35-74" tabindex="-1"></a><span class="fu">rm</span>(tcl2)</span>
+<span id="cb35-75"><a href="Ch05.html#cb35-75" tabindex="-1"></a></span>
+<span id="cb35-76"><a href="Ch05.html#cb35-76" tabindex="-1"></a><span class="co"># palsar</span></span>
+<span id="cb35-77"><a href="Ch05.html#cb35-77" tabindex="-1"></a>palsar<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Trees/Palsar/Palsar_Forests.tif&quot;</span>)</span>
+<span id="cb35-78"><a href="Ch05.html#cb35-78" tabindex="-1"></a>palsar2<span class="ot">=</span><span class="fu">ifel</span>(palsar<span class="sc">==</span><span class="dv">1</span>,<span class="dv">630</span>,<span class="cn">NA</span>,</span>
+<span id="cb35-79"><a href="Ch05.html#cb35-79" tabindex="-1"></a>             <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_Palsar.tif&quot;</span>,</span>
+<span id="cb35-80"><a href="Ch05.html#cb35-80" tabindex="-1"></a>             <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-81"><a href="Ch05.html#cb35-81" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-82"><a href="Ch05.html#cb35-82" tabindex="-1"></a><span class="fu">rm</span>(palsar)</span>
+<span id="cb35-83"><a href="Ch05.html#cb35-83" tabindex="-1"></a><span class="fu">rm</span>(palsar2)</span>
+<span id="cb35-84"><a href="Ch05.html#cb35-84" tabindex="-1"></a></span>
+<span id="cb35-85"><a href="Ch05.html#cb35-85" tabindex="-1"></a></span>
+<span id="cb35-86"><a href="Ch05.html#cb35-86" tabindex="-1"></a><span class="co"># lad</span></span>
+<span id="cb35-87"><a href="Ch05.html#cb35-87" tabindex="-1"></a>lad_klasem<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Geodata/2024/LAD/KulturuKodi_2024.xlsx&quot;</span>)</span>
+<span id="cb35-88"><a href="Ch05.html#cb35-88" tabindex="-1"></a><span class="fu">table</span>(lad_klasem<span class="sc">$</span>SDM_grupa_sakums,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb35-89"><a href="Ch05.html#cb35-89" tabindex="-1"></a>lad<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
+<span id="cb35-90"><a href="Ch05.html#cb35-90" tabindex="-1"></a>krumiem<span class="ot">=</span>lad_klasem <span class="sc">%&gt;%</span> </span>
+<span id="cb35-91"><a href="Ch05.html#cb35-91" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(SDM_grupa_sakums,<span class="st">&quot;krūmv&quot;</span>))</span>
+<span id="cb35-92"><a href="Ch05.html#cb35-92" tabindex="-1"></a>krumi<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb35-93"><a href="Ch05.html#cb35-93" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> krumiem<span class="sc">$</span>kods) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-94"><a href="Ch05.html#cb35-94" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-95"><a href="Ch05.html#cb35-95" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-96"><a href="Ch05.html#cb35-96" tabindex="-1"></a>r_krumi_lad<span class="ot">=</span><span class="fu">fasterize</span>(krumi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-97"><a href="Ch05.html#cb35-97" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_krumi_lad,</span>
+<span id="cb35-98"><a href="Ch05.html#cb35-98" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_lad.tif&quot;</span>,</span>
+<span id="cb35-99"><a href="Ch05.html#cb35-99" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-100"><a href="Ch05.html#cb35-100" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-101"><a href="Ch05.html#cb35-101" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-102"><a href="Ch05.html#cb35-102" tabindex="-1"></a><span class="fu">rm</span>(lad_klasem)</span>
+<span id="cb35-103"><a href="Ch05.html#cb35-103" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb35-104"><a href="Ch05.html#cb35-104" tabindex="-1"></a><span class="fu">rm</span>(krumiem)</span>
+<span id="cb35-105"><a href="Ch05.html#cb35-105" tabindex="-1"></a><span class="fu">rm</span>(krumi)</span>
+<span id="cb35-106"><a href="Ch05.html#cb35-106" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_lad)</span>
+<span id="cb35-107"><a href="Ch05.html#cb35-107" tabindex="-1"></a></span>
+<span id="cb35-108"><a href="Ch05.html#cb35-108" tabindex="-1"></a><span class="co"># topo - pkk</span></span>
+<span id="cb35-109"><a href="Ch05.html#cb35-109" tabindex="-1"></a>pkk_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb35-110"><a href="Ch05.html#cb35-110" tabindex="-1"></a><span class="fu">table</span>(pkk_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb35-111"><a href="Ch05.html#cb35-111" tabindex="-1"></a>pkk_topo<span class="ot">=</span>pkk_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb35-112"><a href="Ch05.html#cb35-112" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Parks&quot;</span>,<span class="st">&quot;poligons_Meza_kapi&quot;</span>,<span class="st">&quot;poligons_Kapi&quot;</span>,</span>
+<span id="cb35-113"><a href="Ch05.html#cb35-113" tabindex="-1"></a>                      <span class="st">&quot;poligons_Kapi_meza&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-114"><a href="Ch05.html#cb35-114" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">640</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-115"><a href="Ch05.html#cb35-115" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-116"><a href="Ch05.html#cb35-116" tabindex="-1"></a>r_pkk_topo<span class="ot">=</span><span class="fu">fasterize</span>(pkk_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-117"><a href="Ch05.html#cb35-117" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_pkk_topo,</span>
+<span id="cb35-118"><a href="Ch05.html#cb35-118" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_pkk_topo.tif&quot;</span>,</span>
+<span id="cb35-119"><a href="Ch05.html#cb35-119" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-120"><a href="Ch05.html#cb35-120" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-121"><a href="Ch05.html#cb35-121" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-122"><a href="Ch05.html#cb35-122" tabindex="-1"></a><span class="fu">rm</span>(pkk_topo)</span>
+<span id="cb35-123"><a href="Ch05.html#cb35-123" tabindex="-1"></a><span class="fu">rm</span>(r_pkk_topo)</span>
+<span id="cb35-124"><a href="Ch05.html#cb35-124" tabindex="-1"></a></span>
+<span id="cb35-125"><a href="Ch05.html#cb35-125" tabindex="-1"></a><span class="co"># topo - shrubs</span></span>
+<span id="cb35-126"><a href="Ch05.html#cb35-126" tabindex="-1"></a>krumi_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb35-127"><a href="Ch05.html#cb35-127" tabindex="-1"></a><span class="fu">table</span>(krumi_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb35-128"><a href="Ch05.html#cb35-128" tabindex="-1"></a>krumi_topo<span class="ot">=</span>krumi_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb35-129"><a href="Ch05.html#cb35-129" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Krūmājs&quot;</span>,<span class="st">&quot;poligons_Krumajs&quot;</span>,</span>
+<span id="cb35-130"><a href="Ch05.html#cb35-130" tabindex="-1"></a>                      <span class="st">&quot;poligons_Krūmaugu_plant&quot;</span>,<span class="st">&quot;poligons_Plantacija_krum&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-131"><a href="Ch05.html#cb35-131" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-132"><a href="Ch05.html#cb35-132" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-133"><a href="Ch05.html#cb35-133" tabindex="-1"></a>r_krumi_topo<span class="ot">=</span><span class="fu">fasterize</span>(krumi_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-134"><a href="Ch05.html#cb35-134" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_krumi_topo,</span>
+<span id="cb35-135"><a href="Ch05.html#cb35-135" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_topo.tif&quot;</span>,</span>
+<span id="cb35-136"><a href="Ch05.html#cb35-136" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-137"><a href="Ch05.html#cb35-137" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-138"><a href="Ch05.html#cb35-138" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-139"><a href="Ch05.html#cb35-139" tabindex="-1"></a><span class="fu">rm</span>(krumi_topo)</span>
+<span id="cb35-140"><a href="Ch05.html#cb35-140" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_topo)</span>
+<span id="cb35-141"><a href="Ch05.html#cb35-141" tabindex="-1"></a></span>
+<span id="cb35-142"><a href="Ch05.html#cb35-142" tabindex="-1"></a><span class="co"># topo - linear vegetation</span></span>
+<span id="cb35-143"><a href="Ch05.html#cb35-143" tabindex="-1"></a>linijas_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/FloraL_COMB.parquet&quot;</span>)</span>
+<span id="cb35-144"><a href="Ch05.html#cb35-144" tabindex="-1"></a><span class="fu">table</span>(linijas_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb35-145"><a href="Ch05.html#cb35-145" tabindex="-1"></a></span>
+<span id="cb35-146"><a href="Ch05.html#cb35-146" tabindex="-1"></a><span class="co"># linear shrubs</span></span>
+<span id="cb35-147"><a href="Ch05.html#cb35-147" tabindex="-1"></a>krumu_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb35-148"><a href="Ch05.html#cb35-148" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME<span class="sc">==</span><span class="st">&quot;Krūmu rinda dzīvzogs&quot;</span><span class="sc">|</span>FNAME<span class="sc">==</span><span class="st">&quot;Krūmu rinda gar ceļiem upēm&quot;</span><span class="sc">|</span></span>
+<span id="cb35-149"><a href="Ch05.html#cb35-149" tabindex="-1"></a>           FNAME<span class="sc">==</span><span class="st">&quot;Krumu_rinda_dzivzogs&quot;</span><span class="sc">|</span>FNAME<span class="sc">==</span><span class="st">&quot;Krumu_rinda_gar_celiem_upem&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-150"><a href="Ch05.html#cb35-150" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-151"><a href="Ch05.html#cb35-151" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-152"><a href="Ch05.html#cb35-152" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-153"><a href="Ch05.html#cb35-153" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(krumu_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-154"><a href="Ch05.html#cb35-154" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_krumu_linijas_topo,</span>
+<span id="cb35-155"><a href="Ch05.html#cb35-155" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_KrumuLinijas_topo.tif&quot;</span>,</span>
+<span id="cb35-156"><a href="Ch05.html#cb35-156" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-157"><a href="Ch05.html#cb35-157" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-158"><a href="Ch05.html#cb35-158" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-159"><a href="Ch05.html#cb35-159" tabindex="-1"></a><span class="fu">rm</span>(krumu_linijas_topo)</span>
+<span id="cb35-160"><a href="Ch05.html#cb35-160" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
+<span id="cb35-161"><a href="Ch05.html#cb35-161" tabindex="-1"></a></span>
+<span id="cb35-162"><a href="Ch05.html#cb35-162" tabindex="-1"></a><span class="co"># linear trees</span></span>
+<span id="cb35-163"><a href="Ch05.html#cb35-163" tabindex="-1"></a>koku_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb35-164"><a href="Ch05.html#cb35-164" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(FNAME,<span class="st">&quot;Koku&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-165"><a href="Ch05.html#cb35-165" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">640</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-166"><a href="Ch05.html#cb35-166" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-167"><a href="Ch05.html#cb35-167" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb35-168"><a href="Ch05.html#cb35-168" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(koku_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb35-169"><a href="Ch05.html#cb35-169" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_koku_linijas_topo,</span>
+<span id="cb35-170"><a href="Ch05.html#cb35-170" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_KokuLinijas_topo.tif&quot;</span>,</span>
+<span id="cb35-171"><a href="Ch05.html#cb35-171" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb35-172"><a href="Ch05.html#cb35-172" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-173"><a href="Ch05.html#cb35-173" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-174"><a href="Ch05.html#cb35-174" tabindex="-1"></a><span class="fu">rm</span>(koku_linijas_topo)</span>
+<span id="cb35-175"><a href="Ch05.html#cb35-175" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
+<span id="cb35-176"><a href="Ch05.html#cb35-176" tabindex="-1"></a><span class="fu">rm</span>(linijas_topo)</span>
+<span id="cb35-177"><a href="Ch05.html#cb35-177" tabindex="-1"></a></span>
+<span id="cb35-178"><a href="Ch05.html#cb35-178" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb35-179"><a href="Ch05.html#cb35-179" tabindex="-1"></a>r_krumi_lad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_lad.tif&quot;</span>)</span>
+<span id="cb35-180"><a href="Ch05.html#cb35-180" tabindex="-1"></a>r_pkk_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_pkk_topo.tif&quot;</span>)</span>
+<span id="cb35-181"><a href="Ch05.html#cb35-181" tabindex="-1"></a>r_krumi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_topo.tif&quot;</span>)</span>
+<span id="cb35-182"><a href="Ch05.html#cb35-182" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_KrumuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb35-183"><a href="Ch05.html#cb35-183" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_KokuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb35-184"><a href="Ch05.html#cb35-184" tabindex="-1"></a>r_palsar<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_palsar.tif&quot;</span>)</span>
+<span id="cb35-185"><a href="Ch05.html#cb35-185" tabindex="-1"></a>r_tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_TCL.tif&quot;</span>)</span>
+<span id="cb35-186"><a href="Ch05.html#cb35-186" tabindex="-1"></a>r_augstas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_augstas_mvr.tif&quot;</span>)</span>
+<span id="cb35-187"><a href="Ch05.html#cb35-187" tabindex="-1"></a>r_zemas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif&quot;</span>)</span>
+<span id="cb35-188"><a href="Ch05.html#cb35-188" tabindex="-1"></a>r_izcirtumi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif&quot;</span>)</span>
+<span id="cb35-189"><a href="Ch05.html#cb35-189" tabindex="-1"></a></span>
+<span id="cb35-190"><a href="Ch05.html#cb35-190" tabindex="-1"></a></span>
+<span id="cb35-191"><a href="Ch05.html#cb35-191" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(r_tcl,r_izcirtumi_mvr)</span>
+<span id="cb35-192"><a href="Ch05.html#cb35-192" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_zemas_mvr)</span>
+<span id="cb35-193"><a href="Ch05.html#cb35-193" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_krumu_linijas_topo)</span>
+<span id="cb35-194"><a href="Ch05.html#cb35-194" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_krumi_topo)</span>
+<span id="cb35-195"><a href="Ch05.html#cb35-195" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_krumi_lad)</span>
+<span id="cb35-196"><a href="Ch05.html#cb35-196" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_augstas_mvr)</span>
+<span id="cb35-197"><a href="Ch05.html#cb35-197" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_pkk_topo)</span>
+<span id="cb35-198"><a href="Ch05.html#cb35-198" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_koku_linijas_topo)</span>
+<span id="cb35-199"><a href="Ch05.html#cb35-199" tabindex="-1"></a>mezu_cover<span class="ot">=</span><span class="fu">cover</span>(mezu_cover,r_palsar,</span>
+<span id="cb35-200"><a href="Ch05.html#cb35-200" tabindex="-1"></a>                 <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif&quot;</span>,</span>
+<span id="cb35-201"><a href="Ch05.html#cb35-201" tabindex="-1"></a>                 <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-202"><a href="Ch05.html#cb35-202" tabindex="-1"></a></span>
+<span id="cb35-203"><a href="Ch05.html#cb35-203" tabindex="-1"></a></span>
+<span id="cb35-204"><a href="Ch05.html#cb35-204" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-205"><a href="Ch05.html#cb35-205" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_lad)</span>
+<span id="cb35-206"><a href="Ch05.html#cb35-206" tabindex="-1"></a><span class="fu">rm</span>(r_pkk_topo)</span>
+<span id="cb35-207"><a href="Ch05.html#cb35-207" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_topo)</span>
+<span id="cb35-208"><a href="Ch05.html#cb35-208" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
+<span id="cb35-209"><a href="Ch05.html#cb35-209" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
+<span id="cb35-210"><a href="Ch05.html#cb35-210" tabindex="-1"></a><span class="fu">rm</span>(r_palsar)</span>
+<span id="cb35-211"><a href="Ch05.html#cb35-211" tabindex="-1"></a><span class="fu">rm</span>(r_tcl)</span>
+<span id="cb35-212"><a href="Ch05.html#cb35-212" tabindex="-1"></a><span class="fu">rm</span>(r_augstas_mvr)</span>
+<span id="cb35-213"><a href="Ch05.html#cb35-213" tabindex="-1"></a><span class="fu">rm</span>(r_zemas_mvr)</span>
+<span id="cb35-214"><a href="Ch05.html#cb35-214" tabindex="-1"></a><span class="fu">rm</span>(r_izcirtumi_mvr)</span>
+<span id="cb35-215"><a href="Ch05.html#cb35-215" tabindex="-1"></a><span class="fu">rm</span>(mezu_cover)</span>
+<span id="cb35-216"><a href="Ch05.html#cb35-216" tabindex="-1"></a></span>
+<span id="cb35-217"><a href="Ch05.html#cb35-217" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_lad.tif&quot;</span>)</span>
+<span id="cb35-218"><a href="Ch05.html#cb35-218" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_pkk_topo.tif&quot;</span>)</span>
+<span id="cb35-219"><a href="Ch05.html#cb35-219" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_krumi_topo.tif&quot;</span>)</span>
+<span id="cb35-220"><a href="Ch05.html#cb35-220" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_KrumuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb35-221"><a href="Ch05.html#cb35-221" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class640_KokuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb35-222"><a href="Ch05.html#cb35-222" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_palsar.tif&quot;</span>)</span>
+<span id="cb35-223"><a href="Ch05.html#cb35-223" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_TCL.tif&quot;</span>)</span>
+<span id="cb35-224"><a href="Ch05.html#cb35-224" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class630_augstas_mvr.tif&quot;</span>)</span>
+<span id="cb35-225"><a href="Ch05.html#cb35-225" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif&quot;</span>)</span>
+<span id="cb35-226"><a href="Ch05.html#cb35-226" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p>700</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="Ch05.html#cb36-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb36-2"><a href="Ch05.html#cb36-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb36-3"><a href="Ch05.html#cb36-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb36-4"><a href="Ch05.html#cb36-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb36-5"><a href="Ch05.html#cb36-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb36-6"><a href="Ch05.html#cb36-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb36-7"><a href="Ch05.html#cb36-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb36-8"><a href="Ch05.html#cb36-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb36-9"><a href="Ch05.html#cb36-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb36-10"><a href="Ch05.html#cb36-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb36-11"><a href="Ch05.html#cb36-11" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="Ch05.html#cb36-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb36-13"><a href="Ch05.html#cb36-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb36-14"><a href="Ch05.html#cb36-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb36-15"><a href="Ch05.html#cb36-15" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="Ch05.html#cb36-16" tabindex="-1"></a></span>
+<span id="cb36-17"><a href="Ch05.html#cb36-17" tabindex="-1"></a><span class="co"># class 700 ----</span></span>
+<span id="cb36-18"><a href="Ch05.html#cb36-18" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="Ch05.html#cb36-19" tabindex="-1"></a><span class="co"># topo</span></span>
+<span id="cb36-20"><a href="Ch05.html#cb36-20" tabindex="-1"></a>topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb36-21"><a href="Ch05.html#cb36-21" tabindex="-1"></a><span class="fu">table</span>(topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb36-22"><a href="Ch05.html#cb36-22" tabindex="-1"></a></span>
+<span id="cb36-23"><a href="Ch05.html#cb36-23" tabindex="-1"></a><span class="do">## ReedSedgeRush</span></span>
+<span id="cb36-24"><a href="Ch05.html#cb36-24" tabindex="-1"></a>niedraji_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
+<span id="cb36-25"><a href="Ch05.html#cb36-25" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Meldrājs_ūdenī_poligons&quot;</span>,<span class="st">&quot;poligons_Grislajs&quot;</span>,<span class="st">&quot;poligons_Grīslājs&quot;</span>,</span>
+<span id="cb36-26"><a href="Ch05.html#cb36-26" tabindex="-1"></a>                      <span class="st">&quot;poligons_Meldrajs&quot;</span>,<span class="st">&quot;poligons_Meldrājs&quot;</span>,<span class="st">&quot;poligons_Meldrajs_udeni&quot;</span>,</span>
+<span id="cb36-27"><a href="Ch05.html#cb36-27" tabindex="-1"></a>                      <span class="st">&quot;poligons_Nec_purvs_grīslājs&quot;</span>,</span>
+<span id="cb36-28"><a href="Ch05.html#cb36-28" tabindex="-1"></a>                      <span class="st">&quot;poligons_Nec_purvs_meldrājs&quot;</span>,</span>
+<span id="cb36-29"><a href="Ch05.html#cb36-29" tabindex="-1"></a>                      <span class="st">&quot;Sēklis_poligons&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-30"><a href="Ch05.html#cb36-30" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">720</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-31"><a href="Ch05.html#cb36-31" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-32"><a href="Ch05.html#cb36-32" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">fasterize</span>(niedraji_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-33"><a href="Ch05.html#cb36-33" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_niedraji_topo,</span>
+<span id="cb36-34"><a href="Ch05.html#cb36-34" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>,</span>
+<span id="cb36-35"><a href="Ch05.html#cb36-35" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb36-36"><a href="Ch05.html#cb36-36" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-37"><a href="Ch05.html#cb36-37" tabindex="-1"></a><span class="fu">rm</span>(niedraji_topo)</span>
+<span id="cb36-38"><a href="Ch05.html#cb36-38" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb36-39"><a href="Ch05.html#cb36-39" tabindex="-1"></a></span>
+<span id="cb36-40"><a href="Ch05.html#cb36-40" tabindex="-1"></a></span>
+<span id="cb36-41"><a href="Ch05.html#cb36-41" tabindex="-1"></a><span class="do">## bogs</span></span>
+<span id="cb36-42"><a href="Ch05.html#cb36-42" tabindex="-1"></a>purvi_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
+<span id="cb36-43"><a href="Ch05.html#cb36-43" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Nec_purvs_sūnājs&quot;</span>,</span>
+<span id="cb36-44"><a href="Ch05.html#cb36-44" tabindex="-1"></a>                      <span class="st">&quot; poligons_Sunajs&quot;</span>,<span class="st">&quot;poligons_Sūnājs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-45"><a href="Ch05.html#cb36-45" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-46"><a href="Ch05.html#cb36-46" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-47"><a href="Ch05.html#cb36-47" tabindex="-1"></a>topo_purvi<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/SwampA_COMB.parquet&quot;</span>)</span>
+<span id="cb36-48"><a href="Ch05.html#cb36-48" tabindex="-1"></a>topo_purvi<span class="ot">=</span>topo_purvi <span class="sc">%&gt;%</span> </span>
+<span id="cb36-49"><a href="Ch05.html#cb36-49" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-50"><a href="Ch05.html#cb36-50" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-51"><a href="Ch05.html#cb36-51" tabindex="-1"></a>purvi<span class="ot">=</span><span class="fu">rbind</span>(purvi_topo,topo_purvi)</span>
+<span id="cb36-52"><a href="Ch05.html#cb36-52" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">fasterize</span>(purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-53"><a href="Ch05.html#cb36-53" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_topo,</span>
+<span id="cb36-54"><a href="Ch05.html#cb36-54" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>,</span>
+<span id="cb36-55"><a href="Ch05.html#cb36-55" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-56"><a href="Ch05.html#cb36-56" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-57"><a href="Ch05.html#cb36-57" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-58"><a href="Ch05.html#cb36-58" tabindex="-1"></a><span class="fu">rm</span>(purvi_topo)</span>
+<span id="cb36-59"><a href="Ch05.html#cb36-59" tabindex="-1"></a><span class="fu">rm</span>(topo_purvi)</span>
+<span id="cb36-60"><a href="Ch05.html#cb36-60" tabindex="-1"></a><span class="fu">rm</span>(purvi)</span>
+<span id="cb36-61"><a href="Ch05.html#cb36-61" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb36-62"><a href="Ch05.html#cb36-62" tabindex="-1"></a></span>
+<span id="cb36-63"><a href="Ch05.html#cb36-63" tabindex="-1"></a></span>
+<span id="cb36-64"><a href="Ch05.html#cb36-64" tabindex="-1"></a><span class="co"># mvr</span></span>
+<span id="cb36-65"><a href="Ch05.html#cb36-65" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb36-66"><a href="Ch05.html#cb36-66" tabindex="-1"></a></span>
+<span id="cb36-67"><a href="Ch05.html#cb36-67" tabindex="-1"></a><span class="co"># bogs and mires</span></span>
+<span id="cb36-68"><a href="Ch05.html#cb36-68" tabindex="-1"></a>mvr_purvi<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb36-69"><a href="Ch05.html#cb36-69" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;21&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-70"><a href="Ch05.html#cb36-70" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-71"><a href="Ch05.html#cb36-71" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-72"><a href="Ch05.html#cb36-72" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-73"><a href="Ch05.html#cb36-73" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_mvr,</span>
+<span id="cb36-74"><a href="Ch05.html#cb36-74" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>,</span>
+<span id="cb36-75"><a href="Ch05.html#cb36-75" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-76"><a href="Ch05.html#cb36-76" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-77"><a href="Ch05.html#cb36-77" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-78"><a href="Ch05.html#cb36-78" tabindex="-1"></a><span class="fu">rm</span>(mvr_purvi)</span>
+<span id="cb36-79"><a href="Ch05.html#cb36-79" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb36-80"><a href="Ch05.html#cb36-80" tabindex="-1"></a></span>
+<span id="cb36-81"><a href="Ch05.html#cb36-81" tabindex="-1"></a><span class="co"># beavers</span></span>
+<span id="cb36-82"><a href="Ch05.html#cb36-82" tabindex="-1"></a>mvr_bebri<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb36-83"><a href="Ch05.html#cb36-83" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;41&quot;</span>,<span class="st">&quot;42&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-84"><a href="Ch05.html#cb36-84" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">730</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-85"><a href="Ch05.html#cb36-85" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-86"><a href="Ch05.html#cb36-86" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_bebri,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-87"><a href="Ch05.html#cb36-87" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_bebri_mvr,</span>
+<span id="cb36-88"><a href="Ch05.html#cb36-88" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>,</span>
+<span id="cb36-89"><a href="Ch05.html#cb36-89" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-90"><a href="Ch05.html#cb36-90" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-91"><a href="Ch05.html#cb36-91" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-92"><a href="Ch05.html#cb36-92" tabindex="-1"></a><span class="fu">rm</span>(mvr_bebri)</span>
+<span id="cb36-93"><a href="Ch05.html#cb36-93" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb36-94"><a href="Ch05.html#cb36-94" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb36-95"><a href="Ch05.html#cb36-95" tabindex="-1"></a></span>
+<span id="cb36-96"><a href="Ch05.html#cb36-96" tabindex="-1"></a></span>
+<span id="cb36-97"><a href="Ch05.html#cb36-97" tabindex="-1"></a></span>
+<span id="cb36-98"><a href="Ch05.html#cb36-98" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb36-99"><a href="Ch05.html#cb36-99" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
+<span id="cb36-100"><a href="Ch05.html#cb36-100" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb36-101"><a href="Ch05.html#cb36-101" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb36-102"><a href="Ch05.html#cb36-102" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span>
+<span id="cb36-103"><a href="Ch05.html#cb36-103" tabindex="-1"></a>mires<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span>
+<span id="cb36-104"><a href="Ch05.html#cb36-104" tabindex="-1"></a>bogs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
+<span id="cb36-105"><a href="Ch05.html#cb36-105" tabindex="-1"></a></span>
+<span id="cb36-106"><a href="Ch05.html#cb36-106" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(r_niedraji_topo,r_purvi_topo)</span>
+<span id="cb36-107"><a href="Ch05.html#cb36-107" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_purvi_mvr)</span>
+<span id="cb36-108"><a href="Ch05.html#cb36-108" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_bebri_mvr)</span>
+<span id="cb36-109"><a href="Ch05.html#cb36-109" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,mires)</span>
+<span id="cb36-110"><a href="Ch05.html#cb36-110" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,bogs,</span>
+<span id="cb36-111"><a href="Ch05.html#cb36-111" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>,</span>
+<span id="cb36-112"><a href="Ch05.html#cb36-112" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-113"><a href="Ch05.html#cb36-113" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-114"><a href="Ch05.html#cb36-114" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb36-115"><a href="Ch05.html#cb36-115" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb36-116"><a href="Ch05.html#cb36-116" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb36-117"><a href="Ch05.html#cb36-117" tabindex="-1"></a><span class="fu">rm</span>(bogs)</span>
+<span id="cb36-118"><a href="Ch05.html#cb36-118" tabindex="-1"></a><span class="fu">rm</span>(mires)</span>
+<span id="cb36-119"><a href="Ch05.html#cb36-119" tabindex="-1"></a><span class="fu">rm</span>(topo)</span>
+<span id="cb36-120"><a href="Ch05.html#cb36-120" tabindex="-1"></a><span class="fu">rm</span>(wetlands_cover)</span>
+<span id="cb36-121"><a href="Ch05.html#cb36-121" tabindex="-1"></a></span>
+<span id="cb36-122"><a href="Ch05.html#cb36-122" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb36-123"><a href="Ch05.html#cb36-123" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb36-124"><a href="Ch05.html#cb36-124" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p>800</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="Ch05.html#cb37-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb37-2"><a href="Ch05.html#cb37-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb37-3"><a href="Ch05.html#cb37-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb37-4"><a href="Ch05.html#cb37-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb37-5"><a href="Ch05.html#cb37-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb37-6"><a href="Ch05.html#cb37-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb37-7"><a href="Ch05.html#cb37-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb37-8"><a href="Ch05.html#cb37-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb37-9"><a href="Ch05.html#cb37-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb37-10"><a href="Ch05.html#cb37-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb37-11"><a href="Ch05.html#cb37-11" tabindex="-1"></a></span>
+<span id="cb37-12"><a href="Ch05.html#cb37-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb37-13"><a href="Ch05.html#cb37-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb37-14"><a href="Ch05.html#cb37-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb37-15"><a href="Ch05.html#cb37-15" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="Ch05.html#cb37-16" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="Ch05.html#cb37-17" tabindex="-1"></a><span class="co"># class 800 ----</span></span>
+<span id="cb37-18"><a href="Ch05.html#cb37-18" tabindex="-1"></a></span>
+<span id="cb37-19"><a href="Ch05.html#cb37-19" tabindex="-1"></a>smiltaji_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb37-20"><a href="Ch05.html#cb37-20" tabindex="-1"></a><span class="fu">table</span>(smiltaji_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb37-21"><a href="Ch05.html#cb37-21" tabindex="-1"></a>smiltaji_topo<span class="ot">=</span>smiltaji_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb37-22"><a href="Ch05.html#cb37-22" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Smiltājs&quot;</span>,<span class="st">&quot;poligons_Smiltajs&quot;</span>,<span class="st">&quot;poligons_Grants&quot;</span>,</span>
+<span id="cb37-23"><a href="Ch05.html#cb37-23" tabindex="-1"></a>                      <span class="st">&quot;poligons_Kūdra&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-24"><a href="Ch05.html#cb37-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">800</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-25"><a href="Ch05.html#cb37-25" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb37-26"><a href="Ch05.html#cb37-26" tabindex="-1"></a>r_smiltaji_topo<span class="ot">=</span><span class="fu">fasterize</span>(smiltaji_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb37-27"><a href="Ch05.html#cb37-27" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_smiltaji_topo,</span>
+<span id="cb37-28"><a href="Ch05.html#cb37-28" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>,</span>
+<span id="cb37-29"><a href="Ch05.html#cb37-29" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb37-30"><a href="Ch05.html#cb37-30" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb37-31"><a href="Ch05.html#cb37-31" tabindex="-1"></a><span class="fu">rm</span>(smiltaji_topo)</span>
+<span id="cb37-32"><a href="Ch05.html#cb37-32" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
+<span id="cb37-33"><a href="Ch05.html#cb37-33" tabindex="-1"></a></span>
+<span id="cb37-34"><a href="Ch05.html#cb37-34" tabindex="-1"></a><span class="co"># mvr zkat 33 un 34</span></span>
+<span id="cb37-35"><a href="Ch05.html#cb37-35" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb37-36"><a href="Ch05.html#cb37-36" tabindex="-1"></a></span>
+<span id="cb37-37"><a href="Ch05.html#cb37-37" tabindex="-1"></a>smiltajiem<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb37-38"><a href="Ch05.html#cb37-38" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;33&quot;</span>,<span class="st">&quot;34&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-39"><a href="Ch05.html#cb37-39" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">800</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-40"><a href="Ch05.html#cb37-40" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb37-41"><a href="Ch05.html#cb37-41" tabindex="-1"></a>r_smiltaji_mvr<span class="ot">=</span><span class="fu">fasterize</span>(smiltajiem,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb37-42"><a href="Ch05.html#cb37-42" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_smiltaji_mvr,</span>
+<span id="cb37-43"><a href="Ch05.html#cb37-43" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>,</span>
+<span id="cb37-44"><a href="Ch05.html#cb37-44" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb37-45"><a href="Ch05.html#cb37-45" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb37-46"><a href="Ch05.html#cb37-46" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb37-47"><a href="Ch05.html#cb37-47" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb37-48"><a href="Ch05.html#cb37-48" tabindex="-1"></a><span class="fu">rm</span>(smiltajiem)</span>
+<span id="cb37-49"><a href="Ch05.html#cb37-49" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
+<span id="cb37-50"><a href="Ch05.html#cb37-50" tabindex="-1"></a></span>
+<span id="cb37-51"><a href="Ch05.html#cb37-51" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb37-52"><a href="Ch05.html#cb37-52" tabindex="-1"></a>r_smiltaji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>)</span>
+<span id="cb37-53"><a href="Ch05.html#cb37-53" tabindex="-1"></a>r_smiltaji_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span>
+<span id="cb37-54"><a href="Ch05.html#cb37-54" tabindex="-1"></a></span>
+<span id="cb37-55"><a href="Ch05.html#cb37-55" tabindex="-1"></a>bare_cover<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(r_smiltaji_topo,r_smiltaji_mvr,</span>
+<span id="cb37-56"><a href="Ch05.html#cb37-56" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>,</span>
+<span id="cb37-57"><a href="Ch05.html#cb37-57" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb37-58"><a href="Ch05.html#cb37-58" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb37-59"><a href="Ch05.html#cb37-59" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
+<span id="cb37-60"><a href="Ch05.html#cb37-60" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
+<span id="cb37-61"><a href="Ch05.html#cb37-61" tabindex="-1"></a><span class="fu">rm</span>(bare_cover)</span>
+<span id="cb37-62"><a href="Ch05.html#cb37-62" tabindex="-1"></a></span>
+<span id="cb37-63"><a href="Ch05.html#cb37-63" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>)</span>
+<span id="cb37-64"><a href="Ch05.html#cb37-64" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span></code></pre></div>
+</details>
+<p><strong>Merging and filling</strong></p>
+<p>The command lines below combine the previously created layers with landscape
+classes in the correct order and ensure that gaps are filled with the appropriately
+classified Dynamic World composite for April-August 2024. After masking to only
+the analysis space, layer is saved in the in the file <code>Ainava_vienk_mask.tif</code>
+for further processing.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="Ch05.html#cb38-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb38-2"><a href="Ch05.html#cb38-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb38-3"><a href="Ch05.html#cb38-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb38-4"><a href="Ch05.html#cb38-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb38-5"><a href="Ch05.html#cb38-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb38-6"><a href="Ch05.html#cb38-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb38-7"><a href="Ch05.html#cb38-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb38-8"><a href="Ch05.html#cb38-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb38-9"><a href="Ch05.html#cb38-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb38-10"><a href="Ch05.html#cb38-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb38-11"><a href="Ch05.html#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="Ch05.html#cb38-12" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb38-13"><a href="Ch05.html#cb38-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb38-14"><a href="Ch05.html#cb38-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb38-15"><a href="Ch05.html#cb38-15" tabindex="-1"></a></span>
+<span id="cb38-16"><a href="Ch05.html#cb38-16" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="Ch05.html#cb38-17" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="Ch05.html#cb38-18" tabindex="-1"></a><span class="co"># final merging and covering ----</span></span>
+<span id="cb38-19"><a href="Ch05.html#cb38-19" tabindex="-1"></a></span>
+<span id="cb38-20"><a href="Ch05.html#cb38-20" tabindex="-1"></a><span class="co"># DW  </span></span>
+<span id="cb38-21"><a href="Ch05.html#cb38-21" tabindex="-1"></a>dynworld<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;Geodata/2024/DynamicWorld/DW_2024_apraug.tif&quot;</span>)</span>
+<span id="cb38-22"><a href="Ch05.html#cb38-22" tabindex="-1"></a>klases<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>,</span>
+<span id="cb38-23"><a href="Ch05.html#cb38-23" tabindex="-1"></a>                <span class="dv">1</span>,<span class="dv">620</span>,</span>
+<span id="cb38-24"><a href="Ch05.html#cb38-24" tabindex="-1"></a>                <span class="dv">2</span>,<span class="dv">330</span>,</span>
+<span id="cb38-25"><a href="Ch05.html#cb38-25" tabindex="-1"></a>                <span class="dv">3</span>,<span class="dv">720</span>,</span>
+<span id="cb38-26"><a href="Ch05.html#cb38-26" tabindex="-1"></a>                <span class="dv">4</span>,<span class="dv">310</span>,</span>
+<span id="cb38-27"><a href="Ch05.html#cb38-27" tabindex="-1"></a>                <span class="dv">5</span>,<span class="dv">710</span>,</span>
+<span id="cb38-28"><a href="Ch05.html#cb38-28" tabindex="-1"></a>                <span class="dv">6</span>,<span class="dv">500</span>,</span>
+<span id="cb38-29"><a href="Ch05.html#cb38-29" tabindex="-1"></a>                <span class="dv">7</span>,<span class="dv">800</span>,</span>
+<span id="cb38-30"><a href="Ch05.html#cb38-30" tabindex="-1"></a>                <span class="dv">8</span>,<span class="dv">500</span>),<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-31"><a href="Ch05.html#cb38-31" tabindex="-1"></a>dw2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">classify</span>(dynworld,klases)</span>
+<span id="cb38-32"><a href="Ch05.html#cb38-32" tabindex="-1"></a><span class="fu">writeRaster</span>(dw2,</span>
+<span id="cb38-33"><a href="Ch05.html#cb38-33" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>,</span>
+<span id="cb38-34"><a href="Ch05.html#cb38-34" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-35"><a href="Ch05.html#cb38-35" tabindex="-1"></a><span class="co"># other layers</span></span>
+<span id="cb38-36"><a href="Ch05.html#cb38-36" tabindex="-1"></a>celi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif&quot;</span>)</span>
+<span id="cb38-37"><a href="Ch05.html#cb38-37" tabindex="-1"></a>niedraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
+<span id="cb38-38"><a href="Ch05.html#cb38-38" tabindex="-1"></a>udeni<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif&quot;</span>)</span>
+<span id="cb38-39"><a href="Ch05.html#cb38-39" tabindex="-1"></a>lauki<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif&quot;</span>)</span>
+<span id="cb38-40"><a href="Ch05.html#cb38-40" tabindex="-1"></a>vasarnicas<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif&quot;</span>)</span>
+<span id="cb38-41"><a href="Ch05.html#cb38-41" tabindex="-1"></a>mezi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif&quot;</span>)</span>
+<span id="cb38-42"><a href="Ch05.html#cb38-42" tabindex="-1"></a>mitraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>)</span>
+<span id="cb38-43"><a href="Ch05.html#cb38-43" tabindex="-1"></a>smiltaji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>)</span>
+<span id="cb38-44"><a href="Ch05.html#cb38-44" tabindex="-1"></a>dw2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>)</span>
+<span id="cb38-45"><a href="Ch05.html#cb38-45" tabindex="-1"></a></span>
+<span id="cb38-46"><a href="Ch05.html#cb38-46" tabindex="-1"></a><span class="co"># covering in correct order</span></span>
+<span id="cb38-47"><a href="Ch05.html#cb38-47" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(celi,niedraji)</span>
+<span id="cb38-48"><a href="Ch05.html#cb38-48" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,udeni)</span>
+<span id="cb38-49"><a href="Ch05.html#cb38-49" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,lauki)</span>
+<span id="cb38-50"><a href="Ch05.html#cb38-50" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,vasarnicas)</span>
+<span id="cb38-51"><a href="Ch05.html#cb38-51" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mezi)</span>
+<span id="cb38-52"><a href="Ch05.html#cb38-52" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mitraji)</span>
+<span id="cb38-53"><a href="Ch05.html#cb38-53" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,smiltaji)</span>
+<span id="cb38-54"><a href="Ch05.html#cb38-54" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,dw2,</span>
+<span id="cb38-55"><a href="Ch05.html#cb38-55" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>,</span>
+<span id="cb38-56"><a href="Ch05.html#cb38-56" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-57"><a href="Ch05.html#cb38-57" tabindex="-1"></a></span>
+<span id="cb38-58"><a href="Ch05.html#cb38-58" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb38-59"><a href="Ch05.html#cb38-59" tabindex="-1"></a><span class="fu">rm</span>(celi)</span>
+<span id="cb38-60"><a href="Ch05.html#cb38-60" tabindex="-1"></a><span class="fu">rm</span>(niedraji)</span>
+<span id="cb38-61"><a href="Ch05.html#cb38-61" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
+<span id="cb38-62"><a href="Ch05.html#cb38-62" tabindex="-1"></a><span class="fu">rm</span>(lauki)</span>
+<span id="cb38-63"><a href="Ch05.html#cb38-63" tabindex="-1"></a><span class="fu">rm</span>(vasarnicas)</span>
+<span id="cb38-64"><a href="Ch05.html#cb38-64" tabindex="-1"></a><span class="fu">rm</span>(mezi)</span>
+<span id="cb38-65"><a href="Ch05.html#cb38-65" tabindex="-1"></a><span class="fu">rm</span>(mitraji)</span>
+<span id="cb38-66"><a href="Ch05.html#cb38-66" tabindex="-1"></a><span class="fu">rm</span>(smiltaji)</span>
+<span id="cb38-67"><a href="Ch05.html#cb38-67" tabindex="-1"></a><span class="fu">rm</span>(klases)</span>
+<span id="cb38-68"><a href="Ch05.html#cb38-68" tabindex="-1"></a><span class="fu">rm</span>(dynworld)</span>
+<span id="cb38-69"><a href="Ch05.html#cb38-69" tabindex="-1"></a><span class="fu">rm</span>(dw2)</span>
+<span id="cb38-70"><a href="Ch05.html#cb38-70" tabindex="-1"></a><span class="fu">rm</span>(rastri_ainavai)</span>
+<span id="cb38-71"><a href="Ch05.html#cb38-71" tabindex="-1"></a></span>
+<span id="cb38-72"><a href="Ch05.html#cb38-72" tabindex="-1"></a><span class="co"># masking</span></span>
+<span id="cb38-73"><a href="Ch05.html#cb38-73" tabindex="-1"></a>rastrs_ainava<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>)</span>
+<span id="cb38-74"><a href="Ch05.html#cb38-74" tabindex="-1"></a>masketa_ainava<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(rastrs_ainava,</span>
+<span id="cb38-75"><a href="Ch05.html#cb38-75" tabindex="-1"></a>                           template_t,</span>
+<span id="cb38-76"><a href="Ch05.html#cb38-76" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>,</span>
+<span id="cb38-77"><a href="Ch05.html#cb38-77" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-78"><a href="Ch05.html#cb38-78" tabindex="-1"></a><span class="fu">plot</span>(masketa_ainava)</span>
+<span id="cb38-79"><a href="Ch05.html#cb38-79" tabindex="-1"></a></span>
+<span id="cb38-80"><a href="Ch05.html#cb38-80" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb38-81"><a href="Ch05.html#cb38-81" tabindex="-1"></a><span class="fu">rm</span>(rastrs_ainava)</span>
+<span id="cb38-82"><a href="Ch05.html#cb38-82" tabindex="-1"></a><span class="fu">rm</span>(masketa_ainava)</span></code></pre></div>
+</details>
 </div>
 <div id="Ch05.04" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Landscape diversity<a href="Ch05.html#Ch05.04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
