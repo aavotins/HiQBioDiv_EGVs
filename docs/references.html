@@ -29,14 +29,14 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-09-04" />
+<meta name="date" content="2025-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sharing-your-book.html"/>
+<link rel="prev" href="Ch07.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -62,8 +62,9 @@ describing Latvia, 2024.</p>" />
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -73,7 +74,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -175,36 +176,603 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-material"><i class="fa fa-check"></i>About this material</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#outline"><i class="fa fa-check"></i>Outline</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>1</b> Hello bookdown</a>
+<li class="chapter" data-level="1" data-path="Ch01.html"><a href="Ch01.html"><i class="fa fa-check"></i><b>1</b> Terminology and acronyms</a></li>
+<li class="chapter" data-level="2" data-path="Ch02.html"><a href="Ch02.html"><i class="fa fa-check"></i><b>2</b> Utilities</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>1.1</b> A section</a>
+<li class="chapter" data-level="2.1" data-path="Ch02.html"><a href="Ch02.html#Ch02.01"><i class="fa fa-check"></i><b>2.1</b> R package egvtools</a>
 <ul>
-<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+<li class="chapter" data-level="2.1.1" data-path="Ch02.html"><a href="Ch02.html#Ch02.01.01"><i class="fa fa-check"></i><b>2.1.1</b> Reproduction only functions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.01.02"><i class="fa fa-check"></i><b>2.1.2</b> General purpose functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.02"><i class="fa fa-check"></i><b>2.2</b> Other utility functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Ch03.html"><a href="Ch03.html"><i class="fa fa-check"></i><b>3</b> Templates and utilities</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Ch03.html"><a href="Ch03.html#Ch03.01"><i class="fa fa-check"></i><b>3.1</b> Vector data</a></li>
+<li class="chapter" data-level="3.2" data-path="Ch03.html"><a href="Ch03.html#Ch03.02"><i class="fa fa-check"></i><b>3.2</b> Raster data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Ch04.html"><a href="Ch04.html"><i class="fa fa-check"></i><b>4</b> Raw geodata</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Service’s State Forest Registry</a></li>
+<li class="chapter" data-level="4.2" data-path="Ch04.html"><a href="Ch04.html#Ch04.02"><i class="fa fa-check"></i><b>4.2</b> Rural Support Service’s information on declared fields</a></li>
+<li class="chapter" data-level="4.3" data-path="Ch04.html"><a href="Ch04.html#Ch04.03"><i class="fa fa-check"></i><b>4.3</b> Melioration Cadaster</a></li>
+<li class="chapter" data-level="4.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.04"><i class="fa fa-check"></i><b>4.4</b> TopographicMap</a></li>
+<li class="chapter" data-level="4.5" data-path="Ch04.html"><a href="Ch04.html#Ch04.05"><i class="fa fa-check"></i><b>4.5</b> Corine Land Cover 2018</a></li>
+<li class="chapter" data-level="4.6" data-path="Ch04.html"><a href="Ch04.html#Ch04.06"><i class="fa fa-check"></i><b>4.6</b> Publicly available LVM data</a></li>
+<li class="chapter" data-level="4.7" data-path="Ch04.html"><a href="Ch04.html#Ch04.07"><i class="fa fa-check"></i><b>4.7</b> Soil data</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.01"><i class="fa fa-check"></i><b>4.7.1</b> Soil chemistry</a></li>
+<li class="chapter" data-level="4.7.2" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.02"><i class="fa fa-check"></i><b>4.7.2</b> Soil texture: Europe</a></li>
+<li class="chapter" data-level="4.7.3" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.03"><i class="fa fa-check"></i><b>4.7.3</b> Soil texture: Farmland</a></li>
+<li class="chapter" data-level="4.7.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.04"><i class="fa fa-check"></i><b>4.7.4</b> Soil texture: Quaternary</a></li>
+<li class="chapter" data-level="4.7.5" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.05"><i class="fa fa-check"></i><b>4.7.5</b> Organic soils: SILAVA</a></li>
+<li class="chapter" data-level="4.7.6" data-path="Ch04.html"><a href="Ch04.html#Ch04.07.06"><i class="fa fa-check"></i><b>4.7.6</b> Organic soils: LU</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="Ch04.html"><a href="Ch04.html#Ch04.08"><i class="fa fa-check"></i><b>4.8</b> Dynamic World data</a></li>
+<li class="chapter" data-level="4.9" data-path="Ch04.html"><a href="Ch04.html#Ch04.09"><i class="fa fa-check"></i><b>4.9</b> The Global Forest Watch</a></li>
+<li class="chapter" data-level="4.10" data-path="Ch04.html"><a href="Ch04.html#Ch04.10"><i class="fa fa-check"></i><b>4.10</b> Palsar</a></li>
+<li class="chapter" data-level="4.11" data-path="Ch04.html"><a href="Ch04.html#Ch04.11"><i class="fa fa-check"></i><b>4.11</b> CHELSA v2.1</a></li>
+<li class="chapter" data-level="4.12" data-path="Ch04.html"><a href="Ch04.html#Ch04.12"><i class="fa fa-check"></i><b>4.12</b> HydroClim data</a></li>
+<li class="chapter" data-level="4.13" data-path="Ch04.html"><a href="Ch04.html#Ch04.13"><i class="fa fa-check"></i><b>4.13</b> Sentinel-2 indices</a></li>
+<li class="chapter" data-level="4.14" data-path="Ch04.html"><a href="Ch04.html#Ch04.14"><i class="fa fa-check"></i><b>4.14</b> Waste and garbage disposal sites, landfills</a></li>
+<li class="chapter" data-level="4.15" data-path="Ch04.html"><a href="Ch04.html#Ch04.15"><i class="fa fa-check"></i><b>4.15</b> Digital elevation/terrain models</a></li>
+<li class="chapter" data-level="4.16" data-path="Ch04.html"><a href="Ch04.html#Ch04.16"><i class="fa fa-check"></i><b>4.16</b> Latvian Exclusive Economic Zone polygon</a></li>
+<li class="chapter" data-level="4.17" data-path="Ch04.html"><a href="Ch04.html#Ch04.17"><i class="fa fa-check"></i><b>4.17</b> Nature Conservation Agency’s data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Ch05.html"><a href="Ch05.html"><i class="fa fa-check"></i><b>5</b> Geodata products</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Ch05.html"><a href="Ch05.html#Ch05.01"><i class="fa fa-check"></i><b>5.1</b> Terrain products</a></li>
+<li class="chapter" data-level="5.2" data-path="Ch05.html"><a href="Ch05.html#Ch05.02"><i class="fa fa-check"></i><b>5.2</b> Soil texture product</a></li>
+<li class="chapter" data-level="5.3" data-path="Ch05.html"><a href="Ch05.html#Ch05.03"><i class="fa fa-check"></i><b>5.3</b> Landscape classification</a></li>
+<li class="chapter" data-level="5.4" data-path="Ch05.html"><a href="Ch05.html#Ch05.04"><i class="fa fa-check"></i><b>5.4</b> Landscape diversity</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.01"><i class="fa fa-check"></i><b>5.4.1</b> Forest diversity</a></li>
+<li class="chapter" data-level="5.4.2" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.02"><i class="fa fa-check"></i><b>5.4.2</b> Farmland diversity</a></li>
+<li class="chapter" data-level="5.4.3" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.03"><i class="fa fa-check"></i><b>5.4.3</b> Landscape in general diversity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>2</b> Cross-references</a>
+<li class="chapter" data-level="6" data-path="Ch06.html"><a href="Ch06.html"><i class="fa fa-check"></i><b>6</b> Ecogeographical variables</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>2.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="2.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="6.1" data-path="Ch06.html"><a href="Ch06.html#ch06.001"><i class="fa fa-check"></i><b>6.1</b> Climate_CHELSAv2.1-bio1_cell</a></li>
+<li class="chapter" data-level="6.2" data-path="Ch06.html"><a href="Ch06.html#ch06.002"><i class="fa fa-check"></i><b>6.2</b> Climate_CHELSAv2.1-bio10_cell</a></li>
+<li class="chapter" data-level="6.3" data-path="Ch06.html"><a href="Ch06.html#ch06.003"><i class="fa fa-check"></i><b>6.3</b> Climate_CHELSAv2.1-bio11_cell</a></li>
+<li class="chapter" data-level="6.4" data-path="Ch06.html"><a href="Ch06.html#ch06.004"><i class="fa fa-check"></i><b>6.4</b> Climate_CHELSAv2.1-bio12_cell</a></li>
+<li class="chapter" data-level="6.5" data-path="Ch06.html"><a href="Ch06.html#ch06.005"><i class="fa fa-check"></i><b>6.5</b> Climate_CHELSAv2.1-bio13_cell</a></li>
+<li class="chapter" data-level="6.6" data-path="Ch06.html"><a href="Ch06.html#ch06.006"><i class="fa fa-check"></i><b>6.6</b> Climate_CHELSAv2.1-bio14_cell</a></li>
+<li class="chapter" data-level="6.7" data-path="Ch06.html"><a href="Ch06.html#ch06.007"><i class="fa fa-check"></i><b>6.7</b> Climate_CHELSAv2.1-bio15_cell</a></li>
+<li class="chapter" data-level="6.8" data-path="Ch06.html"><a href="Ch06.html#ch06.008"><i class="fa fa-check"></i><b>6.8</b> Climate_CHELSAv2.1-bio16_cell</a></li>
+<li class="chapter" data-level="6.9" data-path="Ch06.html"><a href="Ch06.html#ch06.009"><i class="fa fa-check"></i><b>6.9</b> Climate_CHELSAv2.1-bio17_cell</a></li>
+<li class="chapter" data-level="6.10" data-path="Ch06.html"><a href="Ch06.html#ch06.010"><i class="fa fa-check"></i><b>6.10</b> Climate_CHELSAv2.1-bio18_cell</a></li>
+<li class="chapter" data-level="6.11" data-path="Ch06.html"><a href="Ch06.html#ch06.011"><i class="fa fa-check"></i><b>6.11</b> Climate_CHELSAv2.1-bio19_cell</a></li>
+<li class="chapter" data-level="6.12" data-path="Ch06.html"><a href="Ch06.html#ch06.012"><i class="fa fa-check"></i><b>6.12</b> Climate_CHELSAv2.1-bio2_cell</a></li>
+<li class="chapter" data-level="6.13" data-path="Ch06.html"><a href="Ch06.html#ch06.013"><i class="fa fa-check"></i><b>6.13</b> Climate_CHELSAv2.1-bio3_cell</a></li>
+<li class="chapter" data-level="6.14" data-path="Ch06.html"><a href="Ch06.html#ch06.014"><i class="fa fa-check"></i><b>6.14</b> Climate_CHELSAv2.1-bio4_cell</a></li>
+<li class="chapter" data-level="6.15" data-path="Ch06.html"><a href="Ch06.html#ch06.015"><i class="fa fa-check"></i><b>6.15</b> Climate_CHELSAv2.1-bio5_cell</a></li>
+<li class="chapter" data-level="6.16" data-path="Ch06.html"><a href="Ch06.html#ch06.016"><i class="fa fa-check"></i><b>6.16</b> Climate_CHELSAv2.1-bio6_cell</a></li>
+<li class="chapter" data-level="6.17" data-path="Ch06.html"><a href="Ch06.html#ch06.017"><i class="fa fa-check"></i><b>6.17</b> Climate_CHELSAv2.1-bio7_cell</a></li>
+<li class="chapter" data-level="6.18" data-path="Ch06.html"><a href="Ch06.html#ch06.018"><i class="fa fa-check"></i><b>6.18</b> Climate_CHELSAv2.1-bio8_cell</a></li>
+<li class="chapter" data-level="6.19" data-path="Ch06.html"><a href="Ch06.html#ch06.019"><i class="fa fa-check"></i><b>6.19</b> Climate_CHELSAv2.1-bio9_cell</a></li>
+<li class="chapter" data-level="6.20" data-path="Ch06.html"><a href="Ch06.html#ch06.020"><i class="fa fa-check"></i><b>6.20</b> Climate_CHELSAv2.1-clt-max_cell</a></li>
+<li class="chapter" data-level="6.21" data-path="Ch06.html"><a href="Ch06.html#ch06.021"><i class="fa fa-check"></i><b>6.21</b> Climate_CHELSAv2.1-clt-mean_cell</a></li>
+<li class="chapter" data-level="6.22" data-path="Ch06.html"><a href="Ch06.html#ch06.022"><i class="fa fa-check"></i><b>6.22</b> Climate_CHELSAv2.1-clt-min_cell</a></li>
+<li class="chapter" data-level="6.23" data-path="Ch06.html"><a href="Ch06.html#ch06.023"><i class="fa fa-check"></i><b>6.23</b> Climate_CHELSAv2.1-clt-range_cell</a></li>
+<li class="chapter" data-level="6.24" data-path="Ch06.html"><a href="Ch06.html#ch06.024"><i class="fa fa-check"></i><b>6.24</b> Climate_CHELSAv2.1-cmi-max_cell</a></li>
+<li class="chapter" data-level="6.25" data-path="Ch06.html"><a href="Ch06.html#ch06.025"><i class="fa fa-check"></i><b>6.25</b> Climate_CHELSAv2.1-cmi-mean_cell</a></li>
+<li class="chapter" data-level="6.26" data-path="Ch06.html"><a href="Ch06.html#ch06.026"><i class="fa fa-check"></i><b>6.26</b> Climate_CHELSAv2.1-cmi-min_cell</a></li>
+<li class="chapter" data-level="6.27" data-path="Ch06.html"><a href="Ch06.html#ch06.027"><i class="fa fa-check"></i><b>6.27</b> Climate_CHELSAv2.1-cmi-range_cell</a></li>
+<li class="chapter" data-level="6.28" data-path="Ch06.html"><a href="Ch06.html#ch06.028"><i class="fa fa-check"></i><b>6.28</b> Climate_CHELSAv2.1-fcf_cell</a></li>
+<li class="chapter" data-level="6.29" data-path="Ch06.html"><a href="Ch06.html#ch06.029"><i class="fa fa-check"></i><b>6.29</b> Climate_CHELSAv2.1-fgd_cell</a></li>
+<li class="chapter" data-level="6.30" data-path="Ch06.html"><a href="Ch06.html#ch06.030"><i class="fa fa-check"></i><b>6.30</b> Climate_CHELSAv2.1-gdd0_cell</a></li>
+<li class="chapter" data-level="6.31" data-path="Ch06.html"><a href="Ch06.html#ch06.031"><i class="fa fa-check"></i><b>6.31</b> Climate_CHELSAv2.1-gdd10_cell</a></li>
+<li class="chapter" data-level="6.32" data-path="Ch06.html"><a href="Ch06.html#ch06.032"><i class="fa fa-check"></i><b>6.32</b> Climate_CHELSAv2.1-gdd5_cell</a></li>
+<li class="chapter" data-level="6.33" data-path="Ch06.html"><a href="Ch06.html#ch06.033"><i class="fa fa-check"></i><b>6.33</b> Climate_CHELSAv2.1-gddlgd0_cell</a></li>
+<li class="chapter" data-level="6.34" data-path="Ch06.html"><a href="Ch06.html#ch06.034"><i class="fa fa-check"></i><b>6.34</b> Climate_CHELSAv2.1-gddlgd10_cell</a></li>
+<li class="chapter" data-level="6.35" data-path="Ch06.html"><a href="Ch06.html#ch06.035"><i class="fa fa-check"></i><b>6.35</b> Climate_CHELSAv2.1-gddlgd5_cell</a></li>
+<li class="chapter" data-level="6.36" data-path="Ch06.html"><a href="Ch06.html#ch06.036"><i class="fa fa-check"></i><b>6.36</b> Climate_CHELSAv2.1-gdgfgd0_cell</a></li>
+<li class="chapter" data-level="6.37" data-path="Ch06.html"><a href="Ch06.html#ch06.037"><i class="fa fa-check"></i><b>6.37</b> Climate_CHELSAv2.1-gdgfgd10_cell</a></li>
+<li class="chapter" data-level="6.38" data-path="Ch06.html"><a href="Ch06.html#ch06.038"><i class="fa fa-check"></i><b>6.38</b> Climate_CHELSAv2.1-gdgfgd5_cell</a></li>
+<li class="chapter" data-level="6.39" data-path="Ch06.html"><a href="Ch06.html#ch06.039"><i class="fa fa-check"></i><b>6.39</b> Climate_CHELSAv2.1-gsl_cell</a></li>
+<li class="chapter" data-level="6.40" data-path="Ch06.html"><a href="Ch06.html#ch06.040"><i class="fa fa-check"></i><b>6.40</b> Climate_CHELSAv2.1-gsp_cell</a></li>
+<li class="chapter" data-level="6.41" data-path="Ch06.html"><a href="Ch06.html#ch06.041"><i class="fa fa-check"></i><b>6.41</b> Climate_CHELSAv2.1-gst_cell</a></li>
+<li class="chapter" data-level="6.42" data-path="Ch06.html"><a href="Ch06.html#ch06.042"><i class="fa fa-check"></i><b>6.42</b> Climate_CHELSAv2.1-hurs-max_cell</a></li>
+<li class="chapter" data-level="6.43" data-path="Ch06.html"><a href="Ch06.html#ch06.043"><i class="fa fa-check"></i><b>6.43</b> Climate_CHELSAv2.1-hurs-mean_cell</a></li>
+<li class="chapter" data-level="6.44" data-path="Ch06.html"><a href="Ch06.html#ch06.044"><i class="fa fa-check"></i><b>6.44</b> Climate_CHELSAv2.1-hurs-min_cell</a></li>
+<li class="chapter" data-level="6.45" data-path="Ch06.html"><a href="Ch06.html#ch06.045"><i class="fa fa-check"></i><b>6.45</b> Climate_CHELSAv2.1-hurs-range_cell</a></li>
+<li class="chapter" data-level="6.46" data-path="Ch06.html"><a href="Ch06.html#ch06.046"><i class="fa fa-check"></i><b>6.46</b> Climate_CHELSAv2.1-lgd_cell</a></li>
+<li class="chapter" data-level="6.47" data-path="Ch06.html"><a href="Ch06.html#ch06.047"><i class="fa fa-check"></i><b>6.47</b> Climate_CHELSAv2.1-ngd0_cell</a></li>
+<li class="chapter" data-level="6.48" data-path="Ch06.html"><a href="Ch06.html#ch06.048"><i class="fa fa-check"></i><b>6.48</b> Climate_CHELSAv2.1-ngd10_cell</a></li>
+<li class="chapter" data-level="6.49" data-path="Ch06.html"><a href="Ch06.html#ch06.049"><i class="fa fa-check"></i><b>6.49</b> Climate_CHELSAv2.1-ngd5_cell</a></li>
+<li class="chapter" data-level="6.50" data-path="Ch06.html"><a href="Ch06.html#ch06.050"><i class="fa fa-check"></i><b>6.50</b> Climate_CHELSAv2.1-npp_cell</a></li>
+<li class="chapter" data-level="6.51" data-path="Ch06.html"><a href="Ch06.html#ch06.051"><i class="fa fa-check"></i><b>6.51</b> Climate_CHELSAv2.1-pet-penman-max_cell</a></li>
+<li class="chapter" data-level="6.52" data-path="Ch06.html"><a href="Ch06.html#ch06.052"><i class="fa fa-check"></i><b>6.52</b> Climate_CHELSAv2.1-pet-penman-mean_cell</a></li>
+<li class="chapter" data-level="6.53" data-path="Ch06.html"><a href="Ch06.html#ch06.053"><i class="fa fa-check"></i><b>6.53</b> Climate_CHELSAv2.1-pet-penman-min_cell</a></li>
+<li class="chapter" data-level="6.54" data-path="Ch06.html"><a href="Ch06.html#ch06.054"><i class="fa fa-check"></i><b>6.54</b> Climate_CHELSAv2.1-pet-penman-range_cell</a></li>
+<li class="chapter" data-level="6.55" data-path="Ch06.html"><a href="Ch06.html#ch06.055"><i class="fa fa-check"></i><b>6.55</b> Climate_CHELSAv2.1-rsds-max_cell</a></li>
+<li class="chapter" data-level="6.56" data-path="Ch06.html"><a href="Ch06.html#ch06.056"><i class="fa fa-check"></i><b>6.56</b> Climate_CHELSAv2.1-rsds-mean_cell</a></li>
+<li class="chapter" data-level="6.57" data-path="Ch06.html"><a href="Ch06.html#ch06.057"><i class="fa fa-check"></i><b>6.57</b> Climate_CHELSAv2.1-rsds-min_cell</a></li>
+<li class="chapter" data-level="6.58" data-path="Ch06.html"><a href="Ch06.html#ch06.058"><i class="fa fa-check"></i><b>6.58</b> Climate_CHELSAv2.1-rsds-range_cell</a></li>
+<li class="chapter" data-level="6.59" data-path="Ch06.html"><a href="Ch06.html#ch06.059"><i class="fa fa-check"></i><b>6.59</b> Climate_CHELSAv2.1-scd_cell</a></li>
+<li class="chapter" data-level="6.60" data-path="Ch06.html"><a href="Ch06.html#ch06.060"><i class="fa fa-check"></i><b>6.60</b> Climate_CHELSAv2.1-sfcWind-max_cell</a></li>
+<li class="chapter" data-level="6.61" data-path="Ch06.html"><a href="Ch06.html#ch06.061"><i class="fa fa-check"></i><b>6.61</b> Climate_CHELSAv2.1-sfcWind-mean_cell</a></li>
+<li class="chapter" data-level="6.62" data-path="Ch06.html"><a href="Ch06.html#ch06.062"><i class="fa fa-check"></i><b>6.62</b> Climate_CHELSAv2.1-sfcWind-min_cell</a></li>
+<li class="chapter" data-level="6.63" data-path="Ch06.html"><a href="Ch06.html#ch06.063"><i class="fa fa-check"></i><b>6.63</b> Climate_CHELSAv2.1-sfcWind-range_cell</a></li>
+<li class="chapter" data-level="6.64" data-path="Ch06.html"><a href="Ch06.html#ch06.064"><i class="fa fa-check"></i><b>6.64</b> Climate_CHELSAv2.1-swb_cell</a></li>
+<li class="chapter" data-level="6.65" data-path="Ch06.html"><a href="Ch06.html#ch06.065"><i class="fa fa-check"></i><b>6.65</b> Climate_CHELSAv2.1-swe_cell</a></li>
+<li class="chapter" data-level="6.66" data-path="Ch06.html"><a href="Ch06.html#ch06.066"><i class="fa fa-check"></i><b>6.66</b> Climate_CHELSAv2.1-vpd-max_cell</a></li>
+<li class="chapter" data-level="6.67" data-path="Ch06.html"><a href="Ch06.html#ch06.067"><i class="fa fa-check"></i><b>6.67</b> Climate_CHELSAv2.1-vpd-mean_cell</a></li>
+<li class="chapter" data-level="6.68" data-path="Ch06.html"><a href="Ch06.html#ch06.068"><i class="fa fa-check"></i><b>6.68</b> Climate_CHELSAv2.1-vpd-min_cell</a></li>
+<li class="chapter" data-level="6.69" data-path="Ch06.html"><a href="Ch06.html#ch06.069"><i class="fa fa-check"></i><b>6.69</b> Climate_CHELSAv2.1-vpd-range_cell</a></li>
+<li class="chapter" data-level="6.70" data-path="Ch06.html"><a href="Ch06.html#ch06.070"><i class="fa fa-check"></i><b>6.70</b> HydroClim_01-max_cell</a></li>
+<li class="chapter" data-level="6.71" data-path="Ch06.html"><a href="Ch06.html#ch06.071"><i class="fa fa-check"></i><b>6.71</b> HydroClim_02-max_cell</a></li>
+<li class="chapter" data-level="6.72" data-path="Ch06.html"><a href="Ch06.html#ch06.072"><i class="fa fa-check"></i><b>6.72</b> HydroClim_03-max_cell</a></li>
+<li class="chapter" data-level="6.73" data-path="Ch06.html"><a href="Ch06.html#ch06.073"><i class="fa fa-check"></i><b>6.73</b> HydroClim_04-max_cell</a></li>
+<li class="chapter" data-level="6.74" data-path="Ch06.html"><a href="Ch06.html#ch06.074"><i class="fa fa-check"></i><b>6.74</b> HydroClim_05-max_cell</a></li>
+<li class="chapter" data-level="6.75" data-path="Ch06.html"><a href="Ch06.html#ch06.075"><i class="fa fa-check"></i><b>6.75</b> HydroClim_06-min_cell</a></li>
+<li class="chapter" data-level="6.76" data-path="Ch06.html"><a href="Ch06.html#ch06.076"><i class="fa fa-check"></i><b>6.76</b> HydroClim_07-max_cell</a></li>
+<li class="chapter" data-level="6.77" data-path="Ch06.html"><a href="Ch06.html#ch06.077"><i class="fa fa-check"></i><b>6.77</b> HydroClim_08-max_cell</a></li>
+<li class="chapter" data-level="6.78" data-path="Ch06.html"><a href="Ch06.html#ch06.078"><i class="fa fa-check"></i><b>6.78</b> HydroClim_09-min_cell</a></li>
+<li class="chapter" data-level="6.79" data-path="Ch06.html"><a href="Ch06.html#ch06.079"><i class="fa fa-check"></i><b>6.79</b> HydroClim_10-max_cell</a></li>
+<li class="chapter" data-level="6.80" data-path="Ch06.html"><a href="Ch06.html#ch06.080"><i class="fa fa-check"></i><b>6.80</b> HydroClim_11-min_cell</a></li>
+<li class="chapter" data-level="6.81" data-path="Ch06.html"><a href="Ch06.html#ch06.081"><i class="fa fa-check"></i><b>6.81</b> HydroClim_12-max_cell</a></li>
+<li class="chapter" data-level="6.82" data-path="Ch06.html"><a href="Ch06.html#ch06.082"><i class="fa fa-check"></i><b>6.82</b> HydroClim_13-max_cell</a></li>
+<li class="chapter" data-level="6.83" data-path="Ch06.html"><a href="Ch06.html#ch06.083"><i class="fa fa-check"></i><b>6.83</b> HydroClim_14-max_cell</a></li>
+<li class="chapter" data-level="6.84" data-path="Ch06.html"><a href="Ch06.html#ch06.084"><i class="fa fa-check"></i><b>6.84</b> HydroClim_15-max_cell</a></li>
+<li class="chapter" data-level="6.85" data-path="Ch06.html"><a href="Ch06.html#ch06.085"><i class="fa fa-check"></i><b>6.85</b> HydroClim_16-max_cell</a></li>
+<li class="chapter" data-level="6.86" data-path="Ch06.html"><a href="Ch06.html#ch06.086"><i class="fa fa-check"></i><b>6.86</b> HydroClim_17-max_cell</a></li>
+<li class="chapter" data-level="6.87" data-path="Ch06.html"><a href="Ch06.html#ch06.087"><i class="fa fa-check"></i><b>6.87</b> HydroClim_18-max_cell</a></li>
+<li class="chapter" data-level="6.88" data-path="Ch06.html"><a href="Ch06.html#ch06.088"><i class="fa fa-check"></i><b>6.88</b> HydroClim_19-max_cell</a></li>
+<li class="chapter" data-level="6.89" data-path="Ch06.html"><a href="Ch06.html#ch06.089"><i class="fa fa-check"></i><b>6.89</b> Distance_Builtup_cell</a></li>
+<li class="chapter" data-level="6.90" data-path="Ch06.html"><a href="Ch06.html#ch06.090"><i class="fa fa-check"></i><b>6.90</b> Distance_ForestInside_cell</a></li>
+<li class="chapter" data-level="6.91" data-path="Ch06.html"><a href="Ch06.html#ch06.091"><i class="fa fa-check"></i><b>6.91</b> Distance_GrasslandPermanent_cell</a></li>
+<li class="chapter" data-level="6.92" data-path="Ch06.html"><a href="Ch06.html#ch06.092"><i class="fa fa-check"></i><b>6.92</b> Distance_Landfill_cell</a></li>
+<li class="chapter" data-level="6.93" data-path="Ch06.html"><a href="Ch06.html#ch06.093"><i class="fa fa-check"></i><b>6.93</b> Distance_Sea_cell</a></li>
+<li class="chapter" data-level="6.94" data-path="Ch06.html"><a href="Ch06.html#ch06.094"><i class="fa fa-check"></i><b>6.94</b> Distance_Trees_cell</a></li>
+<li class="chapter" data-level="6.95" data-path="Ch06.html"><a href="Ch06.html#ch06.095"><i class="fa fa-check"></i><b>6.95</b> Distance_Waste_cell</a></li>
+<li class="chapter" data-level="6.96" data-path="Ch06.html"><a href="Ch06.html#ch06.096"><i class="fa fa-check"></i><b>6.96</b> Distance_Water_cell</a></li>
+<li class="chapter" data-level="6.97" data-path="Ch06.html"><a href="Ch06.html#ch06.097"><i class="fa fa-check"></i><b>6.97</b> Distance_WaterInside_cell</a></li>
+<li class="chapter" data-level="6.98" data-path="Ch06.html"><a href="Ch06.html#ch06.098"><i class="fa fa-check"></i><b>6.98</b> Diversity_Farmland_r500</a></li>
+<li class="chapter" data-level="6.99" data-path="Ch06.html"><a href="Ch06.html#ch06.099"><i class="fa fa-check"></i><b>6.99</b> Diversity_Farmland_r1250</a></li>
+<li class="chapter" data-level="6.100" data-path="Ch06.html"><a href="Ch06.html#ch06.100"><i class="fa fa-check"></i><b>6.100</b> Diversity_Farmland_r3000</a></li>
+<li class="chapter" data-level="6.101" data-path="Ch06.html"><a href="Ch06.html#ch06.101"><i class="fa fa-check"></i><b>6.101</b> Diversity_Farmland_r10000</a></li>
+<li class="chapter" data-level="6.102" data-path="Ch06.html"><a href="Ch06.html#ch06.102"><i class="fa fa-check"></i><b>6.102</b> Diversity_Forest_r500</a></li>
+<li class="chapter" data-level="6.103" data-path="Ch06.html"><a href="Ch06.html#ch06.103"><i class="fa fa-check"></i><b>6.103</b> Diversity_Forest_r1250</a></li>
+<li class="chapter" data-level="6.104" data-path="Ch06.html"><a href="Ch06.html#ch06.104"><i class="fa fa-check"></i><b>6.104</b> Diversity_Forest_r3000</a></li>
+<li class="chapter" data-level="6.105" data-path="Ch06.html"><a href="Ch06.html#ch06.105"><i class="fa fa-check"></i><b>6.105</b> Diversity_Forest_r10000</a></li>
+<li class="chapter" data-level="6.106" data-path="Ch06.html"><a href="Ch06.html#ch06.106"><i class="fa fa-check"></i><b>6.106</b> Diversity_Total_r500</a></li>
+<li class="chapter" data-level="6.107" data-path="Ch06.html"><a href="Ch06.html#ch06.107"><i class="fa fa-check"></i><b>6.107</b> Diversity_Total_r1250</a></li>
+<li class="chapter" data-level="6.108" data-path="Ch06.html"><a href="Ch06.html#ch06.108"><i class="fa fa-check"></i><b>6.108</b> Diversity_Total_r3000</a></li>
+<li class="chapter" data-level="6.109" data-path="Ch06.html"><a href="Ch06.html#ch06.109"><i class="fa fa-check"></i><b>6.109</b> Diversity_Total_r10000</a></li>
+<li class="chapter" data-level="6.110" data-path="Ch06.html"><a href="Ch06.html#ch06.110"><i class="fa fa-check"></i><b>6.110</b> Edges_Bogs-Trees_cell</a></li>
+<li class="chapter" data-level="6.111" data-path="Ch06.html"><a href="Ch06.html#ch06.111"><i class="fa fa-check"></i><b>6.111</b> Edges_Bogs-Trees_r500</a></li>
+<li class="chapter" data-level="6.112" data-path="Ch06.html"><a href="Ch06.html#ch06.112"><i class="fa fa-check"></i><b>6.112</b> Edges_Bogs-Trees_r1250</a></li>
+<li class="chapter" data-level="6.113" data-path="Ch06.html"><a href="Ch06.html#ch06.113"><i class="fa fa-check"></i><b>6.113</b> Edges_Bogs-Trees_r3000</a></li>
+<li class="chapter" data-level="6.114" data-path="Ch06.html"><a href="Ch06.html#ch06.114"><i class="fa fa-check"></i><b>6.114</b> Edges_Bogs-Trees_r10000</a></li>
+<li class="chapter" data-level="6.115" data-path="Ch06.html"><a href="Ch06.html#ch06.115"><i class="fa fa-check"></i><b>6.115</b> Edges_Bogs-Water_cell</a></li>
+<li class="chapter" data-level="6.116" data-path="Ch06.html"><a href="Ch06.html#ch06.116"><i class="fa fa-check"></i><b>6.116</b> Edges_Bogs-Water_r500</a></li>
+<li class="chapter" data-level="6.117" data-path="Ch06.html"><a href="Ch06.html#ch06.117"><i class="fa fa-check"></i><b>6.117</b> Edges_Bogs-Water_r1250</a></li>
+<li class="chapter" data-level="6.118" data-path="Ch06.html"><a href="Ch06.html#ch06.118"><i class="fa fa-check"></i><b>6.118</b> Edges_Bogs-Water_r3000</a></li>
+<li class="chapter" data-level="6.119" data-path="Ch06.html"><a href="Ch06.html#ch06.119"><i class="fa fa-check"></i><b>6.119</b> Edges_Bogs-Water_r10000</a></li>
+<li class="chapter" data-level="6.120" data-path="Ch06.html"><a href="Ch06.html#ch06.120"><i class="fa fa-check"></i><b>6.120</b> Edges_Farmland-Builtup_cell</a></li>
+<li class="chapter" data-level="6.121" data-path="Ch06.html"><a href="Ch06.html#ch06.121"><i class="fa fa-check"></i><b>6.121</b> Edges_Farmland-Builtup_r500</a></li>
+<li class="chapter" data-level="6.122" data-path="Ch06.html"><a href="Ch06.html#ch06.122"><i class="fa fa-check"></i><b>6.122</b> Edges_Farmland-Builtup_r1250</a></li>
+<li class="chapter" data-level="6.123" data-path="Ch06.html"><a href="Ch06.html#ch06.123"><i class="fa fa-check"></i><b>6.123</b> Edges_Farmland-Builtup_r3000</a></li>
+<li class="chapter" data-level="6.124" data-path="Ch06.html"><a href="Ch06.html#ch06.124"><i class="fa fa-check"></i><b>6.124</b> Edges_Farmland-Builtup_r10000</a></li>
+<li class="chapter" data-level="6.125" data-path="Ch06.html"><a href="Ch06.html#ch06.125"><i class="fa fa-check"></i><b>6.125</b> Edges_Trees-Builtup_cell</a></li>
+<li class="chapter" data-level="6.126" data-path="Ch06.html"><a href="Ch06.html#ch06.126"><i class="fa fa-check"></i><b>6.126</b> Edges_Trees-Builtup_r500</a></li>
+<li class="chapter" data-level="6.127" data-path="Ch06.html"><a href="Ch06.html#ch06.127"><i class="fa fa-check"></i><b>6.127</b> Edges_Trees-Builtup_r1250</a></li>
+<li class="chapter" data-level="6.128" data-path="Ch06.html"><a href="Ch06.html#ch06.128"><i class="fa fa-check"></i><b>6.128</b> Edges_Trees-Builtup_r3000</a></li>
+<li class="chapter" data-level="6.129" data-path="Ch06.html"><a href="Ch06.html#ch06.129"><i class="fa fa-check"></i><b>6.129</b> Edges_Trees-Builtup_r10000</a></li>
+<li class="chapter" data-level="6.130" data-path="Ch06.html"><a href="Ch06.html#ch06.130"><i class="fa fa-check"></i><b>6.130</b> Edges_CropsFallow_cell</a></li>
+<li class="chapter" data-level="6.131" data-path="Ch06.html"><a href="Ch06.html#ch06.131"><i class="fa fa-check"></i><b>6.131</b> Edges_CropsFallow_r500</a></li>
+<li class="chapter" data-level="6.132" data-path="Ch06.html"><a href="Ch06.html#ch06.132"><i class="fa fa-check"></i><b>6.132</b> Edges_CropsFallow_r1250</a></li>
+<li class="chapter" data-level="6.133" data-path="Ch06.html"><a href="Ch06.html#ch06.133"><i class="fa fa-check"></i><b>6.133</b> Edges_CropsFallow_r3000</a></li>
+<li class="chapter" data-level="6.134" data-path="Ch06.html"><a href="Ch06.html#ch06.134"><i class="fa fa-check"></i><b>6.134</b> Edges_CropsFallow_r10000</a></li>
+<li class="chapter" data-level="6.135" data-path="Ch06.html"><a href="Ch06.html#ch06.135"><i class="fa fa-check"></i><b>6.135</b> Edges_FarmlandShrubs-Trees_cell</a></li>
+<li class="chapter" data-level="6.136" data-path="Ch06.html"><a href="Ch06.html#ch06.136"><i class="fa fa-check"></i><b>6.136</b> Edges_FarmlandShrubs-Trees_r500</a></li>
+<li class="chapter" data-level="6.137" data-path="Ch06.html"><a href="Ch06.html#ch06.137"><i class="fa fa-check"></i><b>6.137</b> Edges_FarmlandShrubs-Trees_r1250</a></li>
+<li class="chapter" data-level="6.138" data-path="Ch06.html"><a href="Ch06.html#ch06.138"><i class="fa fa-check"></i><b>6.138</b> Edges_FarmlandShrubs-Trees_r3000</a></li>
+<li class="chapter" data-level="6.139" data-path="Ch06.html"><a href="Ch06.html#ch06.139"><i class="fa fa-check"></i><b>6.139</b> Edges_FarmlandShrubs-Trees_r10000</a></li>
+<li class="chapter" data-level="6.140" data-path="Ch06.html"><a href="Ch06.html#ch06.140"><i class="fa fa-check"></i><b>6.140</b> Edges_Grasslands_cell</a></li>
+<li class="chapter" data-level="6.141" data-path="Ch06.html"><a href="Ch06.html#ch06.141"><i class="fa fa-check"></i><b>6.141</b> Edges_Grasslands_r500</a></li>
+<li class="chapter" data-level="6.142" data-path="Ch06.html"><a href="Ch06.html#ch06.142"><i class="fa fa-check"></i><b>6.142</b> Edges_Grasslands_r1250</a></li>
+<li class="chapter" data-level="6.143" data-path="Ch06.html"><a href="Ch06.html#ch06.143"><i class="fa fa-check"></i><b>6.143</b> Edges_Grasslands_r3000</a></li>
+<li class="chapter" data-level="6.144" data-path="Ch06.html"><a href="Ch06.html#ch06.144"><i class="fa fa-check"></i><b>6.144</b> Edges_Grasslands_r10000</a></li>
+<li class="chapter" data-level="6.145" data-path="Ch06.html"><a href="Ch06.html#ch06.145"><i class="fa fa-check"></i><b>6.145</b> Edges_OldForests_cell</a></li>
+<li class="chapter" data-level="6.146" data-path="Ch06.html"><a href="Ch06.html#ch06.146"><i class="fa fa-check"></i><b>6.146</b> Edges_OldForests_r500</a></li>
+<li class="chapter" data-level="6.147" data-path="Ch06.html"><a href="Ch06.html#ch06.147"><i class="fa fa-check"></i><b>6.147</b> Edges_OldForests_r1250</a></li>
+<li class="chapter" data-level="6.148" data-path="Ch06.html"><a href="Ch06.html#ch06.148"><i class="fa fa-check"></i><b>6.148</b> Edges_OldForests_r3000</a></li>
+<li class="chapter" data-level="6.149" data-path="Ch06.html"><a href="Ch06.html#ch06.149"><i class="fa fa-check"></i><b>6.149</b> Edges_OldForests_r10000</a></li>
+<li class="chapter" data-level="6.150" data-path="Ch06.html"><a href="Ch06.html#ch06.150"><i class="fa fa-check"></i><b>6.150</b> Edges_Roads_cell</a></li>
+<li class="chapter" data-level="6.151" data-path="Ch06.html"><a href="Ch06.html#ch06.151"><i class="fa fa-check"></i><b>6.151</b> Edges_Roads_r500</a></li>
+<li class="chapter" data-level="6.152" data-path="Ch06.html"><a href="Ch06.html#ch06.152"><i class="fa fa-check"></i><b>6.152</b> Edges_Roads_r1250</a></li>
+<li class="chapter" data-level="6.153" data-path="Ch06.html"><a href="Ch06.html#ch06.153"><i class="fa fa-check"></i><b>6.153</b> Edges_Roads_r3000</a></li>
+<li class="chapter" data-level="6.154" data-path="Ch06.html"><a href="Ch06.html#ch06.154"><i class="fa fa-check"></i><b>6.154</b> Edges_Roads_r10000</a></li>
+<li class="chapter" data-level="6.155" data-path="Ch06.html"><a href="Ch06.html#ch06.155"><i class="fa fa-check"></i><b>6.155</b> Edges_Trees_cell</a></li>
+<li class="chapter" data-level="6.156" data-path="Ch06.html"><a href="Ch06.html#ch06.156"><i class="fa fa-check"></i><b>6.156</b> Edges_Trees_r500</a></li>
+<li class="chapter" data-level="6.157" data-path="Ch06.html"><a href="Ch06.html#ch06.157"><i class="fa fa-check"></i><b>6.157</b> Edges_Trees_r1250</a></li>
+<li class="chapter" data-level="6.158" data-path="Ch06.html"><a href="Ch06.html#ch06.158"><i class="fa fa-check"></i><b>6.158</b> Edges_Trees_r3000</a></li>
+<li class="chapter" data-level="6.159" data-path="Ch06.html"><a href="Ch06.html#ch06.159"><i class="fa fa-check"></i><b>6.159</b> Edges_Trees_r10000</a></li>
+<li class="chapter" data-level="6.160" data-path="Ch06.html"><a href="Ch06.html#ch06.160"><i class="fa fa-check"></i><b>6.160</b> Edges_Water_cell</a></li>
+<li class="chapter" data-level="6.161" data-path="Ch06.html"><a href="Ch06.html#ch06.161"><i class="fa fa-check"></i><b>6.161</b> Edges_Water_r500</a></li>
+<li class="chapter" data-level="6.162" data-path="Ch06.html"><a href="Ch06.html#ch06.162"><i class="fa fa-check"></i><b>6.162</b> Edges_Water_r1250</a></li>
+<li class="chapter" data-level="6.163" data-path="Ch06.html"><a href="Ch06.html#ch06.163"><i class="fa fa-check"></i><b>6.163</b> Edges_Water_r3000</a></li>
+<li class="chapter" data-level="6.164" data-path="Ch06.html"><a href="Ch06.html#ch06.164"><i class="fa fa-check"></i><b>6.164</b> Edges_Water_r10000</a></li>
+<li class="chapter" data-level="6.165" data-path="Ch06.html"><a href="Ch06.html#ch06.165"><i class="fa fa-check"></i><b>6.165</b> Edges_Water-Farmland_cell</a></li>
+<li class="chapter" data-level="6.166" data-path="Ch06.html"><a href="Ch06.html#ch06.166"><i class="fa fa-check"></i><b>6.166</b> Edges_Water-Farmland_r500</a></li>
+<li class="chapter" data-level="6.167" data-path="Ch06.html"><a href="Ch06.html#ch06.167"><i class="fa fa-check"></i><b>6.167</b> Edges_Water-Farmland_r1250</a></li>
+<li class="chapter" data-level="6.168" data-path="Ch06.html"><a href="Ch06.html#ch06.168"><i class="fa fa-check"></i><b>6.168</b> Edges_Water-Farmland_r3000</a></li>
+<li class="chapter" data-level="6.169" data-path="Ch06.html"><a href="Ch06.html#ch06.169"><i class="fa fa-check"></i><b>6.169</b> Edges_Water-Farmland_r10000</a></li>
+<li class="chapter" data-level="6.170" data-path="Ch06.html"><a href="Ch06.html#ch06.170"><i class="fa fa-check"></i><b>6.170</b> Edges_Water-Grassland_cell</a></li>
+<li class="chapter" data-level="6.171" data-path="Ch06.html"><a href="Ch06.html#ch06.171"><i class="fa fa-check"></i><b>6.171</b> Edges_Water-Grassland_r500</a></li>
+<li class="chapter" data-level="6.172" data-path="Ch06.html"><a href="Ch06.html#ch06.172"><i class="fa fa-check"></i><b>6.172</b> Edges_Water-Grassland_r1250</a></li>
+<li class="chapter" data-level="6.173" data-path="Ch06.html"><a href="Ch06.html#ch06.173"><i class="fa fa-check"></i><b>6.173</b> Edges_Water-Grassland_r3000</a></li>
+<li class="chapter" data-level="6.174" data-path="Ch06.html"><a href="Ch06.html#ch06.174"><i class="fa fa-check"></i><b>6.174</b> Edges_Water-Grassland_r10000</a></li>
+<li class="chapter" data-level="6.175" data-path="Ch06.html"><a href="Ch06.html#ch06.175"><i class="fa fa-check"></i><b>6.175</b> Edges_ReedSedgeRushBeds-Water_cell</a></li>
+<li class="chapter" data-level="6.176" data-path="Ch06.html"><a href="Ch06.html#ch06.176"><i class="fa fa-check"></i><b>6.176</b> Edges_ReedSedgeRushBeds-Water_r500</a></li>
+<li class="chapter" data-level="6.177" data-path="Ch06.html"><a href="Ch06.html#ch06.177"><i class="fa fa-check"></i><b>6.177</b> Edges_ReedSedgeRushBeds-Water_r1250</a></li>
+<li class="chapter" data-level="6.178" data-path="Ch06.html"><a href="Ch06.html#ch06.178"><i class="fa fa-check"></i><b>6.178</b> Edges_ReedSedgeRushBeds-Water_r3000</a></li>
+<li class="chapter" data-level="6.179" data-path="Ch06.html"><a href="Ch06.html#ch06.179"><i class="fa fa-check"></i><b>6.179</b> Edges_ReedSedgeRushBeds-Water_r10000</a></li>
+<li class="chapter" data-level="6.180" data-path="Ch06.html"><a href="Ch06.html#ch06.180"><i class="fa fa-check"></i><b>6.180</b> FarmlandCrops_CropsAll_cell</a></li>
+<li class="chapter" data-level="6.181" data-path="Ch06.html"><a href="Ch06.html#ch06.181"><i class="fa fa-check"></i><b>6.181</b> FarmlandCrops_CropsAll_r500</a></li>
+<li class="chapter" data-level="6.182" data-path="Ch06.html"><a href="Ch06.html#ch06.182"><i class="fa fa-check"></i><b>6.182</b> FarmlandCrops_CropsAll_r1250</a></li>
+<li class="chapter" data-level="6.183" data-path="Ch06.html"><a href="Ch06.html#ch06.183"><i class="fa fa-check"></i><b>6.183</b> FarmlandCrops_CropsAll_r3000</a></li>
+<li class="chapter" data-level="6.184" data-path="Ch06.html"><a href="Ch06.html#ch06.184"><i class="fa fa-check"></i><b>6.184</b> FarmlandCrops_CropsAll_r10000</a></li>
+<li class="chapter" data-level="6.185" data-path="Ch06.html"><a href="Ch06.html#ch06.185"><i class="fa fa-check"></i><b>6.185</b> FarmlandCrops_CropsHoed_cell</a></li>
+<li class="chapter" data-level="6.186" data-path="Ch06.html"><a href="Ch06.html#ch06.186"><i class="fa fa-check"></i><b>6.186</b> FarmlandCrops_CropsHoed_r500</a></li>
+<li class="chapter" data-level="6.187" data-path="Ch06.html"><a href="Ch06.html#ch06.187"><i class="fa fa-check"></i><b>6.187</b> FarmlandCrops_CropsHoed_r1250</a></li>
+<li class="chapter" data-level="6.188" data-path="Ch06.html"><a href="Ch06.html#ch06.188"><i class="fa fa-check"></i><b>6.188</b> FarmlandCrops_CropsHoed_r3000</a></li>
+<li class="chapter" data-level="6.189" data-path="Ch06.html"><a href="Ch06.html#ch06.189"><i class="fa fa-check"></i><b>6.189</b> FarmlandCrops_CropsHoed_r10000</a></li>
+<li class="chapter" data-level="6.190" data-path="Ch06.html"><a href="Ch06.html#ch06.190"><i class="fa fa-check"></i><b>6.190</b> FarmlandCrops_CropsOther_cell</a></li>
+<li class="chapter" data-level="6.191" data-path="Ch06.html"><a href="Ch06.html#ch06.191"><i class="fa fa-check"></i><b>6.191</b> FarmlandCrops_CropsOther_r500</a></li>
+<li class="chapter" data-level="6.192" data-path="Ch06.html"><a href="Ch06.html#ch06.192"><i class="fa fa-check"></i><b>6.192</b> FarmlandCrops_CropsOther_r1250</a></li>
+<li class="chapter" data-level="6.193" data-path="Ch06.html"><a href="Ch06.html#ch06.193"><i class="fa fa-check"></i><b>6.193</b> FarmlandCrops_CropsOther_r3000</a></li>
+<li class="chapter" data-level="6.194" data-path="Ch06.html"><a href="Ch06.html#ch06.194"><i class="fa fa-check"></i><b>6.194</b> FarmlandCrops_CropsOther_r10000</a></li>
+<li class="chapter" data-level="6.195" data-path="Ch06.html"><a href="Ch06.html#ch06.195"><i class="fa fa-check"></i><b>6.195</b> FarmlandCrops_CropsSpring_cell</a></li>
+<li class="chapter" data-level="6.196" data-path="Ch06.html"><a href="Ch06.html#ch06.196"><i class="fa fa-check"></i><b>6.196</b> FarmlandCrops_CropsSpring_r500</a></li>
+<li class="chapter" data-level="6.197" data-path="Ch06.html"><a href="Ch06.html#ch06.197"><i class="fa fa-check"></i><b>6.197</b> FarmlandCrops_CropsSpring_r1250</a></li>
+<li class="chapter" data-level="6.198" data-path="Ch06.html"><a href="Ch06.html#ch06.198"><i class="fa fa-check"></i><b>6.198</b> FarmlandCrops_CropsSpring_r3000</a></li>
+<li class="chapter" data-level="6.199" data-path="Ch06.html"><a href="Ch06.html#ch06.199"><i class="fa fa-check"></i><b>6.199</b> FarmlandCrops_CropsSpring_r10000</a></li>
+<li class="chapter" data-level="6.200" data-path="Ch06.html"><a href="Ch06.html#ch06.200"><i class="fa fa-check"></i><b>6.200</b> FarmlandCrops_CropsWinter_cell</a></li>
+<li class="chapter" data-level="6.201" data-path="Ch06.html"><a href="Ch06.html#ch06.201"><i class="fa fa-check"></i><b>6.201</b> FarmlandCrops_CropsWinter_r500</a></li>
+<li class="chapter" data-level="6.202" data-path="Ch06.html"><a href="Ch06.html#ch06.202"><i class="fa fa-check"></i><b>6.202</b> FarmlandCrops_CropsWinter_r1250</a></li>
+<li class="chapter" data-level="6.203" data-path="Ch06.html"><a href="Ch06.html#ch06.203"><i class="fa fa-check"></i><b>6.203</b> FarmlandCrops_CropsWinter_r3000</a></li>
+<li class="chapter" data-level="6.204" data-path="Ch06.html"><a href="Ch06.html#ch06.204"><i class="fa fa-check"></i><b>6.204</b> FarmlandCrops_CropsWinter_r10000</a></li>
+<li class="chapter" data-level="6.205" data-path="Ch06.html"><a href="Ch06.html#ch06.205"><i class="fa fa-check"></i><b>6.205</b> FarmlandCrops_RapeseedsSpring_cell</a></li>
+<li class="chapter" data-level="6.206" data-path="Ch06.html"><a href="Ch06.html#ch06.206"><i class="fa fa-check"></i><b>6.206</b> FarmlandCrops_RapeseedsSpring_r500</a></li>
+<li class="chapter" data-level="6.207" data-path="Ch06.html"><a href="Ch06.html#ch06.207"><i class="fa fa-check"></i><b>6.207</b> FarmlandCrops_RapeseedsSpring_r1250</a></li>
+<li class="chapter" data-level="6.208" data-path="Ch06.html"><a href="Ch06.html#ch06.208"><i class="fa fa-check"></i><b>6.208</b> FarmlandCrops_RapeseedsSpring_r3000</a></li>
+<li class="chapter" data-level="6.209" data-path="Ch06.html"><a href="Ch06.html#ch06.209"><i class="fa fa-check"></i><b>6.209</b> FarmlandCrops_RapeseedsSpring_r10000</a></li>
+<li class="chapter" data-level="6.210" data-path="Ch06.html"><a href="Ch06.html#ch06.210"><i class="fa fa-check"></i><b>6.210</b> FarmlandCrops_RapeseedsWinter_cell</a></li>
+<li class="chapter" data-level="6.211" data-path="Ch06.html"><a href="Ch06.html#ch06.211"><i class="fa fa-check"></i><b>6.211</b> FarmlandCrops_RapeseedsWinter_r500</a></li>
+<li class="chapter" data-level="6.212" data-path="Ch06.html"><a href="Ch06.html#ch06.212"><i class="fa fa-check"></i><b>6.212</b> FarmlandCrops_RapeseedsWinter_r1250</a></li>
+<li class="chapter" data-level="6.213" data-path="Ch06.html"><a href="Ch06.html#ch06.213"><i class="fa fa-check"></i><b>6.213</b> FarmlandCrops_RapeseedsWinter_r3000</a></li>
+<li class="chapter" data-level="6.214" data-path="Ch06.html"><a href="Ch06.html#ch06.214"><i class="fa fa-check"></i><b>6.214</b> FarmlandCrops_RapeseedsWinter_r10000</a></li>
+<li class="chapter" data-level="6.215" data-path="Ch06.html"><a href="Ch06.html#ch06.215"><i class="fa fa-check"></i><b>6.215</b> FarmlandGrassland_GrasslandsAbandoned_cell</a></li>
+<li class="chapter" data-level="6.216" data-path="Ch06.html"><a href="Ch06.html#ch06.216"><i class="fa fa-check"></i><b>6.216</b> FarmlandGrassland_GrasslandsAbandoned_r500</a></li>
+<li class="chapter" data-level="6.217" data-path="Ch06.html"><a href="Ch06.html#ch06.217"><i class="fa fa-check"></i><b>6.217</b> FarmlandGrassland_GrasslandsAbandoned_r1250</a></li>
+<li class="chapter" data-level="6.218" data-path="Ch06.html"><a href="Ch06.html#ch06.218"><i class="fa fa-check"></i><b>6.218</b> FarmlandGrassland_GrasslandsAbandoned_r3000</a></li>
+<li class="chapter" data-level="6.219" data-path="Ch06.html"><a href="Ch06.html#ch06.219"><i class="fa fa-check"></i><b>6.219</b> FarmlandGrassland_GrasslandsAbandoned_r10000</a></li>
+<li class="chapter" data-level="6.220" data-path="Ch06.html"><a href="Ch06.html#ch06.220"><i class="fa fa-check"></i><b>6.220</b> FarmlandGrassland_GrasslandsAll_cell</a></li>
+<li class="chapter" data-level="6.221" data-path="Ch06.html"><a href="Ch06.html#ch06.221"><i class="fa fa-check"></i><b>6.221</b> FarmlandGrassland_GrasslandsAll_r500</a></li>
+<li class="chapter" data-level="6.222" data-path="Ch06.html"><a href="Ch06.html#ch06.222"><i class="fa fa-check"></i><b>6.222</b> FarmlandGrassland_GrasslandsAll_r1250</a></li>
+<li class="chapter" data-level="6.223" data-path="Ch06.html"><a href="Ch06.html#ch06.223"><i class="fa fa-check"></i><b>6.223</b> FarmlandGrassland_GrasslandsAll_r3000</a></li>
+<li class="chapter" data-level="6.224" data-path="Ch06.html"><a href="Ch06.html#ch06.224"><i class="fa fa-check"></i><b>6.224</b> FarmlandGrassland_GrasslandsAll_r10000</a></li>
+<li class="chapter" data-level="6.225" data-path="Ch06.html"><a href="Ch06.html#ch06.225"><i class="fa fa-check"></i><b>6.225</b> FarmlandGrassland_GrasslandsPermanent_cell</a></li>
+<li class="chapter" data-level="6.226" data-path="Ch06.html"><a href="Ch06.html#ch06.226"><i class="fa fa-check"></i><b>6.226</b> FarmlandGrassland_GrasslandsPermanent_r500</a></li>
+<li class="chapter" data-level="6.227" data-path="Ch06.html"><a href="Ch06.html#ch06.227"><i class="fa fa-check"></i><b>6.227</b> FarmlandGrassland_GrasslandsPermanent_r1250</a></li>
+<li class="chapter" data-level="6.228" data-path="Ch06.html"><a href="Ch06.html#ch06.228"><i class="fa fa-check"></i><b>6.228</b> FarmlandGrassland_GrasslandsPermanent_r3000</a></li>
+<li class="chapter" data-level="6.229" data-path="Ch06.html"><a href="Ch06.html#ch06.229"><i class="fa fa-check"></i><b>6.229</b> FarmlandGrassland_GrasslandsPermanent_r10000</a></li>
+<li class="chapter" data-level="6.230" data-path="Ch06.html"><a href="Ch06.html#ch06.230"><i class="fa fa-check"></i><b>6.230</b> FarmlandGrassland_GrasslandsTemporary_cell</a></li>
+<li class="chapter" data-level="6.231" data-path="Ch06.html"><a href="Ch06.html#ch06.231"><i class="fa fa-check"></i><b>6.231</b> FarmlandGrassland_GrasslandsTemporary_r500</a></li>
+<li class="chapter" data-level="6.232" data-path="Ch06.html"><a href="Ch06.html#ch06.232"><i class="fa fa-check"></i><b>6.232</b> FarmlandGrassland_GrasslandsTemporary_r1250</a></li>
+<li class="chapter" data-level="6.233" data-path="Ch06.html"><a href="Ch06.html#ch06.233"><i class="fa fa-check"></i><b>6.233</b> FarmlandGrassland_GrasslandsTemporary_r3000</a></li>
+<li class="chapter" data-level="6.234" data-path="Ch06.html"><a href="Ch06.html#ch06.234"><i class="fa fa-check"></i><b>6.234</b> FarmlandGrassland_GrasslandsTemporary_r10000</a></li>
+<li class="chapter" data-level="6.235" data-path="Ch06.html"><a href="Ch06.html#ch06.235"><i class="fa fa-check"></i><b>6.235</b> FarmlandParcels_FieldsActive_cell</a></li>
+<li class="chapter" data-level="6.236" data-path="Ch06.html"><a href="Ch06.html#ch06.236"><i class="fa fa-check"></i><b>6.236</b> FarmlandParcels_FieldsActive_r500</a></li>
+<li class="chapter" data-level="6.237" data-path="Ch06.html"><a href="Ch06.html#ch06.237"><i class="fa fa-check"></i><b>6.237</b> FarmlandParcels_FieldsActive_r1250</a></li>
+<li class="chapter" data-level="6.238" data-path="Ch06.html"><a href="Ch06.html#ch06.238"><i class="fa fa-check"></i><b>6.238</b> FarmlandParcels_FieldsActive_r3000</a></li>
+<li class="chapter" data-level="6.239" data-path="Ch06.html"><a href="Ch06.html#ch06.239"><i class="fa fa-check"></i><b>6.239</b> FarmlandParcels_FieldsActive_r10000</a></li>
+<li class="chapter" data-level="6.240" data-path="Ch06.html"><a href="Ch06.html#ch06.240"><i class="fa fa-check"></i><b>6.240</b> FarmlandPloughed_CropsFallow_cell</a></li>
+<li class="chapter" data-level="6.241" data-path="Ch06.html"><a href="Ch06.html#ch06.241"><i class="fa fa-check"></i><b>6.241</b> FarmlandPloughed_CropsFallow_r500</a></li>
+<li class="chapter" data-level="6.242" data-path="Ch06.html"><a href="Ch06.html#ch06.242"><i class="fa fa-check"></i><b>6.242</b> FarmlandPloughed_CropsFallow_r1250</a></li>
+<li class="chapter" data-level="6.243" data-path="Ch06.html"><a href="Ch06.html#ch06.243"><i class="fa fa-check"></i><b>6.243</b> FarmlandPloughed_CropsFallow_r3000</a></li>
+<li class="chapter" data-level="6.244" data-path="Ch06.html"><a href="Ch06.html#ch06.244"><i class="fa fa-check"></i><b>6.244</b> FarmlandPloughed_CropsFallow_r10000</a></li>
+<li class="chapter" data-level="6.245" data-path="Ch06.html"><a href="Ch06.html#ch06.245"><i class="fa fa-check"></i><b>6.245</b> FarmlandPloughed_CropsFallowTempGrass_cell</a></li>
+<li class="chapter" data-level="6.246" data-path="Ch06.html"><a href="Ch06.html#ch06.246"><i class="fa fa-check"></i><b>6.246</b> FarmlandPloughed_CropsFallowTempGrass_r500</a></li>
+<li class="chapter" data-level="6.247" data-path="Ch06.html"><a href="Ch06.html#ch06.247"><i class="fa fa-check"></i><b>6.247</b> FarmlandPloughed_CropsFallowTempGrass_r1250</a></li>
+<li class="chapter" data-level="6.248" data-path="Ch06.html"><a href="Ch06.html#ch06.248"><i class="fa fa-check"></i><b>6.248</b> FarmlandPloughed_CropsFallowTempGrass_r3000</a></li>
+<li class="chapter" data-level="6.249" data-path="Ch06.html"><a href="Ch06.html#ch06.249"><i class="fa fa-check"></i><b>6.249</b> FarmlandPloughed_CropsFallowTempGrass_r10000</a></li>
+<li class="chapter" data-level="6.250" data-path="Ch06.html"><a href="Ch06.html#ch06.250"><i class="fa fa-check"></i><b>6.250</b> FarmlandPloughed_Fallow_cell</a></li>
+<li class="chapter" data-level="6.251" data-path="Ch06.html"><a href="Ch06.html#ch06.251"><i class="fa fa-check"></i><b>6.251</b> FarmlandPloughed_Fallow_r500</a></li>
+<li class="chapter" data-level="6.252" data-path="Ch06.html"><a href="Ch06.html#ch06.252"><i class="fa fa-check"></i><b>6.252</b> FarmlandPloughed_Fallow_r1250</a></li>
+<li class="chapter" data-level="6.253" data-path="Ch06.html"><a href="Ch06.html#ch06.253"><i class="fa fa-check"></i><b>6.253</b> FarmlandPloughed_Fallow_r3000</a></li>
+<li class="chapter" data-level="6.254" data-path="Ch06.html"><a href="Ch06.html#ch06.254"><i class="fa fa-check"></i><b>6.254</b> FarmlandPloughed_Fallow_r10000</a></li>
+<li class="chapter" data-level="6.255" data-path="Ch06.html"><a href="Ch06.html#ch06.255"><i class="fa fa-check"></i><b>6.255</b> FarmlandSubsidies_BiologicalSubsidies_cell</a></li>
+<li class="chapter" data-level="6.256" data-path="Ch06.html"><a href="Ch06.html#ch06.256"><i class="fa fa-check"></i><b>6.256</b> FarmlandSubsidies_BiologicalSubsidies_r500</a></li>
+<li class="chapter" data-level="6.257" data-path="Ch06.html"><a href="Ch06.html#ch06.257"><i class="fa fa-check"></i><b>6.257</b> FarmlandSubsidies_BiologicalSubsidies_r1250</a></li>
+<li class="chapter" data-level="6.258" data-path="Ch06.html"><a href="Ch06.html#ch06.258"><i class="fa fa-check"></i><b>6.258</b> FarmlandSubsidies_BiologicalSubsidies_r3000</a></li>
+<li class="chapter" data-level="6.259" data-path="Ch06.html"><a href="Ch06.html#ch06.259"><i class="fa fa-check"></i><b>6.259</b> FarmlandSubsidies_BiologicalSubsidies_r10000</a></li>
+<li class="chapter" data-level="6.260" data-path="Ch06.html"><a href="Ch06.html#ch06.260"><i class="fa fa-check"></i><b>6.260</b> FarmlandTrees_PermanentCrops_cell</a></li>
+<li class="chapter" data-level="6.261" data-path="Ch06.html"><a href="Ch06.html#ch06.261"><i class="fa fa-check"></i><b>6.261</b> FarmlandTrees_PermanentCrops_r500</a></li>
+<li class="chapter" data-level="6.262" data-path="Ch06.html"><a href="Ch06.html#ch06.262"><i class="fa fa-check"></i><b>6.262</b> FarmlandTrees_PermanentCrops_r1250</a></li>
+<li class="chapter" data-level="6.263" data-path="Ch06.html"><a href="Ch06.html#ch06.263"><i class="fa fa-check"></i><b>6.263</b> FarmlandTrees_PermanentCrops_r3000</a></li>
+<li class="chapter" data-level="6.264" data-path="Ch06.html"><a href="Ch06.html#ch06.264"><i class="fa fa-check"></i><b>6.264</b> FarmlandTrees_PermanentCrops_r10000</a></li>
+<li class="chapter" data-level="6.265" data-path="Ch06.html"><a href="Ch06.html#ch06.265"><i class="fa fa-check"></i><b>6.265</b> FarmlandTrees_ShortRotationCoppice_cell</a></li>
+<li class="chapter" data-level="6.266" data-path="Ch06.html"><a href="Ch06.html#ch06.266"><i class="fa fa-check"></i><b>6.266</b> FarmlandTrees_ShortRotationCoppice_r500</a></li>
+<li class="chapter" data-level="6.267" data-path="Ch06.html"><a href="Ch06.html#ch06.267"><i class="fa fa-check"></i><b>6.267</b> FarmlandTrees_ShortRotationCoppice_r1250</a></li>
+<li class="chapter" data-level="6.268" data-path="Ch06.html"><a href="Ch06.html#ch06.268"><i class="fa fa-check"></i><b>6.268</b> FarmlandTrees_ShortRotationCoppice_r3000</a></li>
+<li class="chapter" data-level="6.269" data-path="Ch06.html"><a href="Ch06.html#ch06.269"><i class="fa fa-check"></i><b>6.269</b> FarmlandTrees_ShortRotationCoppice_r10000</a></li>
+<li class="chapter" data-level="6.270" data-path="Ch06.html"><a href="Ch06.html#ch06.270"><i class="fa fa-check"></i><b>6.270</b> ForestsAge_ClearcutsLowStands_cell</a></li>
+<li class="chapter" data-level="6.271" data-path="Ch06.html"><a href="Ch06.html#ch06.271"><i class="fa fa-check"></i><b>6.271</b> ForestsAge_ClearcutsLowStands_r500</a></li>
+<li class="chapter" data-level="6.272" data-path="Ch06.html"><a href="Ch06.html#ch06.272"><i class="fa fa-check"></i><b>6.272</b> ForestsAge_ClearcutsLowStands_r1250</a></li>
+<li class="chapter" data-level="6.273" data-path="Ch06.html"><a href="Ch06.html#ch06.273"><i class="fa fa-check"></i><b>6.273</b> ForestsAge_ClearcutsLowStands_r3000</a></li>
+<li class="chapter" data-level="6.274" data-path="Ch06.html"><a href="Ch06.html#ch06.274"><i class="fa fa-check"></i><b>6.274</b> ForestsAge_ClearcutsLowStands_r10000</a></li>
+<li class="chapter" data-level="6.275" data-path="Ch06.html"><a href="Ch06.html#ch06.275"><i class="fa fa-check"></i><b>6.275</b> ForestsAge_Middle_cell</a></li>
+<li class="chapter" data-level="6.276" data-path="Ch06.html"><a href="Ch06.html#ch06.276"><i class="fa fa-check"></i><b>6.276</b> ForestsAge_Middle_r500</a></li>
+<li class="chapter" data-level="6.277" data-path="Ch06.html"><a href="Ch06.html#ch06.277"><i class="fa fa-check"></i><b>6.277</b> ForestsAge_Middle_r1250</a></li>
+<li class="chapter" data-level="6.278" data-path="Ch06.html"><a href="Ch06.html#ch06.278"><i class="fa fa-check"></i><b>6.278</b> ForestsAge_Middle_r3000</a></li>
+<li class="chapter" data-level="6.279" data-path="Ch06.html"><a href="Ch06.html#ch06.279"><i class="fa fa-check"></i><b>6.279</b> ForestsAge_Middle_r10000</a></li>
+<li class="chapter" data-level="6.280" data-path="Ch06.html"><a href="Ch06.html#ch06.280"><i class="fa fa-check"></i><b>6.280</b> ForestsAge_Old_cell</a></li>
+<li class="chapter" data-level="6.281" data-path="Ch06.html"><a href="Ch06.html#ch06.281"><i class="fa fa-check"></i><b>6.281</b> ForestsAge_Old_r500</a></li>
+<li class="chapter" data-level="6.282" data-path="Ch06.html"><a href="Ch06.html#ch06.282"><i class="fa fa-check"></i><b>6.282</b> ForestsAge_Old_r1250</a></li>
+<li class="chapter" data-level="6.283" data-path="Ch06.html"><a href="Ch06.html#ch06.283"><i class="fa fa-check"></i><b>6.283</b> ForestsAge_Old_r3000</a></li>
+<li class="chapter" data-level="6.284" data-path="Ch06.html"><a href="Ch06.html#ch06.284"><i class="fa fa-check"></i><b>6.284</b> ForestsAge_Old_r10000</a></li>
+<li class="chapter" data-level="6.285" data-path="Ch06.html"><a href="Ch06.html#ch06.285"><i class="fa fa-check"></i><b>6.285</b> ForestsAge_YoungTallStandsShrubs_cell</a></li>
+<li class="chapter" data-level="6.286" data-path="Ch06.html"><a href="Ch06.html#ch06.286"><i class="fa fa-check"></i><b>6.286</b> ForestsAge_YoungTallStandsShrubs_r500</a></li>
+<li class="chapter" data-level="6.287" data-path="Ch06.html"><a href="Ch06.html#ch06.287"><i class="fa fa-check"></i><b>6.287</b> ForestsAge_YoungTallStandsShrubs_r1250</a></li>
+<li class="chapter" data-level="6.288" data-path="Ch06.html"><a href="Ch06.html#ch06.288"><i class="fa fa-check"></i><b>6.288</b> ForestsAge_YoungTallStandsShrubs_r3000</a></li>
+<li class="chapter" data-level="6.289" data-path="Ch06.html"><a href="Ch06.html#ch06.289"><i class="fa fa-check"></i><b>6.289</b> ForestsAge_YoungTallStandsShrubs_r10000</a></li>
+<li class="chapter" data-level="6.290" data-path="Ch06.html"><a href="Ch06.html#ch06.290"><i class="fa fa-check"></i><b>6.290</b> ForestsQuant_AgeProp-average_cell</a></li>
+<li class="chapter" data-level="6.291" data-path="Ch06.html"><a href="Ch06.html#ch06.291"><i class="fa fa-check"></i><b>6.291</b> ForestsQuant_DominantDiameter-max_cell</a></li>
+<li class="chapter" data-level="6.292" data-path="Ch06.html"><a href="Ch06.html#ch06.292"><i class="fa fa-check"></i><b>6.292</b> ForestsQuant_LargestDiameter-max_cell</a></li>
+<li class="chapter" data-level="6.293" data-path="Ch06.html"><a href="Ch06.html#ch06.293"><i class="fa fa-check"></i><b>6.293</b> ForestsQuant_TimeSinceDisturbance-average_cell</a></li>
+<li class="chapter" data-level="6.294" data-path="Ch06.html"><a href="Ch06.html#ch06.294"><i class="fa fa-check"></i><b>6.294</b> ForestsQuant_VolumeAspen-sum_cell</a></li>
+<li class="chapter" data-level="6.295" data-path="Ch06.html"><a href="Ch06.html#ch06.295"><i class="fa fa-check"></i><b>6.295</b> ForestsQuant_VolumeBirch-sum_cell</a></li>
+<li class="chapter" data-level="6.296" data-path="Ch06.html"><a href="Ch06.html#ch06.296"><i class="fa fa-check"></i><b>6.296</b> ForestsQuant_VolumeBlackAlder-sum_cell</a></li>
+<li class="chapter" data-level="6.297" data-path="Ch06.html"><a href="Ch06.html#ch06.297"><i class="fa fa-check"></i><b>6.297</b> ForestsQuant_VolumeBorealDeciduousOther-sum_cell</a></li>
+<li class="chapter" data-level="6.298" data-path="Ch06.html"><a href="Ch06.html#ch06.298"><i class="fa fa-check"></i><b>6.298</b> ForestsQuant_VolumeBorealDeciduousTotal-sum_cell</a></li>
+<li class="chapter" data-level="6.299" data-path="Ch06.html"><a href="Ch06.html#ch06.299"><i class="fa fa-check"></i><b>6.299</b> ForestsQuant_VolumeConiferous-sum_cell</a></li>
+<li class="chapter" data-level="6.300" data-path="Ch06.html"><a href="Ch06.html#ch06.300"><i class="fa fa-check"></i><b>6.300</b> ForestsQuant_VolumeOak-sum_cell</a></li>
+<li class="chapter" data-level="6.301" data-path="Ch06.html"><a href="Ch06.html#ch06.301"><i class="fa fa-check"></i><b>6.301</b> ForestsQuant_VolumeOakMaple-sum_cell</a></li>
+<li class="chapter" data-level="6.302" data-path="Ch06.html"><a href="Ch06.html#ch06.302"><i class="fa fa-check"></i><b>6.302</b> ForestsQuant_VolumePine-sum_cell</a></li>
+<li class="chapter" data-level="6.303" data-path="Ch06.html"><a href="Ch06.html#ch06.303"><i class="fa fa-check"></i><b>6.303</b> ForestsQuant_VolumeSpruce-sum_cell</a></li>
+<li class="chapter" data-level="6.304" data-path="Ch06.html"><a href="Ch06.html#ch06.304"><i class="fa fa-check"></i><b>6.304</b> ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell</a></li>
+<li class="chapter" data-level="6.305" data-path="Ch06.html"><a href="Ch06.html#ch06.305"><i class="fa fa-check"></i><b>6.305</b> ForestsQuant_VolumeTemperateWithoutOak-sum_cell</a></li>
+<li class="chapter" data-level="6.306" data-path="Ch06.html"><a href="Ch06.html#ch06.306"><i class="fa fa-check"></i><b>6.306</b> ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell</a></li>
+<li class="chapter" data-level="6.307" data-path="Ch06.html"><a href="Ch06.html#ch06.307"><i class="fa fa-check"></i><b>6.307</b> ForestsQuant_VolumeTotal-sum_cell</a></li>
+<li class="chapter" data-level="6.308" data-path="Ch06.html"><a href="Ch06.html#ch06.308"><i class="fa fa-check"></i><b>6.308</b> ForestsSoil_EutrophicDrained_cell</a></li>
+<li class="chapter" data-level="6.309" data-path="Ch06.html"><a href="Ch06.html#ch06.309"><i class="fa fa-check"></i><b>6.309</b> ForestsSoil_EutrophicDrained_r500</a></li>
+<li class="chapter" data-level="6.310" data-path="Ch06.html"><a href="Ch06.html#ch06.310"><i class="fa fa-check"></i><b>6.310</b> ForestsSoil_EutrophicDrained_r1250</a></li>
+<li class="chapter" data-level="6.311" data-path="Ch06.html"><a href="Ch06.html#ch06.311"><i class="fa fa-check"></i><b>6.311</b> ForestsSoil_EutrophicDrained_r3000</a></li>
+<li class="chapter" data-level="6.312" data-path="Ch06.html"><a href="Ch06.html#ch06.312"><i class="fa fa-check"></i><b>6.312</b> ForestsSoil_EutrophicDrained_r10000</a></li>
+<li class="chapter" data-level="6.313" data-path="Ch06.html"><a href="Ch06.html#ch06.313"><i class="fa fa-check"></i><b>6.313</b> ForestsSoil_EutrophicMineral_cell</a></li>
+<li class="chapter" data-level="6.314" data-path="Ch06.html"><a href="Ch06.html#ch06.314"><i class="fa fa-check"></i><b>6.314</b> ForestsSoil_EutrophicMineral_r500</a></li>
+<li class="chapter" data-level="6.315" data-path="Ch06.html"><a href="Ch06.html#ch06.315"><i class="fa fa-check"></i><b>6.315</b> ForestsSoil_EutrophicMineral_r1250</a></li>
+<li class="chapter" data-level="6.316" data-path="Ch06.html"><a href="Ch06.html#ch06.316"><i class="fa fa-check"></i><b>6.316</b> ForestsSoil_EutrophicMineral_r3000</a></li>
+<li class="chapter" data-level="6.317" data-path="Ch06.html"><a href="Ch06.html#ch06.317"><i class="fa fa-check"></i><b>6.317</b> ForestsSoil_EutrophicMineral_r10000</a></li>
+<li class="chapter" data-level="6.318" data-path="Ch06.html"><a href="Ch06.html#ch06.318"><i class="fa fa-check"></i><b>6.318</b> ForestsSoil_EutrophicOrganic_cell</a></li>
+<li class="chapter" data-level="6.319" data-path="Ch06.html"><a href="Ch06.html#ch06.319"><i class="fa fa-check"></i><b>6.319</b> ForestsSoil_EutrophicOrganic_r500</a></li>
+<li class="chapter" data-level="6.320" data-path="Ch06.html"><a href="Ch06.html#ch06.320"><i class="fa fa-check"></i><b>6.320</b> ForestsSoil_EutrophicOrganic_r1250</a></li>
+<li class="chapter" data-level="6.321" data-path="Ch06.html"><a href="Ch06.html#ch06.321"><i class="fa fa-check"></i><b>6.321</b> ForestsSoil_EutrophicOrganic_r3000</a></li>
+<li class="chapter" data-level="6.322" data-path="Ch06.html"><a href="Ch06.html#ch06.322"><i class="fa fa-check"></i><b>6.322</b> ForestsSoil_EutrophicOrganic_r10000</a></li>
+<li class="chapter" data-level="6.323" data-path="Ch06.html"><a href="Ch06.html#ch06.323"><i class="fa fa-check"></i><b>6.323</b> ForestsSoil_MesotrophicMineral_cell</a></li>
+<li class="chapter" data-level="6.324" data-path="Ch06.html"><a href="Ch06.html#ch06.324"><i class="fa fa-check"></i><b>6.324</b> ForestsSoil_MesotrophicMineral_r500</a></li>
+<li class="chapter" data-level="6.325" data-path="Ch06.html"><a href="Ch06.html#ch06.325"><i class="fa fa-check"></i><b>6.325</b> ForestsSoil_MesotrophicMineral_r1250</a></li>
+<li class="chapter" data-level="6.326" data-path="Ch06.html"><a href="Ch06.html#ch06.326"><i class="fa fa-check"></i><b>6.326</b> ForestsSoil_MesotrophicMineral_r3000</a></li>
+<li class="chapter" data-level="6.327" data-path="Ch06.html"><a href="Ch06.html#ch06.327"><i class="fa fa-check"></i><b>6.327</b> ForestsSoil_MesotrophicMineral_r10000</a></li>
+<li class="chapter" data-level="6.328" data-path="Ch06.html"><a href="Ch06.html#ch06.328"><i class="fa fa-check"></i><b>6.328</b> ForestsSoil_OligotrophicDrained_cell</a></li>
+<li class="chapter" data-level="6.329" data-path="Ch06.html"><a href="Ch06.html#ch06.329"><i class="fa fa-check"></i><b>6.329</b> ForestsSoil_OligotrophicDrained_r500</a></li>
+<li class="chapter" data-level="6.330" data-path="Ch06.html"><a href="Ch06.html#ch06.330"><i class="fa fa-check"></i><b>6.330</b> ForestsSoil_OligotrophicDrained_r1250</a></li>
+<li class="chapter" data-level="6.331" data-path="Ch06.html"><a href="Ch06.html#ch06.331"><i class="fa fa-check"></i><b>6.331</b> ForestsSoil_OligotrophicDrained_r3000</a></li>
+<li class="chapter" data-level="6.332" data-path="Ch06.html"><a href="Ch06.html#ch06.332"><i class="fa fa-check"></i><b>6.332</b> ForestsSoil_OligotrophicDrained_r10000</a></li>
+<li class="chapter" data-level="6.333" data-path="Ch06.html"><a href="Ch06.html#ch06.333"><i class="fa fa-check"></i><b>6.333</b> ForestsSoil_OligotrophicMineral_cell</a></li>
+<li class="chapter" data-level="6.334" data-path="Ch06.html"><a href="Ch06.html#ch06.334"><i class="fa fa-check"></i><b>6.334</b> ForestsSoil_OligotrophicMineral_r500</a></li>
+<li class="chapter" data-level="6.335" data-path="Ch06.html"><a href="Ch06.html#ch06.335"><i class="fa fa-check"></i><b>6.335</b> ForestsSoil_OligotrophicMineral_r1250</a></li>
+<li class="chapter" data-level="6.336" data-path="Ch06.html"><a href="Ch06.html#ch06.336"><i class="fa fa-check"></i><b>6.336</b> ForestsSoil_OligotrophicMineral_r3000</a></li>
+<li class="chapter" data-level="6.337" data-path="Ch06.html"><a href="Ch06.html#ch06.337"><i class="fa fa-check"></i><b>6.337</b> ForestsSoil_OligotrophicMineral_r10000</a></li>
+<li class="chapter" data-level="6.338" data-path="Ch06.html"><a href="Ch06.html#ch06.338"><i class="fa fa-check"></i><b>6.338</b> ForestsSoil_OligotrophicOrganic_cell</a></li>
+<li class="chapter" data-level="6.339" data-path="Ch06.html"><a href="Ch06.html#ch06.339"><i class="fa fa-check"></i><b>6.339</b> ForestsSoil_OligotrophicOrganic_r500</a></li>
+<li class="chapter" data-level="6.340" data-path="Ch06.html"><a href="Ch06.html#ch06.340"><i class="fa fa-check"></i><b>6.340</b> ForestsSoil_OligotrophicOrganic_r1250</a></li>
+<li class="chapter" data-level="6.341" data-path="Ch06.html"><a href="Ch06.html#ch06.341"><i class="fa fa-check"></i><b>6.341</b> ForestsSoil_OligotrophicOrganic_r3000</a></li>
+<li class="chapter" data-level="6.342" data-path="Ch06.html"><a href="Ch06.html#ch06.342"><i class="fa fa-check"></i><b>6.342</b> ForestsSoil_OligotrophicOrganic_r10000</a></li>
+<li class="chapter" data-level="6.343" data-path="Ch06.html"><a href="Ch06.html#ch06.343"><i class="fa fa-check"></i><b>6.343</b> ForestsTreesAge_BorealDeciduousOld_cell</a></li>
+<li class="chapter" data-level="6.344" data-path="Ch06.html"><a href="Ch06.html#ch06.344"><i class="fa fa-check"></i><b>6.344</b> ForestsTreesAge_BorealDeciduousOld_r500</a></li>
+<li class="chapter" data-level="6.345" data-path="Ch06.html"><a href="Ch06.html#ch06.345"><i class="fa fa-check"></i><b>6.345</b> ForestsTreesAge_BorealDeciduousOld_r1250</a></li>
+<li class="chapter" data-level="6.346" data-path="Ch06.html"><a href="Ch06.html#ch06.346"><i class="fa fa-check"></i><b>6.346</b> ForestsTreesAge_BorealDeciduousOld_r3000</a></li>
+<li class="chapter" data-level="6.347" data-path="Ch06.html"><a href="Ch06.html#ch06.347"><i class="fa fa-check"></i><b>6.347</b> ForestsTreesAge_BorealDeciduousOld_r10000</a></li>
+<li class="chapter" data-level="6.348" data-path="Ch06.html"><a href="Ch06.html#ch06.348"><i class="fa fa-check"></i><b>6.348</b> ForestsTreesAge_BorealDeciduousYoung_cell</a></li>
+<li class="chapter" data-level="6.349" data-path="Ch06.html"><a href="Ch06.html#ch06.349"><i class="fa fa-check"></i><b>6.349</b> ForestsTreesAge_BorealDeciduousYoung_r500</a></li>
+<li class="chapter" data-level="6.350" data-path="Ch06.html"><a href="Ch06.html#ch06.350"><i class="fa fa-check"></i><b>6.350</b> ForestsTreesAge_BorealDeciduousYoung_r1250</a></li>
+<li class="chapter" data-level="6.351" data-path="Ch06.html"><a href="Ch06.html#ch06.351"><i class="fa fa-check"></i><b>6.351</b> ForestsTreesAge_BorealDeciduousYoung_r3000</a></li>
+<li class="chapter" data-level="6.352" data-path="Ch06.html"><a href="Ch06.html#ch06.352"><i class="fa fa-check"></i><b>6.352</b> ForestsTreesAge_BorealDeciduousYoung_r10000</a></li>
+<li class="chapter" data-level="6.353" data-path="Ch06.html"><a href="Ch06.html#ch06.353"><i class="fa fa-check"></i><b>6.353</b> ForestsTreesAge_ConiferousOld_cell</a></li>
+<li class="chapter" data-level="6.354" data-path="Ch06.html"><a href="Ch06.html#ch06.354"><i class="fa fa-check"></i><b>6.354</b> ForestsTreesAge_ConiferousOld_r500</a></li>
+<li class="chapter" data-level="6.355" data-path="Ch06.html"><a href="Ch06.html#ch06.355"><i class="fa fa-check"></i><b>6.355</b> ForestsTreesAge_ConiferousOld_r1250</a></li>
+<li class="chapter" data-level="6.356" data-path="Ch06.html"><a href="Ch06.html#ch06.356"><i class="fa fa-check"></i><b>6.356</b> ForestsTreesAge_ConiferousOld_r3000</a></li>
+<li class="chapter" data-level="6.357" data-path="Ch06.html"><a href="Ch06.html#ch06.357"><i class="fa fa-check"></i><b>6.357</b> ForestsTreesAge_ConiferousOld_r10000</a></li>
+<li class="chapter" data-level="6.358" data-path="Ch06.html"><a href="Ch06.html#ch06.358"><i class="fa fa-check"></i><b>6.358</b> ForestsTreesAge_ConiferousYoung_cell</a></li>
+<li class="chapter" data-level="6.359" data-path="Ch06.html"><a href="Ch06.html#ch06.359"><i class="fa fa-check"></i><b>6.359</b> ForestsTreesAge_ConiferousYoung_r500</a></li>
+<li class="chapter" data-level="6.360" data-path="Ch06.html"><a href="Ch06.html#ch06.360"><i class="fa fa-check"></i><b>6.360</b> ForestsTreesAge_ConiferousYoung_r1250</a></li>
+<li class="chapter" data-level="6.361" data-path="Ch06.html"><a href="Ch06.html#ch06.361"><i class="fa fa-check"></i><b>6.361</b> ForestsTreesAge_ConiferousYoung_r3000</a></li>
+<li class="chapter" data-level="6.362" data-path="Ch06.html"><a href="Ch06.html#ch06.362"><i class="fa fa-check"></i><b>6.362</b> ForestsTreesAge_ConiferousYoung_r10000</a></li>
+<li class="chapter" data-level="6.363" data-path="Ch06.html"><a href="Ch06.html#ch06.363"><i class="fa fa-check"></i><b>6.363</b> ForestsTreesAge_MixedOld_cell</a></li>
+<li class="chapter" data-level="6.364" data-path="Ch06.html"><a href="Ch06.html#ch06.364"><i class="fa fa-check"></i><b>6.364</b> ForestsTreesAge_MixedOld_r500</a></li>
+<li class="chapter" data-level="6.365" data-path="Ch06.html"><a href="Ch06.html#ch06.365"><i class="fa fa-check"></i><b>6.365</b> ForestsTreesAge_MixedOld_r1250</a></li>
+<li class="chapter" data-level="6.366" data-path="Ch06.html"><a href="Ch06.html#ch06.366"><i class="fa fa-check"></i><b>6.366</b> ForestsTreesAge_MixedOld_r3000</a></li>
+<li class="chapter" data-level="6.367" data-path="Ch06.html"><a href="Ch06.html#ch06.367"><i class="fa fa-check"></i><b>6.367</b> ForestsTreesAge_MixedOld_r10000</a></li>
+<li class="chapter" data-level="6.368" data-path="Ch06.html"><a href="Ch06.html#ch06.368"><i class="fa fa-check"></i><b>6.368</b> ForestsTreesAge_MixedYoung_cell</a></li>
+<li class="chapter" data-level="6.369" data-path="Ch06.html"><a href="Ch06.html#ch06.369"><i class="fa fa-check"></i><b>6.369</b> ForestsTreesAge_MixedYoung_r500</a></li>
+<li class="chapter" data-level="6.370" data-path="Ch06.html"><a href="Ch06.html#ch06.370"><i class="fa fa-check"></i><b>6.370</b> ForestsTreesAge_MixedYoung_r1250</a></li>
+<li class="chapter" data-level="6.371" data-path="Ch06.html"><a href="Ch06.html#ch06.371"><i class="fa fa-check"></i><b>6.371</b> ForestsTreesAge_MixedYoung_r3000</a></li>
+<li class="chapter" data-level="6.372" data-path="Ch06.html"><a href="Ch06.html#ch06.372"><i class="fa fa-check"></i><b>6.372</b> ForestsTreesAge_MixedYoung_r10000</a></li>
+<li class="chapter" data-level="6.373" data-path="Ch06.html"><a href="Ch06.html#ch06.373"><i class="fa fa-check"></i><b>6.373</b> ForestsTreesAge_TemperateDeciduousOld_cell</a></li>
+<li class="chapter" data-level="6.374" data-path="Ch06.html"><a href="Ch06.html#ch06.374"><i class="fa fa-check"></i><b>6.374</b> ForestsTreesAge_TemperateDeciduousOld_r500</a></li>
+<li class="chapter" data-level="6.375" data-path="Ch06.html"><a href="Ch06.html#ch06.375"><i class="fa fa-check"></i><b>6.375</b> ForestsTreesAge_TemperateDeciduousOld_r1250</a></li>
+<li class="chapter" data-level="6.376" data-path="Ch06.html"><a href="Ch06.html#ch06.376"><i class="fa fa-check"></i><b>6.376</b> ForestsTreesAge_TemperateDeciduousOld_r3000</a></li>
+<li class="chapter" data-level="6.377" data-path="Ch06.html"><a href="Ch06.html#ch06.377"><i class="fa fa-check"></i><b>6.377</b> ForestsTreesAge_TemperateDeciduousOld_r10000</a></li>
+<li class="chapter" data-level="6.378" data-path="Ch06.html"><a href="Ch06.html#ch06.378"><i class="fa fa-check"></i><b>6.378</b> ForestsTreesAge_TemperateDeciduousYoung_cell</a></li>
+<li class="chapter" data-level="6.379" data-path="Ch06.html"><a href="Ch06.html#ch06.379"><i class="fa fa-check"></i><b>6.379</b> ForestsTreesAge_TemperateDeciduousYoung_r500</a></li>
+<li class="chapter" data-level="6.380" data-path="Ch06.html"><a href="Ch06.html#ch06.380"><i class="fa fa-check"></i><b>6.380</b> ForestsTreesAge_TemperateDeciduousYoung_r1250</a></li>
+<li class="chapter" data-level="6.381" data-path="Ch06.html"><a href="Ch06.html#ch06.381"><i class="fa fa-check"></i><b>6.381</b> ForestsTreesAge_TemperateDeciduousYoung_r3000</a></li>
+<li class="chapter" data-level="6.382" data-path="Ch06.html"><a href="Ch06.html#ch06.382"><i class="fa fa-check"></i><b>6.382</b> ForestsTreesAge_TemperateDeciduousYoung_r10000</a></li>
+<li class="chapter" data-level="6.383" data-path="Ch06.html"><a href="Ch06.html#ch06.383"><i class="fa fa-check"></i><b>6.383</b> ForestsTrees_BorealDeciduous_cell</a></li>
+<li class="chapter" data-level="6.384" data-path="Ch06.html"><a href="Ch06.html#ch06.384"><i class="fa fa-check"></i><b>6.384</b> ForestsTrees_BorealDeciduous_r500</a></li>
+<li class="chapter" data-level="6.385" data-path="Ch06.html"><a href="Ch06.html#ch06.385"><i class="fa fa-check"></i><b>6.385</b> ForestsTrees_BorealDeciduous_r1250</a></li>
+<li class="chapter" data-level="6.386" data-path="Ch06.html"><a href="Ch06.html#ch06.386"><i class="fa fa-check"></i><b>6.386</b> ForestsTrees_BorealDeciduous_r3000</a></li>
+<li class="chapter" data-level="6.387" data-path="Ch06.html"><a href="Ch06.html#ch06.387"><i class="fa fa-check"></i><b>6.387</b> ForestsTrees_BorealDeciduous_r10000</a></li>
+<li class="chapter" data-level="6.388" data-path="Ch06.html"><a href="Ch06.html#ch06.388"><i class="fa fa-check"></i><b>6.388</b> ForestsTrees_Coniferous_cell</a></li>
+<li class="chapter" data-level="6.389" data-path="Ch06.html"><a href="Ch06.html#ch06.389"><i class="fa fa-check"></i><b>6.389</b> ForestsTrees_Coniferous_r500</a></li>
+<li class="chapter" data-level="6.390" data-path="Ch06.html"><a href="Ch06.html#ch06.390"><i class="fa fa-check"></i><b>6.390</b> ForestsTrees_Coniferous_r1250</a></li>
+<li class="chapter" data-level="6.391" data-path="Ch06.html"><a href="Ch06.html#ch06.391"><i class="fa fa-check"></i><b>6.391</b> ForestsTrees_Coniferous_r3000</a></li>
+<li class="chapter" data-level="6.392" data-path="Ch06.html"><a href="Ch06.html#ch06.392"><i class="fa fa-check"></i><b>6.392</b> ForestsTrees_Coniferous_r10000</a></li>
+<li class="chapter" data-level="6.393" data-path="Ch06.html"><a href="Ch06.html#ch06.393"><i class="fa fa-check"></i><b>6.393</b> ForestsTrees_Mixed_cell</a></li>
+<li class="chapter" data-level="6.394" data-path="Ch06.html"><a href="Ch06.html#ch06.394"><i class="fa fa-check"></i><b>6.394</b> ForestsTrees_Mixed_r500</a></li>
+<li class="chapter" data-level="6.395" data-path="Ch06.html"><a href="Ch06.html#ch06.395"><i class="fa fa-check"></i><b>6.395</b> ForestsTrees_Mixed_r1250</a></li>
+<li class="chapter" data-level="6.396" data-path="Ch06.html"><a href="Ch06.html#ch06.396"><i class="fa fa-check"></i><b>6.396</b> ForestsTrees_Mixed_r3000</a></li>
+<li class="chapter" data-level="6.397" data-path="Ch06.html"><a href="Ch06.html#ch06.397"><i class="fa fa-check"></i><b>6.397</b> ForestsTrees_Mixed_r10000</a></li>
+<li class="chapter" data-level="6.398" data-path="Ch06.html"><a href="Ch06.html#ch06.398"><i class="fa fa-check"></i><b>6.398</b> ForestsTrees_TemperateDeciduous_cell</a></li>
+<li class="chapter" data-level="6.399" data-path="Ch06.html"><a href="Ch06.html#ch06.399"><i class="fa fa-check"></i><b>6.399</b> ForestsTrees_TemperateDeciduous_r500</a></li>
+<li class="chapter" data-level="6.400" data-path="Ch06.html"><a href="Ch06.html#ch06.400"><i class="fa fa-check"></i><b>6.400</b> ForestsTrees_TemperateDeciduous_r1250</a></li>
+<li class="chapter" data-level="6.401" data-path="Ch06.html"><a href="Ch06.html#ch06.401"><i class="fa fa-check"></i><b>6.401</b> ForestsTrees_TemperateDeciduous_r3000</a></li>
+<li class="chapter" data-level="6.402" data-path="Ch06.html"><a href="Ch06.html#ch06.402"><i class="fa fa-check"></i><b>6.402</b> ForestsTrees_TemperateDeciduous_r10000</a></li>
+<li class="chapter" data-level="6.403" data-path="Ch06.html"><a href="Ch06.html#ch06.403"><i class="fa fa-check"></i><b>6.403</b> General_AllotmentGardens_cell</a></li>
+<li class="chapter" data-level="6.404" data-path="Ch06.html"><a href="Ch06.html#ch06.404"><i class="fa fa-check"></i><b>6.404</b> General_AllotmentGardens_r500</a></li>
+<li class="chapter" data-level="6.405" data-path="Ch06.html"><a href="Ch06.html#ch06.405"><i class="fa fa-check"></i><b>6.405</b> General_AllotmentGardens_r1250</a></li>
+<li class="chapter" data-level="6.406" data-path="Ch06.html"><a href="Ch06.html#ch06.406"><i class="fa fa-check"></i><b>6.406</b> General_AllotmentGardens_r3000</a></li>
+<li class="chapter" data-level="6.407" data-path="Ch06.html"><a href="Ch06.html#ch06.407"><i class="fa fa-check"></i><b>6.407</b> General_AllotmentGardens_r10000</a></li>
+<li class="chapter" data-level="6.408" data-path="Ch06.html"><a href="Ch06.html#ch06.408"><i class="fa fa-check"></i><b>6.408</b> General_BareSoilQuarry_cell</a></li>
+<li class="chapter" data-level="6.409" data-path="Ch06.html"><a href="Ch06.html#ch06.409"><i class="fa fa-check"></i><b>6.409</b> General_BareSoilQuarry_r500</a></li>
+<li class="chapter" data-level="6.410" data-path="Ch06.html"><a href="Ch06.html#ch06.410"><i class="fa fa-check"></i><b>6.410</b> General_BareSoilQuarry_r1250</a></li>
+<li class="chapter" data-level="6.411" data-path="Ch06.html"><a href="Ch06.html#ch06.411"><i class="fa fa-check"></i><b>6.411</b> General_BareSoilQuarry_r3000</a></li>
+<li class="chapter" data-level="6.412" data-path="Ch06.html"><a href="Ch06.html#ch06.412"><i class="fa fa-check"></i><b>6.412</b> General_BareSoilQuarry_r10000</a></li>
+<li class="chapter" data-level="6.413" data-path="Ch06.html"><a href="Ch06.html#ch06.413"><i class="fa fa-check"></i><b>6.413</b> General_Builtup_cell</a></li>
+<li class="chapter" data-level="6.414" data-path="Ch06.html"><a href="Ch06.html#ch06.414"><i class="fa fa-check"></i><b>6.414</b> General_Builtup_r500</a></li>
+<li class="chapter" data-level="6.415" data-path="Ch06.html"><a href="Ch06.html#ch06.415"><i class="fa fa-check"></i><b>6.415</b> General_Builtup_r1250</a></li>
+<li class="chapter" data-level="6.416" data-path="Ch06.html"><a href="Ch06.html#ch06.416"><i class="fa fa-check"></i><b>6.416</b> General_Builtup_r3000</a></li>
+<li class="chapter" data-level="6.417" data-path="Ch06.html"><a href="Ch06.html#ch06.417"><i class="fa fa-check"></i><b>6.417</b> General_Builtup_r10000</a></li>
+<li class="chapter" data-level="6.418" data-path="Ch06.html"><a href="Ch06.html#ch06.418"><i class="fa fa-check"></i><b>6.418</b> General_Farmland_cell</a></li>
+<li class="chapter" data-level="6.419" data-path="Ch06.html"><a href="Ch06.html#ch06.419"><i class="fa fa-check"></i><b>6.419</b> General_Farmland_r500</a></li>
+<li class="chapter" data-level="6.420" data-path="Ch06.html"><a href="Ch06.html#ch06.420"><i class="fa fa-check"></i><b>6.420</b> General_Farmland_r1250</a></li>
+<li class="chapter" data-level="6.421" data-path="Ch06.html"><a href="Ch06.html#ch06.421"><i class="fa fa-check"></i><b>6.421</b> General_Farmland_r3000</a></li>
+<li class="chapter" data-level="6.422" data-path="Ch06.html"><a href="Ch06.html#ch06.422"><i class="fa fa-check"></i><b>6.422</b> General_Farmland_r10000</a></li>
+<li class="chapter" data-level="6.423" data-path="Ch06.html"><a href="Ch06.html#ch06.423"><i class="fa fa-check"></i><b>6.423</b> General_ForestsWithoutInventory_cell</a></li>
+<li class="chapter" data-level="6.424" data-path="Ch06.html"><a href="Ch06.html#ch06.424"><i class="fa fa-check"></i><b>6.424</b> General_ForestsWithoutInventory_r500</a></li>
+<li class="chapter" data-level="6.425" data-path="Ch06.html"><a href="Ch06.html#ch06.425"><i class="fa fa-check"></i><b>6.425</b> General_ForestsWithoutInventory_r1250</a></li>
+<li class="chapter" data-level="6.426" data-path="Ch06.html"><a href="Ch06.html#ch06.426"><i class="fa fa-check"></i><b>6.426</b> General_ForestsWithoutInventory_r3000</a></li>
+<li class="chapter" data-level="6.427" data-path="Ch06.html"><a href="Ch06.html#ch06.427"><i class="fa fa-check"></i><b>6.427</b> General_ForestsWithoutInventory_r10000</a></li>
+<li class="chapter" data-level="6.428" data-path="Ch06.html"><a href="Ch06.html#ch06.428"><i class="fa fa-check"></i><b>6.428</b> General_GardensOrchards_cell</a></li>
+<li class="chapter" data-level="6.429" data-path="Ch06.html"><a href="Ch06.html#ch06.429"><i class="fa fa-check"></i><b>6.429</b> General_GardensOrchards_r500</a></li>
+<li class="chapter" data-level="6.430" data-path="Ch06.html"><a href="Ch06.html#ch06.430"><i class="fa fa-check"></i><b>6.430</b> General_GardensOrchards_r1250</a></li>
+<li class="chapter" data-level="6.431" data-path="Ch06.html"><a href="Ch06.html#ch06.431"><i class="fa fa-check"></i><b>6.431</b> General_GardensOrchards_r3000</a></li>
+<li class="chapter" data-level="6.432" data-path="Ch06.html"><a href="Ch06.html#ch06.432"><i class="fa fa-check"></i><b>6.432</b> General_GardensOrchards_r10000</a></li>
+<li class="chapter" data-level="6.433" data-path="Ch06.html"><a href="Ch06.html#ch06.433"><i class="fa fa-check"></i><b>6.433</b> General_Roads_cell</a></li>
+<li class="chapter" data-level="6.434" data-path="Ch06.html"><a href="Ch06.html#ch06.434"><i class="fa fa-check"></i><b>6.434</b> General_ShrubsOrchards_cell</a></li>
+<li class="chapter" data-level="6.435" data-path="Ch06.html"><a href="Ch06.html#ch06.435"><i class="fa fa-check"></i><b>6.435</b> General_ShrubsOrchards_r500</a></li>
+<li class="chapter" data-level="6.436" data-path="Ch06.html"><a href="Ch06.html#ch06.436"><i class="fa fa-check"></i><b>6.436</b> General_ShrubsOrchards_r1250</a></li>
+<li class="chapter" data-level="6.437" data-path="Ch06.html"><a href="Ch06.html#ch06.437"><i class="fa fa-check"></i><b>6.437</b> General_ShrubsOrchards_r3000</a></li>
+<li class="chapter" data-level="6.438" data-path="Ch06.html"><a href="Ch06.html#ch06.438"><i class="fa fa-check"></i><b>6.438</b> General_ShrubsOrchards_r10000</a></li>
+<li class="chapter" data-level="6.439" data-path="Ch06.html"><a href="Ch06.html#ch06.439"><i class="fa fa-check"></i><b>6.439</b> General_ShrubsOrchardsGardens_cell</a></li>
+<li class="chapter" data-level="6.440" data-path="Ch06.html"><a href="Ch06.html#ch06.440"><i class="fa fa-check"></i><b>6.440</b> General_ShrubsOrchardsGardens_r500</a></li>
+<li class="chapter" data-level="6.441" data-path="Ch06.html"><a href="Ch06.html#ch06.441"><i class="fa fa-check"></i><b>6.441</b> General_ShrubsOrchardsGardens_r1250</a></li>
+<li class="chapter" data-level="6.442" data-path="Ch06.html"><a href="Ch06.html#ch06.442"><i class="fa fa-check"></i><b>6.442</b> General_ShrubsOrchardsGardens_r3000</a></li>
+<li class="chapter" data-level="6.443" data-path="Ch06.html"><a href="Ch06.html#ch06.443"><i class="fa fa-check"></i><b>6.443</b> General_ShrubsOrchardsGardens_r10000</a></li>
+<li class="chapter" data-level="6.444" data-path="Ch06.html"><a href="Ch06.html#ch06.444"><i class="fa fa-check"></i><b>6.444</b> General_SwampsMiresBogsHelophytes_cell</a></li>
+<li class="chapter" data-level="6.445" data-path="Ch06.html"><a href="Ch06.html#ch06.445"><i class="fa fa-check"></i><b>6.445</b> General_SwampsMiresBogsHelophytes_r500</a></li>
+<li class="chapter" data-level="6.446" data-path="Ch06.html"><a href="Ch06.html#ch06.446"><i class="fa fa-check"></i><b>6.446</b> General_SwampsMiresBogsHelophytes_r1250</a></li>
+<li class="chapter" data-level="6.447" data-path="Ch06.html"><a href="Ch06.html#ch06.447"><i class="fa fa-check"></i><b>6.447</b> General_SwampsMiresBogsHelophytes_r3000</a></li>
+<li class="chapter" data-level="6.448" data-path="Ch06.html"><a href="Ch06.html#ch06.448"><i class="fa fa-check"></i><b>6.448</b> General_SwampsMiresBogsHelophytes_r10000</a></li>
+<li class="chapter" data-level="6.449" data-path="Ch06.html"><a href="Ch06.html#ch06.449"><i class="fa fa-check"></i><b>6.449</b> General_Trees_cell</a></li>
+<li class="chapter" data-level="6.450" data-path="Ch06.html"><a href="Ch06.html#ch06.450"><i class="fa fa-check"></i><b>6.450</b> General_Trees_r500</a></li>
+<li class="chapter" data-level="6.451" data-path="Ch06.html"><a href="Ch06.html#ch06.451"><i class="fa fa-check"></i><b>6.451</b> General_Trees_r1250</a></li>
+<li class="chapter" data-level="6.452" data-path="Ch06.html"><a href="Ch06.html#ch06.452"><i class="fa fa-check"></i><b>6.452</b> General_Trees_r3000</a></li>
+<li class="chapter" data-level="6.453" data-path="Ch06.html"><a href="Ch06.html#ch06.453"><i class="fa fa-check"></i><b>6.453</b> General_Trees_r10000</a></li>
+<li class="chapter" data-level="6.454" data-path="Ch06.html"><a href="Ch06.html#ch06.454"><i class="fa fa-check"></i><b>6.454</b> General_TreesOutsideForests_cell</a></li>
+<li class="chapter" data-level="6.455" data-path="Ch06.html"><a href="Ch06.html#ch06.455"><i class="fa fa-check"></i><b>6.455</b> General_TreesOutsideForests_r500</a></li>
+<li class="chapter" data-level="6.456" data-path="Ch06.html"><a href="Ch06.html#ch06.456"><i class="fa fa-check"></i><b>6.456</b> General_TreesOutsideForests_r1250</a></li>
+<li class="chapter" data-level="6.457" data-path="Ch06.html"><a href="Ch06.html#ch06.457"><i class="fa fa-check"></i><b>6.457</b> General_TreesOutsideForests_r3000</a></li>
+<li class="chapter" data-level="6.458" data-path="Ch06.html"><a href="Ch06.html#ch06.458"><i class="fa fa-check"></i><b>6.458</b> General_TreesOutsideForests_r10000</a></li>
+<li class="chapter" data-level="6.459" data-path="Ch06.html"><a href="Ch06.html#ch06.459"><i class="fa fa-check"></i><b>6.459</b> General_Water_cell</a></li>
+<li class="chapter" data-level="6.460" data-path="Ch06.html"><a href="Ch06.html#ch06.460"><i class="fa fa-check"></i><b>6.460</b> General_Water_r500</a></li>
+<li class="chapter" data-level="6.461" data-path="Ch06.html"><a href="Ch06.html#ch06.461"><i class="fa fa-check"></i><b>6.461</b> General_Water_r1250</a></li>
+<li class="chapter" data-level="6.462" data-path="Ch06.html"><a href="Ch06.html#ch06.462"><i class="fa fa-check"></i><b>6.462</b> General_Water_r3000</a></li>
+<li class="chapter" data-level="6.463" data-path="Ch06.html"><a href="Ch06.html#ch06.463"><i class="fa fa-check"></i><b>6.463</b> General_Water_r10000</a></li>
+<li class="chapter" data-level="6.464" data-path="Ch06.html"><a href="Ch06.html#ch06.464"><i class="fa fa-check"></i><b>6.464</b> Wetlands_Bogs_cell</a></li>
+<li class="chapter" data-level="6.465" data-path="Ch06.html"><a href="Ch06.html#ch06.465"><i class="fa fa-check"></i><b>6.465</b> Wetlands_Bogs_r500</a></li>
+<li class="chapter" data-level="6.466" data-path="Ch06.html"><a href="Ch06.html#ch06.466"><i class="fa fa-check"></i><b>6.466</b> Wetlands_Bogs_r1250</a></li>
+<li class="chapter" data-level="6.467" data-path="Ch06.html"><a href="Ch06.html#ch06.467"><i class="fa fa-check"></i><b>6.467</b> Wetlands_Bogs_r3000</a></li>
+<li class="chapter" data-level="6.468" data-path="Ch06.html"><a href="Ch06.html#ch06.468"><i class="fa fa-check"></i><b>6.468</b> Wetlands_Bogs_r10000</a></li>
+<li class="chapter" data-level="6.469" data-path="Ch06.html"><a href="Ch06.html#ch06.469"><i class="fa fa-check"></i><b>6.469</b> Wetlands_Mires_cell</a></li>
+<li class="chapter" data-level="6.470" data-path="Ch06.html"><a href="Ch06.html#ch06.470"><i class="fa fa-check"></i><b>6.470</b> Wetlands_Mires_r500</a></li>
+<li class="chapter" data-level="6.471" data-path="Ch06.html"><a href="Ch06.html#ch06.471"><i class="fa fa-check"></i><b>6.471</b> Wetlands_Mires_r1250</a></li>
+<li class="chapter" data-level="6.472" data-path="Ch06.html"><a href="Ch06.html#ch06.472"><i class="fa fa-check"></i><b>6.472</b> Wetlands_Mires_r3000</a></li>
+<li class="chapter" data-level="6.473" data-path="Ch06.html"><a href="Ch06.html#ch06.473"><i class="fa fa-check"></i><b>6.473</b> Wetlands_Mires_r10000</a></li>
+<li class="chapter" data-level="6.474" data-path="Ch06.html"><a href="Ch06.html#ch06.474"><i class="fa fa-check"></i><b>6.474</b> Wetlands_ReedSedgeRushBeds_cell</a></li>
+<li class="chapter" data-level="6.475" data-path="Ch06.html"><a href="Ch06.html#ch06.475"><i class="fa fa-check"></i><b>6.475</b> Wetlands_ReedSedgeRushBeds_r500</a></li>
+<li class="chapter" data-level="6.476" data-path="Ch06.html"><a href="Ch06.html#ch06.476"><i class="fa fa-check"></i><b>6.476</b> Wetlands_ReedSedgeRushBeds_r1250</a></li>
+<li class="chapter" data-level="6.477" data-path="Ch06.html"><a href="Ch06.html#ch06.477"><i class="fa fa-check"></i><b>6.477</b> Wetlands_ReedSedgeRushBeds_r3000</a></li>
+<li class="chapter" data-level="6.478" data-path="Ch06.html"><a href="Ch06.html#ch06.478"><i class="fa fa-check"></i><b>6.478</b> Wetlands_ReedSedgeRushBeds_r10000</a></li>
+<li class="chapter" data-level="6.479" data-path="Ch06.html"><a href="Ch06.html#ch06.479"><i class="fa fa-check"></i><b>6.479</b> EO_NDMI-LYmed-average_cell</a></li>
+<li class="chapter" data-level="6.480" data-path="Ch06.html"><a href="Ch06.html#ch06.480"><i class="fa fa-check"></i><b>6.480</b> EO_NDMI-LYmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.481" data-path="Ch06.html"><a href="Ch06.html#ch06.481"><i class="fa fa-check"></i><b>6.481</b> EO_NDMI-STiqr-median_cell</a></li>
+<li class="chapter" data-level="6.482" data-path="Ch06.html"><a href="Ch06.html#ch06.482"><i class="fa fa-check"></i><b>6.482</b> EO_NDMI-STmedian-average_cell</a></li>
+<li class="chapter" data-level="6.483" data-path="Ch06.html"><a href="Ch06.html#ch06.483"><i class="fa fa-check"></i><b>6.483</b> EO_NDMI-STmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.484" data-path="Ch06.html"><a href="Ch06.html#ch06.484"><i class="fa fa-check"></i><b>6.484</b> EO_NDMI-STp25-min_cell</a></li>
+<li class="chapter" data-level="6.485" data-path="Ch06.html"><a href="Ch06.html#ch06.485"><i class="fa fa-check"></i><b>6.485</b> EO_NDMI-STp75-max_cell</a></li>
+<li class="chapter" data-level="6.486" data-path="Ch06.html"><a href="Ch06.html#ch06.486"><i class="fa fa-check"></i><b>6.486</b> EO_NDVI-LYmedian-average_cell</a></li>
+<li class="chapter" data-level="6.487" data-path="Ch06.html"><a href="Ch06.html#ch06.487"><i class="fa fa-check"></i><b>6.487</b> EO_NDVI-LYmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.488" data-path="Ch06.html"><a href="Ch06.html#ch06.488"><i class="fa fa-check"></i><b>6.488</b> EO_NDVI-STiqr-median_cell</a></li>
+<li class="chapter" data-level="6.489" data-path="Ch06.html"><a href="Ch06.html#ch06.489"><i class="fa fa-check"></i><b>6.489</b> EO_NDVI-STmedian-average_cell</a></li>
+<li class="chapter" data-level="6.490" data-path="Ch06.html"><a href="Ch06.html#ch06.490"><i class="fa fa-check"></i><b>6.490</b> EO_NDVI-STmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.491" data-path="Ch06.html"><a href="Ch06.html#ch06.491"><i class="fa fa-check"></i><b>6.491</b> EO_NDVI-STp25-min_cell</a></li>
+<li class="chapter" data-level="6.492" data-path="Ch06.html"><a href="Ch06.html#ch06.492"><i class="fa fa-check"></i><b>6.492</b> EO_NDVI-STp75-max_cell</a></li>
+<li class="chapter" data-level="6.493" data-path="Ch06.html"><a href="Ch06.html#ch06.493"><i class="fa fa-check"></i><b>6.493</b> EO_NDWI-LYmedian-average_cell</a></li>
+<li class="chapter" data-level="6.494" data-path="Ch06.html"><a href="Ch06.html#ch06.494"><i class="fa fa-check"></i><b>6.494</b> EO_NDWI-LYmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.495" data-path="Ch06.html"><a href="Ch06.html#ch06.495"><i class="fa fa-check"></i><b>6.495</b> EO_NDWI-STiqr-median_cell</a></li>
+<li class="chapter" data-level="6.496" data-path="Ch06.html"><a href="Ch06.html#ch06.496"><i class="fa fa-check"></i><b>6.496</b> EO_NDWI-STmedian-average_cell</a></li>
+<li class="chapter" data-level="6.497" data-path="Ch06.html"><a href="Ch06.html#ch06.497"><i class="fa fa-check"></i><b>6.497</b> EO_NDWI-STmedian-iqr_cell</a></li>
+<li class="chapter" data-level="6.498" data-path="Ch06.html"><a href="Ch06.html#ch06.498"><i class="fa fa-check"></i><b>6.498</b> EO_NDWI-STp25-min_cell</a></li>
+<li class="chapter" data-level="6.499" data-path="Ch06.html"><a href="Ch06.html#ch06.499"><i class="fa fa-check"></i><b>6.499</b> EO_NDWI-STp75-max_cell</a></li>
+<li class="chapter" data-level="6.500" data-path="Ch06.html"><a href="Ch06.html#ch06.500"><i class="fa fa-check"></i><b>6.500</b> SoilChemistry_ESDAC-CN_cell</a></li>
+<li class="chapter" data-level="6.501" data-path="Ch06.html"><a href="Ch06.html#ch06.501"><i class="fa fa-check"></i><b>6.501</b> SoilChemistry_ESDAC-CaCo3_cell</a></li>
+<li class="chapter" data-level="6.502" data-path="Ch06.html"><a href="Ch06.html#ch06.502"><i class="fa fa-check"></i><b>6.502</b> SoilChemistry_ESDAC-K_cell</a></li>
+<li class="chapter" data-level="6.503" data-path="Ch06.html"><a href="Ch06.html#ch06.503"><i class="fa fa-check"></i><b>6.503</b> SoilChemistry_ESDAC-N_cell</a></li>
+<li class="chapter" data-level="6.504" data-path="Ch06.html"><a href="Ch06.html#ch06.504"><i class="fa fa-check"></i><b>6.504</b> SoilChemistry_ESDAC-P_cell</a></li>
+<li class="chapter" data-level="6.505" data-path="Ch06.html"><a href="Ch06.html#ch06.505"><i class="fa fa-check"></i><b>6.505</b> SoilChemistry_ESDAC-phH2O_cell</a></li>
+<li class="chapter" data-level="6.506" data-path="Ch06.html"><a href="Ch06.html#ch06.506"><i class="fa fa-check"></i><b>6.506</b> SoilTexture_Clay_cell</a></li>
+<li class="chapter" data-level="6.507" data-path="Ch06.html"><a href="Ch06.html#ch06.507"><i class="fa fa-check"></i><b>6.507</b> SoilTexture_Clay_r500</a></li>
+<li class="chapter" data-level="6.508" data-path="Ch06.html"><a href="Ch06.html#ch06.508"><i class="fa fa-check"></i><b>6.508</b> SoilTexture_Clay_r1250</a></li>
+<li class="chapter" data-level="6.509" data-path="Ch06.html"><a href="Ch06.html#ch06.509"><i class="fa fa-check"></i><b>6.509</b> SoilTexture_Clay_r3000</a></li>
+<li class="chapter" data-level="6.510" data-path="Ch06.html"><a href="Ch06.html#ch06.510"><i class="fa fa-check"></i><b>6.510</b> SoilTexture_Clay_r10000</a></li>
+<li class="chapter" data-level="6.511" data-path="Ch06.html"><a href="Ch06.html#ch06.511"><i class="fa fa-check"></i><b>6.511</b> SoilTexture_Organic_cell</a></li>
+<li class="chapter" data-level="6.512" data-path="Ch06.html"><a href="Ch06.html#ch06.512"><i class="fa fa-check"></i><b>6.512</b> SoilTexture_Organic_r500</a></li>
+<li class="chapter" data-level="6.513" data-path="Ch06.html"><a href="Ch06.html#ch06.513"><i class="fa fa-check"></i><b>6.513</b> SoilTexture_Organic_r1250</a></li>
+<li class="chapter" data-level="6.514" data-path="Ch06.html"><a href="Ch06.html#ch06.514"><i class="fa fa-check"></i><b>6.514</b> SoilTexture_Organic_r3000</a></li>
+<li class="chapter" data-level="6.515" data-path="Ch06.html"><a href="Ch06.html#ch06.515"><i class="fa fa-check"></i><b>6.515</b> SoilTexture_Organic_r10000</a></li>
+<li class="chapter" data-level="6.516" data-path="Ch06.html"><a href="Ch06.html#ch06.516"><i class="fa fa-check"></i><b>6.516</b> SoilTexture_Sand_cell</a></li>
+<li class="chapter" data-level="6.517" data-path="Ch06.html"><a href="Ch06.html#ch06.517"><i class="fa fa-check"></i><b>6.517</b> SoilTexture_Sand_r500</a></li>
+<li class="chapter" data-level="6.518" data-path="Ch06.html"><a href="Ch06.html#ch06.518"><i class="fa fa-check"></i><b>6.518</b> SoilTexture_Sand_r1250</a></li>
+<li class="chapter" data-level="6.519" data-path="Ch06.html"><a href="Ch06.html#ch06.519"><i class="fa fa-check"></i><b>6.519</b> SoilTexture_Sand_r3000</a></li>
+<li class="chapter" data-level="6.520" data-path="Ch06.html"><a href="Ch06.html#ch06.520"><i class="fa fa-check"></i><b>6.520</b> SoilTexture_Sand_r10000</a></li>
+<li class="chapter" data-level="6.521" data-path="Ch06.html"><a href="Ch06.html#ch06.521"><i class="fa fa-check"></i><b>6.521</b> SoilTexture_Silt_cell</a></li>
+<li class="chapter" data-level="6.522" data-path="Ch06.html"><a href="Ch06.html#ch06.522"><i class="fa fa-check"></i><b>6.522</b> SoilTexture_Silt_r500</a></li>
+<li class="chapter" data-level="6.523" data-path="Ch06.html"><a href="Ch06.html#ch06.523"><i class="fa fa-check"></i><b>6.523</b> SoilTexture_Silt_r1250</a></li>
+<li class="chapter" data-level="6.524" data-path="Ch06.html"><a href="Ch06.html#ch06.524"><i class="fa fa-check"></i><b>6.524</b> SoilTexture_Silt_r3000</a></li>
+<li class="chapter" data-level="6.525" data-path="Ch06.html"><a href="Ch06.html#ch06.525"><i class="fa fa-check"></i><b>6.525</b> SoilTexture_Silt_r10000</a></li>
+<li class="chapter" data-level="6.526" data-path="Ch06.html"><a href="Ch06.html#ch06.526"><i class="fa fa-check"></i><b>6.526</b> Terrain_ASL-average_cell</a></li>
+<li class="chapter" data-level="6.527" data-path="Ch06.html"><a href="Ch06.html#ch06.527"><i class="fa fa-check"></i><b>6.527</b> Terrain_Aspect-average_cell</a></li>
+<li class="chapter" data-level="6.528" data-path="Ch06.html"><a href="Ch06.html#ch06.528"><i class="fa fa-check"></i><b>6.528</b> Terrain_Aspect-iqr_cell</a></li>
+<li class="chapter" data-level="6.529" data-path="Ch06.html"><a href="Ch06.html#ch06.529"><i class="fa fa-check"></i><b>6.529</b> Terrain_DiS-area_cell</a></li>
+<li class="chapter" data-level="6.530" data-path="Ch06.html"><a href="Ch06.html#ch06.530"><i class="fa fa-check"></i><b>6.530</b> Terrain_DiS-area_r500</a></li>
+<li class="chapter" data-level="6.531" data-path="Ch06.html"><a href="Ch06.html#ch06.531"><i class="fa fa-check"></i><b>6.531</b> Terrain_DiS-area_r1250</a></li>
+<li class="chapter" data-level="6.532" data-path="Ch06.html"><a href="Ch06.html#ch06.532"><i class="fa fa-check"></i><b>6.532</b> Terrain_DiS-area_r3000</a></li>
+<li class="chapter" data-level="6.533" data-path="Ch06.html"><a href="Ch06.html#ch06.533"><i class="fa fa-check"></i><b>6.533</b> Terrain_DiS-area_r10000</a></li>
+<li class="chapter" data-level="6.534" data-path="Ch06.html"><a href="Ch06.html#ch06.534"><i class="fa fa-check"></i><b>6.534</b> Terrain_DiS-max_cell</a></li>
+<li class="chapter" data-level="6.535" data-path="Ch06.html"><a href="Ch06.html#ch06.535"><i class="fa fa-check"></i><b>6.535</b> Terrain_DiS-mean_cell</a></li>
+<li class="chapter" data-level="6.536" data-path="Ch06.html"><a href="Ch06.html#ch06.536"><i class="fa fa-check"></i><b>6.536</b> Terrain_Slope-average_cell</a></li>
+<li class="chapter" data-level="6.537" data-path="Ch06.html"><a href="Ch06.html#ch06.537"><i class="fa fa-check"></i><b>6.537</b> Terrain_Slope-iqr_cell</a></li>
+<li class="chapter" data-level="6.538" data-path="Ch06.html"><a href="Ch06.html#ch06.538"><i class="fa fa-check"></i><b>6.538</b> Terrain_TWI-average_cell</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>3</b> Parts</a></li>
-<li class="chapter" data-level="4" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>4</b> Footnotes and citations</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
-<li class="chapter" data-level="4.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>5.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="5.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.3</b> Callout blocks</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="Ch07.html"><a href="Ch07.html"><i class="fa fa-check"></i><b>7</b> Data access</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -231,22 +799,43 @@ div.csl-indent {
 
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div class="csl-entry">
-Xie, Y., 2025. <a href="https://github.com/rstudio/bookdown">Bookdown: Authoring books and technical documents with r markdown</a>.
+Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. <span>Dynamic</span> <span>World</span>, <span>Near</span> real-time global 10 m land use land cover mapping. Scientific Data 9, 251. <a href="https://doi.org/10.1038/s41597-022-01307-4">https://doi.org/10.1038/s41597-022-01307-4</a>
+</div>
+<div class="csl-entry">
+Domisch, S., Amatulli, G., Jetz, W., 2015. Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution. Scientific Data 2:150073, 1–13. <a href="https://doi.org/10.1038/sdata.2015.73">https://doi.org/10.1038/sdata.2015.73</a>
+</div>
+<div class="csl-entry">
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. <span>Google</span> <span>Earth</span> <span>Engine</span>: <span class="nocase">Planetary-scale</span> geospatial analysis for everyone. Remote Sensing of Environment 202, 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+</div>
+<div class="csl-entry">
+Hansen, M.C., Potapov, P.V., Moore, R., Hancher, M., Turubanova, S.A., Tyukavina, A., Thau, D., Stehman, S.V., Goetz, S.J., Loveland, T.R., Kommareddy, A., Egorov, A., Chini, L., Justice, C.O., Townshend, J.R.G., 2013. <span>High</span>-resolution <span>Global</span> maps of 21st-century forest cover change. Science 342, 850–853. <a href="https://doi.org/10.1126/science.1244693">https://doi.org/10.1126/science.1244693</a>
+</div>
+<div class="csl-entry">
+Hijmans, R.J., Cameron, S.E., Parra, J.L., Jones, P.G., Jarvis, A., 2005. Very high resolution interpolated climate surfaces for global land areas. International Journal of Climatology 25, 1965–1978. <a href="https://doi.org/10.1002/joc.1276">https://doi.org/10.1002/joc.1276</a>
+</div>
+<div class="csl-entry">
+Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P., Kessler, M., 2017. <span>Data</span> <span>Descriptor</span>: <span>Climatologies</span> at high resolution for the earth’s land surface areas. Scientific Data 4:170122. <a href="https://doi.org/10.1038/sdata.2017.122">https://doi.org/10.1038/sdata.2017.122</a>
+</div>
+<div class="csl-entry">
+Lehner, B., Grill, G., 2013. Global river hydrography and network routing: Baseline data and new approaches to study the world’s large river systems. Hydrological Processes 27, 2171–2186. <a href="https://doi.org/10.1002/hyp.9740">https://doi.org/10.1002/hyp.9740</a>
+</div>
+<div class="csl-entry">
+Lehner, B., Verdin, K., Jarvis, A., 2008. New global hydrography derived from spaceborne elevation data. Eos, Transactions, American Geophysical Union 89, 93–94. <a href="https://doi.org/10.1029/2008EO100001">https://doi.org/10.1029/2008EO100001</a>
+</div>
+<div class="csl-entry">
+Panagos, P., Liedekerke, M.V., Borrelli, P., Köninger, J., Ballabio, C., Orgiazzi, A., Lugato, E., Liakos, L., Hervas, J., Jones, A., Montanarella, L., 2022. <span>European</span> <span>Soil</span> <span>Data</span> <span>Centre</span> 2.0: <span>Soil</span> data and knowledge in support of the <span>EU</span> policies. European Journal of Soil Science 73, e13315. <a href="https://doi.org/10.1111/ejss.13315">https://doi.org/10.1111/ejss.13315</a>
+</div>
+<div class="csl-entry">
+Shimada, M., Itoh, T., Motooka, T., Watanabe, M., Shiraishi, T., Thapa, R., Lucas, R., 2013. New global forest/non-forest maps from <span>ALOS PALSAR</span> data (2007–2010). Remote Sensing of Environment 155, 13–31. <a href="https://doi.org/10.1016/j.rse.2014.04.014">https://doi.org/10.1016/j.rse.2014.04.014</a>
 </div>
 </div>
 </div>
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="sharing-your-book.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Ch07.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -278,7 +867,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/aavotins/HiQBioDiv_EGVs/edit/main/book/07-references.Rmd",
+    "link": "https://github.com/aavotins/HiQBioDiv_EGVs/edit/main/book/08-References.Rmd",
     "text": "Edit"
   },
   "history": {
@@ -301,20 +890,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
