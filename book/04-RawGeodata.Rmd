@@ -21,7 +21,48 @@ krā
 
 ## Corine Land Cover 2018 {#Ch04.05}
 
-krā
+Corine Land Cover is publicly available geodata that characterizes land cover 
+and land use (LULC) across Europe over a long period of time using a generally 
+consistent (comparable) methodology (https://land.copernicus.eu/content/corine-land -cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), 
+providing results for individual years - 1990, 2000, 2006, 2012, 
+2018 (https://land.copernicus.eu/en/products/corine-land-cover). 
+Although the dataset has a coarse resolution – the mapping unit is 25 ha areas 
+that are at least 100 m wide – it provides sufficient information for general 
+use, such as workflow testing and observation filtering. This project uses 
+data from 2018.
+
+The downloaded data set has been transformed into the Latvian coordinate 
+system (EPSG:3059), and the file format has been changed to geoparquet to 
+facilitate and speed up further work. As part of the file format change, 
+geometries (empty, validity) have been checked.
+
+Data are stored at `Geodata/2024/CLC/`.
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+
+# downloaded data
+clcLV=st_read("./Geodata/2024/CLC/clcLV.gpkg",layer="clcLV")
+
+# tukšās ģeometrijas
+clcLV2 = clcLV[!st_is_empty(clcLV),,drop=FALSE] # OK
+
+# ģeometriju validēšana
+validity=st_is_valid(clcLV2) 
+table(validity) # 3 non-valid
+clcLV3=st_make_valid(clcLV2)
+
+# koordinātu sistēma
+clcLV3=st_transform(clcLV3,crs=3059)
+
+# saglabāšana
+sfarrow::st_write_parquet(clcLV3, "./Geodata/2024/CLC/CLC_LV_2018.parquet")
+
+```
+
 
 
 ## Publicly available LVM data {#Ch04.06}
@@ -64,7 +105,7 @@ further in this work:
 Files were downloaded to `Geodata/2024/Soils/ESDAC/chemistry/` and no preprocessing 
 was carried out.
 
-### Soil texture Europe {#Ch04.07.02}
+### Soil texture: Europe {#Ch04.07.02}
 
 Data on soil texture are obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
 Soil database [@esdac2]. Dataset is available as [European Soil Database v2 Raster Library 1kmx1km](https://esdac.jrc.ec.europa.eu/content/european-soil-database-v2-raster-library-1kmx1km). There 
@@ -105,7 +146,7 @@ plot(sdTEXT2)
 
 
 
-### Soil texture LIZ {#Ch04.07.03}
+### Soil texture: Farmland {#Ch04.07.03}
 
 Topsoil characteristics in Latvia were mapped in the mid-20th century, almost 
 exclusively in farmlands. With time, data were digitised and combined with some 
@@ -194,7 +235,7 @@ plot(virsaugsnem2)
 ```
 
 
-### Soil texture Quaternary {#Ch04.07.04}
+### Soil texture: Quaternary {#Ch04.07.04}
 
 Data on Quaternary Geology are digitised and stored by University of Latvia 
 Geology group.
@@ -281,7 +322,7 @@ plot(apaksaugsnem)
 
 
 
-### Organic soils SILAVA {#Ch04.07.05}
+### Organic soils: SILAVA {#Ch04.07.05}
 
 The distribution of organic soils was modelled by EU LIFE Programme project 
 "Demonstration of climate change mitigation potential of nutrients rich organic 
@@ -333,7 +374,7 @@ writeRaster(silava_BezStripam,
 ```
 
 
-### Organic soils LU {#Ch04.07.06}
+### Organic soils: LU {#Ch04.07.06}
 
 The distribution of organic soils in farmlands was modelled by the University of 
 Latvia project "Improvement of sustainable soil resource management in agriculture".

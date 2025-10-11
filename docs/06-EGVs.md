@@ -13,11 +13,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio1_cell.tif"
+layername="egv_1"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio1_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -31,11 +53,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio10_cell.tif"
+layername="egv_2"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio10_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -49,11 +93,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio11_cell.tif"
+layername="egv_3"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio11_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -67,11 +133,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio12_cell.tif"
+layername="egv_4"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio12_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -85,11 +173,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Slapjākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio13_cell.tif"
+layername="egv_5"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio13_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -103,11 +213,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sausākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio14_cell.tif"
+layername="egv_6"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio14_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -121,11 +253,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Nokrišņu sezonalitāte (kg m⁻²) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio15_cell.tif"
+layername="egv_7"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio15_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -139,11 +293,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Slapjākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio16_cell.tif"
+layername="egv_8"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio16_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -157,11 +333,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sausākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio17_cell.tif"
+layername="egv_9"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio17_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -175,11 +373,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio18_cell.tif"
+layername="egv_10"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio18_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -193,11 +413,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Aukstākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻² mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio19_cell.tif"
+layername="egv_11"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio19_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -211,11 +453,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio2_cell.tif"
+layername="egv_12"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio2_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -229,11 +493,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Izotermalitāte (attiecība starp diennakts un gada temperatūras svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio3_cell.tif"
+layername="egv_13"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio3_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -247,11 +533,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Temperatūru sezonalitāte (mēneša vidējo temperatūru standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio4_cell.tif"
+layername="egv_14"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio4_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -265,11 +573,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio5_cell.tif"
+layername="egv_15"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio5_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -283,11 +613,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio6_cell.tif"
+layername="egv_16"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio6_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -301,11 +653,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio7_cell.tif"
+layername="egv_17"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio7_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -319,11 +693,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio8_cell.tif"
+layername="egv_18"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio8_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -333,15 +729,37 @@ Creation procedures of every EGV.
 
 **layername:** `egv_19`	
 
-**English name:** Mean daily mean air temperatures (°C) of the driest quartet (CHELSA v2.1) within the analysis cell (1 ha)
+**English name:** Mean daily mean air temperatures (°C) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
 **Latvian name:** Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-bio9_cell.tif"
+layername="egv_19"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio9_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -355,11 +773,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-clt-max_cell.tif"
+layername="egv_20"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -373,11 +813,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-clt-mean_cell.tif"
+layername="egv_21"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -391,11 +853,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-clt-min_cell.tif"
+layername="egv_22"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -409,11 +893,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada mākoņu seguma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-clt-range_cell.tif"
+layername="egv_23"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -427,11 +933,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-cmi-max_cell.tif"
+layername="egv_24"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -445,11 +973,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-cmi-mean_cell.tif"
+layername="egv_25"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -463,11 +1013,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-cmi-min_cell.tif"
+layername="egv_26"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -481,11 +1053,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-cmi-range_cell.tif"
+layername="egv_27"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -499,11 +1093,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sasalšanas gadījumu biežums (zemākā vai augstākā temperatūra šķērso 0°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-fcf_cell.tif"
+layername="egv_28"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-fcf_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -517,11 +1133,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pirmā diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-fgd_cell.tif"
+layername="egv_29"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-fgd_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -535,11 +1173,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdd0_cell.tif"
+layername="egv_30"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd0_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -553,11 +1213,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdd10_cell.tif"
+layername="egv_31"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd10_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -571,11 +1253,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdd5_cell.tif"
+layername="egv_32"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd5_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -589,11 +1293,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gddlgd0_cell.tif"
+layername="egv_33"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd0_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -607,11 +1333,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gddlgd10_cell.tif"
+layername="egv_34"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd10_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -625,11 +1373,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gddlgd5_cell.tif"
+layername="egv_35"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd5_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -643,11 +1413,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdgfgd0_cell.tif"
+layername="egv_36"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd0_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -661,11 +1453,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdgfgd10_cell.tif"
+layername="egv_37"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd10_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -679,11 +1493,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gdgfgd5_cell.tif"
+layername="egv_38"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd5_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -697,11 +1533,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonas garums (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gsl_cell.tif"
+layername="egv_39"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gsl_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -715,11 +1573,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Veģetācijas sezonā (TREELIM) uzkrātais nokrišņu daudzums (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gsp_cell.tif"
+layername="egv_40"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gsp_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -733,11 +1613,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-gst_cell.tif"
+layername="egv_41"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gst_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -751,11 +1653,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-hurs-max_cell.tif"
+layername="egv_42"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -769,11 +1693,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-hurs-mean_cell.tif"
+layername="egv_43"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -787,11 +1733,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-hurs-min_cell.tif"
+layername="egv_44"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -805,11 +1773,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-hurs-range_cell.tif"
+layername="egv_45"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -823,11 +1813,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-lgd_cell.tif"
+layername="egv_46"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-lgd_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -841,11 +1853,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-ngd0_cell.tif"
+layername="egv_47"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd0_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -859,11 +1893,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-ngd10_cell.tif"
+layername="egv_48"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd10_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -877,11 +1933,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-ngd5_cell.tif"
+layername="egv_49"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd5_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -895,11 +1973,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Neto primārā produkcija (g C m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-npp_cell.tif"
+layername="egv_50"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-npp_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -913,11 +2013,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-pet-penman-max_cell.tif"
+layername="egv_51"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -931,11 +2053,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-pet-penman-mean_cell.tif"
+layername="egv_52"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -949,11 +2093,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-pet-penman-min_cell.tif"
+layername="egv_53"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -967,11 +2133,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-pet-penman-range_cell.tif"
+layername="egv_54"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -985,11 +2173,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-rsds-max_cell.tif"
+layername="egv_55"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1003,11 +2213,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-rsds-mean_cell.tif"
+layername="egv_56"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1021,11 +2253,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-rsds-min_cell.tif"
+layername="egv_57"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1039,11 +2293,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-rsds-range_cell.tif"
+layername="egv_58"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1055,13 +2331,35 @@ Creation procedures of every EGV.
 
 **English name:** Number of days with snow cover (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Dienu ar sniega segu skaits. (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
+**Latvian name:** Dienu ar sniega segu skaits (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-scd_cell.tif"
+layername="egv_59"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-scd_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1075,11 +2373,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-sfcWind-max_cell.tif"
+layername="egv_60"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1093,11 +2413,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-sfcWind-mean_cell.tif"
+layername="egv_61"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1111,11 +2453,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-sfcWind-min_cell.tif"
+layername="egv_62"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1129,11 +2493,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-sfcWind-range_cell.tif"
+layername="egv_63"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1147,11 +2533,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Ūdens bilance (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-swb_cell.tif"
+layername="egv_64"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-swb_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1165,11 +2573,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Ūdens ekvivalents sniegā (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-swe_cell.tif"
+layername="egv_65"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-swe_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1183,11 +2613,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-vpd-max_cell.tif"
+layername="egv_66"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-max_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1201,11 +2653,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-vpd-mean_cell.tif"
+layername="egv_67"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-mean_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1219,11 +2693,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Minimālais mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-vpd-min_cell.tif"
+layername="egv_68"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-min_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1237,11 +2733,33 @@ Creation procedures of every EGV.
 
 **Latvian name:** Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with the 
+workflow `egvtools::downscale2egv()` with inverse distance weighted (power = 2) 
+gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# job ----
+
+localname="Climate_CHELSAv2.1-vpd-range_cell.tif"
+layername="egv_69"
+reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-range_cell.tif"
+
+df <- downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = reading,
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = localname,
+  layer_name    = layername,
+  fill_gaps     = TRUE,
+  smooth        = TRUE,
+  smooth_radius_km = 5,
+  plot_result   = TRUE)
+print(df)
 ```
 
 
@@ -1255,11 +2773,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā vidējā gaisa temperatūra augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_01-max_cell.tif"
+layername="egv_70"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1273,11 +2849,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā diennakts gaisa temperatūras amplitūda augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_02-max_cell.tif"
+layername="egv_71"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1291,11 +2925,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā izotermalitāte augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_03-max_cell.tif"
+layername="egv_72"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1309,11 +3001,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā temperatūras sezonalitāte augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_04-max_cell.tif"
+layername="egv_73"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1327,11 +3077,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_05-max_cell.tif"
+layername="egv_74"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1345,11 +3153,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_06-min_cell.tif"
+layername="egv_75"
+summary_function="min"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1363,11 +3229,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces gada gaisa temperatūru amplitūda (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_07-max_cell.tif"
+layername="egv_76"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1381,11 +3305,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra mitrākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_08-max_cell.tif"
+layername="egv_77"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1395,15 +3377,73 @@ Creation procedures of every EGV.
 
 **layername:** `egv_78`	
 
-**English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the driest quartet (HydroClim) within the analysis cell (1 ha)
+**English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the driest quarter (HydroClim) within the analysis cell (1 ha)
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_09-min_cell.tif"
+layername="egv_78"
+summary_function="min"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1413,15 +3453,73 @@ Creation procedures of every EGV.
 
 **layername:** `egv_79`	
 
-**English name:** Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the warmest quartet (HydroClim) within the analysis cell (1 ha)
+**English name:** Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the warmest quarter (HydroClim) within the analysis cell (1 ha)
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra siltākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_10-max_cell.tif"
+layername="egv_79"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1431,15 +3529,73 @@ Creation procedures of every EGV.
 
 **layername:** `egv_80`	
 
-**English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the coldest quartet (HydroClim) within the analysis cell (1 ha)
+**English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the coldest quarter (HydroClim) within the analysis cell (1 ha)
 
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_11-min_cell.tif"
+layername="egv_80"
+summary_function="min"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1453,11 +3609,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums gadā (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_12-max_cell.tif"
+layername="egv_81"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1471,11 +3685,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums mitrākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_13-max_cell.tif"
+layername="egv_82"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1489,11 +3761,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums sausākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_14-max_cell.tif"
+layername="egv_83"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1507,11 +3837,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzuma sezonalitāte (kg m⁻²) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_15-max_cell.tif"
+layername="egv_84"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1525,11 +3913,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_16-max_cell.tif"
+layername="egv_85"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1543,11 +3989,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_17-max_cell.tif"
+layername="egv_86"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1561,11 +4065,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_18-max_cell.tif"
+layername="egv_87"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1579,11 +4141,69 @@ Creation procedures of every EGV.
 
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Information - both basins and raster layers - from [HydroClim data](#Ch04.12) 
+is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (per basin) with 
+layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
+and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
+EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
+inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+intermediate input layer is unlinked.
 
 
 ``` r
 # libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+
+# basins ----
+level12=st_read("./Geodata/2024/HydroClim/hybas_lake_eu_lev01-12_v1c/hybas_lake_eu_lev12_v1c.shp")
+grid_1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
+grid_1km=st_transform(grid_1km,crs=3059)
+level12=st_transform(level12,crs=3059)
+level12=level12[grid_1km,,]
+
+level12=st_make_valid(level12)
+
+# job ----
+
+localname="HydroClim_19-max_cell.tif"
+layername="egv_88"
+summary_function="max"
+  
+slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
+level12$Hydro_values=exact_extract(slanis,level12,fun=summary_function)
+  
+polygon2input(vector_data = level12,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = localname,
+              value_field = "Hydro_values",
+              fun="first",
+              value_type = "continuous",
+              prepare=FALSE,
+              project_mode = "auto",
+              check_na = FALSE,
+              plot_result=FALSE,
+              plot_gaps = FALSE,
+              overwrite=TRUE)
+  
+egvrez=input2egv(input=paste0("./RasterGrids_10m/2024/",localname),
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "average",
+                 missing_job = "FillOutput",
+                 input_template = "./Templates/TemplateRasters/LV10m_10km.tif",
+                 outlocation = "./RasterGrids_100m/2024/RAW/",
+                 outfilename = localname,
+                 layername = layername,
+                 idw_weight = 2,
+                 plot_gaps = FALSE,plot_final = FALSE)
+egvrez
+  
+unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
 
@@ -1658,9 +4278,10 @@ Creation procedures of every EGV.
 
 3. Rasterize and cover so that cells of interest are 1 and others are 0;
 
-4. create an egv with `egvtools::distance2egv`. Expect warning regarding nothing 
-to do with aggregation. It is because `egvtools::distance2egv` already operate at 
-egv-template not the input-template resolution.
+4. create an egv with `egvtools::distance2egv()`. Expect warning regarding nothing 
+to do with aggregation. It is because `egvtools::distance2egv()` already operate at 
+egv-template not the input-template resolution. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. 
 
 
 ``` r
@@ -1713,12 +4334,13 @@ distegv
 
 2. Rasterize and cover so that cells of interest are 1 and others are 0;
 
-3. create an egv with `egvtools::distance2egv`. {fasterize} does not write CRS 
+3. create an egv with `egvtools::distance2egv()`. {fasterize} does not write CRS 
 with `WKT` from epsg-string. Therefore it is better to use `project_to_template_input=TRUE` and
 define input-template. However, the only difference is in how the CRS is stored, 
 therefore this can ignored - distance will be calculated on the input CRS and only 
 resulting layer will be projected to match egv-template (faster due to 10x aggregation of 
-resolution).
+resolution). To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. 
 
 
 ``` r
@@ -1799,9 +4421,10 @@ distegv
 
 4. Rasterize and cover so that cells of interest are 1 and others are 0;
 
-5. create an egv with `egvtools::distance2egv`. Expect warning regarding nothing 
-to do with aggregation. It is because `egvtools::distance2egv` already operate at 
-egv-template not the input-template resolution.
+5. create an egv with `egvtools::distance2egv()`. Expect warning regarding nothing 
+to do with aggregation. It is because `egvtools::distance2egv()` already operate at 
+egv-template not the input-template resolution. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. 
 
 
 
@@ -2107,7 +4730,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the analysis cell (1 ha)
 
-**Latvian name:** Purvu malas ar kokiem garums analīzes šūnā (1 ha)
+**Latvian name:** Purvu malu ar kokiem garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2125,7 +4748,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 0.5 km landscape
 
-**Latvian name:** Purvu malas ar kokiem garums 0,5 km ainavā
+**Latvian name:** Purvu malu ar kokiem garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2143,7 +4766,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 1.25 km landscape
 
-**Latvian name:** Purvu malas ar kokiem garums 1,25 km ainavā
+**Latvian name:** Purvu malu ar kokiem garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2161,7 +4784,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 3 km landscape
 
-**Latvian name:** Purvu malas ar kokiem garums 3 km ainavā
+**Latvian name:** Purvu malu ar kokiem garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2179,7 +4802,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 10 km landscape
 
-**Latvian name:** Purvu malas ar kokiem garums 10 km ainavā
+**Latvian name:** Purvu malu ar kokiem garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2197,7 +4820,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the analysis cell (1 ha)
 
-**Latvian name:** Purvu malas ar ūdeni garums analīzes šūnā (1 ha)
+**Latvian name:** Purvu malu ar ūdeni garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2215,7 +4838,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 0.5 km landscape
 
-**Latvian name:** Purvu malas ar ūdeni garums 0,5 km ainavā
+**Latvian name:** Purvu malu ar ūdeni garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2233,7 +4856,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 1.25 km landscape
 
-**Latvian name:** Purvu malas ar ūdeni garums 1,25 km ainavā
+**Latvian name:** Purvu malu ar ūdeni garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2251,7 +4874,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 3 km landscape
 
-**Latvian name:** Purvu malas ar ūdeni garums 3 km ainavā
+**Latvian name:** Purvu malu ar ūdeni garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2269,7 +4892,7 @@ distegv
 
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 10 km landscape
 
-**Latvian name:** Purvu malas ar ūdeni garums 10 km ainavā
+**Latvian name:** Purvu malu ar ūdeni garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2287,7 +4910,7 @@ distegv
 
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within the analysis cell (1 ha)
 
-**Latvian name:** Lauksaimniecības zemju malas ar apbūvi garums analīzes šūnā (1 ha)
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2305,7 +4928,7 @@ distegv
 
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within the 0.5 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malas ar apbūvi garums 0,5 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2323,7 +4946,7 @@ distegv
 
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within the 1.25 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malas ar apbūvi garums 1,25 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2341,7 +4964,7 @@ distegv
 
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within the 3 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malas ar apbūvi garums 3 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2359,7 +4982,7 @@ distegv
 
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within the 10 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malas ar apbūvi garums 10 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2377,7 +5000,7 @@ distegv
 
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the analysis cell (1 ha)
 
-**Latvian name:** Koku malas ar apbūvi garums analīzes šūnā (1 ha)
+**Latvian name:** Koku malu ar apbūvi garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2395,7 +5018,7 @@ distegv
 
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the 0.5 km landscape
 
-**Latvian name:** Koku malas ar apbūvi garums 0,5 km ainavā
+**Latvian name:** Koku malu ar apbūvi garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2413,7 +5036,7 @@ distegv
 
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the 1.25 km landscape
 
-**Latvian name:** Koku malas ar apbūvi garums 1,25 km ainavā
+**Latvian name:** Koku malu ar apbūvi garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2431,7 +5054,7 @@ distegv
 
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the 3 km landscape
 
-**Latvian name:** Koku malas ar apbūvi garums 3 km ainavā
+**Latvian name:** Koku malu ar apbūvi garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2449,7 +5072,7 @@ distegv
 
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the 10 km landscape
 
-**Latvian name:** Koku malas ar apbūvi garums 10 km ainavā
+**Latvian name:** Koku malu ar apbūvi garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2467,7 +5090,7 @@ distegv
 
 **English name:** Edge pixels of Cropland, Fallow land within the analysis cell (1 ha)
 
-**Latvian name:** Aramzemju malas garums analīzes šūnā (1 ha)
+**Latvian name:** Aramzemju malu garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2485,7 +5108,7 @@ distegv
 
 **English name:** Edge pixels of Cropland, Fallow land within the 0.5 km landscape
 
-**Latvian name:** Aramzemju malas garums 0,5 km ainavā
+**Latvian name:** Aramzemju malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2503,7 +5126,7 @@ distegv
 
 **English name:** Edge pixels of Cropland, Fallow land within the 1.25 km landscape
 
-**Latvian name:** Aramzemju malas garums 1,25 km ainavā
+**Latvian name:** Aramzemju malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2521,7 +5144,7 @@ distegv
 
 **English name:** Edge pixels of Cropland, Fallow land within the 3 km landscape
 
-**Latvian name:** Aramzemju malas garums 3 km ainavā
+**Latvian name:** Aramzemju malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2539,7 +5162,7 @@ distegv
 
 **English name:** Edge pixels of Cropland, Fallow land within the 10 km landscape
 
-**Latvian name:** Aramzemju malas garums 10 km ainavā
+**Latvian name:** Aramzemju malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2557,7 +5180,7 @@ distegv
 
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the analysis cell (1 ha)
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums analīzes šūnā (1 ha)
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2575,7 +5198,7 @@ distegv
 
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 0.5 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 0,5 km ainavā
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2593,7 +5216,7 @@ distegv
 
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 1.25 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 1,25 km ainavā
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2611,7 +5234,7 @@ distegv
 
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 3 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 3 km ainavā
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2629,7 +5252,7 @@ distegv
 
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with Trees within the 10 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malas ar kokiem garums 10 km ainavā
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2647,7 +5270,7 @@ distegv
 
 **English name:** Edge pixels of Grassland within the analysis cell (1 ha)
 
-**Latvian name:** Zālāju malas garums analīzes šūnā (1 ha)
+**Latvian name:** Zālāju malu garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2665,7 +5288,7 @@ distegv
 
 **English name:** Edge pixels of Grassland within the 0.5 km landscape
 
-**Latvian name:** Zālāju malas garums 0,5 km ainavā
+**Latvian name:** Zālāju malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2683,7 +5306,7 @@ distegv
 
 **English name:** Edge pixels of Grassland within the 1.25 km landscape
 
-**Latvian name:** Zālāju malas garums 1,25 km ainavā
+**Latvian name:** Zālāju malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2701,7 +5324,7 @@ distegv
 
 **English name:** Edge pixels of Grassland within the 3 km landscape
 
-**Latvian name:** Zālāju malas garums 3 km ainavā
+**Latvian name:** Zālāju malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2719,7 +5342,7 @@ distegv
 
 **English name:** Edge pixels of Grassland within the 10 km landscape
 
-**Latvian name:** Zālāju malas garums 10 km ainavā
+**Latvian name:** Zālāju malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2737,7 +5360,7 @@ distegv
 
 **English name:** Edge pixels of Forests Over Rotation Age within the analysis cell (1 ha)
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malas garums analīzes šūnā (1 ha)
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2755,7 +5378,7 @@ distegv
 
 **English name:** Edge pixels of Forests Over Rotation Age within the 0.5 km landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malas garums 0,5 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2773,7 +5396,7 @@ distegv
 
 **English name:** Edge pixels of Forests Over Rotation Age within the 1.25 km landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malas garums 1,25 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2791,7 +5414,7 @@ distegv
 
 **English name:** Edge pixels of Forests Over Rotation Age within the 3 km landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malas garums 3 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2809,7 +5432,7 @@ distegv
 
 **English name:** Edge pixels of Forests Over Rotation Age within the 10 km landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malas garums 10 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2827,7 +5450,7 @@ distegv
 
 **English name:** Edge pixels of Roads within the analysis cell (1 ha)
 
-**Latvian name:** Ceļu malas garums analīzes šūnā (1 ha)
+**Latvian name:** Ceļu malu garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2845,7 +5468,7 @@ distegv
 
 **English name:** Edge pixels of Roads within the 0.5 km landscape
 
-**Latvian name:** Ceļu malas garums 0,5 km ainavā
+**Latvian name:** Ceļu malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2863,7 +5486,7 @@ distegv
 
 **English name:** Edge pixels of Roads within the 1.25 km landscape
 
-**Latvian name:** Ceļu malas garums 1,25 km ainavā
+**Latvian name:** Ceļu malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2881,7 +5504,7 @@ distegv
 
 **English name:** Edge pixels of Roads within the 3 km landscape
 
-**Latvian name:** Ceļu malas garums 3 km ainavā
+**Latvian name:** Ceļu malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2899,7 +5522,7 @@ distegv
 
 **English name:** Edge pixels of Roads within the 10 km landscape
 
-**Latvian name:** Ceļu malas garums 10 km ainavā
+**Latvian name:** Ceļu malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -2917,7 +5540,7 @@ distegv
 
 **English name:** Edge pixels of Trees within the analysis cell (1 ha)
 
-**Latvian name:** Koku malas garums analīzes šūnā (1 ha)
+**Latvian name:** Koku malu garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -2935,7 +5558,7 @@ distegv
 
 **English name:** Edge pixels of Trees within the 0.5 km landscape
 
-**Latvian name:** Koku malas garums 0,5 km ainavā
+**Latvian name:** Koku malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -2953,7 +5576,7 @@ distegv
 
 **English name:** Edge pixels of Trees within the 1.25 km landscape
 
-**Latvian name:** Koku malas garums 1,25 km ainavā
+**Latvian name:** Koku malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -2971,7 +5594,7 @@ distegv
 
 **English name:** Edge pixels of Trees within the 3 km landscape
 
-**Latvian name:** Koku malas garums 3 km ainavā
+**Latvian name:** Koku malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -2989,7 +5612,7 @@ distegv
 
 **English name:** Edge pixels of Trees within the 10 km landscape
 
-**Latvian name:** Koku malas garums 10 km ainavā
+**Latvian name:** Koku malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -3007,7 +5630,7 @@ distegv
 
 **English name:** Edge pixels of Water within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpju malas garums nalīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu garums nalīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -3025,7 +5648,7 @@ distegv
 
 **English name:** Edge pixels of Water within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpju malas garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpju malu garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -3043,7 +5666,7 @@ distegv
 
 **English name:** Edge pixels of Water within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpju malas garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpju malu garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -3061,7 +5684,7 @@ distegv
 
 **English name:** Edge pixels of Water within the 3 km landscape
 
-**Latvian name:** Ūdenstilpju malas garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu garums 3 km ainavā
 
 **Procedure:** 
 
@@ -3079,7 +5702,7 @@ distegv
 
 **English name:** Edge pixels of Water within the 10 km landscape
 
-**Latvian name:** Ūdenstilpju malas garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu garums 10 km ainavā
 
 **Procedure:** 
 
@@ -3097,7 +5720,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Farmland within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpu malas ar lauksaimniecības zemēm garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -3115,7 +5738,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Farmland within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar lauksaimniecības zemēm garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -3133,7 +5756,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Farmland within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar lauksaimniecības zemēm garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -3151,7 +5774,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Farmland within the 3 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar lauksaimniecības zemēm garums 3 km ainavā
+**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 3 km ainavā
 
 **Procedure:** 
 
@@ -3169,7 +5792,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Farmland within the 10 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar lauksaimniecības zemēm garums 10 km ainavā
+**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 10 km ainavā
 
 **Procedure:** 
 
@@ -3187,7 +5810,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Grassland within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpu malas ar zālājiem garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpu malu ar zālājiem garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -3205,7 +5828,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Grassland within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar zālājiem garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpu malu ar zālājiem garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -3223,7 +5846,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Grassland within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar zālājiem garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpu malu ar zālājiem garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -3241,7 +5864,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Grassland within the 3 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar zālājiem garums 3 km ainavā
+**Latvian name:** Ūdenstilpu malu ar zālājiem garums 3 km ainavā
 
 **Procedure:** 
 
@@ -3259,7 +5882,7 @@ distegv
 
 **English name:** Edge pixels of Water bordering with Grassland within the 10 km landscape
 
-**Latvian name:** Ūdenstilpu malas ar zālājiem garums 10 km ainavā
+**Latvian name:** Ūdenstilpu malu ar zālājiem garums 10 km ainavā
 
 **Procedure:** 
 
@@ -3277,7 +5900,7 @@ distegv
 
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the analysis cell (1 ha)
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malas ar ūdeni garums analīzes šūnā (1 ha)
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums analīzes šūnā (1 ha)
 
 **Procedure:** 
 
@@ -3295,7 +5918,7 @@ distegv
 
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 0.5 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 0,5 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 0,5 km ainavā
 
 **Procedure:** 
 
@@ -3313,7 +5936,7 @@ distegv
 
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 1.25 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 1,25 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 1,25 km ainavā
 
 **Procedure:** 
 
@@ -3331,7 +5954,7 @@ distegv
 
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 3 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 3 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 3 km ainavā
 
 **Procedure:** 
 
@@ -3349,7 +5972,7 @@ distegv
 
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water within the 10 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malas ar ūdeni garums 10 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 10 km ainavā
 
 **Procedure:** 
 
@@ -3899,9 +6522,9 @@ distegv
 ```
 
 
-## FarmlandCrops_RapseedsWinter_cell	{#ch06.210}
+## FarmlandCrops_RapeseedsWinter_cell	{#ch06.210}
 
-**filename:** `FarmlandCrops_RapseedsWinter_cell.tif`	
+**filename:** `FarmlandCrops_RapeseedsWinter_cell.tif`	
 
 **layername:** `egv_210`	
 
@@ -3917,9 +6540,9 @@ distegv
 ```
 
 
-## FarmlandCrops_RapseedsWinter_r500	{#ch06.211}
+## FarmlandCrops_RapeseedsWinter_r500	{#ch06.211}
 
-**filename:** `FarmlandCrops_RapseedsWinter_r500.tif`	
+**filename:** `FarmlandCrops_RapeseedsWinter_r500.tif`	
 
 **layername:** `egv_211`	
 
@@ -3935,9 +6558,9 @@ distegv
 ```
 
 
-## FarmlandCrops_RapseedsWinter_r1250	{#ch06.212}
+## FarmlandCrops_RapeseedsWinter_r1250	{#ch06.212}
 
-**filename:** `FarmlandCrops_RapseedsWinter_r1250.tif`	
+**filename:** `FarmlandCrops_RapeseedsWinter_r1250.tif`	
 
 **layername:** `egv_212`	
 
@@ -3953,9 +6576,9 @@ distegv
 ```
 
 
-## FarmlandCrops_RapseedsWinter_r3000	{#ch06.213}
+## FarmlandCrops_RapeseedsWinter_r3000	{#ch06.213}
 
-**filename:** `FarmlandCrops_RapseedsWinter_r3000.tif`	
+**filename:** `FarmlandCrops_RapeseedsWinter_r3000.tif`	
 
 **layername:** `egv_213`	
 
@@ -3971,9 +6594,9 @@ distegv
 ```
 
 
-## FarmlandCrops_RapseedsWinter_r10000	{#ch06.214}
+## FarmlandCrops_RapeseedsWinter_r10000	{#ch06.214}
 
-**filename:** `FarmlandCrops_RapseedsWinter_r10000.tif`	
+**filename:** `FarmlandCrops_RapeseedsWinter_r10000.tif`	
 
 **layername:** `egv_214`	
 
@@ -4985,7 +7608,7 @@ distegv
 
 **layername:** `egv_270`	
 
-**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the analysis cell (1 ha)	
+**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within the analysis cell (1 ha)	
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars analīzes šūnā (1 ha)
 
@@ -5003,7 +7626,7 @@ distegv
 
 **layername:** `egv_271`	
 
-**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 0.5 km landscape	
+**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within the 0.5 km landscape	
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 0,5 km ainavā
 
@@ -5021,7 +7644,7 @@ distegv
 
 **layername:** `egv_272`	
 
-**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 1.25 km landscape	
+**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within the 1.25 km landscape	
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 1,25 km ainavā
 
@@ -5039,7 +7662,7 @@ distegv
 
 **layername:** `egv_273`	
 
-**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 3 km landscape	
+**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within the 3 km landscape	
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3 km ainavā
 
@@ -5057,7 +7680,7 @@ distegv
 
 **layername:** `egv_274`	
 
-**English name:** Fractional cover of Clear-Cutts and Stands lower than 5 m within the 10 km landscape	
+**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within the 10 km landscape	
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10 km ainavā
 
@@ -8752,7 +11375,8 @@ distegv
 **Latvian name:** Mediānā pēdējā gada ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Last year is 2024.
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -8785,8 +11409,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:**  Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -8841,10 +11466,11 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **English name:** Average short-term seasonality of vegetation water content (NDMI) within the analysis cell (1 ha)	
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens satura veģetācijā indeksam (NDMI), vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens satura veģetācijā indeksa (NDMI) vērtībai, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -8879,7 +11505,8 @@ egvrez
 **Latvian name:** Mediānā pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -8913,8 +11540,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
 
 
@@ -8970,12 +11598,13 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **layername:** `egv_484`	
 
-**English name:** Minimum of short-term's 25th percentile vegetation water content (NDMI) within the analysis cell (1 ha)	
+**English name:** Minimum short-term 25th percentile of vegetation water content (NDMI) within the analysis cell (1 ha)	
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9006,12 +11635,13 @@ egvrez
 
 **layername:** `egv_485`	
 
-**English name:** Maximum of short-term's 75th percentile vegetation water content (NDMI) within the analysis cell (1 ha)	
+**English name:** Maximum short-term 75th percentile of vegetation water content (NDMI) within the analysis cell (1 ha)	
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens satura veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9045,7 +11675,8 @@ egvrez
 **Latvian name:** Mediānā pēdējā gada veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Last year is 2024.
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -9079,8 +11710,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:**  Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -9137,10 +11769,11 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **English name:** Average short-term seasonality of vegetation index (NDVI) within the analysis cell (1 ha)	
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam veģetācijas indeksam (NDVI), vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam veģetācijas indeksa (NDVI) vērtībai, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9174,7 +11807,8 @@ egvrez
 **Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9208,8 +11842,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
 
 
@@ -9265,12 +11900,13 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **layername:** `egv_491`	
 
-**English name:** Minimum of short-term's 25th percentile vegetation index (NDVI) within the analysis cell (1 ha)	
+**English name:** Minimum short-term 25th percentile of vegetation index (NDVI) within the analysis cell (1 ha)	
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9299,12 +11935,13 @@ egvrez
 
 **layername:** `egv_492`	
 
-**English name:** Maximum of short-term's 75th percentile vegetation index (NDVI) within the analysis cell (1 ha)	
+**English name:** Maximum short-term 75th percentile of vegetation index (NDVI) within the analysis cell (1 ha)	
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9338,7 +11975,8 @@ egvrez
 **Latvian name:** Mediānā pēdējā gada ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Last year is 2024.
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -9370,8 +12008,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Last year is 2024.
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
 
 ``` r
@@ -9427,10 +12066,11 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **English name:** Average short-term seasonality of water index (NDWI) within the analysis cell (1 ha)	
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens indeksam (NDWI), vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens indeksa (NDWI) vērtībai, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9464,7 +12104,8 @@ egvrez
 **Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9498,8 +12139,9 @@ egvrez
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
-is calculated for every cell with `egvtools::input2egv`. Finally, subtracting 
-Q1 from Q3 and writing final raster with specified layername. Short-term corresponds 
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
 
 
@@ -9554,12 +12196,13 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 
 **layername:** `egv_498`	
 
-**English name:** Minimum of short-term's 25th percentile water index (NDWI) within the analysis cell (1 ha)	
+**English name:** Minimum short-term 25th percentile of water index (NDWI) within the analysis cell (1 ha)	
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9588,12 +12231,13 @@ egvrez
 
 **layername:** `egv_499`	
 
-**English name:** Maximum of short-term's 75th percentile water index (NDWI) within the analysis cell (1 ha)	
+**English name:** Maximum short-term 75th percentile of water index (NDWI) within the analysis cell (1 ha)	
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens indeksa (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
-calculated with `egvtools::input2egv`. Short-term is last five years (2020-2024).
+calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
+inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
 
 
 ``` r
@@ -9627,11 +12271,32 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas oglekļa-slāpekļa attiecība (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 
+# CN ----
+
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/CN/CN.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-CN_cell.tif",
+  layer_name    = "egv_500",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilChemistry_ESDAC-CaCo3_cell	{#ch06.501}
@@ -9644,11 +12309,33 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas kalcija karbonātu apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 
+# CaCO3 ----
+
+
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/Caco3/CaCO3.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-CaCo3_cell.tif",
+  layer_name    = "egv_501",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilChemistry_ESDAC-K_cell	{#ch06.502}
@@ -9661,11 +12348,32 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas kālija apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 
+# K ----
+
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/K/K.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-K_cell.tif",
+  layer_name    = "egv_502",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilChemistry_ESDAC-N_cell	{#ch06.503}
@@ -9678,11 +12386,32 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas slāpekļa apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 
+# N ----
+
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/N/N.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-N_cell.tif",
+  layer_name    = "egv_503",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilChemistry_ESDAC-P_cell	{#ch06.504}
@@ -9695,11 +12424,31 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas fosfora apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# P ----
 
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/P/P.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-P_cell.tif",
+  layer_name    = "egv_504",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilChemistry_ESDAC-phH2O_cell	{#ch06.505}
@@ -9712,11 +12461,32 @@ egvrez
 
 **Latvian name:** Augsnes virskārtas reakcija (pH) ūdens šķīdumā (ESDAC v2.0) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
+with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
+to keep as original values as reasonable (there is bilinear interpolation 
+involved when projecting from 500 m to 100 m resolution of different CRS).
 
 
+``` r
+# libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 
+# pH_H2O ----
+
+egv=downscale2egv(
+  template_path = "./Templates/TemplateRasters/LV100m_10km.tif",
+  grid_path     = "./Templates/TemplateGrids/tikls1km_sauzeme.parquet",
+  rawfile_path  = "./Geodata/2024/Soils/ESDAC/chemistry/chemistry/pH_H2O/pH_H2O.tif",
+  out_path      = "./RasterGrids_100m/2024/RAW/",
+  file_name     = "SoilChemistry_ESDAC-phH2O_cell.tif",
+  layer_name    = "egv_505",
+  fill_gaps     = TRUE,
+  smooth        = FALSE,
+  plot_result   = TRUE)
+egv
+```
 
 
 ## SoilTexture_Clay_cell	{#ch06.506}
@@ -9729,11 +12499,41 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
+reclassified so that class of interest is 1, other classes are 0. Then processed 
+with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# input ----
+combtext=rast("./RasterGrids_10m/2024/SoilTXT_combined.tif")
+
+# EGVs cell ----
+
+# SoilTexture_Clay_cell.tif	egv_506
+
+clay10=ifel(combtext==3,1,0)
+
+input2egv(input=clay10,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "SoilTexture_Clay_cell.tif",
+          layername="egv_506",
+          return_visible = TRUE)
+```
 
 
 ## SoilTexture_Clay_r500	{#ch06.507}
@@ -9746,11 +12546,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 0,5 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_cell.tif"),
+  layer_prefixes = c("SoilTexture_Clay"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Clay_r500.tif	egv_507
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r500.tif")
+names(slanis)="egv_507"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r500.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Clay_r1250	{#ch06.508}
@@ -9763,11 +12595,44 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 1,25 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_cell.tif"),
+  layer_prefixes = c("SoilTexture_Clay"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# SoilTexture_Clay_r1250.tif	egv_508
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r1250.tif")
+names(slanis)="egv_508"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r1250.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Clay_r3000	{#ch06.509}
@@ -9780,11 +12645,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 3 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_cell.tif"),
+  layer_prefixes = c("SoilTexture_Clay"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Clay_r3000.tif	egv_509
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r3000.tif")
+names(slanis)="egv_509"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r3000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Clay_r10000	{#ch06.510}
@@ -9797,11 +12694,44 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 10 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_cell.tif"),
+  layer_prefixes = c("SoilTexture_Clay"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# SoilTexture_Clay_r10000.tif	egv_510
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r10000.tif")
+names(slanis)="egv_510"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r10000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Organic_cell	{#ch06.511}
@@ -9814,11 +12744,41 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
+reclassified so that class of interest is 1, other classes are 0. Then processed 
+with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# input ----
+combtext=rast("./RasterGrids_10m/2024/SoilTXT_combined.tif")
+
+# EGVs cell ----
+
+# SoilTexture_Organic_cell.tif	egv_511
+
+org10=ifel(combtext==4,1,0)
+
+input2egv(input=org10,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "SoilTexture_Organic_cell.tif",
+          layername="egv_511",
+          return_visible = TRUE)
+```
 
 
 ## SoilTexture_Organic_r500	{#ch06.512}
@@ -9831,11 +12791,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 0,5 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_cell.tif"),
+  layer_prefixes = c("SoilTexture_Organic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Organic_r500.tif	egv_512
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r500.tif")
+names(slanis)="egv_512"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r500.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Organic_r1250	{#ch06.513}
@@ -9848,11 +12840,44 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 1,25 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_cell.tif"),
+  layer_prefixes = c("SoilTexture_Organic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# SoilTexture_Organic_r1250.tif	egv_513
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r1250.tif")
+names(slanis)="egv_513"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r1250.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Organic_r3000	{#ch06.514}
@@ -9865,11 +12890,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 3 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_cell.tif"),
+  layer_prefixes = c("SoilTexture_Organic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Organic_r3000.tif	egv_514
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r3000.tif")
+names(slanis)="egv_514"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r3000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Organic_r10000	{#ch06.515}
@@ -9882,11 +12939,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 10 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_cell.tif"),
+  layer_prefixes = c("SoilTexture_Organic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Organic_r10000.tif	egv_515
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r10000.tif")
+names(slanis)="egv_515"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r10000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Sand_cell	{#ch06.516}
@@ -9899,11 +12988,42 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
+reclassified so that class of interest is 1, other classes are 0. Then processed 
+with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# input ----
+combtext=rast("./RasterGrids_10m/2024/SoilTXT_combined.tif")
+
+# EGVs cell ----
+
+# SoilTexture_Sand_cell.tif	egv_516
+
+sand10=ifel(combtext==1,1,0)
+plot(sand10)
+
+input2egv(input=sand10,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "SoilTexture_Sand_cell.tif",
+          layername="egv_516",
+          return_visible = TRUE)
+```
 
 
 ## SoilTexture_Sand_r500	{#ch06.517}
@@ -9916,11 +13036,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 0,5 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_cell.tif"),
+  layer_prefixes = c("SoilTexture_Sand"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Sand_r500.tif	egv_517
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r500.tif")
+names(slanis)="egv_517"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r500.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Sand_r1250	{#ch06.518}
@@ -9933,11 +13085,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 1,25 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_cell.tif"),
+  layer_prefixes = c("SoilTexture_Sand"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Sand_r1250.tif	egv_518
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r1250.tif")
+names(slanis)="egv_518"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r1250.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Sand_r3000	{#ch06.519}
@@ -9950,11 +13134,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 3 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_cell.tif"),
+  layer_prefixes = c("SoilTexture_Sand"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Sand_r3000.tif	egv_519
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r3000.tif")
+names(slanis)="egv_519"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r3000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Sand_r10000	{#ch06.520}
@@ -9967,11 +13183,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 10 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_cell.tif"),
+  layer_prefixes = c("SoilTexture_Sand"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Sand_r10000.tif	egv_520
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r10000.tif")
+names(slanis)="egv_520"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r10000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Silt_cell	{#ch06.521}
@@ -9984,11 +13232,41 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
+reclassified so that class of interest is 1, other classes are 0. Then processed 
+with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
+distance weighted (power = 2) filling of gaps at the border.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# input ----
+combtext=rast("./RasterGrids_10m/2024/SoilTXT_combined.tif")
+
+# EGVs cell ----
+
+# SoilTexture_Silt_cell.tif	egv_521
+
+silt10=ifel(combtext==2,1,0)
+
+input2egv(input=silt10,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "SoilTexture_Silt_cell.tif",
+          layername="egv_521",
+          return_visible = TRUE)
+```
 
 
 ## SoilTexture_Silt_r500	{#ch06.522}
@@ -10001,11 +13279,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 0,5 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_cell.tif"),
+  layer_prefixes = c("SoilTexture_Silt"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Silt_r500.tif	egv_522
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r500.tif")
+names(slanis)="egv_522"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r500.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Silt_r1250	{#ch06.523}
@@ -10018,11 +13328,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 1,25 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_cell.tif"),
+  layer_prefixes = c("SoilTexture_Silt"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Silt_r1250.tif	egv_523
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r1250.tif")
+names(slanis)="egv_523"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r1250.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Silt_r3000	{#ch06.524}
@@ -10035,11 +13377,44 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 3 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_cell.tif"),
+  layer_prefixes = c("SoilTexture_Silt"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# SoilTexture_Silt_r3000.tif	egv_524
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r3000.tif")
+names(slanis)="egv_524"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r3000.tif",
+            overwrite=TRUE)
+```
 
 
 ## SoilTexture_Silt_r10000	{#ch06.525}
@@ -10052,11 +13427,43 @@ egvrez
 
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 10 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
+with `egvtools::radius_function()`, then rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# EGVs radii ----
+
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_cell.tif"),
+  layer_prefixes = c("SoilTexture_Silt"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# SoilTexture_Silt_r10000.tif	egv_525
+
+slanis=rast("./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r10000.tif")
+names(slanis)="egv_525"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r10000.tif",
+            overwrite=TRUE)
+```
 
 
 ## Terrain_ASL-average_cell	{#ch06.526}
@@ -10070,7 +13477,6 @@ egvrez
 **Latvian name:** Augstums virs jūras līmeņa (m) analīzes šūnā (1 ha)
 
 **Procedure:**
-
 
 
 
