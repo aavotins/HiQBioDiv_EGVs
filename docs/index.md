@@ -27,8 +27,7 @@ ecogeographical variables (EGVs) for species distribution modelling in Latvia (2
 This material has been developed to present the results of three projects implemented at the University of Latvia, which are deeply rooted in species distribution modeling, and, more importantly, to demonstrate and explain the work process and decisions made in order to ensure their repeatability and reproducibility. These projects are:
 
 - The project "Preparation of a geospatial data layer covering existing 
-protected areas for the implementation of the EU Biodiversity Strategy 2030" (No. 1-08/73/2023), funded by the Latvian Environmental Protection Fund Administration
-;
+protected areas for the implementation of the EU Biodiversity Strategy 2030" (No. 1-08/73/2023), funded by the Latvian Environmental Protection Fund Administration;
 
 - Scientific research service project commissioned by AS "Latvijas valsts meži" (Latvian State Forests) "Improvement of the monitoring of the northern goshawk *Accipiter gentilis* and creation of a spatial model of habitat suitability" (Latvian State Forests document No. 5-5.5.1_000r_101_23_27_6);
 

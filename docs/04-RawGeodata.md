@@ -4,19 +4,1868 @@ This chapter describes raw geodata used and the preliminary processing conducted
 
 ## State Forest Service's State Forest Registry {#Ch04.01}
 
-krā
+The State Forest Service's Forest State Register database (ESRI file geodatabase), 
+which compiles indicators and spatial data characterizing forest compartments 
+(stand level inventory database), was received by the University of 
+Latvia on January 7, 2024, to support study and research processes. The structure 
+of the received database version corresponds to 
+the [Forest State Register Forest Inventory File Structure](https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura), but 
+lowercase letters are used in field names. 
+
+After downloading, the CRS is guarded, geometries are checked and saved in 
+geoparquet format.
+
+Files are stored at `Geodata/2024/MVR/`.
+
+
+``` r
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(gdalUtilities)) {install.packages("gdalUtilities"); require(gdalUtilities)}
+
+# database
+nog=read_sf("./Geodata/2024/MVR/VMD.gdb/",layer="Nogabali_pilna_datubaze")
+
+# ensuring geometries
+source("./RScripts_final/egvs02.02_UtilityFunctions.R")
+nogabali <- ensure_multipolygons(nog)
+
+# securing geometries
+nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 empty geometries
+validity=st_is_valid(nogabali2) 
+table(validity) # 1733 invalid geometries
+nogabali3=st_make_valid(nogabali2)
+
+# transforming CRS
+nogabali4=st_transform(nogabali3, crs=3059)
+
+# saving
+sfarrow::st_write_parquet(nogabali4, "./Geodata/2024/MVR/nogabali_2024janv.parquet")
+```
+
 
 ## Rural Support Service's information on declared fields {#Ch04.02}
 
-krā
+The Rural Support Service maintains [regularly updated information on the open 
+data portal](https://data.gov.lv/dati/lv/organization/lad). An archive (since 2015) is 
+also available there, and the data sets that can be used contain the keyword “deklarētās platības”. 
+
+After downloading files to `Geodata/2024/LAD/downloads/`, they are unzipped and read into R. 
+it is checked, empty files are deleted and the rest are validated, and all individual 
+files are combined into one, which is saved in geopackage and geoparquet formats 
+at `Geodata/2024/LAD/`. At the end, downloaded files are unlinked.
+
+
+``` r
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(gdalUtilities)) {install.packages("gdalUtilities"); require(gdalUtilities)}
+
+# reading all files
+faili=data.frame(celi=list.files("./Geodata/2024/LAD/downloads",full.names = TRUE))
+dati=st_read(faili$celi[1])
+for(i in 2:length(faili$celi)){
+  nakosais=st_read(faili$celi[i])
+  dati=bind_rows(dati,nakosais)
+  print(nrow(dati))
+}
+
+# ensuring geometries
+source("./RScripts_final/egvs02.02_UtilityFunctions.R")
+nogabali <- ensure_multipolygons(nog)
+dati2 <- ensure_multipolygons(dati)
+dati3 = dati2[!st_is_empty(dati2),,drop=FALSE] # viss kārtībā
+table(st_is_valid(dati3)) 
+dati4=st_make_valid(dati3)
+table(st_is_valid(dati4))
+dati5 <- ensure_multipolygons(dati4)
+table(st_is_valid(dati5))
+
+# saving output
+st_write(dati5,"./Geodata/2024/LAD/Lauki_2024.gpkg",append = FALSE)
+sfarrow::st_write_parquet(dati5,"./Geodata/2024/LAD/Lauki_2024.parquet")
+
+# unlinking downloads
+for(i in seq_along(faili$celi)){
+  unlink(faili$celi[i])
+}
+```
+
+
 
 ## Melioration Cadaster {#Ch04.03}
 
-krā
+The Land Improvement Cadastre Information System database was downloaded layer 
+by layer from Geoserver. Geometries were tested and validated for each layer, and 
+layers were all combined into a single geopackage file stored at `Geodata/2024/MKIS/`.
+
+Initially, no additional processing was performed on this data. It was used to 
+prepare [Geodata products](#Ch05) - both [Terrain products](#Ch05.01) and [Landscape classification](#Ch05.03).
+
+
+
+``` r
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(httr)) {install.packages("httr"); require(httr)}
+if(!require(ows4R)) {install.packages("ows4R"); require(ows4R)}
+
+# basis information ----
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+url$query <- list(service = "wfs",
+                  #version = "2.0.0", # facultative
+                  request = "GetCapabilities")
+request <- build_url(url)
+request
+bwk_client <- WFSClient$new(link, 
+                            serviceVersion = "2.0.0")
+bwk_client
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+
+# aizsargdambji ----
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_dam")
+request <- build_url(url)
+aizsargdambji <- read_sf(request)
+aizsargdambji = aizsargdambji %>% st_set_crs(st_crs(3059))
+aizsargdambji=st_cast(aizsargdambji,"MULTILINESTRING")
+
+ggplot(aizsargdambji)+geom_sf()
+
+table(st_is_valid(aizsargdambji))
+
+write_sf(aizsargdambji,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="Aizsargdambji",
+         append=FALSE)
+rm(aizsargdambji)
+
+# dabiskās ūdensteces ----
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_watercourses")
+request <- build_url(url)
+
+DabiskasUdensteces <- read_sf(request)
+DabiskasUdensteces = DabiskasUdensteces %>% st_set_crs(st_crs(3059))
+DabiskasUdensteces=st_cast(DabiskasUdensteces,"MULTILINESTRING")
+
+ggplot(DabiskasUdensteces)+geom_sf()
+
+table(st_is_valid(DabiskasUdensteces))
+
+write_sf(DabiskasUdensteces,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="DabiskasUdensteces",
+         append=FALSE)
+rm(DabiskasUdensteces)
+
+
+
+# dambju piketi ----
+
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_dampicket")
+request <- build_url(url)
+
+DambjuPiketi <- read_sf(request)
+DambjuPiketi = DambjuPiketi %>% st_set_crs(st_crs(3059))
+DambjuPiketi=st_cast(DambjuPiketi,"POINT")
+
+ggplot(DambjuPiketi)+geom_sf()
+
+table(st_is_valid(DambjuPiketi))
+
+write_sf(DambjuPiketi,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="DambjuPiketi",
+         append=FALSE)
+rm(DambjuPiketi)
+
+
+# drenas ----
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_drainpipes"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_Drenas"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+Drenas_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                   layer="temp_Drenas")
+Drenas_all2 = Drenas_all[!st_is_empty(Drenas_all),,drop=FALSE] # 1
+table(st_is_valid(Drenas_all2))
+
+
+write_sf(Drenas_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="Drenas",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# drenu kolektori ----
+
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+bwk_client$getFeatureTypes(pretty = TRUE)
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_draincollectors",
+                  count=1)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+# skaitam
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_draincollectors",
+                  resultType="hits")
+request <- build_url(url)
+result <- GET(request)
+parsed <- xml2::as_list(content(result, "parsed"))
+n_features <- attr(parsed$FeatureCollection, "numberMatched")
+n_features
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_draincollectors"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_DrenuKolektori"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+DrenuKolektori_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                           layer="temp_DrenuKolektori")
+DrenuKolektori_all2 = DrenuKolektori_all[!st_is_empty(DrenuKolektori_all),,drop=FALSE] # 1
+table(st_is_valid(DrenuKolektori_all2))
+
+
+write_sf(DrenuKolektori_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="DrenuKolektori",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# drenāžas tīkla būves ----
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_networkstructures",
+                  count=1)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_networkstructures"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_DrenazasTiklaBuves"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+DrenazasTiklaBuves_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                               layer="temp_DrenazasTiklaBuves")
+DrenazasTiklaBuves_all2 = DrenazasTiklaBuves_all[!st_is_empty(DrenazasTiklaBuves_all),,drop=FALSE] # 0
+table(st_is_valid(DrenazasTiklaBuves_all2))
+
+
+write_sf(DrenazasTiklaBuves_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="DrenazasTiklaBuves",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# grāvji -----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_ditches",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_ditches"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_Gravji"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+Gravji_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                   layer="temp_Gravji")
+Gravji_all2 = Gravji_all[!st_is_empty(Gravji_all),,drop=FALSE] # 0
+table(st_is_valid(Gravji_all2))
+
+
+write_sf(Gravji_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="Gravji",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# hidrometriskie posteņi ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_hydropost",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_hydropost"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./IevadesDati/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_HidrometriskiePosteni"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+HidrometriskiePosteni_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                  layer="temp_HidrometriskiePosteni")
+HidrometriskiePosteni_all2 = HidrometriskiePosteni_all[!st_is_empty(HidrometriskiePosteni_all),,drop=FALSE] # 0
+table(st_is_valid(HidrometriskiePosteni_all2))
+
+
+write_sf(HidrometriskiePosteni_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="HidrometriskiePosteni",
+         append=FALSE)
+rm(list=ls())
+
+
+# liela diametra kolektori ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_bigdraincollectors",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_bigdraincollectors"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_LielaDiametraKolektori"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+LielaDiametraKolektori_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                   layer="temp_LielaDiametraKolektori")
+LielaDiametraKolektori_all2 = LielaDiametraKolektori_all[!st_is_empty(LielaDiametraKolektori_all),,drop=FALSE] # 0
+table(st_is_valid(LielaDiametraKolektori_all2))
+
+
+write_sf(LielaDiametraKolektori_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="LielaDiametraKolektori",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# piketi ----
+
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_stateriverspickets",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_stateriverspickets"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_Piketi"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+Piketi_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                   layer="temp_Piketi")
+Piketi_all2 = Piketi_all[!st_is_empty(Piketi_all),,drop=FALSE] # 0
+table(st_is_valid(Piketi_all2))
+
+
+write_sf(Piketi_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="Piketi",
+         append=FALSE)
+rm(list=ls())
+
+
+# polderu sūkņu stacijas -----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_polderpumpingstation",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_polderpumpingstation"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_PolderuSuknuStacijas"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+PolderuSuknuStacijas_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                 layer="temp_PolderuSuknuStacijas")
+PolderuSuknuStacijas_all2 = PolderuSuknuStacijas_all[!st_is_empty(PolderuSuknuStacijas_all),,drop=FALSE] # 0
+table(st_is_valid(PolderuSuknuStacijas_all2))
+
+
+write_sf(PolderuSuknuStacijas_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="PolderuSuknuStacijas",
+         append=FALSE)
+rm(list=ls())
+
+
+
+# polderu teritorijas -----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_polderterritory",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+geometrijas=st_set_crs(geometrijam,st_crs(3059))
+
+library(gdalUtilities)
+ensure_multipolygons <- function(X) {
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+poligoni <- ensure_multipolygons(geometrijas)
+PolderuTeritorijas_all2 = poligoni[!st_is_empty(poligoni),,drop=FALSE] # 0
+table(st_is_valid(PolderuTeritorijas_all2))
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_polderterritory"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_PolderuTeritorijas"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("MULTIPOLYGON")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+PolderuTeritorijas_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                               layer="temp_PolderuTeritorijas")
+PolderuTeritorijas_all2 = PolderuTeritorijas_all[!st_is_empty(PolderuTeritorijas_all),,drop=FALSE] # 0
+table(st_is_valid(PolderuTeritorijas_all2))
+
+
+write_sf(PolderuTeritorijas_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="PolderuTeritorijas",
+         append=FALSE)
+rm(list=ls())
+
+
+# sateces baseini ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_catchment",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_catchment"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_SatecesBaseini"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    ensure_multipolygons <- function(X) {
+      tmp1 <- tempfile(fileext = ".gpkg")
+      tmp2 <- tempfile(fileext = ".gpkg")
+      st_write(X, tmp1)
+      ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+      Y <- st_read(tmp2)
+      st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+    }
+    chunk <- ensure_multipolygons(chunk)
+    
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+SatecesBaseini_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                           layer="temp_SatecesBaseini")
+SatecesBaseini_all2 = SatecesBaseini_all[!st_is_empty(SatecesBaseini_all),,drop=FALSE] # 0
+table(st_is_valid(SatecesBaseini_all2))
+
+SatecesBaseini_all3=st_make_valid(SatecesBaseini_all2)
+table(st_is_valid(SatecesBaseini_all3))
+SatecesBaseini_all3
+
+write_sf(SatecesBaseini_all3,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="SatecesBaseini",
+         append=FALSE)
+rm(list=ls())
+
+
+# savienojumi ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_connectionpoints",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_connectionpoints"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_Savienojumi"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    chunk=st_cast(chunk,"POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+Savienojumi_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                        layer="temp_Savienojumi")
+Savienojumi_all2 = Savienojumi_all[!st_is_empty(Savienojumi_all),,drop=FALSE] # 0
+table(st_is_valid(Savienojumi_all2))
+
+
+write_sf(Savienojumi_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="Savienojumi",
+         append=FALSE)
+rm(list=ls())
+
+
+# valsts nozīme ūdensnotekas -----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_statecontrolledrivers",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_statecontrolledrivers"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_ValstsNozimesUdensnotekas"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    chunk=st_cast(chunk,"MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+ValstsNozimesUdensnotekas_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                      layer="temp_ValstsNozimesUdensnotekas")
+ValstsNozimesUdensnotekas_all2 = ValstsNozimesUdensnotekas_all[!st_is_empty(ValstsNozimesUdensnotekas_all),,drop=FALSE] # 0
+table(st_is_valid(ValstsNozimesUdensnotekas_all2))
+
+
+write_sf(ValstsNozimesUdensnotekas_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="ValstsNozimesUdensnotekas",
+         append=FALSE)
+rm(list=ls())
+
+
+# zmni reģions ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_zmniregion",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+library(gdalUtilities)
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_zmniregion"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_ZMNIRegions"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    ensure_multipolygons <- function(X) {
+      tmp1 <- tempfile(fileext = ".gpkg")
+      tmp2 <- tempfile(fileext = ".gpkg")
+      st_write(X, tmp1)
+      ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+      Y <- st_read(tmp2)
+      st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+    }
+    chunk <- ensure_multipolygons(chunk)
+    
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+ZMNIRegions_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                        layer="temp_ZMNIRegions")
+ZMNIRegions_all2 = ZMNIRegions_all[!st_is_empty(ZMNIRegions_all),,drop=FALSE] # 0
+table(st_is_valid(ZMNIRegions_all2))
+
+
+write_sf(ZMNIRegions_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="ZMNIRegions",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# ūdensnotekas (novadrāvji) -----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_waterdrainditches",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_waterdrainditches"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_UdensnotekasNovadgravji"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    chunk=st_cast(chunk,"MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+UdensnotekasNovadgravji_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                    layer="temp_UdensnotekasNovadgravji")
+UdensnotekasNovadgravji_all2 = UdensnotekasNovadgravji_all[!st_is_empty(UdensnotekasNovadgravji_all),,drop=FALSE] # 0
+table(st_is_valid(UdensnotekasNovadgravji_all2))
+
+
+write_sf(UdensnotekasNovadgravji_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="UdensnotekasNovadgravji",
+         append=FALSE)
+rm(list=ls())
+
+
+
+
+# ūdensnoteku un grāvju piketi ----
+
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_ditchpicket",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_ditchpicket"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_UdensnotekuNovadgravjuPiketi"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code)) %>%
+      st_cast("POINT")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+UdensnotekuNovadgravjuPiketi_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                         layer="temp_UdensnotekuNovadgravjuPiketi")
+UdensnotekuNovadgravjuPiketi_all2 = UdensnotekuNovadgravjuPiketi_all[!st_is_empty(UdensnotekuNovadgravjuPiketi_all),,drop=FALSE] # 0
+table(st_is_valid(UdensnotekuNovadgravjuPiketi_all2))
+
+
+write_sf(UdensnotekuNovadgravjuPiketi_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="UdensnotekuNovadgravjuPiketi",
+         append=FALSE)
+rm(list=ls())
+
+
+
+# ūdensteču asis ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_stateriversline",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_stateriversline"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_UdenstecuAsis"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    chunk=st_cast(chunk,"MULTILINESTRING")
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+UdenstecuAsis_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                          layer="temp_UdenstecuAsis")
+UdenstecuAsis_all2 = UdenstecuAsis_all[!st_is_empty(UdenstecuAsis_all),,drop=FALSE] # 0
+table(st_is_valid(UdenstecuAsis_all2))
+
+
+write_sf(UdenstecuAsis_all2,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="UdenstecuAsis",
+         append=FALSE)
+rm(list=ls())
+
+
+
+# ūdenstešu ūdens virsmas laukumi ----
+
+
+link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+url=parse_url(link)
+
+url$query <- list(service = "wfs",request = "GetCapabilities")
+request <- build_url(url)
+bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
+
+bwk_client$getFeatureTypes(pretty = TRUE)
+
+# geometrijam
+
+url$query <- list(service = "wfs",
+                  request = "GetFeature",
+                  srsName="EPSG:3059",
+                  typename = "zmni:zmni_stateriverspolygon",
+                  count=100)
+request <- build_url(url)
+
+geometrijam <- read_sf(request)
+geometrijam
+
+
+# lejupielādei
+base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
+type_name <- "zmni:zmni_stateriverspolygon"
+crs_code <- 3059
+chunk_size <- 100000
+gpkg_path <- "./Geodata/2024/MKIS/temp_MKIS_2025.gpkg"
+layer_name <- "temp_UdenstecuVirsmasLaukumi"
+i <- 0
+
+repeat {
+  message("Fetching features ", i * chunk_size + 1, " to ", (i + 1) * chunk_size, "...")
+  
+  query <- list(
+    service = "WFS",
+    version = "2.0.0",
+    request = "GetFeature",
+    typename = type_name,
+    srsName = paste0("EPSG:", crs_code),
+    count = chunk_size,
+    startIndex = i * chunk_size
+  )
+  
+  req_url <- modify_url(base_url, query = query)
+  
+  try({
+    chunk <- read_sf(req_url)
+    if (nrow(chunk) == 0) break
+    
+    # Set CRS and cast to MULTILINESTRING, POINT, MULTIPOLYGON
+    chunk <- chunk %>%
+      st_set_crs(st_crs(crs_code))
+    
+    ensure_multipolygons <- function(X) {
+      tmp1 <- tempfile(fileext = ".gpkg")
+      tmp2 <- tempfile(fileext = ".gpkg")
+      st_write(X, tmp1)
+      ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+      Y <- st_read(tmp2)
+      st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+    }
+    chunk <- ensure_multipolygons(chunk)
+    
+    
+    # Write chunk to GeoPackage (append mode after first)
+    st_write(
+      chunk, 
+      dsn = gpkg_path,
+      layer = layer_name,
+      append = i != 0,
+      quiet = FALSE
+    )
+    
+    i <- i + 1
+  }, silent = TRUE)
+  Sys.sleep(0.5)
+}
+
+message("All chunks written to ", gpkg_path, " in layer ", layer_name)
+
+
+UdenstecuVirsmasLaukumi_all=st_read("./Geodata/2024/MKIS/temp_MKIS_2025.gpkg",
+                                    layer="temp_UdenstecuVirsmasLaukumi")
+UdenstecuVirsmasLaukumi_all2 = UdenstecuVirsmasLaukumi_all[!st_is_empty(UdenstecuVirsmasLaukumi_all),,drop=FALSE] # 0
+table(st_is_valid(UdenstecuVirsmasLaukumi_all2))
+
+UdenstecuVirsmasLaukumi_all3=st_make_valid(UdenstecuVirsmasLaukumi_all2)
+table(st_is_valid(UdenstecuVirsmasLaukumi_all3))
+
+write_sf(UdenstecuVirsmasLaukumi_all3,
+         "./Geodata/2024/MKIS/MKIS_2025.gpkg",
+         layer="UdenstecuVirsmasLaukumi",
+         append=FALSE)
+rm(list=ls())
+```
+
 
 ## TopographicMap {#Ch04.04}
 
-krā
+To ensure the research process at the University of Latvia, the third (completed 
+by January 1, 2018) and fourth (unfinished) versions of the Latvian Geospatial 
+Information Agency's topographic map M:10000 vector geodatabase were received. 
+The most recent version is available for [public viewing](), 
+but access to vector data is restricted.
+
+For the purposes of this project, the ESRI geodatabase has been converted to a 
+geopackage file. As part of the file format change, geometries (empty, their 
+validity checked and corrected where necessary) and coordinate system have 
+been checked.
+
+Files were stored at `Geodata/2024/TopographicMap/`.
+
+After dealing with each database seperately, layers used in this project were 
+combined, preffering the most timely per mapping page. These layers are:
+
+- `bride_L`, describing bridges as lines;
+
+- `bridge_P`, describing bridges as points;
+
+- `hidro_A`, describing waterbodies as polygons;
+
+- `hidro_L`, describing ditches and small rivers as lines;
+
+- `landus_A`, describing LULC as polygons;
+
+- `road_A`, describing larger roads as polygons;
+
+- `road_L`, describing different including very small and unused roads as lines;
+
+- `swamp_A`, describing bogs as polygons;
+
+- `flora_L`, describing linear tree and shrub formations.
+
+
+``` r
+# libs ----
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# v4 ----
+
+
+slani_v4=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v4_20250703.gdb/")
+write.xlsx(slani_v4,"./Geodata/2024/TopographicMap/slani_v4partial.xlsx")
+
+slani_v4$geometrijai=as.character(slani_v4$geomtype)
+table(slani_v4$geometrijai)
+
+slani_v4$geometrijai2=ifelse(slani_v4$geometrijai=="3D Point","POINT",
+                                   ifelse(slani_v4$geometrijai=="Multi Polygon","MULTIPOLYGON",
+                                          ifelse(slani_v4$geometrijai=="3D Multi Line String","MULTILINESTRING",
+                                                 ifelse(slani_v4$geometrijai=="3D Multi Polygon","MULTIPOLYGON",NA))))
+
+slani4x=data.frame(name=slani_v4$name,
+                   geometrija=slani_v4$geometrijai2)
+
+ciklam4x=levels(factor(slani4x$name))
+for(i in seq_along(ciklam4x)){
+  print(i)
+  sakums=Sys.time()
+  nosaukums=ciklam4x[i]
+  objekts=slani4x %>% 
+    filter(name==nosaukums)
+  print(nosaukums)
+  slanis=read_sf("./Geodata/2024/TopographicMap/topo10v4/Latvija_LKS92_v4_20250703.gdb/",layer=nosaukums)
+  slanisZM=st_zm(slanis)
+  slanis2=st_cast(slanisZM,to=objekts$geometrija)
+  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer=nosaukums,append=FALSE)
+  ilgums=Sys.time()-sakums
+  print(ilgums)
+}
+
+
+
+# v3 ----
+
+slani_v3=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/")
+write.xlsx(slani_v3,"./Geodata/2024/TopographicMap/slani_v3.xlsx")
+
+slani_v3$geometrijai=as.character(slani_v3$geomtype)
+table(slani_v3$geometrijai)
+
+slani_v3$geometrijai2=ifelse(slani_v3$geometrijai=="3D Point","POINT",
+                                   ifelse(slani_v3$geometrijai=="Multi Polygon","MULTIPOLYGON",
+                                          ifelse(slani_v3$geometrijai=="3D Multi Line String","MULTILINESTRING",
+                                                 ifelse(slani_v3$geometrijai=="3D Multi Polygon","MULTIPOLYGON",
+                                                        ifelse(slani_v3$geometrijai=="Point","POINT",
+                                                               ifelse(slani_v3$geometrijai=="Multi Line String","MULTILINESTRING",
+                                                                      ifelse(slani_v3$geometrijai=="3D Measured Point","POINT",NA)))))))
+
+slani3x=data.frame(name=slani_v3$name,
+                   geometrija=slani_v3$geometrijai2)
+
+ciklam3x=levels(factor(slani3x$name))
+for(i in seq_along(ciklam3x)){
+  print(i)
+  sakums=Sys.time()
+  nosaukums=ciklam3x[i]
+  objekts=slani3x %>% 
+    filter(name==nosaukums)
+  print(nosaukums)
+  slanis=read_sf("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/",layer=nosaukums)
+  slanisZM=st_zm(slanis)
+  slanis2=st_cast(slanisZM,to=objekts$geometrija)
+  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer=nosaukums,append=FALSE)
+  ilgums=Sys.time()-sakums
+  print(ilgums)
+}
+
+# combination ----
+```
+
 
 
 ## Corine Land Cover 2018 {#Ch04.05}
@@ -67,8 +1916,22 @@ sfarrow::st_write_parquet(clcLV3, "./Geodata/2024/CLC/CLC_LV_2018.parquet")
 
 ## Publicly available LVM data {#Ch04.06}
 
-krā
+[Latvian State Forests geospatial data on forest infrastructure and its description](https://data.gov.lv/dati/lv/dataset/as-latvijas-valsts-mezi-mezsaimniecibas-infrastruktura). The 
+following data sets were used in the project:
+- roads:
+    - forest roads;
+    - forest roads to be developed;
+    - turning areas;
+    - changeover areas;
+    - driveways;
+- drainage systems:
+    - ditches;
+    - drainage systems;
+    - renovated drainage facilities.
+Initially, no additional processing of this data was performed. It was used to 
+prepare [geodata products](#Ch05) (more specifically, [Landscape classification](#Ch05.03)).
 
+Data were downloaded to `Geodata/2024/LVM_OpenData`
 
 ## Soil data {#Ch04.07}
 
