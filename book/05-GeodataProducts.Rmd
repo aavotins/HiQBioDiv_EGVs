@@ -1,6 +1,10 @@
 # Geodata products {#Ch05}
 
-some raw data need extensive processing before EGVs can be created
+Some raw data need extensive processing before EGVs can be created, many EGVs 
+depend on processing raw geodata into geodata products before EGVs can be create, 
+and in some cases, EGV itself could be created from ras geodata, but it has 
+to be spatially restricted to certain locations. This chapter describes these geodata 
+products and procedures involved in creating them.
 
 ## Terrain products {#Ch05.01}
 

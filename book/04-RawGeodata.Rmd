@@ -112,6 +112,8 @@ exclusively in farmlands. With time, data were digitised and combined with some
 other information creating artefacts. Therefore preprocessing was necessary. The 
 version we used was obtained form project "GOODWATER" C1D1_Deliverable_R2.
 
+File is stored at `Geodata/2024/Soils/TopSoil_LV/`.
+
 Preprocessing included:
 
 - reclassification:
@@ -133,7 +135,6 @@ GIS. Investigations led to exclusion of land parcels from 200 ha.
 
 - rasterization to 10 m template with highest class code prevailing.
 
-File is stored at `Geodata/2024/Soils/TopSoil_LV/`
 
 ```{r,eval=FALSE}
 # libs ----
@@ -198,6 +199,8 @@ plot(virsaugsnem2)
 Data on Quaternary Geology are digitised and stored by University of Latvia 
 Geology group.
 
+File is stored at `Geodata/2024/Soils/QuaternaryGeology_LV/`.
+
 Preprocessing included:
 
 - reclassification:
@@ -217,7 +220,6 @@ Preprocessing included:
 
 - rasterization to 10 m template with highest class code prevailing.
 
-File is stored at `Geodata/2024/Soils/QuaternaryGeology_LV/`
 
 ```{r, eval=FALSE}
 # libs ----
@@ -285,7 +287,6 @@ The distribution of organic soils was modelled by EU LIFE Programme project
 "Demonstration of climate change mitigation potential of nutrients rich organic 
 soils in Baltic States and Finland" at the scientific institue SILAVA. Results are 
 available from their web service: https://silava.forestradar.com/geoserver/silava
-
 
 Downloaded file was stored at `Geodata/2024/Soils/OrganicSoils_SILAVA/`.
 
@@ -371,16 +372,181 @@ writeRaster(kudra_norvLV,
 
 ## Dynamic World data {#Ch04.08}
 
-krā
+Dynamic World (DW) is a relatively new Earth observation system product that 
+classifies land cover and land use (LULC) into nine categories (0=water, 1=trees, 
+2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 
+8=snow_and_ice), for each ESA Copernicus Sentinel-2 image with identified 
+cloudiness ≤35, allowing for filtering and various aggregations [@DynWorld].
+
+DW input information - raster layer for each season in each year - prepared on 
+the Google Earth Engine platform [@GEEpaper] using 
+a [replication script](https://code.earthengine.google.com/0f9fd61ee41af11d218ce8692abebe9b). 
+To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
+and sufficient space on Google Drive. When executing the command line, a download 
+will be offered for a file covering the time period from the value in row 7 to 
+the value in row 8 (the file name should be specified in row 32, its 
+description in row 33 and the directory on Google Drive in row 31, or 
+all of this can be specified by confirming the save). This script is not optimized 
+for preparing all seasonal sections for all years, so in order to reproduce or 
+expand this study, it is necessary to change it manually.
+
+Downloaded files are to be stored at `Geodata/2024/DynamicWorld/RAW/`.
+
+During download, it can be seen that each layer covering the whole of Latvia is 
+divided into several sheets. This is because, in order to ensure a true zero 
+class (class "water" rather than background), the layers are encoded as Float 
+rather than integers. All of these tiles need to be downloaded, and the following 
+R command lines combine them, ensuring that the coordinate system and pixels 
+correspond to the reference raster.
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+# 10 m template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# DW export no GEE ----
+faili=data.frame(faili=list.files("./Geodata/2024/DynamicWorld/RAW/"))
+faili$celi_sakums=paste0("./Geodata/2024/DynamicWorld/RAW/",faili$faili)
+
+# Sagatavošana ----
+faili=faili %>% 
+  separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
+  mutate(unikalais=paste0(DW,"_",gads,"_",periods),
+         mosaic_name=paste0(unikalais,".tif"),
+         masaic_cels=paste0("./Geodata/2024/DynamicWorld/",mosaic_name))
+
+# every layer consists of two tiles
+unikalie=levels(factor(faili$unikalais))
+min(table(faili$unikalais))
+max(table(faili$unikalais))
+
+# job
+for(i in seq_along(unikalie)){
+  unikalais=faili %>% filter(unikalais==unikalie[i])
+  beigu_cels=unique(unikalais$masaic_cels)
+  
+  print(i)
+  
+  viens=rast(unikalais$celi_sakums[1])
+  divi=rast(unikalais$celi_sakums[2])
+  
+  viens2=project(viens,template10)
+  divi2=project(divi,template10)
+  
+  mozaika=mosaic(viens2,divi2,fun="first")
+  maskets=mask(mozaika,template10,
+               filename=beigu_cels,
+               overwrite=TRUE)
+
+  print(beigu_cels)
+}
+
+```
 
 
 ## The Global Forest Watch {#Ch04.09}
 
-krā
+The Global Forest Watch (GFW) is a widely known product that describes tree 
+canopy cover in 2000, its annual growth from 2001 to 2012, and its annual 
+loss from 2001 to the current version, which is updated annually [@theGFW]. The 
+data is available both on the [project website](https://data.globalforestwatch.org/documents/941f17325a494ed78c4817f9bb20f33a/explore) 
+and on [GEE](https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2024_v1_12), where 
+it was developed. This project uses v1.12, in which the last year of tree loss 
+dating is 2024, preparing it for download on the GEE platform with 
+this [replication script](https://code.earthengine.google.com/4a12b7504ceafe7f422dd7efbe804b67). 
+To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
+and sufficient space on Google Drive. When executing the command lines, you will 
+be offered to download the file, which you need to save to Google Drive.
+
+After executing the command lines and preparing the results in Google Drive, 
+four files are available for download. The location to download them is 
+`Geodata/2024/Trees/GFW/RAW/`. After download, these files need to be projected 
+to match the reference raster.
+
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# 10 m rastra template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# TreeCoverLoss ----
+treecoverloss=rast("./Geodata/2024/Trees/GFW/RAW/TreeCoverLoss_v1_12.tif")
+
+tcl=ifel(treecoverloss<1,NA,treecoverloss)
+
+tcl2=terra::project(tcl,paraugs)
+tcl3=mask(tcl2,paraugs,filename="./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif",overwrite=TRUE)
+
+```
+
 
 ## Palsar {#Ch04.10}
 
-krā
+The Palsar Forests resource is based on PALSAR-2 synthetic aperture radar (SAR) 
+reflectance classification of forest and non-forest land with a pixel 
+resolution of 25 m. Forests are classified as areas of at least 0.5 ha covered 
+with trees, where tree cover (at least 5 m high) is at least 10% [@PALSARForest]. 
+The data is available at [GEE](https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_FNF4). 
+This project uses a 4-class version (1=Dense Forest, 2=Non-dense Forest, 
+3=Non-Forest, 4=Water), in which the last tree cover dating year is 2020, 
+prepared for download on the GEE platform with this 
+[replication script](https://code.earthengine.google.com/3ec78ab057e6c8910cb1546002132b34). 
+To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
+and sufficient space on Google Drive. When executing the command lines, you will 
+be offered to download the file, which you need to save to Google Drive.
+
+After executing the command lines and preparing the results in Google Drive, 
+four files are available for download. The location to download them is 
+`Geodata/2024/Trees/Palsar/RAW/`. After download, these files need to be projected 
+to match the reference raster and merged. In this resource, trees are coded into 
+two groups: 1=Dense Forest and 2=Non-dense Forest, which need to be merged and 
+the rest converted to missing values (code below).
+
+Although the data in this resource describes the situation in 2020 rather 
+than 2024, it has been used because [The Global Forest Watch data](#Ch04.09) is 
+available to describe the disappearance of tree canopy cover, but the appearance 
+of canopy cover is not so rapid that there would be significant changes over a 
+four-year period.
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# 10 m rastra template ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+
+# PALSAR Forests ----
+
+fnf1=rast("./Geodata/2024/Trees/Palsar/RAW/ForestNonForest-0000023296-0000023296.tif")
+fnf2=rast("./Geodata/2024/Trees/Palsar/RAW/ForestNonForest-0000023296-0000000000.tif")
+fnf3=rast("./Geodata/2024/Trees/Palsar/RAW/ForestNonForest-0000000000-0000023296.tif")
+fnf4=rast("./Geodata/2024/Trees/Palsar/RAW/ForestNonForest-0000000000-0000000000.tif")
+
+fnf1p=terra::project(fnf1,template10)
+fnf2p=terra::project(fnf2,template10)
+fnf3p=terra::project(fnf3,template10)
+fnf4p=terra::project(fnf4,template10)
+
+fnfA=terra::merge(fnf1p,fnf2p)
+fnfB=terra::merge(fnfA,fnf3p)
+fnfC=terra::merge(fnfB,fnf4p)
+plot(fnfC)
+
+fnf_X=ifel(fnfC<=2&fnfC>=1,1,NA)
+plot(fnf_X)
+
+fnf_XX=mask(fnf_X,template10,
+            filename="./Geodata/2024/Trees/Palsar/Palsar_Forests.tif",
+            overwrite=TRUE)
+```
+
+
 
 ## CHELSA v2.1 {#Ch04.11}
 
@@ -522,7 +688,7 @@ index (NDVI), the normalized difference moisture index (NDMI), and the
 normalized difference water index (NDWI) as well as various metrics. 
 A [replication script](https://code.earthengine.google.com/78024b3354cccb526159fd865b214771) 
 can be used to prepare the data. To use this script, 
-you need a [GEE account and project]() 
+you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
 and sufficient space on Google Drive. When executing the command lines, the 
 following files will be offered for download:
 
@@ -674,6 +840,9 @@ using the 8-neighbor approach. The same applies to the aspect or slope
 direction.
 
 ```{r,eval=FALSE}
+# Libs ----
+
+
 
 ```
 

@@ -795,7 +795,11 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Ch05" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Geodata products<a href="Ch05.html#Ch05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>some raw data need extensive processing before EGVs can be created</p>
+<p>Some raw data need extensive processing before EGVs can be created, many EGVs
+depend on processing raw geodata into geodata products before EGVs can be create,
+and in some cases, EGV itself could be created from ras geodata, but it has
+to be spatially restricted to certain locations. This chapter describes these geodata
+products and procedures involved in creating them.</p>
 <div id="Ch05.01" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Terrain products<a href="Ch05.html#Ch05.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>krā</p>
@@ -821,54 +825,54 @@ was overlaid by <a href="Ch04.html#Ch04.07.06">Organic soils as modelled by Univ
 saved for EGV creation.</p></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="Ch05.html#cb17-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
-<span id="cb17-2"><a href="Ch05.html#cb17-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
-<span id="cb17-3"><a href="Ch05.html#cb17-3" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="Ch05.html#cb17-4" tabindex="-1"></a><span class="co"># step 1</span></span>
-<span id="cb17-5"><a href="Ch05.html#cb17-5" tabindex="-1"></a>step1<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>)</span>
-<span id="cb17-6"><a href="Ch05.html#cb17-6" tabindex="-1"></a>step1x<span class="ot">=</span><span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,</span>
-<span id="cb17-7"><a href="Ch05.html#cb17-7" tabindex="-1"></a>            <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">2</span>,<span class="dv">2</span>,</span>
-<span id="cb17-8"><a href="Ch05.html#cb17-8" tabindex="-1"></a>                 <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">3</span>,<span class="dv">2</span>,</span>
-<span id="cb17-9"><a href="Ch05.html#cb17-9" tabindex="-1"></a>                      <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">4</span>,<span class="dv">3</span>,</span>
-<span id="cb17-10"><a href="Ch05.html#cb17-10" tabindex="-1"></a>                           <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">8</span>,<span class="dv">4</span>,<span class="cn">NA</span>)))))</span>
-<span id="cb17-11"><a href="Ch05.html#cb17-11" tabindex="-1"></a><span class="fu">plot</span>(step1x)</span>
-<span id="cb17-12"><a href="Ch05.html#cb17-12" tabindex="-1"></a>step1xy<span class="ot">=</span><span class="fu">as.numeric</span>(step1x)</span>
-<span id="cb17-13"><a href="Ch05.html#cb17-13" tabindex="-1"></a><span class="fu">plot</span>(step1xy)</span>
-<span id="cb17-14"><a href="Ch05.html#cb17-14" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="Ch05.html#cb17-15" tabindex="-1"></a></span>
-<span id="cb17-16"><a href="Ch05.html#cb17-16" tabindex="-1"></a><span class="co"># step 2</span></span>
-<span id="cb17-17"><a href="Ch05.html#cb17-17" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif&quot;</span>)</span>
-<span id="cb17-18"><a href="Ch05.html#cb17-18" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">as.numeric</span>(step2a)<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb17-19"><a href="Ch05.html#cb17-19" tabindex="-1"></a><span class="fu">plot</span>(step2a)</span>
-<span id="cb17-20"><a href="Ch05.html#cb17-20" tabindex="-1"></a></span>
-<span id="cb17-21"><a href="Ch05.html#cb17-21" tabindex="-1"></a>step2<span class="ot">=</span><span class="fu">cover</span>(step2a,step1x)</span>
-<span id="cb17-22"><a href="Ch05.html#cb17-22" tabindex="-1"></a><span class="fu">plot</span>(step2)</span>
-<span id="cb17-23"><a href="Ch05.html#cb17-23" tabindex="-1"></a></span>
-<span id="cb17-24"><a href="Ch05.html#cb17-24" tabindex="-1"></a><span class="co"># step 3</span></span>
-<span id="cb17-25"><a href="Ch05.html#cb17-25" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif&quot;</span>)</span>
-<span id="cb17-26"><a href="Ch05.html#cb17-26" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">as.numeric</span>(step3a)<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb17-27"><a href="Ch05.html#cb17-27" tabindex="-1"></a><span class="fu">plot</span>(step3a)</span>
-<span id="cb17-28"><a href="Ch05.html#cb17-28" tabindex="-1"></a></span>
-<span id="cb17-29"><a href="Ch05.html#cb17-29" tabindex="-1"></a>step3<span class="ot">=</span><span class="fu">cover</span>(step3a,step2)</span>
-<span id="cb17-30"><a href="Ch05.html#cb17-30" tabindex="-1"></a><span class="fu">plot</span>(step3)</span>
-<span id="cb17-31"><a href="Ch05.html#cb17-31" tabindex="-1"></a></span>
-<span id="cb17-32"><a href="Ch05.html#cb17-32" tabindex="-1"></a><span class="co"># step 4</span></span>
-<span id="cb17-33"><a href="Ch05.html#cb17-33" tabindex="-1"></a>step4a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicLU.tif&quot;</span>)</span>
-<span id="cb17-34"><a href="Ch05.html#cb17-34" tabindex="-1"></a>step4b<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicSilava.tif&quot;</span>)</span>
-<span id="cb17-35"><a href="Ch05.html#cb17-35" tabindex="-1"></a></span>
-<span id="cb17-36"><a href="Ch05.html#cb17-36" tabindex="-1"></a>step4c<span class="ot">=</span><span class="fu">cover</span>(step4a,step4b)</span>
-<span id="cb17-37"><a href="Ch05.html#cb17-37" tabindex="-1"></a></span>
-<span id="cb17-38"><a href="Ch05.html#cb17-38" tabindex="-1"></a>step4<span class="ot">=</span><span class="fu">ifel</span>(step4c<span class="sc">==</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="cn">NA</span>)</span>
-<span id="cb17-39"><a href="Ch05.html#cb17-39" tabindex="-1"></a><span class="fu">plot</span>(step4)</span>
-<span id="cb17-40"><a href="Ch05.html#cb17-40" tabindex="-1"></a></span>
-<span id="cb17-41"><a href="Ch05.html#cb17-41" tabindex="-1"></a><span class="co"># step 5</span></span>
-<span id="cb17-42"><a href="Ch05.html#cb17-42" tabindex="-1"></a></span>
-<span id="cb17-43"><a href="Ch05.html#cb17-43" tabindex="-1"></a>step5<span class="ot">=</span><span class="fu">cover</span>(step4,step3)</span>
-<span id="cb17-44"><a href="Ch05.html#cb17-44" tabindex="-1"></a><span class="fu">plot</span>(step5)</span>
-<span id="cb17-45"><a href="Ch05.html#cb17-45" tabindex="-1"></a></span>
-<span id="cb17-46"><a href="Ch05.html#cb17-46" tabindex="-1"></a><span class="fu">writeRaster</span>(step5,</span>
-<span id="cb17-47"><a href="Ch05.html#cb17-47" tabindex="-1"></a>           <span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_combined.tif&quot;</span>,</span>
-<span id="cb17-48"><a href="Ch05.html#cb17-48" tabindex="-1"></a>           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Ch05.html#cb21-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
+<span id="cb21-2"><a href="Ch05.html#cb21-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb21-3"><a href="Ch05.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="Ch05.html#cb21-4" tabindex="-1"></a><span class="co"># step 1</span></span>
+<span id="cb21-5"><a href="Ch05.html#cb21-5" tabindex="-1"></a>step1<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>)</span>
+<span id="cb21-6"><a href="Ch05.html#cb21-6" tabindex="-1"></a>step1x<span class="ot">=</span><span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,</span>
+<span id="cb21-7"><a href="Ch05.html#cb21-7" tabindex="-1"></a>            <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">2</span>,<span class="dv">2</span>,</span>
+<span id="cb21-8"><a href="Ch05.html#cb21-8" tabindex="-1"></a>                 <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">3</span>,<span class="dv">2</span>,</span>
+<span id="cb21-9"><a href="Ch05.html#cb21-9" tabindex="-1"></a>                      <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">4</span>,<span class="dv">3</span>,</span>
+<span id="cb21-10"><a href="Ch05.html#cb21-10" tabindex="-1"></a>                           <span class="fu">ifel</span>(step1<span class="sc">==</span><span class="dv">8</span>,<span class="dv">4</span>,<span class="cn">NA</span>)))))</span>
+<span id="cb21-11"><a href="Ch05.html#cb21-11" tabindex="-1"></a><span class="fu">plot</span>(step1x)</span>
+<span id="cb21-12"><a href="Ch05.html#cb21-12" tabindex="-1"></a>step1xy<span class="ot">=</span><span class="fu">as.numeric</span>(step1x)</span>
+<span id="cb21-13"><a href="Ch05.html#cb21-13" tabindex="-1"></a><span class="fu">plot</span>(step1xy)</span>
+<span id="cb21-14"><a href="Ch05.html#cb21-14" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="Ch05.html#cb21-15" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="Ch05.html#cb21-16" tabindex="-1"></a><span class="co"># step 2</span></span>
+<span id="cb21-17"><a href="Ch05.html#cb21-17" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif&quot;</span>)</span>
+<span id="cb21-18"><a href="Ch05.html#cb21-18" tabindex="-1"></a>step2a<span class="ot">=</span><span class="fu">as.numeric</span>(step2a)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb21-19"><a href="Ch05.html#cb21-19" tabindex="-1"></a><span class="fu">plot</span>(step2a)</span>
+<span id="cb21-20"><a href="Ch05.html#cb21-20" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="Ch05.html#cb21-21" tabindex="-1"></a>step2<span class="ot">=</span><span class="fu">cover</span>(step2a,step1x)</span>
+<span id="cb21-22"><a href="Ch05.html#cb21-22" tabindex="-1"></a><span class="fu">plot</span>(step2)</span>
+<span id="cb21-23"><a href="Ch05.html#cb21-23" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="Ch05.html#cb21-24" tabindex="-1"></a><span class="co"># step 3</span></span>
+<span id="cb21-25"><a href="Ch05.html#cb21-25" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif&quot;</span>)</span>
+<span id="cb21-26"><a href="Ch05.html#cb21-26" tabindex="-1"></a>step3a<span class="ot">=</span><span class="fu">as.numeric</span>(step3a)<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb21-27"><a href="Ch05.html#cb21-27" tabindex="-1"></a><span class="fu">plot</span>(step3a)</span>
+<span id="cb21-28"><a href="Ch05.html#cb21-28" tabindex="-1"></a></span>
+<span id="cb21-29"><a href="Ch05.html#cb21-29" tabindex="-1"></a>step3<span class="ot">=</span><span class="fu">cover</span>(step3a,step2)</span>
+<span id="cb21-30"><a href="Ch05.html#cb21-30" tabindex="-1"></a><span class="fu">plot</span>(step3)</span>
+<span id="cb21-31"><a href="Ch05.html#cb21-31" tabindex="-1"></a></span>
+<span id="cb21-32"><a href="Ch05.html#cb21-32" tabindex="-1"></a><span class="co"># step 4</span></span>
+<span id="cb21-33"><a href="Ch05.html#cb21-33" tabindex="-1"></a>step4a<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicLU.tif&quot;</span>)</span>
+<span id="cb21-34"><a href="Ch05.html#cb21-34" tabindex="-1"></a>step4b<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_OrganicSilava.tif&quot;</span>)</span>
+<span id="cb21-35"><a href="Ch05.html#cb21-35" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="Ch05.html#cb21-36" tabindex="-1"></a>step4c<span class="ot">=</span><span class="fu">cover</span>(step4a,step4b)</span>
+<span id="cb21-37"><a href="Ch05.html#cb21-37" tabindex="-1"></a></span>
+<span id="cb21-38"><a href="Ch05.html#cb21-38" tabindex="-1"></a>step4<span class="ot">=</span><span class="fu">ifel</span>(step4c<span class="sc">==</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="cn">NA</span>)</span>
+<span id="cb21-39"><a href="Ch05.html#cb21-39" tabindex="-1"></a><span class="fu">plot</span>(step4)</span>
+<span id="cb21-40"><a href="Ch05.html#cb21-40" tabindex="-1"></a></span>
+<span id="cb21-41"><a href="Ch05.html#cb21-41" tabindex="-1"></a><span class="co"># step 5</span></span>
+<span id="cb21-42"><a href="Ch05.html#cb21-42" tabindex="-1"></a></span>
+<span id="cb21-43"><a href="Ch05.html#cb21-43" tabindex="-1"></a>step5<span class="ot">=</span><span class="fu">cover</span>(step4,step3)</span>
+<span id="cb21-44"><a href="Ch05.html#cb21-44" tabindex="-1"></a><span class="fu">plot</span>(step5)</span>
+<span id="cb21-45"><a href="Ch05.html#cb21-45" tabindex="-1"></a></span>
+<span id="cb21-46"><a href="Ch05.html#cb21-46" tabindex="-1"></a><span class="fu">writeRaster</span>(step5,</span>
+<span id="cb21-47"><a href="Ch05.html#cb21-47" tabindex="-1"></a>           <span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_combined.tif&quot;</span>,</span>
+<span id="cb21-48"><a href="Ch05.html#cb21-48" tabindex="-1"></a>           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.03" class="section level2 hasAnchor" number="5.3">

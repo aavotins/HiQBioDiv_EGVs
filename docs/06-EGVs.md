@@ -1651,11 +1651,50 @@ Creation procedures of every EGV.
 
 **Latvian name:** Attālums līdz atkritumu poligoniem, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [Waste and garbage disposal sites, landfills](#Ch04.14).
+1. From the [attachaed file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) read sheet "Poligoni";
+
+2. Create an `sf` object (epsg:3059);
+
+3. Rasterize and cover so that cells of interest are 1 and others are 0;
+
+4. create an egv with `egvtools::distance2egv`. Expect warning regarding nothing 
+to do with aggregation. It is because `egvtools::distance2egv` already operate at 
+egv-template not the input-template resolution.
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# Distance_Landfill_cell.tif egv_92 ----
+
+# reading coordinates
+landfills=read_excel("./Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx",sheet="Poligoni")
+#sf object
+landfills_sf=st_as_sf(landfills,coords=c("X","Y"),crs=3059)
+# rasterize
+landfills_rast=rasterize(landfills_sf,template100)
+# raster to 1=Cell of interest, 0=background
+landfills_bg=cover(landfills_rast,nulls100)
+
+# create an egv
+distegv=distance2egv(input = landfills_bg,
+             template_egv = template100,
+             values_as_one = 1,
+             fill_gaps = TRUE, idw_weight = 2,
+             outlocation = "RasterGrids_100m/2024/RAW/",
+             outfilename = "Distance_Landfill_cell.tif",
+             layername = "egv_92")
+distegv
 ```
 
 
@@ -1669,11 +1708,57 @@ Creation procedures of every EGV.
 
 **Latvian name:** Attālums līdz jūrai, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:**  Directly follows [Latvian Exclusive Economic Zone polygon](#Ch04.16).
+1. Read layer as `sf` object (it already is epsg:3059);
+
+2. Rasterize and cover so that cells of interest are 1 and others are 0;
+
+3. create an egv with `egvtools::distance2egv`. {fasterize} does not write CRS 
+with `WKT` from epsg-string. Therefore it is better to use `project_to_template_input=TRUE` and
+define input-template. However, the only difference is in how the CRS is stored, 
+therefore this can ignored - distance will be calculated on the input CRS and only 
+resulting layer will be projected to match egv-template (faster due to 10x aggregation of 
+resolution).
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+rastrs10=raster::raster(template10)
+
+
+# Distance_Sea_cell.tif egv_93 ----
+
+# sea layer, sf
+sea=st_read("./Geodata/2024/LV_EEZ/LV_EEZ.shp")
+
+# quick rasterization
+sea_r=fasterize(sea,rastrs10,field="LV_EEZ")
+sea_rast=rast(sea_r)
+
+# # raster to 1=Cell of interest, 0=background
+sea_bg=cover(sea_rast,nulls10)
+
+# create an egv
+distegv=distance2egv(input = sea_bg,
+                     template_egv = "./Templates/TemplateRasters/LV100m_10km.tif",
+                     values_as_one = 1,
+                     project_to_template_input=TRUE, # fasterize stores CRS differently
+                     template_input=template10,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Sea_cell.tif",
+                     layername = "egv_93")
+distegv
 ```
 
 
@@ -1705,11 +1790,60 @@ Creation procedures of every EGV.
 
 **Latvian name:** Attālums līdz atkritumu šķirošanas un uzglabāšanas vietām, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Directly follows [Waste and garbage disposal sites, landfills](#Ch04.14).
+1. From the [attachaed file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx) read sheet "AtkritumuVietas" and clean names;
+
+2. Create an `sf` object (epsg:3059);
+
+3. Filter to non-deposit collection locations;
+
+4. Rasterize and cover so that cells of interest are 1 and others are 0;
+
+5. create an egv with `egvtools::distance2egv`. Expect warning regarding nothing 
+to do with aggregation. It is because `egvtools::distance2egv` already operate at 
+egv-template not the input-template resolution.
+
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# Distance_Waste_cell.tif egv_95 ----
+
+# reading coordinates
+waste=read_excel("./Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx",sheet="AtkritumuVietas")
+# cleaning names
+waste2=janitor::clean_names(waste)
+#sf object
+waste_sf=st_as_sf(waste2,coords=c("y_koordinata_lks92_tm","x_koordinata_lks92_tm"),crs=3059)
+# filtering to non-deposit
+table(waste_sf$pienemsanas_vietas_tips)
+waste_sf2=waste_sf %>% 
+  filter(!str_detect(pienemsanas_vietas_tips,"Depozīta"))
+# rasterize
+waste_rast=rasterize(waste_sf2,template100)
+# raster to 1=Cell of interest, 0=background
+wastw_bg=cover(waste_rast,nulls100)
+
+# create an egv
+distegv=distance2egv(input = wastw_bg,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Waste_cell.tif",
+                     layername = "egv_95")
+distegv
 ```
 
 
