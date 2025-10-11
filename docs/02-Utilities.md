@@ -49,8 +49,13 @@ to [version 2.0.0](https://zenodo.org/records/14497070) of the dataset;
 - [`download_vector_templates()`](https://aavotins.github.io/egvtools/reference/download_vector_templates.html) - fetch template vector grids/points from Zenodo 
 repository and place them in user specified location on disk, or by default - the 
 one we used. By default this functions links 
-to [version 1.0.1](https://zenodo.org/records/14277114) of the dataset.
+to [version 1.0.1](https://zenodo.org/records/14277114) of the dataset;
 
+- [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
+summary statistics from raster layers using buffered polygon zones of multiple 
+radii and rasterizes them onto a common template grid. Insternally connected to 
+exact parts of the file names used in this project. If they are kept, can 
+be used in other places.
 
 
 ### General purpose functions {#Ch02.01.02} 
@@ -114,9 +119,6 @@ then performs gap analysis (NA count within the template footprint and optional
 maximum gap width) and optional IDW gap filling via WhiteboxTools. Returns a 
 compact data.frame with per-layer stats and timing.
 
-- [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
-summary statistics from raster layers using buffered polygon zones of multiple 
-radii and rasterizes them onto a common template grid.
 
 ## Other utility functions {#Ch02.02}
 

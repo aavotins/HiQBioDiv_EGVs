@@ -116,8 +116,9 @@ download_raster_templates(
 ```
 
 During EGV creation background covering to deal with missing values may be 
-necessary. All the EGVs described in this document can be considered quantities 
-of ratio scale, therefore backgrounds with value `0` are created.
+necessary. All the EGVs described in this document where such an excercise might 
+be necessary can be considered quantities of ratio scale, therefore backgrounds 
+with value `0` are created.
 
 ```{r, eval=FALSE}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}

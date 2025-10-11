@@ -7,16 +7,15 @@ if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
 # Fails as exported from GEE ----
-faili=data.frame(fails=list.files("./Geodata/S2indices/RAW/"))
-faili$celi_sakums=paste0("./Geodata/S2indices/RAW/",faili$fails)
+faili=data.frame(fails=list.files("./Geodata/2024/S2indices/RAW/",pattern = ".tif"))
+faili$celi_sakums=paste0("./Geodata/2024/S2indices/RAW/",faili$fails)
 
-faili=faili[-1,]
 
 # file names ----
 faili=faili %>% 
   separate(fails,into=c("nosaukums","vidus","beigas"),sep="-",remove = FALSE) %>% 
   mutate(mosaic_name=paste0("EO_",nosaukums,"-",beigas,tolower(vidus),".tif"),
-         masaic_cels=paste0("./Geodata/S2indices/Mosaics/",mosaic_name))
+         masaic_cels=paste0("./Geodata/2024/S2indices/Mosaics/",mosaic_name))
 
 
 unikalie=levels(factor(faili$mosaic_name))
