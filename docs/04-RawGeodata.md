@@ -1755,7 +1755,7 @@ rm(list=ls())
 To ensure the research process at the University of Latvia, the third (completed 
 by January 1, 2018) and fourth (unfinished) versions of the Latvian Geospatial 
 Information Agency's topographic map M:10000 vector geodatabase were received. 
-The most recent version is available for [public viewing](), 
+The most recent version is available for [public viewing](https://kartes.lgia.gov.lv/karte/?x=311986.74&y=506887.35&zoom=3&basemap=topokarte), 
 but access to vector data is restricted.
 
 For the purposes of this project, the ESRI geodatabase has been converted to a 
@@ -1864,6 +1864,126 @@ for(i in seq_along(ciklam3x)){
 }
 
 # combination ----
+st_layers("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg")
+
+pages4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="Topo10_lapas")
+pages4_united=st_union(pages4)
+ggplot(pages4_united)+geom_sf()
+
+# landus_A
+landus_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="landus_A")
+landus_not4=st_difference(landus_3,pages4_united)
+landus_not4=landus_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+landus_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="landus_A")
+landus_4=landus_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+landus_new=rbind(landus_not4,landus_4)
+sfarrow::st_write_parquet(landus_new,"./Geodata/2024/TopographicMap/LandusA_COMB.parquet")
+
+# bridge_L
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_L")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="bridge_L")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
+
+
+# bridge_P
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_P")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="bridge_P")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeP_COMB.parquet")
+
+
+# hidro_A
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_A")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="hidro_A")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
+
+
+# hidro_L
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_L")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="hidro_L")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroL_COMB.parquet")
+
+
+# road_A
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_A")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="road_A")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadA_COMB.parquet")
+
+
+# road_L
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_L")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="road_L")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadL_COMB.parquet")
+
+
+# swamp_A
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="swamp_A")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="swamp_A")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/SwampA_COMB.parquet")
+
+
+# flora_L
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="flora_L")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="flora_L")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/FloraL_COMB.parquet")
 ```
 
 
@@ -2744,7 +2864,71 @@ direction.
 
 
 ``` r
-# Libs ----
+# libs
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+
+# reference
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+
+# LiDAR DEM 1 m to 10 m 
+
+lapas_1m=data.frame(faili=list.files("./Geodata/2024/DEM/meanDEM_1mOLD/",pattern="*.tif$"))
+lapas_1m$numurs=substr(lapas_1m$faili,10,13)
+lapas_1m$cels1=paste0("./Geodata/2024/DEM/meanDEM_1mOLD/",lapas_1m$faili)
+lapas_1m$cels2=paste0("./Geodata/2024/DEM/meanDEM_10mOLD/",lapas_1m$faili)
+
+kvadrati=st_read(dsn="GIS_Latvija10.2.gdb",layer="tks93_50000")
+kvadrati$name=as.character(kvadrati$num50tk)
+
+moz2=rast("./Geodata/2024/DEM/Nartiss_visa_Latvija/dem10_20_kopa.tif")
+
+for(i in 1:length(kvadrati$name)){
+  kvadrats=kvadrati[i,]
+  nosaukums=kvadrats$name
+  telpa=terra::ext(kvadrats)
+  
+  paraugs=crop(template10,telpa)
+  nart=crop(moz2,telpa)
+  nart2=project(nart,paraugs,mask=TRUE)
+  
+  dem1m=lapas_1m[lapas_1m$numurs==kvadrats$name,]
+  if(nrow(dem1m)>0){
+    sakumcels=dem1m$cels1
+    dem=rast(sakumcels)
+    reproj=project(dem,paraugs,mask=TRUE,method="bilinear",use_gdal=TRUE)
+    videjais <- ifel(is.na(nart2),nart2,ifel(is.na(reproj),nart2,
+                                             app(c(nart2,reproj), mean)))
+    writeRaster(videjais,overwrite=TRUE,
+                filename=paste0("./Geodata/2024/DEM/meanDEM_10m/","vidDEM_",
+                                nosaukums,".tif"))
+  }
+  else{
+    writeRaster(nart2,overwrite=TRUE,
+                filename=paste0("./Geodata/2024/DEM/meanDEM_10m/","vidDEM_",
+                                nosaukums,".tif"))
+  }
+}
+
+# vrt un mozaic
+lapas_10=data.frame(faili=list.files("./Geodata/2024/DEM/meanDEM_10m/",pattern="*.tif$"))
+lapas_10$celi1=paste0("./Geodata/2024/DEM/meanDEM_10m/",lapas_10$faili)
+mozaikai=vrt(lapas_10$celi1,overwrite=TRUE,
+             filename="./Geodata/2024/DEM/vrtDEM_10m.tif")
+mozaika=rast("./Geodata/2024/DEM/vrtDEM_10m.tif")
+writeRaster(mozaika,"./Geodata/2024/DEM/mozDEM_10m.tif")
+
+
+## slope
+reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
+slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees", 
+                filename="./RasterGrids_10m/2024/Slope_10m.tif", overwrite=TRUE)  
+
+
+## aspect 
+reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
+virzieni=terrain(reljefs, v="aspect", neighbors=8, unit="degrees", 
+                 filename="./RasterGrids_10m/2024/Aspect_10m.tif", overwrite=TRUE)
 ```
 
 
@@ -2754,10 +2938,3 @@ direction.
 The waters of Latvia's Exclusive Economic Zone were obtained from 
 the [HELCOM map and data service](https://maps.helcom.fi/website/mapservice/?datasetID=ae58c373-674c-45d1-be0f-1ff69a59f9ba). After downloading, this line file was 
 analogically connected to the coastline file obtained from the same resource.
-
-
-## Nature Conservation Agency's data {#Ch04.17}
-
-vai tiešām izmantoju?
-
-

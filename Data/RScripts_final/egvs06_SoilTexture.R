@@ -3,19 +3,14 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
-
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
 # input ----
-
 combtext=rast("./RasterGrids_10m/2024/SoilTXT_combined.tif")
-plot(combtext)
-
-
-
 
 # EGVs cell ----
+
 
 # SoilTexture_Sand_cell.tif	egv_516
 

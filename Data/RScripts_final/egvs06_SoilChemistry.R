@@ -1,7 +1,5 @@
 # libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
-if(!require(terra)) {install.packages("terra"); require(terra)}
-if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # P ----
 
