@@ -53,8 +53,14 @@ Acronyms:
 
 **SDMs** - species distribution models
 
+**LAD** - Rural support service
+
 **NDMI** - normalized difference moisture index
 
 **NDVI** - normalized difference vegetation index
 
 **NDWI** - normalized difference water index
+
+**MVR** - State Forest Service's stand level inventory database "Forest State Registry"
+
+**VMD** - State Forest Service

@@ -294,7 +294,23 @@ rm(road_union1)
 rm(road_union2)
 ```
 
-200
+- class `200` - **waters**: water bodies from various sources, filled in 
+sequence (but see "merging and filling" step of this section) - dominates classes 
+with higher values so that relatively small objects are not lost and information 
+about the edges is provided. The following were combined to create this class:
+
+– [topographic map](#Ch04.04) layers `HidroA_COMB` and `HidroL_COMB` (buffered by 5 m);
+
+– [MKIS](#Ch04.03) layer `Gravji`, buffered by 3 m;
+
+– [LVM open data](#Ch04.06) layers `LVM_GRAVJI`, buffered by 5 m.
+
+– Information about ditches from the State Forest Register has not been used, 
+as it is also available in other resources, or is of so small structures that it does 
+not cause a continuous break in the tree canopy.
+
+The command lines below create a layer with landscape class `200`, which is 
+saved in the file `SimpleLandscape_class200_udens_premask.tif` for further processing.
 
 
 
@@ -396,7 +412,27 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif")
 ```
 
 
-300
+- class `300` - **farmland**: agricultural land in LAD database **filled in 
+sequence** - dominated by classes with higher values, but after the general 
+classes were created, the gaps were filled in with information from Dynamic 
+World. The following were combined to create this class:
+
+– [LAD database](#Ch04.02), which, following the decision on grouping (classes are 
+available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)), 
+is divided into three broad groups (in order of overlap):
+
+– arable land with class code `310`;
+
+– fallow land with class code `320`;
+
+– grassland with class code `330`;
+
+– orchards and perennial shrub plantations in the general landscape are placed 
+in other landscape classes.
+
+The command lines below create a layer with landscape class `300` and its 
+subclasses, which are saved in the file `SimpleLandscape_class300_lauki_premask.tif` 
+for further processing.
 
 
 
@@ -499,7 +535,19 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 ```
 
 
-400
+- class `400` - **allotment gardens and orchards, cottages**, **filled in order** - 
+dominate classes with higher values. To create this class, the following were 
+combined (in order of overlap):
+
+– [topographic map](#Ch04.04) layer `LandusA_COMB`, the result of which is coded with `410`;
+
+– [LAD database](#Ch04.02) rural information layer group (classes are 
+available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)) 
+“orchards”, the result of which is coded with `420`.
+
+The command lines below create a layer with landscape class `400`, which is saved 
+in the file `SimpleLandscape_class400_vasarnicas_premask.tif` for further 
+processing.
 
 
 
@@ -576,9 +624,48 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 ```
 
-500
+- class `500` - **built-up**: built-up areas, filled in at the end (see section 
+"merging and filling" of this chapter) using information from Dynamic World about 
+places not covered by other classes.
 
-600
+- class `600` - **forests, shrublands, clearings**: areas covered with trees and 
+shrubs, clearings, and dead forest stands, **filled in order** - dominates 
+classes with higher values. The following have been combined to create this 
+class (in order of overlap):
+
+– [The Global Forest Watch](#Ch04.09) layer records of tree canopy cover 
+loss since 2020, coded as `610`;
+
+– [Forest State Register](#Ch04.01) clearings and dead forest stands, the result 
+of which is coded as `610`;
+
+– [Forest State Register](#Ch04.01) marked forest stands that are lower than 5 m 
+and seed production plantations, the result of which is coded as `620`;
+
+– [topographic map](#Ch04.04) layer `FloraL_COMB` classes related to shrubs, 
+buffered by 10 m, coded as `620`;
+
+– [topographic map](#Ch04.04) layers `LandusA_COMB` clases "poligons_Krūmājs", 
+"poligons_Krumajs", "poligons_Krūmaugu_plant", "poligons_Plantacija_krum", coded as `620`;
+
+– [LAD database](#Ch04.02) group (classes are 
+available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)) 
+“krūmveida ilggadīgie stādījumi”, the result of which is coded with `620`;
+
+– [Forest State Register](#Ch04.01) forest stands with a height of at least 5 m, 
+coded as `630`;
+
+– [topographic map](#Ch04.04) layer `LandusA_COMB` classes "poligons_Parks", 
+"poligons_Meza_kapi", "poligons_Kapi", "poligons_Kapi_meza", the result of 
+which is coded as `640`;
+
+– [topographic map](#Ch04.04) layer `FloraL_COMB` with tree-related classes 
+buffered by 10 m, coded as `640`;
+
+– [Palsar Forests](#Ch04.10) layer, coded as `630`.
+
+The command lines below create a layer with landscape class `600`, which is saved 
+in the file `SimpleLandscape_class600_meziem_premask.tif` for further processing.
 
 
 
@@ -811,7 +898,34 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif")
 ```
 
-700
+- class `700` - **wetlands**: combining geospatial data related to reed beds, 
+marshes, mires and bogs, **filled in order except class `720` that dominates over waters** - 
+dominates classes with higher values. To create this class, the following were 
+combined (in order of overlap):
+
+– [topographic map](#Ch04.04) layer `LandusA_COMB` classes "Meldrājs_ūdenī_poligons", 
+"poligons_Grislajs", "poligons_Grīslājs", "poligons_Meldrajs", "poligons_Meldrājs", 
+"poligons_Meldrajs_udeni", "poligons_Nec_purvs_grīslājs", "poligons_Nec_purvs_meldrājs", 
+"Sēklis_poligons", the result of which is coded with `720`;
+
+– [topographic map](#Ch04.04) layer `LandusA_COMB` class "poligons_Nec_purvs_sūnājs", 
+"poligons_Sunajs", "poligons_Sūnājs", the result of which is coded with `710`;
+
+– [topographic map](#Ch04.04) layer `SwampA_COMB`, the result of which is coded 
+as `710`;
+
+– land categories “21”, “22”, “23” marked in the [State Forest Register](#Ch04.01), 
+the result of which is coded as `710`;
+
+– land categories “41” and “42” marked in the [State Forest Register](#Ch04.01), 
+the result of which is coded as `730`;
+
+- bogs from [Bogs and Mires: EDI](#Ch04.17);
+
+- transitional mires from [Bogs and Mires: EDI](#Ch04.17);
+
+The command lines below create a layer with landscape class `700`, which is saved 
+in the file `SimpleLandscape_class700_mitraji_premask.tif` for further processing.
 
 
 
@@ -859,7 +973,7 @@ rm(r_niedraji_topo)
 ## bogs
 purvi_topo=topo %>% 
   filter(FNAME %in% c("poligons_Nec_purvs_sūnājs",
-                      " poligons_Sunajs","poligons_Sūnājs")) %>% 
+                      "poligons_Sunajs","poligons_Sūnājs")) %>% 
   mutate(yes=710) %>% 
   dplyr::select(yes)
 topo_purvi=st_read_parquet("./Geodata/2024/TopographicMap/SwampA_COMB.parquet")
@@ -932,6 +1046,7 @@ wetlands_cover=cover(wetlands_cover,bogs,
 rm(r_niedraji_topo)
 rm(r_purvi_topo)
 rm(r_purvi_mvr)
+rm(r_bebri_mvr)
 rm(bogs)
 rm(mires)
 rm(topo)
@@ -942,7 +1057,21 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
 ```
 
-800
+- class `800` - **bare soil and quarries**: combining layers related to bare soil, 
+heaths, and quarries, **filled in order** - as this is the highest class, it 
+dominates only over Dynamic World used to fill gaps. The following have been 
+combined to create this class (in order of overlap):
+
+– [topographic map](#Ch04.04) layer `LandusA_COMB` classes 
+"poligons_Smiltājs", "poligons_Smiltajs", "poligons_Grants", "poligons_Kūdra", "poligons_Virsajs" 
+the result of which is coded 
+with `800`;
+
+– land categories "33" and "34" marked in the [State Forest Register](#Ch04.01), 
+the result of which is coded as `730`.
+
+The command lines below create a layer with landscape class `800`, which is saved 
+in the file `SimpleLandscape_class800_smiltaji_premask.tif` for further processing.
 
 
 
@@ -969,7 +1098,7 @@ smiltaji_topo=st_read_parquet("./Geodata/2024/TopographicMap/LandusA_COMB.parque
 table(smiltaji_topo$FNAME,useNA="always")
 smiltaji_topo=smiltaji_topo %>% 
   filter(FNAME %in% c("poligons_Smiltājs","poligons_Smiltajs","poligons_Grants",
-                      "poligons_Kūdra")) %>% 
+                      "poligons_Kūdra","poligons_Virsajs")) %>% 
   mutate(yes=800) %>% 
   dplyr::select(yes)
 r_smiltaji_topo=fasterize(smiltaji_topo,template_r,field="yes")
@@ -1115,15 +1244,17 @@ rm(masketa_ainava)
 
 krā
 
-### Forest diversity {#Ch05.04.01}
-
-krā
-
-### Farmland diversity {#Ch05.04.02}
+### Landscape in general diversity {#Ch05.04.01}
 
 krā
 
 
-### Landscape in general diversity {#Ch05.04.03}
+### Forest diversity {#Ch05.04.02}
 
 krā
+
+### Farmland diversity {#Ch05.04.03}
+
+krā
+
+

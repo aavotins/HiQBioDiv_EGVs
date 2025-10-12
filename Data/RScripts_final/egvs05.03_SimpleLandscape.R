@@ -548,7 +548,8 @@ niedraji_topo=topo %>%
 r_niedraji_topo=fasterize(niedraji_topo,template_r,field="yes")
 raster::writeRaster(r_niedraji_topo,
                     "./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif",
-                    progress="text")
+                    progress="text",
+                    overwrite=TRUE)
 # cleaning
 rm(niedraji_topo)
 rm(r_niedraji_topo)
@@ -557,7 +558,7 @@ rm(r_niedraji_topo)
 ## bogs
 purvi_topo=topo %>% 
   filter(FNAME %in% c("poligons_Nec_purvs_sūnājs",
-                      " poligons_Sunajs","poligons_Sūnājs")) %>% 
+                      "poligons_Sunajs","poligons_Sūnājs")) %>% 
   mutate(yes=710) %>% 
   dplyr::select(yes)
 topo_purvi=st_read_parquet("./Geodata/2024/TopographicMap/SwampA_COMB.parquet")
@@ -630,6 +631,7 @@ wetlands_cover=cover(wetlands_cover,bogs,
 rm(r_niedraji_topo)
 rm(r_purvi_topo)
 rm(r_purvi_mvr)
+rm(r_bebri_mvr)
 rm(bogs)
 rm(mires)
 rm(topo)
@@ -645,7 +647,7 @@ smiltaji_topo=st_read_parquet("./Geodata/2024/TopographicMap/LandusA_COMB.parque
 table(smiltaji_topo$FNAME,useNA="always")
 smiltaji_topo=smiltaji_topo %>% 
   filter(FNAME %in% c("poligons_Smiltājs","poligons_Smiltajs","poligons_Grants",
-                      "poligons_Kūdra")) %>% 
+                      "poligons_Kūdra","poligons_Virsajs")) %>% 
   mutate(yes=800) %>% 
   dplyr::select(yes)
 r_smiltaji_topo=fasterize(smiltaji_topo,template_r,field="yes")
