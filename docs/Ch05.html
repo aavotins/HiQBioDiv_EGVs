@@ -1062,17 +1062,17 @@ saved in the file <code>SimpleLandscape_class100_celi.tif</code> for further pro
 <span id="cb31-101"><a href="Ch05.html#cb31-101" tabindex="-1"></a><span class="fu">rm</span>(road_union2)</span></code></pre></div>
 </details>
 <ul>
-<li>class <code>200</code> - <strong>waters</strong>: water bodies from various sources, filled in
+<li><p>class <code>200</code> - <strong>waters</strong>: water bodies from various sources, filled in
 sequence (but see “merging and filling” step of this section) - dominates classes
 with higher values so that relatively small objects are not lost and information
-about the edges is provided. The following were combined to create this class:</li>
-</ul>
+about the edges is provided. The following were combined to create this class:</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layers <code>HidroA_COMB</code> and <code>HidroL_COMB</code> (buffered by 5 m);</p>
 <p>– <a href="Ch04.html#Ch04.03">MKIS</a> layer <code>Gravji</code>, buffered by 3 m;</p>
 <p>– <a href="Ch04.html#Ch04.06">LVM open data</a> layers <code>LVM_GRAVJI</code>, buffered by 5 m.</p>
 <p>– Information about ditches from the State Forest Register has not been used,
 as it is also available in other resources, or is of so small structures that it does
-not cause a continuous break in the tree canopy.</p>
+not cause a continuous break in the tree canopy.</p></li>
+</ul>
 <p>The command lines below create a layer with landscape class <code>200</code>, which is
 saved in the file <code>SimpleLandscape_class200_udens_premask.tif</code> for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1172,11 +1172,10 @@ saved in the file <code>SimpleLandscape_class200_udens_premask.tif</code> for fu
 <span id="cb32-94"><a href="Ch05.html#cb32-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li>class <code>300</code> - <strong>farmland</strong>: agricultural land in LAD database <strong>filled in
+<li><p>class <code>300</code> - <strong>farmland</strong>: agricultural land in LAD database <strong>filled in
 sequence</strong> - dominated by classes with higher values, but after the general
 classes were created, the gaps were filled in with information from Dynamic
-World. The following were combined to create this class:</li>
-</ul>
+World. The following were combined to create this class:</p>
 <p>– <a href="Ch04.html#Ch04.02">LAD database</a>, which, following the decision on grouping (classes are
 available <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">here</a>),
 is divided into three broad groups (in order of overlap):</p>
@@ -1184,7 +1183,8 @@ is divided into three broad groups (in order of overlap):</p>
 <p>– fallow land with class code <code>320</code>;</p>
 <p>– grassland with class code <code>330</code>;</p>
 <p>– orchards and perennial shrub plantations in the general landscape are placed
-in other landscape classes.</p>
+in other landscape classes.</p></li>
+</ul>
 <p>The command lines below create a layer with landscape class <code>300</code> and its
 subclasses, which are saved in the file <code>SimpleLandscape_class300_lauki_premask.tif</code>
 for further processing.</p>
@@ -1286,14 +1286,14 @@ for further processing.</p>
 <span id="cb33-95"><a href="Ch05.html#cb33-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li>class <code>400</code> - <strong>allotment gardens and orchards, cottages</strong>, <strong>filled in order</strong> -
+<li><p>class <code>400</code> - <strong>allotment gardens and orchards, cottages</strong>, <strong>filled in order</strong> -
 dominate classes with higher values. To create this class, the following were
-combined (in order of overlap):</li>
-</ul>
+combined (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code>, the result of which is coded with <code>410</code>;</p>
 <p>– <a href="Ch04.html#Ch04.02">LAD database</a> rural information layer group (classes are
 available <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">here</a>)
-“orchards”, the result of which is coded with <code>420</code>.</p>
+“augļudārzi”, the result of which is coded with <code>420</code>.</p></li>
+</ul>
 <p>The command lines below create a layer with landscape class <code>400</code>, which is saved
 in the file <code>SimpleLandscape_class400_vasarnicas_premask.tif</code> for further
 processing.</p>
@@ -1376,8 +1376,7 @@ places not covered by other classes.</p></li>
 <li><p>class <code>600</code> - <strong>forests, shrublands, clearings</strong>: areas covered with trees and
 shrubs, clearings, and dead forest stands, <strong>filled in order</strong> - dominates
 classes with higher values. The following have been combined to create this
-class (in order of overlap):</p></li>
-</ul>
+class (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.09">The Global Forest Watch</a> layer records of tree canopy cover
 loss since 2020, coded as <code>610</code>;</p>
 <p>– <a href="Ch04.html#Ch04.01">Forest State Register</a> clearings and dead forest stands, the result
@@ -1398,7 +1397,8 @@ coded as <code>630</code>;</p>
 which is coded as <code>640</code>;</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>FloraL_COMB</code> with tree-related classes
 buffered by 10 m, coded as <code>640</code>;</p>
-<p>– <a href="Ch04.html#Ch04.10">Palsar Forests</a> layer, coded as <code>630</code>.</p>
+<p>– <a href="Ch04.html#Ch04.10">Palsar Forests</a> layer, coded as <code>630</code>.</p></li>
+</ul>
 <p>The command lines below create a layer with landscape class <code>600</code>, which is saved
 in the file <code>SimpleLandscape_class600_meziem_premask.tif</code> for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1630,11 +1630,10 @@ in the file <code>SimpleLandscape_class600_meziem_premask.tif</code> for further
 <span id="cb35-226"><a href="Ch05.html#cb35-226" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li>class <code>700</code> - <strong>wetlands</strong>: combining geospatial data related to reed beds,
+<li><p>class <code>700</code> - <strong>wetlands</strong>: combining geospatial data related to reed beds,
 marshes, mires and bogs, <strong>filled in order except class <code>720</code> that dominates over waters</strong> -
 dominates classes with higher values. To create this class, the following were
-combined (in order of overlap):</li>
-</ul>
+combined (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes “Meldrājs_ūdenī_poligons”,
 “poligons_Grislajs”, “poligons_Grīslājs”, “poligons_Meldrajs”, “poligons_Meldrājs”,
 “poligons_Meldrajs_udeni”, “poligons_Nec_purvs_grīslājs”, “poligons_Nec_purvs_meldrājs”,
@@ -1650,6 +1649,7 @@ the result of which is coded as <code>730</code>;</p>
 <ul>
 <li><p>bogs from <a href="Ch04.html#Ch04.17">Bogs and Mires: EDI</a>;</p></li>
 <li><p>transitional mires from <a href="Ch04.html#Ch04.17">Bogs and Mires: EDI</a>;</p></li>
+</ul></li>
 </ul>
 <p>The command lines below create a layer with landscape class <code>700</code>, which is saved
 in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for further processing.</p>
@@ -1781,17 +1781,16 @@ in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for furthe
 <span id="cb36-125"><a href="Ch05.html#cb36-125" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li>class <code>800</code> - <strong>bare soil and quarries</strong>: combining layers related to bare soil,
+<li><p>class <code>800</code> - <strong>bare soil and quarries</strong>: combining layers related to bare soil,
 heaths, and quarries, <strong>filled in order</strong> - as this is the highest class, it
 dominates only over Dynamic World used to fill gaps. The following have been
-combined to create this class (in order of overlap):</li>
-</ul>
+combined to create this class (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes
-“poligons_Smiltājs”, “poligons_Smiltajs”, “poligons_Grants”, “poligons_Kūdra”, “poligons_Virsajs”
-the result of which is coded
-with <code>800</code>;</p>
+“poligons_Smiltājs”, “poligons_Smiltajs”, “poligons_Grants”, “poligons_Kūdra”,
+“poligons_Virsajs” the result of which is coded with <code>800</code>;</p>
 <p>– land categories “33” and “34” marked in the <a href="Ch04.html#Ch04.01">State Forest Register</a>,
-the result of which is coded as <code>730</code>.</p>
+the result of which is coded as <code>730</code>.</p></li>
+</ul>
 <p>The command lines below create a layer with landscape class <code>800</code>, which is saved
 in the file <code>SimpleLandscape_class800_smiltaji_premask.tif</code> for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
