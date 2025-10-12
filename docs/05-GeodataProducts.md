@@ -1067,7 +1067,7 @@ combined to create this class (in order of overlap):
     "poligons_Virsajs" the result of which is coded with `800`;
 
     – land categories "33" and "34" marked in the [State Forest Register](#Ch04.01), 
-    the result of which is coded as `730`.
+    the result of which is coded as `800`.
 
 The command lines below create a layer with landscape class `800`, which is saved 
 in the file `SimpleLandscape_class800_smiltaji_premask.tif` for further processing.
