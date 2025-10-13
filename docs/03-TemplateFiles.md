@@ -76,8 +76,9 @@ tiled_buffers(
   in_dir = "./Templates/TemplateGridPoints",
   out_dir = "./Templates/TemplateGridPoints/tiles",
   buffer_mode = "sparse",
-  mapping_sparse = list(pts100_sauzeme.parquet = c(500, 1250), pts300_sauzeme.parquet =
-    3000, pts1000_sauzeme.parquet = 10000),
+  mapping_sparse = list("pts100_sauzeme.parquet" = c(500, 1250), 
+                        "pts300_sauzeme.parquet" =  3000, 
+                        "pts1000_sauzeme.parquet" = 10000),
   split_field = "tks50km",
   n_workers = 4,
   os_type = NULL,

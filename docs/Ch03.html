@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-13" />
+<meta name="date" content="2025-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -851,15 +851,16 @@ we used “sparse” grid:</p>
 <span id="cb6-4"><a href="Ch03.html#cb6-4" tabindex="-1"></a>  <span class="at">in_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
 <span id="cb6-5"><a href="Ch03.html#cb6-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles&quot;</span>,</span>
 <span id="cb6-6"><a href="Ch03.html#cb6-6" tabindex="-1"></a>  <span class="at">buffer_mode =</span> <span class="st">&quot;sparse&quot;</span>,</span>
-<span id="cb6-7"><a href="Ch03.html#cb6-7" tabindex="-1"></a>  <span class="at">mapping_sparse =</span> <span class="fu">list</span>(<span class="at">pts100_sauzeme.parquet =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1250</span>), <span class="at">pts300_sauzeme.parquet =</span></span>
-<span id="cb6-8"><a href="Ch03.html#cb6-8" tabindex="-1"></a>    <span class="dv">3000</span>, <span class="at">pts1000_sauzeme.parquet =</span> <span class="dv">10000</span>),</span>
-<span id="cb6-9"><a href="Ch03.html#cb6-9" tabindex="-1"></a>  <span class="at">split_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb6-10"><a href="Ch03.html#cb6-10" tabindex="-1"></a>  <span class="at">n_workers =</span> <span class="dv">4</span>,</span>
-<span id="cb6-11"><a href="Ch03.html#cb6-11" tabindex="-1"></a>  <span class="at">os_type =</span> <span class="cn">NULL</span>,</span>
-<span id="cb6-12"><a href="Ch03.html#cb6-12" tabindex="-1"></a>  <span class="at">future_max_mem_gb =</span> <span class="dv">4</span>,</span>
-<span id="cb6-13"><a href="Ch03.html#cb6-13" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb6-14"><a href="Ch03.html#cb6-14" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
-<span id="cb6-15"><a href="Ch03.html#cb6-15" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb6-7"><a href="Ch03.html#cb6-7" tabindex="-1"></a>  <span class="at">mapping_sparse =</span> <span class="fu">list</span>(<span class="st">&quot;pts100_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1250</span>), </span>
+<span id="cb6-8"><a href="Ch03.html#cb6-8" tabindex="-1"></a>                        <span class="st">&quot;pts300_sauzeme.parquet&quot;</span> <span class="ot">=</span>  <span class="dv">3000</span>, </span>
+<span id="cb6-9"><a href="Ch03.html#cb6-9" tabindex="-1"></a>                        <span class="st">&quot;pts1000_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="dv">10000</span>),</span>
+<span id="cb6-10"><a href="Ch03.html#cb6-10" tabindex="-1"></a>  <span class="at">split_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb6-11"><a href="Ch03.html#cb6-11" tabindex="-1"></a>  <span class="at">n_workers =</span> <span class="dv">4</span>,</span>
+<span id="cb6-12"><a href="Ch03.html#cb6-12" tabindex="-1"></a>  <span class="at">os_type =</span> <span class="cn">NULL</span>,</span>
+<span id="cb6-13"><a href="Ch03.html#cb6-13" tabindex="-1"></a>  <span class="at">future_max_mem_gb =</span> <span class="dv">4</span>,</span>
+<span id="cb6-14"><a href="Ch03.html#cb6-14" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-15"><a href="Ch03.html#cb6-15" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-16"><a href="Ch03.html#cb6-16" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <p>Expect to see warning:
 <code>This is an initial implementation of Parquet/Feather file support and geo metadata. This is tracking version 0.1.0 of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata specification may change and does not yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to rewrite your Parquet/Feather files.</code></p>
