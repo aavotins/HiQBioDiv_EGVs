@@ -560,7 +560,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
 # templates ----
@@ -678,7 +677,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
 # templates ----
@@ -938,7 +936,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
 # templates ----
@@ -1033,13 +1030,15 @@ r_purvi_topo=rast("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.ti
 r_purvi_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif")
 r_bebri_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
 mires=rast("./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif")
+miresY=ifel(mires==1,710,NA)
 bogs=rast("./RasterGrids_10m/2024/EDI_BogsYN.tif")
+bogsY=ifel(bogs==1,710,NA)
 
 wetlands_cover=cover(r_niedraji_topo,r_purvi_topo)
 wetlands_cover=cover(wetlands_cover,r_purvi_mvr)
 wetlands_cover=cover(wetlands_cover,r_bebri_mvr)
-wetlands_cover=cover(wetlands_cover,mires)
-wetlands_cover=cover(wetlands_cover,bogs,
+wetlands_cover=cover(wetlands_cover,miresY)
+wetlands_cover=cover(wetlands_cover,bogsY,
                             filename="./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif",
                             overwrite=TRUE)
 # cleaning
@@ -1049,6 +1048,8 @@ rm(r_purvi_mvr)
 rm(r_bebri_mvr)
 rm(bogs)
 rm(mires)
+rm(bogsY)
+rm(miresY)
 rm(topo)
 rm(wetlands_cover)
 
@@ -1083,7 +1084,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
 # templates ----
@@ -1152,15 +1152,7 @@ for further processing.
 
 ``` r
 # Libs ----
-if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(sf)) {install.packages("sf"); require(sf)}
-if(!require(arrow)) {install.packages("arrow"); require(arrow)}
-if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
-if(!require(raster)) {install.packages("raster"); require(raster)}
-if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
 # templates ----
 template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
@@ -1241,19 +1233,416 @@ rm(masketa_ainava)
 
 ## Landscape diversity {#Ch05.04}
 
-krā
+This subsection summarizes the input products related to the landscape described 
+in the previous section – raster layers prepared with a resolution of 10 m, which 
+characterize the classes found in the landscape (environment) and the subsequent 
+preprocessing for the preparation of the EGV.
+
+Shannon diversity index calculations are so resource-intensive that it is not 
+rationally possible to perform them at every landscape scale around each analysis 
+cell. They cannot be directly aggregated to speed up the calculation. Therefore, 
+a decision has been made on the raster cell size, which:
+
+- is formed as a multiplication of the analysis cell by an integer;
+
+- is large enough to allow for environmental variability. Therefore, the analysis 
+cell itself (or multiplication by 1) is not suitable - there is very little 
+variability in land cover and land use in an area of 1 ha. This means that this 
+cell must be as large as possible, but an analysis cell that is too large would 
+mean an artificial intensification of spatial autocorrelation and a loss of 
+spatial relevance;
+
+- any landscape scale must be formed from several diversity-index-level cells.
+
+Since we will use spatially weighted zonal statistics in the preparation of EGVs 
+and the smallest landscape scale is r=500 m around the center of the EGV-cell, 
+it has been decided to calculate the landscape diversity index for individual cells 
+with a side length of 500 m, i.e., 25 ha landscapes. This means that the 
+smallest number of units used for the development of the EGVs is nine (for a 
+landscape scale of r=500 m around the center of the EGV-cell).
+
+Three principal environments are described using diversity indices: landscape in 
+general, farmland and forests. To make them easier to reproduce and find, each 
+one is described in a separate section below.
 
 ### Landscape in general diversity {#Ch05.04.01}
 
-krā
+Combination of three layers is involved to describe landscape in general diversity:
+
+- as the lowest in hierarchy is `Ainava_vienk_mask.tif`, prepared in section 
+[Landscape classification](#Ch05.03);
+
+- farmland diversity as a top layer in hierarhy. Prepared based on relatively 
+broadly classified [agricultural codes (field - SDM_grupa_sakums)](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx) from [ural Support Service's information on declared fields](#Ch04.02). Only cells 
+at declared fields have values, others are empty to be inherited from other layers during overlay. Codes used range from 351 to 362;
+
+- forest diversity as a second layer in hierarchy. This layer describes tree 
+species groups dominant in every stand with stand-level inventory interacted with 
+age group as used in forestry practice. Values used in this classification are 
+available from [database description](https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura).
+
+    - tree species groups:
+    
+        - coniferous species codes: "1", "3", "13", "14", "15", "22", "23";
+        
+        - boreal deciduous species codes: "4", "6", "8", "9", "19", "20", "21", 
+        "32", "35", "50", "68";
+        
+        - temperate dciduous species codes: "10", "11", "12", "16", "17", "18", 
+        "24", "25", "26", "27", "28", "29", "61", "62", "63", "64", "65", "66", 
+        "67", "69";
+        
+        - classification: forest is considered coniferous, if timber volume of coniferous species in top tree layer is at least 75% of total timer volume, else it can be considered boreal deciduous if the respective proportion is at least 75%, else it can be considered temperate deciduous if the respective proportion is 50%, else it is considered mixed.
+    
+    - tree age groups: 
+    
+        - forests are considered young, if they are registered with age groups 
+        "1", "2" or "3";
+        
+        - forests are considered old, if they are registered with age groups 
+        "4", or "5";
+        
+    - created codes are formatted as factors and again as scalars with 660 added.
+
+Once the landscape classification is done, diversity index is calculated at 25 ha 
+landscapes with function `egvtools::landscape_function`. To guard value coverage, 
+inverse distance weighted (power=2) gap filling is incorporated, however,
+there were no gaps to fill.
+
+
+``` r
+# Libs ----
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates ----
+template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template_r=raster(template_t)
+
+# general diversity ----
+
+## Farmland broad ----
+
+# classification 
+culturecodes=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+culturecodes$kods=as.character(culturecodes$kods)
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad2=lad %>% 
+  left_join(culturecodes, by=c("PRODUCT_CODE"="kods")) %>% 
+  mutate(numeric_code=as.numeric(as.factor(SDM_grupa_sakums))+350) %>% 
+  filter(!is.na(numeric_code))
+table(lad2$numeric_code,useNA = "always")
+
+# input layer
+polygon2input(vector_data = lad2,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = "Diversity_FarmlandBroad_only.tif",
+              value_field = "numeric_code",
+              fun="first",
+              prepare=FALSE,
+              project_mode = "auto")
+# cleaning
+rm(culturecodes)
+rm(lad)
+rm(lad2)
+
+
+## Forests broad ----
+
+# data
+mvr=sfarrow::st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+
+# species groups
+coniferous=c("1","3","13","14","15","22","23") # 7
+boreal_deciduous=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+temperate_deciduous=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+
+# classification
+mvr2=mvr %>% 
+  mutate(vol_coniferous=ifelse(s10 %in% coniferous,v10,0)+
+           ifelse(s11 %in% coniferous,v11,0)+ifelse(s12 %in% coniferous,v12,0)+
+           ifelse(s13 %in% coniferous,v13,0)+ifelse(s14 %in% coniferous,v14,0),
+         vol_boreal=ifelse(s10 %in% boreal_deciduous,v10,0)+
+           ifelse(s11 %in% boreal_deciduous,v11,0)+ifelse(s12 %in% boreal_deciduous,v12,0)+
+           ifelse(s13 %in% boreal_deciduous,v13,0)+ifelse(s14 %in% boreal_deciduous,v14,0),
+         vol_temperate=ifelse(s10 %in% temperate_deciduous,v10,0)+
+           ifelse(s11 %in% temperate_deciduous,v11,0)+ifelse(s12 %in% temperate_deciduous,v12,0)+
+           ifelse(s13 %in% temperate_deciduous,v13,0)+ifelse(s14 %in% temperate_deciduous,v14,0)) %>% 
+  mutate(vol_total=vol_coniferous+vol_boreal+vol_temperate) %>% 
+  mutate(forest_type=ifelse(vol_coniferous/vol_total>=0.75,"coniferous",
+                     ifelse(vol_boreal/vol_total>=0.75,"boreal",
+                            ifelse(vol_temperate/vol_total>0.5,"temperate",
+                                   "mixed")))) %>% 
+  mutate(forest_age=ifelse(vgr=="1"|vgr=="2"|vgr=="3","young",
+                           ifelse(vgr=="4"|vgr=="5","old",NA))) %>% 
+  filter(!is.na(forest_type)) %>% 
+  filter(!is.na(forest_age)) %>% 
+  mutate(divbroad_class=paste0(forest_type,"_",forest_age)) %>% 
+  mutate(divbroad_numeric=as.numeric(as.factor(divbroad_class))+660) %>% 
+  filter(!is.na(divbroad_numeric))
+
+# input layer
+polygon2input(vector_data = mvr2,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = "Diversity_ForestBroad_only.tif",
+              value_field = "divbroad_numeric",
+              fun="first",
+              prepare=FALSE,
+              project_mode = "auto",
+              overwrite = TRUE)
+# cleaning
+rm(mvr)
+rm(mvr2)
+
+## General classification ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+## Covered classes for general diversity ----
+farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
+forests_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
+
+diversity_classes=cover(farmland_broad,forests_broad)
+diversity_classes2=cover(diversity_classes,simple_landscape,
+                        filename="./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
+                        overwrite=TRUE)
+rm(simple_landscape)
+rm(farmland_broad)
+rm(forests_broad)
+rm(diversity_classes)
+rm(diversity_classes2)
+
+## Diversity index at 25ha -----
+res_tbl <- landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
+  zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
+  id_field       = "rinda500",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV500m_10km.tif",
+  out_dir        = "./RasterGrids_500m/2024/",
+  out_filename   = "Diversity_GeneralLandscape_500x.tif",
+  out_layername  = "Diversity_GeneralLandscape_500x",
+  what           = "lsm_l_shdi",
+  rasterize_engine = "fasterize",
+  n_workers      = 8,
+  future_max_size = 3 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = TRUE,
+  plot_result    = TRUE
+)
+print(res_tbl)
+plot(rast("./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif"))
+rm(res_tbl)
+```
 
 
 ### Forest diversity {#Ch05.04.02}
 
-krā
+An input grid with a cell size of 10 m covering the entire territory of Latvia. It 
+contains the following values, in order of hierarchy:
+
+- [State Forest Service Forest State Register](#Ch04.01) code, in which the 
+code of the dominant tree species is multiplied by 1000 and the age group 
+code is added. However, before rasterization, geometries in which no code has 
+been created or one of the code components is 0 are excluded;
+
+- forest diversity class values prepared in [Landscape in general diversity](#Ch05.04.01);
+
+- value 1 - other cells located in the territory of Latvia.
+
+Once the landscape classification is done, diversity index is calculated at 25 ha 
+landscapes with function `egvtools::landscape_function`. To guard value coverage, 
+inverse distance weighted (power=2) gap filling is incorporated, however,
+there were no gaps to fill.
+
+
+``` r
+# Libs ----
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates ----
+template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template_r=raster(template_t)
+
+# forest diversity ----
+
+## forest broad ----
+forest_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
+
+
+## forest codes ----
+
+# meži
+mvr=st_read_parquet("./Geodata/2024/MVR/")
+
+mvr=mvr %>% 
+  mutate(kods1=as.numeric(s10)*1000,
+         kods2=as.numeric(vgr),
+         kods=kods1+kods2) %>% 
+  filter(!is.na(kods)) %>% 
+  filter(kods1>0) %>% 
+  filter(kods2>0)
+
+# input layer
+polygon2input(vector_data = mvr,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = "Diversity_ForestCodes_only.tif",
+              value_field = "kods",
+              fun="first",
+              prepare=FALSE,
+              project_mode = "auto",
+              overwrite = TRUE)
+
+# cleaning
+rm(mvr)
+
+## Covered classes for forest diversity ----
+forest_codes=rast("./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif")
+forest_covered=cover(forest_codes,forest_broad)
+forest_covered2=cover(forest_covered,template_t,
+                        filename="./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
+                        overwrite=TRUE)
+
+# cleaning
+rm(forest_codes)
+rm(forest_covered)
+rm(forest_covered2)
+rm(forest_broad)
+
+
+
+## Diversity index at 25ha -----
+res_tbl <- landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
+  zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
+  id_field       = "rinda500",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV500m_10km.tif",
+  out_dir        = "./RasterGrids_500m/2024/",
+  out_filename   = "Diversity_Forests_500x.tif",
+  out_layername  = "Diversity_Forests_500x",
+  what           = "lsm_l_shdi",
+  rasterize_engine = "fasterize",
+  n_workers      = 8,
+  future_max_size = 3 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = TRUE,
+  plot_result    = TRUE
+)
+print(res_tbl)
+
+plot(rast("./RasterGrids_500m/2024/Diversity_Forests_500x.tif"))
+rm(res_tbl)
+```
+
+
+
 
 ### Farmland diversity {#Ch05.04.03}
 
-krā
+A grid with a cell size of 10 m covering the entire territory of Latvia. It 
+contains the following values, in order of hierarchy:
+
+- [Rural Support Service](#Ch04.02) crop codes with 1000 added;
+
+- farmland diversity class values prepared in [Landscape in general diversity](#Ch05.04.01);
+
+- value 1 - other cells located in the territory of Latvia.
+
+Once the landscape classification is done, diversity index is calculated at 25 ha 
+landscapes with function `egvtools::landscape_function`. To guard value coverage, 
+inverse distance weighted (power=2) gap filling is incorporated, however,
+there were no gaps to fill.
 
 
+``` r
+# Libs ----
+if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates ----
+template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+# farmland diversity -----
+
+## Farmland broad ----
+farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
+
+## Farmland codes ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$product_code=as.numeric(lad$PRODUCT_CODE)+1000
+
+# input layer
+polygon2input(vector_data = lad,
+              template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+              out_path = "./RasterGrids_10m/2024/",
+              file_name = "Diversity_FarmlandCodes_only.tif",
+              value_field = "product_code",
+              fun="first",
+              prepare=FALSE,
+              project_mode = "auto",
+              overwrite = TRUE)
+
+# cleaning
+rm(lad)
+
+
+## Covered classes for farmland diversity ----
+farmland_codes=rast("./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif")
+farmland_covered=cover(farmland_codes,farmland_broad)
+farmland_covered2=cover(farmland_covered,template_t,
+                        filename="./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
+                        overwrite=TRUE)
+plot(farmland_covered2)
+
+# cleaning
+rm(farmland_codes)
+rm(farmland_covered)
+rm(farmland_covered2)
+rm(farmland_broad)
+
+
+## Diversity index at 25ha -----
+res_tbl <- landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
+  zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
+  id_field       = "rinda500",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV500m_10km.tif",
+  out_dir        = "./RasterGrids_500m/2024/",
+  out_filename   = "Diversity_Farmland_500x.tif",
+  out_layername  = "Diversity_Farmland_500x",
+  what           = "lsm_l_shdi",
+  rasterize_engine = "fasterize",
+  n_workers      = 8,
+  future_max_size = 3 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = TRUE,
+  plot_result    = TRUE
+)
+print(res_tbl)
+
+plot(rast("./RasterGrids_500m/2024/Diversity_Farmland_500x.tif"))
+rm(res_tbl)
+```
