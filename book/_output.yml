@@ -3,7 +3,7 @@ bookdown::gitbook:
   code_folding: hide
   config:
     toc:
-      collapse: subsection
+      collapse: section
       scroll_highlight: true
       before: |
         <li><a href="./">HiQBioDiv EGVs</a></li>

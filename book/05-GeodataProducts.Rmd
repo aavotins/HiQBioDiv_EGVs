@@ -179,8 +179,7 @@ if(!require(exactextractr)){install.packages("exactextractr");require(exactextra
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
-
-# dealing with waterbodies 
+#  dealing with waterbodies 
 udeni=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
 
 slope=rast("./Geodata/2024/DEM/Terrain_Slope_10m.tif")
@@ -192,13 +191,6 @@ dis=rast("./Geodata/2024/DEM/Terrain_DiS_breached_10m.tif")
 # average per waterbody
 udeni$slopes=exactextractr::exact_extract(slope,udeni,"mean")
 caurumi_slope=fasterize::fasterize(udeni,templis,field="slopes")
-udeni$aspect=exactextractr::exact_extract(aspect,udeni,"mean")
-caurumi_aspect=fasterize::fasterize(udeni,templis,field="aspect")
-udeni$twis=exactextractr::exact_extract(twi,udeni,"mean")
-caurumi_TWI=fasterize::fasterize(udeni,templis,field="twis")
-udeni$disi=exactextractr::exact_extract(dis,udeni,"mean")
-caurumi_DiS=fasterize::fasterize(udeni,templis,field="disi")
-
 caurumi_slope2=rast(caurumi_slope)
 caurumains_slope=app(c(caurumi_slope2,slope),fun="first",na.rm=TRUE,
                      overwrite=TRUE,
@@ -207,6 +199,15 @@ caurumains_slope=terra::rast("./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif")
 caurumains_slope2=terra::mask(caurumains_slope,template,
                               overwrite=TRUE,
                               filename="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif")
+rm(slope)
+rm(caurumi_slope)
+rm(caurumi_slope2)
+rm(caurumains_slope)
+rm(caurumains_slope2)
+
+
+udeni$aspect=exactextractr::exact_extract(aspect,udeni,"mean")
+caurumi_aspect=fasterize::fasterize(udeni,templis,field="aspect")
 caurumi_aspect2=rast(caurumi_aspect)
 caurumi_aspect=app(c(caurumi_aspect2,aspect),fun="first",na.rm=TRUE,
                    overwrite=TRUE,
@@ -214,15 +215,17 @@ caurumi_aspect=app(c(caurumi_aspect2,aspect),fun="first",na.rm=TRUE,
 caurumains_aspect=terra::rast("./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif")
 caurumains_aspect2=terra::mask(caurumains_aspect,template,
                                overwrite=TRUE,
-                               filename="./RasterGrids_10m/2024/Terrain_udeni2_10m.tif")
-caurumi_DiS2=rast(caurumi_DiS)
-caurumains_DiS=app(c(caurumi_DiS2,dis),fun="first",na.rm=TRUE,
-                   overwrite=TRUE,
-                   filename="./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif")
-caurumains_DiS=terra::rast("./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif")
-caurumains_DiS2=terra::mask(caurumains_DiS,template,
-                            overwrite=TRUE,
-                            filename="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif")
+                               filename="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif")
+rm(aspect)
+rm(caurumi_aspect)
+rm(caurumi_aspect2)
+rm(caurumains_aspect)
+rm(caurumains_aspect2)
+
+
+
+udeni$twis=exactextractr::exact_extract(twi,udeni,"mean")
+caurumi_TWI=fasterize::fasterize(udeni,templis,field="twis")
 caurumi_TWI2=rast(caurumi_TWI)
 caurumains_TWI=app(c(caurumi_TWI2,twi),fun="first",na.rm=TRUE,
                    overwrite=TRUE,
@@ -231,31 +234,32 @@ caurumains_TWI=terra::rast("./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif")
 caurumains_TWI2=terra::mask(caurumains_TWI,template,
                             overwrite=TRUE,
                             filename="./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif")
-
-# cleaning
-rm(udeni)
-rm(slope)
-rm(aspect)
 rm(twi)
-rm(dis)
-rm(caurumi_slope)
-rm(caurumi_aspect)
 rm(caurumi_TWI)
-rm(caurumi_DiS)
-rm(caurumi_slope2)
-rm(caurumains_slope)
-rm(caurumains_slope2)
-rm(caurumi_aspect2)
-rm(caurumi_aspect)
-rm(caurumains_aspect)
-rm(caurumains_aspect2)
-rm(caurumi_DiS2)
-rm(caurumains_DiS)
-rm(caurumains_DiS2)
 rm(caurumi_TWI2)
 rm(caurumains_TWI)
 rm(caurumains_TWI2)
 
+
+udeni$disi=exactextractr::exact_extract(dis,udeni,"mean")
+caurumi_DiS=fasterize::fasterize(udeni,templis,field="disi")
+caurumi_DiS2=rast(caurumi_DiS)
+caurumains_DiS=app(c(caurumi_DiS2,dis),fun="first",na.rm=TRUE,
+                   overwrite=TRUE,
+                   filename="./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif")
+caurumains_DiS=terra::rast("./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif")
+caurumains_DiS2=terra::mask(caurumains_DiS,template,
+                            overwrite=TRUE,
+                            filename="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif")
+rm(udeni)
+rm(dis)
+rm(caurumi_DiS)
+rm(caurumi_DiS2)
+rm(caurumains_DiS)
+rm(caurumains_DiS2)
+
+
+# cleaning
 unlink("./Geodata/2024/DEM/caurtDEM_breachedF.tif")
 unlink("./Geodata/2024/DEM/caurtDEM_breachedNF.tif")
 unlink("./Geodata/2024/DEM/caurtDEM_BreachFill.tif")
