@@ -774,9 +774,6 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="Ch07.html"><a href="Ch07.html"><i class="fa fa-check"></i><b>7</b> Data access</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -945,8 +942,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
   "sharing": {
     "github": false,
-    "facebook": true,
-    "twitter": true,
+    "facebook": false,
+    "twitter": false,
     "linkedin": false,
     "weibo": false,
     "instapaper": false,
@@ -971,13 +968,14 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["HiQBioDiv-EGVs.pdf", "HiQBioDiv-EGVs.epub"],
+  "download": ["HiQBioDiv-EGVs.pdf"],
   "search": {
     "engine": "fuse",
     "options": null
   },
   "toc": {
-    "collapse": "subsection"
+    "collapse": "subsection",
+    "scroll_highlight": true
   }
 });
 });

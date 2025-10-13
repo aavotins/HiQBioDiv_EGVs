@@ -774,9 +774,6 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="Ch07.html"><a href="Ch07.html"><i class="fa fa-check"></i><b>7</b> Data access</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -811,30 +808,72 @@ impact. However, in the context of Latvia, this is challenging. These challenges
 can be addressed in various ways. For example, if reliable (accurate) information
 on the exact locations of rivers and ditches were available, it could be
 incorporated into the terrain. Unfortunately, there is no sufficiently
-accurate information available. Therefore, information about transport
-structures from the <a href="Ch04.html#Ch04.03">Melioration Cadastre Information System database</a>, bridges
-from the <a href="Ch04.html#Ch04.04">topographic map</a> and transport structures and bridges
-from <a href="Ch04.html#Ch04.06">LVM Open Data</a> was used to address the challenges -
-information about the minimum height above sea level was incorporated into the
-DEM to be used further in a 30 m buffer around these locations.</p>
+accurate information available. Therefore, information about network
+structures from the <a href="Ch04.html#Ch04.03">Melioration Cadastre Information System database</a>
+buffered by 10 m, bridges from the <a href="Ch04.html#Ch04.04">topographic map</a> and transport structures and bridges
+from <a href="Ch04.html#Ch04.06">LVM Open Data</a> was used to address the challenges (both buffered
+by 10 m) - information about the minimum height above sea level was incorporated into the
+DEM to be used in further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="Ch05.html#cb27-1" tabindex="-1"></a><span class="co"># Libs</span></span>
-<span id="cb27-2"><a href="Ch05.html#cb27-2" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="Ch05.html#cb27-3" tabindex="-1"></a><span class="co"># arī LVM</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="Ch05.html#cb27-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb27-2"><a href="Ch05.html#cb27-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb27-3"><a href="Ch05.html#cb27-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb27-4"><a href="Ch05.html#cb27-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb27-5"><a href="Ch05.html#cb27-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb27-6"><a href="Ch05.html#cb27-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb27-7"><a href="Ch05.html#cb27-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)){<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>);<span class="fu">require</span>(exactextractr)}</span>
+<span id="cb27-8"><a href="Ch05.html#cb27-8" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="Ch05.html#cb27-9" tabindex="-1"></a><span class="co"># reference</span></span>
+<span id="cb27-10"><a href="Ch05.html#cb27-10" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb27-11"><a href="Ch05.html#cb27-11" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="Ch05.html#cb27-12" tabindex="-1"></a><span class="co"># reljefs</span></span>
+<span id="cb27-13"><a href="Ch05.html#cb27-13" tabindex="-1"></a>reljefs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/mozDEM_10m.tif&quot;</span>)</span>
+<span id="cb27-14"><a href="Ch05.html#cb27-14" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="Ch05.html#cb27-15" tabindex="-1"></a><span class="co"># drenazas tikla buves</span></span>
+<span id="cb27-16"><a href="Ch05.html#cb27-16" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>)</span>
+<span id="cb27-17"><a href="Ch05.html#cb27-17" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="Ch05.html#cb27-18" tabindex="-1"></a>dtb<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;DrenazasTiklaBuves&quot;</span>)</span>
+<span id="cb27-19"><a href="Ch05.html#cb27-19" tabindex="-1"></a>dtb_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(dtb,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb27-20"><a href="Ch05.html#cb27-20" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="Ch05.html#cb27-21" tabindex="-1"></a><span class="co"># tilti </span></span>
+<span id="cb27-22"><a href="Ch05.html#cb27-22" tabindex="-1"></a>tiltiL<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
+<span id="cb27-23"><a href="Ch05.html#cb27-23" tabindex="-1"></a>tiltiL_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiL,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-24"><a href="Ch05.html#cb27-24" tabindex="-1"></a>tiltiP<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
+<span id="cb27-25"><a href="Ch05.html#cb27-25" tabindex="-1"></a>tiltiP_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiP,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-26"><a href="Ch05.html#cb27-26" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="Ch05.html#cb27-27" tabindex="-1"></a><span class="co"># LVM</span></span>
+<span id="cb27-28"><a href="Ch05.html#cb27-28" tabindex="-1"></a>lvm_caurtekas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_CAURTEKAS/LVM_CAURTEKAS_Shape.shp&quot;</span>)</span>
+<span id="cb27-29"><a href="Ch05.html#cb27-29" tabindex="-1"></a>lvm_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(lvm_caurtekas,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-30"><a href="Ch05.html#cb27-30" tabindex="-1"></a></span>
+<span id="cb27-31"><a href="Ch05.html#cb27-31" tabindex="-1"></a></span>
+<span id="cb27-32"><a href="Ch05.html#cb27-32" tabindex="-1"></a><span class="co"># visi buferi </span></span>
+<span id="cb27-33"><a href="Ch05.html#cb27-33" tabindex="-1"></a><span class="fu">st_geometry</span>(dtb_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-34"><a href="Ch05.html#cb27-34" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiL_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-35"><a href="Ch05.html#cb27-35" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiP_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-36"><a href="Ch05.html#cb27-36" tabindex="-1"></a><span class="fu">st_geometry</span>(lvm_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-37"><a href="Ch05.html#cb27-37" tabindex="-1"></a>visi_buferi<span class="ot">=</span><span class="fu">bind_rows</span>(dtb_buffer,tiltiL_buffer,tiltiP_buffer,lvm_buffer)</span>
+<span id="cb27-38"><a href="Ch05.html#cb27-38" tabindex="-1"></a></span>
+<span id="cb27-39"><a href="Ch05.html#cb27-39" tabindex="-1"></a><span class="co"># caurumosana</span></span>
+<span id="cb27-40"><a href="Ch05.html#cb27-40" tabindex="-1"></a>visi_buferi<span class="sc">$</span>vertiba<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(reljefs,visi_buferi,<span class="st">&quot;min&quot;</span>)</span>
+<span id="cb27-41"><a href="Ch05.html#cb27-41" tabindex="-1"></a></span>
+<span id="cb27-42"><a href="Ch05.html#cb27-42" tabindex="-1"></a>templis<span class="ot">=</span>raster<span class="sc">::</span><span class="fu">raster</span>(template)</span>
+<span id="cb27-43"><a href="Ch05.html#cb27-43" tabindex="-1"></a>caurumi<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(visi_buferi,templis,<span class="at">field=</span><span class="st">&quot;vertiba&quot;</span>)</span>
+<span id="cb27-44"><a href="Ch05.html#cb27-44" tabindex="-1"></a>caurumi2<span class="ot">=</span><span class="fu">rast</span>(caurumi)</span>
+<span id="cb27-45"><a href="Ch05.html#cb27-45" tabindex="-1"></a>caurumains<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(reljefs,caurumi2),<span class="at">fun=</span><span class="st">&quot;min&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb27-46"><a href="Ch05.html#cb27-46" tabindex="-1"></a>               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb27-47"><a href="Ch05.html#cb27-47" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./IevadesDati/reljefs/caurtDEM_10m.tif&quot;</span>)</span></code></pre></div>
 </details>
 <p>This DEM was then used for geoprocessing to find terrain depressions and
-determine the topographic wetness index (TWI). First, terrain depressions were
-calculated, assuming that all runoff that should be known is known and taken
-into account (adjusted DEM values - previous code area). Then, the topographic
-wetness index was prepared and the search for non-runoff depressions was repeated:</p>
+determine the topographic wetness index (TWI). The topographic
+wetness index was prepared and the search for non-runoff depressions was conducted:</p>
 <ol style="list-style-type: decimal">
+<li><p>drainage depressions and their depth layers were prepared after
+incorporating flow breaks;</p></li>
 <li><p>to calculate the topographic wetness index, the terrain depressions without
 runoff were reviewed, allowing up to ten cell breaks in places of lower
 resistance, the rest were filled in;</p></li>
-<li><p>precise drainage depressions and their depth layers were prepared after
-incorporating flow breaks;</p></li>
-<li><p>for additional security, the result of the first step was repeated to
-search for and fill in relief depressions <span class="citation">(<a href="#ref-WangLiu2006">Wang and Liu, 2006</a>)</span>;</p></li>
+<li><p>for additional security, the result of the second step was repeated to
+search for and fill in terrain depressions <span class="citation">(<a href="#ref-WangLiu2006">Wang and Liu, 2006</a>)</span>;</p></li>
 <li><p>the result of the third step was used to determine the specific catchment
 area using d-infinity flow division;</p></li>
 <li><p>by combining the specific catchment area layer with the slope layer,
@@ -842,13 +881,171 @@ the topographic wetness index was calculated. A graphical evaluation revealed
 individual extreme values, which were limited to <strong>20</strong>.</p></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="Ch05.html#cb28-1" tabindex="-1"></a><span class="co"># Libs</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="Ch05.html#cb28-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb28-2"><a href="Ch05.html#cb28-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb28-3"><a href="Ch05.html#cb28-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(whitebox)){<span class="fu">install.packages</span>(<span class="st">&quot;whitebox&quot;</span>);<span class="fu">require</span>(whitebox)}</span>
+<span id="cb28-4"><a href="Ch05.html#cb28-4" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="Ch05.html#cb28-5" tabindex="-1"></a><span class="co"># reference</span></span>
+<span id="cb28-6"><a href="Ch05.html#cb28-6" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb28-7"><a href="Ch05.html#cb28-7" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="Ch05.html#cb28-8" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="Ch05.html#cb28-9" tabindex="-1"></a><span class="co"># DEM</span></span>
+<span id="cb28-10"><a href="Ch05.html#cb28-10" tabindex="-1"></a>caurumainis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>)</span>
+<span id="cb28-11"><a href="Ch05.html#cb28-11" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="Ch05.html#cb28-12" tabindex="-1"></a><span class="co"># Sinks</span></span>
+<span id="cb28-13"><a href="Ch05.html#cb28-13" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="Ch05.html#cb28-14" tabindex="-1"></a><span class="do">## breached sinks un depth in sinks</span></span>
+<span id="cb28-15"><a href="Ch05.html#cb28-15" tabindex="-1"></a><span class="fu">wbt_breach_depressions_least_cost</span>(</span>
+<span id="cb28-16"><a href="Ch05.html#cb28-16" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>,</span>
+<span id="cb28-17"><a href="Ch05.html#cb28-17" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>,</span>
+<span id="cb28-18"><a href="Ch05.html#cb28-18" tabindex="-1"></a>  <span class="at">dist =</span> <span class="dv">10</span>,</span>
+<span id="cb28-19"><a href="Ch05.html#cb28-19" tabindex="-1"></a>  <span class="at">fill =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb28-20"><a href="Ch05.html#cb28-20" tabindex="-1"></a><span class="fu">wbt_depth_in_sink</span>(<span class="at">dem=</span><span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>,</span>
+<span id="cb28-21"><a href="Ch05.html#cb28-21" tabindex="-1"></a>                  <span class="at">output=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_breached_10m.tif&quot;</span>,</span>
+<span id="cb28-22"><a href="Ch05.html#cb28-22" tabindex="-1"></a>                  <span class="at">zero_background =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-23"><a href="Ch05.html#cb28-23" tabindex="-1"></a><span class="fu">wbt_sink</span>(<span class="at">input =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>,</span>
+<span id="cb28-24"><a href="Ch05.html#cb28-24" tabindex="-1"></a>         <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif&quot;</span>,</span>
+<span id="cb28-25"><a href="Ch05.html#cb28-25" tabindex="-1"></a>         <span class="at">verbose_mode =</span> <span class="cn">FALSE</span>,<span class="at">zero_background =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-26"><a href="Ch05.html#cb28-26" tabindex="-1"></a>sinks<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif&quot;</span>)</span>
+<span id="cb28-27"><a href="Ch05.html#cb28-27" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="Ch05.html#cb28-28" tabindex="-1"></a>sinks2 <span class="ot">&lt;-</span> <span class="fu">ifel</span>(sinks <span class="sc">&gt;=</span> <span class="dv">1</span>, <span class="dv">1</span>, sinks,</span>
+<span id="cb28-29"><a href="Ch05.html#cb28-29" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_SinkYN_breached_10m.tif&quot;</span>)</span>
+<span id="cb28-30"><a href="Ch05.html#cb28-30" tabindex="-1"></a><span class="fu">plot</span>(sinks2)</span>
+<span id="cb28-31"><a href="Ch05.html#cb28-31" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="Ch05.html#cb28-32" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="Ch05.html#cb28-33" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="Ch05.html#cb28-34" tabindex="-1"></a><span class="co"># TWI</span></span>
+<span id="cb28-35"><a href="Ch05.html#cb28-35" tabindex="-1"></a><span class="do">## breaching</span></span>
+<span id="cb28-36"><a href="Ch05.html#cb28-36" tabindex="-1"></a><span class="fu">wbt_breach_depressions_least_cost</span>(</span>
+<span id="cb28-37"><a href="Ch05.html#cb28-37" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>,</span>
+<span id="cb28-38"><a href="Ch05.html#cb28-38" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
+<span id="cb28-39"><a href="Ch05.html#cb28-39" tabindex="-1"></a>  <span class="at">dist =</span> <span class="dv">10</span>,</span>
+<span id="cb28-40"><a href="Ch05.html#cb28-40" tabindex="-1"></a>  <span class="at">fill =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-41"><a href="Ch05.html#cb28-41" tabindex="-1"></a></span>
+<span id="cb28-42"><a href="Ch05.html#cb28-42" tabindex="-1"></a></span>
+<span id="cb28-43"><a href="Ch05.html#cb28-43" tabindex="-1"></a><span class="do">### filling</span></span>
+<span id="cb28-44"><a href="Ch05.html#cb28-44" tabindex="-1"></a><span class="fu">wbt_fill_depressions_wang_and_liu</span>(</span>
+<span id="cb28-45"><a href="Ch05.html#cb28-45" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
+<span id="cb28-46"><a href="Ch05.html#cb28-46" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span></span>
+<span id="cb28-47"><a href="Ch05.html#cb28-47" tabindex="-1"></a>)</span>
+<span id="cb28-48"><a href="Ch05.html#cb28-48" tabindex="-1"></a></span>
+<span id="cb28-49"><a href="Ch05.html#cb28-49" tabindex="-1"></a><span class="do">### (d inf) flow direction</span></span>
+<span id="cb28-50"><a href="Ch05.html#cb28-50" tabindex="-1"></a><span class="fu">wbt_d_inf_flow_accumulation</span>(<span class="at">input =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>,</span>
+<span id="cb28-51"><a href="Ch05.html#cb28-51" tabindex="-1"></a>                            <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
+<span id="cb28-52"><a href="Ch05.html#cb28-52" tabindex="-1"></a>                            <span class="at">out_type =</span> <span class="st">&quot;Specific Contributing Area&quot;</span>)</span>
+<span id="cb28-53"><a href="Ch05.html#cb28-53" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="Ch05.html#cb28-54" tabindex="-1"></a><span class="do">### twi</span></span>
+<span id="cb28-55"><a href="Ch05.html#cb28-55" tabindex="-1"></a><span class="fu">wbt_wetness_index</span>(<span class="at">sca =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
+<span id="cb28-56"><a href="Ch05.html#cb28-56" tabindex="-1"></a>                  <span class="at">slope =</span> <span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>,</span>
+<span id="cb28-57"><a href="Ch05.html#cb28-57" tabindex="-1"></a>                  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
+<span id="cb28-58"><a href="Ch05.html#cb28-58" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
+<span id="cb28-59"><a href="Ch05.html#cb28-59" tabindex="-1"></a><span class="fu">hist</span>(twi) <span class="co"># excessive values</span></span>
+<span id="cb28-60"><a href="Ch05.html#cb28-60" tabindex="-1"></a><span class="fu">plot</span>(twi)</span>
+<span id="cb28-61"><a href="Ch05.html#cb28-61" tabindex="-1"></a>twi2<span class="ot">=</span><span class="fu">ifel</span>(twi<span class="sc">&gt;</span><span class="dv">20</span>,<span class="dv">20</span>,twi)</span>
+<span id="cb28-62"><a href="Ch05.html#cb28-62" tabindex="-1"></a></span>
+<span id="cb28-63"><a href="Ch05.html#cb28-63" tabindex="-1"></a><span class="fu">writeRaster</span>(twi2x,<span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span></code></pre></div>
 </details>
 <p>Since the initial DEM input was created by filling in water bodies using
 interpolation methods, the water bodies show a pronounced terrain, which needs
 to be removed. This is done by inserting average values into these polygons.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="Ch05.html#cb29-1" tabindex="-1"></a><span class="co"># Libs</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="Ch05.html#cb29-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb29-2"><a href="Ch05.html#cb29-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb29-3"><a href="Ch05.html#cb29-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb29-4"><a href="Ch05.html#cb29-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb29-5"><a href="Ch05.html#cb29-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb29-6"><a href="Ch05.html#cb29-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb29-7"><a href="Ch05.html#cb29-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)){<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>);<span class="fu">require</span>(exactextractr)}</span>
+<span id="cb29-8"><a href="Ch05.html#cb29-8" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="Ch05.html#cb29-9" tabindex="-1"></a><span class="co"># reference</span></span>
+<span id="cb29-10"><a href="Ch05.html#cb29-10" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
+<span id="cb29-11"><a href="Ch05.html#cb29-11" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="Ch05.html#cb29-12" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="Ch05.html#cb29-13" tabindex="-1"></a><span class="co"># dealing with waterbodies </span></span>
+<span id="cb29-14"><a href="Ch05.html#cb29-14" tabindex="-1"></a>udeni<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
+<span id="cb29-15"><a href="Ch05.html#cb29-15" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="Ch05.html#cb29-16" tabindex="-1"></a>slope<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>)</span>
+<span id="cb29-17"><a href="Ch05.html#cb29-17" tabindex="-1"></a>aspect<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_10m.tif&quot;</span>)</span>
+<span id="cb29-18"><a href="Ch05.html#cb29-18" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span>
+<span id="cb29-19"><a href="Ch05.html#cb29-19" tabindex="-1"></a>dis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_breached_10m.tif&quot;</span>)</span>
+<span id="cb29-20"><a href="Ch05.html#cb29-20" tabindex="-1"></a></span>
+<span id="cb29-21"><a href="Ch05.html#cb29-21" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="Ch05.html#cb29-22" tabindex="-1"></a><span class="co"># average per waterbody</span></span>
+<span id="cb29-23"><a href="Ch05.html#cb29-23" tabindex="-1"></a>udeni<span class="sc">$</span>slopes<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(slope,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-24"><a href="Ch05.html#cb29-24" tabindex="-1"></a>caurumi_slope<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;slopes&quot;</span>)</span>
+<span id="cb29-25"><a href="Ch05.html#cb29-25" tabindex="-1"></a>udeni<span class="sc">$</span>aspect<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(aspect,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-26"><a href="Ch05.html#cb29-26" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;aspect&quot;</span>)</span>
+<span id="cb29-27"><a href="Ch05.html#cb29-27" tabindex="-1"></a>udeni<span class="sc">$</span>twis<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(twi,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-28"><a href="Ch05.html#cb29-28" tabindex="-1"></a>caurumi_TWI<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;twis&quot;</span>)</span>
+<span id="cb29-29"><a href="Ch05.html#cb29-29" tabindex="-1"></a>udeni<span class="sc">$</span>disi<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(dis,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-30"><a href="Ch05.html#cb29-30" tabindex="-1"></a>caurumi_DiS<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;disi&quot;</span>)</span>
+<span id="cb29-31"><a href="Ch05.html#cb29-31" tabindex="-1"></a></span>
+<span id="cb29-32"><a href="Ch05.html#cb29-32" tabindex="-1"></a>caurumi_slope2<span class="ot">=</span><span class="fu">rast</span>(caurumi_slope)</span>
+<span id="cb29-33"><a href="Ch05.html#cb29-33" tabindex="-1"></a>caurumains_slope<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_slope2,slope),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-34"><a href="Ch05.html#cb29-34" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-35"><a href="Ch05.html#cb29-35" tabindex="-1"></a>                     <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-36"><a href="Ch05.html#cb29-36" tabindex="-1"></a>caurumains_slope<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-37"><a href="Ch05.html#cb29-37" tabindex="-1"></a>caurumains_slope2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_slope,template,</span>
+<span id="cb29-38"><a href="Ch05.html#cb29-38" tabindex="-1"></a>                              <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-39"><a href="Ch05.html#cb29-39" tabindex="-1"></a>                              <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-40"><a href="Ch05.html#cb29-40" tabindex="-1"></a>caurumi_aspect2<span class="ot">=</span><span class="fu">rast</span>(caurumi_aspect)</span>
+<span id="cb29-41"><a href="Ch05.html#cb29-41" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_aspect2,aspect),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-42"><a href="Ch05.html#cb29-42" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-43"><a href="Ch05.html#cb29-43" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-44"><a href="Ch05.html#cb29-44" tabindex="-1"></a>caurumains_aspect<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-45"><a href="Ch05.html#cb29-45" tabindex="-1"></a>caurumains_aspect2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_aspect,template,</span>
+<span id="cb29-46"><a href="Ch05.html#cb29-46" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-47"><a href="Ch05.html#cb29-47" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-48"><a href="Ch05.html#cb29-48" tabindex="-1"></a>caurumi_DiS2<span class="ot">=</span><span class="fu">rast</span>(caurumi_DiS)</span>
+<span id="cb29-49"><a href="Ch05.html#cb29-49" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_DiS2,dis),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-50"><a href="Ch05.html#cb29-50" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-51"><a href="Ch05.html#cb29-51" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-52"><a href="Ch05.html#cb29-52" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-53"><a href="Ch05.html#cb29-53" tabindex="-1"></a>caurumains_DiS2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_DiS,template,</span>
+<span id="cb29-54"><a href="Ch05.html#cb29-54" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-55"><a href="Ch05.html#cb29-55" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-56"><a href="Ch05.html#cb29-56" tabindex="-1"></a>caurumi_TWI2<span class="ot">=</span><span class="fu">rast</span>(caurumi_TWI)</span>
+<span id="cb29-57"><a href="Ch05.html#cb29-57" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_TWI2,twi),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-58"><a href="Ch05.html#cb29-58" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-59"><a href="Ch05.html#cb29-59" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-60"><a href="Ch05.html#cb29-60" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-61"><a href="Ch05.html#cb29-61" tabindex="-1"></a>caurumains_TWI2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_TWI,template,</span>
+<span id="cb29-62"><a href="Ch05.html#cb29-62" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-63"><a href="Ch05.html#cb29-63" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-64"><a href="Ch05.html#cb29-64" tabindex="-1"></a></span>
+<span id="cb29-65"><a href="Ch05.html#cb29-65" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb29-66"><a href="Ch05.html#cb29-66" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
+<span id="cb29-67"><a href="Ch05.html#cb29-67" tabindex="-1"></a><span class="fu">rm</span>(slope)</span>
+<span id="cb29-68"><a href="Ch05.html#cb29-68" tabindex="-1"></a><span class="fu">rm</span>(aspect)</span>
+<span id="cb29-69"><a href="Ch05.html#cb29-69" tabindex="-1"></a><span class="fu">rm</span>(twi)</span>
+<span id="cb29-70"><a href="Ch05.html#cb29-70" tabindex="-1"></a><span class="fu">rm</span>(dis)</span>
+<span id="cb29-71"><a href="Ch05.html#cb29-71" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope)</span>
+<span id="cb29-72"><a href="Ch05.html#cb29-72" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect)</span>
+<span id="cb29-73"><a href="Ch05.html#cb29-73" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI)</span>
+<span id="cb29-74"><a href="Ch05.html#cb29-74" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS)</span>
+<span id="cb29-75"><a href="Ch05.html#cb29-75" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope2)</span>
+<span id="cb29-76"><a href="Ch05.html#cb29-76" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope)</span>
+<span id="cb29-77"><a href="Ch05.html#cb29-77" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope2)</span>
+<span id="cb29-78"><a href="Ch05.html#cb29-78" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect2)</span>
+<span id="cb29-79"><a href="Ch05.html#cb29-79" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect)</span>
+<span id="cb29-80"><a href="Ch05.html#cb29-80" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect)</span>
+<span id="cb29-81"><a href="Ch05.html#cb29-81" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect2)</span>
+<span id="cb29-82"><a href="Ch05.html#cb29-82" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS2)</span>
+<span id="cb29-83"><a href="Ch05.html#cb29-83" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS)</span>
+<span id="cb29-84"><a href="Ch05.html#cb29-84" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS2)</span>
+<span id="cb29-85"><a href="Ch05.html#cb29-85" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI2)</span>
+<span id="cb29-86"><a href="Ch05.html#cb29-86" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI)</span>
+<span id="cb29-87"><a href="Ch05.html#cb29-87" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI2)</span>
+<span id="cb29-88"><a href="Ch05.html#cb29-88" tabindex="-1"></a></span>
+<span id="cb29-89"><a href="Ch05.html#cb29-89" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>)</span>
+<span id="cb29-90"><a href="Ch05.html#cb29-90" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>)</span>
+<span id="cb29-91"><a href="Ch05.html#cb29-91" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>)</span>
+<span id="cb29-92"><a href="Ch05.html#cb29-92" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>)</span>
+<span id="cb29-93"><a href="Ch05.html#cb29-93" tabindex="-1"></a></span>
+<span id="cb29-94"><a href="Ch05.html#cb29-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-95"><a href="Ch05.html#cb29-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-96"><a href="Ch05.html#cb29-96" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-97"><a href="Ch05.html#cb29-97" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.02" class="section level2 hasAnchor" number="5.2">
@@ -2365,8 +2562,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
   "sharing": {
     "github": false,
-    "facebook": true,
-    "twitter": true,
+    "facebook": false,
+    "twitter": false,
     "linkedin": false,
     "weibo": false,
     "instapaper": false,
@@ -2391,13 +2588,14 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["HiQBioDiv-EGVs.pdf", "HiQBioDiv-EGVs.epub"],
+  "download": ["HiQBioDiv-EGVs.pdf"],
   "search": {
     "engine": "fuse",
     "options": null
   },
   "toc": {
-    "collapse": "subsection"
+    "collapse": "subsection",
+    "scroll_highlight": true
   }
 });
 });
