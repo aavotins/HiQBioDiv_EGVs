@@ -618,13 +618,15 @@ r_purvi_topo=rast("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.ti
 r_purvi_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif")
 r_bebri_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
 mires=rast("./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif")
+miresY=ifel(mires==1,710,NA)
 bogs=rast("./RasterGrids_10m/2024/EDI_BogsYN.tif")
+bogsY=ifel(bogs==1,710,NA)
 
 wetlands_cover=cover(r_niedraji_topo,r_purvi_topo)
 wetlands_cover=cover(wetlands_cover,r_purvi_mvr)
 wetlands_cover=cover(wetlands_cover,r_bebri_mvr)
-wetlands_cover=cover(wetlands_cover,mires)
-wetlands_cover=cover(wetlands_cover,bogs,
+wetlands_cover=cover(wetlands_cover,miresY)
+wetlands_cover=cover(wetlands_cover,bogsY,
                             filename="./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif",
                             overwrite=TRUE)
 # cleaning
@@ -633,13 +635,17 @@ rm(r_purvi_topo)
 rm(r_purvi_mvr)
 rm(r_bebri_mvr)
 rm(bogs)
+rm(bogsY)
 rm(mires)
+rm(miresY)
 rm(topo)
 rm(wetlands_cover)
 
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
+
+plot(rast("./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif"))
 
 # class 800 ----
 
@@ -712,14 +718,31 @@ writeRaster(dw2,
             overwrite=TRUE)
 # other layers
 celi=rast("./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif")
+plot(celi)
+
 niedraji=rast("RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif")
+plot(niedraji)
+
 udeni=rast("./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif")
+plot(udeni)
+
 lauki=rast("./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif")
+plot(lauki)
+
 vasarnicas=rast("./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif")
+plot(vasarnicas)
+
 mezi=rast("./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif")
+plot(mezi)
+
 mitraji=rast("./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif")
+plot(mitraji)
+
 smiltaji=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif")
+plot(smiltaji)
+
 dw2=rast("./RasterGrids_10m/2024/DW_reclass.tif")
+plot(dw2)
 
 # covering in correct order
 rastri_ainavai=cover(celi,niedraji)
@@ -732,6 +755,7 @@ rastri_ainavai=cover(rastri_ainavai,smiltaji)
 rastri_ainavai=cover(rastri_ainavai,dw2,
                            filename="./RasterGrids_10m/2024/Ainava_vienkarsa.tif",
                            overwrite=TRUE)
+plot(rastri_ainavai)
 
 # cleaning
 rm(celi)
@@ -749,6 +773,9 @@ rm(rastri_ainavai)
 
 # masking
 rastrs_ainava=rast("./RasterGrids_10m/2024/Ainava_vienkarsa.tif")
+plot(rastrs_ainava)
+freq(rastrs_ainava)
+
 masketa_ainava=terra::mask(rastrs_ainava,
                            template_t,
                            filename="./RasterGrids_10m/2024/Ainava_vienk_mask.tif",
