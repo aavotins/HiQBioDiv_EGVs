@@ -1,2 +1,19 @@
 \usepackage{booktabs}
 \usepackage{longtable}
+
+% Better line breaking in verbatim code blocks produced by Pandoc/knitr
+\usepackage{fvextra}      % extends fancyvrb used by Pandoc
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines,             % enable soft wrapping
+  breakanywhere,          % allow breaks inside long tokens (URLs/paths)
+  commandchars=\\\{\}     % keep Pandoc's defaults
+}
+\setlength{\emergencystretch}{3em}  % helps break overfull lines elsewhere
+\sloppy
+
+\usepackage{listings}
+\lstset{
+  breaklines=true,
+  breakatwhitespace=false,
+  basicstyle=\ttfamily\small
+}
