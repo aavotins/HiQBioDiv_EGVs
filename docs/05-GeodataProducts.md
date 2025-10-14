@@ -768,7 +768,10 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 dominate classes with higher values. To create this class, the following were 
 combined (in order of overlap):
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB`, the result of which is coded with `410`;
+    – [topographic map](#Ch04.04) layer `BuildA_COMB` values "poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve" coded with `410`;
+
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` values "poligons_Augludarzs", "poligons_Augļudārzs", "poligons_Sakņudārzs", "poligons_Ogulājs", "poligons_Ogulajs", 
+    "poligons_Saknudarzs" coded with `420`;
 
     – [LAD database](#Ch04.02) rural information layer group (classes are 
     available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)) 
@@ -797,6 +800,23 @@ template_r=raster(template_t)
 
 
 # class 400 ----
+
+
+# topo apbuves
+viensvasar=st_read_parquet("./Geodata/2024/TopographicMap/BuildA_COMB.parquet")
+table(viensvasar$FNAME,useNA="always")
+viensvasar=viensvasar %>% 
+  filter(FNAME %in% c("poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve")) %>% 
+  mutate(yes=410) %>% 
+  dplyr::select(yes)
+r_viensetasvasarnicas=fasterize(viensvasar,template_r,field="yes")
+raster::writeRaster(r_viensetasvasarnicas,
+                    "./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# cleaning
+rm(viensvasar)
+rm(r_darzini_topo)
 
 # topo
 darzini_topo=st_read_parquet("./Geodata/2024/TopographicMap/LandusA_COMB.parquet")
@@ -837,8 +857,9 @@ rm(lad)
 rm(r_darzini_lad)
 
 # merging
-a400=rast("./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif")
-b400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
+a400=rast("./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif")
+b400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
+c400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 
 allotment_cover=cover(a400,b400,
                      filename="./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif",
@@ -848,7 +869,8 @@ allotment_cover=cover(a400,b400,
 rm(a400)
 rm(b400)
 rm(allotment_cover)
-unlink("./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif")
+unlink("./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif")
+unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 ```
 
@@ -1711,6 +1733,8 @@ been created or one of the code components is 0 are excluded;
 
 - forest diversity class values prepared in [Landscape in general diversity](#Ch05.04.01);
 
+- forest classes from [Landscape classification](#Ch05.03);
+
 - value 1 - other cells located in the territory of Latvia.
 
 Once the landscape classification is done, diversity index is calculated at 25 ha 
@@ -1765,10 +1789,15 @@ polygon2input(vector_data = mvr,
 # cleaning
 rm(mvr)
 
+# simple forests
+simple_forests=rast("./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif")
+
 ## Covered classes for forest diversity ----
+
 forest_codes=rast("./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif")
 plot(forest_codes)
 forest_covered=cover(forest_codes,forest_broad)
+forest_covered=cover(forest_covered,simple_forests)
 plot(forest_covered)
 
 forest_covered2=cover(forest_covered,template_t,
@@ -1781,6 +1810,9 @@ rm(forest_codes)
 rm(forest_covered)
 rm(forest_covered2)
 rm(forest_broad)
+rm(simple_forests)
+
+
 
 ## Diversity index at 25ha -----
 
@@ -1818,6 +1850,8 @@ contains the following values, in order of hierarchy:
 - [Rural Support Service](#Ch04.02) crop codes with 1000 added;
 
 - farmland diversity class values prepared in [Landscape in general diversity](#Ch05.04.01);
+
+- farmland classes from [Landscape classification](#Ch05.03);
 
 - value 1 - other cells located in the territory of Latvia.
 
@@ -1871,10 +1905,14 @@ polygon2input(vector_data = lad,
 rm(lad)
 
 
+# simple landscapes input 
+simple_farmland=rast("./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif")
+
 ## Covered classes for farmland diversity ----
 
 farmland_codes=rast("./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif")
 farmland_covered=cover(farmland_codes,farmland_broad)
+farmland_covered=cover(farmland_covered,simple_farmland)
 farmland_covered2=cover(farmland_covered,template_t,
                         filename="./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
                         overwrite=TRUE)
@@ -1884,6 +1922,7 @@ plot(farmland_covered2)
 rm(farmland_codes)
 rm(farmland_covered)
 rm(farmland_covered2)
+rm(simple_farmland)
 rm(farmland_broad)
 
 

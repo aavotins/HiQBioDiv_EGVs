@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-14" />
+<meta name="date" content="2025-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2551,7 +2551,8 @@ combined, preffering the most timely per mapping page. These layers are:</p>
 <li><p><code>road_A</code>, describing larger roads as polygons;</p></li>
 <li><p><code>road_L</code>, describing different including very small and unused roads as lines;</p></li>
 <li><p><code>swamp_A</code>, describing bogs as polygons;</p></li>
-<li><p><code>flora_L</code>, describing linear tree and shrub formations.</p></li>
+<li><p><code>flora_L</code>, describing linear tree and shrub formations;</p></li>
+<li><p><code>build_A</code>, describing types of builtup areas.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="Ch04.html#cb12-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2747,7 +2748,19 @@ combined, preffering the most timely per mapping page. These layers are:</p>
 <span id="cb12-191"><a href="Ch04.html#cb12-191" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
 <span id="cb12-192"><a href="Ch04.html#cb12-192" tabindex="-1"></a></span>
 <span id="cb12-193"><a href="Ch04.html#cb12-193" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-194"><a href="Ch04.html#cb12-194" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/FloraL_COMB.parquet&quot;</span>)</span></code></pre></div>
+<span id="cb12-194"><a href="Ch04.html#cb12-194" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/FloraL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-195"><a href="Ch04.html#cb12-195" tabindex="-1"></a></span>
+<span id="cb12-196"><a href="Ch04.html#cb12-196" tabindex="-1"></a></span>
+<span id="cb12-197"><a href="Ch04.html#cb12-197" tabindex="-1"></a><span class="co"># build_A</span></span>
+<span id="cb12-198"><a href="Ch04.html#cb12-198" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;build_A&quot;</span>)</span>
+<span id="cb12-199"><a href="Ch04.html#cb12-199" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-200"><a href="Ch04.html#cb12-200" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-201"><a href="Ch04.html#cb12-201" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-202"><a href="Ch04.html#cb12-202" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;build_A&quot;</span>)</span>
+<span id="cb12-203"><a href="Ch04.html#cb12-203" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-204"><a href="Ch04.html#cb12-204" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-205"><a href="Ch04.html#cb12-205" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-206"><a href="Ch04.html#cb12-206" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/BuildA_COMB.parquet&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch04.05" class="section level2 hasAnchor" number="4.5">

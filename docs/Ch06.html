@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-14" />
+<meta name="date" content="2025-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -4771,9 +4771,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_98</code></p>
 <p><strong>English name:</strong> Average farmland class α-diversity of 500 m grid cells within the 0.5 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="#Ch05.04.0">Farmland diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="Ch06.html#cb139-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="Ch06.html#cb139-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb139-2"><a href="Ch06.html#cb139-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb139-3"><a href="Ch06.html#cb139-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb139-4"><a href="Ch06.html#cb139-4" tabindex="-1"></a></span>
+<span id="cb139-5"><a href="Ch06.html#cb139-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb139-6"><a href="Ch06.html#cb139-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb139-7"><a href="Ch06.html#cb139-7" tabindex="-1"></a></span>
+<span id="cb139-8"><a href="Ch06.html#cb139-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb139-9"><a href="Ch06.html#cb139-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb139-10"><a href="Ch06.html#cb139-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb139-11"><a href="Ch06.html#cb139-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb139-12"><a href="Ch06.html#cb139-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb139-13"><a href="Ch06.html#cb139-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb139-14"><a href="Ch06.html#cb139-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>),</span>
+<span id="cb139-15"><a href="Ch06.html#cb139-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Farmland&quot;</span>),</span>
+<span id="cb139-16"><a href="Ch06.html#cb139-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb139-17"><a href="Ch06.html#cb139-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb139-18"><a href="Ch06.html#cb139-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r500&quot;</span>),</span>
+<span id="cb139-19"><a href="Ch06.html#cb139-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb139-20"><a href="Ch06.html#cb139-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb139-21"><a href="Ch06.html#cb139-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb139-22"><a href="Ch06.html#cb139-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb139-23"><a href="Ch06.html#cb139-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb139-24"><a href="Ch06.html#cb139-24" tabindex="-1"></a></span>
+<span id="cb139-25"><a href="Ch06.html#cb139-25" tabindex="-1"></a><span class="co"># Diversity_Farmland_r500.tif   egv_98</span></span>
+<span id="cb139-26"><a href="Ch06.html#cb139-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif&quot;</span>)</span>
+<span id="cb139-27"><a href="Ch06.html#cb139-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_98&quot;</span></span>
+<span id="cb139-28"><a href="Ch06.html#cb139-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb139-29"><a href="Ch06.html#cb139-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb139-30"><a href="Ch06.html#cb139-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif&quot;</span>,</span>
+<span id="cb139-31"><a href="Ch06.html#cb139-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.099" class="section level2 hasAnchor" number="6.99">
@@ -4782,9 +4816,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_99</code></p>
 <p><strong>English name:</strong> Average farmland class α-diversity of 500 m grid cells within the 1.25 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="#Ch05.04.0">Farmland diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="Ch06.html#cb140-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="Ch06.html#cb140-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb140-2"><a href="Ch06.html#cb140-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb140-3"><a href="Ch06.html#cb140-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb140-4"><a href="Ch06.html#cb140-4" tabindex="-1"></a></span>
+<span id="cb140-5"><a href="Ch06.html#cb140-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb140-6"><a href="Ch06.html#cb140-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb140-7"><a href="Ch06.html#cb140-7" tabindex="-1"></a></span>
+<span id="cb140-8"><a href="Ch06.html#cb140-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb140-9"><a href="Ch06.html#cb140-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb140-10"><a href="Ch06.html#cb140-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb140-11"><a href="Ch06.html#cb140-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb140-12"><a href="Ch06.html#cb140-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb140-13"><a href="Ch06.html#cb140-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb140-14"><a href="Ch06.html#cb140-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>),</span>
+<span id="cb140-15"><a href="Ch06.html#cb140-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Farmland&quot;</span>),</span>
+<span id="cb140-16"><a href="Ch06.html#cb140-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb140-17"><a href="Ch06.html#cb140-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb140-18"><a href="Ch06.html#cb140-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r1250&quot;</span>),</span>
+<span id="cb140-19"><a href="Ch06.html#cb140-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb140-20"><a href="Ch06.html#cb140-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb140-21"><a href="Ch06.html#cb140-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb140-22"><a href="Ch06.html#cb140-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb140-23"><a href="Ch06.html#cb140-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb140-24"><a href="Ch06.html#cb140-24" tabindex="-1"></a></span>
+<span id="cb140-25"><a href="Ch06.html#cb140-25" tabindex="-1"></a><span class="co"># Diversity_Farmland_r1250.tif  egv_99</span></span>
+<span id="cb140-26"><a href="Ch06.html#cb140-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif&quot;</span>)</span>
+<span id="cb140-27"><a href="Ch06.html#cb140-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_99&quot;</span></span>
+<span id="cb140-28"><a href="Ch06.html#cb140-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb140-29"><a href="Ch06.html#cb140-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb140-30"><a href="Ch06.html#cb140-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif&quot;</span>,</span>
+<span id="cb140-31"><a href="Ch06.html#cb140-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.100" class="section level2 hasAnchor" number="6.100">
@@ -4793,9 +4861,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_100</code></p>
 <p><strong>English name:</strong> Average farmland class α-diversity of 500 m grid cells within the 3 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="#Ch05.04.0">Farmland diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="Ch06.html#cb141-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="Ch06.html#cb141-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb141-2"><a href="Ch06.html#cb141-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb141-3"><a href="Ch06.html#cb141-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb141-4"><a href="Ch06.html#cb141-4" tabindex="-1"></a></span>
+<span id="cb141-5"><a href="Ch06.html#cb141-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb141-6"><a href="Ch06.html#cb141-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb141-7"><a href="Ch06.html#cb141-7" tabindex="-1"></a></span>
+<span id="cb141-8"><a href="Ch06.html#cb141-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb141-9"><a href="Ch06.html#cb141-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb141-10"><a href="Ch06.html#cb141-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb141-11"><a href="Ch06.html#cb141-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb141-12"><a href="Ch06.html#cb141-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb141-13"><a href="Ch06.html#cb141-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb141-14"><a href="Ch06.html#cb141-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>),</span>
+<span id="cb141-15"><a href="Ch06.html#cb141-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Farmland&quot;</span>),</span>
+<span id="cb141-16"><a href="Ch06.html#cb141-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb141-17"><a href="Ch06.html#cb141-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb141-18"><a href="Ch06.html#cb141-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r3000&quot;</span>),</span>
+<span id="cb141-19"><a href="Ch06.html#cb141-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb141-20"><a href="Ch06.html#cb141-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb141-21"><a href="Ch06.html#cb141-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb141-22"><a href="Ch06.html#cb141-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb141-23"><a href="Ch06.html#cb141-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb141-24"><a href="Ch06.html#cb141-24" tabindex="-1"></a></span>
+<span id="cb141-25"><a href="Ch06.html#cb141-25" tabindex="-1"></a><span class="co"># Diversity_Farmland_r3000.tif  egv_100</span></span>
+<span id="cb141-26"><a href="Ch06.html#cb141-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r3000.tif&quot;</span>)</span>
+<span id="cb141-27"><a href="Ch06.html#cb141-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_100&quot;</span></span>
+<span id="cb141-28"><a href="Ch06.html#cb141-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb141-29"><a href="Ch06.html#cb141-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb141-30"><a href="Ch06.html#cb141-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r3000.tif&quot;</span>,</span>
+<span id="cb141-31"><a href="Ch06.html#cb141-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.101" class="section level2 hasAnchor" number="6.101">
@@ -4804,9 +4906,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_101</code></p>
 <p><strong>English name:</strong> Average farmland class α-diversity of 500 m grid cells within the 10 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="#Ch05.04.0">Farmland diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="Ch06.html#cb142-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="Ch06.html#cb142-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb142-2"><a href="Ch06.html#cb142-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb142-3"><a href="Ch06.html#cb142-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb142-4"><a href="Ch06.html#cb142-4" tabindex="-1"></a></span>
+<span id="cb142-5"><a href="Ch06.html#cb142-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb142-6"><a href="Ch06.html#cb142-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb142-7"><a href="Ch06.html#cb142-7" tabindex="-1"></a></span>
+<span id="cb142-8"><a href="Ch06.html#cb142-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb142-9"><a href="Ch06.html#cb142-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb142-10"><a href="Ch06.html#cb142-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb142-11"><a href="Ch06.html#cb142-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb142-12"><a href="Ch06.html#cb142-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb142-13"><a href="Ch06.html#cb142-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb142-14"><a href="Ch06.html#cb142-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>),</span>
+<span id="cb142-15"><a href="Ch06.html#cb142-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Farmland&quot;</span>),</span>
+<span id="cb142-16"><a href="Ch06.html#cb142-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb142-17"><a href="Ch06.html#cb142-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb142-18"><a href="Ch06.html#cb142-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r10000&quot;</span>),</span>
+<span id="cb142-19"><a href="Ch06.html#cb142-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb142-20"><a href="Ch06.html#cb142-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb142-21"><a href="Ch06.html#cb142-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb142-22"><a href="Ch06.html#cb142-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb142-23"><a href="Ch06.html#cb142-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb142-24"><a href="Ch06.html#cb142-24" tabindex="-1"></a></span>
+<span id="cb142-25"><a href="Ch06.html#cb142-25" tabindex="-1"></a><span class="co"># Diversity_Farmland_r10000.tif egv_101</span></span>
+<span id="cb142-26"><a href="Ch06.html#cb142-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r10000.tif&quot;</span>)</span>
+<span id="cb142-27"><a href="Ch06.html#cb142-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_101&quot;</span></span>
+<span id="cb142-28"><a href="Ch06.html#cb142-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb142-29"><a href="Ch06.html#cb142-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb142-30"><a href="Ch06.html#cb142-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Farmland_r10000.tif&quot;</span>,</span>
+<span id="cb142-31"><a href="Ch06.html#cb142-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.102" class="section level2 hasAnchor" number="6.102">
@@ -4815,9 +4951,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_102</code></p>
 <p><strong>English name:</strong> Average forest class α-diversity of 500 m grid cells within the 0.5 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.02">Forest diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="Ch06.html#cb143-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="Ch06.html#cb143-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb143-2"><a href="Ch06.html#cb143-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb143-3"><a href="Ch06.html#cb143-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb143-4"><a href="Ch06.html#cb143-4" tabindex="-1"></a></span>
+<span id="cb143-5"><a href="Ch06.html#cb143-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb143-6"><a href="Ch06.html#cb143-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb143-7"><a href="Ch06.html#cb143-7" tabindex="-1"></a></span>
+<span id="cb143-8"><a href="Ch06.html#cb143-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb143-9"><a href="Ch06.html#cb143-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb143-10"><a href="Ch06.html#cb143-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb143-11"><a href="Ch06.html#cb143-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb143-12"><a href="Ch06.html#cb143-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb143-13"><a href="Ch06.html#cb143-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb143-14"><a href="Ch06.html#cb143-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>),</span>
+<span id="cb143-15"><a href="Ch06.html#cb143-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Forest&quot;</span>),</span>
+<span id="cb143-16"><a href="Ch06.html#cb143-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb143-17"><a href="Ch06.html#cb143-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb143-18"><a href="Ch06.html#cb143-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r500&quot;</span>),</span>
+<span id="cb143-19"><a href="Ch06.html#cb143-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb143-20"><a href="Ch06.html#cb143-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb143-21"><a href="Ch06.html#cb143-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb143-22"><a href="Ch06.html#cb143-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb143-23"><a href="Ch06.html#cb143-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb143-24"><a href="Ch06.html#cb143-24" tabindex="-1"></a></span>
+<span id="cb143-25"><a href="Ch06.html#cb143-25" tabindex="-1"></a><span class="co"># Diversity_Forest_r500.tif egv_102</span></span>
+<span id="cb143-26"><a href="Ch06.html#cb143-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r500.tif&quot;</span>)</span>
+<span id="cb143-27"><a href="Ch06.html#cb143-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_102&quot;</span></span>
+<span id="cb143-28"><a href="Ch06.html#cb143-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb143-29"><a href="Ch06.html#cb143-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb143-30"><a href="Ch06.html#cb143-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r500.tif&quot;</span>,</span>
+<span id="cb143-31"><a href="Ch06.html#cb143-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.103" class="section level2 hasAnchor" number="6.103">
@@ -4826,9 +4996,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_103</code></p>
 <p><strong>English name:</strong> Average forest class α-diversity of 500 m grid cells within the 1.25 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.02">Forest diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="Ch06.html#cb144-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="Ch06.html#cb144-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb144-2"><a href="Ch06.html#cb144-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb144-3"><a href="Ch06.html#cb144-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb144-4"><a href="Ch06.html#cb144-4" tabindex="-1"></a></span>
+<span id="cb144-5"><a href="Ch06.html#cb144-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb144-6"><a href="Ch06.html#cb144-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb144-7"><a href="Ch06.html#cb144-7" tabindex="-1"></a></span>
+<span id="cb144-8"><a href="Ch06.html#cb144-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb144-9"><a href="Ch06.html#cb144-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb144-10"><a href="Ch06.html#cb144-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb144-11"><a href="Ch06.html#cb144-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb144-12"><a href="Ch06.html#cb144-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb144-13"><a href="Ch06.html#cb144-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb144-14"><a href="Ch06.html#cb144-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>),</span>
+<span id="cb144-15"><a href="Ch06.html#cb144-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Forest&quot;</span>),</span>
+<span id="cb144-16"><a href="Ch06.html#cb144-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb144-17"><a href="Ch06.html#cb144-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb144-18"><a href="Ch06.html#cb144-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r1250&quot;</span>),</span>
+<span id="cb144-19"><a href="Ch06.html#cb144-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb144-20"><a href="Ch06.html#cb144-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb144-21"><a href="Ch06.html#cb144-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb144-22"><a href="Ch06.html#cb144-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb144-23"><a href="Ch06.html#cb144-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb144-24"><a href="Ch06.html#cb144-24" tabindex="-1"></a></span>
+<span id="cb144-25"><a href="Ch06.html#cb144-25" tabindex="-1"></a><span class="co"># Diversity_Forest_r1250.tif    egv_103</span></span>
+<span id="cb144-26"><a href="Ch06.html#cb144-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r1250.tif&quot;</span>)</span>
+<span id="cb144-27"><a href="Ch06.html#cb144-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_103&quot;</span></span>
+<span id="cb144-28"><a href="Ch06.html#cb144-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb144-29"><a href="Ch06.html#cb144-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb144-30"><a href="Ch06.html#cb144-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r1250.tif&quot;</span>,</span>
+<span id="cb144-31"><a href="Ch06.html#cb144-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.104" class="section level2 hasAnchor" number="6.104">
@@ -4837,9 +5041,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_104</code></p>
 <p><strong>English name:</strong> Average forest class α-diversity of 500 m grid cells within the 3 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.02">Forest diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="Ch06.html#cb145-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="Ch06.html#cb145-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb145-2"><a href="Ch06.html#cb145-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb145-3"><a href="Ch06.html#cb145-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb145-4"><a href="Ch06.html#cb145-4" tabindex="-1"></a></span>
+<span id="cb145-5"><a href="Ch06.html#cb145-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb145-6"><a href="Ch06.html#cb145-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb145-7"><a href="Ch06.html#cb145-7" tabindex="-1"></a></span>
+<span id="cb145-8"><a href="Ch06.html#cb145-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb145-9"><a href="Ch06.html#cb145-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb145-10"><a href="Ch06.html#cb145-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb145-11"><a href="Ch06.html#cb145-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb145-12"><a href="Ch06.html#cb145-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb145-13"><a href="Ch06.html#cb145-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb145-14"><a href="Ch06.html#cb145-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>),</span>
+<span id="cb145-15"><a href="Ch06.html#cb145-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Forest&quot;</span>),</span>
+<span id="cb145-16"><a href="Ch06.html#cb145-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb145-17"><a href="Ch06.html#cb145-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb145-18"><a href="Ch06.html#cb145-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r3000&quot;</span>),</span>
+<span id="cb145-19"><a href="Ch06.html#cb145-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb145-20"><a href="Ch06.html#cb145-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb145-21"><a href="Ch06.html#cb145-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb145-22"><a href="Ch06.html#cb145-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb145-23"><a href="Ch06.html#cb145-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb145-24"><a href="Ch06.html#cb145-24" tabindex="-1"></a></span>
+<span id="cb145-25"><a href="Ch06.html#cb145-25" tabindex="-1"></a><span class="co"># Diversity_Forest_r3000.tif    egv_104</span></span>
+<span id="cb145-26"><a href="Ch06.html#cb145-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r3000.tif&quot;</span>)</span>
+<span id="cb145-27"><a href="Ch06.html#cb145-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_104&quot;</span></span>
+<span id="cb145-28"><a href="Ch06.html#cb145-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb145-29"><a href="Ch06.html#cb145-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb145-30"><a href="Ch06.html#cb145-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r3000.tif&quot;</span>,</span>
+<span id="cb145-31"><a href="Ch06.html#cb145-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.105" class="section level2 hasAnchor" number="6.105">
@@ -4848,9 +5086,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_105</code></p>
 <p><strong>English name:</strong> Average forest class α-diversity of 500 m grid cells within the 10 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.02">Forest diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="Ch06.html#cb146-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="Ch06.html#cb146-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb146-2"><a href="Ch06.html#cb146-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb146-3"><a href="Ch06.html#cb146-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb146-4"><a href="Ch06.html#cb146-4" tabindex="-1"></a></span>
+<span id="cb146-5"><a href="Ch06.html#cb146-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb146-6"><a href="Ch06.html#cb146-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb146-7"><a href="Ch06.html#cb146-7" tabindex="-1"></a></span>
+<span id="cb146-8"><a href="Ch06.html#cb146-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb146-9"><a href="Ch06.html#cb146-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb146-10"><a href="Ch06.html#cb146-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb146-11"><a href="Ch06.html#cb146-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb146-12"><a href="Ch06.html#cb146-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb146-13"><a href="Ch06.html#cb146-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb146-14"><a href="Ch06.html#cb146-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>),</span>
+<span id="cb146-15"><a href="Ch06.html#cb146-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Forest&quot;</span>),</span>
+<span id="cb146-16"><a href="Ch06.html#cb146-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb146-17"><a href="Ch06.html#cb146-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb146-18"><a href="Ch06.html#cb146-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r10000&quot;</span>),</span>
+<span id="cb146-19"><a href="Ch06.html#cb146-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb146-20"><a href="Ch06.html#cb146-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb146-21"><a href="Ch06.html#cb146-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb146-22"><a href="Ch06.html#cb146-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb146-23"><a href="Ch06.html#cb146-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb146-24"><a href="Ch06.html#cb146-24" tabindex="-1"></a></span>
+<span id="cb146-25"><a href="Ch06.html#cb146-25" tabindex="-1"></a><span class="co"># Diversity_Forest_r10000.tif   egv_105</span></span>
+<span id="cb146-26"><a href="Ch06.html#cb146-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r10000.tif&quot;</span>)</span>
+<span id="cb146-27"><a href="Ch06.html#cb146-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_105&quot;</span></span>
+<span id="cb146-28"><a href="Ch06.html#cb146-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb146-29"><a href="Ch06.html#cb146-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb146-30"><a href="Ch06.html#cb146-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Forest_r10000.tif&quot;</span>,</span>
+<span id="cb146-31"><a href="Ch06.html#cb146-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.106" class="section level2 hasAnchor" number="6.106">
@@ -4859,9 +5131,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_106</code></p>
 <p><strong>English name:</strong> Average combined landscape α-diversity of 500 m grid cells within the 0.5 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="Ch06.html#cb147-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="Ch06.html#cb147-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb147-2"><a href="Ch06.html#cb147-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb147-3"><a href="Ch06.html#cb147-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb147-4"><a href="Ch06.html#cb147-4" tabindex="-1"></a></span>
+<span id="cb147-5"><a href="Ch06.html#cb147-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb147-6"><a href="Ch06.html#cb147-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb147-7"><a href="Ch06.html#cb147-7" tabindex="-1"></a></span>
+<span id="cb147-8"><a href="Ch06.html#cb147-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb147-9"><a href="Ch06.html#cb147-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb147-10"><a href="Ch06.html#cb147-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb147-11"><a href="Ch06.html#cb147-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb147-12"><a href="Ch06.html#cb147-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb147-13"><a href="Ch06.html#cb147-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb147-14"><a href="Ch06.html#cb147-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>),</span>
+<span id="cb147-15"><a href="Ch06.html#cb147-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Total&quot;</span>),</span>
+<span id="cb147-16"><a href="Ch06.html#cb147-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb147-17"><a href="Ch06.html#cb147-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb147-18"><a href="Ch06.html#cb147-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r500&quot;</span>),</span>
+<span id="cb147-19"><a href="Ch06.html#cb147-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb147-20"><a href="Ch06.html#cb147-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb147-21"><a href="Ch06.html#cb147-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb147-22"><a href="Ch06.html#cb147-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb147-23"><a href="Ch06.html#cb147-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb147-24"><a href="Ch06.html#cb147-24" tabindex="-1"></a></span>
+<span id="cb147-25"><a href="Ch06.html#cb147-25" tabindex="-1"></a><span class="co"># Diversity_Total_r500.tif  egv_106</span></span>
+<span id="cb147-26"><a href="Ch06.html#cb147-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r500.tif&quot;</span>)</span>
+<span id="cb147-27"><a href="Ch06.html#cb147-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_106&quot;</span></span>
+<span id="cb147-28"><a href="Ch06.html#cb147-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb147-29"><a href="Ch06.html#cb147-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb147-30"><a href="Ch06.html#cb147-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r500.tif&quot;</span>,</span>
+<span id="cb147-31"><a href="Ch06.html#cb147-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.107" class="section level2 hasAnchor" number="6.107">
@@ -4870,9 +5176,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_107</code></p>
 <p><strong>English name:</strong> Average combined landscape α-diversity of 500 m grid cells within the 1.25 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="Ch06.html#cb148-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="Ch06.html#cb148-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb148-2"><a href="Ch06.html#cb148-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb148-3"><a href="Ch06.html#cb148-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb148-4"><a href="Ch06.html#cb148-4" tabindex="-1"></a></span>
+<span id="cb148-5"><a href="Ch06.html#cb148-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb148-6"><a href="Ch06.html#cb148-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb148-7"><a href="Ch06.html#cb148-7" tabindex="-1"></a></span>
+<span id="cb148-8"><a href="Ch06.html#cb148-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb148-9"><a href="Ch06.html#cb148-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb148-10"><a href="Ch06.html#cb148-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb148-11"><a href="Ch06.html#cb148-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb148-12"><a href="Ch06.html#cb148-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb148-13"><a href="Ch06.html#cb148-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb148-14"><a href="Ch06.html#cb148-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>),</span>
+<span id="cb148-15"><a href="Ch06.html#cb148-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Total&quot;</span>),</span>
+<span id="cb148-16"><a href="Ch06.html#cb148-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb148-17"><a href="Ch06.html#cb148-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb148-18"><a href="Ch06.html#cb148-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r1250&quot;</span>),</span>
+<span id="cb148-19"><a href="Ch06.html#cb148-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb148-20"><a href="Ch06.html#cb148-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb148-21"><a href="Ch06.html#cb148-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb148-22"><a href="Ch06.html#cb148-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb148-23"><a href="Ch06.html#cb148-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb148-24"><a href="Ch06.html#cb148-24" tabindex="-1"></a></span>
+<span id="cb148-25"><a href="Ch06.html#cb148-25" tabindex="-1"></a><span class="co"># Diversity_Total_r1250.tif egv_107</span></span>
+<span id="cb148-26"><a href="Ch06.html#cb148-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r1250.tif&quot;</span>)</span>
+<span id="cb148-27"><a href="Ch06.html#cb148-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_107&quot;</span></span>
+<span id="cb148-28"><a href="Ch06.html#cb148-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb148-29"><a href="Ch06.html#cb148-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb148-30"><a href="Ch06.html#cb148-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r1250.tif&quot;</span>,</span>
+<span id="cb148-31"><a href="Ch06.html#cb148-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.108" class="section level2 hasAnchor" number="6.108">
@@ -4881,9 +5221,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_108</code></p>
 <p><strong>English name:</strong> Average combined landscape α-diversity of 500 m grid cells within the 3 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="Ch06.html#cb149-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="Ch06.html#cb149-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb149-2"><a href="Ch06.html#cb149-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb149-3"><a href="Ch06.html#cb149-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb149-4"><a href="Ch06.html#cb149-4" tabindex="-1"></a></span>
+<span id="cb149-5"><a href="Ch06.html#cb149-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb149-6"><a href="Ch06.html#cb149-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb149-7"><a href="Ch06.html#cb149-7" tabindex="-1"></a></span>
+<span id="cb149-8"><a href="Ch06.html#cb149-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb149-9"><a href="Ch06.html#cb149-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb149-10"><a href="Ch06.html#cb149-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb149-11"><a href="Ch06.html#cb149-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb149-12"><a href="Ch06.html#cb149-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb149-13"><a href="Ch06.html#cb149-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb149-14"><a href="Ch06.html#cb149-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>),</span>
+<span id="cb149-15"><a href="Ch06.html#cb149-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Total&quot;</span>),</span>
+<span id="cb149-16"><a href="Ch06.html#cb149-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb149-17"><a href="Ch06.html#cb149-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb149-18"><a href="Ch06.html#cb149-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r3000&quot;</span>),</span>
+<span id="cb149-19"><a href="Ch06.html#cb149-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb149-20"><a href="Ch06.html#cb149-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb149-21"><a href="Ch06.html#cb149-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb149-22"><a href="Ch06.html#cb149-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb149-23"><a href="Ch06.html#cb149-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb149-24"><a href="Ch06.html#cb149-24" tabindex="-1"></a></span>
+<span id="cb149-25"><a href="Ch06.html#cb149-25" tabindex="-1"></a><span class="co"># Diversity_Total_r3000.tif egv_108</span></span>
+<span id="cb149-26"><a href="Ch06.html#cb149-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r3000.tif&quot;</span>)</span>
+<span id="cb149-27"><a href="Ch06.html#cb149-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_108&quot;</span></span>
+<span id="cb149-28"><a href="Ch06.html#cb149-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb149-29"><a href="Ch06.html#cb149-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb149-30"><a href="Ch06.html#cb149-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r3000.tif&quot;</span>,</span>
+<span id="cb149-31"><a href="Ch06.html#cb149-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.109" class="section level2 hasAnchor" number="6.109">
@@ -4892,9 +5266,43 @@ weighted (power = 2) gap filling is implemented.</p>
 <p><strong>layername:</strong> <code>egv_109</code></p>
 <p><strong>English name:</strong> Average combined landscape α-diversity of 500 m grid cells within the 10 km landscape</p>
 <p><strong>Latvian name:</strong> Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā</p>
-<p><strong>Procedure:</strong></p>
+<p><strong>Procedure:</strong> Derived from <a href="Ch05.html#Ch05.04">Landscape diversity</a>, more precisely
+<a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>. Average value of 25 ha
+cells diversity index values calculated with <code>egvtools::radius_function()</code>. To
+guard against missing values at the edges, inverse distance wieghted (power = 2)
+gap filling is allowed. File is written twice, to ensure layername.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="Ch06.html#cb150-1" tabindex="-1"></a><span class="co"># libs ----</span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="Ch06.html#cb150-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
+<span id="cb150-2"><a href="Ch06.html#cb150-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb150-3"><a href="Ch06.html#cb150-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb150-4"><a href="Ch06.html#cb150-4" tabindex="-1"></a></span>
+<span id="cb150-5"><a href="Ch06.html#cb150-5" tabindex="-1"></a><span class="co"># templates ----</span></span>
+<span id="cb150-6"><a href="Ch06.html#cb150-6" tabindex="-1"></a>template100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>)</span>
+<span id="cb150-7"><a href="Ch06.html#cb150-7" tabindex="-1"></a></span>
+<span id="cb150-8"><a href="Ch06.html#cb150-8" tabindex="-1"></a><span class="co"># radii</span></span>
+<span id="cb150-9"><a href="Ch06.html#cb150-9" tabindex="-1"></a><span class="fu">radius_function</span>(</span>
+<span id="cb150-10"><a href="Ch06.html#cb150-10" tabindex="-1"></a>  <span class="at">kvadrati_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles/&quot;</span>,</span>
+<span id="cb150-11"><a href="Ch06.html#cb150-11" tabindex="-1"></a>  <span class="at">radii_path     =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles/&quot;</span>,</span>
+<span id="cb150-12"><a href="Ch06.html#cb150-12" tabindex="-1"></a>  <span class="at">tikls100_path  =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb150-13"><a href="Ch06.html#cb150-13" tabindex="-1"></a>  <span class="at">template_path  =</span> <span class="st">&quot;./Templates/TemplateRasters/LV100m_10km.tif&quot;</span>,</span>
+<span id="cb150-14"><a href="Ch06.html#cb150-14" tabindex="-1"></a>  <span class="at">input_layers   =</span> <span class="fu">c</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>),</span>
+<span id="cb150-15"><a href="Ch06.html#cb150-15" tabindex="-1"></a>  <span class="at">layer_prefixes =</span> <span class="fu">c</span>(<span class="st">&quot;Diversity_Total&quot;</span>),</span>
+<span id="cb150-16"><a href="Ch06.html#cb150-16" tabindex="-1"></a>  <span class="at">output_dir     =</span> <span class="st">&quot;./RasterGrids_100m/2024/RAW/&quot;</span>,</span>
+<span id="cb150-17"><a href="Ch06.html#cb150-17" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">12</span>,</span>
+<span id="cb150-18"><a href="Ch06.html#cb150-18" tabindex="-1"></a>  <span class="at">radii          =</span> <span class="fu">c</span>(<span class="st">&quot;r10000&quot;</span>),</span>
+<span id="cb150-19"><a href="Ch06.html#cb150-19" tabindex="-1"></a>  <span class="at">radius_mode    =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb150-20"><a href="Ch06.html#cb150-20" tabindex="-1"></a>  <span class="at">extract_fun    =</span> <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb150-21"><a href="Ch06.html#cb150-21" tabindex="-1"></a>  <span class="at">fill_missing   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb150-22"><a href="Ch06.html#cb150-22" tabindex="-1"></a>  <span class="at">IDW_weight     =</span> <span class="dv">2</span>,</span>
+<span id="cb150-23"><a href="Ch06.html#cb150-23" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>)</span>
+<span id="cb150-24"><a href="Ch06.html#cb150-24" tabindex="-1"></a></span>
+<span id="cb150-25"><a href="Ch06.html#cb150-25" tabindex="-1"></a><span class="co"># Diversity_Total_r10000.tif    egv_109</span></span>
+<span id="cb150-26"><a href="Ch06.html#cb150-26" tabindex="-1"></a>slanis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r10000.tif&quot;</span>)</span>
+<span id="cb150-27"><a href="Ch06.html#cb150-27" tabindex="-1"></a><span class="fu">names</span>(slanis)<span class="ot">=</span><span class="st">&quot;egv_109&quot;</span></span>
+<span id="cb150-28"><a href="Ch06.html#cb150-28" tabindex="-1"></a>slanis2<span class="ot">=</span><span class="fu">project</span>(slanis,template100)</span>
+<span id="cb150-29"><a href="Ch06.html#cb150-29" tabindex="-1"></a><span class="fu">writeRaster</span>(slanis2,</span>
+<span id="cb150-30"><a href="Ch06.html#cb150-30" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_100m/2024/RAW/Diversity_Total_r10000.tif&quot;</span>,</span>
+<span id="cb150-31"><a href="Ch06.html#cb150-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="ch06.110" class="section level2 hasAnchor" number="6.110">

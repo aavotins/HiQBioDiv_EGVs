@@ -1785,7 +1785,9 @@ combined, preffering the most timely per mapping page. These layers are:
 
 - `swamp_A`, describing bogs as polygons;
 
-- `flora_L`, describing linear tree and shrub formations.
+- `flora_L`, describing linear tree and shrub formations;
+
+- `build_A`, describing types of builtup areas.
 
 
 ``` r
@@ -1983,6 +1985,18 @@ data_4=data_4 %>%
 
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/FloraL_COMB.parquet")
+
+
+# build_A
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="build_A")
+data_not4=st_difference(data_3,pages4_united)
+data_not4=data_not4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="build_A")
+data_4=data_4 %>% 
+  dplyr::select(FNAME,FCODE)
+data_new=rbind(data_not4,data_4)
+sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BuildA_COMB.parquet")
 ```
 
 

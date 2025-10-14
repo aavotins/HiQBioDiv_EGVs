@@ -4667,11 +4667,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Farmland diversity](#Ch05.04.0). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Farmland_500x.tif"),
+  layer_prefixes = c("Diversity_Farmland"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Farmland_r500.tif	egv_98
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif")
+names(slanis)="egv_98"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4685,11 +4719,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Farmland diversity](#Ch05.04.0). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Farmland_500x.tif"),
+  layer_prefixes = c("Diversity_Farmland"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Farmland_r1250.tif	egv_99
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif")
+names(slanis)="egv_99"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4703,11 +4771,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Farmland diversity](#Ch05.04.0). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Farmland_500x.tif"),
+  layer_prefixes = c("Diversity_Farmland"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Farmland_r3000.tif	egv_100
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r3000.tif")
+names(slanis)="egv_100"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r3000.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4721,11 +4823,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Farmland diversity](#Ch05.04.0). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Farmland_500x.tif"),
+  layer_prefixes = c("Diversity_Farmland"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Farmland_r10000.tif	egv_101
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r10000.tif")
+names(slanis)="egv_101"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r10000.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4739,11 +4875,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Forest diversity](#Ch05.04.02). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Forests_500x.tif"),
+  layer_prefixes = c("Diversity_Forest"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Forest_r500.tif	egv_102
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Forest_r500.tif")
+names(slanis)="egv_102"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Forest_r500.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4757,11 +4927,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Forest diversity](#Ch05.04.02). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Forests_500x.tif"),
+  layer_prefixes = c("Diversity_Forest"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Forest_r1250.tif	egv_103
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Forest_r1250.tif")
+names(slanis)="egv_103"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Forest_r1250.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4775,11 +4979,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Forest diversity](#Ch05.04.02). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Forests_500x.tif"),
+  layer_prefixes = c("Diversity_Forest"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Forest_r3000.tif	egv_104
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Forest_r3000.tif")
+names(slanis)="egv_104"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Forest_r3000.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4793,11 +5031,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Forest diversity](#Ch05.04.02). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_Forests_500x.tif"),
+  layer_prefixes = c("Diversity_Forest"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Forest_r10000.tif	egv_105
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Forest_r10000.tif")
+names(slanis)="egv_105"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Forest_r10000.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4811,11 +5083,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Landscape in general diversity](#Ch05.04.01). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif"),
+  layer_prefixes = c("Diversity_Total"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Total_r500.tif	egv_106
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Total_r500.tif")
+names(slanis)="egv_106"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Total_r500.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4829,11 +5135,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Landscape in general diversity](#Ch05.04.01). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif"),
+  layer_prefixes = c("Diversity_Total"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Total_r1250.tif	egv_107
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Total_r1250.tif")
+names(slanis)="egv_107"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Total_r1250.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4847,11 +5187,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Landscape in general diversity](#Ch05.04.01). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif"),
+  layer_prefixes = c("Diversity_Total"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Total_r3000.tif	egv_108
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Total_r3000.tif")
+names(slanis)="egv_108"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Total_r3000.tif",
+            overwrite=TRUE)
 ```
 
 
@@ -4865,11 +5239,45 @@ rm(distegv)
 
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely 
+[Landscape in general diversity](#Ch05.04.01). Average value of  25 ha 
+cells diversity index values calculated with `egvtools::radius_function()`. To 
+guard against missing values at the edges, inverse distance wieghted (power = 2) 
+gap filling is allowed. File is written twice, to ensure layername.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif"),
+  layer_prefixes = c("Diversity_Total"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Diversity_Total_r10000.tif	egv_109
+slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Total_r10000.tif")
+names(slanis)="egv_109"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Diversity_Total_r10000.tif",
+            overwrite=TRUE)
 ```
 
 
