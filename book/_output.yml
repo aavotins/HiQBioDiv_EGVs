@@ -18,10 +18,10 @@ bookdown::gitbook:
       instapaper: false
       vk: false
       whatsapp: false
+
 bookdown::pdf_book:
+  latex_engine: xelatex
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
   keep_tex: yes
   pandoc_args: ["--listings"]

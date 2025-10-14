@@ -16,13 +16,35 @@ github-repo: aavotins/HiQBioDiv_EGVs
 url: https://aavotins.github.io/HiQBioDiv_EGVs/
 ---
 
-
 ```{r, eval=FALSE, echo=FALSE}
+
 bookdown::serve_book() # apskatei
 setwd("../book/")
 bookdown::render_book() # pirms stumšanas uz GitHub
-bookdown::pdf_book # priekš pdf
+bookdown::render_book(output_format = "bookdown::pdf_book")
+
+#
+bookdown::clean_book()
+unlink("_bookdown_files", recursive = TRUE, force = TRUE)
+# force pdf build and DO use your _output.yml
+bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")
+
+
 ```
+
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+options(
+  width = 80,                 # wrap base R output
+  pillar.width = 80, 
+  tibble.width = 80,         # tibbles/pillar
+  dplyr.print_min = 5,
+  dplyr.print_max = 5,
+  crayon.enabled = FALSE      # strip ANSI escapes if any
+)
+```
+
 
 # Preface {-}
 

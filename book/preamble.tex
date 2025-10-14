@@ -1,19 +1,61 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 
-% Better line breaking in verbatim code blocks produced by Pandoc/knitr
-\usepackage{fvextra}      % extends fancyvrb used by Pandoc
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
-  breaklines,             % enable soft wrapping
-  breakanywhere,          % allow breaks inside long tokens (URLs/paths)
-  commandchars=\\\{\}     % keep Pandoc's defaults
-}
-\setlength{\emergencystretch}{3em}  % helps break overfull lines elsewhere
-\sloppy
+% -------- Fonts (XeLaTeX) --------
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+% Robust fallbacks so this works on different machines
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{Arial}}
+\IfFontExistsTF{TeX Gyre Cursor}{\setmonofont{TeX Gyre Cursor}}{\setmonofont{Menlo}}
 
+% -------- Code blocks via listings (no Shaded/framed) --------
+\usepackage{xcolor}
 \usepackage{listings}
-\lstset{
+\usepackage{listingsutf8}
+
+% Colors for code
+\definecolor{codebg}{HTML}{F7F7F7}
+\definecolor{codekw}{HTML}{005CC5}
+\definecolor{codecom}{HTML}{6A737D}
+\definecolor{codestr}{HTML}{032F62}
+\definecolor{codeline}{HTML}{E0E0E0}
+
+% One tidy style for R code: shaded bg, wrapping, simple colors
+\lstdefinestyle{andrisR}{
+  language=R,
+  inputencoding=utf8,
   breaklines=true,
   breakatwhitespace=false,
-  basicstyle=\ttfamily\small
+  postbreak=\mbox{\textcolor{codecom}{$\hookrightarrow$}\space},
+  keepspaces=true,
+  columns=fullflexible,
+  upquote=true,
+  showstringspaces=false,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries\color{codekw},
+  commentstyle=\itshape\color{codecom},
+  stringstyle=\color{codestr},
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeline},
+  frameround=tttt,
+  framesep=6pt,
+  numbersep=6pt
 }
+\lstset{style=andrisR}
+
+% Latvian diacritics inside code (listings is verbatim, so map them)
+% Using Unicode code points keeps things stable under XeLaTeX.
+\lstset{literate=
+  {ā}{{\char"0101}}1 {ē}{{\char"0113}}1 {ī}{{\char"012B}}1 {ū}{{\char"016B}}1
+  {š}{{\char"0161}}1 {ž}{{\char"017E}}1 {č}{{\char"010D}}1
+  {ģ}{{\char"0123}}1 {ķ}{{\char"0137}}1 {ļ}{{\char"013C}}1 {ņ}{{\char"0146}}1
+  {Ā}{{\char"0100}}1 {Ē}{{\char"0112}}1 {Ī}{{\char"012A}}1 {Ū}{{\char"016A}}1
+  {Š}{{\char"0160}}1 {Ž}{{\char"017D}}1 {Č}{{\char"010C}}1
+  {Ģ}{{\char"0122}}1 {Ķ}{{\char"0136}}1 {Ļ}{{\char"013B}}1 {Ņ}{{\char"0145}}1
+}
+
+% Help regular text with long lines
+\setlength{\emergencystretch}{3em}
+\sloppy

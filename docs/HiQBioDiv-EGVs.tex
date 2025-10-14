@@ -65,30 +65,103 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
 \usepackage{booktabs}
 \usepackage{longtable}
 
-% Better line breaking in verbatim code blocks produced by Pandoc/knitr
-\usepackage{fvextra}      % extends fancyvrb used by Pandoc
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
-  breaklines,             % enable soft wrapping
-  breakanywhere,          % allow breaks inside long tokens (URLs/paths)
-  commandchars=\\\{\}     % keep Pandoc's defaults
-}
-\setlength{\emergencystretch}{3em}  % helps break overfull lines elsewhere
-\sloppy
+% -------- Fonts (XeLaTeX) --------
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+% Robust fallbacks so this works on different machines
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{Arial}}
+\IfFontExistsTF{TeX Gyre Cursor}{\setmonofont{TeX Gyre Cursor}}{\setmonofont{Menlo}}
 
+% -------- Code blocks via listings (no Shaded/framed) --------
+\usepackage{xcolor}
 \usepackage{listings}
-\lstset{
+\usepackage{listingsutf8}
+
+% Colors for code
+\definecolor{codebg}{HTML}{F7F7F7}
+\definecolor{codekw}{HTML}{005CC5}
+\definecolor{codecom}{HTML}{6A737D}
+\definecolor{codestr}{HTML}{032F62}
+\definecolor{codeline}{HTML}{E0E0E0}
+
+% One tidy style for R code: shaded bg, wrapping, simple colors
+\lstdefinestyle{andrisR}{
+  language=R,
+  inputencoding=utf8,
   breaklines=true,
   breakatwhitespace=false,
-  basicstyle=\ttfamily\small
+  postbreak=\mbox{\textcolor{codecom}{$\hookrightarrow$}\space},
+  keepspaces=true,
+  columns=fullflexible,
+  upquote=true,
+  showstringspaces=false,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries\color{codekw},
+  commentstyle=\itshape\color{codecom},
+  stringstyle=\color{codestr},
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeline},
+  frameround=tttt,
+  framesep=6pt,
+  numbersep=6pt
 }
+\lstset{style=andrisR}
+
+% Latvian diacritics inside code (listings is verbatim, so map them)
+% Using Unicode code points keeps things stable under XeLaTeX.
+\lstset{literate=
+  {ā}{{\char"0101}}1 {ē}{{\char"0113}}1 {ī}{{\char"012B}}1 {ū}{{\char"016B}}1
+  {š}{{\char"0161}}1 {ž}{{\char"017E}}1 {č}{{\char"010D}}1
+  {ģ}{{\char"0123}}1 {ķ}{{\char"0137}}1 {ļ}{{\char"013C}}1 {ņ}{{\char"0146}}1
+  {Ā}{{\char"0100}}1 {Ē}{{\char"0112}}1 {Ī}{{\char"012A}}1 {Ū}{{\char"016A}}1
+  {Š}{{\char"0160}}1 {Ž}{{\char"017D}}1 {Č}{{\char"010C}}1
+  {Ģ}{{\char"0122}}1 {Ķ}{{\char"0136}}1 {Ļ}{{\char"013B}}1 {Ņ}{{\char"0145}}1
+}
+
+% Help regular text with long lines
+\setlength{\emergencystretch}{3em}
+\sloppy
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -2667,7 +2740,7 @@ datasets and their location in the filetree are documented in following subchapt
 \subsection{Soil chemistry}\label{Ch04.07.01}
 
 Data on soil chemistry are obtained from \href{https://esdac.jrc.ec.europa.eu/}{European Soil Data Centre's} European
-Soil database \citep{esdac2}. Dataset decribing soil chemistry is derived from \href{https://esdac.jrc.ec.europa.eu/content/chemical-properties-european-scale-based-lucas-topsoil-data}{LUCAS
+Soil database (\citeproc{ref-esdac2}{Panagos et al., 2022}). Dataset decribing soil chemistry is derived from \href{https://esdac.jrc.ec.europa.eu/content/chemical-properties-european-scale-based-lucas-topsoil-data}{LUCAS
 2009/2012 topsoil data}. There are several chemical properties available with
 download, however not all of them are experts chosen for SDM, therefore not used
 further in this work:
@@ -2699,7 +2772,7 @@ was carried out.
 \subsection{Soil texture: Europe}\label{Ch04.07.02}
 
 Data on soil texture are obtained from \href{https://esdac.jrc.ec.europa.eu/}{European Soil Data Centre's} European
-Soil database \citep{esdac2}. Dataset is available as \href{https://esdac.jrc.ec.europa.eu/content/european-soil-database-v2-raster-library-1kmx1km}{European Soil Database v2 Raster Library 1kmx1km}. There
+Soil database (\citeproc{ref-esdac2}{Panagos et al., 2022}). Dataset is available as \href{https://esdac.jrc.ec.europa.eu/content/european-soil-database-v2-raster-library-1kmx1km}{European Soil Database v2 Raster Library 1kmx1km}. There
 are several properties available with download, \passthrough{\lstinline!TXT!} was used to
 create \hyperref[Ch05.02]{soil texture product}. Files were downloaded to \passthrough{\lstinline!eodata/2024/Soils/ESDAC/texture/!}.
 
@@ -3003,10 +3076,10 @@ Dynamic World (DW) is a relatively new Earth observation system product that
 classifies land cover and land use (LULC) into nine categories (0=water, 1=trees,
 2=grass, 3=flooded\_vegetation, 4=crops, 5=shrub\_and\_scrub, 6=built, 7=bare,
 8=snow\_and\_ice), for each ESA Copernicus Sentinel-2 image with identified
-cloudiness ≤35, allowing for filtering and various aggregations \citep{DynWorld}.
+cloudiness ≤35, allowing for filtering and various aggregations (\citeproc{ref-DynWorld}{Brown et al., 2022}).
 
 DW input information - raster layer for each season in each year - prepared on
-the Google Earth Engine platform \citep{GEEpaper} using
+the Google Earth Engine platform (\citeproc{ref-GEEpaper}{Gorelick et al., 2017}) using
 a \href{https://code.earthengine.google.com/0f9fd61ee41af11d218ce8692abebe9b}{replication script}.
 To use this script, you need a \href{https://console.cloud.google.com/earth-engine/welcome}{GEE account and project}
 and sufficient space on Google Drive. When executing the command line, a download
@@ -3076,7 +3149,7 @@ for(i in seq_along(unikalie)){
 
 The Global Forest Watch (GFW) is a widely known product that describes tree
 canopy cover in 2000, its annual growth from 2001 to 2012, and its annual
-loss from 2001 to the current version, which is updated annually \citep{theGFW}. The
+loss from 2001 to the current version, which is updated annually (\citeproc{ref-theGFW}{Hansen et al., 2013}). The
 data is available both on the \href{https://data.globalforestwatch.org/documents/941f17325a494ed78c4817f9bb20f33a/explore}{project website}
 and on \href{https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2024_v1_12}{GEE}, where
 it was developed. This project uses v1.12, in which the last year of tree loss
@@ -3112,7 +3185,7 @@ tcl3=mask(tcl2,paraugs,filename="./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.ti
 The Palsar Forests resource is based on PALSAR-2 synthetic aperture radar (SAR)
 reflectance classification of forest and non-forest land with a pixel
 resolution of 25 m. Forests are classified as areas of at least 0.5 ha covered
-with trees, where tree cover (at least 5 m high) is at least 10\% \citep{PALSARForest}.
+with trees, where tree cover (at least 5 m high) is at least 10\% (\citeproc{ref-PALSARForest}{Shimada et al., 2013}).
 The data is available at \href{https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_FNF4}{GEE}.
 This project uses a 4-class version (1=Dense Forest, 2=Non-dense Forest,
 3=Non-Forest, 4=Water), in which the last tree cover dating year is 2020,
@@ -3171,12 +3244,12 @@ fnf_XX=mask(fnf_X,template10,
 \section{CHELSA v2.1}\label{Ch04.11}
 
 Climatologies at high resolution for the Earth's land surface areas (CHELSA) is
-30 arc second global downscaled climate data set \citep{CHELSA}. The temperature algorithm
+30 arc second global downscaled climate data set (\citeproc{ref-CHELSA}{Karger et al., 2017}). The temperature algorithm
 is based on statistical downscaling of atmospheric temperatures. The precipitation
 algorithm incorporates orographic predictors including wind fields, valley
 exposition, and boundary layer height, with a subsequent bias correction. CHELSA
 climatological data has a similar accuracy as other products for temperature, but
-that its predictions of precipitation patterns are better \citep{CHELSA}. Data
+that its predictions of precipitation patterns are better (\citeproc{ref-CHELSA}{Karger et al., 2017}). Data
 (1980-2010 baseline) are freely available for download
 from \href{https://chelsa-climate.org/}{homepage} forwarding
 to download server, providing download links for selected products. There is also technical
@@ -3232,10 +3305,10 @@ for(i in seq_along(links_names$localname)){
 \section{HydroClim data}\label{Ch04.12}
 
 HydroClim is a near-global freshwater-specific environmental variable dataset,
-created for biodiversity analysis at 1 km resolution \citep{HydroClim}. Dataset
+created for biodiversity analysis at 1 km resolution (\citeproc{ref-HydroClim}{Domisch et al., 2015}). Dataset
 contains many different variables along the HydroSHEDS river
-network \citep{HydroSheds}, including upstream climate recalculated from
-worldclim \citep{worldclim_hijmans}. We downloaded (to \passthrough{\lstinline!Geodata/2024/HydroClim/!})
+network (\citeproc{ref-HydroSheds}{Lehner et al., 2008}), including upstream climate recalculated from
+worldclim (\citeproc{ref-worldclim_hijmans}{Hijmans et al., 2005}). We downloaded (to \passthrough{\lstinline!Geodata/2024/HydroClim/!})
 averaged upstream climate from \href{https://zenodo.org/records/5089529}{Zenodo repository}
 (available also from \href{https://datadryad.org/dataset/doi:10.5061/dryad.dv920}{Dryad})
 and cropped to the extent of Latvia and renamed files for further processing
@@ -3282,7 +3355,7 @@ for(i in seq_along(slanu_nosaukumi$local_name)){
 
 The raster dataset contains values only where large enough rivers are detected
 in HydroSHEDS. However, for species distribution modelling in this project
-we need continuously covered raster surfaces. For necessary geoprocessing to create such surfaces, we downloaded also HydroBASINS \citep{HydroBasins} \href{https://www.hydrosheds.org/products/hydrobasins}{dataset} to \passthrough{\lstinline!Geodata/2024/HydroClim/!}.
+we need continuously covered raster surfaces. For necessary geoprocessing to create such surfaces, we downloaded also HydroBASINS (\citeproc{ref-HydroBasins}{Lehner and Grill, 2013}) \href{https://www.hydrosheds.org/products/hydrobasins}{dataset} to \passthrough{\lstinline!Geodata/2024/HydroClim/!}.
 These procedures were EGV-specific and are described with other \hyperref[Ch06]{EGVs}.
 
 \section{Sentinel-2 indices}\label{Ch04.13}
@@ -3295,7 +3368,7 @@ with the first images available earlier. Each satellite captures high-resolution
 images (from 10 m (at the equator) pixel resolution) in 13 spectral channels
 with a return time of up to 5 days (more frequently closer to the poles) (\url{https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2}). The
 data from this mission is freely available, including on the Google Earth Engine
-platform \citep{GEEpaper} for various large-scale pre-processing and analysis. We use
+platform (\citeproc{ref-GEEpaper}{Gorelick et al., 2017}) for various large-scale pre-processing and analysis. We use
 the harmonized Level-2A (\url{https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED\#description}) product, applying a cloud mask that includes not only cloud filtering but also
 shadow filtering, so that for each filtered (cloud and seasonal - from April to
 October and from 2020 to 2024) to calculate the normalized difference vegetation
@@ -3696,7 +3769,7 @@ wetness index was prepared and the search for non-runoff depressions was conduct
   resistance, the rest were filled in;
 \item
   for additional security, the result of the second step was repeated to
-  search for and fill in terrain depressions \citep{WangLiu2006};
+  search for and fill in terrain depressions (\citeproc{ref-WangLiu2006}{Wang and Liu, 2006});
 \item
   the result of the third step was used to determine the specific catchment
   area using d-infinity flow division;
@@ -18050,6 +18123,41 @@ This chapter provides access to EGVs described in previous parts
 \chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
 
-\bibliography{book.bib,packages.bib,refs.bib}
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-DynWorld}
+Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. {Dynamic} {World}, {Near} real-time global 10 m land use land cover mapping. Scientific Data 9, 251. \url{https://doi.org/10.1038/s41597-022-01307-4}
+
+\bibitem[\citeproctext]{ref-HydroClim}
+Domisch, S., Amatulli, G., Jetz, W., 2015. Near-global freshwater-specific environmental variables for biodiversity analyses in 1 km resolution. Scientific Data 2:150073, 1--13. \url{https://doi.org/10.1038/sdata.2015.73}
+
+\bibitem[\citeproctext]{ref-GEEpaper}
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. {Google} {Earth} {Engine}: {Planetary-scale} geospatial analysis for everyone. Remote Sensing of Environment 202, 18--27. \url{https://doi.org/10.1016/j.rse.2017.06.031}
+
+\bibitem[\citeproctext]{ref-theGFW}
+Hansen, M.C., Potapov, P.V., Moore, R., Hancher, M., Turubanova, S.A., Tyukavina, A., Thau, D., Stehman, S.V., Goetz, S.J., Loveland, T.R., Kommareddy, A., Egorov, A., Chini, L., Justice, C.O., Townshend, J.R.G., 2013. {High}-resolution {Global} maps of 21st-century forest cover change. Science 342, 850--853. \url{https://doi.org/10.1126/science.1244693}
+
+\bibitem[\citeproctext]{ref-worldclim_hijmans}
+Hijmans, R.J., Cameron, S.E., Parra, J.L., Jones, P.G., Jarvis, A., 2005. Very high resolution interpolated climate surfaces for global land areas. International Journal of Climatology 25, 1965--1978. \url{https://doi.org/10.1002/joc.1276}
+
+\bibitem[\citeproctext]{ref-CHELSA}
+Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., Zimmermann, N.E., Linder, H.P., Kessler, M., 2017. {Data} {Descriptor}: {Climatologies} at high resolution for the earth's land surface areas. Scientific Data 4:170122. \url{https://doi.org/10.1038/sdata.2017.122}
+
+\bibitem[\citeproctext]{ref-HydroBasins}
+Lehner, B., Grill, G., 2013. Global river hydrography and network routing: Baseline data and new approaches to study the world's large river systems. Hydrological Processes 27, 2171--2186. \url{https://doi.org/10.1002/hyp.9740}
+
+\bibitem[\citeproctext]{ref-HydroSheds}
+Lehner, B., Verdin, K., Jarvis, A., 2008. New global hydrography derived from spaceborne elevation data. Eos, Transactions, American Geophysical Union 89, 93--94. \url{https://doi.org/10.1029/2008EO100001}
+
+\bibitem[\citeproctext]{ref-esdac2}
+Panagos, P., Liedekerke, M.V., Borrelli, P., Köninger, J., Ballabio, C., Orgiazzi, A., Lugato, E., Liakos, L., Hervas, J., Jones, A., Montanarella, L., 2022. {European} {Soil} {Data} {Centre} 2.0: {Soil} data and knowledge in support of the {EU} policies. European Journal of Soil Science 73, e13315. \url{https://doi.org/10.1111/ejss.13315}
+
+\bibitem[\citeproctext]{ref-PALSARForest}
+Shimada, M., Itoh, T., Motooka, T., Watanabe, M., Shiraishi, T., Thapa, R., Lucas, R., 2013. New global forest/non-forest maps from {ALOS PALSAR} data (2007--2010). Remote Sensing of Environment 155, 13--31. \url{https://doi.org/10.1016/j.rse.2014.04.014}
+
+\bibitem[\citeproctext]{ref-WangLiu2006}
+Wang, L., Liu, H., 2006. An efficient method for identifying and filling surface depressions in digital elevation models for hydrologic analysis and modelling. International Journal of Geographical Information Science 20, 193--213. \url{https://doi.org/10.1080/13658810500433453}
+
+\end{CSLReferences}
 
 \end{document}
