@@ -4217,11 +4217,32 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 **Latvian name:** Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:**   Derived from [Landscape classification](#Ch05.03) with class 500 
+reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. 
+To protect against possible data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. 
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Builtup_cell.tif	egv_89 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+builtup=ifel(simple_landscape==500,1,0)
+plot(builtup)
+distegv=distance2egv(input = builtup,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Builtup_cell.tif",
+                     layername = "egv_89")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Builtup_cell.tif"))
+rm(builtup)
+rm(distegv)
 ```
 
 
@@ -4235,11 +4256,33 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 **Latvian name:** Attālums līdz meža malai tā iekšienē, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:**  Derived from [Landscape classification](#Ch05.03) with values in 
+a range from 630 to 700 reclassified as 0 and others as 1. Processed 
+with `egvtools::distance2egv()`. To protect against possible data loss at 
+edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented.
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_ForestInside_cell.tif	egv_90 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+trees_inside=ifel(simple_landscape>=630&simple_landscape<700,0,1)
+plot(trees_inside)
+distegv=distance2egv(input = trees_inside,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_ForestInside_cell.tif",
+                     layername = "egv_90")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_ForestInside_cell.tif"))
+rm(trees_inside)
+rm(distegv)
 ```
 
 
@@ -4253,11 +4296,55 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 **Latvian name:** Attālums līdz ilggadīgiem zālājiem, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Derived from [Rural Support Service's information on declared fields](#Ch04.02) 
+with `PRODUCT_CODE=="710"` classified as 1 and the rest of the country as 0. Processed 
+with `egvtools::distance2egv()`. To protect against possible data loss at 
+edge cells, inverse distance weighted (power = 2) gap filling is implemented.
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+rastra_pamatne=raster(template10)
+
+# Distance_GrasslandPermanent_cell.tif	egv_91 ----
+kodes=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+permgrass=lad %>% 
+  filter(PRODUCT_CODE=="710") %>% 
+  mutate(yes=1)
+permgrass_r=fasterize(permgrass,rastra_pamatne,field="yes",fun="first")
+permgrass_t=rast(permgrass_r)
+permgrass_t2=cover(permgrass_t,nulls10)
+plot(permgrass_t2)
+distegv=distance2egv(input = permgrass_t2,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_GrasslandPermanent_cell.tif",
+                     layername = "egv_91")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_GrasslandPermanent_cell.tif"))
+rm(distegv)
+rm(kodes)
+rm(lad)
+rm(permgrass)
+rm(permgrass_r)
+rm(permgrass_t)
+rm(permgrass_t2)
 ```
 
 
@@ -4290,7 +4377,7 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
@@ -4347,7 +4434,7 @@ inverse distance weighted (power = 2) gap filling is implemented.
 # libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
 
@@ -4394,11 +4481,33 @@ distegv
 
 **Latvian name:** Attālums līdz kokiem, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape classification](#Ch05.03) with values in 
+a range from 630 to 700 reclassified as 1 and others as 0. Processed 
+with `egvtools::distance2egv()`. To protect against possible data loss at 
+edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented.
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Trees_cell.tif	egv_94 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+trees=ifel(simple_landscape>=630&simple_landscape<700,1,0)
+plot(trees)
+distegv=distance2egv(input = trees,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Trees_cell.tif",
+                     layername = "egv_94")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Trees_cell.tif"))
+rm(trees)
+rm(distegv)
 ```
 
 
@@ -4434,7 +4543,7 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
@@ -4480,11 +4589,32 @@ distegv
 
 **Latvian name:** Attālums līdz ūdenstilpēn, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200 
+reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. 
+To protect against possible data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented.
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Water_cell.tif	egv_96 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+water=ifel(simple_landscape==200,1,0)
+plot(water)
+distegv=distance2egv(input = water,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Water_cell.tif",
+                     layername = "egv_96")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Water_cell.tif"))
+rm(water)
+rm(distegv)
 ```
 
 
@@ -4498,11 +4628,32 @@ distegv
 
 **Latvian name:** Attālums līdz ūdenstilpes malai tās iekšienē, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200 
+reclassified as 0 and others as 1. Processed with `egvtools::distance2egv()`. 
+To protect against possible data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. 
 
 
 ``` r
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_WaterInside_cell.tif	egv_97 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+water_outside=ifel(simple_landscape==200,0,1)
+plot(water_outside)
+distegv=distance2egv(input = water_outside,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_WaterInside_cell.tif",
+                     layername = "egv_97")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_WaterInside_cell.tif"))
+rm(water_outside)
+rm(distegv)
 ```
 
 
@@ -12547,7 +12698,9 @@ input2egv(input=clay10,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 0,5 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12596,7 +12749,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 1,25 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12646,7 +12801,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 3 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12695,7 +12852,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 10 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12792,7 +12951,9 @@ input2egv(input=org10,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 0,5 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12841,7 +13002,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 1,25 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12891,7 +13054,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 3 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -12940,7 +13105,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības īpatsvars 10 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13037,7 +13204,9 @@ input2egv(input=sand10,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 0,5 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13086,7 +13255,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 1,25 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13135,7 +13306,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 3 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13184,7 +13357,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 10 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13280,7 +13455,9 @@ input2egv(input=silt10,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 0,5 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13329,7 +13506,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 1,25 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13378,7 +13557,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 3 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13428,7 +13609,9 @@ writeRaster(slanis2,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts" platības īpatsvars 10 km ainavā
 
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed 
-with `egvtools::radius_function()`, then rewritten to ensure layername.
+with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
@@ -13476,10 +13659,34 @@ writeRaster(slanis2,
 
 **Latvian name:** Augstums virs jūras līmeņa (m) analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Digital elevation/terrain models](#Ch04.15). Processed 
+with `egvtools::input2egv()`. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# Terrain_ASL-average_cell.tif	egv_526
+
+input2egv(input="./Geodata/2024/DEM/mozDEM_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_ASL-average_cell.tif",
+          layername="egv_526",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_Aspect-average_cell	{#ch06.527}
@@ -13492,11 +13699,35 @@ writeRaster(slanis2,
 
 **Latvian name:** Nogāzes vidējais vērsuma virziens analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Aspect-average_cell.tif	egv_527
+input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_Aspect-average_cell.tif",
+          layername="egv_527",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_Aspect-iqr_cell	{#ch06.528}
@@ -13509,11 +13740,56 @@ writeRaster(slanis2,
 
 **Latvian name:** Nogāzes vērsuma variabilitāte analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Aspect-iqr_cell.tif	egv_528
+p25rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_528",
+                 idw_weight = 2)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_528",
+                 idw_weight = 2)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/Terrain_Aspect-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
 
 
 ## Terrain_DiS-area_cell	{#ch06.529}
@@ -13526,11 +13802,38 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-area_cell.tif	egv_529
+dis=rast("./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif")
+dis2=ifel(dis>0,1,dis)
+
+input2egv(input=dis2,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-area_cell.tif",
+          layername="egv_529",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_DiS-area_r500	{#ch06.530}
@@ -13543,11 +13846,48 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 0,5 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::radius_function()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. After zonal statistics, file is rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r500.tif	egv_530
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r500.tif")
+names(slanis)="egv_530"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r500.tif",
+            overwrite=TRUE)
+```
 
 
 ## Terrain_DiS-area_r1250	{#ch06.531}
@@ -13560,11 +13900,47 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 1,25 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::radius_function()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. After zonal statistics, file is rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Terrain_DiS-area_r1250.tif	egv_531
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r1250.tif")
+names(slanis)="egv_531"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r1250.tif",
+            overwrite=TRUE)
+```
 
 
 ## Terrain_DiS-area_r3000	{#ch06.532}
@@ -13577,11 +13953,48 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 3 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::radius_function()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. After zonal statistics, file is rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r3000.tif	egv_532
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r3000.tif")
+names(slanis)="egv_532"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r3000.tif",
+            overwrite=TRUE)
+```
 
 
 ## Terrain_DiS-area_r10000	{#ch06.533}
@@ -13594,11 +14007,48 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 10 km ainavā
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::radius_function()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. After zonal statistics, file is rewritten to ensure layername.
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r10000.tif	egv_533
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r10000.tif")
+names(slanis)="egv_533"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r10000.tif",
+            overwrite=TRUE)
+```
 
 
 ## Terrain_DiS-max_cell	{#ch06.534}	
@@ -13611,11 +14061,34 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju lielākais dziļums analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-max_cell.tif	egv_534
+input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "max",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-max_cell.tif",
+          layername="egv_534",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_DiS-mean_cell	{#ch06.535}	
@@ -13628,11 +14101,34 @@ writeRaster(slanis2,
 
 **Latvian name:** Reljefa depresiju vidējais dziļums analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-mean_cell.tif	egv_535
+input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-mean_cell.tif",
+          layername="egv_535",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_Slope-average_cell	{#ch06.536}	
@@ -13645,11 +14141,35 @@ writeRaster(slanis2,
 
 **Latvian name:** Nogāzes slīpuma vidējā vērtība analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Slope-average_cell.tif	egv_536
+input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_Slope-average_cell.tif",
+          layername="egv_536",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 
 ## Terrain_Slope-iqr_cell	{#ch06.537}	
@@ -13662,11 +14182,56 @@ writeRaster(slanis2,
 
 **Latvian name:** Nogāzes slīpuma variabilitāte analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:** Derived from [Terrain products](#Ch05.01). First Q1 and then Q3 
+is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
+Q1 from Q3 and writing final raster with specified layername. To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Slope-iqr_cell.tif	egv_537
+p25rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_537",
+                 idw_weight = 2)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_537",
+                 idw_weight = 2)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/Terrain_Slope-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+```
 
 
 ## Terrain_TWI-average_cell	{#ch06.538}	
@@ -13679,10 +14244,34 @@ writeRaster(slanis2,
 
 **Latvian name:** Topogrāfiskā mitruma indeksa vidējā vērtība analīzes šūnā (1 ha)
 
-**Procedure:**
+**Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
+with `egvtools::input2egv()`.  To protect against 
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
+is implemented. 
 
 
 
 
+``` r
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_TWI-average_cell.tif	egv_538
+input2egv(input="./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_TWI-average_cell.tif",
+          layername="egv_538",
+          return_visible = TRUE,
+          plot_final = TRUE)
+```
 
 

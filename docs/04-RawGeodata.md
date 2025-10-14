@@ -33,9 +33,9 @@ source("./RScripts_final/egvs02.02_UtilityFunctions.R")
 nogabali <- ensure_multipolygons(nog)
 
 # securing geometries
-nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 empty geometries
+nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 tukšas ģeometrijas
 validity=st_is_valid(nogabali2) 
-table(validity) # 1733 invalid geometries
+table(validity) # 1733 invalid ģeometrijas
 nogabali3=st_make_valid(nogabali2)
 
 # transforming CRS
@@ -93,6 +93,7 @@ sfarrow::st_write_parquet(dati5,"./Geodata/2024/LAD/Lauki_2024.parquet")
 for(i in seq_along(faili$celi)){
   unlink(faili$celi[i])
 }
+rm(list=ls())
 ```
 
 
@@ -151,7 +152,7 @@ write_sf(aizsargdambji,
          append=FALSE)
 rm(aizsargdambji)
 
-# dabiskās ūdensteces ----
+# dabiskas udensteces ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
@@ -297,7 +298,7 @@ n_features <- attr(parsed$FeatureCollection, "numberMatched")
 n_features
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_draincollectors"
 crs_code <- 3059
@@ -360,7 +361,7 @@ rm(list=ls())
 
 
 
-# drenāžas tīkla būves ----
+# drenazas tikla būves ----
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 url=parse_url(link)
@@ -385,7 +386,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_networkstructures"
 crs_code <- 3059
@@ -448,7 +449,7 @@ rm(list=ls())
 
 
 
-# grāvji -----
+# gravji -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -474,7 +475,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditches"
 crs_code <- 3059
@@ -537,7 +538,7 @@ rm(list=ls())
 
 
 
-# hidrometriskie posteņi ----
+# hidrometriskie posteni ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -563,7 +564,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_hydropost"
 crs_code <- 3059
@@ -650,7 +651,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_bigdraincollectors"
 crs_code <- 3059
@@ -740,7 +741,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspickets"
 crs_code <- 3059
@@ -801,7 +802,7 @@ write_sf(Piketi_all2,
 rm(list=ls())
 
 
-# polderu sūkņu stacijas -----
+# polderu suknu stacijas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -827,7 +828,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderpumpingstation"
 crs_code <- 3059
@@ -929,7 +930,7 @@ PolderuTeritorijas_all2 = poligoni[!st_is_empty(poligoni),,drop=FALSE] # 0
 table(st_is_valid(PolderuTeritorijas_all2))
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderterritory"
 crs_code <- 3059
@@ -1018,7 +1019,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_catchment"
 crs_code <- 3059
@@ -1120,7 +1121,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_connectionpoints"
 crs_code <- 3059
@@ -1184,7 +1185,7 @@ write_sf(Savienojumi_all2,
 rm(list=ls())
 
 
-# valsts nozīme ūdensnotekas -----
+# valsts nozimes ūdensnotekas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1210,7 +1211,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_statecontrolledrivers"
 crs_code <- 3059
@@ -1274,7 +1275,7 @@ write_sf(ValstsNozimesUdensnotekas_all2,
 rm(list=ls())
 
 
-# zmni reģions ----
+# zmni regions ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1302,7 +1303,7 @@ geometrijam
 library(gdalUtilities)
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_zmniregion"
 crs_code <- 3059
@@ -1377,7 +1378,7 @@ rm(list=ls())
 
 
 
-# ūdensnotekas (novadrāvji) -----
+# udensnotekas (novadgravji) -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1403,7 +1404,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_waterdrainditches"
 crs_code <- 3059
@@ -1469,7 +1470,7 @@ rm(list=ls())
 
 
 
-# ūdensnoteku un grāvju piketi ----
+# udensnoteku un gravju piketi ----
 
 
 
@@ -1496,7 +1497,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditchpicket"
 crs_code <- 3059
@@ -1558,7 +1559,7 @@ rm(list=ls())
 
 
 
-# ūdensteču asis ----
+# udenstecu asis ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1584,7 +1585,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriversline"
 crs_code <- 3059
@@ -1649,7 +1650,7 @@ rm(list=ls())
 
 
 
-# ūdenstešu ūdens virsmas laukumi ----
+# udens virsmas laukumi ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1674,7 +1675,7 @@ geometrijam <- read_sf(request)
 geometrijam
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspolygon"
 crs_code <- 3059
@@ -1794,8 +1795,6 @@ if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # v4 ----
-
-
 slani_v4=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v4_20250703.gdb/")
 write.xlsx(slani_v4,"./Geodata/2024/TopographicMap/slani_v4partial.xlsx")
 
@@ -1829,7 +1828,6 @@ for(i in seq_along(ciklam4x)){
 
 
 # v3 ----
-
 slani_v3=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/")
 write.xlsx(slani_v3,"./Geodata/2024/TopographicMap/slani_v3.xlsx")
 
@@ -1863,6 +1861,7 @@ for(i in seq_along(ciklam3x)){
   print(ilgums)
 }
 
+
 # combination ----
 st_layers("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg")
 
@@ -1894,7 +1893,6 @@ data_4=data_4 %>%
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
 
-
 # bridge_P
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_P")
 data_not4=st_difference(data_3,pages4_united)
@@ -1907,7 +1905,6 @@ data_4=data_4 %>%
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeP_COMB.parquet")
 
-
 # hidro_A
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_A")
 data_not4=st_difference(data_3,pages4_united)
@@ -1919,7 +1916,6 @@ data_4=data_4 %>%
 
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
-
 
 # hidro_L
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_L")
@@ -1947,6 +1943,7 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadA_COMB.parquet")
 
 
+
 # road_L
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_L")
 data_not4=st_difference(data_3,pages4_united)
@@ -1960,6 +1957,7 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadL_COMB.parquet")
 
 
+
 # swamp_A
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="swamp_A")
 data_not4=st_difference(data_3,pages4_united)
@@ -1971,6 +1969,7 @@ data_4=data_4 %>%
 
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/SwampA_COMB.parquet")
+
 
 
 # flora_L
@@ -2017,18 +2016,18 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 # downloaded data
 clcLV=st_read("./Geodata/2024/CLC/clcLV.gpkg",layer="clcLV")
 
-# tukšās ģeometrijas
+# empty geoms
 clcLV2 = clcLV[!st_is_empty(clcLV),,drop=FALSE] # OK
 
-# ģeometriju validēšana
+# validation
 validity=st_is_valid(clcLV2) 
 table(validity) # 3 non-valid
 clcLV3=st_make_valid(clcLV2)
 
-# koordinātu sistēma
+# crs
 clcLV3=st_transform(clcLV3,crs=3059)
 
-# saglabāšana
+# saving
 sfarrow::st_write_parquet(clcLV3, "./Geodata/2024/CLC/CLC_LV_2018.parquet")
 ```
 
@@ -2341,7 +2340,7 @@ organika_silava=ifel(organika_silava==2,1,NA)
 organika_silavaLV=project(organika_silava,template10)
 
 # stripes drawn manually, rasterization
-silavas_telpai=st_read("./IevadesDati/Augsnes_COMB/KudraugsnuPrognozes_Silava/stripam.gpkg",
+silavas_telpai=st_read("./Geodata/2024/Soils/OrganicSoils_SILAVA/stripam.gpkg",
                        layer="stripam")
 silavas_telpai=st_transform(silavas_telpai,crs=3059)
 silavas_telpai$yes=1
@@ -2435,7 +2434,7 @@ template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 faili=data.frame(faili=list.files("./Geodata/2024/DynamicWorld/RAW/"))
 faili$celi_sakums=paste0("./Geodata/2024/DynamicWorld/RAW/",faili$faili)
 
-# Sagatavošana ----
+# prepping ----
 faili=faili %>% 
   separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
   mutate(unikalais=paste0(DW,"_",gads,"_",periods),
@@ -2464,7 +2463,7 @@ for(i in seq_along(unikalie)){
   maskets=mask(mozaika,template10,
                filename=beigu_cels,
                overwrite=TRUE)
-
+  
   print(beigu_cels)
 }
 ```
@@ -2658,7 +2657,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # templates ----
-
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 tikls1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
 
@@ -2924,7 +2922,6 @@ reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees", 
                 filename="./Geodata/2024/DEM/Terrain_Slope_10m.tif", overwrite=TRUE)  
 
-
 ## aspect 
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 virzieni=terrain(reljefs, v="aspect", neighbors=8, unit="degrees", 
@@ -2968,7 +2965,6 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 
 
 # Templates ----
-
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
@@ -2976,8 +2972,6 @@ nulles10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 
 
 # Bogs ----
-
-
 neatklata71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif")
 neatklata71107120=ifel(neatklata71107120>0,1,NA)
 plot(neatklata71107120)
@@ -3011,7 +3005,6 @@ writeRaster(sunuYN,
 
 
 # Transitional mires ----
-
 parejas_proj=project(tikai_parejas,template10)
 parejasYN=cover(parejas_proj,nulles10)
 plot(parejasYN)

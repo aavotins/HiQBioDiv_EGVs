@@ -826,42 +826,58 @@ DEM to be used in further processing.</p>
 <span id="cb27-9"><a href="Ch05.html#cb27-9" tabindex="-1"></a><span class="co"># reference</span></span>
 <span id="cb27-10"><a href="Ch05.html#cb27-10" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
 <span id="cb27-11"><a href="Ch05.html#cb27-11" tabindex="-1"></a></span>
-<span id="cb27-12"><a href="Ch05.html#cb27-12" tabindex="-1"></a><span class="co"># reljefs</span></span>
-<span id="cb27-13"><a href="Ch05.html#cb27-13" tabindex="-1"></a>reljefs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/mozDEM_10m.tif&quot;</span>)</span>
-<span id="cb27-14"><a href="Ch05.html#cb27-14" tabindex="-1"></a></span>
-<span id="cb27-15"><a href="Ch05.html#cb27-15" tabindex="-1"></a><span class="co"># drenazas tikla buves</span></span>
-<span id="cb27-16"><a href="Ch05.html#cb27-16" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>)</span>
-<span id="cb27-17"><a href="Ch05.html#cb27-17" tabindex="-1"></a></span>
-<span id="cb27-18"><a href="Ch05.html#cb27-18" tabindex="-1"></a>dtb<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;DrenazasTiklaBuves&quot;</span>)</span>
-<span id="cb27-19"><a href="Ch05.html#cb27-19" tabindex="-1"></a>dtb_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(dtb,<span class="at">dist=</span><span class="dv">10</span>)</span>
-<span id="cb27-20"><a href="Ch05.html#cb27-20" tabindex="-1"></a></span>
-<span id="cb27-21"><a href="Ch05.html#cb27-21" tabindex="-1"></a><span class="co"># tilti </span></span>
-<span id="cb27-22"><a href="Ch05.html#cb27-22" tabindex="-1"></a>tiltiL<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
-<span id="cb27-23"><a href="Ch05.html#cb27-23" tabindex="-1"></a>tiltiL_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiL,<span class="at">dist=</span><span class="dv">30</span>)</span>
-<span id="cb27-24"><a href="Ch05.html#cb27-24" tabindex="-1"></a>tiltiP<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
-<span id="cb27-25"><a href="Ch05.html#cb27-25" tabindex="-1"></a>tiltiP_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiP,<span class="at">dist=</span><span class="dv">30</span>)</span>
-<span id="cb27-26"><a href="Ch05.html#cb27-26" tabindex="-1"></a></span>
-<span id="cb27-27"><a href="Ch05.html#cb27-27" tabindex="-1"></a><span class="co"># LVM</span></span>
-<span id="cb27-28"><a href="Ch05.html#cb27-28" tabindex="-1"></a>lvm_caurtekas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_CAURTEKAS/LVM_CAURTEKAS_Shape.shp&quot;</span>)</span>
-<span id="cb27-29"><a href="Ch05.html#cb27-29" tabindex="-1"></a>lvm_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(lvm_caurtekas,<span class="at">dist=</span><span class="dv">30</span>)</span>
-<span id="cb27-30"><a href="Ch05.html#cb27-30" tabindex="-1"></a></span>
-<span id="cb27-31"><a href="Ch05.html#cb27-31" tabindex="-1"></a></span>
-<span id="cb27-32"><a href="Ch05.html#cb27-32" tabindex="-1"></a><span class="co"># visi buferi </span></span>
-<span id="cb27-33"><a href="Ch05.html#cb27-33" tabindex="-1"></a><span class="fu">st_geometry</span>(dtb_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
-<span id="cb27-34"><a href="Ch05.html#cb27-34" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiL_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
-<span id="cb27-35"><a href="Ch05.html#cb27-35" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiP_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
-<span id="cb27-36"><a href="Ch05.html#cb27-36" tabindex="-1"></a><span class="fu">st_geometry</span>(lvm_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
-<span id="cb27-37"><a href="Ch05.html#cb27-37" tabindex="-1"></a>visi_buferi<span class="ot">=</span><span class="fu">bind_rows</span>(dtb_buffer,tiltiL_buffer,tiltiP_buffer,lvm_buffer)</span>
-<span id="cb27-38"><a href="Ch05.html#cb27-38" tabindex="-1"></a></span>
-<span id="cb27-39"><a href="Ch05.html#cb27-39" tabindex="-1"></a><span class="co"># caurumosana</span></span>
-<span id="cb27-40"><a href="Ch05.html#cb27-40" tabindex="-1"></a>visi_buferi<span class="sc">$</span>vertiba<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(reljefs,visi_buferi,<span class="st">&quot;min&quot;</span>)</span>
-<span id="cb27-41"><a href="Ch05.html#cb27-41" tabindex="-1"></a></span>
-<span id="cb27-42"><a href="Ch05.html#cb27-42" tabindex="-1"></a>templis<span class="ot">=</span>raster<span class="sc">::</span><span class="fu">raster</span>(template)</span>
-<span id="cb27-43"><a href="Ch05.html#cb27-43" tabindex="-1"></a>caurumi<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(visi_buferi,templis,<span class="at">field=</span><span class="st">&quot;vertiba&quot;</span>)</span>
-<span id="cb27-44"><a href="Ch05.html#cb27-44" tabindex="-1"></a>caurumi2<span class="ot">=</span><span class="fu">rast</span>(caurumi)</span>
-<span id="cb27-45"><a href="Ch05.html#cb27-45" tabindex="-1"></a>caurumains<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(reljefs,caurumi2),<span class="at">fun=</span><span class="st">&quot;min&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
-<span id="cb27-46"><a href="Ch05.html#cb27-46" tabindex="-1"></a>               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb27-47"><a href="Ch05.html#cb27-47" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./IevadesDati/reljefs/caurtDEM_10m.tif&quot;</span>)</span></code></pre></div>
+<span id="cb27-12"><a href="Ch05.html#cb27-12" tabindex="-1"></a><span class="co"># part one ----</span></span>
+<span id="cb27-13"><a href="Ch05.html#cb27-13" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="Ch05.html#cb27-14" tabindex="-1"></a><span class="co"># reljefs</span></span>
+<span id="cb27-15"><a href="Ch05.html#cb27-15" tabindex="-1"></a>reljefs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/mozDEM_10m.tif&quot;</span>)</span>
+<span id="cb27-16"><a href="Ch05.html#cb27-16" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="Ch05.html#cb27-17" tabindex="-1"></a><span class="co"># drainage network structures</span></span>
+<span id="cb27-18"><a href="Ch05.html#cb27-18" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>)</span>
+<span id="cb27-19"><a href="Ch05.html#cb27-19" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="Ch05.html#cb27-20" tabindex="-1"></a>dtb<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/MKIS/MKIS_2025.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;DrenazasTiklaBuves&quot;</span>)</span>
+<span id="cb27-21"><a href="Ch05.html#cb27-21" tabindex="-1"></a>dtb_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(dtb,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb27-22"><a href="Ch05.html#cb27-22" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="Ch05.html#cb27-23" tabindex="-1"></a><span class="co"># bridges </span></span>
+<span id="cb27-24"><a href="Ch05.html#cb27-24" tabindex="-1"></a>tiltiL<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
+<span id="cb27-25"><a href="Ch05.html#cb27-25" tabindex="-1"></a>tiltiL_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiL,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-26"><a href="Ch05.html#cb27-26" tabindex="-1"></a>tiltiP<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
+<span id="cb27-27"><a href="Ch05.html#cb27-27" tabindex="-1"></a>tiltiP_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(tiltiP,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-28"><a href="Ch05.html#cb27-28" tabindex="-1"></a></span>
+<span id="cb27-29"><a href="Ch05.html#cb27-29" tabindex="-1"></a><span class="co"># LVM</span></span>
+<span id="cb27-30"><a href="Ch05.html#cb27-30" tabindex="-1"></a>lvm_caurtekas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/LVM_OpenData/LVM_CAURTEKAS/LVM_CAURTEKAS_Shape.shp&quot;</span>)</span>
+<span id="cb27-31"><a href="Ch05.html#cb27-31" tabindex="-1"></a>lvm_buffer<span class="ot">=</span><span class="fu">st_buffer</span>(lvm_caurtekas,<span class="at">dist=</span><span class="dv">30</span>)</span>
+<span id="cb27-32"><a href="Ch05.html#cb27-32" tabindex="-1"></a></span>
+<span id="cb27-33"><a href="Ch05.html#cb27-33" tabindex="-1"></a></span>
+<span id="cb27-34"><a href="Ch05.html#cb27-34" tabindex="-1"></a><span class="co"># buffers</span></span>
+<span id="cb27-35"><a href="Ch05.html#cb27-35" tabindex="-1"></a><span class="fu">st_geometry</span>(dtb_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-36"><a href="Ch05.html#cb27-36" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiL_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-37"><a href="Ch05.html#cb27-37" tabindex="-1"></a><span class="fu">st_geometry</span>(tiltiP_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-38"><a href="Ch05.html#cb27-38" tabindex="-1"></a><span class="fu">st_geometry</span>(lvm_buffer)<span class="ot">=</span><span class="st">&quot;geometry&quot;</span></span>
+<span id="cb27-39"><a href="Ch05.html#cb27-39" tabindex="-1"></a>visi_buferi<span class="ot">=</span><span class="fu">bind_rows</span>(dtb_buffer,tiltiL_buffer,tiltiP_buffer,lvm_buffer)</span>
+<span id="cb27-40"><a href="Ch05.html#cb27-40" tabindex="-1"></a></span>
+<span id="cb27-41"><a href="Ch05.html#cb27-41" tabindex="-1"></a><span class="co"># incorporation in DEM</span></span>
+<span id="cb27-42"><a href="Ch05.html#cb27-42" tabindex="-1"></a>visi_buferi<span class="sc">$</span>vertiba<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(reljefs,visi_buferi,<span class="st">&quot;min&quot;</span>)</span>
+<span id="cb27-43"><a href="Ch05.html#cb27-43" tabindex="-1"></a></span>
+<span id="cb27-44"><a href="Ch05.html#cb27-44" tabindex="-1"></a>caurumi<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(visi_buferi,templis,<span class="at">field=</span><span class="st">&quot;vertiba&quot;</span>)</span>
+<span id="cb27-45"><a href="Ch05.html#cb27-45" tabindex="-1"></a>caurumi2<span class="ot">=</span><span class="fu">rast</span>(caurumi)</span>
+<span id="cb27-46"><a href="Ch05.html#cb27-46" tabindex="-1"></a>caurumains<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(reljefs,caurumi2),<span class="at">fun=</span><span class="st">&quot;min&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb27-47"><a href="Ch05.html#cb27-47" tabindex="-1"></a>               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb27-48"><a href="Ch05.html#cb27-48" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>)</span>
+<span id="cb27-49"><a href="Ch05.html#cb27-49" tabindex="-1"></a></span>
+<span id="cb27-50"><a href="Ch05.html#cb27-50" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb27-51"><a href="Ch05.html#cb27-51" tabindex="-1"></a><span class="fu">rm</span>(caurumi)</span>
+<span id="cb27-52"><a href="Ch05.html#cb27-52" tabindex="-1"></a><span class="fu">rm</span>(caurumi2)</span>
+<span id="cb27-53"><a href="Ch05.html#cb27-53" tabindex="-1"></a><span class="fu">rm</span>(dtb)</span>
+<span id="cb27-54"><a href="Ch05.html#cb27-54" tabindex="-1"></a><span class="fu">rm</span>(dtb_buffer)</span>
+<span id="cb27-55"><a href="Ch05.html#cb27-55" tabindex="-1"></a><span class="fu">rm</span>(lvm_buffer)</span>
+<span id="cb27-56"><a href="Ch05.html#cb27-56" tabindex="-1"></a><span class="fu">rm</span>(lvm_caurtekas)</span>
+<span id="cb27-57"><a href="Ch05.html#cb27-57" tabindex="-1"></a><span class="fu">rm</span>(reljefs)</span>
+<span id="cb27-58"><a href="Ch05.html#cb27-58" tabindex="-1"></a><span class="fu">rm</span>(tiltiL)</span>
+<span id="cb27-59"><a href="Ch05.html#cb27-59" tabindex="-1"></a><span class="fu">rm</span>(tiltiL_buffer)</span>
+<span id="cb27-60"><a href="Ch05.html#cb27-60" tabindex="-1"></a><span class="fu">rm</span>(tiltiP)</span>
+<span id="cb27-61"><a href="Ch05.html#cb27-61" tabindex="-1"></a><span class="fu">rm</span>(tiltiP_buffer)</span>
+<span id="cb27-62"><a href="Ch05.html#cb27-62" tabindex="-1"></a><span class="fu">rm</span>(visi_buferi)</span>
+<span id="cb27-63"><a href="Ch05.html#cb27-63" tabindex="-1"></a><span class="fu">rm</span>(caurumains)</span></code></pre></div>
 </details>
 <p>This DEM was then used for geoprocessing to find terrain depressions and
 determine the topographic wetness index (TWI). The topographic
@@ -888,13 +904,13 @@ individual extreme values, which were limited to <strong>20</strong>.</p></li>
 <span id="cb28-5"><a href="Ch05.html#cb28-5" tabindex="-1"></a><span class="co"># reference</span></span>
 <span id="cb28-6"><a href="Ch05.html#cb28-6" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
 <span id="cb28-7"><a href="Ch05.html#cb28-7" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="Ch05.html#cb28-8" tabindex="-1"></a></span>
-<span id="cb28-9"><a href="Ch05.html#cb28-9" tabindex="-1"></a><span class="co"># DEM</span></span>
-<span id="cb28-10"><a href="Ch05.html#cb28-10" tabindex="-1"></a>caurumainis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>)</span>
-<span id="cb28-11"><a href="Ch05.html#cb28-11" tabindex="-1"></a></span>
-<span id="cb28-12"><a href="Ch05.html#cb28-12" tabindex="-1"></a><span class="co"># Sinks</span></span>
-<span id="cb28-13"><a href="Ch05.html#cb28-13" tabindex="-1"></a></span>
-<span id="cb28-14"><a href="Ch05.html#cb28-14" tabindex="-1"></a><span class="do">## breached sinks un depth in sinks</span></span>
+<span id="cb28-8"><a href="Ch05.html#cb28-8" tabindex="-1"></a><span class="co"># part two ----</span></span>
+<span id="cb28-9"><a href="Ch05.html#cb28-9" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="Ch05.html#cb28-10" tabindex="-1"></a><span class="co"># DEM</span></span>
+<span id="cb28-11"><a href="Ch05.html#cb28-11" tabindex="-1"></a>caurumainis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>)</span>
+<span id="cb28-12"><a href="Ch05.html#cb28-12" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="Ch05.html#cb28-13" tabindex="-1"></a><span class="co"># Sinks</span></span>
+<span id="cb28-14"><a href="Ch05.html#cb28-14" tabindex="-1"></a><span class="do">## breached sinks and depth in sinks</span></span>
 <span id="cb28-15"><a href="Ch05.html#cb28-15" tabindex="-1"></a><span class="fu">wbt_breach_depressions_least_cost</span>(</span>
 <span id="cb28-16"><a href="Ch05.html#cb28-16" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>,</span>
 <span id="cb28-17"><a href="Ch05.html#cb28-17" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>,</span>
@@ -911,39 +927,46 @@ individual extreme values, which were limited to <strong>20</strong>.</p></li>
 <span id="cb28-28"><a href="Ch05.html#cb28-28" tabindex="-1"></a>sinks2 <span class="ot">&lt;-</span> <span class="fu">ifel</span>(sinks <span class="sc">&gt;=</span> <span class="dv">1</span>, <span class="dv">1</span>, sinks,</span>
 <span id="cb28-29"><a href="Ch05.html#cb28-29" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_SinkYN_breached_10m.tif&quot;</span>)</span>
 <span id="cb28-30"><a href="Ch05.html#cb28-30" tabindex="-1"></a><span class="fu">plot</span>(sinks2)</span>
-<span id="cb28-31"><a href="Ch05.html#cb28-31" tabindex="-1"></a></span>
+<span id="cb28-31"><a href="Ch05.html#cb28-31" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif&quot;</span>)</span>
 <span id="cb28-32"><a href="Ch05.html#cb28-32" tabindex="-1"></a></span>
-<span id="cb28-33"><a href="Ch05.html#cb28-33" tabindex="-1"></a></span>
-<span id="cb28-34"><a href="Ch05.html#cb28-34" tabindex="-1"></a><span class="co"># TWI</span></span>
-<span id="cb28-35"><a href="Ch05.html#cb28-35" tabindex="-1"></a><span class="do">## breaching</span></span>
-<span id="cb28-36"><a href="Ch05.html#cb28-36" tabindex="-1"></a><span class="fu">wbt_breach_depressions_least_cost</span>(</span>
-<span id="cb28-37"><a href="Ch05.html#cb28-37" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>,</span>
-<span id="cb28-38"><a href="Ch05.html#cb28-38" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
-<span id="cb28-39"><a href="Ch05.html#cb28-39" tabindex="-1"></a>  <span class="at">dist =</span> <span class="dv">10</span>,</span>
-<span id="cb28-40"><a href="Ch05.html#cb28-40" tabindex="-1"></a>  <span class="at">fill =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb28-41"><a href="Ch05.html#cb28-41" tabindex="-1"></a></span>
-<span id="cb28-42"><a href="Ch05.html#cb28-42" tabindex="-1"></a></span>
-<span id="cb28-43"><a href="Ch05.html#cb28-43" tabindex="-1"></a><span class="do">### filling</span></span>
-<span id="cb28-44"><a href="Ch05.html#cb28-44" tabindex="-1"></a><span class="fu">wbt_fill_depressions_wang_and_liu</span>(</span>
-<span id="cb28-45"><a href="Ch05.html#cb28-45" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
-<span id="cb28-46"><a href="Ch05.html#cb28-46" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span></span>
-<span id="cb28-47"><a href="Ch05.html#cb28-47" tabindex="-1"></a>)</span>
-<span id="cb28-48"><a href="Ch05.html#cb28-48" tabindex="-1"></a></span>
-<span id="cb28-49"><a href="Ch05.html#cb28-49" tabindex="-1"></a><span class="do">### (d inf) flow direction</span></span>
-<span id="cb28-50"><a href="Ch05.html#cb28-50" tabindex="-1"></a><span class="fu">wbt_d_inf_flow_accumulation</span>(<span class="at">input =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>,</span>
-<span id="cb28-51"><a href="Ch05.html#cb28-51" tabindex="-1"></a>                            <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
-<span id="cb28-52"><a href="Ch05.html#cb28-52" tabindex="-1"></a>                            <span class="at">out_type =</span> <span class="st">&quot;Specific Contributing Area&quot;</span>)</span>
-<span id="cb28-53"><a href="Ch05.html#cb28-53" tabindex="-1"></a></span>
-<span id="cb28-54"><a href="Ch05.html#cb28-54" tabindex="-1"></a><span class="do">### twi</span></span>
-<span id="cb28-55"><a href="Ch05.html#cb28-55" tabindex="-1"></a><span class="fu">wbt_wetness_index</span>(<span class="at">sca =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
-<span id="cb28-56"><a href="Ch05.html#cb28-56" tabindex="-1"></a>                  <span class="at">slope =</span> <span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>,</span>
-<span id="cb28-57"><a href="Ch05.html#cb28-57" tabindex="-1"></a>                  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
-<span id="cb28-58"><a href="Ch05.html#cb28-58" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
-<span id="cb28-59"><a href="Ch05.html#cb28-59" tabindex="-1"></a><span class="fu">hist</span>(twi) <span class="co"># excessive values</span></span>
-<span id="cb28-60"><a href="Ch05.html#cb28-60" tabindex="-1"></a><span class="fu">plot</span>(twi)</span>
-<span id="cb28-61"><a href="Ch05.html#cb28-61" tabindex="-1"></a>twi2<span class="ot">=</span><span class="fu">ifel</span>(twi<span class="sc">&gt;</span><span class="dv">20</span>,<span class="dv">20</span>,twi)</span>
+<span id="cb28-33"><a href="Ch05.html#cb28-33" tabindex="-1"></a><span class="co"># TWI</span></span>
+<span id="cb28-34"><a href="Ch05.html#cb28-34" tabindex="-1"></a><span class="do">## breaching</span></span>
+<span id="cb28-35"><a href="Ch05.html#cb28-35" tabindex="-1"></a><span class="fu">wbt_breach_depressions_least_cost</span>(</span>
+<span id="cb28-36"><a href="Ch05.html#cb28-36" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_10m.tif&quot;</span>,</span>
+<span id="cb28-37"><a href="Ch05.html#cb28-37" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
+<span id="cb28-38"><a href="Ch05.html#cb28-38" tabindex="-1"></a>  <span class="at">dist =</span> <span class="dv">10</span>,</span>
+<span id="cb28-39"><a href="Ch05.html#cb28-39" tabindex="-1"></a>  <span class="at">fill =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-40"><a href="Ch05.html#cb28-40" tabindex="-1"></a></span>
+<span id="cb28-41"><a href="Ch05.html#cb28-41" tabindex="-1"></a><span class="do">### filling</span></span>
+<span id="cb28-42"><a href="Ch05.html#cb28-42" tabindex="-1"></a><span class="fu">wbt_fill_depressions_wang_and_liu</span>(</span>
+<span id="cb28-43"><a href="Ch05.html#cb28-43" tabindex="-1"></a>  <span class="at">dem =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>,</span>
+<span id="cb28-44"><a href="Ch05.html#cb28-44" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span></span>
+<span id="cb28-45"><a href="Ch05.html#cb28-45" tabindex="-1"></a>)</span>
+<span id="cb28-46"><a href="Ch05.html#cb28-46" tabindex="-1"></a></span>
+<span id="cb28-47"><a href="Ch05.html#cb28-47" tabindex="-1"></a><span class="do">### (d inf) flow direction</span></span>
+<span id="cb28-48"><a href="Ch05.html#cb28-48" tabindex="-1"></a><span class="fu">wbt_d_inf_flow_accumulation</span>(<span class="at">input =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>,</span>
+<span id="cb28-49"><a href="Ch05.html#cb28-49" tabindex="-1"></a>                            <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
+<span id="cb28-50"><a href="Ch05.html#cb28-50" tabindex="-1"></a>                            <span class="at">out_type =</span> <span class="st">&quot;Specific Contributing Area&quot;</span>)</span>
+<span id="cb28-51"><a href="Ch05.html#cb28-51" tabindex="-1"></a></span>
+<span id="cb28-52"><a href="Ch05.html#cb28-52" tabindex="-1"></a><span class="do">### twi</span></span>
+<span id="cb28-53"><a href="Ch05.html#cb28-53" tabindex="-1"></a><span class="fu">wbt_wetness_index</span>(<span class="at">sca =</span> <span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>,</span>
+<span id="cb28-54"><a href="Ch05.html#cb28-54" tabindex="-1"></a>                  <span class="at">slope =</span> <span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>,</span>
+<span id="cb28-55"><a href="Ch05.html#cb28-55" tabindex="-1"></a>                  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
+<span id="cb28-56"><a href="Ch05.html#cb28-56" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
+<span id="cb28-57"><a href="Ch05.html#cb28-57" tabindex="-1"></a><span class="fu">hist</span>(twi) <span class="co"># vietumis ir sevišķi ekscesīvas vērtības</span></span>
+<span id="cb28-58"><a href="Ch05.html#cb28-58" tabindex="-1"></a><span class="fu">plot</span>(twi)</span>
+<span id="cb28-59"><a href="Ch05.html#cb28-59" tabindex="-1"></a>twi2<span class="ot">=</span><span class="fu">ifel</span>(twi<span class="sc">&gt;</span><span class="dv">20</span>,<span class="dv">20</span>,twi)</span>
+<span id="cb28-60"><a href="Ch05.html#cb28-60" tabindex="-1"></a><span class="fu">plot</span>(twi2)</span>
+<span id="cb28-61"><a href="Ch05.html#cb28-61" tabindex="-1"></a>twi2x<span class="ot">=</span><span class="fu">ifel</span>(<span class="fu">is.na</span>(twi2)<span class="sc">&amp;!</span><span class="fu">is.na</span>(template),<span class="dv">20</span>,twi2) <span class="co"># Lake Burtnieks</span></span>
 <span id="cb28-62"><a href="Ch05.html#cb28-62" tabindex="-1"></a></span>
-<span id="cb28-63"><a href="Ch05.html#cb28-63" tabindex="-1"></a><span class="fu">writeRaster</span>(twi2x,<span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span></code></pre></div>
+<span id="cb28-63"><a href="Ch05.html#cb28-63" tabindex="-1"></a><span class="fu">writeRaster</span>(twi2x,<span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span>
+<span id="cb28-64"><a href="Ch05.html#cb28-64" tabindex="-1"></a></span>
+<span id="cb28-65"><a href="Ch05.html#cb28-65" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb28-66"><a href="Ch05.html#cb28-66" tabindex="-1"></a><span class="fu">rm</span>(sinks)</span>
+<span id="cb28-67"><a href="Ch05.html#cb28-67" tabindex="-1"></a><span class="fu">rm</span>(sinks2)</span>
+<span id="cb28-68"><a href="Ch05.html#cb28-68" tabindex="-1"></a><span class="fu">rm</span>(caurumainis)</span>
+<span id="cb28-69"><a href="Ch05.html#cb28-69" tabindex="-1"></a><span class="fu">rm</span>(twi)</span>
+<span id="cb28-70"><a href="Ch05.html#cb28-70" tabindex="-1"></a><span class="fu">rm</span>(twi2)</span></code></pre></div>
 </details>
 <p>Since the initial DEM input was created by filling in water bodies using
 interpolation methods, the water bodies show a pronounced terrain, which needs
@@ -959,97 +982,99 @@ to be removed. This is done by inserting average values into these polygons.</p>
 <span id="cb29-8"><a href="Ch05.html#cb29-8" tabindex="-1"></a></span>
 <span id="cb29-9"><a href="Ch05.html#cb29-9" tabindex="-1"></a><span class="co"># reference</span></span>
 <span id="cb29-10"><a href="Ch05.html#cb29-10" tabindex="-1"></a>template<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
-<span id="cb29-11"><a href="Ch05.html#cb29-11" tabindex="-1"></a></span>
-<span id="cb29-12"><a href="Ch05.html#cb29-12" tabindex="-1"></a><span class="co">#  dealing with waterbodies </span></span>
-<span id="cb29-13"><a href="Ch05.html#cb29-13" tabindex="-1"></a>udeni<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
-<span id="cb29-14"><a href="Ch05.html#cb29-14" tabindex="-1"></a></span>
-<span id="cb29-15"><a href="Ch05.html#cb29-15" tabindex="-1"></a>slope<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>)</span>
-<span id="cb29-16"><a href="Ch05.html#cb29-16" tabindex="-1"></a>aspect<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_10m.tif&quot;</span>)</span>
-<span id="cb29-17"><a href="Ch05.html#cb29-17" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span>
-<span id="cb29-18"><a href="Ch05.html#cb29-18" tabindex="-1"></a>dis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_breached_10m.tif&quot;</span>)</span>
-<span id="cb29-19"><a href="Ch05.html#cb29-19" tabindex="-1"></a></span>
-<span id="cb29-20"><a href="Ch05.html#cb29-20" tabindex="-1"></a></span>
-<span id="cb29-21"><a href="Ch05.html#cb29-21" tabindex="-1"></a><span class="co"># average per waterbody</span></span>
-<span id="cb29-22"><a href="Ch05.html#cb29-22" tabindex="-1"></a>udeni<span class="sc">$</span>slopes<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(slope,udeni,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb29-23"><a href="Ch05.html#cb29-23" tabindex="-1"></a>caurumi_slope<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;slopes&quot;</span>)</span>
-<span id="cb29-24"><a href="Ch05.html#cb29-24" tabindex="-1"></a>caurumi_slope2<span class="ot">=</span><span class="fu">rast</span>(caurumi_slope)</span>
-<span id="cb29-25"><a href="Ch05.html#cb29-25" tabindex="-1"></a>caurumains_slope<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_slope2,slope),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-26"><a href="Ch05.html#cb29-26" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-27"><a href="Ch05.html#cb29-27" tabindex="-1"></a>                     <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-28"><a href="Ch05.html#cb29-28" tabindex="-1"></a>caurumains_slope<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-29"><a href="Ch05.html#cb29-29" tabindex="-1"></a>caurumains_slope2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_slope,template,</span>
-<span id="cb29-30"><a href="Ch05.html#cb29-30" tabindex="-1"></a>                              <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-31"><a href="Ch05.html#cb29-31" tabindex="-1"></a>                              <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif&quot;</span>)</span>
-<span id="cb29-32"><a href="Ch05.html#cb29-32" tabindex="-1"></a><span class="fu">rm</span>(slope)</span>
-<span id="cb29-33"><a href="Ch05.html#cb29-33" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope)</span>
-<span id="cb29-34"><a href="Ch05.html#cb29-34" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope2)</span>
-<span id="cb29-35"><a href="Ch05.html#cb29-35" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope)</span>
-<span id="cb29-36"><a href="Ch05.html#cb29-36" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope2)</span>
-<span id="cb29-37"><a href="Ch05.html#cb29-37" tabindex="-1"></a></span>
-<span id="cb29-38"><a href="Ch05.html#cb29-38" tabindex="-1"></a></span>
-<span id="cb29-39"><a href="Ch05.html#cb29-39" tabindex="-1"></a>udeni<span class="sc">$</span>aspect<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(aspect,udeni,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb29-40"><a href="Ch05.html#cb29-40" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;aspect&quot;</span>)</span>
-<span id="cb29-41"><a href="Ch05.html#cb29-41" tabindex="-1"></a>caurumi_aspect2<span class="ot">=</span><span class="fu">rast</span>(caurumi_aspect)</span>
-<span id="cb29-42"><a href="Ch05.html#cb29-42" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_aspect2,aspect),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-43"><a href="Ch05.html#cb29-43" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-44"><a href="Ch05.html#cb29-44" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-45"><a href="Ch05.html#cb29-45" tabindex="-1"></a>caurumains_aspect<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-46"><a href="Ch05.html#cb29-46" tabindex="-1"></a>caurumains_aspect2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_aspect,template,</span>
-<span id="cb29-47"><a href="Ch05.html#cb29-47" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-48"><a href="Ch05.html#cb29-48" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif&quot;</span>)</span>
-<span id="cb29-49"><a href="Ch05.html#cb29-49" tabindex="-1"></a><span class="fu">rm</span>(aspect)</span>
-<span id="cb29-50"><a href="Ch05.html#cb29-50" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect)</span>
-<span id="cb29-51"><a href="Ch05.html#cb29-51" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect2)</span>
-<span id="cb29-52"><a href="Ch05.html#cb29-52" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect)</span>
-<span id="cb29-53"><a href="Ch05.html#cb29-53" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect2)</span>
-<span id="cb29-54"><a href="Ch05.html#cb29-54" tabindex="-1"></a></span>
-<span id="cb29-55"><a href="Ch05.html#cb29-55" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="Ch05.html#cb29-11" tabindex="-1"></a><span class="co"># third part ----</span></span>
+<span id="cb29-12"><a href="Ch05.html#cb29-12" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="Ch05.html#cb29-13" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="Ch05.html#cb29-14" tabindex="-1"></a><span class="co">#  dealing with waterbodies </span></span>
+<span id="cb29-15"><a href="Ch05.html#cb29-15" tabindex="-1"></a>udeni<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
+<span id="cb29-16"><a href="Ch05.html#cb29-16" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="Ch05.html#cb29-17" tabindex="-1"></a>slope<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>)</span>
+<span id="cb29-18"><a href="Ch05.html#cb29-18" tabindex="-1"></a>aspect<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_10m.tif&quot;</span>)</span>
+<span id="cb29-19"><a href="Ch05.html#cb29-19" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif&quot;</span>)</span>
+<span id="cb29-20"><a href="Ch05.html#cb29-20" tabindex="-1"></a>dis<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_breached_10m.tif&quot;</span>)</span>
+<span id="cb29-21"><a href="Ch05.html#cb29-21" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="Ch05.html#cb29-22" tabindex="-1"></a></span>
+<span id="cb29-23"><a href="Ch05.html#cb29-23" tabindex="-1"></a><span class="co"># average per waterbody</span></span>
+<span id="cb29-24"><a href="Ch05.html#cb29-24" tabindex="-1"></a>udeni<span class="sc">$</span>slopes<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(slope,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-25"><a href="Ch05.html#cb29-25" tabindex="-1"></a>caurumi_slope<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;slopes&quot;</span>)</span>
+<span id="cb29-26"><a href="Ch05.html#cb29-26" tabindex="-1"></a>caurumi_slope2<span class="ot">=</span><span class="fu">rast</span>(caurumi_slope)</span>
+<span id="cb29-27"><a href="Ch05.html#cb29-27" tabindex="-1"></a>caurumains_slope<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_slope2,slope),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-28"><a href="Ch05.html#cb29-28" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-29"><a href="Ch05.html#cb29-29" tabindex="-1"></a>                     <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-30"><a href="Ch05.html#cb29-30" tabindex="-1"></a>caurumains_slope<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-31"><a href="Ch05.html#cb29-31" tabindex="-1"></a>caurumains_slope2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_slope,template,</span>
+<span id="cb29-32"><a href="Ch05.html#cb29-32" tabindex="-1"></a>                              <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-33"><a href="Ch05.html#cb29-33" tabindex="-1"></a>                              <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-34"><a href="Ch05.html#cb29-34" tabindex="-1"></a><span class="fu">rm</span>(slope)</span>
+<span id="cb29-35"><a href="Ch05.html#cb29-35" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope)</span>
+<span id="cb29-36"><a href="Ch05.html#cb29-36" tabindex="-1"></a><span class="fu">rm</span>(caurumi_slope2)</span>
+<span id="cb29-37"><a href="Ch05.html#cb29-37" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope)</span>
+<span id="cb29-38"><a href="Ch05.html#cb29-38" tabindex="-1"></a><span class="fu">rm</span>(caurumains_slope2)</span>
+<span id="cb29-39"><a href="Ch05.html#cb29-39" tabindex="-1"></a></span>
+<span id="cb29-40"><a href="Ch05.html#cb29-40" tabindex="-1"></a></span>
+<span id="cb29-41"><a href="Ch05.html#cb29-41" tabindex="-1"></a>udeni<span class="sc">$</span>aspect<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(aspect,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-42"><a href="Ch05.html#cb29-42" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;aspect&quot;</span>)</span>
+<span id="cb29-43"><a href="Ch05.html#cb29-43" tabindex="-1"></a>caurumi_aspect2<span class="ot">=</span><span class="fu">rast</span>(caurumi_aspect)</span>
+<span id="cb29-44"><a href="Ch05.html#cb29-44" tabindex="-1"></a>caurumi_aspect<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_aspect2,aspect),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-45"><a href="Ch05.html#cb29-45" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-46"><a href="Ch05.html#cb29-46" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-47"><a href="Ch05.html#cb29-47" tabindex="-1"></a>caurumains_aspect<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-48"><a href="Ch05.html#cb29-48" tabindex="-1"></a>caurumains_aspect2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_aspect,template,</span>
+<span id="cb29-49"><a href="Ch05.html#cb29-49" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-50"><a href="Ch05.html#cb29-50" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-51"><a href="Ch05.html#cb29-51" tabindex="-1"></a><span class="fu">rm</span>(aspect)</span>
+<span id="cb29-52"><a href="Ch05.html#cb29-52" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect)</span>
+<span id="cb29-53"><a href="Ch05.html#cb29-53" tabindex="-1"></a><span class="fu">rm</span>(caurumi_aspect2)</span>
+<span id="cb29-54"><a href="Ch05.html#cb29-54" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect)</span>
+<span id="cb29-55"><a href="Ch05.html#cb29-55" tabindex="-1"></a><span class="fu">rm</span>(caurumains_aspect2)</span>
 <span id="cb29-56"><a href="Ch05.html#cb29-56" tabindex="-1"></a></span>
-<span id="cb29-57"><a href="Ch05.html#cb29-57" tabindex="-1"></a>udeni<span class="sc">$</span>twis<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(twi,udeni,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb29-58"><a href="Ch05.html#cb29-58" tabindex="-1"></a>caurumi_TWI<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;twis&quot;</span>)</span>
-<span id="cb29-59"><a href="Ch05.html#cb29-59" tabindex="-1"></a>caurumi_TWI2<span class="ot">=</span><span class="fu">rast</span>(caurumi_TWI)</span>
-<span id="cb29-60"><a href="Ch05.html#cb29-60" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_TWI2,twi),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-61"><a href="Ch05.html#cb29-61" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-62"><a href="Ch05.html#cb29-62" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-63"><a href="Ch05.html#cb29-63" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-64"><a href="Ch05.html#cb29-64" tabindex="-1"></a>caurumains_TWI2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_TWI,template,</span>
-<span id="cb29-65"><a href="Ch05.html#cb29-65" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-66"><a href="Ch05.html#cb29-66" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif&quot;</span>)</span>
-<span id="cb29-67"><a href="Ch05.html#cb29-67" tabindex="-1"></a><span class="fu">rm</span>(twi)</span>
-<span id="cb29-68"><a href="Ch05.html#cb29-68" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI)</span>
-<span id="cb29-69"><a href="Ch05.html#cb29-69" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI2)</span>
-<span id="cb29-70"><a href="Ch05.html#cb29-70" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI)</span>
-<span id="cb29-71"><a href="Ch05.html#cb29-71" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI2)</span>
-<span id="cb29-72"><a href="Ch05.html#cb29-72" tabindex="-1"></a></span>
-<span id="cb29-73"><a href="Ch05.html#cb29-73" tabindex="-1"></a></span>
-<span id="cb29-74"><a href="Ch05.html#cb29-74" tabindex="-1"></a>udeni<span class="sc">$</span>disi<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(dis,udeni,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb29-75"><a href="Ch05.html#cb29-75" tabindex="-1"></a>caurumi_DiS<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;disi&quot;</span>)</span>
-<span id="cb29-76"><a href="Ch05.html#cb29-76" tabindex="-1"></a>caurumi_DiS2<span class="ot">=</span><span class="fu">rast</span>(caurumi_DiS)</span>
-<span id="cb29-77"><a href="Ch05.html#cb29-77" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_DiS2,dis),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-78"><a href="Ch05.html#cb29-78" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-79"><a href="Ch05.html#cb29-79" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-80"><a href="Ch05.html#cb29-80" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-81"><a href="Ch05.html#cb29-81" tabindex="-1"></a>caurumains_DiS2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_DiS,template,</span>
-<span id="cb29-82"><a href="Ch05.html#cb29-82" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb29-83"><a href="Ch05.html#cb29-83" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif&quot;</span>)</span>
-<span id="cb29-84"><a href="Ch05.html#cb29-84" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
-<span id="cb29-85"><a href="Ch05.html#cb29-85" tabindex="-1"></a><span class="fu">rm</span>(dis)</span>
-<span id="cb29-86"><a href="Ch05.html#cb29-86" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS)</span>
-<span id="cb29-87"><a href="Ch05.html#cb29-87" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS2)</span>
-<span id="cb29-88"><a href="Ch05.html#cb29-88" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS)</span>
-<span id="cb29-89"><a href="Ch05.html#cb29-89" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS2)</span>
-<span id="cb29-90"><a href="Ch05.html#cb29-90" tabindex="-1"></a></span>
-<span id="cb29-91"><a href="Ch05.html#cb29-91" tabindex="-1"></a></span>
-<span id="cb29-92"><a href="Ch05.html#cb29-92" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb29-93"><a href="Ch05.html#cb29-93" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>)</span>
-<span id="cb29-94"><a href="Ch05.html#cb29-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>)</span>
-<span id="cb29-95"><a href="Ch05.html#cb29-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>)</span>
-<span id="cb29-96"><a href="Ch05.html#cb29-96" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>)</span>
-<span id="cb29-97"><a href="Ch05.html#cb29-97" tabindex="-1"></a></span>
-<span id="cb29-98"><a href="Ch05.html#cb29-98" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-99"><a href="Ch05.html#cb29-99" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-100"><a href="Ch05.html#cb29-100" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
-<span id="cb29-101"><a href="Ch05.html#cb29-101" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span></code></pre></div>
+<span id="cb29-57"><a href="Ch05.html#cb29-57" tabindex="-1"></a></span>
+<span id="cb29-58"><a href="Ch05.html#cb29-58" tabindex="-1"></a></span>
+<span id="cb29-59"><a href="Ch05.html#cb29-59" tabindex="-1"></a>udeni<span class="sc">$</span>twis<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(twi,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-60"><a href="Ch05.html#cb29-60" tabindex="-1"></a>caurumi_TWI<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;twis&quot;</span>)</span>
+<span id="cb29-61"><a href="Ch05.html#cb29-61" tabindex="-1"></a>caurumi_TWI2<span class="ot">=</span><span class="fu">rast</span>(caurumi_TWI)</span>
+<span id="cb29-62"><a href="Ch05.html#cb29-62" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_TWI2,twi),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-63"><a href="Ch05.html#cb29-63" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-64"><a href="Ch05.html#cb29-64" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-65"><a href="Ch05.html#cb29-65" tabindex="-1"></a>caurumains_TWI<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-66"><a href="Ch05.html#cb29-66" tabindex="-1"></a>caurumains_TWI2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_TWI,template,</span>
+<span id="cb29-67"><a href="Ch05.html#cb29-67" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-68"><a href="Ch05.html#cb29-68" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-69"><a href="Ch05.html#cb29-69" tabindex="-1"></a><span class="fu">rm</span>(twi)</span>
+<span id="cb29-70"><a href="Ch05.html#cb29-70" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI)</span>
+<span id="cb29-71"><a href="Ch05.html#cb29-71" tabindex="-1"></a><span class="fu">rm</span>(caurumi_TWI2)</span>
+<span id="cb29-72"><a href="Ch05.html#cb29-72" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI)</span>
+<span id="cb29-73"><a href="Ch05.html#cb29-73" tabindex="-1"></a><span class="fu">rm</span>(caurumains_TWI2)</span>
+<span id="cb29-74"><a href="Ch05.html#cb29-74" tabindex="-1"></a></span>
+<span id="cb29-75"><a href="Ch05.html#cb29-75" tabindex="-1"></a></span>
+<span id="cb29-76"><a href="Ch05.html#cb29-76" tabindex="-1"></a>udeni<span class="sc">$</span>disi<span class="ot">=</span>exactextractr<span class="sc">::</span><span class="fu">exact_extract</span>(dis,udeni,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb29-77"><a href="Ch05.html#cb29-77" tabindex="-1"></a>caurumi_DiS<span class="ot">=</span>fasterize<span class="sc">::</span><span class="fu">fasterize</span>(udeni,templis,<span class="at">field=</span><span class="st">&quot;disi&quot;</span>)</span>
+<span id="cb29-78"><a href="Ch05.html#cb29-78" tabindex="-1"></a>caurumi_DiS2<span class="ot">=</span><span class="fu">rast</span>(caurumi_DiS)</span>
+<span id="cb29-79"><a href="Ch05.html#cb29-79" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(caurumi_DiS2,dis),<span class="at">fun=</span><span class="st">&quot;first&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-80"><a href="Ch05.html#cb29-80" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-81"><a href="Ch05.html#cb29-81" tabindex="-1"></a>                   <span class="at">filename=</span><span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-82"><a href="Ch05.html#cb29-82" tabindex="-1"></a>caurumains_DiS<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-83"><a href="Ch05.html#cb29-83" tabindex="-1"></a>caurumains_DiS2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(caurumains_DiS,template,</span>
+<span id="cb29-84"><a href="Ch05.html#cb29-84" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb29-85"><a href="Ch05.html#cb29-85" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif&quot;</span>)</span>
+<span id="cb29-86"><a href="Ch05.html#cb29-86" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
+<span id="cb29-87"><a href="Ch05.html#cb29-87" tabindex="-1"></a><span class="fu">rm</span>(dis)</span>
+<span id="cb29-88"><a href="Ch05.html#cb29-88" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS)</span>
+<span id="cb29-89"><a href="Ch05.html#cb29-89" tabindex="-1"></a><span class="fu">rm</span>(caurumi_DiS2)</span>
+<span id="cb29-90"><a href="Ch05.html#cb29-90" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS)</span>
+<span id="cb29-91"><a href="Ch05.html#cb29-91" tabindex="-1"></a><span class="fu">rm</span>(caurumains_DiS2)</span>
+<span id="cb29-92"><a href="Ch05.html#cb29-92" tabindex="-1"></a></span>
+<span id="cb29-93"><a href="Ch05.html#cb29-93" tabindex="-1"></a></span>
+<span id="cb29-94"><a href="Ch05.html#cb29-94" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb29-95"><a href="Ch05.html#cb29-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedF.tif&quot;</span>)</span>
+<span id="cb29-96"><a href="Ch05.html#cb29-96" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_breachedNF.tif&quot;</span>)</span>
+<span id="cb29-97"><a href="Ch05.html#cb29-97" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_BreachFill.tif&quot;</span>)</span>
+<span id="cb29-98"><a href="Ch05.html#cb29-98" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif&quot;</span>)</span>
+<span id="cb29-99"><a href="Ch05.html#cb29-99" tabindex="-1"></a></span>
+<span id="cb29-100"><a href="Ch05.html#cb29-100" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-101"><a href="Ch05.html#cb29-101" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_Aspect_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-102"><a href="Ch05.html#cb29-102" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_DiS_udeni_10m.tif&quot;</span>)</span>
+<span id="cb29-103"><a href="Ch05.html#cb29-103" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./Geodata/2024/DEM/Terrain_TWI_udeni_10m.tif&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.02" class="section level2 hasAnchor" number="5.2">
@@ -1886,101 +1911,102 @@ in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for furthe
 <span id="cb36-31"><a href="Ch05.html#cb36-31" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">fasterize</span>(niedraji_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
 <span id="cb36-32"><a href="Ch05.html#cb36-32" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_niedraji_topo,</span>
 <span id="cb36-33"><a href="Ch05.html#cb36-33" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>,</span>
-<span id="cb36-34"><a href="Ch05.html#cb36-34" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
-<span id="cb36-35"><a href="Ch05.html#cb36-35" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb36-36"><a href="Ch05.html#cb36-36" tabindex="-1"></a><span class="fu">rm</span>(niedraji_topo)</span>
-<span id="cb36-37"><a href="Ch05.html#cb36-37" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
-<span id="cb36-38"><a href="Ch05.html#cb36-38" tabindex="-1"></a></span>
+<span id="cb36-34"><a href="Ch05.html#cb36-34" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-35"><a href="Ch05.html#cb36-35" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-36"><a href="Ch05.html#cb36-36" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-37"><a href="Ch05.html#cb36-37" tabindex="-1"></a><span class="fu">rm</span>(niedraji_topo)</span>
+<span id="cb36-38"><a href="Ch05.html#cb36-38" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
 <span id="cb36-39"><a href="Ch05.html#cb36-39" tabindex="-1"></a></span>
-<span id="cb36-40"><a href="Ch05.html#cb36-40" tabindex="-1"></a><span class="do">## bogs</span></span>
-<span id="cb36-41"><a href="Ch05.html#cb36-41" tabindex="-1"></a>purvi_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
-<span id="cb36-42"><a href="Ch05.html#cb36-42" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Nec_purvs_sūnājs&quot;</span>,</span>
-<span id="cb36-43"><a href="Ch05.html#cb36-43" tabindex="-1"></a>                      <span class="st">&quot;poligons_Sunajs&quot;</span>,<span class="st">&quot;poligons_Sūnājs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-44"><a href="Ch05.html#cb36-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-45"><a href="Ch05.html#cb36-45" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb36-46"><a href="Ch05.html#cb36-46" tabindex="-1"></a>topo_purvi<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/SwampA_COMB.parquet&quot;</span>)</span>
-<span id="cb36-47"><a href="Ch05.html#cb36-47" tabindex="-1"></a>topo_purvi<span class="ot">=</span>topo_purvi <span class="sc">%&gt;%</span> </span>
-<span id="cb36-48"><a href="Ch05.html#cb36-48" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-49"><a href="Ch05.html#cb36-49" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb36-50"><a href="Ch05.html#cb36-50" tabindex="-1"></a>purvi<span class="ot">=</span><span class="fu">rbind</span>(purvi_topo,topo_purvi)</span>
-<span id="cb36-51"><a href="Ch05.html#cb36-51" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">fasterize</span>(purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
-<span id="cb36-52"><a href="Ch05.html#cb36-52" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_topo,</span>
-<span id="cb36-53"><a href="Ch05.html#cb36-53" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>,</span>
-<span id="cb36-54"><a href="Ch05.html#cb36-54" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
-<span id="cb36-55"><a href="Ch05.html#cb36-55" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb36-56"><a href="Ch05.html#cb36-56" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb36-57"><a href="Ch05.html#cb36-57" tabindex="-1"></a><span class="fu">rm</span>(purvi_topo)</span>
-<span id="cb36-58"><a href="Ch05.html#cb36-58" tabindex="-1"></a><span class="fu">rm</span>(topo_purvi)</span>
-<span id="cb36-59"><a href="Ch05.html#cb36-59" tabindex="-1"></a><span class="fu">rm</span>(purvi)</span>
-<span id="cb36-60"><a href="Ch05.html#cb36-60" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
-<span id="cb36-61"><a href="Ch05.html#cb36-61" tabindex="-1"></a></span>
+<span id="cb36-40"><a href="Ch05.html#cb36-40" tabindex="-1"></a></span>
+<span id="cb36-41"><a href="Ch05.html#cb36-41" tabindex="-1"></a><span class="do">## bogs</span></span>
+<span id="cb36-42"><a href="Ch05.html#cb36-42" tabindex="-1"></a>purvi_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
+<span id="cb36-43"><a href="Ch05.html#cb36-43" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Nec_purvs_sūnājs&quot;</span>,</span>
+<span id="cb36-44"><a href="Ch05.html#cb36-44" tabindex="-1"></a>                      <span class="st">&quot;poligons_Sunajs&quot;</span>,<span class="st">&quot;poligons_Sūnājs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-45"><a href="Ch05.html#cb36-45" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-46"><a href="Ch05.html#cb36-46" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-47"><a href="Ch05.html#cb36-47" tabindex="-1"></a>topo_purvi<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/SwampA_COMB.parquet&quot;</span>)</span>
+<span id="cb36-48"><a href="Ch05.html#cb36-48" tabindex="-1"></a>topo_purvi<span class="ot">=</span>topo_purvi <span class="sc">%&gt;%</span> </span>
+<span id="cb36-49"><a href="Ch05.html#cb36-49" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-50"><a href="Ch05.html#cb36-50" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-51"><a href="Ch05.html#cb36-51" tabindex="-1"></a>purvi<span class="ot">=</span><span class="fu">rbind</span>(purvi_topo,topo_purvi)</span>
+<span id="cb36-52"><a href="Ch05.html#cb36-52" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">fasterize</span>(purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-53"><a href="Ch05.html#cb36-53" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_topo,</span>
+<span id="cb36-54"><a href="Ch05.html#cb36-54" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>,</span>
+<span id="cb36-55"><a href="Ch05.html#cb36-55" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-56"><a href="Ch05.html#cb36-56" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-57"><a href="Ch05.html#cb36-57" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-58"><a href="Ch05.html#cb36-58" tabindex="-1"></a><span class="fu">rm</span>(purvi_topo)</span>
+<span id="cb36-59"><a href="Ch05.html#cb36-59" tabindex="-1"></a><span class="fu">rm</span>(topo_purvi)</span>
+<span id="cb36-60"><a href="Ch05.html#cb36-60" tabindex="-1"></a><span class="fu">rm</span>(purvi)</span>
+<span id="cb36-61"><a href="Ch05.html#cb36-61" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
 <span id="cb36-62"><a href="Ch05.html#cb36-62" tabindex="-1"></a></span>
-<span id="cb36-63"><a href="Ch05.html#cb36-63" tabindex="-1"></a><span class="co"># mvr</span></span>
-<span id="cb36-64"><a href="Ch05.html#cb36-64" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
-<span id="cb36-65"><a href="Ch05.html#cb36-65" tabindex="-1"></a></span>
-<span id="cb36-66"><a href="Ch05.html#cb36-66" tabindex="-1"></a><span class="co"># bogs and mires</span></span>
-<span id="cb36-67"><a href="Ch05.html#cb36-67" tabindex="-1"></a>mvr_purvi<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
-<span id="cb36-68"><a href="Ch05.html#cb36-68" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;21&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-69"><a href="Ch05.html#cb36-69" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-70"><a href="Ch05.html#cb36-70" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb36-71"><a href="Ch05.html#cb36-71" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
-<span id="cb36-72"><a href="Ch05.html#cb36-72" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_mvr,</span>
-<span id="cb36-73"><a href="Ch05.html#cb36-73" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>,</span>
-<span id="cb36-74"><a href="Ch05.html#cb36-74" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
-<span id="cb36-75"><a href="Ch05.html#cb36-75" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb36-76"><a href="Ch05.html#cb36-76" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb36-77"><a href="Ch05.html#cb36-77" tabindex="-1"></a><span class="fu">rm</span>(mvr_purvi)</span>
-<span id="cb36-78"><a href="Ch05.html#cb36-78" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
-<span id="cb36-79"><a href="Ch05.html#cb36-79" tabindex="-1"></a></span>
-<span id="cb36-80"><a href="Ch05.html#cb36-80" tabindex="-1"></a><span class="co"># beavers</span></span>
-<span id="cb36-81"><a href="Ch05.html#cb36-81" tabindex="-1"></a>mvr_bebri<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
-<span id="cb36-82"><a href="Ch05.html#cb36-82" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;41&quot;</span>,<span class="st">&quot;42&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-83"><a href="Ch05.html#cb36-83" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">730</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-84"><a href="Ch05.html#cb36-84" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb36-85"><a href="Ch05.html#cb36-85" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_bebri,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
-<span id="cb36-86"><a href="Ch05.html#cb36-86" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_bebri_mvr,</span>
-<span id="cb36-87"><a href="Ch05.html#cb36-87" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>,</span>
-<span id="cb36-88"><a href="Ch05.html#cb36-88" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
-<span id="cb36-89"><a href="Ch05.html#cb36-89" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb36-90"><a href="Ch05.html#cb36-90" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb36-91"><a href="Ch05.html#cb36-91" tabindex="-1"></a><span class="fu">rm</span>(mvr_bebri)</span>
-<span id="cb36-92"><a href="Ch05.html#cb36-92" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
-<span id="cb36-93"><a href="Ch05.html#cb36-93" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
-<span id="cb36-94"><a href="Ch05.html#cb36-94" tabindex="-1"></a></span>
+<span id="cb36-63"><a href="Ch05.html#cb36-63" tabindex="-1"></a></span>
+<span id="cb36-64"><a href="Ch05.html#cb36-64" tabindex="-1"></a><span class="co"># mvr</span></span>
+<span id="cb36-65"><a href="Ch05.html#cb36-65" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb36-66"><a href="Ch05.html#cb36-66" tabindex="-1"></a></span>
+<span id="cb36-67"><a href="Ch05.html#cb36-67" tabindex="-1"></a><span class="co"># bogs and mires</span></span>
+<span id="cb36-68"><a href="Ch05.html#cb36-68" tabindex="-1"></a>mvr_purvi<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb36-69"><a href="Ch05.html#cb36-69" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;21&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-70"><a href="Ch05.html#cb36-70" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-71"><a href="Ch05.html#cb36-71" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-72"><a href="Ch05.html#cb36-72" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-73"><a href="Ch05.html#cb36-73" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_mvr,</span>
+<span id="cb36-74"><a href="Ch05.html#cb36-74" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>,</span>
+<span id="cb36-75"><a href="Ch05.html#cb36-75" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-76"><a href="Ch05.html#cb36-76" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-77"><a href="Ch05.html#cb36-77" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-78"><a href="Ch05.html#cb36-78" tabindex="-1"></a><span class="fu">rm</span>(mvr_purvi)</span>
+<span id="cb36-79"><a href="Ch05.html#cb36-79" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb36-80"><a href="Ch05.html#cb36-80" tabindex="-1"></a></span>
+<span id="cb36-81"><a href="Ch05.html#cb36-81" tabindex="-1"></a><span class="co"># beavers</span></span>
+<span id="cb36-82"><a href="Ch05.html#cb36-82" tabindex="-1"></a>mvr_bebri<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb36-83"><a href="Ch05.html#cb36-83" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;41&quot;</span>,<span class="st">&quot;42&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-84"><a href="Ch05.html#cb36-84" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">730</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-85"><a href="Ch05.html#cb36-85" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb36-86"><a href="Ch05.html#cb36-86" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_bebri,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb36-87"><a href="Ch05.html#cb36-87" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_bebri_mvr,</span>
+<span id="cb36-88"><a href="Ch05.html#cb36-88" tabindex="-1"></a>                    <span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>,</span>
+<span id="cb36-89"><a href="Ch05.html#cb36-89" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb36-90"><a href="Ch05.html#cb36-90" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-91"><a href="Ch05.html#cb36-91" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-92"><a href="Ch05.html#cb36-92" tabindex="-1"></a><span class="fu">rm</span>(mvr_bebri)</span>
+<span id="cb36-93"><a href="Ch05.html#cb36-93" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb36-94"><a href="Ch05.html#cb36-94" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
 <span id="cb36-95"><a href="Ch05.html#cb36-95" tabindex="-1"></a></span>
 <span id="cb36-96"><a href="Ch05.html#cb36-96" tabindex="-1"></a></span>
-<span id="cb36-97"><a href="Ch05.html#cb36-97" tabindex="-1"></a><span class="co"># merging</span></span>
-<span id="cb36-98"><a href="Ch05.html#cb36-98" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
-<span id="cb36-99"><a href="Ch05.html#cb36-99" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
-<span id="cb36-100"><a href="Ch05.html#cb36-100" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
-<span id="cb36-101"><a href="Ch05.html#cb36-101" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span>
-<span id="cb36-102"><a href="Ch05.html#cb36-102" tabindex="-1"></a>mires<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span>
-<span id="cb36-103"><a href="Ch05.html#cb36-103" tabindex="-1"></a>miresY<span class="ot">=</span><span class="fu">ifel</span>(mires<span class="sc">==</span><span class="dv">1</span>,<span class="dv">710</span>,<span class="cn">NA</span>)</span>
-<span id="cb36-104"><a href="Ch05.html#cb36-104" tabindex="-1"></a>bogs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
-<span id="cb36-105"><a href="Ch05.html#cb36-105" tabindex="-1"></a>bogsY<span class="ot">=</span><span class="fu">ifel</span>(bogs<span class="sc">==</span><span class="dv">1</span>,<span class="dv">710</span>,<span class="cn">NA</span>)</span>
-<span id="cb36-106"><a href="Ch05.html#cb36-106" tabindex="-1"></a></span>
-<span id="cb36-107"><a href="Ch05.html#cb36-107" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(r_niedraji_topo,r_purvi_topo)</span>
-<span id="cb36-108"><a href="Ch05.html#cb36-108" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_purvi_mvr)</span>
-<span id="cb36-109"><a href="Ch05.html#cb36-109" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_bebri_mvr)</span>
-<span id="cb36-110"><a href="Ch05.html#cb36-110" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,miresY)</span>
-<span id="cb36-111"><a href="Ch05.html#cb36-111" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,bogsY,</span>
-<span id="cb36-112"><a href="Ch05.html#cb36-112" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>,</span>
-<span id="cb36-113"><a href="Ch05.html#cb36-113" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb36-114"><a href="Ch05.html#cb36-114" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb36-115"><a href="Ch05.html#cb36-115" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
-<span id="cb36-116"><a href="Ch05.html#cb36-116" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
-<span id="cb36-117"><a href="Ch05.html#cb36-117" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
-<span id="cb36-118"><a href="Ch05.html#cb36-118" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
-<span id="cb36-119"><a href="Ch05.html#cb36-119" tabindex="-1"></a><span class="fu">rm</span>(bogs)</span>
-<span id="cb36-120"><a href="Ch05.html#cb36-120" tabindex="-1"></a><span class="fu">rm</span>(mires)</span>
+<span id="cb36-97"><a href="Ch05.html#cb36-97" tabindex="-1"></a></span>
+<span id="cb36-98"><a href="Ch05.html#cb36-98" tabindex="-1"></a><span class="co"># merging</span></span>
+<span id="cb36-99"><a href="Ch05.html#cb36-99" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
+<span id="cb36-100"><a href="Ch05.html#cb36-100" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb36-101"><a href="Ch05.html#cb36-101" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb36-102"><a href="Ch05.html#cb36-102" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span>
+<span id="cb36-103"><a href="Ch05.html#cb36-103" tabindex="-1"></a>mires<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span>
+<span id="cb36-104"><a href="Ch05.html#cb36-104" tabindex="-1"></a>miresY<span class="ot">=</span><span class="fu">ifel</span>(mires<span class="sc">==</span><span class="dv">1</span>,<span class="dv">710</span>,<span class="cn">NA</span>)</span>
+<span id="cb36-105"><a href="Ch05.html#cb36-105" tabindex="-1"></a>bogs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
+<span id="cb36-106"><a href="Ch05.html#cb36-106" tabindex="-1"></a>bogsY<span class="ot">=</span><span class="fu">ifel</span>(bogs<span class="sc">==</span><span class="dv">1</span>,<span class="dv">710</span>,<span class="cn">NA</span>)</span>
+<span id="cb36-107"><a href="Ch05.html#cb36-107" tabindex="-1"></a></span>
+<span id="cb36-108"><a href="Ch05.html#cb36-108" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(r_niedraji_topo,r_purvi_topo)</span>
+<span id="cb36-109"><a href="Ch05.html#cb36-109" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_purvi_mvr)</span>
+<span id="cb36-110"><a href="Ch05.html#cb36-110" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_bebri_mvr)</span>
+<span id="cb36-111"><a href="Ch05.html#cb36-111" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,miresY)</span>
+<span id="cb36-112"><a href="Ch05.html#cb36-112" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,bogsY,</span>
+<span id="cb36-113"><a href="Ch05.html#cb36-113" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>,</span>
+<span id="cb36-114"><a href="Ch05.html#cb36-114" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-115"><a href="Ch05.html#cb36-115" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb36-116"><a href="Ch05.html#cb36-116" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb36-117"><a href="Ch05.html#cb36-117" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb36-118"><a href="Ch05.html#cb36-118" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb36-119"><a href="Ch05.html#cb36-119" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb36-120"><a href="Ch05.html#cb36-120" tabindex="-1"></a><span class="fu">rm</span>(bogs)</span>
 <span id="cb36-121"><a href="Ch05.html#cb36-121" tabindex="-1"></a><span class="fu">rm</span>(bogsY)</span>
-<span id="cb36-122"><a href="Ch05.html#cb36-122" tabindex="-1"></a><span class="fu">rm</span>(miresY)</span>
-<span id="cb36-123"><a href="Ch05.html#cb36-123" tabindex="-1"></a><span class="fu">rm</span>(topo)</span>
-<span id="cb36-124"><a href="Ch05.html#cb36-124" tabindex="-1"></a><span class="fu">rm</span>(wetlands_cover)</span>
-<span id="cb36-125"><a href="Ch05.html#cb36-125" tabindex="-1"></a></span>
-<span id="cb36-126"><a href="Ch05.html#cb36-126" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
-<span id="cb36-127"><a href="Ch05.html#cb36-127" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
-<span id="cb36-128"><a href="Ch05.html#cb36-128" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
+<span id="cb36-122"><a href="Ch05.html#cb36-122" tabindex="-1"></a><span class="fu">rm</span>(mires)</span>
+<span id="cb36-123"><a href="Ch05.html#cb36-123" tabindex="-1"></a><span class="fu">rm</span>(miresY)</span>
+<span id="cb36-124"><a href="Ch05.html#cb36-124" tabindex="-1"></a><span class="fu">rm</span>(topo)</span>
+<span id="cb36-125"><a href="Ch05.html#cb36-125" tabindex="-1"></a><span class="fu">rm</span>(wetlands_cover)</span>
+<span id="cb36-126"><a href="Ch05.html#cb36-126" tabindex="-1"></a></span>
+<span id="cb36-127"><a href="Ch05.html#cb36-127" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb36-128"><a href="Ch05.html#cb36-128" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb36-129"><a href="Ch05.html#cb36-129" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
 <li><p>class <code>800</code> - <strong>bare soil and quarries</strong>: combining layers related to bare soil,
@@ -2052,7 +2078,7 @@ in the file <code>SimpleLandscape_class800_smiltaji_premask.tif</code> for furth
 <span id="cb37-54"><a href="Ch05.html#cb37-54" tabindex="-1"></a>bare_cover<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(r_smiltaji_topo,r_smiltaji_mvr,</span>
 <span id="cb37-55"><a href="Ch05.html#cb37-55" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>,</span>
 <span id="cb37-56"><a href="Ch05.html#cb37-56" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb37-57"><a href="Ch05.html#cb37-57" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb37-57"><a href="Ch05.html#cb37-57" tabindex="-1"></a><span class="co"># cleaning</span></span>
 <span id="cb37-58"><a href="Ch05.html#cb37-58" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
 <span id="cb37-59"><a href="Ch05.html#cb37-59" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
 <span id="cb37-60"><a href="Ch05.html#cb37-60" tabindex="-1"></a><span class="fu">rm</span>(bare_cover)</span>
@@ -2075,72 +2101,92 @@ for further processing.</p>
 <span id="cb38-6"><a href="Ch05.html#cb38-6" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
 <span id="cb38-7"><a href="Ch05.html#cb38-7" tabindex="-1"></a></span>
 <span id="cb38-8"><a href="Ch05.html#cb38-8" tabindex="-1"></a></span>
-<span id="cb38-9"><a href="Ch05.html#cb38-9" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="Ch05.html#cb38-10" tabindex="-1"></a><span class="co"># final merging and covering ----</span></span>
-<span id="cb38-11"><a href="Ch05.html#cb38-11" tabindex="-1"></a></span>
-<span id="cb38-12"><a href="Ch05.html#cb38-12" tabindex="-1"></a><span class="co"># DW  </span></span>
-<span id="cb38-13"><a href="Ch05.html#cb38-13" tabindex="-1"></a>dynworld<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;Geodata/2024/DynamicWorld/DW_2024_apraug.tif&quot;</span>)</span>
-<span id="cb38-14"><a href="Ch05.html#cb38-14" tabindex="-1"></a>klases<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>,</span>
-<span id="cb38-15"><a href="Ch05.html#cb38-15" tabindex="-1"></a>                <span class="dv">1</span>,<span class="dv">620</span>,</span>
-<span id="cb38-16"><a href="Ch05.html#cb38-16" tabindex="-1"></a>                <span class="dv">2</span>,<span class="dv">330</span>,</span>
-<span id="cb38-17"><a href="Ch05.html#cb38-17" tabindex="-1"></a>                <span class="dv">3</span>,<span class="dv">720</span>,</span>
-<span id="cb38-18"><a href="Ch05.html#cb38-18" tabindex="-1"></a>                <span class="dv">4</span>,<span class="dv">310</span>,</span>
-<span id="cb38-19"><a href="Ch05.html#cb38-19" tabindex="-1"></a>                <span class="dv">5</span>,<span class="dv">710</span>,</span>
-<span id="cb38-20"><a href="Ch05.html#cb38-20" tabindex="-1"></a>                <span class="dv">6</span>,<span class="dv">500</span>,</span>
-<span id="cb38-21"><a href="Ch05.html#cb38-21" tabindex="-1"></a>                <span class="dv">7</span>,<span class="dv">800</span>,</span>
-<span id="cb38-22"><a href="Ch05.html#cb38-22" tabindex="-1"></a>                <span class="dv">8</span>,<span class="dv">500</span>),<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-23"><a href="Ch05.html#cb38-23" tabindex="-1"></a>dw2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">classify</span>(dynworld,klases)</span>
-<span id="cb38-24"><a href="Ch05.html#cb38-24" tabindex="-1"></a><span class="fu">writeRaster</span>(dw2,</span>
-<span id="cb38-25"><a href="Ch05.html#cb38-25" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>,</span>
-<span id="cb38-26"><a href="Ch05.html#cb38-26" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-27"><a href="Ch05.html#cb38-27" tabindex="-1"></a><span class="co"># other layers</span></span>
-<span id="cb38-28"><a href="Ch05.html#cb38-28" tabindex="-1"></a>celi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif&quot;</span>)</span>
-<span id="cb38-29"><a href="Ch05.html#cb38-29" tabindex="-1"></a>niedraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
-<span id="cb38-30"><a href="Ch05.html#cb38-30" tabindex="-1"></a>udeni<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif&quot;</span>)</span>
-<span id="cb38-31"><a href="Ch05.html#cb38-31" tabindex="-1"></a>lauki<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif&quot;</span>)</span>
-<span id="cb38-32"><a href="Ch05.html#cb38-32" tabindex="-1"></a>vasarnicas<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif&quot;</span>)</span>
-<span id="cb38-33"><a href="Ch05.html#cb38-33" tabindex="-1"></a>mezi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif&quot;</span>)</span>
-<span id="cb38-34"><a href="Ch05.html#cb38-34" tabindex="-1"></a>mitraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>)</span>
-<span id="cb38-35"><a href="Ch05.html#cb38-35" tabindex="-1"></a>smiltaji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>)</span>
-<span id="cb38-36"><a href="Ch05.html#cb38-36" tabindex="-1"></a>dw2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>)</span>
-<span id="cb38-37"><a href="Ch05.html#cb38-37" tabindex="-1"></a></span>
-<span id="cb38-38"><a href="Ch05.html#cb38-38" tabindex="-1"></a><span class="co"># covering in correct order</span></span>
-<span id="cb38-39"><a href="Ch05.html#cb38-39" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(celi,niedraji)</span>
-<span id="cb38-40"><a href="Ch05.html#cb38-40" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,udeni)</span>
-<span id="cb38-41"><a href="Ch05.html#cb38-41" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,lauki)</span>
-<span id="cb38-42"><a href="Ch05.html#cb38-42" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,vasarnicas)</span>
-<span id="cb38-43"><a href="Ch05.html#cb38-43" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mezi)</span>
-<span id="cb38-44"><a href="Ch05.html#cb38-44" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mitraji)</span>
-<span id="cb38-45"><a href="Ch05.html#cb38-45" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,smiltaji)</span>
-<span id="cb38-46"><a href="Ch05.html#cb38-46" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,dw2,</span>
-<span id="cb38-47"><a href="Ch05.html#cb38-47" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>,</span>
-<span id="cb38-48"><a href="Ch05.html#cb38-48" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-49"><a href="Ch05.html#cb38-49" tabindex="-1"></a></span>
-<span id="cb38-50"><a href="Ch05.html#cb38-50" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb38-51"><a href="Ch05.html#cb38-51" tabindex="-1"></a><span class="fu">rm</span>(celi)</span>
-<span id="cb38-52"><a href="Ch05.html#cb38-52" tabindex="-1"></a><span class="fu">rm</span>(niedraji)</span>
-<span id="cb38-53"><a href="Ch05.html#cb38-53" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
-<span id="cb38-54"><a href="Ch05.html#cb38-54" tabindex="-1"></a><span class="fu">rm</span>(lauki)</span>
-<span id="cb38-55"><a href="Ch05.html#cb38-55" tabindex="-1"></a><span class="fu">rm</span>(vasarnicas)</span>
-<span id="cb38-56"><a href="Ch05.html#cb38-56" tabindex="-1"></a><span class="fu">rm</span>(mezi)</span>
-<span id="cb38-57"><a href="Ch05.html#cb38-57" tabindex="-1"></a><span class="fu">rm</span>(mitraji)</span>
-<span id="cb38-58"><a href="Ch05.html#cb38-58" tabindex="-1"></a><span class="fu">rm</span>(smiltaji)</span>
-<span id="cb38-59"><a href="Ch05.html#cb38-59" tabindex="-1"></a><span class="fu">rm</span>(klases)</span>
-<span id="cb38-60"><a href="Ch05.html#cb38-60" tabindex="-1"></a><span class="fu">rm</span>(dynworld)</span>
-<span id="cb38-61"><a href="Ch05.html#cb38-61" tabindex="-1"></a><span class="fu">rm</span>(dw2)</span>
-<span id="cb38-62"><a href="Ch05.html#cb38-62" tabindex="-1"></a><span class="fu">rm</span>(rastri_ainavai)</span>
-<span id="cb38-63"><a href="Ch05.html#cb38-63" tabindex="-1"></a></span>
-<span id="cb38-64"><a href="Ch05.html#cb38-64" tabindex="-1"></a><span class="co"># masking</span></span>
-<span id="cb38-65"><a href="Ch05.html#cb38-65" tabindex="-1"></a>rastrs_ainava<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>)</span>
-<span id="cb38-66"><a href="Ch05.html#cb38-66" tabindex="-1"></a>masketa_ainava<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(rastrs_ainava,</span>
-<span id="cb38-67"><a href="Ch05.html#cb38-67" tabindex="-1"></a>                           template_t,</span>
-<span id="cb38-68"><a href="Ch05.html#cb38-68" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>,</span>
-<span id="cb38-69"><a href="Ch05.html#cb38-69" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-70"><a href="Ch05.html#cb38-70" tabindex="-1"></a><span class="fu">plot</span>(masketa_ainava)</span>
-<span id="cb38-71"><a href="Ch05.html#cb38-71" tabindex="-1"></a></span>
-<span id="cb38-72"><a href="Ch05.html#cb38-72" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb38-73"><a href="Ch05.html#cb38-73" tabindex="-1"></a><span class="fu">rm</span>(rastrs_ainava)</span>
-<span id="cb38-74"><a href="Ch05.html#cb38-74" tabindex="-1"></a><span class="fu">rm</span>(masketa_ainava)</span></code></pre></div>
+<span id="cb38-9"><a href="Ch05.html#cb38-9" tabindex="-1"></a><span class="co"># final merging and covering ----</span></span>
+<span id="cb38-10"><a href="Ch05.html#cb38-10" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="Ch05.html#cb38-11" tabindex="-1"></a><span class="co"># DW  </span></span>
+<span id="cb38-12"><a href="Ch05.html#cb38-12" tabindex="-1"></a>dynworld<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;Geodata/2024/DynamicWorld/DW_2024_apraug.tif&quot;</span>)</span>
+<span id="cb38-13"><a href="Ch05.html#cb38-13" tabindex="-1"></a>klases<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>,</span>
+<span id="cb38-14"><a href="Ch05.html#cb38-14" tabindex="-1"></a>                <span class="dv">1</span>,<span class="dv">620</span>,</span>
+<span id="cb38-15"><a href="Ch05.html#cb38-15" tabindex="-1"></a>                <span class="dv">2</span>,<span class="dv">330</span>,</span>
+<span id="cb38-16"><a href="Ch05.html#cb38-16" tabindex="-1"></a>                <span class="dv">3</span>,<span class="dv">720</span>,</span>
+<span id="cb38-17"><a href="Ch05.html#cb38-17" tabindex="-1"></a>                <span class="dv">4</span>,<span class="dv">310</span>,</span>
+<span id="cb38-18"><a href="Ch05.html#cb38-18" tabindex="-1"></a>                <span class="dv">5</span>,<span class="dv">710</span>,</span>
+<span id="cb38-19"><a href="Ch05.html#cb38-19" tabindex="-1"></a>                <span class="dv">6</span>,<span class="dv">500</span>,</span>
+<span id="cb38-20"><a href="Ch05.html#cb38-20" tabindex="-1"></a>                <span class="dv">7</span>,<span class="dv">800</span>,</span>
+<span id="cb38-21"><a href="Ch05.html#cb38-21" tabindex="-1"></a>                <span class="dv">8</span>,<span class="dv">500</span>),<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-22"><a href="Ch05.html#cb38-22" tabindex="-1"></a>dw2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">classify</span>(dynworld,klases)</span>
+<span id="cb38-23"><a href="Ch05.html#cb38-23" tabindex="-1"></a><span class="fu">writeRaster</span>(dw2,</span>
+<span id="cb38-24"><a href="Ch05.html#cb38-24" tabindex="-1"></a>            <span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>,</span>
+<span id="cb38-25"><a href="Ch05.html#cb38-25" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-26"><a href="Ch05.html#cb38-26" tabindex="-1"></a><span class="co"># other layers</span></span>
+<span id="cb38-27"><a href="Ch05.html#cb38-27" tabindex="-1"></a>celi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif&quot;</span>)</span>
+<span id="cb38-28"><a href="Ch05.html#cb38-28" tabindex="-1"></a><span class="fu">plot</span>(celi)</span>
+<span id="cb38-29"><a href="Ch05.html#cb38-29" tabindex="-1"></a></span>
+<span id="cb38-30"><a href="Ch05.html#cb38-30" tabindex="-1"></a>niedraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif&quot;</span>)</span>
+<span id="cb38-31"><a href="Ch05.html#cb38-31" tabindex="-1"></a><span class="fu">plot</span>(niedraji)</span>
+<span id="cb38-32"><a href="Ch05.html#cb38-32" tabindex="-1"></a></span>
+<span id="cb38-33"><a href="Ch05.html#cb38-33" tabindex="-1"></a>udeni<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif&quot;</span>)</span>
+<span id="cb38-34"><a href="Ch05.html#cb38-34" tabindex="-1"></a><span class="fu">plot</span>(udeni)</span>
+<span id="cb38-35"><a href="Ch05.html#cb38-35" tabindex="-1"></a></span>
+<span id="cb38-36"><a href="Ch05.html#cb38-36" tabindex="-1"></a>lauki<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif&quot;</span>)</span>
+<span id="cb38-37"><a href="Ch05.html#cb38-37" tabindex="-1"></a><span class="fu">plot</span>(lauki)</span>
+<span id="cb38-38"><a href="Ch05.html#cb38-38" tabindex="-1"></a></span>
+<span id="cb38-39"><a href="Ch05.html#cb38-39" tabindex="-1"></a>vasarnicas<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif&quot;</span>)</span>
+<span id="cb38-40"><a href="Ch05.html#cb38-40" tabindex="-1"></a><span class="fu">plot</span>(vasarnicas)</span>
+<span id="cb38-41"><a href="Ch05.html#cb38-41" tabindex="-1"></a></span>
+<span id="cb38-42"><a href="Ch05.html#cb38-42" tabindex="-1"></a>mezi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif&quot;</span>)</span>
+<span id="cb38-43"><a href="Ch05.html#cb38-43" tabindex="-1"></a><span class="fu">plot</span>(mezi)</span>
+<span id="cb38-44"><a href="Ch05.html#cb38-44" tabindex="-1"></a></span>
+<span id="cb38-45"><a href="Ch05.html#cb38-45" tabindex="-1"></a>mitraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>)</span>
+<span id="cb38-46"><a href="Ch05.html#cb38-46" tabindex="-1"></a><span class="fu">plot</span>(mitraji)</span>
+<span id="cb38-47"><a href="Ch05.html#cb38-47" tabindex="-1"></a></span>
+<span id="cb38-48"><a href="Ch05.html#cb38-48" tabindex="-1"></a>smiltaji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>)</span>
+<span id="cb38-49"><a href="Ch05.html#cb38-49" tabindex="-1"></a><span class="fu">plot</span>(smiltaji)</span>
+<span id="cb38-50"><a href="Ch05.html#cb38-50" tabindex="-1"></a></span>
+<span id="cb38-51"><a href="Ch05.html#cb38-51" tabindex="-1"></a>dw2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/DW_reclass.tif&quot;</span>)</span>
+<span id="cb38-52"><a href="Ch05.html#cb38-52" tabindex="-1"></a><span class="fu">plot</span>(dw2)</span>
+<span id="cb38-53"><a href="Ch05.html#cb38-53" tabindex="-1"></a></span>
+<span id="cb38-54"><a href="Ch05.html#cb38-54" tabindex="-1"></a><span class="co"># covering in correct order</span></span>
+<span id="cb38-55"><a href="Ch05.html#cb38-55" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(celi,niedraji)</span>
+<span id="cb38-56"><a href="Ch05.html#cb38-56" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,udeni)</span>
+<span id="cb38-57"><a href="Ch05.html#cb38-57" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,lauki)</span>
+<span id="cb38-58"><a href="Ch05.html#cb38-58" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,vasarnicas)</span>
+<span id="cb38-59"><a href="Ch05.html#cb38-59" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mezi)</span>
+<span id="cb38-60"><a href="Ch05.html#cb38-60" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,mitraji)</span>
+<span id="cb38-61"><a href="Ch05.html#cb38-61" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,smiltaji)</span>
+<span id="cb38-62"><a href="Ch05.html#cb38-62" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">cover</span>(rastri_ainavai,dw2,</span>
+<span id="cb38-63"><a href="Ch05.html#cb38-63" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>,</span>
+<span id="cb38-64"><a href="Ch05.html#cb38-64" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-65"><a href="Ch05.html#cb38-65" tabindex="-1"></a><span class="fu">plot</span>(rastri_ainavai)</span>
+<span id="cb38-66"><a href="Ch05.html#cb38-66" tabindex="-1"></a></span>
+<span id="cb38-67"><a href="Ch05.html#cb38-67" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb38-68"><a href="Ch05.html#cb38-68" tabindex="-1"></a><span class="fu">rm</span>(celi)</span>
+<span id="cb38-69"><a href="Ch05.html#cb38-69" tabindex="-1"></a><span class="fu">rm</span>(niedraji)</span>
+<span id="cb38-70"><a href="Ch05.html#cb38-70" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
+<span id="cb38-71"><a href="Ch05.html#cb38-71" tabindex="-1"></a><span class="fu">rm</span>(lauki)</span>
+<span id="cb38-72"><a href="Ch05.html#cb38-72" tabindex="-1"></a><span class="fu">rm</span>(vasarnicas)</span>
+<span id="cb38-73"><a href="Ch05.html#cb38-73" tabindex="-1"></a><span class="fu">rm</span>(mezi)</span>
+<span id="cb38-74"><a href="Ch05.html#cb38-74" tabindex="-1"></a><span class="fu">rm</span>(mitraji)</span>
+<span id="cb38-75"><a href="Ch05.html#cb38-75" tabindex="-1"></a><span class="fu">rm</span>(smiltaji)</span>
+<span id="cb38-76"><a href="Ch05.html#cb38-76" tabindex="-1"></a><span class="fu">rm</span>(klases)</span>
+<span id="cb38-77"><a href="Ch05.html#cb38-77" tabindex="-1"></a><span class="fu">rm</span>(dynworld)</span>
+<span id="cb38-78"><a href="Ch05.html#cb38-78" tabindex="-1"></a><span class="fu">rm</span>(dw2)</span>
+<span id="cb38-79"><a href="Ch05.html#cb38-79" tabindex="-1"></a><span class="fu">rm</span>(rastri_ainavai)</span>
+<span id="cb38-80"><a href="Ch05.html#cb38-80" tabindex="-1"></a></span>
+<span id="cb38-81"><a href="Ch05.html#cb38-81" tabindex="-1"></a><span class="co"># masking</span></span>
+<span id="cb38-82"><a href="Ch05.html#cb38-82" tabindex="-1"></a>rastrs_ainava<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienkarsa.tif&quot;</span>)</span>
+<span id="cb38-83"><a href="Ch05.html#cb38-83" tabindex="-1"></a><span class="fu">plot</span>(rastrs_ainava)</span>
+<span id="cb38-84"><a href="Ch05.html#cb38-84" tabindex="-1"></a><span class="fu">freq</span>(rastrs_ainava)</span>
+<span id="cb38-85"><a href="Ch05.html#cb38-85" tabindex="-1"></a></span>
+<span id="cb38-86"><a href="Ch05.html#cb38-86" tabindex="-1"></a>masketa_ainava<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(rastrs_ainava,</span>
+<span id="cb38-87"><a href="Ch05.html#cb38-87" tabindex="-1"></a>                           template_t,</span>
+<span id="cb38-88"><a href="Ch05.html#cb38-88" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>,</span>
+<span id="cb38-89"><a href="Ch05.html#cb38-89" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-90"><a href="Ch05.html#cb38-90" tabindex="-1"></a><span class="fu">plot</span>(masketa_ainava)</span>
+<span id="cb38-91"><a href="Ch05.html#cb38-91" tabindex="-1"></a></span>
+<span id="cb38-92"><a href="Ch05.html#cb38-92" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb38-93"><a href="Ch05.html#cb38-93" tabindex="-1"></a><span class="fu">rm</span>(rastrs_ainava)</span>
+<span id="cb38-94"><a href="Ch05.html#cb38-94" tabindex="-1"></a><span class="fu">rm</span>(masketa_ainava)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.04" class="section level2 hasAnchor" number="5.4">
@@ -2224,122 +2270,128 @@ there were no gaps to fill.</p>
 <span id="cb39-11"><a href="Ch05.html#cb39-11" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>)</span>
 <span id="cb39-12"><a href="Ch05.html#cb39-12" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
 <span id="cb39-13"><a href="Ch05.html#cb39-13" tabindex="-1"></a></span>
-<span id="cb39-14"><a href="Ch05.html#cb39-14" tabindex="-1"></a><span class="co"># general diversity ----</span></span>
-<span id="cb39-15"><a href="Ch05.html#cb39-15" tabindex="-1"></a></span>
-<span id="cb39-16"><a href="Ch05.html#cb39-16" tabindex="-1"></a><span class="do">## Farmland broad ----</span></span>
-<span id="cb39-17"><a href="Ch05.html#cb39-17" tabindex="-1"></a></span>
-<span id="cb39-18"><a href="Ch05.html#cb39-18" tabindex="-1"></a><span class="co"># classification </span></span>
-<span id="cb39-19"><a href="Ch05.html#cb39-19" tabindex="-1"></a>culturecodes<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Geodata/2024/LAD/KulturuKodi_2024.xlsx&quot;</span>)</span>
-<span id="cb39-20"><a href="Ch05.html#cb39-20" tabindex="-1"></a>culturecodes<span class="sc">$</span>kods<span class="ot">=</span><span class="fu">as.character</span>(culturecodes<span class="sc">$</span>kods)</span>
-<span id="cb39-21"><a href="Ch05.html#cb39-21" tabindex="-1"></a>lad<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
-<span id="cb39-22"><a href="Ch05.html#cb39-22" tabindex="-1"></a>lad2<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
-<span id="cb39-23"><a href="Ch05.html#cb39-23" tabindex="-1"></a>  <span class="fu">left_join</span>(culturecodes, <span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;PRODUCT_CODE&quot;</span><span class="ot">=</span><span class="st">&quot;kods&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-24"><a href="Ch05.html#cb39-24" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numeric_code=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(SDM_grupa_sakums))<span class="sc">+</span><span class="dv">350</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-25"><a href="Ch05.html#cb39-25" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(numeric_code))</span>
-<span id="cb39-26"><a href="Ch05.html#cb39-26" tabindex="-1"></a><span class="fu">table</span>(lad2<span class="sc">$</span>numeric_code,<span class="at">useNA =</span> <span class="st">&quot;always&quot;</span>)</span>
-<span id="cb39-27"><a href="Ch05.html#cb39-27" tabindex="-1"></a></span>
-<span id="cb39-28"><a href="Ch05.html#cb39-28" tabindex="-1"></a><span class="co"># input layer</span></span>
-<span id="cb39-29"><a href="Ch05.html#cb39-29" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> lad2,</span>
-<span id="cb39-30"><a href="Ch05.html#cb39-30" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
-<span id="cb39-31"><a href="Ch05.html#cb39-31" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
-<span id="cb39-32"><a href="Ch05.html#cb39-32" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_FarmlandBroad_only.tif&quot;</span>,</span>
-<span id="cb39-33"><a href="Ch05.html#cb39-33" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;numeric_code&quot;</span>,</span>
-<span id="cb39-34"><a href="Ch05.html#cb39-34" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
-<span id="cb39-35"><a href="Ch05.html#cb39-35" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
-<span id="cb39-36"><a href="Ch05.html#cb39-36" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>)</span>
-<span id="cb39-37"><a href="Ch05.html#cb39-37" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb39-38"><a href="Ch05.html#cb39-38" tabindex="-1"></a><span class="fu">rm</span>(culturecodes)</span>
-<span id="cb39-39"><a href="Ch05.html#cb39-39" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
-<span id="cb39-40"><a href="Ch05.html#cb39-40" tabindex="-1"></a><span class="fu">rm</span>(lad2)</span>
-<span id="cb39-41"><a href="Ch05.html#cb39-41" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="Ch05.html#cb39-14" tabindex="-1"></a></span>
+<span id="cb39-15"><a href="Ch05.html#cb39-15" tabindex="-1"></a><span class="co"># general diversity ----</span></span>
+<span id="cb39-16"><a href="Ch05.html#cb39-16" tabindex="-1"></a></span>
+<span id="cb39-17"><a href="Ch05.html#cb39-17" tabindex="-1"></a><span class="do">## Farmland broad ----</span></span>
+<span id="cb39-18"><a href="Ch05.html#cb39-18" tabindex="-1"></a></span>
+<span id="cb39-19"><a href="Ch05.html#cb39-19" tabindex="-1"></a><span class="co"># classification </span></span>
+<span id="cb39-20"><a href="Ch05.html#cb39-20" tabindex="-1"></a>culturecodes<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Geodata/2024/LAD/KulturuKodi_2024.xlsx&quot;</span>)</span>
+<span id="cb39-21"><a href="Ch05.html#cb39-21" tabindex="-1"></a>culturecodes<span class="sc">$</span>kods<span class="ot">=</span><span class="fu">as.character</span>(culturecodes<span class="sc">$</span>kods)</span>
+<span id="cb39-22"><a href="Ch05.html#cb39-22" tabindex="-1"></a>lad<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
+<span id="cb39-23"><a href="Ch05.html#cb39-23" tabindex="-1"></a>lad2<span class="ot">=</span>lad <span class="sc">%&gt;%</span> </span>
+<span id="cb39-24"><a href="Ch05.html#cb39-24" tabindex="-1"></a>  <span class="fu">left_join</span>(culturecodes, <span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;PRODUCT_CODE&quot;</span><span class="ot">=</span><span class="st">&quot;kods&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-25"><a href="Ch05.html#cb39-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numeric_code=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(SDM_grupa_sakums))<span class="sc">+</span><span class="dv">350</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-26"><a href="Ch05.html#cb39-26" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(numeric_code))</span>
+<span id="cb39-27"><a href="Ch05.html#cb39-27" tabindex="-1"></a><span class="fu">table</span>(lad2<span class="sc">$</span>numeric_code,<span class="at">useNA =</span> <span class="st">&quot;always&quot;</span>)</span>
+<span id="cb39-28"><a href="Ch05.html#cb39-28" tabindex="-1"></a></span>
+<span id="cb39-29"><a href="Ch05.html#cb39-29" tabindex="-1"></a><span class="co"># input layer</span></span>
+<span id="cb39-30"><a href="Ch05.html#cb39-30" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> lad2,</span>
+<span id="cb39-31"><a href="Ch05.html#cb39-31" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
+<span id="cb39-32"><a href="Ch05.html#cb39-32" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb39-33"><a href="Ch05.html#cb39-33" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_FarmlandBroad_only.tif&quot;</span>,</span>
+<span id="cb39-34"><a href="Ch05.html#cb39-34" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;numeric_code&quot;</span>,</span>
+<span id="cb39-35"><a href="Ch05.html#cb39-35" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
+<span id="cb39-36"><a href="Ch05.html#cb39-36" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
+<span id="cb39-37"><a href="Ch05.html#cb39-37" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>)</span>
+<span id="cb39-38"><a href="Ch05.html#cb39-38" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb39-39"><a href="Ch05.html#cb39-39" tabindex="-1"></a><span class="fu">rm</span>(culturecodes)</span>
+<span id="cb39-40"><a href="Ch05.html#cb39-40" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb39-41"><a href="Ch05.html#cb39-41" tabindex="-1"></a><span class="fu">rm</span>(lad2)</span>
 <span id="cb39-42"><a href="Ch05.html#cb39-42" tabindex="-1"></a></span>
-<span id="cb39-43"><a href="Ch05.html#cb39-43" tabindex="-1"></a><span class="do">## Forests broad ----</span></span>
-<span id="cb39-44"><a href="Ch05.html#cb39-44" tabindex="-1"></a></span>
-<span id="cb39-45"><a href="Ch05.html#cb39-45" tabindex="-1"></a><span class="co"># data</span></span>
-<span id="cb39-46"><a href="Ch05.html#cb39-46" tabindex="-1"></a>mvr<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
-<span id="cb39-47"><a href="Ch05.html#cb39-47" tabindex="-1"></a></span>
-<span id="cb39-48"><a href="Ch05.html#cb39-48" tabindex="-1"></a><span class="co"># species groups</span></span>
-<span id="cb39-49"><a href="Ch05.html#cb39-49" tabindex="-1"></a>coniferous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;13&quot;</span>,<span class="st">&quot;14&quot;</span>,<span class="st">&quot;15&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>) <span class="co"># 7</span></span>
-<span id="cb39-50"><a href="Ch05.html#cb39-50" tabindex="-1"></a>boreal_deciduous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;4&quot;</span>,<span class="st">&quot;6&quot;</span>,<span class="st">&quot;8&quot;</span>,<span class="st">&quot;9&quot;</span>,<span class="st">&quot;19&quot;</span>,<span class="st">&quot;20&quot;</span>,<span class="st">&quot;21&quot;</span>,<span class="st">&quot;32&quot;</span>,<span class="st">&quot;35&quot;</span>,<span class="st">&quot;50&quot;</span>,<span class="st">&quot;68&quot;</span>) <span class="co"># 11</span></span>
-<span id="cb39-51"><a href="Ch05.html#cb39-51" tabindex="-1"></a>temperate_deciduous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;10&quot;</span>,<span class="st">&quot;11&quot;</span>,<span class="st">&quot;12&quot;</span>,<span class="st">&quot;16&quot;</span>,<span class="st">&quot;17&quot;</span>,<span class="st">&quot;18&quot;</span>,<span class="st">&quot;24&quot;</span>,<span class="st">&quot;25&quot;</span>,<span class="st">&quot;26&quot;</span>,<span class="st">&quot;27&quot;</span>,<span class="st">&quot;28&quot;</span>,<span class="st">&quot;29&quot;</span>,</span>
-<span id="cb39-52"><a href="Ch05.html#cb39-52" tabindex="-1"></a>            <span class="st">&quot;61&quot;</span>,<span class="st">&quot;62&quot;</span>,<span class="st">&quot;63&quot;</span>,<span class="st">&quot;64&quot;</span>,<span class="st">&quot;65&quot;</span>,<span class="st">&quot;66&quot;</span>,<span class="st">&quot;67&quot;</span>,<span class="st">&quot;69&quot;</span>) <span class="co"># 20</span></span>
-<span id="cb39-53"><a href="Ch05.html#cb39-53" tabindex="-1"></a></span>
-<span id="cb39-54"><a href="Ch05.html#cb39-54" tabindex="-1"></a><span class="co"># classification</span></span>
-<span id="cb39-55"><a href="Ch05.html#cb39-55" tabindex="-1"></a>mvr2<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
-<span id="cb39-56"><a href="Ch05.html#cb39-56" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vol_coniferous=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> coniferous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-57"><a href="Ch05.html#cb39-57" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> coniferous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> coniferous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-58"><a href="Ch05.html#cb39-58" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> coniferous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> coniferous,v14,<span class="dv">0</span>),</span>
-<span id="cb39-59"><a href="Ch05.html#cb39-59" tabindex="-1"></a>         <span class="at">vol_boreal=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> boreal_deciduous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-60"><a href="Ch05.html#cb39-60" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> boreal_deciduous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> boreal_deciduous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-61"><a href="Ch05.html#cb39-61" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> boreal_deciduous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> boreal_deciduous,v14,<span class="dv">0</span>),</span>
-<span id="cb39-62"><a href="Ch05.html#cb39-62" tabindex="-1"></a>         <span class="at">vol_temperate=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> temperate_deciduous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-63"><a href="Ch05.html#cb39-63" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> temperate_deciduous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> temperate_deciduous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
-<span id="cb39-64"><a href="Ch05.html#cb39-64" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> temperate_deciduous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> temperate_deciduous,v14,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-65"><a href="Ch05.html#cb39-65" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vol_total=</span>vol_coniferous<span class="sc">+</span>vol_boreal<span class="sc">+</span>vol_temperate) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-66"><a href="Ch05.html#cb39-66" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">forest_type=</span><span class="fu">ifelse</span>(vol_coniferous<span class="sc">/</span>vol_total<span class="sc">&gt;=</span><span class="fl">0.75</span>,<span class="st">&quot;coniferous&quot;</span>,</span>
-<span id="cb39-67"><a href="Ch05.html#cb39-67" tabindex="-1"></a>                     <span class="fu">ifelse</span>(vol_boreal<span class="sc">/</span>vol_total<span class="sc">&gt;=</span><span class="fl">0.75</span>,<span class="st">&quot;boreal&quot;</span>,</span>
-<span id="cb39-68"><a href="Ch05.html#cb39-68" tabindex="-1"></a>                            <span class="fu">ifelse</span>(vol_temperate<span class="sc">/</span>vol_total<span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">&quot;temperate&quot;</span>,</span>
-<span id="cb39-69"><a href="Ch05.html#cb39-69" tabindex="-1"></a>                                   <span class="st">&quot;mixed&quot;</span>)))) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-70"><a href="Ch05.html#cb39-70" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">forest_age=</span><span class="fu">ifelse</span>(vgr<span class="sc">==</span><span class="st">&quot;1&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;2&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;3&quot;</span>,<span class="st">&quot;young&quot;</span>,</span>
-<span id="cb39-71"><a href="Ch05.html#cb39-71" tabindex="-1"></a>                           <span class="fu">ifelse</span>(vgr<span class="sc">==</span><span class="st">&quot;4&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;5&quot;</span>,<span class="st">&quot;old&quot;</span>,<span class="cn">NA</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-72"><a href="Ch05.html#cb39-72" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(forest_type)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-73"><a href="Ch05.html#cb39-73" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(forest_age)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-74"><a href="Ch05.html#cb39-74" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">divbroad_class=</span><span class="fu">paste0</span>(forest_type,<span class="st">&quot;_&quot;</span>,forest_age)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-75"><a href="Ch05.html#cb39-75" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">divbroad_numeric=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(divbroad_class))<span class="sc">+</span><span class="dv">660</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-76"><a href="Ch05.html#cb39-76" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(divbroad_numeric))</span>
-<span id="cb39-77"><a href="Ch05.html#cb39-77" tabindex="-1"></a></span>
-<span id="cb39-78"><a href="Ch05.html#cb39-78" tabindex="-1"></a><span class="co"># input layer</span></span>
-<span id="cb39-79"><a href="Ch05.html#cb39-79" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> mvr2,</span>
-<span id="cb39-80"><a href="Ch05.html#cb39-80" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
-<span id="cb39-81"><a href="Ch05.html#cb39-81" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
-<span id="cb39-82"><a href="Ch05.html#cb39-82" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_ForestBroad_only.tif&quot;</span>,</span>
-<span id="cb39-83"><a href="Ch05.html#cb39-83" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;divbroad_numeric&quot;</span>,</span>
-<span id="cb39-84"><a href="Ch05.html#cb39-84" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
-<span id="cb39-85"><a href="Ch05.html#cb39-85" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
-<span id="cb39-86"><a href="Ch05.html#cb39-86" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
-<span id="cb39-87"><a href="Ch05.html#cb39-87" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb39-88"><a href="Ch05.html#cb39-88" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb39-89"><a href="Ch05.html#cb39-89" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
-<span id="cb39-90"><a href="Ch05.html#cb39-90" tabindex="-1"></a><span class="fu">rm</span>(mvr2)</span>
-<span id="cb39-91"><a href="Ch05.html#cb39-91" tabindex="-1"></a></span>
-<span id="cb39-92"><a href="Ch05.html#cb39-92" tabindex="-1"></a><span class="do">## General classification ----</span></span>
-<span id="cb39-93"><a href="Ch05.html#cb39-93" tabindex="-1"></a>simple_landscape<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>)</span>
+<span id="cb39-43"><a href="Ch05.html#cb39-43" tabindex="-1"></a></span>
+<span id="cb39-44"><a href="Ch05.html#cb39-44" tabindex="-1"></a><span class="do">## Forests broad ----</span></span>
+<span id="cb39-45"><a href="Ch05.html#cb39-45" tabindex="-1"></a></span>
+<span id="cb39-46"><a href="Ch05.html#cb39-46" tabindex="-1"></a><span class="co"># data</span></span>
+<span id="cb39-47"><a href="Ch05.html#cb39-47" tabindex="-1"></a>mvr<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb39-48"><a href="Ch05.html#cb39-48" tabindex="-1"></a></span>
+<span id="cb39-49"><a href="Ch05.html#cb39-49" tabindex="-1"></a><span class="co"># species groups</span></span>
+<span id="cb39-50"><a href="Ch05.html#cb39-50" tabindex="-1"></a>coniferous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;13&quot;</span>,<span class="st">&quot;14&quot;</span>,<span class="st">&quot;15&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>) <span class="co"># 7</span></span>
+<span id="cb39-51"><a href="Ch05.html#cb39-51" tabindex="-1"></a>boreal_deciduous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;4&quot;</span>,<span class="st">&quot;6&quot;</span>,<span class="st">&quot;8&quot;</span>,<span class="st">&quot;9&quot;</span>,<span class="st">&quot;19&quot;</span>,<span class="st">&quot;20&quot;</span>,<span class="st">&quot;21&quot;</span>,<span class="st">&quot;32&quot;</span>,<span class="st">&quot;35&quot;</span>,<span class="st">&quot;50&quot;</span>,<span class="st">&quot;68&quot;</span>) <span class="co"># 11</span></span>
+<span id="cb39-52"><a href="Ch05.html#cb39-52" tabindex="-1"></a>temperate_deciduous<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;10&quot;</span>,<span class="st">&quot;11&quot;</span>,<span class="st">&quot;12&quot;</span>,<span class="st">&quot;16&quot;</span>,<span class="st">&quot;17&quot;</span>,<span class="st">&quot;18&quot;</span>,<span class="st">&quot;24&quot;</span>,<span class="st">&quot;25&quot;</span>,<span class="st">&quot;26&quot;</span>,<span class="st">&quot;27&quot;</span>,<span class="st">&quot;28&quot;</span>,<span class="st">&quot;29&quot;</span>,</span>
+<span id="cb39-53"><a href="Ch05.html#cb39-53" tabindex="-1"></a>            <span class="st">&quot;61&quot;</span>,<span class="st">&quot;62&quot;</span>,<span class="st">&quot;63&quot;</span>,<span class="st">&quot;64&quot;</span>,<span class="st">&quot;65&quot;</span>,<span class="st">&quot;66&quot;</span>,<span class="st">&quot;67&quot;</span>,<span class="st">&quot;69&quot;</span>) <span class="co"># 20</span></span>
+<span id="cb39-54"><a href="Ch05.html#cb39-54" tabindex="-1"></a></span>
+<span id="cb39-55"><a href="Ch05.html#cb39-55" tabindex="-1"></a><span class="co"># classification</span></span>
+<span id="cb39-56"><a href="Ch05.html#cb39-56" tabindex="-1"></a>mvr2<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb39-57"><a href="Ch05.html#cb39-57" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vol_coniferous=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> coniferous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-58"><a href="Ch05.html#cb39-58" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> coniferous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> coniferous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-59"><a href="Ch05.html#cb39-59" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> coniferous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> coniferous,v14,<span class="dv">0</span>),</span>
+<span id="cb39-60"><a href="Ch05.html#cb39-60" tabindex="-1"></a>         <span class="at">vol_boreal=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> boreal_deciduous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-61"><a href="Ch05.html#cb39-61" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> boreal_deciduous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> boreal_deciduous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-62"><a href="Ch05.html#cb39-62" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> boreal_deciduous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> boreal_deciduous,v14,<span class="dv">0</span>),</span>
+<span id="cb39-63"><a href="Ch05.html#cb39-63" tabindex="-1"></a>         <span class="at">vol_temperate=</span><span class="fu">ifelse</span>(s10 <span class="sc">%in%</span> temperate_deciduous,v10,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-64"><a href="Ch05.html#cb39-64" tabindex="-1"></a>           <span class="fu">ifelse</span>(s11 <span class="sc">%in%</span> temperate_deciduous,v11,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s12 <span class="sc">%in%</span> temperate_deciduous,v12,<span class="dv">0</span>)<span class="sc">+</span></span>
+<span id="cb39-65"><a href="Ch05.html#cb39-65" tabindex="-1"></a>           <span class="fu">ifelse</span>(s13 <span class="sc">%in%</span> temperate_deciduous,v13,<span class="dv">0</span>)<span class="sc">+</span><span class="fu">ifelse</span>(s14 <span class="sc">%in%</span> temperate_deciduous,v14,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-66"><a href="Ch05.html#cb39-66" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vol_total=</span>vol_coniferous<span class="sc">+</span>vol_boreal<span class="sc">+</span>vol_temperate) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-67"><a href="Ch05.html#cb39-67" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">forest_type=</span><span class="fu">ifelse</span>(vol_coniferous<span class="sc">/</span>vol_total<span class="sc">&gt;=</span><span class="fl">0.75</span>,<span class="st">&quot;coniferous&quot;</span>,</span>
+<span id="cb39-68"><a href="Ch05.html#cb39-68" tabindex="-1"></a>                     <span class="fu">ifelse</span>(vol_boreal<span class="sc">/</span>vol_total<span class="sc">&gt;=</span><span class="fl">0.75</span>,<span class="st">&quot;boreal&quot;</span>,</span>
+<span id="cb39-69"><a href="Ch05.html#cb39-69" tabindex="-1"></a>                            <span class="fu">ifelse</span>(vol_temperate<span class="sc">/</span>vol_total<span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">&quot;temperate&quot;</span>,</span>
+<span id="cb39-70"><a href="Ch05.html#cb39-70" tabindex="-1"></a>                                   <span class="st">&quot;mixed&quot;</span>)))) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-71"><a href="Ch05.html#cb39-71" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">forest_age=</span><span class="fu">ifelse</span>(vgr<span class="sc">==</span><span class="st">&quot;1&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;2&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;3&quot;</span>,<span class="st">&quot;young&quot;</span>,</span>
+<span id="cb39-72"><a href="Ch05.html#cb39-72" tabindex="-1"></a>                           <span class="fu">ifelse</span>(vgr<span class="sc">==</span><span class="st">&quot;4&quot;</span><span class="sc">|</span>vgr<span class="sc">==</span><span class="st">&quot;5&quot;</span>,<span class="st">&quot;old&quot;</span>,<span class="cn">NA</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-73"><a href="Ch05.html#cb39-73" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(forest_type)) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-74"><a href="Ch05.html#cb39-74" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(forest_age)) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-75"><a href="Ch05.html#cb39-75" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">divbroad_class=</span><span class="fu">paste0</span>(forest_type,<span class="st">&quot;_&quot;</span>,forest_age)) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-76"><a href="Ch05.html#cb39-76" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">divbroad_numeric=</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(divbroad_class))<span class="sc">+</span><span class="dv">660</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-77"><a href="Ch05.html#cb39-77" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(divbroad_numeric))</span>
+<span id="cb39-78"><a href="Ch05.html#cb39-78" tabindex="-1"></a></span>
+<span id="cb39-79"><a href="Ch05.html#cb39-79" tabindex="-1"></a><span class="co"># input layer</span></span>
+<span id="cb39-80"><a href="Ch05.html#cb39-80" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> mvr2,</span>
+<span id="cb39-81"><a href="Ch05.html#cb39-81" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
+<span id="cb39-82"><a href="Ch05.html#cb39-82" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb39-83"><a href="Ch05.html#cb39-83" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_ForestBroad_only.tif&quot;</span>,</span>
+<span id="cb39-84"><a href="Ch05.html#cb39-84" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;divbroad_numeric&quot;</span>,</span>
+<span id="cb39-85"><a href="Ch05.html#cb39-85" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
+<span id="cb39-86"><a href="Ch05.html#cb39-86" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
+<span id="cb39-87"><a href="Ch05.html#cb39-87" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
+<span id="cb39-88"><a href="Ch05.html#cb39-88" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb39-89"><a href="Ch05.html#cb39-89" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb39-90"><a href="Ch05.html#cb39-90" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb39-91"><a href="Ch05.html#cb39-91" tabindex="-1"></a><span class="fu">rm</span>(mvr2)</span>
+<span id="cb39-92"><a href="Ch05.html#cb39-92" tabindex="-1"></a></span>
+<span id="cb39-93"><a href="Ch05.html#cb39-93" tabindex="-1"></a><span class="do">## General classification ----</span></span>
 <span id="cb39-94"><a href="Ch05.html#cb39-94" tabindex="-1"></a></span>
-<span id="cb39-95"><a href="Ch05.html#cb39-95" tabindex="-1"></a><span class="do">## Covered classes for general diversity ----</span></span>
-<span id="cb39-96"><a href="Ch05.html#cb39-96" tabindex="-1"></a>farmland_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif&quot;</span>)</span>
-<span id="cb39-97"><a href="Ch05.html#cb39-97" tabindex="-1"></a>forests_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif&quot;</span>)</span>
+<span id="cb39-95"><a href="Ch05.html#cb39-95" tabindex="-1"></a>simple_landscape<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>)</span>
+<span id="cb39-96"><a href="Ch05.html#cb39-96" tabindex="-1"></a></span>
+<span id="cb39-97"><a href="Ch05.html#cb39-97" tabindex="-1"></a><span class="do">## Covered classes for general diversity ----</span></span>
 <span id="cb39-98"><a href="Ch05.html#cb39-98" tabindex="-1"></a></span>
-<span id="cb39-99"><a href="Ch05.html#cb39-99" tabindex="-1"></a>diversity_classes<span class="ot">=</span><span class="fu">cover</span>(farmland_broad,forests_broad)</span>
-<span id="cb39-100"><a href="Ch05.html#cb39-100" tabindex="-1"></a>diversity_classes2<span class="ot">=</span><span class="fu">cover</span>(diversity_classes,simple_landscape,</span>
-<span id="cb39-101"><a href="Ch05.html#cb39-101" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif&quot;</span>,</span>
-<span id="cb39-102"><a href="Ch05.html#cb39-102" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb39-103"><a href="Ch05.html#cb39-103" tabindex="-1"></a><span class="fu">rm</span>(simple_landscape)</span>
-<span id="cb39-104"><a href="Ch05.html#cb39-104" tabindex="-1"></a><span class="fu">rm</span>(farmland_broad)</span>
-<span id="cb39-105"><a href="Ch05.html#cb39-105" tabindex="-1"></a><span class="fu">rm</span>(forests_broad)</span>
-<span id="cb39-106"><a href="Ch05.html#cb39-106" tabindex="-1"></a><span class="fu">rm</span>(diversity_classes)</span>
-<span id="cb39-107"><a href="Ch05.html#cb39-107" tabindex="-1"></a><span class="fu">rm</span>(diversity_classes2)</span>
-<span id="cb39-108"><a href="Ch05.html#cb39-108" tabindex="-1"></a></span>
-<span id="cb39-109"><a href="Ch05.html#cb39-109" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
-<span id="cb39-110"><a href="Ch05.html#cb39-110" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
-<span id="cb39-111"><a href="Ch05.html#cb39-111" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif&quot;</span>,</span>
-<span id="cb39-112"><a href="Ch05.html#cb39-112" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
-<span id="cb39-113"><a href="Ch05.html#cb39-113" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
-<span id="cb39-114"><a href="Ch05.html#cb39-114" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb39-115"><a href="Ch05.html#cb39-115" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
-<span id="cb39-116"><a href="Ch05.html#cb39-116" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
-<span id="cb39-117"><a href="Ch05.html#cb39-117" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_GeneralLandscape_500x.tif&quot;</span>,</span>
-<span id="cb39-118"><a href="Ch05.html#cb39-118" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_GeneralLandscape_500x&quot;</span>,</span>
-<span id="cb39-119"><a href="Ch05.html#cb39-119" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
-<span id="cb39-120"><a href="Ch05.html#cb39-120" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
-<span id="cb39-121"><a href="Ch05.html#cb39-121" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
-<span id="cb39-122"><a href="Ch05.html#cb39-122" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
-<span id="cb39-123"><a href="Ch05.html#cb39-123" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb39-124"><a href="Ch05.html#cb39-124" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb39-125"><a href="Ch05.html#cb39-125" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
-<span id="cb39-126"><a href="Ch05.html#cb39-126" tabindex="-1"></a>)</span>
-<span id="cb39-127"><a href="Ch05.html#cb39-127" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
-<span id="cb39-128"><a href="Ch05.html#cb39-128" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>))</span>
-<span id="cb39-129"><a href="Ch05.html#cb39-129" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
+<span id="cb39-99"><a href="Ch05.html#cb39-99" tabindex="-1"></a>farmland_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif&quot;</span>)</span>
+<span id="cb39-100"><a href="Ch05.html#cb39-100" tabindex="-1"></a>forests_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif&quot;</span>)</span>
+<span id="cb39-101"><a href="Ch05.html#cb39-101" tabindex="-1"></a></span>
+<span id="cb39-102"><a href="Ch05.html#cb39-102" tabindex="-1"></a>diversity_classes<span class="ot">=</span><span class="fu">cover</span>(farmland_broad,forests_broad)</span>
+<span id="cb39-103"><a href="Ch05.html#cb39-103" tabindex="-1"></a>diversity_classes2<span class="ot">=</span><span class="fu">cover</span>(diversity_classes,simple_landscape,</span>
+<span id="cb39-104"><a href="Ch05.html#cb39-104" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif&quot;</span>,</span>
+<span id="cb39-105"><a href="Ch05.html#cb39-105" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb39-106"><a href="Ch05.html#cb39-106" tabindex="-1"></a></span>
+<span id="cb39-107"><a href="Ch05.html#cb39-107" tabindex="-1"></a><span class="fu">rm</span>(simple_landscape)</span>
+<span id="cb39-108"><a href="Ch05.html#cb39-108" tabindex="-1"></a><span class="fu">rm</span>(farmland_broad)</span>
+<span id="cb39-109"><a href="Ch05.html#cb39-109" tabindex="-1"></a><span class="fu">rm</span>(forests_broad)</span>
+<span id="cb39-110"><a href="Ch05.html#cb39-110" tabindex="-1"></a><span class="fu">rm</span>(diversity_classes)</span>
+<span id="cb39-111"><a href="Ch05.html#cb39-111" tabindex="-1"></a><span class="fu">rm</span>(diversity_classes2)</span>
+<span id="cb39-112"><a href="Ch05.html#cb39-112" tabindex="-1"></a></span>
+<span id="cb39-113"><a href="Ch05.html#cb39-113" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
+<span id="cb39-114"><a href="Ch05.html#cb39-114" tabindex="-1"></a></span>
+<span id="cb39-115"><a href="Ch05.html#cb39-115" tabindex="-1"></a></span>
+<span id="cb39-116"><a href="Ch05.html#cb39-116" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
+<span id="cb39-117"><a href="Ch05.html#cb39-117" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif&quot;</span>,</span>
+<span id="cb39-118"><a href="Ch05.html#cb39-118" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
+<span id="cb39-119"><a href="Ch05.html#cb39-119" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
+<span id="cb39-120"><a href="Ch05.html#cb39-120" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb39-121"><a href="Ch05.html#cb39-121" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
+<span id="cb39-122"><a href="Ch05.html#cb39-122" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
+<span id="cb39-123"><a href="Ch05.html#cb39-123" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_GeneralLandscape_500x.tif&quot;</span>,</span>
+<span id="cb39-124"><a href="Ch05.html#cb39-124" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_GeneralLandscape_500x&quot;</span>,</span>
+<span id="cb39-125"><a href="Ch05.html#cb39-125" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
+<span id="cb39-126"><a href="Ch05.html#cb39-126" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
+<span id="cb39-127"><a href="Ch05.html#cb39-127" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
+<span id="cb39-128"><a href="Ch05.html#cb39-128" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
+<span id="cb39-129"><a href="Ch05.html#cb39-129" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb39-130"><a href="Ch05.html#cb39-130" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb39-131"><a href="Ch05.html#cb39-131" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
+<span id="cb39-132"><a href="Ch05.html#cb39-132" tabindex="-1"></a>)</span>
+<span id="cb39-133"><a href="Ch05.html#cb39-133" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
+<span id="cb39-134"><a href="Ch05.html#cb39-134" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_GeneralLandscape_500x.tif&quot;</span>))</span>
+<span id="cb39-135"><a href="Ch05.html#cb39-135" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.04.02" class="section level3 hasAnchor" number="5.4.2">
@@ -2379,69 +2431,71 @@ there were no gaps to fill.</p>
 <span id="cb40-18"><a href="Ch05.html#cb40-18" tabindex="-1"></a></span>
 <span id="cb40-19"><a href="Ch05.html#cb40-19" tabindex="-1"></a></span>
 <span id="cb40-20"><a href="Ch05.html#cb40-20" tabindex="-1"></a><span class="do">## forest codes ----</span></span>
-<span id="cb40-21"><a href="Ch05.html#cb40-21" tabindex="-1"></a></span>
-<span id="cb40-22"><a href="Ch05.html#cb40-22" tabindex="-1"></a><span class="co"># meži</span></span>
-<span id="cb40-23"><a href="Ch05.html#cb40-23" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/&quot;</span>)</span>
-<span id="cb40-24"><a href="Ch05.html#cb40-24" tabindex="-1"></a></span>
-<span id="cb40-25"><a href="Ch05.html#cb40-25" tabindex="-1"></a>mvr<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
-<span id="cb40-26"><a href="Ch05.html#cb40-26" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kods1=</span><span class="fu">as.numeric</span>(s10)<span class="sc">*</span><span class="dv">1000</span>,</span>
-<span id="cb40-27"><a href="Ch05.html#cb40-27" tabindex="-1"></a>         <span class="at">kods2=</span><span class="fu">as.numeric</span>(vgr),</span>
-<span id="cb40-28"><a href="Ch05.html#cb40-28" tabindex="-1"></a>         <span class="at">kods=</span>kods1<span class="sc">+</span>kods2) <span class="sc">%&gt;%</span> </span>
-<span id="cb40-29"><a href="Ch05.html#cb40-29" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(kods)) <span class="sc">%&gt;%</span> </span>
-<span id="cb40-30"><a href="Ch05.html#cb40-30" tabindex="-1"></a>  <span class="fu">filter</span>(kods1<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb40-31"><a href="Ch05.html#cb40-31" tabindex="-1"></a>  <span class="fu">filter</span>(kods2<span class="sc">&gt;</span><span class="dv">0</span>)</span>
-<span id="cb40-32"><a href="Ch05.html#cb40-32" tabindex="-1"></a></span>
-<span id="cb40-33"><a href="Ch05.html#cb40-33" tabindex="-1"></a><span class="co"># input layer</span></span>
-<span id="cb40-34"><a href="Ch05.html#cb40-34" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> mvr,</span>
-<span id="cb40-35"><a href="Ch05.html#cb40-35" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
-<span id="cb40-36"><a href="Ch05.html#cb40-36" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
-<span id="cb40-37"><a href="Ch05.html#cb40-37" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_ForestCodes_only.tif&quot;</span>,</span>
-<span id="cb40-38"><a href="Ch05.html#cb40-38" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;kods&quot;</span>,</span>
-<span id="cb40-39"><a href="Ch05.html#cb40-39" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
-<span id="cb40-40"><a href="Ch05.html#cb40-40" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
-<span id="cb40-41"><a href="Ch05.html#cb40-41" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
-<span id="cb40-42"><a href="Ch05.html#cb40-42" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb40-43"><a href="Ch05.html#cb40-43" tabindex="-1"></a></span>
-<span id="cb40-44"><a href="Ch05.html#cb40-44" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb40-45"><a href="Ch05.html#cb40-45" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
-<span id="cb40-46"><a href="Ch05.html#cb40-46" tabindex="-1"></a></span>
-<span id="cb40-47"><a href="Ch05.html#cb40-47" tabindex="-1"></a><span class="do">## Covered classes for forest diversity ----</span></span>
-<span id="cb40-48"><a href="Ch05.html#cb40-48" tabindex="-1"></a>forest_codes<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif&quot;</span>)</span>
+<span id="cb40-21"><a href="Ch05.html#cb40-21" tabindex="-1"></a><span class="co"># mezi</span></span>
+<span id="cb40-22"><a href="Ch05.html#cb40-22" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/MVR/nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb40-23"><a href="Ch05.html#cb40-23" tabindex="-1"></a></span>
+<span id="cb40-24"><a href="Ch05.html#cb40-24" tabindex="-1"></a>mvr<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb40-25"><a href="Ch05.html#cb40-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kods1=</span><span class="fu">as.numeric</span>(s10)<span class="sc">*</span><span class="dv">1000</span>,</span>
+<span id="cb40-26"><a href="Ch05.html#cb40-26" tabindex="-1"></a>         <span class="at">kods2=</span><span class="fu">as.numeric</span>(vgr),</span>
+<span id="cb40-27"><a href="Ch05.html#cb40-27" tabindex="-1"></a>         <span class="at">kods=</span>kods1<span class="sc">+</span>kods2) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-28"><a href="Ch05.html#cb40-28" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(kods)) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-29"><a href="Ch05.html#cb40-29" tabindex="-1"></a>  <span class="fu">filter</span>(kods1<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-30"><a href="Ch05.html#cb40-30" tabindex="-1"></a>  <span class="fu">filter</span>(kods2<span class="sc">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb40-31"><a href="Ch05.html#cb40-31" tabindex="-1"></a></span>
+<span id="cb40-32"><a href="Ch05.html#cb40-32" tabindex="-1"></a><span class="co"># input layer</span></span>
+<span id="cb40-33"><a href="Ch05.html#cb40-33" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> mvr,</span>
+<span id="cb40-34"><a href="Ch05.html#cb40-34" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
+<span id="cb40-35"><a href="Ch05.html#cb40-35" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb40-36"><a href="Ch05.html#cb40-36" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_ForestCodes_only.tif&quot;</span>,</span>
+<span id="cb40-37"><a href="Ch05.html#cb40-37" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;kods&quot;</span>,</span>
+<span id="cb40-38"><a href="Ch05.html#cb40-38" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
+<span id="cb40-39"><a href="Ch05.html#cb40-39" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
+<span id="cb40-40"><a href="Ch05.html#cb40-40" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
+<span id="cb40-41"><a href="Ch05.html#cb40-41" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb40-42"><a href="Ch05.html#cb40-42" tabindex="-1"></a></span>
+<span id="cb40-43"><a href="Ch05.html#cb40-43" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb40-44"><a href="Ch05.html#cb40-44" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb40-45"><a href="Ch05.html#cb40-45" tabindex="-1"></a></span>
+<span id="cb40-46"><a href="Ch05.html#cb40-46" tabindex="-1"></a><span class="do">## Covered classes for forest diversity ----</span></span>
+<span id="cb40-47"><a href="Ch05.html#cb40-47" tabindex="-1"></a>forest_codes<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif&quot;</span>)</span>
+<span id="cb40-48"><a href="Ch05.html#cb40-48" tabindex="-1"></a><span class="fu">plot</span>(forest_codes)</span>
 <span id="cb40-49"><a href="Ch05.html#cb40-49" tabindex="-1"></a>forest_covered<span class="ot">=</span><span class="fu">cover</span>(forest_codes,forest_broad)</span>
-<span id="cb40-50"><a href="Ch05.html#cb40-50" tabindex="-1"></a>forest_covered2<span class="ot">=</span><span class="fu">cover</span>(forest_covered,template_t,</span>
-<span id="cb40-51"><a href="Ch05.html#cb40-51" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif&quot;</span>,</span>
-<span id="cb40-52"><a href="Ch05.html#cb40-52" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb40-53"><a href="Ch05.html#cb40-53" tabindex="-1"></a></span>
-<span id="cb40-54"><a href="Ch05.html#cb40-54" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb40-55"><a href="Ch05.html#cb40-55" tabindex="-1"></a><span class="fu">rm</span>(forest_codes)</span>
-<span id="cb40-56"><a href="Ch05.html#cb40-56" tabindex="-1"></a><span class="fu">rm</span>(forest_covered)</span>
-<span id="cb40-57"><a href="Ch05.html#cb40-57" tabindex="-1"></a><span class="fu">rm</span>(forest_covered2)</span>
-<span id="cb40-58"><a href="Ch05.html#cb40-58" tabindex="-1"></a><span class="fu">rm</span>(forest_broad)</span>
-<span id="cb40-59"><a href="Ch05.html#cb40-59" tabindex="-1"></a></span>
-<span id="cb40-60"><a href="Ch05.html#cb40-60" tabindex="-1"></a></span>
-<span id="cb40-61"><a href="Ch05.html#cb40-61" tabindex="-1"></a></span>
-<span id="cb40-62"><a href="Ch05.html#cb40-62" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
-<span id="cb40-63"><a href="Ch05.html#cb40-63" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
-<span id="cb40-64"><a href="Ch05.html#cb40-64" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif&quot;</span>,</span>
-<span id="cb40-65"><a href="Ch05.html#cb40-65" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
-<span id="cb40-66"><a href="Ch05.html#cb40-66" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
-<span id="cb40-67"><a href="Ch05.html#cb40-67" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb40-68"><a href="Ch05.html#cb40-68" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
-<span id="cb40-69"><a href="Ch05.html#cb40-69" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
-<span id="cb40-70"><a href="Ch05.html#cb40-70" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_Forests_500x.tif&quot;</span>,</span>
-<span id="cb40-71"><a href="Ch05.html#cb40-71" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_Forests_500x&quot;</span>,</span>
-<span id="cb40-72"><a href="Ch05.html#cb40-72" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
-<span id="cb40-73"><a href="Ch05.html#cb40-73" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
-<span id="cb40-74"><a href="Ch05.html#cb40-74" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
-<span id="cb40-75"><a href="Ch05.html#cb40-75" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
-<span id="cb40-76"><a href="Ch05.html#cb40-76" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb40-77"><a href="Ch05.html#cb40-77" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb40-78"><a href="Ch05.html#cb40-78" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
-<span id="cb40-79"><a href="Ch05.html#cb40-79" tabindex="-1"></a>)</span>
-<span id="cb40-80"><a href="Ch05.html#cb40-80" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
-<span id="cb40-81"><a href="Ch05.html#cb40-81" tabindex="-1"></a></span>
-<span id="cb40-82"><a href="Ch05.html#cb40-82" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>))</span>
-<span id="cb40-83"><a href="Ch05.html#cb40-83" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
+<span id="cb40-50"><a href="Ch05.html#cb40-50" tabindex="-1"></a><span class="fu">plot</span>(forest_covered)</span>
+<span id="cb40-51"><a href="Ch05.html#cb40-51" tabindex="-1"></a></span>
+<span id="cb40-52"><a href="Ch05.html#cb40-52" tabindex="-1"></a>forest_covered2<span class="ot">=</span><span class="fu">cover</span>(forest_covered,template_t,</span>
+<span id="cb40-53"><a href="Ch05.html#cb40-53" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif&quot;</span>,</span>
+<span id="cb40-54"><a href="Ch05.html#cb40-54" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb40-55"><a href="Ch05.html#cb40-55" tabindex="-1"></a><span class="fu">plot</span>(forest_covered2)</span>
+<span id="cb40-56"><a href="Ch05.html#cb40-56" tabindex="-1"></a></span>
+<span id="cb40-57"><a href="Ch05.html#cb40-57" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb40-58"><a href="Ch05.html#cb40-58" tabindex="-1"></a><span class="fu">rm</span>(forest_codes)</span>
+<span id="cb40-59"><a href="Ch05.html#cb40-59" tabindex="-1"></a><span class="fu">rm</span>(forest_covered)</span>
+<span id="cb40-60"><a href="Ch05.html#cb40-60" tabindex="-1"></a><span class="fu">rm</span>(forest_covered2)</span>
+<span id="cb40-61"><a href="Ch05.html#cb40-61" tabindex="-1"></a><span class="fu">rm</span>(forest_broad)</span>
+<span id="cb40-62"><a href="Ch05.html#cb40-62" tabindex="-1"></a></span>
+<span id="cb40-63"><a href="Ch05.html#cb40-63" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
+<span id="cb40-64"><a href="Ch05.html#cb40-64" tabindex="-1"></a></span>
+<span id="cb40-65"><a href="Ch05.html#cb40-65" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
+<span id="cb40-66"><a href="Ch05.html#cb40-66" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif&quot;</span>,</span>
+<span id="cb40-67"><a href="Ch05.html#cb40-67" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
+<span id="cb40-68"><a href="Ch05.html#cb40-68" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
+<span id="cb40-69"><a href="Ch05.html#cb40-69" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb40-70"><a href="Ch05.html#cb40-70" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
+<span id="cb40-71"><a href="Ch05.html#cb40-71" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
+<span id="cb40-72"><a href="Ch05.html#cb40-72" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_Forests_500x.tif&quot;</span>,</span>
+<span id="cb40-73"><a href="Ch05.html#cb40-73" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_Forests_500x&quot;</span>,</span>
+<span id="cb40-74"><a href="Ch05.html#cb40-74" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
+<span id="cb40-75"><a href="Ch05.html#cb40-75" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
+<span id="cb40-76"><a href="Ch05.html#cb40-76" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
+<span id="cb40-77"><a href="Ch05.html#cb40-77" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
+<span id="cb40-78"><a href="Ch05.html#cb40-78" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-79"><a href="Ch05.html#cb40-79" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb40-80"><a href="Ch05.html#cb40-80" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
+<span id="cb40-81"><a href="Ch05.html#cb40-81" tabindex="-1"></a>)</span>
+<span id="cb40-82"><a href="Ch05.html#cb40-82" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
+<span id="cb40-83"><a href="Ch05.html#cb40-83" tabindex="-1"></a></span>
+<span id="cb40-84"><a href="Ch05.html#cb40-84" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Forests_500x.tif&quot;</span>))</span>
+<span id="cb40-85"><a href="Ch05.html#cb40-85" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch05.04.03" class="section level3 hasAnchor" number="5.4.3">
@@ -2472,67 +2526,74 @@ there were no gaps to fill.</p>
 <span id="cb41-12"><a href="Ch05.html#cb41-12" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
 <span id="cb41-13"><a href="Ch05.html#cb41-13" tabindex="-1"></a></span>
 <span id="cb41-14"><a href="Ch05.html#cb41-14" tabindex="-1"></a></span>
-<span id="cb41-15"><a href="Ch05.html#cb41-15" tabindex="-1"></a><span class="co"># farmland diversity -----</span></span>
-<span id="cb41-16"><a href="Ch05.html#cb41-16" tabindex="-1"></a></span>
-<span id="cb41-17"><a href="Ch05.html#cb41-17" tabindex="-1"></a><span class="do">## Farmland broad ----</span></span>
-<span id="cb41-18"><a href="Ch05.html#cb41-18" tabindex="-1"></a>farmland_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif&quot;</span>)</span>
-<span id="cb41-19"><a href="Ch05.html#cb41-19" tabindex="-1"></a></span>
-<span id="cb41-20"><a href="Ch05.html#cb41-20" tabindex="-1"></a><span class="do">## Farmland codes ----</span></span>
-<span id="cb41-21"><a href="Ch05.html#cb41-21" tabindex="-1"></a>lad<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
-<span id="cb41-22"><a href="Ch05.html#cb41-22" tabindex="-1"></a>lad<span class="sc">$</span>product_code<span class="ot">=</span><span class="fu">as.numeric</span>(lad<span class="sc">$</span>PRODUCT_CODE)<span class="sc">+</span><span class="dv">1000</span></span>
+<span id="cb41-15"><a href="Ch05.html#cb41-15" tabindex="-1"></a></span>
+<span id="cb41-16"><a href="Ch05.html#cb41-16" tabindex="-1"></a><span class="co"># farmland diversity -----</span></span>
+<span id="cb41-17"><a href="Ch05.html#cb41-17" tabindex="-1"></a></span>
+<span id="cb41-18"><a href="Ch05.html#cb41-18" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="Ch05.html#cb41-19" tabindex="-1"></a><span class="do">## Farmland broad ----</span></span>
+<span id="cb41-20"><a href="Ch05.html#cb41-20" tabindex="-1"></a></span>
+<span id="cb41-21"><a href="Ch05.html#cb41-21" tabindex="-1"></a>farmland_broad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif&quot;</span>)</span>
+<span id="cb41-22"><a href="Ch05.html#cb41-22" tabindex="-1"></a></span>
 <span id="cb41-23"><a href="Ch05.html#cb41-23" tabindex="-1"></a></span>
-<span id="cb41-24"><a href="Ch05.html#cb41-24" tabindex="-1"></a><span class="co"># input layer</span></span>
-<span id="cb41-25"><a href="Ch05.html#cb41-25" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> lad,</span>
-<span id="cb41-26"><a href="Ch05.html#cb41-26" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
-<span id="cb41-27"><a href="Ch05.html#cb41-27" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
-<span id="cb41-28"><a href="Ch05.html#cb41-28" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_FarmlandCodes_only.tif&quot;</span>,</span>
-<span id="cb41-29"><a href="Ch05.html#cb41-29" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;product_code&quot;</span>,</span>
-<span id="cb41-30"><a href="Ch05.html#cb41-30" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
-<span id="cb41-31"><a href="Ch05.html#cb41-31" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
-<span id="cb41-32"><a href="Ch05.html#cb41-32" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
-<span id="cb41-33"><a href="Ch05.html#cb41-33" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb41-34"><a href="Ch05.html#cb41-34" tabindex="-1"></a></span>
-<span id="cb41-35"><a href="Ch05.html#cb41-35" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb41-36"><a href="Ch05.html#cb41-36" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
-<span id="cb41-37"><a href="Ch05.html#cb41-37" tabindex="-1"></a></span>
-<span id="cb41-38"><a href="Ch05.html#cb41-38" tabindex="-1"></a></span>
-<span id="cb41-39"><a href="Ch05.html#cb41-39" tabindex="-1"></a><span class="do">## Covered classes for farmland diversity ----</span></span>
-<span id="cb41-40"><a href="Ch05.html#cb41-40" tabindex="-1"></a>farmland_codes<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif&quot;</span>)</span>
-<span id="cb41-41"><a href="Ch05.html#cb41-41" tabindex="-1"></a>farmland_covered<span class="ot">=</span><span class="fu">cover</span>(farmland_codes,farmland_broad)</span>
-<span id="cb41-42"><a href="Ch05.html#cb41-42" tabindex="-1"></a>farmland_covered2<span class="ot">=</span><span class="fu">cover</span>(farmland_covered,template_t,</span>
-<span id="cb41-43"><a href="Ch05.html#cb41-43" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif&quot;</span>,</span>
-<span id="cb41-44"><a href="Ch05.html#cb41-44" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb41-45"><a href="Ch05.html#cb41-45" tabindex="-1"></a><span class="fu">plot</span>(farmland_covered2)</span>
-<span id="cb41-46"><a href="Ch05.html#cb41-46" tabindex="-1"></a></span>
-<span id="cb41-47"><a href="Ch05.html#cb41-47" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb41-48"><a href="Ch05.html#cb41-48" tabindex="-1"></a><span class="fu">rm</span>(farmland_codes)</span>
-<span id="cb41-49"><a href="Ch05.html#cb41-49" tabindex="-1"></a><span class="fu">rm</span>(farmland_covered)</span>
-<span id="cb41-50"><a href="Ch05.html#cb41-50" tabindex="-1"></a><span class="fu">rm</span>(farmland_covered2)</span>
-<span id="cb41-51"><a href="Ch05.html#cb41-51" tabindex="-1"></a><span class="fu">rm</span>(farmland_broad)</span>
+<span id="cb41-24"><a href="Ch05.html#cb41-24" tabindex="-1"></a><span class="do">## Farmland codes ----</span></span>
+<span id="cb41-25"><a href="Ch05.html#cb41-25" tabindex="-1"></a></span>
+<span id="cb41-26"><a href="Ch05.html#cb41-26" tabindex="-1"></a>lad<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/LAD/Lauki_2024.parquet&quot;</span>)</span>
+<span id="cb41-27"><a href="Ch05.html#cb41-27" tabindex="-1"></a>lad<span class="sc">$</span>product_code<span class="ot">=</span><span class="fu">as.numeric</span>(lad<span class="sc">$</span>PRODUCT_CODE)<span class="sc">+</span><span class="dv">1000</span></span>
+<span id="cb41-28"><a href="Ch05.html#cb41-28" tabindex="-1"></a></span>
+<span id="cb41-29"><a href="Ch05.html#cb41-29" tabindex="-1"></a><span class="co"># input layer</span></span>
+<span id="cb41-30"><a href="Ch05.html#cb41-30" tabindex="-1"></a><span class="fu">polygon2input</span>(<span class="at">vector_data =</span> lad,</span>
+<span id="cb41-31"><a href="Ch05.html#cb41-31" tabindex="-1"></a>              <span class="at">template_path =</span> <span class="st">&quot;./Templates/TemplateRasters/LV10m_10km.tif&quot;</span>,</span>
+<span id="cb41-32"><a href="Ch05.html#cb41-32" tabindex="-1"></a>              <span class="at">out_path =</span> <span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb41-33"><a href="Ch05.html#cb41-33" tabindex="-1"></a>              <span class="at">file_name =</span> <span class="st">&quot;Diversity_FarmlandCodes_only.tif&quot;</span>,</span>
+<span id="cb41-34"><a href="Ch05.html#cb41-34" tabindex="-1"></a>              <span class="at">value_field =</span> <span class="st">&quot;product_code&quot;</span>,</span>
+<span id="cb41-35"><a href="Ch05.html#cb41-35" tabindex="-1"></a>              <span class="at">fun=</span><span class="st">&quot;first&quot;</span>,</span>
+<span id="cb41-36"><a href="Ch05.html#cb41-36" tabindex="-1"></a>              <span class="at">prepare=</span><span class="cn">FALSE</span>,</span>
+<span id="cb41-37"><a href="Ch05.html#cb41-37" tabindex="-1"></a>              <span class="at">project_mode =</span> <span class="st">&quot;auto&quot;</span>,</span>
+<span id="cb41-38"><a href="Ch05.html#cb41-38" tabindex="-1"></a>              <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-39"><a href="Ch05.html#cb41-39" tabindex="-1"></a></span>
+<span id="cb41-40"><a href="Ch05.html#cb41-40" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb41-41"><a href="Ch05.html#cb41-41" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb41-42"><a href="Ch05.html#cb41-42" tabindex="-1"></a></span>
+<span id="cb41-43"><a href="Ch05.html#cb41-43" tabindex="-1"></a></span>
+<span id="cb41-44"><a href="Ch05.html#cb41-44" tabindex="-1"></a><span class="do">## Covered classes for farmland diversity ----</span></span>
+<span id="cb41-45"><a href="Ch05.html#cb41-45" tabindex="-1"></a></span>
+<span id="cb41-46"><a href="Ch05.html#cb41-46" tabindex="-1"></a>farmland_codes<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif&quot;</span>)</span>
+<span id="cb41-47"><a href="Ch05.html#cb41-47" tabindex="-1"></a>farmland_covered<span class="ot">=</span><span class="fu">cover</span>(farmland_codes,farmland_broad)</span>
+<span id="cb41-48"><a href="Ch05.html#cb41-48" tabindex="-1"></a>farmland_covered2<span class="ot">=</span><span class="fu">cover</span>(farmland_covered,template_t,</span>
+<span id="cb41-49"><a href="Ch05.html#cb41-49" tabindex="-1"></a>                        <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif&quot;</span>,</span>
+<span id="cb41-50"><a href="Ch05.html#cb41-50" tabindex="-1"></a>                        <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb41-51"><a href="Ch05.html#cb41-51" tabindex="-1"></a><span class="fu">plot</span>(farmland_covered2)</span>
 <span id="cb41-52"><a href="Ch05.html#cb41-52" tabindex="-1"></a></span>
-<span id="cb41-53"><a href="Ch05.html#cb41-53" tabindex="-1"></a></span>
-<span id="cb41-54"><a href="Ch05.html#cb41-54" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
-<span id="cb41-55"><a href="Ch05.html#cb41-55" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
-<span id="cb41-56"><a href="Ch05.html#cb41-56" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif&quot;</span>,</span>
-<span id="cb41-57"><a href="Ch05.html#cb41-57" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
-<span id="cb41-58"><a href="Ch05.html#cb41-58" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
-<span id="cb41-59"><a href="Ch05.html#cb41-59" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb41-60"><a href="Ch05.html#cb41-60" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
-<span id="cb41-61"><a href="Ch05.html#cb41-61" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
-<span id="cb41-62"><a href="Ch05.html#cb41-62" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_Farmland_500x.tif&quot;</span>,</span>
-<span id="cb41-63"><a href="Ch05.html#cb41-63" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_Farmland_500x&quot;</span>,</span>
-<span id="cb41-64"><a href="Ch05.html#cb41-64" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
-<span id="cb41-65"><a href="Ch05.html#cb41-65" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
-<span id="cb41-66"><a href="Ch05.html#cb41-66" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
-<span id="cb41-67"><a href="Ch05.html#cb41-67" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
-<span id="cb41-68"><a href="Ch05.html#cb41-68" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb41-69"><a href="Ch05.html#cb41-69" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb41-70"><a href="Ch05.html#cb41-70" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
-<span id="cb41-71"><a href="Ch05.html#cb41-71" tabindex="-1"></a>)</span>
-<span id="cb41-72"><a href="Ch05.html#cb41-72" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
-<span id="cb41-73"><a href="Ch05.html#cb41-73" tabindex="-1"></a></span>
-<span id="cb41-74"><a href="Ch05.html#cb41-74" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>))</span>
-<span id="cb41-75"><a href="Ch05.html#cb41-75" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
+<span id="cb41-53"><a href="Ch05.html#cb41-53" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb41-54"><a href="Ch05.html#cb41-54" tabindex="-1"></a><span class="fu">rm</span>(farmland_codes)</span>
+<span id="cb41-55"><a href="Ch05.html#cb41-55" tabindex="-1"></a><span class="fu">rm</span>(farmland_covered)</span>
+<span id="cb41-56"><a href="Ch05.html#cb41-56" tabindex="-1"></a><span class="fu">rm</span>(farmland_covered2)</span>
+<span id="cb41-57"><a href="Ch05.html#cb41-57" tabindex="-1"></a><span class="fu">rm</span>(farmland_broad)</span>
+<span id="cb41-58"><a href="Ch05.html#cb41-58" tabindex="-1"></a></span>
+<span id="cb41-59"><a href="Ch05.html#cb41-59" tabindex="-1"></a></span>
+<span id="cb41-60"><a href="Ch05.html#cb41-60" tabindex="-1"></a><span class="do">## Diversity index at 25ha -----</span></span>
+<span id="cb41-61"><a href="Ch05.html#cb41-61" tabindex="-1"></a></span>
+<span id="cb41-62"><a href="Ch05.html#cb41-62" tabindex="-1"></a>res_tbl <span class="ot">&lt;-</span> <span class="fu">landscape_function</span>(</span>
+<span id="cb41-63"><a href="Ch05.html#cb41-63" tabindex="-1"></a>  <span class="at">landscape      =</span> <span class="st">&quot;./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif&quot;</span>,</span>
+<span id="cb41-64"><a href="Ch05.html#cb41-64" tabindex="-1"></a>  <span class="at">zones          =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls500_sauzeme.parquet&quot;</span>,</span>
+<span id="cb41-65"><a href="Ch05.html#cb41-65" tabindex="-1"></a>  <span class="at">id_field       =</span> <span class="st">&quot;rinda500&quot;</span>,</span>
+<span id="cb41-66"><a href="Ch05.html#cb41-66" tabindex="-1"></a>  <span class="at">tile_field     =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb41-67"><a href="Ch05.html#cb41-67" tabindex="-1"></a>  <span class="at">template       =</span> <span class="st">&quot;./Templates/TemplateRasters/LV500m_10km.tif&quot;</span>,</span>
+<span id="cb41-68"><a href="Ch05.html#cb41-68" tabindex="-1"></a>  <span class="at">out_dir        =</span> <span class="st">&quot;./RasterGrids_500m/2024/&quot;</span>,</span>
+<span id="cb41-69"><a href="Ch05.html#cb41-69" tabindex="-1"></a>  <span class="at">out_filename   =</span> <span class="st">&quot;Diversity_Farmland_500x.tif&quot;</span>,</span>
+<span id="cb41-70"><a href="Ch05.html#cb41-70" tabindex="-1"></a>  <span class="at">out_layername  =</span> <span class="st">&quot;Diversity_Farmland_500x&quot;</span>,</span>
+<span id="cb41-71"><a href="Ch05.html#cb41-71" tabindex="-1"></a>  <span class="at">what           =</span> <span class="st">&quot;lsm_l_shdi&quot;</span>,</span>
+<span id="cb41-72"><a href="Ch05.html#cb41-72" tabindex="-1"></a>  <span class="at">rasterize_engine =</span> <span class="st">&quot;fasterize&quot;</span>,</span>
+<span id="cb41-73"><a href="Ch05.html#cb41-73" tabindex="-1"></a>  <span class="at">n_workers      =</span> <span class="dv">8</span>,</span>
+<span id="cb41-74"><a href="Ch05.html#cb41-74" tabindex="-1"></a>  <span class="at">future_max_size =</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">1024</span><span class="sc">^</span><span class="dv">3</span>,</span>
+<span id="cb41-75"><a href="Ch05.html#cb41-75" tabindex="-1"></a>  <span class="at">fill_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb41-76"><a href="Ch05.html#cb41-76" tabindex="-1"></a>  <span class="at">plot_gaps      =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb41-77"><a href="Ch05.html#cb41-77" tabindex="-1"></a>  <span class="at">plot_result    =</span> <span class="cn">TRUE</span></span>
+<span id="cb41-78"><a href="Ch05.html#cb41-78" tabindex="-1"></a>)</span>
+<span id="cb41-79"><a href="Ch05.html#cb41-79" tabindex="-1"></a><span class="fu">print</span>(res_tbl)</span>
+<span id="cb41-80"><a href="Ch05.html#cb41-80" tabindex="-1"></a></span>
+<span id="cb41-81"><a href="Ch05.html#cb41-81" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_500m/2024/Diversity_Farmland_500x.tif&quot;</span>))</span>
+<span id="cb41-82"><a href="Ch05.html#cb41-82" tabindex="-1"></a><span class="fu">rm</span>(res_tbl)</span></code></pre></div>
 </details>
 
 </div>

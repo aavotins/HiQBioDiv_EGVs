@@ -5,7 +5,6 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 
 
 # Templates ----
-
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
@@ -13,8 +12,6 @@ nulles10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 
 
 # Bogs ----
-
-
 neatklata71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif")
 neatklata71107120=ifel(neatklata71107120>0,1,NA)
 plot(neatklata71107120)
@@ -48,7 +45,6 @@ writeRaster(sunuYN,
 
 
 # Transitional mires ----
-
 parejas_proj=project(tikai_parejas,template10)
 parejasYN=cover(parejas_proj,nulles10)
 plot(parejasYN)

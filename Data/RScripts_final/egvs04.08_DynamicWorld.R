@@ -9,7 +9,7 @@ template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 faili=data.frame(faili=list.files("./Geodata/2024/DynamicWorld/RAW/"))
 faili$celi_sakums=paste0("./Geodata/2024/DynamicWorld/RAW/",faili$faili)
 
-# Sagatavošana ----
+# prepping ----
 faili=faili %>% 
   separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
   mutate(unikalais=paste0(DW,"_",gads,"_",periods),

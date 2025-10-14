@@ -40,7 +40,7 @@ write_sf(aizsargdambji,
          append=FALSE)
 rm(aizsargdambji)
 
-# dabiskās ūdensteces ----
+# dabiskas udensteces ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
@@ -186,7 +186,7 @@ n_features <- attr(parsed$FeatureCollection, "numberMatched")
 n_features
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_draincollectors"
 crs_code <- 3059
@@ -249,7 +249,7 @@ rm(list=ls())
 
 
 
-# drenāžas tīkla būves ----
+# drenazas tikla būves ----
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 url=parse_url(link)
@@ -274,7 +274,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_networkstructures"
 crs_code <- 3059
@@ -337,7 +337,7 @@ rm(list=ls())
 
 
 
-# grāvji -----
+# gravji -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -363,7 +363,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditches"
 crs_code <- 3059
@@ -426,7 +426,7 @@ rm(list=ls())
 
 
 
-# hidrometriskie posteņi ----
+# hidrometriskie posteni ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -452,7 +452,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_hydropost"
 crs_code <- 3059
@@ -539,7 +539,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_bigdraincollectors"
 crs_code <- 3059
@@ -629,7 +629,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspickets"
 crs_code <- 3059
@@ -690,7 +690,7 @@ write_sf(Piketi_all2,
 rm(list=ls())
 
 
-# polderu sūkņu stacijas -----
+# polderu suknu stacijas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -716,7 +716,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderpumpingstation"
 crs_code <- 3059
@@ -818,7 +818,7 @@ PolderuTeritorijas_all2 = poligoni[!st_is_empty(poligoni),,drop=FALSE] # 0
 table(st_is_valid(PolderuTeritorijas_all2))
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderterritory"
 crs_code <- 3059
@@ -907,7 +907,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_catchment"
 crs_code <- 3059
@@ -1009,7 +1009,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_connectionpoints"
 crs_code <- 3059
@@ -1073,7 +1073,7 @@ write_sf(Savienojumi_all2,
 rm(list=ls())
 
 
-# valsts nozīme ūdensnotekas -----
+# valsts nozimes ūdensnotekas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1099,7 +1099,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_statecontrolledrivers"
 crs_code <- 3059
@@ -1163,7 +1163,7 @@ write_sf(ValstsNozimesUdensnotekas_all2,
 rm(list=ls())
 
 
-# zmni reģions ----
+# zmni regions ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1191,7 +1191,7 @@ geometrijam
 library(gdalUtilities)
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_zmniregion"
 crs_code <- 3059
@@ -1266,7 +1266,7 @@ rm(list=ls())
 
 
 
-# ūdensnotekas (novadrāvji) -----
+# udensnotekas (novadgravji) -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1292,7 +1292,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_waterdrainditches"
 crs_code <- 3059
@@ -1358,7 +1358,7 @@ rm(list=ls())
 
 
 
-# ūdensnoteku un grāvju piketi ----
+# udensnoteku un gravju piketi ----
 
 
 
@@ -1385,7 +1385,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditchpicket"
 crs_code <- 3059
@@ -1447,7 +1447,7 @@ rm(list=ls())
 
 
 
-# ūdensteču asis ----
+# udenstecu asis ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1473,7 +1473,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriversline"
 crs_code <- 3059
@@ -1538,7 +1538,7 @@ rm(list=ls())
 
 
 
-# ūdenstešu ūdens virsmas laukumi ----
+# udens virsmas laukumi ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1563,7 +1563,7 @@ geometrijam <- read_sf(request)
 geometrijam
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspolygon"
 crs_code <- 3059

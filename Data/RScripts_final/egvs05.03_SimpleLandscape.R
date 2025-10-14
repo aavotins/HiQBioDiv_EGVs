@@ -688,7 +688,7 @@ r_smiltaji_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_m
 bare_cover=terra::merge(r_smiltaji_topo,r_smiltaji_mvr,
                                filename="./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif",
                                overwrite=TRUE)
-# liekā aizvākšana
+# cleaning
 rm(r_smiltaji_topo)
 rm(r_smiltaji_mvr)
 rm(bare_cover)

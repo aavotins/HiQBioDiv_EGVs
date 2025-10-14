@@ -77,11 +77,10 @@ tiled_buffers(
   out_dir = "./Templates/TemplateGridPoints/tiles",
   buffer_mode = "sparse",
   mapping_sparse = list("pts100_sauzeme.parquet" = c(500, 1250), 
-                        "pts300_sauzeme.parquet" =  3000, 
+                        "pts300_sauzeme.parquet" = 3000, 
                         "pts1000_sauzeme.parquet" = 10000),
   split_field = "tks50km",
   n_workers = 4,
-  os_type = NULL,
   future_max_mem_gb = 4,
   overwrite = FALSE,
   quiet = FALSE
@@ -115,7 +114,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 download_raster_templates(
   url = "https://zenodo.org/api/records/14497070/files-archive",
   out_dir = "./Templates/TemplateRasters",
-  overwrite = FALSE,
+  overwrite = TRUE,
   quiet = FALSE
 )
 ```

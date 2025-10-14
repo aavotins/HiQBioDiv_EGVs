@@ -56,10 +56,9 @@ writeRaster(mozaika,"./Geodata/2024/DEM/mozDEM_10m.tif")
 ## slope
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees", 
-                filename="./RasterGrids_10m/2024/Slope_10m.tif", overwrite=TRUE)  
-
+                filename="./Geodata/2024/DEM/Terrain_Slope_10m.tif", overwrite=TRUE)  
 
 ## aspect 
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 virzieni=terrain(reljefs, v="aspect", neighbors=8, unit="degrees", 
-                 filename="./RasterGrids_10m/2024/Aspect_10m.tif", overwrite=TRUE)
+                 filename="./Geodata/2024/DEM/Terrain_Aspect_10m.tif", overwrite=TRUE)

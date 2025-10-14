@@ -5,7 +5,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # templates ----
-
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 tikls1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
 

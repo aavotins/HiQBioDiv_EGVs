@@ -14,8 +14,6 @@ template_r=raster(template_t)
 
 # general diversity ----
 
-# Ainava_vienk_mask & Ainava_LaukuDaudzveidibai & Ainava_MezuDaudzveidibai -> Ainava_KopejaiDaudzveidibai
-
 ## Farmland broad ----
 
 # classification 
@@ -224,7 +222,7 @@ forest_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
 ## forest codes ----
 
 
-# meži
+# mezi
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 
 mvr=mvr %>% 

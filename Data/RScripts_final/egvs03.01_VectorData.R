@@ -32,7 +32,6 @@ tiled_buffers(
                         "pts1000_sauzeme.parquet" = 10000),
   split_field = "tks50km",
   n_workers = 4,
-  os_type = NULL,
   future_max_mem_gb = 4,
   overwrite = FALSE,
   quiet = FALSE

@@ -36,16 +36,18 @@ if(!require(exactextractr)){install.packages("exactextractr");require(exactextra
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
+# part one ----
+
 # reljefs
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 
-# drenazas tikla buves
+# drainage network structures
 st_layers("./Geodata/2024/MKIS/MKIS_2025.gpkg")
 
 dtb=st_read("./Geodata/2024/MKIS/MKIS_2025.gpkg",layer="DrenazasTiklaBuves")
 dtb_buffer=st_buffer(dtb,dist=10)
 
-# tilti 
+# bridges 
 tiltiL=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
 tiltiL_buffer=st_buffer(tiltiL,dist=30)
 tiltiP=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
@@ -56,22 +58,36 @@ lvm_caurtekas=st_read("./Geodata/2024/LVM_OpenData/LVM_CAURTEKAS/LVM_CAURTEKAS_S
 lvm_buffer=st_buffer(lvm_caurtekas,dist=30)
 
 
-# visi buferi 
+# buffers
 st_geometry(dtb_buffer)="geometry"
 st_geometry(tiltiL_buffer)="geometry"
 st_geometry(tiltiP_buffer)="geometry"
 st_geometry(lvm_buffer)="geometry"
 visi_buferi=bind_rows(dtb_buffer,tiltiL_buffer,tiltiP_buffer,lvm_buffer)
 
-# caurumosana
+# incorporation in DEM
 visi_buferi$vertiba=exactextractr::exact_extract(reljefs,visi_buferi,"min")
 
-templis=raster::raster(template)
 caurumi=fasterize::fasterize(visi_buferi,templis,field="vertiba")
 caurumi2=rast(caurumi)
 caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
                overwrite=TRUE,
-               filename="./IevadesDati/reljefs/caurtDEM_10m.tif")
+               filename="./Geodata/2024/DEM/caurtDEM_10m.tif")
+
+# cleaning
+rm(caurumi)
+rm(caurumi2)
+rm(dtb)
+rm(dtb_buffer)
+rm(lvm_buffer)
+rm(lvm_caurtekas)
+rm(reljefs)
+rm(tiltiL)
+rm(tiltiL_buffer)
+rm(tiltiP)
+rm(tiltiP_buffer)
+rm(visi_buferi)
+rm(caurumains)
 ```
 
 This DEM was then used for geoprocessing to find terrain depressions and 
@@ -105,13 +121,13 @@ if(!require(whitebox)){install.packages("whitebox");require(whitebox)}
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
+# part two ----
 
 # DEM
 caurumainis=rast("./Geodata/2024/DEM/caurtDEM_10m.tif")
 
 # Sinks
-
-## breached sinks un depth in sinks
+## breached sinks and depth in sinks
 wbt_breach_depressions_least_cost(
   dem = "./Geodata/2024/DEM/caurtDEM_10m.tif",
   output = "./Geodata/2024/DEM/caurtDEM_breachedNF.tif",
@@ -128,8 +144,7 @@ sinks=rast("./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif")
 sinks2 <- ifel(sinks >= 1, 1, sinks,
                filename="./Geodata/2024/DEM/Terrain_SinkYN_breached_10m.tif")
 plot(sinks2)
-
-
+unlink("./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif")
 
 # TWI
 ## breaching
@@ -138,7 +153,6 @@ wbt_breach_depressions_least_cost(
   output = "./Geodata/2024/DEM/caurtDEM_breachedF.tif",
   dist = 10,
   fill = TRUE)
-
 
 ### filling
 wbt_fill_depressions_wang_and_liu(
@@ -156,11 +170,20 @@ wbt_wetness_index(sca = "./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif",
                   slope = "./Geodata/2024/DEM/Terrain_Slope_10m.tif",
                   output = "./Geodata/2024/DEM/TWI_caurtDEM.tif")
 twi=rast("./Geodata/2024/DEM/TWI_caurtDEM.tif")
-hist(twi) # excessive values
+hist(twi) # vietumis ir sevišķi ekscesīvas vērtības
 plot(twi)
 twi2=ifel(twi>20,20,twi)
+plot(twi2)
+twi2x=ifel(is.na(twi2)&!is.na(template),20,twi2) # Lake Burtnieks
 
 writeRaster(twi2x,filename="./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif")
+
+# cleaning
+rm(sinks)
+rm(sinks2)
+rm(caurumainis)
+rm(twi)
+rm(twi2)
 ```
 
 Since the initial DEM input was created by filling in water bodies using 
@@ -180,6 +203,8 @@ if(!require(exactextractr)){install.packages("exactextractr");require(exactextra
 
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+# third part ----
+
 
 #  dealing with waterbodies 
 udeni=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
@@ -1165,7 +1190,8 @@ niedraji_topo=topo %>%
 r_niedraji_topo=fasterize(niedraji_topo,template_r,field="yes")
 raster::writeRaster(r_niedraji_topo,
                     "./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif",
-                    progress="text")
+                    progress="text",
+                    overwrite=TRUE)
 # cleaning
 rm(niedraji_topo)
 rm(r_niedraji_topo)
@@ -1251,8 +1277,8 @@ rm(r_purvi_topo)
 rm(r_purvi_mvr)
 rm(r_bebri_mvr)
 rm(bogs)
-rm(mires)
 rm(bogsY)
+rm(mires)
 rm(miresY)
 rm(topo)
 rm(wetlands_cover)
@@ -1336,7 +1362,7 @@ r_smiltaji_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_m
 bare_cover=terra::merge(r_smiltaji_topo,r_smiltaji_mvr,
                                filename="./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif",
                                overwrite=TRUE)
-# liekā aizvākšana
+# cleaning
 rm(r_smiltaji_topo)
 rm(r_smiltaji_mvr)
 rm(bare_cover)
@@ -1363,7 +1389,6 @@ template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
 
-
 # final merging and covering ----
 
 # DW  
@@ -1383,14 +1408,31 @@ writeRaster(dw2,
             overwrite=TRUE)
 # other layers
 celi=rast("./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif")
+plot(celi)
+
 niedraji=rast("RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif")
+plot(niedraji)
+
 udeni=rast("./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif")
+plot(udeni)
+
 lauki=rast("./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif")
+plot(lauki)
+
 vasarnicas=rast("./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif")
+plot(vasarnicas)
+
 mezi=rast("./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif")
+plot(mezi)
+
 mitraji=rast("./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif")
+plot(mitraji)
+
 smiltaji=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif")
+plot(smiltaji)
+
 dw2=rast("./RasterGrids_10m/2024/DW_reclass.tif")
+plot(dw2)
 
 # covering in correct order
 rastri_ainavai=cover(celi,niedraji)
@@ -1403,6 +1445,7 @@ rastri_ainavai=cover(rastri_ainavai,smiltaji)
 rastri_ainavai=cover(rastri_ainavai,dw2,
                            filename="./RasterGrids_10m/2024/Ainava_vienkarsa.tif",
                            overwrite=TRUE)
+plot(rastri_ainavai)
 
 # cleaning
 rm(celi)
@@ -1420,6 +1463,9 @@ rm(rastri_ainavai)
 
 # masking
 rastrs_ainava=rast("./RasterGrids_10m/2024/Ainava_vienkarsa.tif")
+plot(rastrs_ainava)
+freq(rastrs_ainava)
+
 masketa_ainava=terra::mask(rastrs_ainava,
                            template_t,
                            filename="./RasterGrids_10m/2024/Ainava_vienk_mask.tif",
@@ -1528,6 +1574,7 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
+
 # general diversity ----
 
 ## Farmland broad ----
@@ -1607,9 +1654,11 @@ rm(mvr)
 rm(mvr2)
 
 ## General classification ----
+
 simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 
 ## Covered classes for general diversity ----
+
 farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
 forests_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
 
@@ -1617,6 +1666,7 @@ diversity_classes=cover(farmland_broad,forests_broad)
 diversity_classes2=cover(diversity_classes,simple_landscape,
                         filename="./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
                         overwrite=TRUE)
+
 rm(simple_landscape)
 rm(farmland_broad)
 rm(forests_broad)
@@ -1624,6 +1674,8 @@ rm(diversity_classes)
 rm(diversity_classes2)
 
 ## Diversity index at 25ha -----
+
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -1688,9 +1740,8 @@ forest_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
 
 
 ## forest codes ----
-
-# meži
-mvr=st_read_parquet("./Geodata/2024/MVR/")
+# mezi
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 
 mvr=mvr %>% 
   mutate(kods1=as.numeric(s10)*1000,
@@ -1716,10 +1767,14 @@ rm(mvr)
 
 ## Covered classes for forest diversity ----
 forest_codes=rast("./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif")
+plot(forest_codes)
 forest_covered=cover(forest_codes,forest_broad)
+plot(forest_covered)
+
 forest_covered2=cover(forest_covered,template_t,
                         filename="./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
                         overwrite=TRUE)
+plot(forest_covered2)
 
 # cleaning
 rm(forest_codes)
@@ -1727,9 +1782,8 @@ rm(forest_covered)
 rm(forest_covered2)
 rm(forest_broad)
 
-
-
 ## Diversity index at 25ha -----
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -1788,12 +1842,17 @@ template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
 
+
 # farmland diversity -----
 
+
 ## Farmland broad ----
+
 farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
 
+
 ## Farmland codes ----
+
 lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
 lad$product_code=as.numeric(lad$PRODUCT_CODE)+1000
 
@@ -1813,6 +1872,7 @@ rm(lad)
 
 
 ## Covered classes for farmland diversity ----
+
 farmland_codes=rast("./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif")
 farmland_covered=cover(farmland_codes,farmland_broad)
 farmland_covered2=cover(farmland_covered,template_t,
@@ -1828,6 +1888,7 @@ rm(farmland_broad)
 
 
 ## Diversity index at 25ha -----
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",

@@ -634,11 +634,10 @@ tiled_buffers(
   out_dir = "./Templates/TemplateGridPoints/tiles",
   buffer_mode = "sparse",
   mapping_sparse = list("pts100_sauzeme.parquet" = c(500, 1250), 
-                        "pts300_sauzeme.parquet" =  3000, 
+                        "pts300_sauzeme.parquet" = 3000, 
                         "pts1000_sauzeme.parquet" = 10000),
   split_field = "tks50km",
   n_workers = 4,
-  os_type = NULL,
   future_max_mem_gb = 4,
   overwrite = FALSE,
   quiet = FALSE
@@ -667,7 +666,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 download_raster_templates(
   url = "https://zenodo.org/api/records/14497070/files-archive",
   out_dir = "./Templates/TemplateRasters",
-  overwrite = FALSE,
+  overwrite = TRUE,
   quiet = FALSE
 )
 \end{lstlisting}
@@ -721,9 +720,9 @@ source("./RScripts_final/egvs02.02_UtilityFunctions.R")
 nogabali <- ensure_multipolygons(nog)
 
 # securing geometries
-nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 empty geometries
+nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 tukšas ģeometrijas
 validity=st_is_valid(nogabali2) 
-table(validity) # 1733 invalid geometries
+table(validity) # 1733 invalid ģeometrijas
 nogabali3=st_make_valid(nogabali2)
 
 # transforming CRS
@@ -779,6 +778,7 @@ sfarrow::st_write_parquet(dati5,"./Geodata/2024/LAD/Lauki_2024.parquet")
 for(i in seq_along(faili$celi)){
   unlink(faili$celi[i])
 }
+rm(list=ls())
 \end{lstlisting}
 
 \section{Melioration Cadaster}\label{Ch04.03}
@@ -833,7 +833,7 @@ write_sf(aizsargdambji,
          append=FALSE)
 rm(aizsargdambji)
 
-# dabiskās ūdensteces ----
+# dabiskas udensteces ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
@@ -979,7 +979,7 @@ n_features <- attr(parsed$FeatureCollection, "numberMatched")
 n_features
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_draincollectors"
 crs_code <- 3059
@@ -1042,7 +1042,7 @@ rm(list=ls())
 
 
 
-# drenāžas tīkla būves ----
+# drenazas tikla būves ----
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 url=parse_url(link)
@@ -1067,7 +1067,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_networkstructures"
 crs_code <- 3059
@@ -1130,7 +1130,7 @@ rm(list=ls())
 
 
 
-# grāvji -----
+# gravji -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1156,7 +1156,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditches"
 crs_code <- 3059
@@ -1219,7 +1219,7 @@ rm(list=ls())
 
 
 
-# hidrometriskie posteņi ----
+# hidrometriskie posteni ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1245,7 +1245,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_hydropost"
 crs_code <- 3059
@@ -1332,7 +1332,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_bigdraincollectors"
 crs_code <- 3059
@@ -1422,7 +1422,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspickets"
 crs_code <- 3059
@@ -1483,7 +1483,7 @@ write_sf(Piketi_all2,
 rm(list=ls())
 
 
-# polderu sūkņu stacijas -----
+# polderu suknu stacijas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1509,7 +1509,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderpumpingstation"
 crs_code <- 3059
@@ -1611,7 +1611,7 @@ PolderuTeritorijas_all2 = poligoni[!st_is_empty(poligoni),,drop=FALSE] # 0
 table(st_is_valid(PolderuTeritorijas_all2))
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_polderterritory"
 crs_code <- 3059
@@ -1700,7 +1700,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_catchment"
 crs_code <- 3059
@@ -1802,7 +1802,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_connectionpoints"
 crs_code <- 3059
@@ -1866,7 +1866,7 @@ write_sf(Savienojumi_all2,
 rm(list=ls())
 
 
-# valsts nozīme ūdensnotekas -----
+# valsts nozimes ūdensnotekas -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1892,7 +1892,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_statecontrolledrivers"
 crs_code <- 3059
@@ -1956,7 +1956,7 @@ write_sf(ValstsNozimesUdensnotekas_all2,
 rm(list=ls())
 
 
-# zmni reģions ----
+# zmni regions ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1984,7 +1984,7 @@ geometrijam
 library(gdalUtilities)
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_zmniregion"
 crs_code <- 3059
@@ -2059,7 +2059,7 @@ rm(list=ls())
 
 
 
-# ūdensnotekas (novadrāvji) -----
+# udensnotekas (novadgravji) -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -2085,7 +2085,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_waterdrainditches"
 crs_code <- 3059
@@ -2151,7 +2151,7 @@ rm(list=ls())
 
 
 
-# ūdensnoteku un grāvju piketi ----
+# udensnoteku un gravju piketi ----
 
 
 
@@ -2178,7 +2178,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_ditchpicket"
 crs_code <- 3059
@@ -2240,7 +2240,7 @@ rm(list=ls())
 
 
 
-# ūdensteču asis ----
+# udenstecu asis ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -2266,7 +2266,7 @@ geometrijam
 
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriversline"
 crs_code <- 3059
@@ -2331,7 +2331,7 @@ rm(list=ls())
 
 
 
-# ūdenstešu ūdens virsmas laukumi ----
+# udens virsmas laukumi ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -2356,7 +2356,7 @@ geometrijam <- read_sf(request)
 geometrijam
 
 
-# lejupielādei
+# download
 base_url <- "https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 type_name <- "zmni:zmni_stateriverspolygon"
 crs_code <- 3059
@@ -2477,8 +2477,6 @@ if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # v4 ----
-
-
 slani_v4=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v4_20250703.gdb/")
 write.xlsx(slani_v4,"./Geodata/2024/TopographicMap/slani_v4partial.xlsx")
 
@@ -2512,7 +2510,6 @@ for(i in seq_along(ciklam4x)){
 
 
 # v3 ----
-
 slani_v3=st_layers("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/")
 write.xlsx(slani_v3,"./Geodata/2024/TopographicMap/slani_v3.xlsx")
 
@@ -2546,6 +2543,7 @@ for(i in seq_along(ciklam3x)){
   print(ilgums)
 }
 
+
 # combination ----
 st_layers("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg")
 
@@ -2577,7 +2575,6 @@ data_4=data_4 %>%
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
 
-
 # bridge_P
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_P")
 data_not4=st_difference(data_3,pages4_united)
@@ -2590,7 +2587,6 @@ data_4=data_4 %>%
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeP_COMB.parquet")
 
-
 # hidro_A
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_A")
 data_not4=st_difference(data_3,pages4_united)
@@ -2602,7 +2598,6 @@ data_4=data_4 %>%
 
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
-
 
 # hidro_L
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_L")
@@ -2630,6 +2625,7 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadA_COMB.parquet")
 
 
+
 # road_L
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_L")
 data_not4=st_difference(data_3,pages4_united)
@@ -2643,6 +2639,7 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadL_COMB.parquet")
 
 
+
 # swamp_A
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="swamp_A")
 data_not4=st_difference(data_3,pages4_united)
@@ -2654,6 +2651,7 @@ data_4=data_4 %>%
 
 data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/SwampA_COMB.parquet")
+
 
 
 # flora_L
@@ -2697,18 +2695,18 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 # downloaded data
 clcLV=st_read("./Geodata/2024/CLC/clcLV.gpkg",layer="clcLV")
 
-# tukšās ģeometrijas
+# empty geoms
 clcLV2 = clcLV[!st_is_empty(clcLV),,drop=FALSE] # OK
 
-# ģeometriju validēšana
+# validation
 validity=st_is_valid(clcLV2) 
 table(validity) # 3 non-valid
 clcLV3=st_make_valid(clcLV2)
 
-# koordinātu sistēma
+# crs
 clcLV3=st_transform(clcLV3,crs=3059)
 
-# saglabāšana
+# saving
 sfarrow::st_write_parquet(clcLV3, "./Geodata/2024/CLC/CLC_LV_2018.parquet")
 \end{lstlisting}
 
@@ -3023,7 +3021,7 @@ organika_silava=ifel(organika_silava==2,1,NA)
 organika_silavaLV=project(organika_silava,template10)
 
 # stripes drawn manually, rasterization
-silavas_telpai=st_read("./IevadesDati/Augsnes_COMB/KudraugsnuPrognozes_Silava/stripam.gpkg",
+silavas_telpai=st_read("./Geodata/2024/Soils/OrganicSoils_SILAVA/stripam.gpkg",
                        layer="stripam")
 silavas_telpai=st_transform(silavas_telpai,crs=3059)
 silavas_telpai$yes=1
@@ -3111,7 +3109,7 @@ template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 faili=data.frame(faili=list.files("./Geodata/2024/DynamicWorld/RAW/"))
 faili$celi_sakums=paste0("./Geodata/2024/DynamicWorld/RAW/",faili$faili)
 
-# Sagatavošana ----
+# prepping ----
 faili=faili %>% 
   separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
   mutate(unikalais=paste0(DW,"_",gads,"_",periods),
@@ -3140,7 +3138,7 @@ for(i in seq_along(unikalie)){
   maskets=mask(mozaika,template10,
                filename=beigu_cels,
                overwrite=TRUE)
-
+  
   print(beigu_cels)
 }
 \end{lstlisting}
@@ -3322,7 +3320,6 @@ if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # templates ----
-
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 tikls1km=sfarrow::st_read_parquet("./Templates/TemplateGrids/tikls1km_sauzeme.parquet")
 
@@ -3587,7 +3584,6 @@ reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees", 
                 filename="./Geodata/2024/DEM/Terrain_Slope_10m.tif", overwrite=TRUE)  
 
-
 ## aspect 
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 virzieni=terrain(reljefs, v="aspect", neighbors=8, unit="degrees", 
@@ -3627,7 +3623,6 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 
 
 # Templates ----
-
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
@@ -3635,8 +3630,6 @@ nulles10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 
 
 # Bogs ----
-
-
 neatklata71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif")
 neatklata71107120=ifel(neatklata71107120>0,1,NA)
 plot(neatklata71107120)
@@ -3670,7 +3663,6 @@ writeRaster(sunuYN,
 
 
 # Transitional mires ----
-
 parejas_proj=project(tikai_parejas,template10)
 parejasYN=cover(parejas_proj,nulles10)
 plot(parejasYN)
@@ -3716,16 +3708,18 @@ if(!require(exactextractr)){install.packages("exactextractr");require(exactextra
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
+# part one ----
+
 # reljefs
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 
-# drenazas tikla buves
+# drainage network structures
 st_layers("./Geodata/2024/MKIS/MKIS_2025.gpkg")
 
 dtb=st_read("./Geodata/2024/MKIS/MKIS_2025.gpkg",layer="DrenazasTiklaBuves")
 dtb_buffer=st_buffer(dtb,dist=10)
 
-# tilti 
+# bridges 
 tiltiL=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
 tiltiL_buffer=st_buffer(tiltiL,dist=30)
 tiltiP=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
@@ -3736,22 +3730,36 @@ lvm_caurtekas=st_read("./Geodata/2024/LVM_OpenData/LVM_CAURTEKAS/LVM_CAURTEKAS_S
 lvm_buffer=st_buffer(lvm_caurtekas,dist=30)
 
 
-# visi buferi 
+# buffers
 st_geometry(dtb_buffer)="geometry"
 st_geometry(tiltiL_buffer)="geometry"
 st_geometry(tiltiP_buffer)="geometry"
 st_geometry(lvm_buffer)="geometry"
 visi_buferi=bind_rows(dtb_buffer,tiltiL_buffer,tiltiP_buffer,lvm_buffer)
 
-# caurumosana
+# incorporation in DEM
 visi_buferi$vertiba=exactextractr::exact_extract(reljefs,visi_buferi,"min")
 
-templis=raster::raster(template)
 caurumi=fasterize::fasterize(visi_buferi,templis,field="vertiba")
 caurumi2=rast(caurumi)
 caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
                overwrite=TRUE,
-               filename="./IevadesDati/reljefs/caurtDEM_10m.tif")
+               filename="./Geodata/2024/DEM/caurtDEM_10m.tif")
+
+# cleaning
+rm(caurumi)
+rm(caurumi2)
+rm(dtb)
+rm(dtb_buffer)
+rm(lvm_buffer)
+rm(lvm_caurtekas)
+rm(reljefs)
+rm(tiltiL)
+rm(tiltiL_buffer)
+rm(tiltiP)
+rm(tiltiP_buffer)
+rm(visi_buferi)
+rm(caurumains)
 \end{lstlisting}
 
 This DEM was then used for geoprocessing to find terrain depressions and
@@ -3787,13 +3795,13 @@ if(!require(whitebox)){install.packages("whitebox");require(whitebox)}
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
+# part two ----
 
 # DEM
 caurumainis=rast("./Geodata/2024/DEM/caurtDEM_10m.tif")
 
 # Sinks
-
-## breached sinks un depth in sinks
+## breached sinks and depth in sinks
 wbt_breach_depressions_least_cost(
   dem = "./Geodata/2024/DEM/caurtDEM_10m.tif",
   output = "./Geodata/2024/DEM/caurtDEM_breachedNF.tif",
@@ -3810,8 +3818,7 @@ sinks=rast("./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif")
 sinks2 <- ifel(sinks >= 1, 1, sinks,
                filename="./Geodata/2024/DEM/Terrain_SinkYN_breached_10m.tif")
 plot(sinks2)
-
-
+unlink("./Geodata/2024/DEM/Terrain_Sink_breached_10m.tif")
 
 # TWI
 ## breaching
@@ -3820,7 +3827,6 @@ wbt_breach_depressions_least_cost(
   output = "./Geodata/2024/DEM/caurtDEM_breachedF.tif",
   dist = 10,
   fill = TRUE)
-
 
 ### filling
 wbt_fill_depressions_wang_and_liu(
@@ -3838,11 +3844,20 @@ wbt_wetness_index(sca = "./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif",
                   slope = "./Geodata/2024/DEM/Terrain_Slope_10m.tif",
                   output = "./Geodata/2024/DEM/TWI_caurtDEM.tif")
 twi=rast("./Geodata/2024/DEM/TWI_caurtDEM.tif")
-hist(twi) # excessive values
+hist(twi) # vietumis ir sevišķi ekscesīvas vērtības
 plot(twi)
 twi2=ifel(twi>20,20,twi)
+plot(twi2)
+twi2x=ifel(is.na(twi2)&!is.na(template),20,twi2) # Lake Burtnieks
 
 writeRaster(twi2x,filename="./Geodata/2024/DEM/Terrain_TWI_lim20_caurtDEM.tif")
+
+# cleaning
+rm(sinks)
+rm(sinks2)
+rm(caurumainis)
+rm(twi)
+rm(twi2)
 \end{lstlisting}
 
 Since the initial DEM input was created by filling in water bodies using
@@ -3860,6 +3875,8 @@ if(!require(exactextractr)){install.packages("exactextractr");require(exactextra
 
 # reference
 template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+# third part ----
+
 
 #  dealing with waterbodies 
 udeni=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
@@ -4853,7 +4870,8 @@ niedraji_topo=topo %>%
 r_niedraji_topo=fasterize(niedraji_topo,template_r,field="yes")
 raster::writeRaster(r_niedraji_topo,
                     "./RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif",
-                    progress="text")
+                    progress="text",
+                    overwrite=TRUE)
 # cleaning
 rm(niedraji_topo)
 rm(r_niedraji_topo)
@@ -4939,8 +4957,8 @@ rm(r_purvi_topo)
 rm(r_purvi_mvr)
 rm(r_bebri_mvr)
 rm(bogs)
-rm(mires)
 rm(bogsY)
+rm(mires)
 rm(miresY)
 rm(topo)
 rm(wetlands_cover)
@@ -5025,7 +5043,7 @@ r_smiltaji_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_m
 bare_cover=terra::merge(r_smiltaji_topo,r_smiltaji_mvr,
                                filename="./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif",
                                overwrite=TRUE)
-# liekā aizvākšana
+# cleaning
 rm(r_smiltaji_topo)
 rm(r_smiltaji_mvr)
 rm(bare_cover)
@@ -5051,7 +5069,6 @@ template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
 
-
 # final merging and covering ----
 
 # DW  
@@ -5071,14 +5088,31 @@ writeRaster(dw2,
             overwrite=TRUE)
 # other layers
 celi=rast("./RasterGrids_10m/2024/SimpleLandscape_class100_celi.tif")
+plot(celi)
+
 niedraji=rast("RasterGrids_10m/2024/SimpleLandscape_class720_niedraji_topo.tif")
+plot(niedraji)
+
 udeni=rast("./RasterGrids_10m/2024/SimpleLandscape_class200_udens_premask.tif")
+plot(udeni)
+
 lauki=rast("./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif")
+plot(lauki)
+
 vasarnicas=rast("./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif")
+plot(vasarnicas)
+
 mezi=rast("./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif")
+plot(mezi)
+
 mitraji=rast("./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif")
+plot(mitraji)
+
 smiltaji=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif")
+plot(smiltaji)
+
 dw2=rast("./RasterGrids_10m/2024/DW_reclass.tif")
+plot(dw2)
 
 # covering in correct order
 rastri_ainavai=cover(celi,niedraji)
@@ -5091,6 +5125,7 @@ rastri_ainavai=cover(rastri_ainavai,smiltaji)
 rastri_ainavai=cover(rastri_ainavai,dw2,
                            filename="./RasterGrids_10m/2024/Ainava_vienkarsa.tif",
                            overwrite=TRUE)
+plot(rastri_ainavai)
 
 # cleaning
 rm(celi)
@@ -5108,6 +5143,9 @@ rm(rastri_ainavai)
 
 # masking
 rastrs_ainava=rast("./RasterGrids_10m/2024/Ainava_vienkarsa.tif")
+plot(rastrs_ainava)
+freq(rastrs_ainava)
+
 masketa_ainava=terra::mask(rastrs_ainava,
                            template_t,
                            filename="./RasterGrids_10m/2024/Ainava_vienk_mask.tif",
@@ -5226,6 +5264,7 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
+
 # general diversity ----
 
 ## Farmland broad ----
@@ -5305,9 +5344,11 @@ rm(mvr)
 rm(mvr2)
 
 ## General classification ----
+
 simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 
 ## Covered classes for general diversity ----
+
 farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
 forests_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
 
@@ -5315,6 +5356,7 @@ diversity_classes=cover(farmland_broad,forests_broad)
 diversity_classes2=cover(diversity_classes,simple_landscape,
                         filename="./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
                         overwrite=TRUE)
+
 rm(simple_landscape)
 rm(farmland_broad)
 rm(forests_broad)
@@ -5322,6 +5364,8 @@ rm(diversity_classes)
 rm(diversity_classes2)
 
 ## Diversity index at 25ha -----
+
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -5387,9 +5431,8 @@ forest_broad=rast("./RasterGrids_10m/2024/Diversity_ForestBroad_only.tif")
 
 
 ## forest codes ----
-
-# meži
-mvr=st_read_parquet("./Geodata/2024/MVR/")
+# mezi
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 
 mvr=mvr %>% 
   mutate(kods1=as.numeric(s10)*1000,
@@ -5415,10 +5458,14 @@ rm(mvr)
 
 ## Covered classes for forest diversity ----
 forest_codes=rast("./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif")
+plot(forest_codes)
 forest_covered=cover(forest_codes,forest_broad)
+plot(forest_covered)
+
 forest_covered2=cover(forest_covered,template_t,
                         filename="./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
                         overwrite=TRUE)
+plot(forest_covered2)
 
 # cleaning
 rm(forest_codes)
@@ -5426,9 +5473,8 @@ rm(forest_covered)
 rm(forest_covered2)
 rm(forest_broad)
 
-
-
 ## Diversity index at 25ha -----
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_ForestsDetailed.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -5486,12 +5532,17 @@ template_t=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 template_r=raster(template_t)
 
 
+
 # farmland diversity -----
 
+
 ## Farmland broad ----
+
 farmland_broad=rast("./RasterGrids_10m/2024/Diversity_FarmlandBroad_only.tif")
 
+
 ## Farmland codes ----
+
 lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
 lad$product_code=as.numeric(lad$PRODUCT_CODE)+1000
 
@@ -5511,6 +5562,7 @@ rm(lad)
 
 
 ## Covered classes for farmland diversity ----
+
 farmland_codes=rast("./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif")
 farmland_covered=cover(farmland_codes,farmland_broad)
 farmland_covered2=cover(farmland_covered,template_t,
@@ -5526,6 +5578,7 @@ rm(farmland_broad)
 
 
 ## Diversity index at 25ha -----
+
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -9591,10 +9644,31 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 \textbf{Latvian name:} Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.03]{Landscape classification} with class 500
+reclassified as 1 and others as 0. Processed with \passthrough{\lstinline!egvtools::distance2egv()!}.
+To protect against possible data loss at edge cells, inverse distance
+weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Builtup_cell.tif egv_89 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+builtup=ifel(simple_landscape==500,1,0)
+plot(builtup)
+distegv=distance2egv(input = builtup,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Builtup_cell.tif",
+                     layername = "egv_89")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Builtup_cell.tif"))
+rm(builtup)
+rm(distegv)
 \end{lstlisting}
 
 \section{Distance\_ForestInside\_cell}\label{ch06.090}
@@ -9607,10 +9681,32 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 \textbf{Latvian name:} Attālums līdz meža malai tā iekšienē, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.03]{Landscape classification} with values in
+a range from 630 to 700 reclassified as 0 and others as 1. Processed
+with \passthrough{\lstinline!egvtools::distance2egv()!}. To protect against possible data loss at
+edge cells, inverse distance
+weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_ForestInside_cell.tif    egv_90 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+trees_inside=ifel(simple_landscape>=630&simple_landscape<700,0,1)
+plot(trees_inside)
+distegv=distance2egv(input = trees_inside,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_ForestInside_cell.tif",
+                     layername = "egv_90")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_ForestInside_cell.tif"))
+rm(trees_inside)
+rm(distegv)
 \end{lstlisting}
 
 \section{Distance\_GrasslandPermanent\_cell}\label{ch06.091}
@@ -9623,10 +9719,54 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 \textbf{Latvian name:} Attālums līdz ilggadīgiem zālājiem, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch04.02]{Rural Support Service's information on declared fields}
+with \passthrough{\lstinline!PRODUCT\_CODE=="710"!} classified as 1 and the rest of the country as 0. Processed
+with \passthrough{\lstinline!egvtools::distance2egv()!}. To protect against possible data loss at
+edge cells, inverse distance weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+rastra_pamatne=raster(template10)
+
+# Distance_GrasslandPermanent_cell.tif  egv_91 ----
+kodes=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+permgrass=lad %>% 
+  filter(PRODUCT_CODE=="710") %>% 
+  mutate(yes=1)
+permgrass_r=fasterize(permgrass,rastra_pamatne,field="yes",fun="first")
+permgrass_t=rast(permgrass_r)
+permgrass_t2=cover(permgrass_t,nulls10)
+plot(permgrass_t2)
+distegv=distance2egv(input = permgrass_t2,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_GrasslandPermanent_cell.tif",
+                     layername = "egv_91")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_GrasslandPermanent_cell.tif"))
+rm(distegv)
+rm(kodes)
+rm(lad)
+rm(permgrass)
+rm(permgrass_r)
+rm(permgrass_t)
+rm(permgrass_t2)
 \end{lstlisting}
 
 \section{Distance\_Landfill\_cell}\label{ch06.092}
@@ -9662,7 +9802,7 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
@@ -9722,7 +9862,7 @@ distegv
 # libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
 
@@ -9768,10 +9908,32 @@ distegv
 
 \textbf{Latvian name:} Attālums līdz kokiem, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.03]{Landscape classification} with values in
+a range from 630 to 700 reclassified as 1 and others as 0. Processed
+with \passthrough{\lstinline!egvtools::distance2egv()!}. To protect against possible data loss at
+edge cells, inverse distance
+weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Trees_cell.tif   egv_94 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+trees=ifel(simple_landscape>=630&simple_landscape<700,1,0)
+plot(trees)
+distegv=distance2egv(input = trees,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Trees_cell.tif",
+                     layername = "egv_94")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Trees_cell.tif"))
+rm(trees)
+rm(distegv)
 \end{lstlisting}
 
 \section{Distance\_Waste\_cell}\label{ch06.095}
@@ -9809,7 +9971,7 @@ if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
@@ -9854,10 +10016,31 @@ distegv
 
 \textbf{Latvian name:} Attālums līdz ūdenstilpēn, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.03]{Landscape classification} with class 200
+reclassified as 1 and others as 0. Processed with \passthrough{\lstinline!egvtools::distance2egv()!}.
+To protect against possible data loss at edge cells, inverse distance
+weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_Water_cell.tif   egv_96 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+water=ifel(simple_landscape==200,1,0)
+plot(water)
+distegv=distance2egv(input = water,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_Water_cell.tif",
+                     layername = "egv_96")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_Water_cell.tif"))
+rm(water)
+rm(distegv)
 \end{lstlisting}
 
 \section{Distance\_WaterInside\_cell}\label{ch06.097}
@@ -9870,10 +10053,31 @@ distegv
 
 \textbf{Latvian name:} Attālums līdz ūdenstilpes malai tās iekšienē, vidējais analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.03]{Landscape classification} with class 200
+reclassified as 0 and others as 1. Processed with \passthrough{\lstinline!egvtools::distance2egv()!}.
+To protect against possible data loss at edge cells, inverse distance
+weighted (power = 2) gap filling is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# Distance_WaterInside_cell.tif egv_97 ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+water_outside=ifel(simple_landscape==200,0,1)
+plot(water_outside)
+distegv=distance2egv(input = water_outside,
+                     template_egv = template100,
+                     values_as_one = 1,
+                     fill_gaps = TRUE, idw_weight = 2,
+                     outlocation = "RasterGrids_100m/2024/RAW/",
+                     outfilename = "Distance_WaterInside_cell.tif",
+                     layername = "egv_97")
+distegv
+plot(rast("RasterGrids_100m/2024/RAW/Distance_WaterInside_cell.tif"))
+rm(water_outside)
+rm(distegv)
 \end{lstlisting}
 
 \section{Diversity\_Farmland\_r500}\label{ch06.098}
@@ -17098,7 +17302,9 @@ input2egv(input=clay10,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``māls'' platības īpatsvars 0,5 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.506]{SoilTexture\_Clay\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17144,7 +17350,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``māls'' platības īpatsvars 1,25 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.506]{SoilTexture\_Clay\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17191,7 +17399,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``māls'' platības īpatsvars 3 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.506]{SoilTexture\_Clay\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17237,7 +17447,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``māls'' platības īpatsvars 10 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.506]{SoilTexture\_Clay\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17328,7 +17540,9 @@ input2egv(input=org10,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``organiskās augsnes'' platības īpatsvars 0,5 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.511]{SoilTexture\_Organic\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17374,7 +17588,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``organiskās augsnes'' platības īpatsvars 1,25 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.511]{SoilTexture\_Organic\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17421,7 +17637,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``organiskās augsnes'' platības īpatsvars 3 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.511]{SoilTexture\_Organic\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17467,7 +17685,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``organiskās augsnes'' platības īpatsvars 10 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.511]{SoilTexture\_Organic\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17558,7 +17778,9 @@ input2egv(input=sand10,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilts'' platības īpatsvars 0,5 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.516]{SoilTexture\_Sand\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17604,7 +17826,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilts'' platības īpatsvars 1,25 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.516]{SoilTexture\_Sand\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17650,7 +17874,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilts'' platības īpatsvars 3 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.516]{SoilTexture\_Sand\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17696,7 +17922,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilts'' platības īpatsvars 10 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.516]{SoilTexture\_Sand\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17786,7 +18014,9 @@ input2egv(input=silt10,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilšmāls un mālsmilts'' platības īpatsvars 0,5 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.521]{SoilTexture\_Silt\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17832,7 +18062,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilšmāls un mālsmilts'' platības īpatsvars 1,25 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.521]{SoilTexture\_Silt\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17878,7 +18110,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilšmāls un mālsmilts'' platības īpatsvars 3 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.521]{SoilTexture\_Silt\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17925,7 +18159,9 @@ writeRaster(slanis2,
 \textbf{Latvian name:} Augsnes granulometriskās klases ``smilšmāls un mālsmilts'' platības īpatsvars 10 km ainavā
 
 \textbf{Procedure:} Derived from \hyperref[ch06.521]{SoilTexture\_Silt\_cell}. First processed
-with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername.
+with \passthrough{\lstinline!egvtools::radius\_function()!}, then rewritten to ensure layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
 
 \begin{lstlisting}[language=R]
 # libs ----
@@ -17970,7 +18206,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Augstums virs jūras līmeņa (m) analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch04.15]{Digital elevation/terrain models}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# Terrain_ASL-average_cell.tif  egv_526
+
+input2egv(input="./Geodata/2024/DEM/mozDEM_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_ASL-average_cell.tif",
+          layername="egv_526",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_Aspect-average\_cell}\label{ch06.527}
 
@@ -17982,7 +18243,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Nogāzes vidējais vērsuma virziens analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Aspect-average_cell.tif   egv_527
+input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_Aspect-average_cell.tif",
+          layername="egv_527",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_Aspect-iqr\_cell}\label{ch06.528}
 
@@ -17994,7 +18280,54 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Nogāzes vērsuma variabilitāte analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. First Q1 and then Q3
+is calculated for every cell with \passthrough{\lstinline!egvtools::input2egv()!}. Finally, subtracting
+Q1 from Q3 and writing final raster with specified layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Aspect-iqr_cell.tif   egv_528
+p25rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_528",
+                 idw_weight = 2)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_528",
+                 idw_weight = 2)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/Terrain_Aspect-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+\end{lstlisting}
 
 \section{Terrain\_DiS-area\_cell}\label{ch06.529}
 
@@ -18006,7 +18339,35 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju bez virszemes noteces platības īpatsvars analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-area_cell.tif egv_529
+dis=rast("./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif")
+dis2=ifel(dis>0,1,dis)
+
+input2egv(input=dis2,
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-area_cell.tif",
+          layername="egv_529",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-area\_r500}\label{ch06.530}
 
@@ -18018,7 +18379,46 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju bez virszemes noteces platības īpatsvars 0,5 km ainavā
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::radius\_function()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented. After zonal statistics, file is rewritten to ensure layername.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r500.tif egv_530
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r500.tif")
+names(slanis)="egv_530"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r500.tif",
+            overwrite=TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-area\_r1250}\label{ch06.531}
 
@@ -18030,7 +18430,45 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju bez virszemes noteces platības īpatsvars 1,25 km ainavā
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::radius\_function()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented. After zonal statistics, file is rewritten to ensure layername.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+# Terrain_DiS-area_r1250.tif    egv_531
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r1250.tif")
+names(slanis)="egv_531"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r1250.tif",
+            overwrite=TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-area\_r3000}\label{ch06.532}
 
@@ -18042,7 +18480,46 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju bez virszemes noteces platības īpatsvars 3 km ainavā
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::radius\_function()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented. After zonal statistics, file is rewritten to ensure layername.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r3000.tif    egv_532
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r3000.tif")
+names(slanis)="egv_532"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r3000.tif",
+            overwrite=TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-area\_r10000}\label{ch06.533}
 
@@ -18054,7 +18531,46 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju bez virszemes noteces platības īpatsvars 10 km ainavā
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::radius\_function()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented. After zonal statistics, file is rewritten to ensure layername.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_cell.tif"),
+  layer_prefixes = c("Terrain_DiS-area"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 5,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 5 * 1024^3)
+
+
+# Terrain_DiS-area_r10000.tif   egv_533
+slanis=rast("./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r10000.tif")
+names(slanis)="egv_533"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r10000.tif",
+            overwrite=TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-max\_cell}\label{ch06.534}
 
@@ -18066,7 +18582,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju lielākais dziļums analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-max_cell.tif  egv_534
+input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "max",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-max_cell.tif",
+          layername="egv_534",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_DiS-mean\_cell}\label{ch06.535}
 
@@ -18078,7 +18619,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Reljefa depresiju vidējais dziļums analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_DiS-mean_cell.tif egv_535
+input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_DiS-mean_cell.tif",
+          layername="egv_535",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_Slope-average\_cell}\label{ch06.536}
 
@@ -18090,7 +18656,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Nogāzes slīpuma vidējā vērtība analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Slope-average_cell.tif    egv_536
+input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_Slope-average_cell.tif",
+          layername="egv_536",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \section{Terrain\_Slope-iqr\_cell}\label{ch06.537}
 
@@ -18102,7 +18693,54 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Nogāzes slīpuma variabilitāte analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. First Q1 and then Q3
+is calculated for every cell with \passthrough{\lstinline!egvtools::input2egv()!}. Finally, subtracting
+Q1 from Q3 and writing final raster with specified layername. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_Slope-iqr_cell.tif    egv_537
+p25rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q1",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p25.tif",
+                 layername = "egv_537",
+                 idw_weight = 2)
+p25rez_r=rast("./RasterGrids_100m/2024/draza_p25.tif")
+
+
+p75rez=input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
+                 egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                 summary_function = "q3",
+                 missing_job = "FillOutput",
+                 outlocation = "./RasterGrids_100m/2024/",
+                 outfilename = "draza_p75.tif",
+                 layername = "egv_537",
+                 idw_weight = 2)
+p75rez_r=rast("./RasterGrids_100m/2024/draza_p75.tif")
+
+iqr_rez=p75rez_r-p25rez_r
+iqr_rez
+plot(iqr_rez)
+
+writeRaster(iqr_rez,
+            "./RasterGrids_100m/2024/RAW/Terrain_Slope-iqr_cell.tif",
+            overwrite=TRUE)
+
+unlink("./RasterGrids_100m/2024/draza_p75.tif")
+unlink("./RasterGrids_100m/2024/draza_p25.tif")
+\end{lstlisting}
 
 \section{Terrain\_TWI-average\_cell}\label{ch06.538}
 
@@ -18114,7 +18752,32 @@ writeRaster(slanis2,
 
 \textbf{Latvian name:} Topogrāfiskā mitruma indeksa vidējā vērtība analīzes šūnā (1 ha)
 
-\textbf{Procedure:}
+\textbf{Procedure:} Derived from \hyperref[Ch05.01]{Terrain products}. Processed
+with \passthrough{\lstinline!egvtools::input2egv()!}. To protect against
+possible data loss at edge cells, inverse distance weighted (power = 2) gap filling
+is implemented.
+
+\begin{lstlisting}[language=R]
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+
+# Terrain_TWI-average_cell.tif  egv_538
+input2egv(input="./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif",
+          egv_template="./Templates/TemplateRasters/LV100m_10km.tif",
+          summary_function = "average",
+          missing_job = "FillOutput",
+          idw_weight = 2,
+          outlocation = "./RasterGrids_100m/2024/RAW/",
+          outfilename = "Terrain_TWI-average_cell.tif",
+          layername="egv_538",
+          return_visible = TRUE,
+          plot_final = TRUE)
+\end{lstlisting}
 
 \chapter{Data access}\label{Ch07}
 

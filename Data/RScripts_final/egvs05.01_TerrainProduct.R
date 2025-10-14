@@ -66,7 +66,6 @@ rm(caurumains)
 
 # part two ----
 
-
 # DEM
 caurumainis=rast("./Geodata/2024/DEM/caurtDEM_10m.tif")
 
