@@ -3,8 +3,8 @@
 This section names and provides description (R code with its explanation in 
 procedure) of every one of the 538 EGVs created.
 
-For better undestanding of the relatedness of these vairable, refer to **figure** 
-( \@ref(fig:flowchart)). 
+For better undestanding of the relatedness of these vairable, refer to flowchart below 
+(Fig. \@ref(fig:flowchart)). 
 Names used in figure correspond to EGV layer names and follow naming convention: 
 [group]_[specific name]_[scale], where: 
 
@@ -16,13 +16,13 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains} \caption{Relationships of ecogeograpfical variables crated.}(\#fig:flowchart)
+\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains_300dpi_2} \caption{Relationships of ecogeograpfical variables crated.}(\#fig:flowchart)
 \end{figure}
 
 <br>
 
 
-In cover fraction and adge variables, we first calculated values at the analysis 
+In cover fraction and edge variables, we first calculated values at the analysis 
 cell resolution and then used {exactextract} to summarise values from larger scales. 
 This package uses pixel area weight to calculate weighted summary statistic, thus the 
 error created due to aggregation is negligible, particularly at larger scales, but 

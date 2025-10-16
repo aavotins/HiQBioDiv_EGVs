@@ -795,8 +795,8 @@ div.csl-indent {
 <h1><span class="header-section-number">6</span> Ecogeographical variables<a href="Ch06.html#Ch06" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This section names and provides description (R code with its explanation in
 procedure) of every one of the 538 EGVs created.</p>
-<p>For better undestanding of the relatedness of these vairable, refer to <strong>figure</strong>
-( <a href="Ch06.html#fig:flowchart">6.1</a>).
+<p>For better undestanding of the relatedness of these vairable, refer to flowchart below
+(Fig. <a href="Ch06.html#fig:flowchart">6.1</a>).
 Names used in figure correspond to EGV layer names and follow naming convention:
 [group]<em>[specific name]</em>[scale], where:</p>
 <ul>
@@ -805,13 +805,13 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 <li><p>scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.</p></li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:flowchart"></span>
-<img src="Figures/EGV_FlowChartY_eps_krasains.png" alt="Relationships of ecogeograpfical variables crated." width="100%" />
+<img src="Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png" alt="Relationships of ecogeograpfical variables crated." width="100%" />
 <p class="caption">
 Figure 6.1: Relationships of ecogeograpfical variables crated.
 </p>
 </div>
 <p><br></p>
-<p>In cover fraction and adge variables, we first calculated values at the analysis
+<p>In cover fraction and edge variables, we first calculated values at the analysis
 cell resolution and then used {exactextract} to summarise values from larger scales.
 This package uses pixel area weight to calculate weighted summary statistic, thus the
 error created due to aggregation is negligible, particularly at larger scales, but
