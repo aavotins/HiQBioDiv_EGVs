@@ -15,7 +15,7 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 - scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.
 
 
-```{r flowchart, echo=FALSE, out.width = '100%', fig.cap='Relationships of ecogeograpfical variables crated.'}
+```{r flowchart, echo=FALSE, out.width = '100%', fig.cap='Relationships of ecogeographical variables created.'}
 knitr::include_graphics("./Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png")
 ```
 

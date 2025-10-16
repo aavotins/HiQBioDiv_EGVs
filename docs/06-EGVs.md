@@ -16,7 +16,7 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains_300dpi_2} \caption{Relationships of ecogeograpfical variables crated.}(\#fig:flowchart)
+\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains_300dpi_2} \caption{Relationships of ecogeographical variables created.}(\#fig:flowchart)
 \end{figure}
 
 <br>

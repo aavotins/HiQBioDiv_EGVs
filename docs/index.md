@@ -1,7 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
 author: "Andris Avotiņš"
-date: "2025-10-16"
+date: "2025-10-17"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, refs.bib]
