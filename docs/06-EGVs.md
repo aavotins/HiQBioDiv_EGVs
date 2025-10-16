@@ -1,6 +1,43 @@
 # Ecogeographical variables {#Ch06}
 
-Creation procedures of every EGV.
+This section names and provides description (R code with its explanation in 
+procedure) of every one of the 538 EGVs created.
+
+For better undestanding of the relatedness of these vairable, refer to **figure** 
+( \@ref(fig:flowchart)). 
+Names used in figure correspond to EGV layer names and follow naming convention: 
+[group]_[specific name]_[scale], where: 
+
+- group is broader collection of EGVs describing the same fenomena, ecosystem, coming from the same source, etc.;
+
+- specific name shortly describes landscape class and/or metrics used in creation of the layer;
+
+- scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.
+
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../Figures/EGV_FlowChartY_eps_krasains} \caption{Relationships of ecogeograpfical variables crated.}(\#fig:flowchart)
+\end{figure}
+
+<br>
+
+
+In cover fraction and adge variables, we first calculated values at the analysis 
+cell resolution and then used {exactextract} to summarise values from larger scales. 
+This package uses pixel area weight to calculate weighted summary statistic, thus the 
+error created due to aggregation is negligible, particularly at larger scales, but 
+reduces computation time thousunds up to even hundreds of thousands times compared 
+to input resolution (10 m). To further speed up the procedures, we used "sparse" 
+mode in `egvtools::radius_function`, thus summarising zonal statistics every 300 m for 
+3000 m radius buffers and every 1000 m for 10000 m buffers, obtaining near linear 
+reduction in time relative to the number of zones (nine fold and 100 fold further 
+computation time reduction), while loosing less than 0.001 % of variability altogether.
+
+We used slightly different approach with diversity metrics - first we calculated 
+Shanons diversity index at 25 ha raster grid cells as there is nearly no variability 
+of landscape classes at 1 ha grid cells. Further on we calculated arithmetic mean as 
+zonal statictics value ("sparse" mode with `egvtools::radius_function`), but we 
+did not create this EGV at the analysis cells scale.
 
 
 ## Climate_CHELSAv2.1-bio1_cell	{#ch06.001}

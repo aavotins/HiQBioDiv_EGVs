@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-15" />
+<meta name="date" content="2025-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -793,7 +793,39 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Ch06" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Ecogeographical variables<a href="Ch06.html#Ch06" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Creation procedures of every EGV.</p>
+<p>This section names and provides description (R code with its explanation in
+procedure) of every one of the 538 EGVs created.</p>
+<p>For better undestanding of the relatedness of these vairable, refer to <strong>figure</strong>
+( <a href="Ch06.html#fig:flowchart">6.1</a>).
+Names used in figure correspond to EGV layer names and follow naming convention:
+[group]<em>[specific name]</em>[scale], where:</p>
+<ul>
+<li><p>group is broader collection of EGVs describing the same fenomena, ecosystem, coming from the same source, etc.;</p></li>
+<li><p>specific name shortly describes landscape class and/or metrics used in creation of the layer;</p></li>
+<li><p>scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:flowchart"></span>
+<img src="../Figures/EGV_FlowChartY_eps_krasains.png" alt="Relationships of ecogeograpfical variables crated." width="100%" />
+<p class="caption">
+Figure 6.1: Relationships of ecogeograpfical variables crated.
+</p>
+</div>
+<p><br></p>
+<p>In cover fraction and adge variables, we first calculated values at the analysis
+cell resolution and then used {exactextract} to summarise values from larger scales.
+This package uses pixel area weight to calculate weighted summary statistic, thus the
+error created due to aggregation is negligible, particularly at larger scales, but
+reduces computation time thousunds up to even hundreds of thousands times compared
+to input resolution (10 m). To further speed up the procedures, we used “sparse”
+mode in <code>egvtools::radius_function</code>, thus summarising zonal statistics every 300 m for
+3000 m radius buffers and every 1000 m for 10000 m buffers, obtaining near linear
+reduction in time relative to the number of zones (nine fold and 100 fold further
+computation time reduction), while loosing less than 0.001 % of variability altogether.</p>
+<p>We used slightly different approach with diversity metrics - first we calculated
+Shanons diversity index at 25 ha raster grid cells as there is nearly no variability
+of landscape classes at 1 ha grid cells. Further on we calculated arithmetic mean as
+zonal statictics value (“sparse” mode with <code>egvtools::radius_function</code>), but we
+did not create this EGV at the analysis cells scale.</p>
 <div id="ch06.001" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Climate_CHELSAv2.1-bio1_cell<a href="Ch06.html#ch06.001" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>filename:</strong> <code>Climate_CHELSAv2.1-bio1_cell.tif</code></p>
