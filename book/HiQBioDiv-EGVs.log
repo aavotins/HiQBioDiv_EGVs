@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.14)  18 OCT 2025 11:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.14)  18 OCT 2025 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2556,9 +2556,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [144]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_1.png Graphic file (type bmp)
+<./Figures/maps4book/egv_1.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2574,17 +2573,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_2.png Graphic file (type bmp)
+<./Figures/maps4book/egv_2.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2592,38 +2587,20 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_3.png Graphic file (type bmp)
+<./Figures/maps4book/egv_3.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1406) in paragraph at lines 5856--5857
-[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Precipitation amount (kg m⁻² month⁻¹) of the wettest month
- []
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [147]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2642,6 +2619,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [148]
+File: ./Figures/maps4book/egv_4.png Graphic file (type bmp)
+<./Figures/maps4book/egv_4.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2649,6 +2628,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 1406) in paragraph at lines 5864--5865
+[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Precipitation amount (kg m⁻² month⁻¹) of the wettest month
+ []
+
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -2659,6 +2644,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [149]
+File: ./Figures/maps4book/egv_5.png Graphic file (type bmp)
+<./Figures/maps4book/egv_5.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2668,55 +2655,26 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 
 [150]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_6.png Graphic file (type bmp)
+<./Figures/maps4book/egv_6.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [151]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
@@ -2724,6 +2682,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_7.png Graphic file (type bmp)
+<./Figures/maps4book/egv_7.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2734,6 +2697,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2743,17 +2709,17 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [153]
+File: ./Figures/maps4book/egv_8.png Graphic file (type bmp)
+<./Figures/maps4book/egv_8.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Underfull \hbox (badness 2556) in paragraph at lines 6162--6163
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Izotermalitāte (attiecība starp diennakts un gada temperatūras
- []
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2763,24 +2729,17 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [154]
+File: ./Figures/maps4book/egv_9.png Graphic file (type bmp)
+<./Figures/maps4book/egv_9.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [155]
@@ -2790,15 +2749,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_10.png Graphic file (type bmp)
+<./Figures/maps4book/egv_10.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2808,14 +2760,19 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_11.png Graphic file (type bmp)
+<./Figures/maps4book/egv_11.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2835,6 +2792,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [158]
+File: ./Figures/maps4book/egv_12.png Graphic file (type bmp)
+<./Figures/maps4book/egv_12.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2842,10 +2801,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 2556) in paragraph at lines 6186--6187
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Izotermalitāte (attiecība starp diennakts un gada temperatūras
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -2856,18 +2814,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [159]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_13.png Graphic file (type bmp)
+<./Figures/maps4book/egv_13.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2883,9 +2831,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_14.png Graphic file (type bmp)
+<./Figures/maps4book/egv_14.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2901,8 +2848,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_15.png Graphic file (type bmp)
+<./Figures/maps4book/egv_15.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2910,18 +2859,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1320) in paragraph at lines 6578--6579
-[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Maximum monthly climate moisture index (kg m⁻² month⁻¹)
- []
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2934,13 +2871,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [163]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+File: ./Figures/maps4book/egv_16.png Graphic file (type bmp)
+<./Figures/maps4book/egv_16.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -2952,45 +2884,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1558) in paragraph at lines 6654--6655
-[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Minimum monthly climate moisture index (kg m⁻² month⁻¹)
- []
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1281) in paragraph at lines 6656--6657
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
- []
 
 
 
 [164]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 2119) in paragraph at lines 6694--6695
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹)
- []
-
+File: ./Figures/maps4book/egv_17.png Graphic file (type bmp)
+<./Figures/maps4book/egv_17.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3006,9 +2905,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_18.png Graphic file (type bmp)
+<./Figures/maps4book/egv_18.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3024,8 +2922,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_19.png Graphic file (type bmp)
+<./Figures/maps4book/egv_19.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3043,20 +2943,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [168]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_20.png Graphic file (type bmp)
+<./Figures/maps4book/egv_20.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3072,12 +2962,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [169]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_21.png Graphic file (type bmp)
+<./Figures/maps4book/egv_21.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3093,9 +2979,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_22.png Graphic file (type bmp)
+<./Figures/maps4book/egv_22.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3111,11 +2996,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_23.png Graphic file (type bmp)
+<./Figures/maps4book/egv_23.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3126,9 +3010,15 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1320) in paragraph at lines 6624--6625
+[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Maximum monthly climate moisture index (kg m⁻² month⁻¹)
+ []
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3138,18 +3028,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [173]
+File: ./Figures/maps4book/egv_24.png Graphic file (type bmp)
+<./Figures/maps4book/egv_24.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3159,17 +3049,27 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [174]
+File: ./Figures/maps4book/egv_25.png Graphic file (type bmp)
+<./Figures/maps4book/egv_25.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1558) in paragraph at lines 6704--6705
+[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Minimum monthly climate moisture index (kg m⁻² month⁻¹)
+ []
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1281) in paragraph at lines 6706--6707
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
+ []
 
 
 
@@ -3180,13 +3080,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_26.png Graphic file (type bmp)
+<./Figures/maps4book/egv_26.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3196,20 +3091,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 2119) in paragraph at lines 6746--6747
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹)
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_27.png Graphic file (type bmp)
+<./Figures/maps4book/egv_27.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3227,14 +3127,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [178]
+File: ./Figures/maps4book/egv_28.png Graphic file (type bmp)
+<./Figures/maps4book/egv_28.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3250,12 +3146,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [179]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_29.png Graphic file (type bmp)
+<./Figures/maps4book/egv_29.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3271,17 +3163,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Underfull \hbox (badness 1424) in paragraph at lines 7416--7417
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1)
- []
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_30.png Graphic file (type bmp)
+<./Figures/maps4book/egv_30.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3297,11 +3180,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_31.png Graphic file (type bmp)
+<./Figures/maps4book/egv_31.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3319,24 +3201,16 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [183]
+File: ./Figures/maps4book/egv_32.png Graphic file (type bmp)
+<./Figures/maps4book/egv_32.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3346,16 +3220,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [184]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+File: ./Figures/maps4book/egv_33.png Graphic file (type bmp)
+<./Figures/maps4book/egv_33.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3371,39 +3237,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1571) in paragraph at lines 7642--7643
-[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Mean monthly potential evapotranspiration (kg m⁻² month⁻¹)
- []
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+File: ./Figures/maps4book/egv_34.png Graphic file (type bmp)
+<./Figures/maps4book/egv_34.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [186]
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1043) in paragraph at lines 7682--7683
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻²
- []
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3413,23 +3254,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_35.png Graphic file (type bmp)
+<./Figures/maps4book/egv_35.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Underfull \hbox (badness 1142) in paragraph at lines 7718--7719
-[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Annual range of monthly potential evapotranspiration (kg m⁻²
- []
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3440,10 +3268,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3453,16 +3277,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [188]
+File: ./Figures/maps4book/egv_36.png Graphic file (type bmp)
+<./Figures/maps4book/egv_36.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3472,19 +3294,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [189]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_37.png Graphic file (type bmp)
+<./Figures/maps4book/egv_37.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3497,19 +3308,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_38.png Graphic file (type bmp)
+<./Figures/maps4book/egv_38.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3525,16 +3328,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_39.png Graphic file (type bmp)
+<./Figures/maps4book/egv_39.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3547,6 +3344,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3556,14 +3355,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [193]
+File: ./Figures/maps4book/egv_40.png Graphic file (type bmp)
+<./Figures/maps4book/egv_40.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3573,52 +3372,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [194]
+File: ./Figures/maps4book/egv_41.png Graphic file (type bmp)
+<./Figures/maps4book/egv_41.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [195]
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_42.png Graphic file (type bmp)
+<./Figures/maps4book/egv_42.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3634,8 +3406,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_43.png Graphic file (type bmp)
+<./Figures/maps4book/egv_43.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3655,9 +3429,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [198]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_44.png Graphic file (type bmp)
+<./Figures/maps4book/egv_44.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3673,6 +3446,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [199]
+File: ./Figures/maps4book/egv_45.png Graphic file (type bmp)
+<./Figures/maps4book/egv_45.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3680,13 +3455,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1424) in paragraph at lines 7506--7507
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1)
+ []
 
 
 
@@ -3697,9 +3468,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_46.png Graphic file (type bmp)
+<./Figures/maps4book/egv_46.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3715,29 +3485,31 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_47.png Graphic file (type bmp)
+<./Figures/maps4book/egv_47.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-
-[202]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+[202]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
 [203]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_48.png Graphic file (type bmp)
+<./Figures/maps4book/egv_48.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3753,21 +3525,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [204]
+File: ./Figures/maps4book/egv_49.png Graphic file (type bmp)
+<./Figures/maps4book/egv_49.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [205]
@@ -3775,7 +3544,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \vbox (badness 6625) has occurred while \output is active []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_50.png Graphic file (type bmp)
+<./Figures/maps4book/egv_50.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
@@ -3783,20 +3557,20 @@ Underfull \vbox (badness 6625) has occurred while \output is active []
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_51.png Graphic file (type bmp)
+<./Figures/maps4book/egv_51.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3805,19 +3579,42 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 1571) in paragraph at lines 7744--7745
+[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Mean monthly potential evapotranspiration (kg m⁻² month⁻¹)
+ []
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
 [208]
+File: ./Figures/maps4book/egv_52.png Graphic file (type bmp)
+<./Figures/maps4book/egv_52.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1043) in paragraph at lines 7786--7787
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻²
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -3828,28 +3625,36 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [209]
+File: ./Figures/maps4book/egv_53.png Graphic file (type bmp)
+<./Figures/maps4book/egv_53.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 1142) in paragraph at lines 7824--7825
+[]\TU/TimesNewRoman(0)/b/n/10 English name: \TU/TimesNewRoman(0)/m/n/10 Annual range of monthly potential evapotranspiration (kg m⁻²
+ []
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [210]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_54.png Graphic file (type bmp)
+<./Figures/maps4book/egv_54.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
@@ -3857,20 +3662,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_55.png Graphic file (type bmp)
+<./Figures/maps4book/egv_55.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3881,15 +3686,31 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 
 [213]
+File: ./Figures/maps4book/egv_56.png Graphic file (type bmp)
+<./Figures/maps4book/egv_56.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3899,28 +3720,31 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [214]
+File: ./Figures/maps4book/egv_57.png Graphic file (type bmp)
+<./Figures/maps4book/egv_57.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [215]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_58.png Graphic file (type bmp)
+<./Figures/maps4book/egv_58.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
@@ -3934,14 +3758,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_59.png Graphic file (type bmp)
+<./Figures/maps4book/egv_59.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3954,11 +3774,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3968,12 +3783,27 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [218]
+File: ./Figures/maps4book/egv_60.png Graphic file (type bmp)
+<./Figures/maps4book/egv_60.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
 [219]
+File: ./Figures/maps4book/egv_61.png Graphic file (type bmp)
+<./Figures/maps4book/egv_61.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -3982,20 +3812,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 
 [220]
@@ -4003,7 +3819,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+File: ./Figures/maps4book/egv_62.png Graphic file (type bmp)
+<./Figures/maps4book/egv_62.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
@@ -4013,19 +3834,16 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_63.png Graphic file (type bmp)
+<./Figures/maps4book/egv_63.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4038,12 +3856,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4053,27 +3867,29 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [223]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+File: ./Figures/maps4book/egv_64.png Graphic file (type bmp)
+<./Figures/maps4book/egv_64.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
 [224]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_65.png Graphic file (type bmp)
+<./Figures/maps4book/egv_65.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4089,13 +3905,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+File: ./Figures/maps4book/egv_66.png Graphic file (type bmp)
+<./Figures/maps4book/egv_66.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 
 [226]
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4105,22 +3922,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+File: ./Figures/maps4book/egv_67.png Graphic file (type bmp)
+<./Figures/maps4book/egv_67.png>
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [227]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4136,27 +3945,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [228]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+File: ./Figures/maps4book/egv_68.png Graphic file (type bmp)
+<./Figures/maps4book/egv_68.png>
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 
 [229]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+File: ./Figures/maps4book/egv_69.png Graphic file (type bmp)
+<./Figures/maps4book/egv_69.png>
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4166,6 +3973,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [230]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4194,22 +4004,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [232]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4251,16 +4051,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [235]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 6625) has occurred while \output is active []
 
 
 
@@ -4290,17 +4087,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [238]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4332,9 +4123,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-LaTeX Warning: Hyper reference `Ch05.04.0' on page 240 undefined on input line 10183.
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -4343,20 +4131,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [240]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-LaTeX Warning: Hyper reference `Ch05.04.0' on page 241 undefined on input line 10233.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4368,7 +4143,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-LaTeX Warning: Hyper reference `Ch05.04.0' on page 242 undefined on input line 10283.
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -4378,15 +4159,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 [242]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-LaTeX Warning: Hyper reference `Ch05.04.0' on page 243 undefined on input line 10333.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -4422,23 +4194,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [245]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [246]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4460,6 +4234,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4473,17 +4254,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [249]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4503,14 +4285,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [251]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4532,15 +4318,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4556,32 +4335,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [253]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4592,15 +4346,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4622,45 +4371,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 
 [256]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4682,15 +4399,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4706,35 +4418,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [258]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4745,18 +4429,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⁻ (U+207B) in font Times New Roman/OT:script=latn;language=dflt;mapping=tex-text;!
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4782,38 +4458,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [261]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4848,32 +4494,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [263]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4914,15 +4536,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [265]
 
@@ -4932,38 +4545,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [266]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -4995,35 +4578,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [268]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5058,13 +4614,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+LaTeX Warning: Hyper reference `Ch05.04.0' on page 270 undefined on input line 10321.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5082,16 +4632,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+LaTeX Warning: Hyper reference `Ch05.04.0' on page 271 undefined on input line 10371.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5109,22 +4650,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+LaTeX Warning: Hyper reference `Ch05.04.0' on page 272 undefined on input line 10421.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5142,19 +4668,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+LaTeX Warning: Hyper reference `Ch05.04.0' on page 273 undefined on input line 10471.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5162,21 +4676,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [273]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5205,38 +4704,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [275]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5265,24 +4734,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [277]
 
@@ -5298,43 +4749,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [278]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 12060--12061
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
- []
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5363,18 +4779,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [280]
 
@@ -5387,44 +4791,8 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [281]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5525,6 +4893,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [285]
 
@@ -5573,23 +4944,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (1.85846pt too wide) in paragraph at lines 12452--12452
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_cell 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (9.06549pt too wide) in paragraph at lines 12468--12468
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r500 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5604,23 +4962,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (16.26547pt too wide) in paragraph at lines 12484--12484
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r1250 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (16.26547pt too wide) in paragraph at lines 12500--12500
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r3000 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5632,9 +4977,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (23.46548pt too wide) in paragraph at lines 12516--12516
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r10000 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5645,6 +4988,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [288]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -5703,29 +5049,19 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [290]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (5.81003pt too wide) in paragraph at lines 12628--12628
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r500 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (13.01001pt too wide) in paragraph at lines 12644--12644
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r1250 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5737,9 +5073,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (13.01001pt too wide) in paragraph at lines 12660--12660
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r3000 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5754,11 +5088,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (20.21002pt too wide) in paragraph at lines 12676--12676
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r10000 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -5775,11 +5104,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (6.89282pt too wide) in paragraph at lines 12708--12708
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r500 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5794,9 +5118,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (14.09283pt too wide) in paragraph at lines 12724--12724
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r1250 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5808,23 +5136,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (14.09283pt too wide) in paragraph at lines 12740--12740
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r3000 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (21.29282pt too wide) in paragraph at lines 12756--12756
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r10000 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5938,11 +5250,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (5.81705pt too wide) in paragraph at lines 12932--12932
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_cell 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -5950,11 +5257,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (13.02408pt too wide) in paragraph at lines 12948--12948
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r500 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5969,9 +5271,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (20.22406pt too wide) in paragraph at lines 12964--12964
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r1250 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -5983,23 +5289,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (20.22406pt too wide) in paragraph at lines 12980--12980
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r3000 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (27.42407pt too wide) in paragraph at lines 12996--12996
-[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r10000 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6007,9 +5297,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [298]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -6155,11 +5442,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [303]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -6275,11 +5562,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-
-[307]
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+
+
+[307]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -6318,6 +5605,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 12198--12199
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6395,6 +5687,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [311]
 
@@ -6443,11 +5738,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13700--13700
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_TimeSinceDisturbance-
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -6487,14 +5777,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13764--13764
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeBorealDeciduousOther-
- []
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -6502,11 +5784,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 [314]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13780--13780
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeBorealDeciduousTotal-
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6560,17 +5837,26 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [316]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (5.54282pt too wide) in paragraph at lines 13876--13876
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateDeciduousTotal-
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (1.85846pt too wide) in paragraph at lines 12590--12590
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_cell 
  []
 
 
@@ -6583,23 +5869,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13892--13892
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateWithoutOak-
+Overfull \hbox (9.06549pt too wide) in paragraph at lines 12606--12606
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r500 
  []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (26.60141pt too wide) in paragraph at lines 13908--13908
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateWithoutOakMaple-
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6611,7 +5886,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (16.26547pt too wide) in paragraph at lines 12622--12622
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r1250 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6623,10 +5900,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (16.26547pt too wide) in paragraph at lines 12638--12638
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r3000 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (23.46548pt too wide) in paragraph at lines 12654--12654
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsAbandoned_r10000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6701,7 +5991,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (5.81003pt too wide) in paragraph at lines 12766--12766
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r500 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6713,10 +6005,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (13.01001pt too wide) in paragraph at lines 12782--12782
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r1250 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (13.01001pt too wide) in paragraph at lines 12798--12798
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r3000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6731,7 +6036,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (20.21002pt too wide) in paragraph at lines 12814--12814
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsPermanent_r10000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6747,6 +6054,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (6.89282pt too wide) in paragraph at lines 12846--12846
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r500 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6761,7 +6076,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (14.09283pt too wide) in paragraph at lines 12862--12862
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r1250 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6773,10 +6090,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (14.09283pt too wide) in paragraph at lines 12878--12878
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r3000 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (21.29282pt too wide) in paragraph at lines 12894--12894
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandGrassland_GrasslandsTemporary_r10000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6881,8 +6211,17 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 14348--14349
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (5.81705pt too wide) in paragraph at lines 13070--13070
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_cell 
  []
 
 
@@ -6895,13 +6234,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (13.02408pt too wide) in paragraph at lines 13086--13086
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r500 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6916,7 +6251,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (20.22406pt too wide) in paragraph at lines 13102--13102
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r1250 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6928,13 +6265,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (20.22406pt too wide) in paragraph at lines 13118--13118
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r3000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (27.42407pt too wide) in paragraph at lines 13134--13134
+[]\TU/TimesNewRoman(0)/b/n/14.4 FarmlandPloughed_CropsFallowTempGrass_r10000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -6942,6 +6289,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [328]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -7027,9 +6377,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [331]
 
@@ -7069,9 +6416,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (3.91861pt too wide) in paragraph at lines 14644--14644
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_BorealDeciduousYoung_r10000 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7097,9 +6442,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [333]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -7245,6 +6587,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [338]
 
@@ -7302,14 +6647,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (6.02798pt too wide) in paragraph at lines 15012--15012
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r1250 
- []
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [340]
 
@@ -7319,23 +6656,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (6.02798pt too wide) in paragraph at lines 15028--15028
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r3000 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (13.22797pt too wide) in paragraph at lines 15044--15044
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r10000 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7347,9 +6671,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (7.6311pt too wide) in paragraph at lines 15060--15060
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_cell 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7364,23 +6686,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (14.83813pt too wide) in paragraph at lines 15076--15076
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r500 
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Overfull \hbox (22.03815pt too wide) in paragraph at lines 15092--15092
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r1250 
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7392,9 +6701,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (22.03815pt too wide) in paragraph at lines 15108--15108
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r3000 
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7409,18 +6716,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Overfull \hbox (29.23813pt too wide) in paragraph at lines 15124--15124
-[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r10000 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13838--13838
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_TimeSinceDisturbance-
  []
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7462,6 +6769,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 13902--13902
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeBorealDeciduousOther-
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -7474,7 +6786,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 10000) in paragraph at lines 13918--13918
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeBorealDeciduousTotal-
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7528,13 +6842,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [346]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (5.54282pt too wide) in paragraph at lines 14014--14014
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateDeciduousTotal-
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7546,13 +6865,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Underfull \hbox (badness 10000) in paragraph at lines 14030--14030
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateWithoutOak-
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (26.60141pt too wide) in paragraph at lines 14046--14046
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsQuant_VolumeTemperateWithoutOakMaple-
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -7615,11 +6944,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-
-[349]
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+
+
+[349]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -7705,11 +7034,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-
-[352]
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
+
+
+[352]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -7830,6 +7159,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [356]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 14486--14487
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
+ []
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8014,6 +7351,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (3.91861pt too wide) in paragraph at lines 14782--14782
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_BorealDeciduousYoung_r10000 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -8125,11 +7467,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [366]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8215,9 +7557,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [369]
 
@@ -8245,6 +7584,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (6.02798pt too wide) in paragraph at lines 15150--15150
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r1250 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -8257,7 +7601,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (6.02798pt too wide) in paragraph at lines 15166--15166
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r3000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8269,10 +7615,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (13.22797pt too wide) in paragraph at lines 15182--15182
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousOld_r10000 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (7.6311pt too wide) in paragraph at lines 15198--15198
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_cell 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8287,7 +7646,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
+Overfull \hbox (14.83813pt too wide) in paragraph at lines 15214--15214
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r500 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8299,10 +7660,23 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Overfull \hbox (22.03815pt too wide) in paragraph at lines 15230--15230
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r1250 
+ []
+
+
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (22.03815pt too wide) in paragraph at lines 15246--15246
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r3000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8315,6 +7689,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Overfull \hbox (29.23813pt too wide) in paragraph at lines 15262--15262
+[]\TU/TimesNewRoman(0)/b/n/14.4 ForestsTreesAge_TemperateDeciduousYoung_r10000 
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8340,6 +7719,12 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [373]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8410,8 +7795,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [376]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8440,8 +7855,35 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [378]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8470,8 +7912,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [380]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8509,14 +7981,53 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [382]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [383]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8557,6 +8068,18 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [385]
 
@@ -8566,8 +8089,35 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [386]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8602,6 +8152,21 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [388]
 
@@ -8617,8 +8182,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [389]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8653,6 +8248,15 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [391]
 
@@ -8662,8 +8266,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [392]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8707,14 +8341,7 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 17541--17546
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 17541--17546
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8738,14 +8365,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 17577--17582
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 17577--17582
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8769,14 +8395,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 17614--17619
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 17614--17619
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8800,16 +8425,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 17650--17655
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 17650--17655
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -8820,22 +8435,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 17686--17691
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 17686--17691
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
 
 
 
@@ -8859,14 +8458,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 17721--17726
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 17721--17726
-[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8874,6 +8469,21 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [398]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8905,8 +8515,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [400]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8935,8 +8575,38 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [402]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -8959,9 +8629,13 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 17993--17994
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -8982,9 +8656,19 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 18037--18038
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -9002,11 +8686,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 18085--18086
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -9020,11 +8699,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 18134--18135
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -9042,11 +8716,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 18182--18183
-[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
- []
-
-
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
@@ -9055,9 +8724,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [408]
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -9101,8 +8767,17 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [411]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -9122,17 +8797,11 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [413]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -9167,6 +8836,9 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [415]
 
@@ -9176,14 +8848,14 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [416]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -9227,15 +8899,6 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
 
 [419]
 
@@ -9266,21 +8929,16 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [421]
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 18879--18883
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
- []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -9298,9 +8956,10 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 18930--18934
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
- []
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -9318,8 +8977,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 18980--18984
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 17679--17684
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17679--17684
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
  []
 
 
@@ -9338,8 +9014,19 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 19031--19035
-[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 17715--17720
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17715--17720
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
  []
 
 
@@ -9353,6 +9040,25 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 17752--17757
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17752--17757
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
+ []
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -9376,6 +9082,44 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Underfull \hbox (badness 1436) in paragraph at lines 17788--17793
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17788--17793
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 17824--17829
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17824--17829
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
+ []
+
+
 
 [427]
 
@@ -9397,8 +9141,30 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
+Underfull \hbox (badness 1436) in paragraph at lines 17859--17864
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Directly derived from []Soil chemistry[]. Processed with [][][][]
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 17859--17864
+[][][][][][][][][][] \TU/TimesNewRoman(0)/m/n/10 with [][][][][][][][][][][][][][][][][][][][][][][] performing inverse distance weighted
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [428]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -9423,20 +9189,536 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
 [430]
-Chapter 7.
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
 
-[431
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-]
 
-[432
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[431]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[432]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
 
 [433]
 
-[434] (./HiQBioDiv-EGVs.aux)
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 18131--18132
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[434]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 18175--18176
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[435]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 18223--18224
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[436]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 18272--18273
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[437]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 18320--18321
+[]\TU/TimesNewRoman(0)/b/n/10 Latvian name: \TU/TimesNewRoman(0)/m/n/10 Augsnes granulometriskās klases “organiskās augsnes” platības
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[438]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[439]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[440]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[441]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[442]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[443]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[444]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[445]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[446]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[447]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[448]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[449]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[450]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[451]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 19017--19021
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[452]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 19068--19072
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[453]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 19118--19122
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[454]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 19169--19173
+[]\TU/TimesNewRoman(0)/b/n/10 Procedure: \TU/TimesNewRoman(0)/m/n/10 Derived from []Terrain products[]. Processed with [][][][][][][][][][][]
+ []
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[455]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[456]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[457]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[458]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[459]
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+
+
+[460]
+Chapter 7.
+
+
+[461
+
+]
+
+[462
+
+]
+
+[463]
+
+[464] (./HiQBioDiv-EGVs.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -9446,12 +9728,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20888 strings out of 470394
- 362386 string characters out of 5484191
- 1600673 words of memory out of 5000000
- 48969 multiletter control sequences out of 15000+600000
+ 22200 strings out of 470394
+ 406809 string characters out of 5484191
+ 1604209 words of memory out of 5000000
+ 50211 multiletter control sequences out of 15000+600000
  635429 words of font info for 136 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,6n,116p,455b,1883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HiQBioDiv-EGVs.pdf (434 pages).
+Output written on HiQBioDiv-EGVs.pdf (464 pages).

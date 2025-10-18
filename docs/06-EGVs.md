@@ -80,6 +80,9 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_1} 
+
+
 ## Climate_CHELSAv2.1-bio10_cell	{#ch06.002}
 
 **filename:** `Climate_CHELSAv2.1-bio10_cell.tif`	
@@ -118,6 +121,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_2} 
+
 
 
 ## Climate_CHELSAv2.1-bio11_cell	{#ch06.003}
@@ -160,6 +167,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_3} 
+
+
+
 ## Climate_CHELSAv2.1-bio12_cell	{#ch06.004}
 
 **filename:** `Climate_CHELSAv2.1-bio12_cell.tif`	
@@ -198,6 +209,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_4} 
+
 
 
 ## Climate_CHELSAv2.1-bio13_cell	{#ch06.005}
@@ -240,6 +255,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_5} 
+
+
+
 ## Climate_CHELSAv2.1-bio14_cell	{#ch06.006}
 
 **filename:** `Climate_CHELSAv2.1-bio14_cell.tif`	
@@ -278,6 +297,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_6} 
+
 
 
 ## Climate_CHELSAv2.1-bio15_cell	{#ch06.007}
@@ -320,6 +343,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_7} 
+
+
+
 ## Climate_CHELSAv2.1-bio16_cell	{#ch06.008}
 
 **filename:** `Climate_CHELSAv2.1-bio16_cell.tif`	
@@ -358,6 +385,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_8} 
+
 
 
 ## Climate_CHELSAv2.1-bio17_cell	{#ch06.009}
@@ -400,6 +431,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_9} 
+
+
+
 ## Climate_CHELSAv2.1-bio18_cell	{#ch06.010}
 
 **filename:** `Climate_CHELSAv2.1-bio18_cell.tif`	
@@ -438,6 +473,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_10} 
+
 
 
 ## Climate_CHELSAv2.1-bio19_cell	{#ch06.011}
@@ -480,6 +519,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_11} 
+
+
+
 ## Climate_CHELSAv2.1-bio2_cell	{#ch06.012}
 
 **filename:** `Climate_CHELSAv2.1-bio2_cell.tif`	
@@ -518,6 +561,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_12} 
+
 
 
 ## Climate_CHELSAv2.1-bio3_cell	{#ch06.013}
@@ -560,6 +607,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_13} 
+
+
+
 ## Climate_CHELSAv2.1-bio4_cell	{#ch06.014}
 
 **filename:** `Climate_CHELSAv2.1-bio4_cell.tif`	
@@ -598,6 +649,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_14} 
+
 
 
 ## Climate_CHELSAv2.1-bio5_cell	{#ch06.015}
@@ -640,6 +695,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_15} 
+
+
+
 ## Climate_CHELSAv2.1-bio6_cell	{#ch06.016}
 
 **filename:** `Climate_CHELSAv2.1-bio6_cell.tif`	
@@ -678,6 +737,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_16} 
+
 
 
 ## Climate_CHELSAv2.1-bio7_cell	{#ch06.017}
@@ -720,6 +783,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_17} 
+
+
+
 ## Climate_CHELSAv2.1-bio8_cell	{#ch06.018}
 
 **filename:** `Climate_CHELSAv2.1-bio8_cell.tif`	
@@ -758,6 +825,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_18} 
+
 
 
 ## Climate_CHELSAv2.1-bio9_cell	{#ch06.019}
@@ -800,6 +871,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_19} 
+
+
+
 ## Climate_CHELSAv2.1-clt-max_cell	{#ch06.020}
 
 **filename:** `Climate_CHELSAv2.1-clt-max_cell.tif`	
@@ -838,6 +913,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_20} 
+
 
 
 ## Climate_CHELSAv2.1-clt-mean_cell	{#ch06.021}
@@ -880,6 +959,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_21} 
+
+
+
 ## Climate_CHELSAv2.1-clt-min_cell	{#ch06.022}
 
 **filename:** `Climate_CHELSAv2.1-clt-min_cell.tif`	
@@ -918,6 +1001,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_22} 
+
 
 
 ## Climate_CHELSAv2.1-clt-range_cell	{#ch06.023}
@@ -960,6 +1047,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_23} 
+
+
+
 ## Climate_CHELSAv2.1-cmi-max_cell	{#ch06.024}
 
 **filename:** `Climate_CHELSAv2.1-cmi-max_cell.tif`	
@@ -998,6 +1089,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_24} 
+
 
 
 ## Climate_CHELSAv2.1-cmi-mean_cell	{#ch06.025}
@@ -1040,6 +1135,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_25} 
+
+
+
 ## Climate_CHELSAv2.1-cmi-min_cell	{#ch06.026}
 
 **filename:** `Climate_CHELSAv2.1-cmi-min_cell.tif`	
@@ -1078,6 +1177,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_26} 
+
 
 
 ## Climate_CHELSAv2.1-cmi-range_cell	{#ch06.027}
@@ -1120,6 +1223,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_27} 
+
+
+
 ## Climate_CHELSAv2.1-fcf_cell	{#ch06.028}
 
 **filename:** `Climate_CHELSAv2.1-fcf_cell.tif`	
@@ -1158,6 +1265,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_28} 
+
 
 
 ## Climate_CHELSAv2.1-fgd_cell	{#ch06.029}
@@ -1200,6 +1311,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_29} 
+
+
+
 ## Climate_CHELSAv2.1-gdd0_cell	{#ch06.030}
 
 **filename:** `Climate_CHELSAv2.1-gdd0_cell.tif`	
@@ -1238,6 +1353,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_30} 
+
 
 
 ## Climate_CHELSAv2.1-gdd10_cell	{#ch06.031}
@@ -1280,6 +1399,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_31} 
+
+
+
 ## Climate_CHELSAv2.1-gdd5_cell	{#ch06.032}
 
 **filename:** `Climate_CHELSAv2.1-gdd5_cell.tif`	
@@ -1318,6 +1441,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_32} 
+
 
 
 ## Climate_CHELSAv2.1-gddlgd0_cell	{#ch06.033}
@@ -1360,6 +1487,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_33} 
+
+
+
 ## Climate_CHELSAv2.1-gddlgd10_cell	{#ch06.034}
 
 **filename:** `Climate_CHELSAv2.1-gddlgd10_cell.tif`	
@@ -1398,6 +1529,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_34} 
+
 
 
 ## Climate_CHELSAv2.1-gddlgd5_cell	{#ch06.035}
@@ -1440,6 +1575,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_35} 
+
+
+
 ## Climate_CHELSAv2.1-gdgfgd0_cell	{#ch06.036}
 
 **filename:** `Climate_CHELSAv2.1-gdgfgd0_cell.tif`	
@@ -1478,6 +1617,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_36} 
+
 
 
 ## Climate_CHELSAv2.1-gdgfgd10_cell	{#ch06.037}
@@ -1520,6 +1663,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_37} 
+
+
+
 ## Climate_CHELSAv2.1-gdgfgd5_cell	{#ch06.038}
 
 **filename:** `Climate_CHELSAv2.1-gdgfgd5_cell.tif`	
@@ -1558,6 +1705,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_38} 
+
 
 
 ## Climate_CHELSAv2.1-gsl_cell	{#ch06.039}
@@ -1600,6 +1751,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_39} 
+
+
+
 ## Climate_CHELSAv2.1-gsp_cell	{#ch06.040}
 
 **filename:** `Climate_CHELSAv2.1-gsp_cell.tif`	
@@ -1638,6 +1793,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_40} 
+
 
 
 ## Climate_CHELSAv2.1-gst_cell	{#ch06.041}
@@ -1680,6 +1839,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_41} 
+
+
+
 ## Climate_CHELSAv2.1-hurs-max_cell	{#ch06.042}
 
 **filename:** `Climate_CHELSAv2.1-hurs-max_cell.tif`	
@@ -1718,6 +1881,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_42} 
+
 
 
 ## Climate_CHELSAv2.1-hurs-mean_cell	{#ch06.043}
@@ -1760,6 +1927,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_43} 
+
+
+
 ## Climate_CHELSAv2.1-hurs-min_cell	{#ch06.044}
 
 **filename:** `Climate_CHELSAv2.1-hurs-min_cell.tif`	
@@ -1798,6 +1969,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_44} 
+
 
 
 ## Climate_CHELSAv2.1-hurs-range_cell	{#ch06.045}
@@ -1840,6 +2015,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_45} 
+
+
+
 ## Climate_CHELSAv2.1-lgd_cell	{#ch06.046}
 
 **filename:** `Climate_CHELSAv2.1-lgd_cell.tif`	
@@ -1878,6 +2057,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_46} 
+
 
 
 ## Climate_CHELSAv2.1-ngd0_cell	{#ch06.047}
@@ -1920,6 +2103,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_47} 
+
+
+
 ## Climate_CHELSAv2.1-ngd10_cell	{#ch06.048}
 
 **filename:** `Climate_CHELSAv2.1-ngd10_cell.tif`	
@@ -1958,6 +2145,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_48} 
+
 
 
 ## Climate_CHELSAv2.1-ngd5_cell	{#ch06.049}
@@ -2000,6 +2191,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_49} 
+
+
+
 ## Climate_CHELSAv2.1-npp_cell	{#ch06.050}
 
 **filename:** `Climate_CHELSAv2.1-npp_cell.tif`	
@@ -2038,6 +2233,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_50} 
+
 
 
 ## Climate_CHELSAv2.1-pet-penman-max_cell	{#ch06.051}
@@ -2080,6 +2279,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_51} 
+
+
+
 ## Climate_CHELSAv2.1-pet-penman-mean_cell	{#ch06.052}
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-mean_cell.tif`	
@@ -2118,6 +2321,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_52} 
+
 
 
 ## Climate_CHELSAv2.1-pet-penman-min_cell	{#ch06.053}
@@ -2160,6 +2367,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_53} 
+
+
+
 ## Climate_CHELSAv2.1-pet-penman-range_cell	{#ch06.054}
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-range_cell.tif`	
@@ -2198,6 +2409,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_54} 
+
 
 
 ## Climate_CHELSAv2.1-rsds-max_cell	{#ch06.055}
@@ -2240,6 +2455,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_55} 
+
+
+
 ## Climate_CHELSAv2.1-rsds-mean_cell	{#ch06.056}
 
 **filename:** `Climate_CHELSAv2.1-rsds-mean_cell.tif`	
@@ -2278,6 +2497,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_56} 
+
 
 
 ## Climate_CHELSAv2.1-rsds-min_cell	{#ch06.057}
@@ -2320,6 +2543,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_57} 
+
+
+
 ## Climate_CHELSAv2.1-rsds-range_cell	{#ch06.058}
 
 **filename:** `Climate_CHELSAv2.1-rsds-range_cell.tif`	
@@ -2358,6 +2585,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_58} 
+
 
 
 ## Climate_CHELSAv2.1-scd_cell	{#ch06.059}
@@ -2400,6 +2631,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_59} 
+
+
+
 ## Climate_CHELSAv2.1-sfcWind-max_cell	{#ch06.060}
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-max_cell.tif`	
@@ -2438,6 +2673,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_60} 
+
 
 
 ## Climate_CHELSAv2.1-sfcWind-mean_cell	{#ch06.061}
@@ -2480,6 +2719,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_61} 
+
+
+
 ## Climate_CHELSAv2.1-sfcWind-min_cell	{#ch06.062}
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-min_cell.tif`	
@@ -2518,6 +2761,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_62} 
+
 
 
 ## Climate_CHELSAv2.1-sfcWind-range_cell	{#ch06.063}
@@ -2560,6 +2807,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_63} 
+
+
+
 ## Climate_CHELSAv2.1-swb_cell	{#ch06.064}
 
 **filename:** `Climate_CHELSAv2.1-swb_cell.tif`	
@@ -2598,6 +2849,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_64} 
+
 
 
 ## Climate_CHELSAv2.1-swe_cell	{#ch06.065}
@@ -2640,6 +2895,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_65} 
+
+
+
 ## Climate_CHELSAv2.1-vpd-max_cell	{#ch06.066}
 
 **filename:** `Climate_CHELSAv2.1-vpd-max_cell.tif`	
@@ -2678,6 +2937,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_66} 
+
 
 
 ## Climate_CHELSAv2.1-vpd-mean_cell	{#ch06.067}
@@ -2720,6 +2983,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_67} 
+
+
+
 ## Climate_CHELSAv2.1-vpd-min_cell	{#ch06.068}
 
 **filename:** `Climate_CHELSAv2.1-vpd-min_cell.tif`	
@@ -2760,6 +3027,10 @@ print(df)
 ```
 
 
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_68} 
+
+
+
 ## Climate_CHELSAv2.1-vpd-range_cell	{#ch06.069}
 
 **filename:** `Climate_CHELSAv2.1-vpd-range_cell.tif`	
@@ -2798,6 +3069,10 @@ df <- downscale2egv(
   plot_result   = TRUE)
 print(df)
 ```
+
+
+\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_69} 
+
 
 
 ## HydroClim_01-max_cell	{#ch06.070}
