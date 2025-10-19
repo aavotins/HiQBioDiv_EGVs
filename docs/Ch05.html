@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-18" />
+<meta name="date" content="2025-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1515,7 +1515,7 @@ for further processing.</p>
 <li><p>class <code>400</code> - <strong>allotment gardens and orchards, cottages</strong>, <strong>filled in order</strong> -
 dominate classes with higher values. To create this class, the following were
 combined (in order of overlap):</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>BuildA_COMB</code> values “poligons_Vasarnīcu_apbūve”,“poligons_Viensētu_apbūve” coded with <code>410</code>;</p>
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>BuildA_v3</code> values “poligons_Vasarnīcu_apbūve”,“poligons_Viensētu_apbūve” coded with <code>410</code>;</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> values “poligons_Augludarzs”, “poligons_Augļudārzs”, “poligons_Sakņudārzs”, “poligons_Ogulājs”, “poligons_Ogulajs”,
 “poligons_Saknudarzs” coded with <code>420</code>;</p>
 <p>– <a href="Ch04.html#Ch04.02">LAD database</a> rural information layer group (classes are
@@ -1545,7 +1545,7 @@ processing.</p>
 <span id="cb34-17"><a href="Ch05.html#cb34-17" tabindex="-1"></a></span>
 <span id="cb34-18"><a href="Ch05.html#cb34-18" tabindex="-1"></a></span>
 <span id="cb34-19"><a href="Ch05.html#cb34-19" tabindex="-1"></a><span class="co"># topo apbuves</span></span>
-<span id="cb34-20"><a href="Ch05.html#cb34-20" tabindex="-1"></a>viensvasar<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BuildA_COMB.parquet&quot;</span>)</span>
+<span id="cb34-20"><a href="Ch05.html#cb34-20" tabindex="-1"></a>viensvasar<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/BuildA_v3.parquet&quot;</span>)</span>
 <span id="cb34-21"><a href="Ch05.html#cb34-21" tabindex="-1"></a><span class="fu">table</span>(viensvasar<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
 <span id="cb34-22"><a href="Ch05.html#cb34-22" tabindex="-1"></a>viensvasar<span class="ot">=</span>viensvasar <span class="sc">%&gt;%</span> </span>
 <span id="cb34-23"><a href="Ch05.html#cb34-23" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Vasarnīcu_apbūve&quot;</span>,<span class="st">&quot;poligons_Viensētu_apbūve&quot;</span>)) <span class="sc">%&gt;%</span> </span>

@@ -1787,7 +1787,8 @@ combined, preffering the most timely per mapping page. These layers are:
 
 - `flora_L`, describing linear tree and shrub formations;
 
-- `build_A`, describing types of builtup areas.
+- `build_A`, describing types of builtup areas. Version 4 available at the 
+University of Latvia does not have all the classes as version 3, therefore version 3 is used.
 
 
 ``` r
@@ -1989,14 +1990,9 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/FloraL_COMB.pa
 
 # build_A
 data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="build_A")
-data_not4=st_difference(data_3,pages4_united)
-data_not4=data_not4 %>% 
+data_3=data_3 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="build_A")
-data_4=data_4 %>% 
-  dplyr::select(FNAME,FCODE)
-data_new=rbind(data_not4,data_4)
-sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BuildA_COMB.parquet")
+sfarrow::st_write_parquet(data_3,"./Geodata/2024/TopographicMap/BuildA_v3.parquet")
 ```
 
 

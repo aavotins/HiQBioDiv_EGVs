@@ -15,9 +15,10 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 - scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.
 
 
-\begin{figure}
-\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains_300dpi_2} \caption{Relationships of ecogeographical variables created.}(\#fig:flowchart)
-\end{figure}
+<div class="figure">
+<img src="./Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png" alt="Relationships of ecogeographical variables created." width="100%" />
+<p class="caption">(\#fig:flowchart)Relationships of ecogeographical variables created.</p>
+</div>
 
 <br>
 
@@ -79,8 +80,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_1} 
+<img src="./Figures/maps4book/egv_1.png" width="100%" />
 
 
 ## Climate_CHELSAv2.1-bio10_cell	{#ch06.002}
@@ -122,8 +122,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_2} 
+<img src="./Figures/maps4book/egv_2.png" width="100%" />
 
 
 
@@ -166,8 +165,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_3} 
+<img src="./Figures/maps4book/egv_3.png" width="100%" />
 
 
 
@@ -210,8 +208,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_4} 
+<img src="./Figures/maps4book/egv_4.png" width="100%" />
 
 
 
@@ -254,8 +251,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_5} 
+<img src="./Figures/maps4book/egv_5.png" width="100%" />
 
 
 
@@ -298,8 +294,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_6} 
+<img src="./Figures/maps4book/egv_6.png" width="100%" />
 
 
 
@@ -342,8 +337,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_7} 
+<img src="./Figures/maps4book/egv_7.png" width="100%" />
 
 
 
@@ -386,8 +380,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_8} 
+<img src="./Figures/maps4book/egv_8.png" width="100%" />
 
 
 
@@ -430,8 +423,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_9} 
+<img src="./Figures/maps4book/egv_9.png" width="100%" />
 
 
 
@@ -474,8 +466,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_10} 
+<img src="./Figures/maps4book/egv_10.png" width="100%" />
 
 
 
@@ -518,8 +509,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_11} 
+<img src="./Figures/maps4book/egv_11.png" width="100%" />
 
 
 
@@ -562,8 +552,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_12} 
+<img src="./Figures/maps4book/egv_12.png" width="100%" />
 
 
 
@@ -606,8 +595,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_13} 
+<img src="./Figures/maps4book/egv_13.png" width="100%" />
 
 
 
@@ -650,8 +638,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_14} 
+<img src="./Figures/maps4book/egv_14.png" width="100%" />
 
 
 
@@ -694,8 +681,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_15} 
+<img src="./Figures/maps4book/egv_15.png" width="100%" />
 
 
 
@@ -738,8 +724,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_16} 
+<img src="./Figures/maps4book/egv_16.png" width="100%" />
 
 
 
@@ -782,8 +767,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_17} 
+<img src="./Figures/maps4book/egv_17.png" width="100%" />
 
 
 
@@ -826,8 +810,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_18} 
+<img src="./Figures/maps4book/egv_18.png" width="100%" />
 
 
 
@@ -870,8 +853,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_19} 
+<img src="./Figures/maps4book/egv_19.png" width="100%" />
 
 
 
@@ -914,8 +896,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_20} 
+<img src="./Figures/maps4book/egv_20.png" width="100%" />
 
 
 
@@ -958,8 +939,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_21} 
+<img src="./Figures/maps4book/egv_21.png" width="100%" />
 
 
 
@@ -1002,8 +982,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_22} 
+<img src="./Figures/maps4book/egv_22.png" width="100%" />
 
 
 
@@ -1046,8 +1025,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_23} 
+<img src="./Figures/maps4book/egv_23.png" width="100%" />
 
 
 
@@ -1090,8 +1068,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_24} 
+<img src="./Figures/maps4book/egv_24.png" width="100%" />
 
 
 
@@ -1134,8 +1111,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_25} 
+<img src="./Figures/maps4book/egv_25.png" width="100%" />
 
 
 
@@ -1178,8 +1154,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_26} 
+<img src="./Figures/maps4book/egv_26.png" width="100%" />
 
 
 
@@ -1222,8 +1197,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_27} 
+<img src="./Figures/maps4book/egv_27.png" width="100%" />
 
 
 
@@ -1266,8 +1240,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_28} 
+<img src="./Figures/maps4book/egv_28.png" width="100%" />
 
 
 
@@ -1310,8 +1283,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_29} 
+<img src="./Figures/maps4book/egv_29.png" width="100%" />
 
 
 
@@ -1354,8 +1326,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_30} 
+<img src="./Figures/maps4book/egv_30.png" width="100%" />
 
 
 
@@ -1398,8 +1369,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_31} 
+<img src="./Figures/maps4book/egv_31.png" width="100%" />
 
 
 
@@ -1442,8 +1412,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_32} 
+<img src="./Figures/maps4book/egv_32.png" width="100%" />
 
 
 
@@ -1486,8 +1455,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_33} 
+<img src="./Figures/maps4book/egv_33.png" width="100%" />
 
 
 
@@ -1530,8 +1498,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_34} 
+<img src="./Figures/maps4book/egv_34.png" width="100%" />
 
 
 
@@ -1574,8 +1541,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_35} 
+<img src="./Figures/maps4book/egv_35.png" width="100%" />
 
 
 
@@ -1618,8 +1584,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_36} 
+<img src="./Figures/maps4book/egv_36.png" width="100%" />
 
 
 
@@ -1662,8 +1627,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_37} 
+<img src="./Figures/maps4book/egv_37.png" width="100%" />
 
 
 
@@ -1706,8 +1670,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_38} 
+<img src="./Figures/maps4book/egv_38.png" width="100%" />
 
 
 
@@ -1750,8 +1713,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_39} 
+<img src="./Figures/maps4book/egv_39.png" width="100%" />
 
 
 
@@ -1794,8 +1756,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_40} 
+<img src="./Figures/maps4book/egv_40.png" width="100%" />
 
 
 
@@ -1838,8 +1799,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_41} 
+<img src="./Figures/maps4book/egv_41.png" width="100%" />
 
 
 
@@ -1882,8 +1842,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_42} 
+<img src="./Figures/maps4book/egv_42.png" width="100%" />
 
 
 
@@ -1926,8 +1885,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_43} 
+<img src="./Figures/maps4book/egv_43.png" width="100%" />
 
 
 
@@ -1970,8 +1928,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_44} 
+<img src="./Figures/maps4book/egv_44.png" width="100%" />
 
 
 
@@ -2014,8 +1971,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_45} 
+<img src="./Figures/maps4book/egv_45.png" width="100%" />
 
 
 
@@ -2058,8 +2014,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_46} 
+<img src="./Figures/maps4book/egv_46.png" width="100%" />
 
 
 
@@ -2102,8 +2057,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_47} 
+<img src="./Figures/maps4book/egv_47.png" width="100%" />
 
 
 
@@ -2146,8 +2100,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_48} 
+<img src="./Figures/maps4book/egv_48.png" width="100%" />
 
 
 
@@ -2190,8 +2143,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_49} 
+<img src="./Figures/maps4book/egv_49.png" width="100%" />
 
 
 
@@ -2234,8 +2186,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_50} 
+<img src="./Figures/maps4book/egv_50.png" width="100%" />
 
 
 
@@ -2278,8 +2229,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_51} 
+<img src="./Figures/maps4book/egv_51.png" width="100%" />
 
 
 
@@ -2322,8 +2272,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_52} 
+<img src="./Figures/maps4book/egv_52.png" width="100%" />
 
 
 
@@ -2366,8 +2315,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_53} 
+<img src="./Figures/maps4book/egv_53.png" width="100%" />
 
 
 
@@ -2410,8 +2358,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_54} 
+<img src="./Figures/maps4book/egv_54.png" width="100%" />
 
 
 
@@ -2454,8 +2401,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_55} 
+<img src="./Figures/maps4book/egv_55.png" width="100%" />
 
 
 
@@ -2498,8 +2444,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_56} 
+<img src="./Figures/maps4book/egv_56.png" width="100%" />
 
 
 
@@ -2542,8 +2487,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_57} 
+<img src="./Figures/maps4book/egv_57.png" width="100%" />
 
 
 
@@ -2586,8 +2530,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_58} 
+<img src="./Figures/maps4book/egv_58.png" width="100%" />
 
 
 
@@ -2630,8 +2573,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_59} 
+<img src="./Figures/maps4book/egv_59.png" width="100%" />
 
 
 
@@ -2674,8 +2616,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_60} 
+<img src="./Figures/maps4book/egv_60.png" width="100%" />
 
 
 
@@ -2718,8 +2659,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_61} 
+<img src="./Figures/maps4book/egv_61.png" width="100%" />
 
 
 
@@ -2762,8 +2702,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_62} 
+<img src="./Figures/maps4book/egv_62.png" width="100%" />
 
 
 
@@ -2806,8 +2745,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_63} 
+<img src="./Figures/maps4book/egv_63.png" width="100%" />
 
 
 
@@ -2850,8 +2788,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_64} 
+<img src="./Figures/maps4book/egv_64.png" width="100%" />
 
 
 
@@ -2894,8 +2831,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_65} 
+<img src="./Figures/maps4book/egv_65.png" width="100%" />
 
 
 
@@ -2938,8 +2874,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_66} 
+<img src="./Figures/maps4book/egv_66.png" width="100%" />
 
 
 
@@ -2982,8 +2917,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_67} 
+<img src="./Figures/maps4book/egv_67.png" width="100%" />
 
 
 
@@ -3026,8 +2960,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_68} 
+<img src="./Figures/maps4book/egv_68.png" width="100%" />
 
 
 
@@ -3070,8 +3003,7 @@ df <- downscale2egv(
 print(df)
 ```
 
-
-\includegraphics[width=1\linewidth]{./Figures/maps4book/egv_69} 
+<img src="./Figures/maps4book/egv_69.png" width="100%" />
 
 
 
@@ -3150,6 +3082,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_70.png" width="100%" />
+
+
 
 ## HydroClim_02-max_cell	{#ch06.071}
 
@@ -3225,6 +3160,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_71.png" width="100%" />
+
 
 
 ## HydroClim_03-max_cell	{#ch06.072}
@@ -3302,6 +3240,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_72.png" width="100%" />
+
+
 
 ## HydroClim_04-max_cell	{#ch06.073}
 
@@ -3377,6 +3318,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_73.png" width="100%" />
+
 
 
 ## HydroClim_05-max_cell	{#ch06.074}
@@ -3454,6 +3398,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_74.png" width="100%" />
+
+
 
 ## HydroClim_06-min_cell	{#ch06.075}
 
@@ -3529,6 +3476,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_75.png" width="100%" />
+
 
 
 ## HydroClim_07-max_cell	{#ch06.076}
@@ -3606,6 +3556,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_76.png" width="100%" />
+
+
 
 ## HydroClim_08-max_cell	{#ch06.077}
 
@@ -3681,6 +3634,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_77.png" width="100%" />
+
 
 
 ## HydroClim_09-min_cell	{#ch06.078}
@@ -3758,6 +3714,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_78.png" width="100%" />
+
+
 
 ## HydroClim_10-max_cell	{#ch06.079}
 
@@ -3833,6 +3792,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_79.png" width="100%" />
+
 
 
 ## HydroClim_11-min_cell	{#ch06.080}
@@ -3910,6 +3872,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_80.png" width="100%" />
+
+
 
 ## HydroClim_12-max_cell	{#ch06.081}
 
@@ -3985,6 +3950,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_81.png" width="100%" />
+
 
 
 ## HydroClim_13-max_cell	{#ch06.082}
@@ -4062,6 +4030,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_82.png" width="100%" />
+
+
 
 ## HydroClim_14-max_cell	{#ch06.083}
 
@@ -4137,6 +4108,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_83.png" width="100%" />
+
 
 
 ## HydroClim_15-max_cell	{#ch06.084}
@@ -4214,6 +4188,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_84.png" width="100%" />
+
+
 
 ## HydroClim_16-max_cell	{#ch06.085}
 
@@ -4289,6 +4266,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_85.png" width="100%" />
+
 
 
 ## HydroClim_17-max_cell	{#ch06.086}
@@ -4366,6 +4346,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_86.png" width="100%" />
+
+
 
 ## HydroClim_18-max_cell	{#ch06.087}
 
@@ -4441,6 +4424,9 @@ egvrez
   
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
+
+<img src="./Figures/maps4book/egv_87.png" width="100%" />
+
 
 
 ## HydroClim_19-max_cell	{#ch06.088}
@@ -4518,6 +4504,9 @@ egvrez
 unlink(paste0("./RasterGrids_10m/2024/",localname))
 ```
 
+<img src="./Figures/maps4book/egv_88.png" width="100%" />
+
+
 
 ## Distance_Builtup_cell	{#ch06.089}
 
@@ -4529,8 +4518,9 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 
 **Latvian name:** Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
 
-**Procedure:**   Derived from [Landscape classification](#Ch05.03) with class 500 
-reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. 
+**Procedure:**   Derived from [Landscape classification](#Ch05.03) with class 
+500 reclassified as 1 and others as 0. Processed 
+with `egvtools::distance2egv()`. 
 To protect against possible data loss at edge cells, inverse distance 
 weighted (power = 2) gap filling is implemented. 
 
@@ -4556,6 +4546,9 @@ plot(rast("RasterGrids_100m/2024/RAW/Distance_Builtup_cell.tif"))
 rm(builtup)
 rm(distegv)
 ```
+
+<img src="./Figures/maps4book/egv_89.png" width="100%" />
+
 
 
 ## Distance_ForestInside_cell	{#ch06.090}
@@ -4596,6 +4589,9 @@ plot(rast("RasterGrids_100m/2024/RAW/Distance_ForestInside_cell.tif"))
 rm(trees_inside)
 rm(distegv)
 ```
+
+<img src="./Figures/maps4book/egv_90.png" width="100%" />
+
 
 
 ## Distance_GrasslandPermanent_cell	{#ch06.091}
@@ -4659,6 +4655,9 @@ rm(permgrass_t)
 rm(permgrass_t2)
 ```
 
+<img src="./Figures/maps4book/egv_91.png" width="100%" />
+
+
 
 ## Distance_Landfill_cell	{#ch06.092}
 
@@ -4716,6 +4715,9 @@ distegv=distance2egv(input = landfills_bg,
              layername = "egv_92")
 distegv
 ```
+
+<img src="./Figures/maps4book/egv_92.png" width="100%" />
+
 
 
 ## Distance_Sea_cell	{#ch06.093}
@@ -4782,6 +4784,9 @@ distegv=distance2egv(input = sea_bg,
 distegv
 ```
 
+<img src="./Figures/maps4book/egv_93.png" width="100%" />
+
+
 
 ## Distance_Trees_cell	{#ch06.094}
 
@@ -4821,6 +4826,9 @@ plot(rast("RasterGrids_100m/2024/RAW/Distance_Trees_cell.tif"))
 rm(trees)
 rm(distegv)
 ```
+
+<img src="./Figures/maps4book/egv_94.png" width="100%" />
+
 
 
 ## Distance_Waste_cell	{#ch06.095}
@@ -4890,6 +4898,9 @@ distegv=distance2egv(input = wastw_bg,
 distegv
 ```
 
+<img src="./Figures/maps4book/egv_95.png" width="100%" />
+
+
 
 ## Distance_Water_cell	{#ch06.096}
 
@@ -4929,6 +4940,9 @@ rm(water)
 rm(distegv)
 ```
 
+<img src="./Figures/maps4book/egv_96.png" width="100%" />
+
+
 
 ## Distance_WaterInside_cell	{#ch06.097}
 
@@ -4967,6 +4981,9 @@ plot(rast("RasterGrids_100m/2024/RAW/Distance_WaterInside_cell.tif"))
 rm(water_outside)
 rm(distegv)
 ```
+
+<img src="./Figures/maps4book/egv_97.png" width="100%" />
+
 
 
 ## Diversity_Farmland_r500	{#ch06.098}
@@ -5020,6 +5037,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_98.png" width="100%" />
+
+
 
 ## Diversity_Farmland_r1250	{#ch06.099}
 
@@ -5071,6 +5091,9 @@ writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif",
             overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_99.png" width="100%" />
+
 
 
 ## Diversity_Farmland_r3000	{#ch06.100}
@@ -5124,6 +5147,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_100.png" width="100%" />
+
+
 
 ## Diversity_Farmland_r10000	{#ch06.101}
 
@@ -5175,6 +5201,9 @@ writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r10000.tif",
             overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_101.png" width="100%" />
+
 
 
 ## Diversity_Forest_r500	{#ch06.102}
@@ -5228,6 +5257,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_102.png" width="100%" />
+
+
 
 ## Diversity_Forest_r1250	{#ch06.103}
 
@@ -5279,6 +5311,9 @@ writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Forest_r1250.tif",
             overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_103.png" width="100%" />
+
 
 
 ## Diversity_Forest_r3000	{#ch06.104}
@@ -5332,6 +5367,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_104.png" width="100%" />
+
+
 
 ## Diversity_Forest_r10000	{#ch06.105}
 
@@ -5383,6 +5421,9 @@ writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Forest_r10000.tif",
             overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_105.png" width="100%" />
+
 
 
 ## Diversity_Total_r500	{#ch06.106}
@@ -5436,6 +5477,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_106.png" width="100%" />
+
+
 
 ## Diversity_Total_r1250	{#ch06.107}
 
@@ -5487,6 +5531,9 @@ writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Total_r1250.tif",
             overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_107.png" width="100%" />
+
 
 
 ## Diversity_Total_r3000	{#ch06.108}
@@ -5540,6 +5587,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_108.png" width="100%" />
+
+
 
 ## Diversity_Total_r10000	{#ch06.109}
 
@@ -5592,6 +5642,9 @@ writeRaster(slanis2,
             overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_109.png" width="100%" />
+
+
 
 ## Edges_Bogs-Trees_cell	{#ch06.110}
 
@@ -5603,12 +5656,78 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar kokiem garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values from 620 to 700 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then bog and transitional mire layers from [EDI](#Ch04.17) are reclassified to presence-only (value 1) and combined. Then, bog-and-mire layer (1=presence) is covered over 
+tree layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Bogs-Trees_input.tif ----
+
+trees_from620=ifel(simple_landscape>=620 & simple_landscape<700,0,NA)
+plot(trees_from620)
+
+bogs=rast("./RasterGrids_10m/2024/EDI_BogsYN.tif")
+bogs=subst(bogs,0,NA)
+plot(bogs)
+mires=rast("./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif")
+mires=subst(mires,0,NA)
+plot(mires)
+bogs_mires=cover(bogs,mires)
+plot(bogs_mires)
+
+bm_trees=cover(bogs_mires,trees_from620)
+plot(bm_trees)
+
+edge_bm_trees=project(bm_trees,template10,
+                      filename="./RasterGrids_10m/2024/Edges_Bogs-Trees_input.tif",
+                      overwrite=TRUE)
+
+rm(edge_bm_trees)
+rm(bm_trees)
+
+# Edges_Bogs-Trees_cell.tif	egv_110
+
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Bogs-Trees_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Bogs-Trees_cell.tif",
+  out_layername  = "egv_110",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_110.png" width="100%" />
 
 
 ## Edges_Bogs-Trees_r500	{#ch06.111}
@@ -5621,12 +5740,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar kokiem garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 4,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Trees_r500.tif	egv_111
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r500.tif")
+names(slanis)="egv_111"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_111.png" width="100%" />
 
 
 ## Edges_Bogs-Trees_r1250	{#ch06.112}
@@ -5639,12 +5791,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar kokiem garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:**  Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 4,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Trees_r1250.tif	egv_112
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r1250.tif")
+names(slanis)="egv_112"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_112.png" width="100%" />
 
 
 ## Edges_Bogs-Trees_r3000	{#ch06.113}
@@ -5657,12 +5842,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar kokiem garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 4,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Trees_r3000.tif	egv_113
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r3000.tif")
+names(slanis)="egv_113"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_113.png" width="100%" />
 
 
 ## Edges_Bogs-Trees_r10000	{#ch06.114}
@@ -5675,12 +5893,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar kokiem garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:**Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 4,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Trees_r10000.tif	egv_114
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r10000.tif")
+names(slanis)="egv_114"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_114.png" width="100%" />
 
 
 ## Edges_Bogs-Water_cell	{#ch06.115}
@@ -5693,12 +5944,76 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar ūdeni garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values 200 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then bog and transitional mire layers from [EDI](#Ch04.17) are reclassified to presence-only (value 1) and combined. Then, bog-and-mire layer (1=presence) is covered over 
+water layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Bogs-Water_input.tif ----
+bogs=rast("./RasterGrids_10m/2024/EDI_BogsYN.tif")
+bogs=subst(bogs,0,NA)
+plot(bogs)
+mires=rast("./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif")
+mires=subst(mires,0,NA)
+plot(mires)
+bogs_mires=cover(bogs,mires)
+plot(bogs_mires)
+
+water=ifel(simple_landscape==200,0,NA)
+plot(water)
+
+bm_water=cover(bogs_mires,water)
+plot(bm_water)
+
+edge_bm_water=project(bm_water,template10,
+                      filename="./RasterGrids_10m/2024/Edges_Bogs-Water_input.tif",
+                      overwrite=TRUE)
+rm(edge_bm_water)
+rm(bm_water)
+
+
+# Edges_Bogs-Water_cell.tif	egv_115 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Bogs-Water_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Bogs-Water_cell.tif",
+  out_layername  = "egv_115",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_115.png" width="100%" />
 
 
 ## Edges_Bogs-Water_r500	{#ch06.116}
@@ -5711,12 +6026,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar ūdeni garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Water"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Water_r500.tif	egv_116
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r500.tif")
+names(slanis)="egv_116"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_116.png" width="100%" />
 
 
 ## Edges_Bogs-Water_r1250	{#ch06.117}
@@ -5729,12 +6077,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar ūdeni garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Water"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Water_r1250.tif	egv_117
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r1250.tif")
+names(slanis)="egv_117"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_117.png" width="100%" />
 
 
 ## Edges_Bogs-Water_r3000	{#ch06.118}
@@ -5747,12 +6128,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar ūdeni garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Water"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Water_r3000.tif	egv_118
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r3000.tif")
+names(slanis)="egv_118"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_118.png" width="100%" />
 
 
 ## Edges_Bogs-Water_r10000	{#ch06.119}
@@ -5765,12 +6179,45 @@ writeRaster(slanis2,
 
 **Latvian name:** Purvu malu ar ūdeni garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_cell.tif"),
+  layer_prefixes = c("Edges_Bogs-Water"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+# Edges_Bogs-Water_r10000.tif	egv_119
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r10000.tif")
+names(slanis)="egv_119"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_119.png" width="100%" />
 
 
 ## Edges_Farmland-Builtup_cell	{#ch06.120}
@@ -5783,12 +6230,70 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values larger than 300 and smaller than 400 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then values 500 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then, the first layer (1=presence) is covered over 
+the second layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Farmland-Builtup_input.tif ----
+farmland=ifel(simple_landscape>300 & simple_landscape<400,1,NA)
+plot(farmland)
+
+builtup=ifel(simple_landscape==500,0,NA)
+plot(builtup)
+
+farmland_builtup=cover(farmland,builtup)
+plot(farmland_builtup)
+
+edge_farmland_builtup=project(farmland_builtup,template10,
+                      filename="./RasterGrids_10m/2024/Edges_Farmland-Builtup_input.tif",
+                      overwrite=TRUE)
+rm(edge_farmland_builtup)
+rm(farmland_builtup)
+
+
+# Edges_Farmland-Builtup_cell.tif	egv_120 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Farmland-Builtup_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Farmland-Builtup_cell.tif",
+  out_layername  = "egv_120",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_120.png" width="100%" />
 
 
 ## Edges_Farmland-Builtup_r500	{#ch06.121}
@@ -5801,12 +6306,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Farmland-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Farmland-Builtup_r500.tif	egv_121 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r500.tif")
+names(slanis)="egv_121"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_121.png" width="100%" />
 
 
 ## Edges_Farmland-Builtup_r1250	{#ch06.122}
@@ -5819,12 +6358,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Farmland-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Farmland-Builtup_r1250.tif	egv_122 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r1250.tif")
+names(slanis)="egv_122"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_122.png" width="100%" />
 
 
 ## Edges_Farmland-Builtup_r3000	{#ch06.123}
@@ -5837,12 +6410,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Farmland-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Farmland-Builtup_r3000.tif	egv_123 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r3000.tif")
+names(slanis)="egv_123"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_123.png" width="100%" />
 
 
 ## Edges_Farmland-Builtup_r10000	{#ch06.124}
@@ -5855,12 +6462,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Farmland-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Farmland-Builtup_r10000.tif	egv_124 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r10000.tif")
+names(slanis)="egv_124"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Farmland-Builtup_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_124.png" width="100%" />
 
 
 ## Edges_Trees-Builtup_cell	{#ch06.125}
@@ -5873,12 +6514,70 @@ writeRaster(slanis2,
 
 **Latvian name:** Koku malu ar apbūvi garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values larger than 630 and smaller than 700 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then values 500 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then, the first layer (1=presence) is covered over 
+the second layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Trees-Builtup_input.tif ----
+trees_from630=ifel(simple_landscape>=630 & simple_landscape<700,1,NA)
+plot(trees_from630)
+
+builtup=ifel(simple_landscape==500,0,NA)
+plot(builtup)
+
+trees630_builtup=cover(trees_from630,builtup)
+plot(trees630_builtup)
+
+edge_trees630_builtup=project(trees630_builtup,template10,
+                              filename="./RasterGrids_10m/2024/Edges_Trees-Builtup_input.tif",
+                              overwrite=TRUE)
+rm(edge_trees630_builtup)
+rm(trees630_builtup)
+
+
+# Edges_Trees-Builtup_cell.tif	egv_125 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Trees-Builtup_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Trees-Builtup_cell.tif",
+  out_layername  = "egv_125",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_125.png" width="100%" />
 
 
 ## Edges_Trees-Builtup_r500	{#ch06.126}
@@ -5891,12 +6590,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Koku malu ar apbūvi garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Trees-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Trees-Builtup_r500.tif	egv_126 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r500.tif")
+names(slanis)="egv_126"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_126.png" width="100%" />
 
 
 ## Edges_Trees-Builtup_r1250	{#ch06.127}
@@ -5909,12 +6642,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Koku malu ar apbūvi garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Trees-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Trees-Builtup_r1250.tif	egv_127 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r1250.tif")
+names(slanis)="egv_127"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_127.png" width="100%" />
 
 
 ## Edges_Trees-Builtup_r3000	{#ch06.128}
@@ -5927,12 +6694,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Koku malu ar apbūvi garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Trees-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Trees-Builtup_r3000.tif	egv_128 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r3000.tif")
+names(slanis)="egv_128"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_128.png" width="100%" />
 
 
 ## Edges_Trees-Builtup_r10000	{#ch06.129}
@@ -5945,12 +6746,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Koku malu ar apbūvi garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_cell.tif"),
+  layer_prefixes = c("Edges_Trees-Builtup"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Trees-Builtup_r10000.tif	egv_129 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r10000.tif")
+names(slanis)="egv_129"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Trees-Builtup_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_129.png" width="100%" />
 
 
 ## Edges_CropsFallow_cell	{#ch06.130}
@@ -5963,12 +6798,65 @@ writeRaster(slanis2,
 
 **Latvian name:** Aramzemju malu garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values larger than or equal to 310 and smaller than 325 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the layer (1=presence) is covered over 
+the nulls layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_CropsFallow_input.tif ----
+cropsfallow=ifel(simple_landscape>=310 & simple_landscape<325,1,NA)
+plot(cropsfallow)
+cropsfallow=cover(cropsfallow,nulls10)
+plot(cropsfallow)
+
+edge_cropsfallow=project(cropsfallow,template10,
+                       filename="./RasterGrids_10m/2024/Edges_CropsFallow_input.tif",
+                       overwrite=TRUE)
+rm(edge_cropsfallow)
+
+
+# Edges_CropsFallow_cell.tif	egv_130 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_CropsFallow_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_CropsFallow_cell.tif",
+  out_layername  = "egv_130",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_130.png" width="100%" />
 
 
 ## Edges_CropsFallow_r500	{#ch06.131}
@@ -5981,12 +6869,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Aramzemju malu garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_cell.tif"),
+  layer_prefixes = c("Edges_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_CropsFallow_r500.tif	egv_131 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r500.tif")
+names(slanis)="egv_131"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_131.png" width="100%" />
 
 
 ## Edges_CropsFallow_r1250	{#ch06.132}
@@ -5999,12 +6921,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Aramzemju malu garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_cell.tif"),
+  layer_prefixes = c("Edges_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_CropsFallow_r1250.tif	egv_132 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r1250.tif")
+names(slanis)="egv_132"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_132.png" width="100%" />
 
 
 ## Edges_CropsFallow_r3000	{#ch06.133}
@@ -6017,12 +6973,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Aramzemju malu garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_cell.tif"),
+  layer_prefixes = c("Edges_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_CropsFallow_r3000.tif	egv_133 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r3000.tif")
+names(slanis)="egv_133"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_133.png" width="100%" />
 
 
 ## Edges_CropsFallow_r10000	{#ch06.134}
@@ -6035,12 +7025,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Aramzemju malu garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_cell.tif"),
+  layer_prefixes = c("Edges_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_CropsFallow_r10000.tif	egv_134 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r10000.tif")
+names(slanis)="egv_134"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_CropsFallow_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_134.png" width="100%" />
 
 
 ## Edges_FarmlandShrubs-Trees_cell	{#ch06.135}
@@ -6053,12 +7077,70 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values between 300 and 400 and between 600 and 630 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then values larger than or equal to 630 to 700 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the first layer (1=presence) is covered over 
+the second layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_FarmlandShrubs-Trees_input.tif ----
+farmshrub=ifel((simple_landscape>300 & simple_landscape<400)|
+                 (simple_landscape>600 & simple_landscape<630),0,NA)
+
+trees_from630=ifel(simple_landscape>=630 & simple_landscape<700,1,NA)
+plot(trees_from630)
+
+farmshrub_trees630=cover(farmshrub,trees_from630)
+plot(farmshrub_trees630)
+
+edge_farmshrub_trees630=project(farmshrub_trees630,template10,
+                              filename="./RasterGrids_10m/2024/Edges_FarmlandShrubs-Trees_input.tif",
+                              overwrite=TRUE)
+rm(edge_farmshrub_trees630)
+rm(farmshrub_trees630)
+
+
+# Edges_FarmlandShrubs-Trees_cell.tif	egv_135 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_FarmlandShrubs-Trees_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_FarmlandShrubs-Trees_cell.tif",
+  out_layername  = "egv_135",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_135.png" width="100%" />
 
 
 ## Edges_FarmlandShrubs-Trees_r500	{#ch06.136}
@@ -6071,12 +7153,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_FarmlandShrubs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_FarmlandShrubs-Trees_r500.tif	egv_136 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r500.tif")
+names(slanis)="egv_136"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_136.png" width="100%" />
 
 
 ## Edges_FarmlandShrubs-Trees_r1250	{#ch06.137}
@@ -6089,12 +7205,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_FarmlandShrubs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_FarmlandShrubs-Trees_r1250.tif	egv_137 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r1250.tif")
+names(slanis)="egv_137"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_137.png" width="100%" />
 
 
 ## Edges_FarmlandShrubs-Trees_r3000	{#ch06.138}
@@ -6107,12 +7257,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_FarmlandShrubs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_FarmlandShrubs-Trees_r3000.tif	egv_138 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r3000.tif")
+names(slanis)="egv_138"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_138.png" width="100%" />
 
 
 ## Edges_FarmlandShrubs-Trees_r10000	{#ch06.139}
@@ -6125,12 +7309,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_cell.tif"),
+  layer_prefixes = c("Edges_FarmlandShrubs-Trees"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_FarmlandShrubs-Trees_r10000.tif	egv_139 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r10000.tif")
+names(slanis)="egv_139"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_139.png" width="100%" />
 
 
 ## Edges_Grasslands_cell	{#ch06.140}
@@ -6143,12 +7361,65 @@ writeRaster(slanis2,
 
 **Latvian name:** Zālāju malu garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values equal to 330 and from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the layer (1=presence) is covered over 
+the nulls layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Grasslands_input.tif ----
+grassland=ifel(simple_landscape==330,1,NA)
+plot(grassland)
+grassland=cover(grassland,nulls10)
+plot(grassland)
+
+edge_grassland=project(grassland,template10,
+                           filename="./RasterGrids_10m/2024/Edges_Grasslands_input.tif",
+                           overwrite=TRUE)
+rm(edge_grassland)
+
+
+# Edges_Grasslands_cell.tif	egv_140 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Grasslands_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Grasslands_cell.tif",
+  out_layername  = "egv_140",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_140.png" width="100%" />
 
 
 ## Edges_Grasslands_r500	{#ch06.141}
@@ -6161,12 +7432,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Zālāju malu garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Grasslands_cell.tif"),
+  layer_prefixes = c("Edges_Grasslands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Grasslands_r500.tif	egv_141 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Grasslands_r500.tif")
+names(slanis)="egv_141"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Grasslands_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_141.png" width="100%" />
 
 
 ## Edges_Grasslands_r1250	{#ch06.142}
@@ -6179,12 +7484,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Zālāju malu garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Grasslands_cell.tif"),
+  layer_prefixes = c("Edges_Grasslands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Grasslands_r1250.tif	egv_142 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Grasslands_r1250.tif")
+names(slanis)="egv_142"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Grasslands_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_142.png" width="100%" />
 
 
 ## Edges_Grasslands_r3000	{#ch06.143}
@@ -6197,12 +7536,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Zālāju malu garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Grasslands_cell.tif"),
+  layer_prefixes = c("Edges_Grasslands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Grasslands_r3000.tif	egv_143 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Grasslands_r3000.tif")
+names(slanis)="egv_143"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Grasslands_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_143.png" width="100%" />
 
 
 ## Edges_Grasslands_r10000	{#ch06.144}
@@ -6215,12 +7588,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Zālāju malu garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Grasslands_cell.tif"),
+  layer_prefixes = c("Edges_Grasslands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Grasslands_r10000.tif	egv_144 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Grasslands_r10000.tif")
+names(slanis)="egv_144"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Grasslands_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_144.png" width="100%" />
 
 
 ## Edges_OldForests_cell	{#ch06.145}
@@ -6233,12 +7640,75 @@ writeRaster(slanis2,
 
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, raster layer with forest stands from [MVR](#Ch04.01) at age groups 4 and 5 is prepared (presence = 1, everything else = NA). Then, the layer (1=presence) is covered over 
+the nulls layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_OldForests_input.tif ----
+mvr=sfarrow::st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr2=mvr %>% 
+  mutate(forest_age=ifelse(vgr=="4"|vgr=="5",1,NA)) %>% 
+  filter(!is.na(forest_age))
+
+rast_old=fasterize(mvr2,raster(template10),field="forest_age")
+terra_old=rast(rast_old)
+plot(terra_old)
+terra_old=cover(terra_old,nulls10)
+plot(terra_old)
+
+edge_old=project(terra_old,template10,
+                       filename="./RasterGrids_10m/2024/Edges_OldForests_input.tif",
+                       overwrite=TRUE)
+rm(mvr)
+rm(mvr2)
+rm(rast_old)
+rm(terra_old)
+rm(edge_old)
+
+
+# Edges_OldForests_cell.tif	egv_145 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_OldForests_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_OldForests_cell.tif",
+  out_layername  = "egv_145",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_145.png" width="100%" />
 
 
 ## Edges_OldForests_r500	{#ch06.146}
@@ -6251,12 +7721,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_OldForests_cell.tif"),
+  layer_prefixes = c("Edges_OldForests"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_OldForests_r500.tif	egv_146 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_OldForests_r500.tif")
+names(slanis)="egv_146"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_OldForests_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_146.png" width="100%" />
 
 
 ## Edges_OldForests_r1250	{#ch06.147}
@@ -6269,12 +7773,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_OldForests_cell.tif"),
+  layer_prefixes = c("Edges_OldForests"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_OldForests_r1250.tif	egv_147 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_OldForests_r1250.tif")
+names(slanis)="egv_147"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_OldForests_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_147.png" width="100%" />
 
 
 ## Edges_OldForests_r3000	{#ch06.148}
@@ -6287,12 +7825,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_OldForests_cell.tif"),
+  layer_prefixes = c("Edges_OldForests"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_OldForests_r3000.tif	egv_148 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_OldForests_r3000.tif")
+names(slanis)="egv_148"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_OldForests_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_148.png" width="100%" />
 
 
 ## Edges_OldForests_r10000	{#ch06.149}
@@ -6305,12 +7877,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_OldForests_cell.tif"),
+  layer_prefixes = c("Edges_OldForests"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_OldForests_r10000.tif	egv_149 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_OldForests_r10000.tif")
+names(slanis)="egv_149"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_OldForests_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_149.png" width="100%" />
 
 
 ## Edges_Roads_cell	{#ch06.150}
@@ -6323,12 +7929,65 @@ writeRaster(slanis2,
 
 **Latvian name:** Ceļu malu garums analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, values equal to 100 and from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the layer (1=presence) is covered over 
+the nulls layer (presence=0) and written to file (matching the input). Finally, with 
+the function `egvtools::landscape_function()` total edge between the two classes 
+is calculated. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+
+# Templates -----
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+
+# simple landscape ----
+simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# Edges_Roads_input.tif ----
+roads=ifel(simple_landscape==100,1,NA)
+plot(roads)
+roads=cover(roads,nulls10)
+plot(roads)
+
+edge_roads=project(roads,template10,
+                   filename="./RasterGrids_10m/2024/Edges_Roads_input.tif",
+                   overwrite=TRUE)
+rm(edge_roads)
+
+
+# Edges_Roads_cell.tif	egv_150 ----
+landscape_function(
+  landscape      = "./RasterGrids_10m/2024/Edges_Roads_input.tif",
+  zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  id_field       = "id",
+  tile_field     = "tks50km",
+  template       = "./Templates/TemplateRasters/LV100m_10km.tif",
+  out_dir        = "./RasterGrids_100m/2024/RAW",
+  out_filename   = "Edges_Roads_cell.tif",
+  out_layername  = "egv_150",
+  what             = "lsm_l_te",
+  lm_args          = list(count_boundary = FALSE),
+  rasterize_engine = "fasterize",
+  n_workers      = 12,
+  future_max_size = 20 * 1024^3,
+  fill_gaps      = TRUE,
+  plot_gaps      = FALSE,
+  plot_result    = FALSE
+)
 ```
+
+<img src="./Figures/maps4book/egv_150.png" width="100%" />
 
 
 ## Edges_Roads_r500	{#ch06.151}
@@ -6341,12 +8000,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Ceļu malu garums 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Roads_cell.tif"),
+  layer_prefixes = c("Edges_Roads"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Roads_r500.tif	egv_151 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Roads_r500.tif")
+names(slanis)="egv_151"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Roads_r500.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_151.png" width="100%" />
 
 
 ## Edges_Roads_r1250	{#ch06.152}
@@ -6359,12 +8052,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Ceļu malu garums 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Roads_cell.tif"),
+  layer_prefixes = c("Edges_Roads"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Roads_r1250.tif	egv_152 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Roads_r1250.tif")
+names(slanis)="egv_152"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Roads_r1250.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_152.png" width="100%" />
 
 
 ## Edges_Roads_r3000	{#ch06.153}
@@ -6377,12 +8104,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Ceļu malu garums 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Roads_cell.tif"),
+  layer_prefixes = c("Edges_Roads"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Roads_r3000.tif	egv_153 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Roads_r3000.tif")
+names(slanis)="egv_153"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Roads_r3000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_153.png" width="100%" />
 
 
 ## Edges_Roads_r10000	{#ch06.154}
@@ -6395,12 +8156,46 @@ writeRaster(slanis2,
 
 **Latvian name:** Ceļu malu garums 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Roads_cell.tif"),
+  layer_prefixes = c("Edges_Roads"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 12,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "sum",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 20 * 1024^3)
+
+
+# Edges_Roads_r10000.tif	egv_154 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Roads_r10000.tif")
+names(slanis)="egv_154"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/Edges_Roads_r10000.tif",
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_154.png" width="100%" />
 
 
 ## Edges_Trees_cell	{#ch06.155}

@@ -761,7 +761,7 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 dominate classes with higher values. To create this class, the following were 
 combined (in order of overlap):
 
-    – [topographic map](#Ch04.04) layer `BuildA_COMB` values "poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve" coded with `410`;
+    – [topographic map](#Ch04.04) layer `BuildA_v3` values "poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve" coded with `410`;
 
     – [topographic map](#Ch04.04) layer `LandusA_COMB` values "poligons_Augludarzs", "poligons_Augļudārzs", "poligons_Sakņudārzs", "poligons_Ogulājs", "poligons_Ogulajs", 
     "poligons_Saknudarzs" coded with `420`;
@@ -795,7 +795,7 @@ template_r=raster(template_t)
 
 
 # topo apbuves
-viensvasar=st_read_parquet("./Geodata/2024/TopographicMap/BuildA_COMB.parquet")
+viensvasar=st_read_parquet("./Geodata/2024/TopographicMap/BuildA_v3.parquet")
 table(viensvasar$FNAME,useNA="always")
 viensvasar=viensvasar %>% 
   filter(FNAME %in% c("poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve")) %>% 
