@@ -17431,6 +17431,9 @@ writeRaster(merogots,
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
+
 
 ``` r
 # libs ----
@@ -17448,7 +17451,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-LYmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-LYmed-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_479.png" width="100%" />
 
 
 ## EO_NDMI-LYmedian-iqr_cell	{#ch06.480}
@@ -17465,6 +17490,9 @@ egvrez
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17508,7 +17536,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-LYmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_480.png" width="100%" />
 
 
 ## EO_NDMI-STiqr-median_cell	{#ch06.481}
@@ -17524,6 +17574,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17544,7 +17597,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STiqr.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-STiqr-median_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_481.png" width="100%" />
 
 
 ## EO_NDMI-STmedian-average_cell	{#ch06.482}
@@ -17560,6 +17635,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17579,7 +17657,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-STmedian-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_482.png" width="100%" />
 
 
 ## EO_NDMI-STmedian-iqr_cell	{#ch06.483}
@@ -17597,6 +17697,9 @@ is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17642,7 +17745,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-STmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_483.png" width="100%" />
 
 
 ## EO_NDMI-STp25-min_cell	{#ch06.484}
@@ -17658,6 +17783,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17679,7 +17807,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STp25.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-STp25-min_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_484.png" width="100%" />
 
 
 ## EO_NDMI-STp75-max_cell	{#ch06.485}
@@ -17695,6 +17845,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17714,7 +17867,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDMI-STp75.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDMI-STp75-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_485.png" width="100%" />
 
 
 ## EO_NDVI-LYmedian-average_cell	{#ch06.486}
@@ -17730,6 +17905,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17749,7 +17927,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-LYmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-LYmedian-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_486.png" width="100%" />
 
 
 ## EO_NDVI-LYmedian-iqr_cell	{#ch06.487}
@@ -17766,6 +17966,9 @@ egvrez
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17811,7 +18014,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-LYmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_487.png" width="100%" />
 
 
 ## EO_NDVI-STiqr-median_cell	{#ch06.488}
@@ -17827,6 +18052,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17846,7 +18074,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STiqr.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-STiqr-median_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_488.png" width="100%" />
 
 
 ## EO_NDVI-STmedian-average_cell	{#ch06.489}
@@ -17862,6 +18112,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17881,7 +18134,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-STmedian-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_489.png" width="100%" />
 
 
 ## EO_NDVI-STmedian-iqr_cell	{#ch06.490}
@@ -17899,6 +18174,9 @@ is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17944,7 +18222,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-STmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_490.png" width="100%" />
 
 
 ## EO_NDVI-STp25-min_cell	{#ch06.491}
@@ -17960,6 +18260,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -17979,7 +18282,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STp25.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-STp25-min_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_491.png" width="100%" />
 
 
 ## EO_NDVI-STp75-max_cell	{#ch06.492}
@@ -17995,6 +18320,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18014,7 +18342,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDVI-STp75.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDVI-STp75-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_492.png" width="100%" />
 
 
 ## EO_NDWI-LYmedian-average_cell	{#ch06.493}
@@ -18030,6 +18380,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18047,7 +18400,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-LYmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-LYmedian-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_493.png" width="100%" />
 
 
 ## EO_NDWI-LYmedian-iqr_cell	{#ch06.494}
@@ -18064,6 +18439,9 @@ egvrez
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Last year is 2024.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18108,7 +18486,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-LYmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_494.png" width="100%" />
 
 
 ## EO_NDWI-STiqr-median_cell	{#ch06.495}
@@ -18124,6 +18524,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18143,7 +18546,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STiqr.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-STiqr-median_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_495.png" width="100%" />
 
 
 ## EO_NDWI-STmedian-average_cell	{#ch06.496}
@@ -18159,6 +18584,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18178,7 +18606,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STmedian.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-STmedian-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_496.png" width="100%" />
 
 
 ## EO_NDWI-STmedian-iqr_cell	{#ch06.497}
@@ -18196,6 +18646,9 @@ is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term corresponds 
 to last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18240,7 +18693,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-STmedian-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_497.png" width="100%" />
 
 
 ## EO_NDWI-STp25-min_cell	{#ch06.498}
@@ -18256,6 +18731,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18275,7 +18753,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STp25.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-STp25-min_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_498.png" width="100%" />
 
 
 ## EO_NDWI-STp75-max_cell	{#ch06.499}
@@ -18291,6 +18791,9 @@ egvrez
 **Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at analysis cell 
 calculated with `egvtools::input2egv()`. To protect against possible data loss at edge cells, 
 inverse distance weighted (power = 2) gap filling is implemented. Short-term is last five years (2020-2024).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18311,7 +18814,29 @@ egvrez=input2egv(input="./Geodata/2024/S2indices/Mosaics/EO_NDWI-STp75.tif",
                  plot_gaps = FALSE,
                  plot_final = FALSE)
 egvrez
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="EO_NDWI-STp75-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_499.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-CN_cell	{#ch06.500}
@@ -18329,6 +18854,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18349,7 +18877,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-CN_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_500.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-CaCo3_cell	{#ch06.501}
@@ -18367,6 +18917,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18388,7 +18941,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-CaCo3_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_501.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-K_cell	{#ch06.502}
@@ -18406,6 +18981,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18426,7 +19004,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-K_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_502.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-N_cell	{#ch06.503}
@@ -18444,6 +19044,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18464,7 +19067,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-N_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_503.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-P_cell	{#ch06.504}
@@ -18482,6 +19107,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18501,7 +19129,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-P_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_504.png" width="100%" />
 
 
 ## SoilChemistry_ESDAC-phH2O_cell	{#ch06.505}
@@ -18519,6 +19169,9 @@ with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE` 
 to keep as original values as reasonable (there is bilinear interpolation 
 involved when projecting from 500 m to 100 m resolution of different CRS).
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
@@ -18539,7 +19192,29 @@ egv=downscale2egv(
   smooth        = FALSE,
   plot_result   = TRUE)
 egv
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilChemistry_ESDAC-phH2O_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_505.png" width="100%" />
 
 
 ## SoilTexture_Clay_cell	{#ch06.506}
@@ -18556,6 +19231,9 @@ egv
 reclassified so that class of interest is 1, other classes are 0. Then processed 
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
 distance weighted (power = 2) filling of gaps at the border.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18586,7 +19264,29 @@ input2egv(input=clay10,
           outfilename = "SoilTexture_Clay_cell.tif",
           layername="egv_506",
           return_visible = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Clay_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_506.png" width="100%" />
 
 
 ## SoilTexture_Clay_r500	{#ch06.507}
@@ -18603,6 +19303,9 @@ input2egv(input=clay10,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18637,7 +19340,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r500.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Clay_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_507.png" width="100%" />
 
 
 ## SoilTexture_Clay_r1250	{#ch06.508}
@@ -18654,6 +19379,9 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18689,7 +19417,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r1250.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Clay_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_508.png" width="100%" />
 
 
 ## SoilTexture_Clay_r3000	{#ch06.509}
@@ -18706,6 +19456,9 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18740,7 +19493,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r3000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Clay_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_509.png" width="100%" />
 
 
 ## SoilTexture_Clay_r10000	{#ch06.510}
@@ -18757,6 +19532,9 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18792,7 +19570,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Clay_r10000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Clay_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_510.png" width="100%" />
 
 
 ## SoilTexture_Organic_cell	{#ch06.511}
@@ -18809,6 +19609,9 @@ writeRaster(slanis2,
 reclassified so that class of interest is 1, other classes are 0. Then processed 
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
 distance weighted (power = 2) filling of gaps at the border.
+
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18839,7 +19642,29 @@ input2egv(input=org10,
           outfilename = "SoilTexture_Organic_cell.tif",
           layername="egv_511",
           return_visible = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Organic_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_511.png" width="100%" />
 
 
 ## SoilTexture_Organic_r500	{#ch06.512}
@@ -18856,6 +19681,8 @@ input2egv(input=org10,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18890,7 +19717,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r500.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Organic_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_512.png" width="100%" />
 
 
 ## SoilTexture_Organic_r1250	{#ch06.513}
@@ -18907,6 +19756,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18942,7 +19793,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r1250.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Organic_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_513.png" width="100%" />
 
 
 ## SoilTexture_Organic_r3000	{#ch06.514}
@@ -18959,6 +19832,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -18993,7 +19868,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r3000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Organic_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_514.png" width="100%" />
 
 
 ## SoilTexture_Organic_r10000	{#ch06.515}
@@ -19010,6 +19907,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19044,7 +19943,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Organic_r10000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Organic_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_515.png" width="100%" />
 
 
 ## SoilTexture_Sand_cell	{#ch06.516}
@@ -19060,7 +19981,9 @@ writeRaster(slanis2,
 **Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
 reclassified so that class of interest is 1, other classes are 0. Then processed 
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
-distance weighted (power = 2) filling of gaps at the border.
+distance weighted (power = 2) filling of gaps at the border. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19092,7 +20015,29 @@ input2egv(input=sand10,
           outfilename = "SoilTexture_Sand_cell.tif",
           layername="egv_516",
           return_visible = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Sand_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_516.png" width="100%" />
 
 
 ## SoilTexture_Sand_r500	{#ch06.517}
@@ -19109,6 +20054,8 @@ input2egv(input=sand10,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19143,7 +20090,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r500.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Sand_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_517.png" width="100%" />
 
 
 ## SoilTexture_Sand_r1250	{#ch06.518}
@@ -19160,6 +20129,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19194,7 +20165,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r1250.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Sand_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_518.png" width="100%" />
 
 
 ## SoilTexture_Sand_r3000	{#ch06.519}
@@ -19211,6 +20204,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19245,7 +20240,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r3000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Sand_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_519.png" width="100%" />
 
 
 ## SoilTexture_Sand_r10000	{#ch06.520}
@@ -19262,6 +20279,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19296,7 +20315,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Sand_r10000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Sand_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_520.png" width="100%" />
 
 
 ## SoilTexture_Silt_cell	{#ch06.521}
@@ -19312,7 +20353,9 @@ writeRaster(slanis2,
 **Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is 
 reclassified so that class of interest is 1, other classes are 0. Then processed 
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse 
-distance weighted (power = 2) filling of gaps at the border.
+distance weighted (power = 2) filling of gaps at the border. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19343,7 +20386,29 @@ input2egv(input=silt10,
           outfilename = "SoilTexture_Silt_cell.tif",
           layername="egv_521",
           return_visible = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Silt_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_521.png" width="100%" />
 
 
 ## SoilTexture_Silt_r500	{#ch06.522}
@@ -19360,6 +20425,8 @@ input2egv(input=silt10,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19394,7 +20461,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r500.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Silt_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_522.png" width="100%" />
 
 
 ## SoilTexture_Silt_r1250	{#ch06.523}
@@ -19411,6 +20500,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19445,7 +20536,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r1250.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Silt_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_523.png" width="100%" />
 
 
 ## SoilTexture_Silt_r3000	{#ch06.524}
@@ -19462,6 +20575,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19497,7 +20612,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r3000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Silt_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_524.png" width="100%" />
 
 
 ## SoilTexture_Silt_r10000	{#ch06.525}
@@ -19514,6 +20651,8 @@ writeRaster(slanis2,
 with `egvtools::radius_function()`, then rewritten to ensure layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19548,7 +20687,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/SoilTexture_Silt_r10000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="SoilTexture_Silt_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_525.png" width="100%" />
 
 
 ## Terrain_ASL-average_cell	{#ch06.526}
@@ -19565,6 +20726,8 @@ writeRaster(slanis2,
 with `egvtools::input2egv()`. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19588,7 +20751,29 @@ input2egv(input="./Geodata/2024/DEM/mozDEM_10m.tif",
           layername="egv_526",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_ASL-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_526.png" width="100%" />
 
 
 ## Terrain_Aspect-average_cell	{#ch06.527}
@@ -19605,6 +20790,8 @@ input2egv(input="./Geodata/2024/DEM/mozDEM_10m.tif",
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19629,7 +20816,29 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
           layername="egv_527",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_Aspect-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_527.png" width="100%" />
 
 
 ## Terrain_Aspect-iqr_cell	{#ch06.528}
@@ -19647,6 +20856,8 @@ is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19691,7 +20902,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_Aspect-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_528.png" width="100%" />
 
 
 ## Terrain_DiS-area_cell	{#ch06.529}
@@ -19708,6 +20941,8 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19735,7 +20970,29 @@ input2egv(input=dis2,
           layername="egv_529",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-area_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_529.png" width="100%" />
 
 
 ## Terrain_DiS-area_r500	{#ch06.530}
@@ -19751,7 +21008,9 @@ input2egv(input=dis2,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
 with `egvtools::radius_function()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
-is implemented. After zonal statistics, file is rewritten to ensure layername.
+is implemented. After zonal statistics, file is rewritten to ensure layername. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19789,7 +21048,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r500.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-area_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_530.png" width="100%" />
 
 
 ## Terrain_DiS-area_r1250	{#ch06.531}
@@ -19805,7 +21086,9 @@ writeRaster(slanis2,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
 with `egvtools::radius_function()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
-is implemented. After zonal statistics, file is rewritten to ensure layername.
+is implemented. After zonal statistics, file is rewritten to ensure layername. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19842,7 +21125,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r1250.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-area_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_531.png" width="100%" />
 
 
 ## Terrain_DiS-area_r3000	{#ch06.532}
@@ -19858,7 +21163,9 @@ writeRaster(slanis2,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
 with `egvtools::radius_function()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
-is implemented. After zonal statistics, file is rewritten to ensure layername.
+is implemented. After zonal statistics, file is rewritten to ensure layername. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19896,7 +21203,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r3000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-area_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_532.png" width="100%" />
 
 
 ## Terrain_DiS-area_r10000	{#ch06.533}
@@ -19912,7 +21241,10 @@ writeRaster(slanis2,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed 
 with `egvtools::radius_function()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
-is implemented. After zonal statistics, file is rewritten to ensure layername.
+is implemented. After zonal statistics, file is rewritten to ensure layername. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
+
 
 
 
@@ -19950,7 +21282,29 @@ slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Terrain_DiS-area_r10000.tif",
             overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-area_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_533.png" width="100%" />
 
 
 ## Terrain_DiS-max_cell	{#ch06.534}	
@@ -19967,6 +21321,8 @@ writeRaster(slanis2,
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -19990,7 +21346,29 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
           layername="egv_534",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_534.png" width="100%" />
 
 
 ## Terrain_DiS-mean_cell	{#ch06.535}	
@@ -20007,6 +21385,8 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -20030,7 +21410,29 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
           layername="egv_535",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_DiS-mean_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_535.png" width="100%" />
 
 
 ## Terrain_Slope-average_cell	{#ch06.536}	
@@ -20047,6 +21449,8 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -20071,7 +21475,29 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
           layername="egv_536",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_Slope-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_536.png" width="100%" />
 
 
 ## Terrain_Slope-iqr_cell	{#ch06.537}	
@@ -20089,6 +21515,8 @@ is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
 is implemented. 
+At the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -20133,7 +21561,29 @@ writeRaster(iqr_rez,
 
 unlink("./RasterGrids_100m/2024/draza_p75.tif")
 unlink("./RasterGrids_100m/2024/draza_p25.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_Slope-iqr_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_537.png" width="100%" />
 
 
 ## Terrain_TWI-average_cell	{#ch06.538}	
@@ -20149,7 +21599,9 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 **Procedure:**  Derived from [Terrain products](#Ch05.01). Processed 
 with `egvtools::input2egv()`.  To protect against 
 possible data loss at edge cells, inverse distance weighted (power = 2) gap filling 
-is implemented. 
+is implemented. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 
@@ -20174,6 +21626,27 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif",
           layername="egv_538",
           return_visible = TRUE,
           plot_final = TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="Terrain_TWI-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
 
+<img src="./Figures/maps4book/egv_538.png" width="100%" />
 
