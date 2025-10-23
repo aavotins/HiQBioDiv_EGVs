@@ -13557,12 +13557,101 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with any type of crops are selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_CropsAll_cell.tif	egv_180 ----
+aramzemes=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"aramz"))
+
+p2i_rez=egvtools::polygon2input(vector_data = aramzemes,
+                        template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                        out_path = "./RasterGrids_10m/2024/",
+                        file_name = "FarmlandCrops_CropsAll_input.tif",
+                        value_field = "yes",
+                        prepare=FALSE,
+                        background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                        plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_CropsAll_input.tif"),
+                    egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                    summary_function = "average",
+                    missing_job = "FillOutput",
+                    outlocation = "./RasterGrids_100m/2024/RAW/",
+                    outfilename = "FarmlandCrops_CropsAll_cell.tif",
+                    layername = "egv_180",
+                    idw_weight = 2,
+                    plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(aramzemes)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsAll_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsAll_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_180.png" width="100%" />
 
 
 ## FarmlandCrops_CropsAll_r500	{#ch06.181}
@@ -13575,12 +13664,74 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+
+# FarmlandCrops_CropsAll_r500.tif	egv_181 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r500.tif")
+names(slanis)="egv_181"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsAll_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_181.png" width="100%" />
 
 
 ## FarmlandCrops_CropsAll_r1250	{#ch06.182}
@@ -13593,12 +13744,74 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+
+# FarmlandCrops_CropsAll_r1250.tif	egv_182 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r1250.tif")
+names(slanis)="egv_182"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsAll_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_182.png" width="100%" />
 
 
 ## FarmlandCrops_CropsAll_r3000	{#ch06.183}
@@ -13611,12 +13824,74 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+
+# FarmlandCrops_CropsAll_r3000.tif	egv_183 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r3000.tif")
+names(slanis)="egv_183"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsAll_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_183.png" width="100%" />
 
 
 ## FarmlandCrops_CropsAll_r10000	{#ch06.184}
@@ -13629,12 +13904,74 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+
+# FarmlandCrops_CropsAll_r10000.tif	egv_184 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r10000.tif")
+names(slanis)="egv_184"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsAll_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsAll_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_184.png" width="100%" />
 
 
 ## FarmlandCrops_CropsHoed_cell	{#ch06.185}
@@ -13647,12 +13984,103 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with hoed crops were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_CropsHoed_cell.tif	egv_185 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"ruši"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_CropsHoed_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_CropsHoed_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_CropsHoed_cell.tif",
+                            layername = "egv_185",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsHoed_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsHoed_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_185.png" width="100%" />
 
 
 ## FarmlandCrops_CropsHoed_r500	{#ch06.186}
@@ -13665,12 +14093,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.185) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsHoed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsHoed_r500.tif	egv_186 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r500.tif")
+names(slanis)="egv_186"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsHoed_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_186.png" width="100%" />
 
 
 ## FarmlandCrops_CropsHoed_r1250	{#ch06.187}
@@ -13683,12 +14172,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.185) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsHoed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsHoed_r1250.tif	egv_187 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r1250.tif")
+names(slanis)="egv_187"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsHoed_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_187.png" width="100%" />
 
 
 ## FarmlandCrops_CropsHoed_r3000	{#ch06.188}
@@ -13701,12 +14251,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.185) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsHoed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsHoed_r3000.tif	egv_188 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r3000.tif")
+names(slanis)="egv_188"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsHoed_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_188.png" width="100%" />
 
 
 ## FarmlandCrops_CropsHoed_r10000	{#ch06.189}
@@ -13719,12 +14330,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.185) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsHoed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsHoed_r10000.tif	egv_189 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r10000.tif")
+names(slanis)="egv_189"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsHoed_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsHoed_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_189.png" width="100%" />
 
 
 ## FarmlandCrops_CropsOther_cell	{#ch06.190}
@@ -13737,12 +14409,104 @@ writeRaster(merogots,
 
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with otherwise not differentiated crops were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_CropsOther_cell.tif	egv_190 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"citur neie"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_CropsOther_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_CropsOther_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_CropsOther_cell.tif",
+                            layername = "egv_190",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsOther_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsOther_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_190.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsOther_r500	{#ch06.191}
@@ -13755,12 +14519,73 @@ writeRaster(merogots,
 
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.190) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsOther"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsOther_r500.tif	egv_191 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r500.tif")
+names(slanis)="egv_191"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsOther_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_191.png" width="100%" />
 
 
 ## FarmlandCrops_CropsOther_r1250	{#ch06.192}
@@ -13773,12 +14598,73 @@ writeRaster(merogots,
 
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.190) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsOther"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsOther_r1250.tif	egv_192 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r1250.tif")
+names(slanis)="egv_192"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsOther_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_192.png" width="100%" />
 
 
 ## FarmlandCrops_CropsOther_r3000	{#ch06.193}
@@ -13791,12 +14677,73 @@ writeRaster(merogots,
 
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.190) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsOther"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsOther_r3000.tif	egv_193 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r3000.tif")
+names(slanis)="egv_193"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsOther_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_193.png" width="100%" />
 
 
 ## FarmlandCrops_CropsOther_r10000	{#ch06.194}
@@ -13809,12 +14756,73 @@ writeRaster(merogots,
 
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.190) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsOther"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsOther_r10000.tif	egv_194 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r10000.tif")
+names(slanis)="egv_194"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsOther_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsOther_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_194.png" width="100%" />
 
 
 ## FarmlandCrops_CropsSpring_cell	{#ch06.195}
@@ -13827,12 +14835,104 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with declared as spring sawn crops were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_CropsSpring_cell.tif	egv_195 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"labība-vasarāji"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_CropsSpring_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_CropsSpring_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_CropsSpring_cell.tif",
+                            layername = "egv_195",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsSpring_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsSpring_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_195.png" width="100%" />
 
 
 ## FarmlandCrops_CropsSpring_r500	{#ch06.196}
@@ -13845,12 +14945,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.195) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsSpring_r500.tif	egv_196 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r500.tif")
+names(slanis)="egv_196"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsSpring_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_196.png" width="100%" />
 
 
 ## FarmlandCrops_CropsSpring_r1250	{#ch06.197}
@@ -13863,12 +15024,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.195) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsSpring_r1250.tif	egv_197 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r1250.tif")
+names(slanis)="egv_197"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsSpring_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_197.png" width="100%" />
 
 
 ## FarmlandCrops_CropsSpring_r3000	{#ch06.198}
@@ -13881,12 +15103,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.195) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsSpring_r3000.tif	egv_198 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r3000.tif")
+names(slanis)="egv_198"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsSpring_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_198.png" width="100%" />
 
 
 ## FarmlandCrops_CropsSpring_r10000	{#ch06.199}
@@ -13899,12 +15182,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.195) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsSpring_r10000.tif	egv_199 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r10000.tif")
+names(slanis)="egv_199"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsSpring_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsSpring_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_199.png" width="100%" />
 
 
 ## FarmlandCrops_CropsWinter_cell	{#ch06.200}
@@ -13917,12 +15261,104 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with declared as winter crops were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_CropsWinter_cell.tif	egv_200 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"labība-ziemāji"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_CropsWinter_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_CropsWinter_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_CropsWinter_cell.tif",
+                            layername = "egv_200",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsWinter_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsWinter_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_200.png" width="100%" />
 
 
 ## FarmlandCrops_CropsWinter_r500	{#ch06.201}
@@ -13935,12 +15371,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.200) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsWinter_r500.tif	egv_201 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r500.tif")
+names(slanis)="egv_201"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsWinter_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_201.png" width="100%" />
 
 
 ## FarmlandCrops_CropsWinter_r1250	{#ch06.202}
@@ -13953,12 +15450,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.200) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsWinter_r1250.tif	egv_202 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r1250.tif")
+names(slanis)="egv_202"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsWinter_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_202.png" width="100%" />
 
 
 ## FarmlandCrops_CropsWinter_r3000	{#ch06.203}
@@ -13971,12 +15529,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.200) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsWinter_r3000.tif	egv_203 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r3000.tif")
+names(slanis)="egv_203"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsWinter_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_203.png" width="100%" />
 
 
 ## FarmlandCrops_CropsWinter_r10000	{#ch06.204}
@@ -13989,12 +15608,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.200) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_CropsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_CropsWinter_r10000.tif	egv_204 ----
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r10000.tif")
+names(slanis)="egv_204"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_CropsWinter_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_CropsWinter_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_204.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsSpring_cell	{#ch06.205}
@@ -14007,12 +15687,105 @@ writeRaster(merogots,
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with declared as spring sawn rapeseed, turnip or corn were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_RapeseedsSpring_cell.tif	egv_205 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"vasaras rapsis"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_RapeseedsSpring_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_RapeseedsSpring_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_RapeseedsSpring_cell.tif",
+                            layername = "egv_205",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_RapeseedsSpring_input.tif")
+
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsSpring_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_205.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsSpring_r500	{#ch06.206}
@@ -14025,12 +15798,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.205) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsSpring_r500.tif	egv_206
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r500.tif")
+names(slanis)="egv_206"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsSpring_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_206.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsSpring_r1250	{#ch06.207}
@@ -14043,12 +15877,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.205) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsSpring_r1250.tif	egv_207
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r1250.tif")
+names(slanis)="egv_207"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsSpring_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_207.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsSpring_r3000	{#ch06.208}
@@ -14061,12 +15956,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.205) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsSpring_r3000.tif	egv_208
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r3000.tif")
+names(slanis)="egv_208"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsSpring_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_208.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsSpring_r10000	{#ch06.209}
@@ -14079,12 +16035,73 @@ writeRaster(merogots,
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.205) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsSpring"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsSpring_r10000.tif	egv_209
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r10000.tif")
+names(slanis)="egv_209"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsSpring_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsSpring_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_209.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsWinter_cell	{#ch06.210}
@@ -14097,12 +16114,104 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels with declared as winter rapeseed or turnip were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandCrops_RapeseedsWinter_cell.tif	egv_210 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"ziemas rapsis"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandCrops_RapeseedsWinter_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandCrops_RapeseedsWinter_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandCrops_RapeseedsWinter_cell.tif",
+                            layername = "egv_210",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandCrops_RapeseedsWinter_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsWinter_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_210.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsWinter_r500	{#ch06.211}
@@ -14115,12 +16224,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.210) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsWinter_r500.tif	egv_211
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r500.tif")
+names(slanis)="egv_211"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsWinter_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_211.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsWinter_r1250	{#ch06.212}
@@ -14133,12 +16303,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.210) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsWinter_r1250.tif	egv_212
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r1250.tif")
+names(slanis)="egv_212"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsWinter_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_212.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsWinter_r3000	{#ch06.213}
@@ -14151,12 +16382,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.210) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsWinter_r3000.tif	egv_213
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r3000.tif")
+names(slanis)="egv_213"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsWinter_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_213.png" width="100%" />
 
 
 ## FarmlandCrops_RapeseedsWinter_r10000	{#ch06.214}
@@ -14169,12 +16461,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.210) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_cell.tif"),
+  layer_prefixes = c("FarmlandCrops_RapeseedsWinter"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandCrops_RapeseedsWinter_r10000.tif	egv_214
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r10000.tif")
+names(slanis)="egv_214"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandCrops_RapeseedsWinter_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandCrops_RapeseedsWinter_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_214.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_cell	{#ch06.215}
@@ -14187,12 +16540,101 @@ writeRaster(merogots,
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, grasslands from [Landscape classification](#Ch05.03) were selected (value 330 reclassified to
+value 1, others as NA). Then agricultural parcels declared as grasslands were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). Then cells with 
+grasslands in [Landscape classification](#Ch05.03) but not in [Rural Support Service's information on declared fields](#Ch04.02) were selected and matched to input layer. 
+Once matched, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandGrassland_GrasslandsAbandoned_cell.tif	egv_215 ----
+landscape_grasslands=ifel(simple_landscape==330,1,0)
+
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"zālāji"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+lad_zalajiem=fasterize(dati,rastrs10,field="yes",fun="first")
+lad_zalaji=rast(lad_zalajiem)
+
+abandoned=ifel(landscape_grasslands==1&is.na(lad_zalaji),1,0)
+plot(abandoned)
+
+i2e_rez=egvtools::input2egv(input=abandoned,
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandGrassland_GrasslandsAbandoned_cell.tif",
+                            layername = "egv_215",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(i2e_rez)
+rm(dati)
+rm(lad_zalajiem)
+rm(lad_zalaji)
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAbandoned_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_215.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r500	{#ch06.216}
@@ -14205,12 +16647,73 @@ writeRaster(merogots,
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.215) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAbandoned"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAbandoned_r500.tif	egv_216
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r500.tif")
+names(slanis)="egv_216"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAbandoned_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_216.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r1250	{#ch06.217}
@@ -14223,12 +16726,73 @@ writeRaster(merogots,
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.215) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAbandoned"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAbandoned_r1250.tif	egv_217
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r1250.tif")
+names(slanis)="egv_217"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAbandoned_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_217.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r3000	{#ch06.218}
@@ -14241,12 +16805,73 @@ writeRaster(merogots,
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.215) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAbandoned"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAbandoned_r3000.tif	egv_218
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r3000.tif")
+names(slanis)="egv_218"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAbandoned_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_218.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r10000	{#ch06.219}
@@ -14259,12 +16884,73 @@ writeRaster(merogots,
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.215) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAbandoned"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAbandoned_r10000.tif	egv_219
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r10000.tif")
+names(slanis)="egv_219"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAbandoned_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAbandoned_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_219.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAll_cell	{#ch06.220}
@@ -14277,12 +16963,86 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, grasslands from [Landscape classification](#Ch05.03) were selected (value 330 reclassified to
+value 1, others as NA). 
+Once selected, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandGrassland_GrasslandsAll_cell.tif	egv_220 ----
+landscape_grasslands=ifel(simple_landscape==330,1,0)
+
+i2e_rez=egvtools::input2egv(input=landscape_grasslands,
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandGrassland_GrasslandsAll_cell.tif",
+                            layername = "egv_220",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(i2e_rez)
+rm(landscape_grasslands)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAll_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_220.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAll_r500	{#ch06.221}
@@ -14295,12 +17055,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.220) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAll_r500.tif	egv_221
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r500.tif")
+names(slanis)="egv_221"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAll_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_221.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAll_r1250	{#ch06.222}
@@ -14313,12 +17134,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.220) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAll_r1250.tif	egv_222
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r1250.tif")
+names(slanis)="egv_222"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAll_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_222.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAll_r3000	{#ch06.223}
@@ -14331,12 +17213,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.220) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAll_r3000.tif	egv_223
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r3000.tif")
+names(slanis)="egv_223"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAll_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_223.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsAll_r10000	{#ch06.224}
@@ -14349,12 +17292,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.220) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsAll"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsAll_r10000.tif	egv_224
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r10000.tif")
+names(slanis)="egv_224"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsAll_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsAll_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_224.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsPermanent_cell	{#ch06.225}
@@ -14367,12 +17371,104 @@ writeRaster(merogots,
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as permanent grasslands were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandGrassland_GrasslandsPermanent_cell.tif	egv_225 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums=="zālāji (ilggadīgie)")
+  
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandGrassland_GrasslandsPermanent_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandGrassland_GrasslandsPermanent_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandGrassland_GrasslandsPermanent_cell.tif",
+                            layername = "egv_225",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandGrassland_GrasslandsPermanent_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsPermanent_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_225.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r500	{#ch06.226}
@@ -14385,12 +17481,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.225) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsPermanent"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsPermanent_r500.tif	egv_226
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r500.tif")
+names(slanis)="egv_226"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsPermanent_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_226.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r1250	{#ch06.227}
@@ -14403,12 +17560,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.225) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsPermanent"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsPermanent_r1250.tif	egv_227
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r1250.tif")
+names(slanis)="egv_227"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsPermanent_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_227.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r3000	{#ch06.228}
@@ -14421,12 +17639,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.225) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsPermanent"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsPermanent_r3000.tif	egv_228
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r3000.tif")
+names(slanis)="egv_228"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsPermanent_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_228.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r10000	{#ch06.229}
@@ -14439,12 +17718,73 @@ writeRaster(merogots,
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.225) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsPermanent"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsPermanent_r10000.tif	egv_229
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r10000.tif")
+names(slanis)="egv_229"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsPermanent_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsPermanent_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_229.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsTemporary_cell	{#ch06.230}
@@ -14457,12 +17797,103 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as grasslands in arable lands were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). These geometries 
+were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandGrassland_GrasslandsTemporary_cell.tif	egv_230 ----
+dati=lad %>% 
+  filter(str_detect(SDM_grupa_sakums,"kultivēt"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandGrassland_GrasslandsTemporary_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandGrassland_GrasslandsTemporary_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandGrassland_GrasslandsTemporary_cell.tif",
+                            layername = "egv_230",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandGrassland_GrasslandsTemporary_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsTemporary_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_230.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r500	{#ch06.231}
@@ -14475,12 +17906,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.230) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsTemporary"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsTemporary_r500.tif	egv_231
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r500.tif")
+names(slanis)="egv_231"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsTemporary_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_231.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r1250	{#ch06.232}
@@ -14493,12 +17985,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.230) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsTemporary"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsTemporary_r1250.tif	egv_232
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r1250.tif")
+names(slanis)="egv_232"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsTemporary_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_232.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r3000	{#ch06.233}
@@ -14511,12 +18064,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.230) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsTemporary"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsTemporary_r3000.tif	egv_233
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r3000.tif")
+names(slanis)="egv_233"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsTemporary_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_233.png" width="100%" />
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r10000	{#ch06.234}
@@ -14529,12 +18143,73 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.230) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_cell.tif"),
+  layer_prefixes = c("FarmlandGrassland_GrasslandsTemporary"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandGrassland_GrasslandsTemporary_r10000.tif	egv_234
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r10000.tif")
+names(slanis)="egv_234"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandGrassland_GrasslandsTemporary_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandGrassland_GrasslandsTemporary_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_234.png" width="100%" />
 
 
 ## FarmlandParcels_FieldsActive_cell	{#ch06.235}
@@ -14547,12 +18222,99 @@ writeRaster(merogots,
 
 **Latvian name:** Lauku bloku platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels from 
+[Rural Support Service's information on declared fields](#Ch04.02) 
+were rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandParcels_FieldsActive_cell.tif	egv_235 ----
+p2i_rez=egvtools::polygon2input(vector_data = lad,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandParcels_FieldsActive_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandParcels_FieldsActive_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandParcels_FieldsActive_cell.tif",
+                            layername = "egv_235",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandParcels_FieldsActive_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandParcels_FieldsActive_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_235.png" width="100%" />
 
 
 ## FarmlandParcels_FieldsActive_r500	{#ch06.236}
@@ -14565,12 +18327,73 @@ writeRaster(merogots,
 
 **Latvian name:** Lauku bloku platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.235) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_cell.tif"),
+  layer_prefixes = c("FarmlandParcels_FieldsActive"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandParcels_FieldsActive_r500.tif	egv_236
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r500.tif")
+names(slanis)="egv_236"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandParcels_FieldsActive_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_236.png" width="100%" />
 
 
 ## FarmlandParcels_FieldsActive_r1250	{#ch06.237}
@@ -14583,12 +18406,73 @@ writeRaster(merogots,
 
 **Latvian name:** Lauku bloku platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.235) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_cell.tif"),
+  layer_prefixes = c("FarmlandParcels_FieldsActive"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandParcels_FieldsActive_r1250.tif	egv_237
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r1250.tif")
+names(slanis)="egv_237"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandParcels_FieldsActive_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_237.png" width="100%" />
 
 
 ## FarmlandParcels_FieldsActive_r3000	{#ch06.238}
@@ -14601,12 +18485,73 @@ writeRaster(merogots,
 
 **Latvian name:** Lauku bloku platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.235) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_cell.tif"),
+  layer_prefixes = c("FarmlandParcels_FieldsActive"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandParcels_FieldsActive_r3000.tif	egv_238
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r3000.tif")
+names(slanis)="egv_238"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandParcels_FieldsActive_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_238.png" width="100%" />
 
 
 ## FarmlandParcels_FieldsActive_r10000	{#ch06.239}
@@ -14619,12 +18564,73 @@ writeRaster(merogots,
 
 **Latvian name:** Lauku bloku platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.235) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_cell.tif"),
+  layer_prefixes = c("FarmlandParcels_FieldsActive"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandParcels_FieldsActive_r10000.tif	egv_239
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r10000.tif")
+names(slanis)="egv_239"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandParcels_FieldsActive_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandParcels_FieldsActive_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_239.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallow_cell	{#ch06.240}
@@ -14637,12 +18643,109 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as crops or fallow land were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandPloughed_CropsFallow_cell.tif	egv_240 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums %in% c("aramzemes (citur neiekļautās)",
+                                 "aramzemes (labība-vasarāji)",
+                                 "aramzemes (labība-ziemāji)",
+                                 "aramzemes (vagu un rušināmkultūru)",
+                                 "aramzemes (vasaras rapsis un rispsis, kukurūzas, zirņi un pupas, soja, kaņepes)",
+                                 "aramzemes (ziemas rapsis un ripsis)",
+                                 "papuves"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandPloughed_CropsFallow_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandPloughed_CropsFallow_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandPloughed_CropsFallow_cell.tif",
+                            layername = "egv_240",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandPloughed_CropsFallow_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallow_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_240.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallow_r500	{#ch06.241}
@@ -14655,12 +18758,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.240) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallow_r500.tif	egv_241
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r500.tif")
+names(slanis)="egv_241"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallow_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_241.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallow_r1250	{#ch06.242}
@@ -14673,12 +18837,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.240) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallow_r1250.tif	egv_242
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r1250.tif")
+names(slanis)="egv_242"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallow_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_242.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallow_r3000	{#ch06.243}
@@ -14691,12 +18916,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.240) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallow_r3000.tif	egv_243
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r3000.tif")
+names(slanis)="egv_243"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallow_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_243.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallow_r10000	{#ch06.244}
@@ -14709,12 +18995,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.240) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallow_r10000.tif	egv_244
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r10000.tif")
+names(slanis)="egv_244"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallow_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallow_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_244.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_cell	{#ch06.245}
@@ -14727,12 +19074,110 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as crops, fallow land or grasslands in arable land were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandPloughed_CropsFallowTempGrass_cell.tif	egv_245 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums %in% c("aramzemes (citur neiekļautās)",
+                                 "aramzemes (labība-vasarāji)",
+                                 "aramzemes (labība-ziemāji)",
+                                 "aramzemes (vagu un rušināmkultūru)",
+                                 "aramzemes (vasaras rapsis un rispsis, kukurūzas, zirņi un pupas, soja, kaņepes)",
+                                 "aramzemes (ziemas rapsis un ripsis)",
+                                 "papuves",
+                                 "zālāji (kultivētie)"))
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandPloughed_CropsFallowTempGrass_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandPloughed_CropsFallowTempGrass_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandPloughed_CropsFallowTempGrass_cell.tif",
+                            layername = "egv_245",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandPloughed_CropsFallowTempGrass_input.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallowTempGrass_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_245.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r500	{#ch06.246}
@@ -14745,12 +19190,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.245) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallowTempGrass"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallowTempGrass_r500.tif	egv_246
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r500.tif")
+names(slanis)="egv_246"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallowTempGrass_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_246.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r1250	{#ch06.247}
@@ -14763,12 +19269,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.245) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallowTempGrass"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallowTempGrass_r1250.tif	egv_247
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r1250.tif")
+names(slanis)="egv_247"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallowTempGrass_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_247.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r3000	{#ch06.248}
@@ -14781,12 +19348,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.245) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallowTempGrass"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallowTempGrass_r3000.tif	egv_248
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r3000.tif")
+names(slanis)="egv_248"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallowTempGrass_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_248.png" width="100%" />
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r10000	{#ch06.249}
@@ -14799,12 +19427,73 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.245) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_CropsFallowTempGrass"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_CropsFallowTempGrass_r10000.tif	egv_249
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r10000.tif")
+names(slanis)="egv_249"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_CropsFallowTempGrass_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_CropsFallowTempGrass_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_249.png" width="100%" />
 
 
 ## FarmlandPloughed_Fallow_cell	{#ch06.250}
@@ -14817,12 +19506,102 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as fallow land were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandPloughed_Fallow_cell.tif	egv_250 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums == "papuves")
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandPloughed_Fallow_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandPloughed_Fallow_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandPloughed_Fallow_cell.tif",
+                            layername = "egv_250",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandPloughed_Fallow_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_Fallow_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_250.png" width="100%" />
 
 
 ## FarmlandPloughed_Fallow_r500	{#ch06.251}
@@ -14835,12 +19614,73 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.250) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_Fallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_Fallow_r500.tif	egv_251
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r500.tif")
+names(slanis)="egv_251"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_Fallow_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_251.png" width="100%" />
 
 
 ## FarmlandPloughed_Fallow_r1250	{#ch06.252}
@@ -14853,12 +19693,73 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.250) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_Fallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_Fallow_r1250.tif	egv_252
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r1250.tif")
+names(slanis)="egv_252"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_Fallow_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_252.png" width="100%" />
 
 
 ## FarmlandPloughed_Fallow_r3000	{#ch06.253}
@@ -14871,12 +19772,73 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.250) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_Fallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_Fallow_r3000.tif	egv_253
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r3000.tif")
+names(slanis)="egv_253"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_Fallow_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_253.png" width="100%" />
 
 
 ## FarmlandPloughed_Fallow_r10000	{#ch06.254}
@@ -14889,12 +19851,73 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.250) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_cell.tif"),
+  layer_prefixes = c("FarmlandPloughed_Fallow"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandPloughed_Fallow_r10000.tif	egv_254
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r10000.tif")
+names(slanis)="egv_254"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandPloughed_Fallow_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandPloughed_Fallow_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_254.png" width="100%" />
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_cell	{#ch06.255}
@@ -14907,12 +19930,102 @@ writeRaster(merogots,
 
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as receiving subsidies for biological agriculture were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandSubsidies_BiologicalSubsidies_cell.tif	egv_255 ----
+dati=lad %>% 
+  filter(str_detect(AID_FORMS,"BLA"))
+table(dati$AID_FORMS,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandSubsidies_BiologicalSubsidies_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandSubsidies_BiologicalSubsidies_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandSubsidies_BiologicalSubsidies_cell.tif",
+                            layername = "egv_255",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandSubsidies_BiologicalSubsidies_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandSubsidies_BiologicalSubsidies_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_255.png" width="100%" />
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r500	{#ch06.256}
@@ -14925,12 +20038,73 @@ writeRaster(merogots,
 
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.255) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_cell.tif"),
+  layer_prefixes = c("FarmlandSubsidies_BiologicalSubsidies"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandSubsidies_BiologicalSubsidies_r500.tif	egv_256
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r500.tif")
+names(slanis)="egv_256"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandSubsidies_BiologicalSubsidies_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_256.png" width="100%" />
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r1250	{#ch06.257}
@@ -14943,12 +20117,73 @@ writeRaster(merogots,
 
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.255) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_cell.tif"),
+  layer_prefixes = c("FarmlandSubsidies_BiologicalSubsidies"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandSubsidies_BiologicalSubsidies_r1250.tif	egv_257
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r1250.tif")
+names(slanis)="egv_257"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandSubsidies_BiologicalSubsidies_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_257.png" width="100%" />
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r3000	{#ch06.258}
@@ -14961,12 +20196,73 @@ writeRaster(merogots,
 
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.255) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_cell.tif"),
+  layer_prefixes = c("FarmlandSubsidies_BiologicalSubsidies"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandSubsidies_BiologicalSubsidies_r3000.tif	egv_258
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r3000.tif")
+names(slanis)="egv_258"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandSubsidies_BiologicalSubsidies_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_258.png" width="100%" />
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r10000	{#ch06.259}
@@ -14979,12 +20275,73 @@ writeRaster(merogots,
 
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto lauksaimniecības platību īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.255) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_cell.tif"),
+  layer_prefixes = c("FarmlandSubsidies_BiologicalSubsidies"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandSubsidies_BiologicalSubsidies_r10000.tif	egv_259
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r10000.tif")
+names(slanis)="egv_259"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandSubsidies_BiologicalSubsidies_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandSubsidies_BiologicalSubsidies_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_259.png" width="100%" />
 
 
 ## FarmlandTrees_PermanentCrops_cell	{#ch06.260}
@@ -14997,12 +20354,115 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as permanent crops were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandTrees_PermanentCrops_cell.tif	egv_260 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums == "augļudārzi")
+table(dati$SDM_grupa_sakums,useNA="always")
+dati=dati %>% 
+  dplyr::select(yes)
+
+topo=sfarrow::st_read_parquet("./Geodata/2024/TopographicMap/LandusA_COMB.parquet")
+dati_topo= topo %>% 
+  filter(FNAME %in% c("poligons_Augludarzs","poligons_Augļudārzs",
+                      "poligons_Ogulājs","poligons_Ogulajs")) %>% 
+  mutate(yes=1) %>% 
+  dplyr::select(yes)
+abidati=rbind(dati,dati_topo)
+
+p2i_rez=egvtools::polygon2input(vector_data = abidati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandTrees_PermanentCrops_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandTrees_PermanentCrops_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandTrees_PermanentCrops_cell.tif",
+                            layername = "egv_260",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+rm(topo)
+rm(dati_topo)
+rm(abidati)
+unlink("./RasterGrids_10m/2024/FarmlandTrees_PermanentCrops_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_PermanentCrops_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_260.png" width="100%" />
 
 
 ## FarmlandTrees_PermanentCrops_r500	{#ch06.261}
@@ -15015,12 +20475,73 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.260) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_PermanentCrops"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_PermanentCrops_r500.tif	egv_261
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r500.tif")
+names(slanis)="egv_261"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_PermanentCrops_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_261.png" width="100%" />
 
 
 ## FarmlandTrees_PermanentCrops_r1250	{#ch06.262}
@@ -15033,12 +20554,73 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.260) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_PermanentCrops"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_PermanentCrops_r1250.tif	egv_262
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r1250.tif")
+names(slanis)="egv_262"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_PermanentCrops_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_262.png" width="100%" />
 
 
 ## FarmlandTrees_PermanentCrops_r3000	{#ch06.263}
@@ -15051,12 +20633,74 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.260) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_PermanentCrops"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_PermanentCrops_r3000.tif	egv_263
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r3000.tif")
+names(slanis)="egv_263"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_PermanentCrops_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_263.png" width="100%" />
+
 
 
 ## FarmlandTrees_PermanentCrops_r10000	{#ch06.264}
@@ -15069,12 +20713,73 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.260) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_PermanentCrops"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_PermanentCrops_r10000.tif	egv_264
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r10000.tif")
+names(slanis)="egv_264"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_PermanentCrops_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_PermanentCrops_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_264.png" width="100%" />
 
 
 ## FarmlandTrees_ShortRotationCoppice_cell	{#ch06.265}
@@ -15087,12 +20792,102 @@ writeRaster(merogots,
 
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** First, agricultural parcels declared as short rotation coppice were selected from 
+[Rural Support Service's information on declared fields](#Ch04.02). 
+Geometries were then rasterized to input resolution, ensuring value 1 at the polygon locations 
+and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
+Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During caggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+# kodi ----
+kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
+kodi$kods=as.character(kodi$kods)
+# LAD ----
+lad=sfarrow::st_read_parquet("./Geodata/2024/LAD/Lauki_2024.parquet")
+lad$yes=1
+lad=lad %>% 
+  left_join(kodi,by=c("PRODUCT_CODE"="kods"))
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+
+# FarmlandTrees_ShortRotationCoppice_cell.tif	egv_265 ----
+dati=lad %>% 
+  filter(SDM_grupa_sakums == "krūmveida ilggadīgie stādījumi")
+table(dati$SDM_grupa_sakums,useNA="always")
+
+p2i_rez=egvtools::polygon2input(vector_data = dati,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "FarmlandTrees_ShortRotationCoppice_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "FarmlandTrees_ShortRotationCoppice_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "FarmlandTrees_ShortRotationCoppice_cell.tif",
+                            layername = "egv_265",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(i2e_rez)
+rm(dati)
+unlink("./RasterGrids_10m/2024/FarmlandTrees_ShortRotationCoppice_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_ShortRotationCoppice_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_265.png" width="100%" />
 
 
 ## FarmlandTrees_ShortRotationCoppice_r500	{#ch06.266}
@@ -15105,12 +20900,73 @@ writeRaster(merogots,
 
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.265) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_ShortRotationCoppice"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_ShortRotationCoppice_r500.tif	egv_266
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r500.tif")
+names(slanis)="egv_266"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_ShortRotationCoppice_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_266.png" width="100%" />
 
 
 ## FarmlandTrees_ShortRotationCoppice_r1250	{#ch06.267}
@@ -15123,12 +20979,73 @@ writeRaster(merogots,
 
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.265) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_ShortRotationCoppice"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_ShortRotationCoppice_r1250.tif	egv_267
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r1250.tif")
+names(slanis)="egv_267"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_ShortRotationCoppice_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_267.png" width="100%" />
 
 
 ## FarmlandTrees_ShortRotationCoppice_r3000	{#ch06.268}
@@ -15141,12 +21058,73 @@ writeRaster(merogots,
 
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.265) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_ShortRotationCoppice"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_ShortRotationCoppice_r3000.tif	egv_268
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r3000.tif")
+names(slanis)="egv_268"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_ShortRotationCoppice_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_268.png" width="100%" />
 
 
 ## FarmlandTrees_ShortRotationCoppice_r10000	{#ch06.269}
@@ -15159,12 +21137,73 @@ writeRaster(merogots,
 
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.265) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_cell.tif"),
+  layer_prefixes = c("FarmlandTrees_ShortRotationCoppice"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# FarmlandTrees_ShortRotationCoppice_r10000.tif	egv_269
+slanis=rast("./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r10000.tif")
+names(slanis)="egv_269"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/FarmlandTrees_ShortRotationCoppice_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+
+nosaukums="FarmlandTrees_ShortRotationCoppice_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+nosaukumiem$egv_mean[i]=videjais
+nosaukumiem$egv_rms[i]=standartnovirze
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_269.png" width="100%" />
 
 
 ## ForestsAge_ClearcutsLowStands_cell	{#ch06.270}
