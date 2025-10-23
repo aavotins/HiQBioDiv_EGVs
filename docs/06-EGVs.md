@@ -83,9 +83,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
-
 nosaukums="Climate_CHELSAv2.1-bio1_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
 saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
@@ -94,8 +91,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -147,8 +142,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio10_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -158,8 +151,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -212,8 +203,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio11_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -223,8 +212,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -277,8 +264,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio12_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -288,8 +273,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -342,8 +325,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio13_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -353,8 +334,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -407,8 +386,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio14_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -418,8 +395,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -472,8 +447,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio15_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -483,8 +456,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -537,8 +508,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio16_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -548,8 +517,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -602,8 +569,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio17_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -613,8 +578,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -667,8 +630,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio18_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -678,8 +639,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -732,8 +691,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio19_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -743,8 +700,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -797,8 +752,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio2_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -808,8 +761,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -862,8 +813,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio3_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -873,8 +822,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -927,8 +874,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio4_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -938,8 +883,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -992,8 +935,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio5_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1003,8 +944,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1057,8 +996,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio6_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1068,8 +1005,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1122,8 +1057,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio7_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1133,8 +1066,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1187,8 +1118,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio8_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1198,8 +1127,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1252,8 +1179,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-bio9_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1263,8 +1188,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1317,8 +1240,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-clt-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1328,8 +1249,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1382,8 +1301,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-clt-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1393,8 +1310,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1447,8 +1362,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-clt-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1458,8 +1371,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1512,8 +1423,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-clt-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1523,8 +1432,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1577,8 +1484,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-cmi-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1588,8 +1493,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1642,8 +1545,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-cmi-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1653,8 +1554,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1707,8 +1606,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-cmi-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1718,8 +1615,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1772,8 +1667,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-cmi-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1783,8 +1676,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1837,8 +1728,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-fcf_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1848,8 +1737,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1902,8 +1789,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-fgd_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1913,8 +1798,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -1967,8 +1850,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdd0_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -1978,8 +1859,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2032,8 +1911,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdd10_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2043,8 +1920,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2097,8 +1972,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdd5_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2108,8 +1981,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2162,8 +2033,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gddlgd0_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2173,8 +2042,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2227,8 +2094,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gddlgd10_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2238,8 +2103,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2292,8 +2155,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gddlgd5_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2303,8 +2164,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2357,8 +2216,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdgfgd0_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2368,8 +2225,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2422,8 +2277,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdgfgd10_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2433,8 +2286,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2487,8 +2338,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gdgfgd5_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2498,8 +2347,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2552,8 +2399,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gsl_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2563,8 +2408,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2617,8 +2460,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gsp_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2628,8 +2469,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2682,8 +2521,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-gst_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2693,8 +2530,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2747,8 +2582,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-hurs-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2758,8 +2591,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2812,8 +2643,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-hurs-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2823,8 +2652,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2877,8 +2704,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-hurs-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2888,8 +2713,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -2942,8 +2765,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-hurs-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -2953,8 +2774,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3007,8 +2826,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-lgd_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3018,8 +2835,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3072,8 +2887,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-ngd0_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3083,8 +2896,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3137,8 +2948,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-ngd10_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3148,8 +2957,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3202,8 +3009,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-ngd5_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3213,8 +3018,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3267,8 +3070,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-npp_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3278,8 +3079,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3332,8 +3131,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-pet-penman-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3343,8 +3140,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3397,8 +3192,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-pet-penman-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3408,8 +3201,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3462,8 +3253,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-pet-penman-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3473,8 +3262,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3527,8 +3314,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-pet-penman-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3538,8 +3323,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3592,8 +3375,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-rsds-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3603,8 +3384,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3657,8 +3436,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-rsds-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3668,8 +3445,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3722,8 +3497,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-rsds-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3733,8 +3506,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3787,8 +3558,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-rsds-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3798,8 +3567,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3852,8 +3619,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-scd_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3863,8 +3628,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3917,8 +3680,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-sfcWind-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3928,8 +3689,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -3982,8 +3741,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-sfcWind-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -3993,8 +3750,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4047,8 +3802,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-sfcWind-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4058,8 +3811,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4112,8 +3863,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-sfcWind-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4123,8 +3872,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4177,8 +3924,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-swb_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4188,8 +3933,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4242,8 +3985,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-swe_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4253,8 +3994,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4307,8 +4046,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-vpd-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4318,8 +4055,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4372,8 +4107,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-vpd-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4383,8 +4116,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4437,8 +4168,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-vpd-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4448,8 +4177,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4502,8 +4229,6 @@ print(df)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Climate_CHELSAv2.1-vpd-range_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4513,8 +4238,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4603,8 +4326,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_01-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4614,8 +4335,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4704,8 +4423,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_02-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4715,8 +4432,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4805,8 +4520,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_03-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4816,8 +4529,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -4906,8 +4617,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_04-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -4917,8 +4626,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5007,8 +4714,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_05-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5018,8 +4723,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5108,8 +4811,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_06-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5119,8 +4820,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5209,8 +4908,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_07-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5220,8 +4917,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5310,8 +5005,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_08-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5321,8 +5014,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5411,8 +5102,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_09-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5422,8 +5111,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5512,8 +5199,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_10-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5523,8 +5208,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5613,8 +5296,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_11-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5624,8 +5305,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5714,8 +5393,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_12-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5725,8 +5402,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5815,8 +5490,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_13-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5826,8 +5499,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -5916,8 +5587,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_14-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -5927,8 +5596,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6017,8 +5684,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_15-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6028,8 +5693,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6118,8 +5781,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_16-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6129,8 +5790,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6219,8 +5878,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_17-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6230,8 +5887,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6320,8 +5975,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_18-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6331,8 +5984,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6421,8 +6072,6 @@ unlink(paste0("./RasterGrids_10m/2024/",localname))
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="HydroClim_19-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6432,8 +6081,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6486,8 +6133,6 @@ rm(distegv)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Builtup_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6497,8 +6142,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6551,8 +6194,6 @@ rm(distegv)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_ForestInside_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6562,8 +6203,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6638,8 +6277,6 @@ rm(permgrass_t2)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_GrasslandPermanent_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6649,8 +6286,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6721,8 +6356,6 @@ distegv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Landfill_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6732,8 +6365,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6811,8 +6442,6 @@ distegv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Sea_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6822,8 +6451,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6876,8 +6503,6 @@ rm(distegv)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Trees_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6887,8 +6512,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -6969,8 +6592,6 @@ distegv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Waste_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -6980,8 +6601,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7033,8 +6652,6 @@ rm(distegv)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_Water_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7044,8 +6661,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7097,8 +6712,6 @@ rm(distegv)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Distance_WaterInside_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7108,8 +6721,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7174,8 +6785,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Farmland_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7185,8 +6794,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7251,8 +6858,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Farmland_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7262,8 +6867,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7328,8 +6931,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Farmland_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7339,8 +6940,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7405,8 +7004,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Farmland_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7416,8 +7013,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7482,8 +7077,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Forest_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7493,8 +7086,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7559,8 +7150,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Forest_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7570,8 +7159,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7636,8 +7223,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Forest_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7647,8 +7232,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7713,8 +7296,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Forest_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7724,8 +7305,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7790,8 +7369,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Total_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7801,8 +7378,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7867,8 +7442,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Total_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7878,8 +7451,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -7944,8 +7515,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Total_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -7955,8 +7524,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8021,8 +7588,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Diversity_Total_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8032,8 +7597,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8128,8 +7691,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Trees_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8139,8 +7700,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8201,8 +7760,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Trees_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8212,8 +7769,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8274,8 +7829,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Trees_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8285,8 +7838,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8347,8 +7898,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Trees_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8358,8 +7907,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8420,8 +7967,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Trees_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8431,8 +7976,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8524,8 +8067,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Water_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8535,8 +8076,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8597,8 +8136,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Water_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8608,8 +8145,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8670,8 +8205,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Water_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8681,8 +8214,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8743,8 +8274,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Water_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8754,8 +8283,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8816,8 +8343,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Bogs-Water_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8827,8 +8352,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8914,8 +8437,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Farmland-Builtup_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8925,8 +8446,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -8988,8 +8507,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Farmland-Builtup_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -8999,8 +8516,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9062,8 +8577,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Farmland-Builtup_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9073,8 +8586,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9136,8 +8647,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Farmland-Builtup_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9147,8 +8656,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9210,8 +8717,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Farmland-Builtup_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9221,8 +8726,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9308,8 +8811,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees-Builtup_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9319,8 +8820,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9382,8 +8881,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees-Builtup_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9393,8 +8890,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9456,8 +8951,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees-Builtup_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9467,8 +8960,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9530,8 +9021,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees-Builtup_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9541,8 +9030,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9604,8 +9091,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees-Builtup_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9615,8 +9100,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9697,8 +9180,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_CropsFallow_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9708,8 +9189,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9771,8 +9250,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_CropsFallow_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9782,8 +9259,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9845,8 +9320,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_CropsFallow_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9856,8 +9329,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9919,8 +9390,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_CropsFallow_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -9930,8 +9399,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -9993,8 +9460,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_CropsFallow_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10004,8 +9469,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10091,8 +9554,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_FarmlandShrubs-Trees_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10102,8 +9563,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10165,8 +9624,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_FarmlandShrubs-Trees_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10176,8 +9633,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10239,8 +9694,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_FarmlandShrubs-Trees_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10250,8 +9703,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10313,8 +9764,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_FarmlandShrubs-Trees_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10324,8 +9773,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10387,8 +9834,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_FarmlandShrubs-Trees_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10398,8 +9843,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10480,8 +9923,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Grasslands_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10491,8 +9932,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10554,8 +9993,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Grasslands_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10565,8 +10002,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10628,8 +10063,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Grasslands_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10639,8 +10072,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10702,8 +10133,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Grasslands_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10713,8 +10142,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10776,8 +10203,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Grasslands_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10787,8 +10212,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10879,8 +10302,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_OldForests_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10890,8 +10311,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -10953,8 +10372,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_OldForests_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -10964,8 +10381,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11027,8 +10442,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_OldForests_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11038,8 +10451,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11101,8 +10512,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_OldForests_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11112,8 +10521,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11175,8 +10582,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_OldForests_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11186,8 +10591,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11268,8 +10671,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Roads_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11279,8 +10680,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11342,8 +10741,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Roads_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11353,8 +10750,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11416,8 +10811,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Roads_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11427,8 +10820,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11490,8 +10881,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Roads_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11501,8 +10890,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11564,8 +10951,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Roads_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11575,8 +10960,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11657,8 +11040,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11668,8 +11049,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11732,8 +11111,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11743,8 +11120,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11806,8 +11181,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11817,8 +11190,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11881,8 +11252,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11892,8 +11261,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -11955,8 +11322,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Trees_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -11966,8 +11331,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12047,8 +11410,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12058,8 +11419,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12121,8 +11480,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12132,8 +11489,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12195,8 +11550,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12206,8 +11559,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12269,8 +11620,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12280,8 +11629,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12343,8 +11690,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12354,8 +11699,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12441,8 +11784,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Farmland_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12452,8 +11793,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12515,8 +11854,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Farmland_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12526,8 +11863,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12589,8 +11924,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Farmland_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12600,8 +11933,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12663,8 +11994,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Farmland_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12674,8 +12003,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12737,8 +12064,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Farmland_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12748,8 +12073,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12835,8 +12158,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Grassland_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12846,8 +12167,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12909,8 +12228,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Grassland_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12920,8 +12237,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -12983,8 +12298,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Grassland_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -12994,8 +12307,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13057,8 +12368,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Grassland_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13068,8 +12377,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13131,8 +12438,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_Water-Grassland_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13142,8 +12447,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13230,8 +12533,6 @@ landscape_function(
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_ReedSedgeRushBeds-Water_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13241,8 +12542,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13304,8 +12603,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_ReedSedgeRushBeds-Water_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13315,8 +12612,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13378,8 +12673,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_ReedSedgeRushBeds-Water_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13389,8 +12682,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13452,8 +12743,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_ReedSedgeRushBeds-Water_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13463,8 +12752,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13526,8 +12813,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Edges_ReedSedgeRushBeds-Water_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13537,8 +12822,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13633,8 +12916,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsAll_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsAll_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13644,8 +12925,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13713,8 +12992,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsAll_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13724,8 +13001,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13793,8 +13068,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsAll_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13804,8 +13077,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13873,8 +13144,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsAll_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13884,8 +13153,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -13953,8 +13220,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsAll_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -13964,8 +13229,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14062,8 +13325,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsHoed_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsHoed_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14073,8 +13334,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14141,8 +13400,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsHoed_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14152,8 +13409,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14220,8 +13475,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsHoed_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14231,8 +13484,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14299,8 +13550,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsHoed_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14310,8 +13559,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14378,8 +13625,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsHoed_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14389,8 +13634,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14487,8 +13730,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsOther_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsOther_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14498,8 +13739,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14567,8 +13806,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsOther_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14578,8 +13815,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14646,8 +13881,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsOther_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14657,8 +13890,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14725,8 +13956,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsOther_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14736,8 +13965,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14804,8 +14031,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsOther_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14815,8 +14040,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14914,8 +14137,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsSpring_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsSpring_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -14925,8 +14146,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -14993,8 +14212,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsSpring_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15004,8 +14221,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15072,8 +14287,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsSpring_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15083,8 +14296,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15151,8 +14362,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsSpring_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15162,8 +14371,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15230,8 +14437,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsSpring_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15241,8 +14446,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15340,8 +14543,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_CropsWinter_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsWinter_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15351,8 +14552,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15419,8 +14618,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsWinter_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15430,8 +14627,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15498,8 +14693,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsWinter_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15509,8 +14702,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15577,8 +14768,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsWinter_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15588,8 +14777,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15656,8 +14843,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_CropsWinter_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15667,8 +14852,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15767,8 +14950,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_RapeseedsSpring_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsSpring_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15778,8 +14959,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15846,8 +15025,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsSpring_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15857,8 +15034,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -15925,8 +15100,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsSpring_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -15936,8 +15109,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16004,8 +15175,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsSpring_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16015,8 +15184,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16083,8 +15250,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsSpring_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16094,8 +15259,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16193,8 +15356,6 @@ unlink("./RasterGrids_10m/2024/FarmlandCrops_RapeseedsWinter_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsWinter_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16204,8 +15365,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16272,8 +15431,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsWinter_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16283,8 +15440,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16351,8 +15506,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsWinter_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16362,8 +15515,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16430,8 +15581,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsWinter_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16441,8 +15590,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16509,8 +15656,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandCrops_RapeseedsWinter_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16520,8 +15665,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16616,8 +15759,6 @@ rm(lad_zalaji)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAbandoned_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16627,8 +15768,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16695,8 +15834,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAbandoned_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16706,8 +15843,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16774,8 +15909,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAbandoned_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16785,8 +15918,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16853,8 +15984,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAbandoned_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16864,8 +15993,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -16932,8 +16059,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAbandoned_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -16943,8 +16068,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17024,8 +16147,6 @@ rm(landscape_grasslands)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAll_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17035,8 +16156,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17103,8 +16222,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAll_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17114,8 +16231,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17182,8 +16297,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAll_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17193,8 +16306,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17261,8 +16372,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAll_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17272,8 +16381,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17340,8 +16447,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsAll_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17351,8 +16456,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17450,8 +16553,6 @@ unlink("./RasterGrids_10m/2024/FarmlandGrassland_GrasslandsPermanent_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsPermanent_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17461,8 +16562,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17529,8 +16628,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsPermanent_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17540,8 +16637,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17608,8 +16703,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsPermanent_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17619,8 +16712,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17687,8 +16778,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsPermanent_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17698,8 +16787,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17766,8 +16853,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsPermanent_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17777,8 +16862,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17875,8 +16958,6 @@ unlink("./RasterGrids_10m/2024/FarmlandGrassland_GrasslandsTemporary_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsTemporary_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17886,8 +16967,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -17954,8 +17033,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsTemporary_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -17965,8 +17042,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18033,8 +17108,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsTemporary_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18044,8 +17117,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18112,8 +17183,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsTemporary_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18123,8 +17192,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18191,8 +17258,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandGrassland_GrasslandsTemporary_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18202,8 +17267,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18296,8 +17359,6 @@ unlink("./RasterGrids_10m/2024/FarmlandParcels_FieldsActive_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandParcels_FieldsActive_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18307,8 +17368,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18375,8 +17434,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandParcels_FieldsActive_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18386,8 +17443,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18454,8 +17509,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandParcels_FieldsActive_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18465,8 +17518,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18533,8 +17584,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandParcels_FieldsActive_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18544,8 +17593,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18612,8 +17659,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandParcels_FieldsActive_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18623,8 +17668,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18727,8 +17770,6 @@ unlink("./RasterGrids_10m/2024/FarmlandPloughed_CropsFallow_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallow_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18738,8 +17779,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18806,8 +17845,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallow_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18817,8 +17854,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18885,8 +17920,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallow_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18896,8 +17929,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -18964,8 +17995,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallow_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -18975,8 +18004,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19043,8 +18070,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallow_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19054,8 +18079,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19159,8 +18182,6 @@ unlink("./RasterGrids_10m/2024/FarmlandPloughed_CropsFallowTempGrass_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallowTempGrass_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19170,8 +18191,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19238,8 +18257,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallowTempGrass_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19249,8 +18266,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19317,8 +18332,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallowTempGrass_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19328,8 +18341,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19396,8 +18407,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallowTempGrass_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19407,8 +18416,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19475,8 +18482,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_CropsFallowTempGrass_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19486,8 +18491,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19583,8 +18586,6 @@ unlink("./RasterGrids_10m/2024/FarmlandPloughed_Fallow_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_Fallow_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19594,8 +18595,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19662,8 +18661,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_Fallow_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19673,8 +18670,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19741,8 +18736,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_Fallow_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19752,8 +18745,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19820,8 +18811,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_Fallow_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19831,8 +18820,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -19899,8 +18886,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandPloughed_Fallow_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -19910,8 +18895,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20007,8 +18990,6 @@ unlink("./RasterGrids_10m/2024/FarmlandSubsidies_BiologicalSubsidies_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandSubsidies_BiologicalSubsidies_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20018,8 +18999,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20086,8 +19065,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandSubsidies_BiologicalSubsidies_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20097,8 +19074,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20165,8 +19140,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandSubsidies_BiologicalSubsidies_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20176,8 +19149,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20244,8 +19215,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandSubsidies_BiologicalSubsidies_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20255,8 +19224,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20323,8 +19290,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandSubsidies_BiologicalSubsidies_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20334,8 +19299,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20444,8 +19407,6 @@ unlink("./RasterGrids_10m/2024/FarmlandTrees_PermanentCrops_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_PermanentCrops_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20455,8 +19416,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20523,8 +19482,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_PermanentCrops_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20534,8 +19491,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20602,8 +19557,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_PermanentCrops_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20613,8 +19566,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20681,8 +19632,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_PermanentCrops_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20692,8 +19641,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20761,8 +19708,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_PermanentCrops_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20772,8 +19717,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20869,8 +19812,6 @@ unlink("./RasterGrids_10m/2024/FarmlandTrees_ShortRotationCoppice_input.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_ShortRotationCoppice_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20880,8 +19821,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -20948,8 +19887,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_ShortRotationCoppice_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -20959,8 +19896,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -21027,8 +19962,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_ShortRotationCoppice_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -21038,8 +19971,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -21106,9 +20037,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
-
 nosaukums="FarmlandTrees_ShortRotationCoppice_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
 saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
@@ -21117,8 +20045,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -21185,8 +20111,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="FarmlandTrees_ShortRotationCoppice_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -21196,8 +20120,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -23661,8 +22583,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_AllotmentGardens_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -23672,8 +22592,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -23740,8 +22658,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_AllotmentGardens_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -23751,8 +22667,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -23819,8 +22733,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_AllotmentGardens_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -23830,8 +22742,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -23898,8 +22808,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_AllotmentGardens_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -23909,8 +22817,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -23977,8 +22883,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_AllotmentGardens_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -23988,8 +22892,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24059,8 +22961,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_BareSoilQuarry_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24070,8 +22970,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24138,8 +23036,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_BareSoilQuarry_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24149,8 +23045,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24217,8 +23111,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_BareSoilQuarry_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24228,8 +23120,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24296,8 +23186,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_BareSoilQuarry_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24307,8 +23195,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24375,8 +23261,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_BareSoilQuarry_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24386,8 +23270,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24457,8 +23339,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Builtup_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24468,8 +23348,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24536,8 +23414,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Builtup_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24547,8 +23423,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24615,8 +23489,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Builtup_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24626,8 +23498,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24694,8 +23564,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Builtup_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24705,8 +23573,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24773,8 +23639,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Builtup_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24784,8 +23648,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24855,8 +23717,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Farmland_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24866,8 +23726,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -24934,8 +23792,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Farmland_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -24945,8 +23801,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25013,8 +23867,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Farmland_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25024,8 +23876,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25092,8 +23942,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Farmland_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25103,8 +23951,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25171,8 +24017,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Farmland_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25182,8 +24026,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25266,8 +24108,6 @@ rm(visi_mezi)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ForestsWithoutInventory_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25277,8 +24117,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25345,8 +24183,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ForestsWithoutInventory_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25356,8 +24192,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25424,8 +24258,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ForestsWithoutInventory_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25435,8 +24267,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25503,8 +24333,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ForestsWithoutInventory_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25514,8 +24342,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25582,8 +24408,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ForestsWithoutInventory_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25593,8 +24417,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25664,8 +24486,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_GardensOrchards_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25675,8 +24495,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25743,8 +24561,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_GardensOrchards_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25754,8 +24570,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25822,8 +24636,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_GardensOrchards_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25833,8 +24645,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25901,8 +24711,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_GardensOrchards_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25912,8 +24720,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -25980,8 +24786,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_GardensOrchards_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -25991,8 +24795,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26062,8 +24864,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Roads_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26073,8 +24873,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26166,8 +24964,6 @@ rm(lad)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchards_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26177,8 +24973,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26245,8 +25039,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchards_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26256,8 +25048,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26324,8 +25114,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchards_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26335,8 +25123,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26403,8 +25189,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchards_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26414,8 +25198,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26482,8 +25264,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchards_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26493,8 +25273,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26584,8 +25362,6 @@ rm(parejie)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchardsGardens_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26595,8 +25371,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26663,8 +25437,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchardsGardens_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26674,8 +25446,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26742,8 +25512,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchardsGardens_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26753,8 +25521,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26821,8 +25587,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchardsGardens_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26832,8 +25596,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26900,8 +25662,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_ShrubsOrchardsGardens_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26911,8 +25671,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -26982,8 +25740,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_SwampsMiresBogsHelophytes_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -26993,8 +25749,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27061,8 +25815,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_SwampsMiresBogsHelophytes_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27072,8 +25824,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27140,8 +25890,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_SwampsMiresBogsHelophytes_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27151,8 +25899,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27219,8 +25965,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_SwampsMiresBogsHelophytes_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27230,8 +25974,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27298,8 +26040,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_SwampsMiresBogsHelophytes_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27309,8 +26049,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27380,8 +26118,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Trees_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27391,8 +26127,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27459,8 +26193,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Trees_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27470,8 +26202,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27538,8 +26268,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Trees_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27549,8 +26277,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27617,8 +26343,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Trees_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27628,8 +26352,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27696,8 +26418,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Trees_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27707,8 +26427,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27777,8 +26495,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_TreesOutsideForests_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27788,8 +26504,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27856,8 +26570,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_TreesOutsideForests_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27867,8 +26579,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -27935,8 +26645,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_TreesOutsideForests_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -27946,8 +26654,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28014,8 +26720,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_TreesOutsideForests_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28025,8 +26729,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28093,8 +26795,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_TreesOutsideForests_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28104,8 +26804,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28174,8 +26872,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Water_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28185,8 +26881,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28253,8 +26947,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Water_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28264,8 +26956,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28332,8 +27022,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Water_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28343,8 +27031,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28411,8 +27097,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Water_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28422,8 +27106,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28490,8 +27172,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="General_Water_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28501,8 +27181,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28556,8 +27234,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Bogs_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28567,8 +27243,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28635,8 +27309,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Bogs_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28646,8 +27318,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28714,8 +27384,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Bogs_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28725,8 +27393,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28793,8 +27459,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Bogs_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28804,8 +27468,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28872,8 +27534,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Bogs_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28883,8 +27543,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -28938,8 +27596,6 @@ rm(i2e_rez)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Mires_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -28949,8 +27605,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29017,8 +27671,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Mires_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29028,8 +27680,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29096,8 +27746,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Mires_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29107,8 +27755,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29175,8 +27821,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Mires_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29186,8 +27830,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29254,8 +27896,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_Mires_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29265,8 +27905,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29347,8 +27985,6 @@ rm(simple_landscape)
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_ReedSedgeRushBeds_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29358,8 +27994,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29426,8 +28060,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_ReedSedgeRushBeds_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29437,8 +28069,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29505,8 +28135,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_ReedSedgeRushBeds_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29516,8 +28144,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29584,8 +28210,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_ReedSedgeRushBeds_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29595,8 +28219,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29663,8 +28285,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Wetlands_ReedSedgeRushBeds_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29674,8 +28294,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29722,8 +28340,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-LYmed-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29733,8 +28349,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29807,8 +28421,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-LYmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29818,8 +28430,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29868,8 +28478,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-STiqr-median_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29879,8 +28487,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -29928,8 +28534,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-STmedian-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -29939,8 +28543,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30016,8 +28618,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-STmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30027,8 +28627,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30078,8 +28676,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-STp25-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30089,8 +28685,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30138,8 +28732,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDMI-STp75-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30149,8 +28741,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30198,8 +28788,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-LYmedian-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30209,8 +28797,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30285,8 +28871,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-LYmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30296,8 +28880,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30345,8 +28927,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-STiqr-median_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30356,8 +28936,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30405,8 +28983,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-STmedian-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30416,8 +28992,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30493,8 +29067,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-STmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30504,8 +29076,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30553,8 +29123,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-STp25-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30564,8 +29132,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30613,8 +29179,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDVI-STp75-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30624,8 +29188,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30671,8 +29233,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-LYmedian-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30682,8 +29242,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30757,8 +29315,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-LYmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30768,8 +29324,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30817,8 +29371,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-STiqr-median_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30828,8 +29380,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30877,8 +29427,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-STmedian-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30888,8 +29436,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -30964,8 +29510,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-STmedian-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -30975,8 +29519,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31024,8 +29566,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-STp25-min_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31035,8 +29575,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31085,8 +29623,6 @@ egvrez
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="EO_NDWI-STp75-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31096,8 +29632,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31148,8 +29682,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-CN_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31159,8 +29691,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31212,8 +29742,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-CaCo3_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31223,8 +29751,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31275,8 +29801,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-K_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31286,8 +29810,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31338,8 +29860,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-N_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31349,8 +29869,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31400,8 +29918,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-P_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31411,8 +29927,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31463,8 +29977,6 @@ egv
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilChemistry_ESDAC-phH2O_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31474,8 +29986,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31535,8 +30045,6 @@ input2egv(input=clay10,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Clay_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31546,8 +30054,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31611,8 +30117,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Clay_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31622,8 +30126,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31688,8 +30190,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Clay_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31699,8 +30199,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31764,8 +30262,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Clay_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31775,8 +30271,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31841,8 +30335,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Clay_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31852,8 +30344,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31913,8 +30403,6 @@ input2egv(input=org10,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Organic_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31924,8 +30412,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -31988,8 +30474,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Organic_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -31999,8 +30483,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32064,8 +30546,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Organic_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32075,8 +30555,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32139,8 +30617,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Organic_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32150,8 +30626,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32214,8 +30688,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Organic_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32225,8 +30697,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32286,8 +30756,6 @@ input2egv(input=sand10,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Sand_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32297,8 +30765,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32361,8 +30827,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Sand_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32372,8 +30836,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32436,8 +30898,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Sand_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32447,8 +30907,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32511,8 +30969,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Sand_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32522,8 +30978,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32586,8 +31040,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Sand_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32597,8 +31049,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32657,8 +31107,6 @@ input2egv(input=silt10,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Silt_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32668,8 +31116,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32732,8 +31178,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Silt_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32743,8 +31187,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32807,8 +31249,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Silt_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32818,8 +31258,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32883,8 +31321,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Silt_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32894,8 +31330,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -32958,8 +31392,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="SoilTexture_Silt_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -32969,8 +31401,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33022,8 +31452,6 @@ input2egv(input="./Geodata/2024/DEM/mozDEM_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_ASL-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33033,8 +31461,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33087,8 +31513,6 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_Aspect_udeni2_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_Aspect-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33098,8 +31522,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33173,8 +31595,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_Aspect-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33184,8 +31604,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33241,8 +31659,6 @@ input2egv(input=dis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-area_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33252,8 +31668,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33319,8 +31733,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-area_r500.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33330,8 +31742,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33396,8 +31806,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-area_r1250.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33407,8 +31815,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33474,8 +31880,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-area_r3000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33485,8 +31889,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33553,8 +31955,6 @@ writeRaster(slanis2,
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-area_r10000.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33564,8 +31964,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33617,8 +32015,6 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-max_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33628,8 +32024,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33681,8 +32075,6 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_DiS_udeni2_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_DiS-mean_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33692,8 +32084,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33746,8 +32136,6 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_Slope_udeni2_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_Slope-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33757,8 +32145,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33832,8 +32218,6 @@ unlink("./RasterGrids_100m/2024/draza_p25.tif")
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_Slope-iqr_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33843,8 +32227,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
@@ -33897,8 +32279,6 @@ input2egv(input="./RasterGrids_10m/2024/Terrain_TWI_udeni2_10m.tif",
 # standardization ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(readxl)) {install.packages("readxl"); require(readxl)}
-if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 
 nosaukums="Terrain_TWI-average_cell.tif"
 ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
@@ -33908,8 +32288,6 @@ videjais=global(slanis,fun="mean",na.rm=TRUE)
 centrets=slanis-videjais[,1]
 standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
 merogots=centrets/standartnovirze[,1]
-nosaukumiem$egv_mean[i]=videjais
-nosaukumiem$egv_rms[i]=standartnovirze
 writeRaster(merogots,
             filename=saglabasanas_cels,
             overwrite=TRUE)
