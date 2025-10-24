@@ -43,6 +43,69 @@ provide exact sensitive information.
 In this material, we use the term *species distribution modelling* as a more used term, that 
 is synonymous with *ecological niche analysis* and *ecological niche modelling*.
 
+Tree species groups:
+
+**coniferous** - following species (codes) as used in the national forest 
+stand-level-inventory database:
+
+    - pines (1, 12, 22)
+    
+    - spruces (3, 15)
+    
+    - larch (13)
+    
+    - fir (23, 28)
+
+**boreal deciduous** - following species (codes) as used in the national forest 
+stand-level-inventory database:
+
+    - birches (4)
+    
+    - black alder (6)
+    
+    - aspens (8, 19, 68)
+    
+    - grey alder (9)
+    
+    - willows (20, 21)
+    
+    - rowan (32)
+    
+    - eve (35)
+
+**temperate deciduous** - following species (codes) as used in the national forest 
+stand-level-inventory database:
+
+    - oaks (10, 61)
+    
+    - ashes (11, 64)
+    
+    - lindens (12, 62)
+    
+    - elms (16, 65)
+    
+    - beech (17)
+    
+    - hornbeam (18)
+    
+    - maples (24, 63)
+    
+    - cherry (25)
+    
+    - apple (26)
+    
+    - pear (27)
+    
+    - yew (29)
+    
+    - acacia (50)
+    
+    - walnut (66)
+    
+    - chestnut (67)
+    
+    - robinia (69)
+
 Acronyms:
 
 **CRS** - coordinate reference system
