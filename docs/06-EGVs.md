@@ -15,10 +15,9 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 - scale is one of: cell, 500, 1250, 3000, 10000 m around the center of analysis cell. The resolution of every EGV is 1 ha, larger scales are summarised to it.
 
 
-<div class="figure">
-<img src="./Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png" alt="Relationships of ecogeographical variables created." width="100%" />
-<p class="caption">(\#fig:flowchart)Relationships of ecogeographical variables created.</p>
-</div>
+\begin{figure}
+\includegraphics[width=1\linewidth]{./Figures/EGV_FlowChartY_eps_krasains_300dpi_2} \caption{Relationships of ecogeographical variables created.}(\#fig:flowchart)
+\end{figure}
 
 <br>
 
@@ -96,7 +95,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_1.png" width="100%" />
+
 
 
 ## Climate_CHELSAv2.1-bio10_cell	{#ch06.002}
@@ -156,7 +155,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_2.png" width="100%" />
+
 
 
 
@@ -217,7 +216,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_3.png" width="100%" />
+
 
 
 
@@ -278,7 +277,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_4.png" width="100%" />
+
 
 
 
@@ -339,7 +338,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_5.png" width="100%" />
+
 
 
 
@@ -400,7 +399,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_6.png" width="100%" />
+
 
 
 
@@ -461,7 +460,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_7.png" width="100%" />
+
 
 
 
@@ -522,7 +521,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_8.png" width="100%" />
+
 
 
 
@@ -583,7 +582,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_9.png" width="100%" />
+
 
 
 
@@ -644,7 +643,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_10.png" width="100%" />
+
 
 
 
@@ -705,7 +704,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_11.png" width="100%" />
+
 
 
 
@@ -766,7 +765,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_12.png" width="100%" />
+
 
 
 
@@ -827,7 +826,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_13.png" width="100%" />
+
 
 
 
@@ -888,7 +887,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_14.png" width="100%" />
+
 
 
 
@@ -949,7 +948,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_15.png" width="100%" />
+
 
 
 
@@ -1010,7 +1009,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_16.png" width="100%" />
+
 
 
 
@@ -1071,7 +1070,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_17.png" width="100%" />
+
 
 
 
@@ -1132,7 +1131,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_18.png" width="100%" />
+
 
 
 
@@ -1193,7 +1192,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_19.png" width="100%" />
+
 
 
 
@@ -1254,7 +1253,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_20.png" width="100%" />
+
 
 
 
@@ -1315,7 +1314,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_21.png" width="100%" />
+
 
 
 
@@ -1376,7 +1375,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_22.png" width="100%" />
+
 
 
 
@@ -1437,7 +1436,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_23.png" width="100%" />
+
 
 
 
@@ -1498,7 +1497,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_24.png" width="100%" />
+
 
 
 
@@ -1559,7 +1558,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_25.png" width="100%" />
+
 
 
 
@@ -1620,7 +1619,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_26.png" width="100%" />
+
 
 
 
@@ -1681,7 +1680,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_27.png" width="100%" />
+
 
 
 
@@ -1742,7 +1741,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_28.png" width="100%" />
+
 
 
 
@@ -1803,7 +1802,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_29.png" width="100%" />
+
 
 
 
@@ -1864,7 +1863,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_30.png" width="100%" />
+
 
 
 
@@ -1925,7 +1924,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_31.png" width="100%" />
+
 
 
 
@@ -1986,7 +1985,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_32.png" width="100%" />
+
 
 
 
@@ -2047,7 +2046,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_33.png" width="100%" />
+
 
 
 
@@ -2108,7 +2107,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_34.png" width="100%" />
+
 
 
 
@@ -2169,7 +2168,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_35.png" width="100%" />
+
 
 
 
@@ -2230,7 +2229,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_36.png" width="100%" />
+
 
 
 
@@ -2291,7 +2290,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_37.png" width="100%" />
+
 
 
 
@@ -2352,7 +2351,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_38.png" width="100%" />
+
 
 
 
@@ -2413,7 +2412,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_39.png" width="100%" />
+
 
 
 
@@ -2474,7 +2473,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_40.png" width="100%" />
+
 
 
 
@@ -2535,7 +2534,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_41.png" width="100%" />
+
 
 
 
@@ -2596,7 +2595,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_42.png" width="100%" />
+
 
 
 
@@ -2657,7 +2656,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_43.png" width="100%" />
+
 
 
 
@@ -2718,7 +2717,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_44.png" width="100%" />
+
 
 
 
@@ -2779,7 +2778,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_45.png" width="100%" />
+
 
 
 
@@ -2840,7 +2839,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_46.png" width="100%" />
+
 
 
 
@@ -2901,7 +2900,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_47.png" width="100%" />
+
 
 
 
@@ -2962,7 +2961,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_48.png" width="100%" />
+
 
 
 
@@ -3023,7 +3022,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_49.png" width="100%" />
+
 
 
 
@@ -3084,7 +3083,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_50.png" width="100%" />
+
 
 
 
@@ -3145,7 +3144,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_51.png" width="100%" />
+
 
 
 
@@ -3206,7 +3205,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_52.png" width="100%" />
+
 
 
 
@@ -3267,7 +3266,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_53.png" width="100%" />
+
 
 
 
@@ -3328,7 +3327,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_54.png" width="100%" />
+
 
 
 
@@ -3389,7 +3388,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_55.png" width="100%" />
+
 
 
 
@@ -3450,7 +3449,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_56.png" width="100%" />
+
 
 
 
@@ -3511,7 +3510,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_57.png" width="100%" />
+
 
 
 
@@ -3572,7 +3571,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_58.png" width="100%" />
+
 
 
 
@@ -3633,7 +3632,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_59.png" width="100%" />
+
 
 
 
@@ -3694,7 +3693,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_60.png" width="100%" />
+
 
 
 
@@ -3755,7 +3754,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_61.png" width="100%" />
+
 
 
 
@@ -3816,7 +3815,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_62.png" width="100%" />
+
 
 
 
@@ -3877,7 +3876,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_63.png" width="100%" />
+
 
 
 
@@ -3938,7 +3937,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_64.png" width="100%" />
+
 
 
 
@@ -3999,7 +3998,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_65.png" width="100%" />
+
 
 
 
@@ -4060,7 +4059,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_66.png" width="100%" />
+
 
 
 
@@ -4121,7 +4120,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_67.png" width="100%" />
+
 
 
 
@@ -4182,7 +4181,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_68.png" width="100%" />
+
 
 
 
@@ -4243,7 +4242,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_69.png" width="100%" />
+
 
 
 
@@ -4340,7 +4339,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_70.png" width="100%" />
+
 
 
 
@@ -4437,7 +4436,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_71.png" width="100%" />
+
 
 
 
@@ -4534,7 +4533,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_72.png" width="100%" />
+
 
 
 
@@ -4631,7 +4630,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_73.png" width="100%" />
+
 
 
 
@@ -4728,7 +4727,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_74.png" width="100%" />
+
 
 
 
@@ -4825,7 +4824,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_75.png" width="100%" />
+
 
 
 
@@ -4922,7 +4921,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_76.png" width="100%" />
+
 
 
 
@@ -5019,7 +5018,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_77.png" width="100%" />
+
 
 
 
@@ -5116,7 +5115,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_78.png" width="100%" />
+
 
 
 
@@ -5213,7 +5212,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_79.png" width="100%" />
+
 
 
 
@@ -5310,7 +5309,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_80.png" width="100%" />
+
 
 
 
@@ -5407,7 +5406,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_81.png" width="100%" />
+
 
 
 
@@ -5504,7 +5503,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_82.png" width="100%" />
+
 
 
 
@@ -5601,7 +5600,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_83.png" width="100%" />
+
 
 
 
@@ -5698,7 +5697,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_84.png" width="100%" />
+
 
 
 
@@ -5795,7 +5794,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_85.png" width="100%" />
+
 
 
 
@@ -5892,7 +5891,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_86.png" width="100%" />
+
 
 
 
@@ -5989,7 +5988,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_87.png" width="100%" />
+
 
 
 
@@ -6086,7 +6085,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_88.png" width="100%" />
+
 
 
 
@@ -6147,7 +6146,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_89.png" width="100%" />
+
 
 
 
@@ -6208,7 +6207,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_90.png" width="100%" />
+
 
 
 
@@ -6291,7 +6290,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_91.png" width="100%" />
+
 
 
 
@@ -6370,7 +6369,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_92.png" width="100%" />
+
 
 
 
@@ -6456,7 +6455,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_93.png" width="100%" />
+
 
 
 
@@ -6517,7 +6516,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_94.png" width="100%" />
+
 
 
 
@@ -6606,7 +6605,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_95.png" width="100%" />
+
 
 
 
@@ -6666,7 +6665,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_96.png" width="100%" />
+
 
 
 
@@ -6726,7 +6725,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_97.png" width="100%" />
+
 
 
 
@@ -6799,7 +6798,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_98.png" width="100%" />
+
 
 
 
@@ -6872,7 +6871,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_99.png" width="100%" />
+
 
 
 
@@ -6945,7 +6944,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_100.png" width="100%" />
+
 
 
 
@@ -7018,7 +7017,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_101.png" width="100%" />
+
 
 
 
@@ -7091,7 +7090,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_102.png" width="100%" />
+
 
 
 
@@ -7164,7 +7163,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_103.png" width="100%" />
+
 
 
 
@@ -7237,7 +7236,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_104.png" width="100%" />
+
 
 
 
@@ -7310,7 +7309,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_105.png" width="100%" />
+
 
 
 
@@ -7383,7 +7382,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_106.png" width="100%" />
+
 
 
 
@@ -7456,7 +7455,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_107.png" width="100%" />
+
 
 
 
@@ -7529,7 +7528,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_108.png" width="100%" />
+
 
 
 
@@ -7602,7 +7601,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_109.png" width="100%" />
+
 
 
 
@@ -7705,7 +7704,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_110.png" width="100%" />
+
 
 
 ## Edges_Bogs-Trees_r500	{#ch06.111}
@@ -7774,7 +7773,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_111.png" width="100%" />
+
 
 
 ## Edges_Bogs-Trees_r1250	{#ch06.112}
@@ -7843,7 +7842,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_112.png" width="100%" />
+
 
 
 ## Edges_Bogs-Trees_r3000	{#ch06.113}
@@ -7912,7 +7911,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_113.png" width="100%" />
+
 
 
 ## Edges_Bogs-Trees_r10000	{#ch06.114}
@@ -7981,7 +7980,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_114.png" width="100%" />
+
 
 
 ## Edges_Bogs-Water_cell	{#ch06.115}
@@ -8081,7 +8080,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_115.png" width="100%" />
+
 
 
 ## Edges_Bogs-Water_r500	{#ch06.116}
@@ -8150,7 +8149,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_116.png" width="100%" />
+
 
 
 ## Edges_Bogs-Water_r1250	{#ch06.117}
@@ -8219,7 +8218,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_117.png" width="100%" />
+
 
 
 ## Edges_Bogs-Water_r3000	{#ch06.118}
@@ -8288,7 +8287,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_118.png" width="100%" />
+
 
 
 ## Edges_Bogs-Water_r10000	{#ch06.119}
@@ -8357,7 +8356,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_119.png" width="100%" />
+
 
 
 ## Edges_Farmland-Builtup_cell	{#ch06.120}
@@ -8451,7 +8450,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_120.png" width="100%" />
+
 
 
 ## Edges_Farmland-Builtup_r500	{#ch06.121}
@@ -8521,7 +8520,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_121.png" width="100%" />
+
 
 
 ## Edges_Farmland-Builtup_r1250	{#ch06.122}
@@ -8591,7 +8590,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_122.png" width="100%" />
+
 
 
 ## Edges_Farmland-Builtup_r3000	{#ch06.123}
@@ -8661,7 +8660,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_123.png" width="100%" />
+
 
 
 ## Edges_Farmland-Builtup_r10000	{#ch06.124}
@@ -8731,7 +8730,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_124.png" width="100%" />
+
 
 
 ## Edges_Trees-Builtup_cell	{#ch06.125}
@@ -8825,7 +8824,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_125.png" width="100%" />
+
 
 
 ## Edges_Trees-Builtup_r500	{#ch06.126}
@@ -8895,7 +8894,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_126.png" width="100%" />
+
 
 
 ## Edges_Trees-Builtup_r1250	{#ch06.127}
@@ -8965,7 +8964,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_127.png" width="100%" />
+
 
 
 ## Edges_Trees-Builtup_r3000	{#ch06.128}
@@ -9035,7 +9034,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_128.png" width="100%" />
+
 
 
 ## Edges_Trees-Builtup_r10000	{#ch06.129}
@@ -9105,7 +9104,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_129.png" width="100%" />
+
 
 
 ## Edges_CropsFallow_cell	{#ch06.130}
@@ -9194,7 +9193,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_130.png" width="100%" />
+
 
 
 ## Edges_CropsFallow_r500	{#ch06.131}
@@ -9264,7 +9263,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_131.png" width="100%" />
+
 
 
 ## Edges_CropsFallow_r1250	{#ch06.132}
@@ -9334,7 +9333,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_132.png" width="100%" />
+
 
 
 ## Edges_CropsFallow_r3000	{#ch06.133}
@@ -9404,7 +9403,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_133.png" width="100%" />
+
 
 
 ## Edges_CropsFallow_r10000	{#ch06.134}
@@ -9474,7 +9473,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_134.png" width="100%" />
+
 
 
 ## Edges_FarmlandShrubs-Trees_cell	{#ch06.135}
@@ -9568,7 +9567,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_135.png" width="100%" />
+
 
 
 ## Edges_FarmlandShrubs-Trees_r500	{#ch06.136}
@@ -9638,7 +9637,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_136.png" width="100%" />
+
 
 
 ## Edges_FarmlandShrubs-Trees_r1250	{#ch06.137}
@@ -9708,7 +9707,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_137.png" width="100%" />
+
 
 
 ## Edges_FarmlandShrubs-Trees_r3000	{#ch06.138}
@@ -9778,7 +9777,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_138.png" width="100%" />
+
 
 
 ## Edges_FarmlandShrubs-Trees_r10000	{#ch06.139}
@@ -9848,7 +9847,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_139.png" width="100%" />
+
 
 
 ## Edges_Grasslands_cell	{#ch06.140}
@@ -9937,7 +9936,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_140.png" width="100%" />
+
 
 
 ## Edges_Grasslands_r500	{#ch06.141}
@@ -10007,7 +10006,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_141.png" width="100%" />
+
 
 
 ## Edges_Grasslands_r1250	{#ch06.142}
@@ -10077,7 +10076,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_142.png" width="100%" />
+
 
 
 ## Edges_Grasslands_r3000	{#ch06.143}
@@ -10147,7 +10146,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_143.png" width="100%" />
+
 
 
 ## Edges_Grasslands_r10000	{#ch06.144}
@@ -10217,7 +10216,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_144.png" width="100%" />
+
 
 
 ## Edges_OldForests_cell	{#ch06.145}
@@ -10316,7 +10315,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_145.png" width="100%" />
+
 
 
 ## Edges_OldForests_r500	{#ch06.146}
@@ -10386,7 +10385,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_146.png" width="100%" />
+
 
 
 ## Edges_OldForests_r1250	{#ch06.147}
@@ -10456,7 +10455,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_147.png" width="100%" />
+
 
 
 ## Edges_OldForests_r3000	{#ch06.148}
@@ -10526,7 +10525,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_148.png" width="100%" />
+
 
 
 ## Edges_OldForests_r10000	{#ch06.149}
@@ -10596,7 +10595,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_149.png" width="100%" />
+
 
 
 ## Edges_Roads_cell	{#ch06.150}
@@ -10685,7 +10684,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_150.png" width="100%" />
+
 
 
 ## Edges_Roads_r500	{#ch06.151}
@@ -10755,7 +10754,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_151.png" width="100%" />
+
 
 
 ## Edges_Roads_r1250	{#ch06.152}
@@ -10825,7 +10824,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_152.png" width="100%" />
+
 
 
 ## Edges_Roads_r3000	{#ch06.153}
@@ -10895,7 +10894,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_153.png" width="100%" />
+
 
 
 ## Edges_Roads_r10000	{#ch06.154}
@@ -10965,7 +10964,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_154.png" width="100%" />
+
 
 
 ## Edges_Trees_cell	{#ch06.155}
@@ -11054,7 +11053,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_155.png" width="100%" />
+
 
 
 
@@ -11125,7 +11124,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_156.png" width="100%" />
+
 
 
 ## Edges_Trees_r1250	{#ch06.157}
@@ -11195,7 +11194,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_157.png" width="100%" />
+
 
 
 
@@ -11266,7 +11265,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_158.png" width="100%" />
+
 
 
 ## Edges_Trees_r10000	{#ch06.159}
@@ -11336,7 +11335,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_159.png" width="100%" />
+
 
 
 ## Edges_Water_cell	{#ch06.160}
@@ -11424,7 +11423,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_160.png" width="100%" />
+
 
 
 ## Edges_Water_r500	{#ch06.161}
@@ -11494,7 +11493,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_161.png" width="100%" />
+
 
 
 ## Edges_Water_r1250	{#ch06.162}
@@ -11564,7 +11563,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_162.png" width="100%" />
+
 
 
 ## Edges_Water_r3000	{#ch06.163}
@@ -11634,7 +11633,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_163.png" width="100%" />
+
 
 
 ## Edges_Water_r10000	{#ch06.164}
@@ -11704,7 +11703,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_164.png" width="100%" />
+
 
 
 ## Edges_Water-Farmland_cell	{#ch06.165}
@@ -11798,7 +11797,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_165.png" width="100%" />
+
 
 
 ## Edges_Water-Farmland_r500	{#ch06.166}
@@ -11868,7 +11867,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_166.png" width="100%" />
+
 
 
 ## Edges_Water-Farmland_r1250	{#ch06.167}
@@ -11938,7 +11937,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_167.png" width="100%" />
+
 
 
 ## Edges_Water-Farmland_r3000	{#ch06.168}
@@ -12008,7 +12007,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_168.png" width="100%" />
+
 
 
 ## Edges_Water-Farmland_r10000	{#ch06.169}
@@ -12078,7 +12077,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_169.png" width="100%" />
+
 
 
 ## Edges_Water-Grassland_cell	{#ch06.170}
@@ -12172,7 +12171,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_170.png" width="100%" />
+
 
 
 ## Edges_Water-Grassland_r500	{#ch06.171}
@@ -12242,7 +12241,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_171.png" width="100%" />
+
 
 
 ## Edges_Water-Grassland_r1250	{#ch06.172}
@@ -12312,7 +12311,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_172.png" width="100%" />
+
 
 
 ## Edges_Water-Grassland_r3000	{#ch06.173}
@@ -12382,7 +12381,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_173.png" width="100%" />
+
 
 
 ## Edges_Water-Grassland_r10000	{#ch06.174}
@@ -12452,7 +12451,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_174.png" width="100%" />
+
 
 
 ## Edges_ReedSedgeRushBeds-Water_cell	{#ch06.175}
@@ -12547,7 +12546,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_175.png" width="100%" />
+
 
 
 ## Edges_ReedSedgeRushBeds-Water_r500	{#ch06.176}
@@ -12617,7 +12616,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_176.png" width="100%" />
+
 
 
 ## Edges_ReedSedgeRushBeds-Water_r1250	{#ch06.177}
@@ -12687,7 +12686,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_177.png" width="100%" />
+
 
 
 ## Edges_ReedSedgeRushBeds-Water_r3000	{#ch06.178}
@@ -12757,7 +12756,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_178.png" width="100%" />
+
 
 
 ## Edges_ReedSedgeRushBeds-Water_r10000	{#ch06.179}
@@ -12827,7 +12826,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_179.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsAll_cell	{#ch06.180}
@@ -12930,7 +12929,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_180.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsAll_r500	{#ch06.181}
@@ -13006,7 +13005,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_181.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsAll_r1250	{#ch06.182}
@@ -13082,7 +13081,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_182.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsAll_r3000	{#ch06.183}
@@ -13158,7 +13157,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_183.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsAll_r10000	{#ch06.184}
@@ -13234,7 +13233,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_184.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsHoed_cell	{#ch06.185}
@@ -13339,7 +13338,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_185.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsHoed_r500	{#ch06.186}
@@ -13414,7 +13413,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_186.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsHoed_r1250	{#ch06.187}
@@ -13489,7 +13488,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_187.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsHoed_r3000	{#ch06.188}
@@ -13564,7 +13563,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_188.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsHoed_r10000	{#ch06.189}
@@ -13639,7 +13638,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_189.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsOther_cell	{#ch06.190}
@@ -13744,7 +13743,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_190.png" width="100%" />
+
 
 
 
@@ -13820,7 +13819,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_191.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsOther_r1250	{#ch06.192}
@@ -13895,7 +13894,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_192.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsOther_r3000	{#ch06.193}
@@ -13970,7 +13969,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_193.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsOther_r10000	{#ch06.194}
@@ -14045,7 +14044,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_194.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsSpring_cell	{#ch06.195}
@@ -14151,7 +14150,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_195.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsSpring_r500	{#ch06.196}
@@ -14226,7 +14225,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_196.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsSpring_r1250	{#ch06.197}
@@ -14301,7 +14300,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_197.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsSpring_r3000	{#ch06.198}
@@ -14376,7 +14375,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_198.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsSpring_r10000	{#ch06.199}
@@ -14451,7 +14450,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_199.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsWinter_cell	{#ch06.200}
@@ -14557,7 +14556,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_200.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsWinter_r500	{#ch06.201}
@@ -14632,7 +14631,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_201.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsWinter_r1250	{#ch06.202}
@@ -14707,7 +14706,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_202.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsWinter_r3000	{#ch06.203}
@@ -14782,7 +14781,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_203.png" width="100%" />
+
 
 
 ## FarmlandCrops_CropsWinter_r10000	{#ch06.204}
@@ -14857,7 +14856,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_204.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsSpring_cell	{#ch06.205}
@@ -14964,7 +14963,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_205.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsSpring_r500	{#ch06.206}
@@ -15039,7 +15038,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_206.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsSpring_r1250	{#ch06.207}
@@ -15114,7 +15113,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_207.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsSpring_r3000	{#ch06.208}
@@ -15189,7 +15188,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_208.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsSpring_r10000	{#ch06.209}
@@ -15264,7 +15263,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_209.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsWinter_cell	{#ch06.210}
@@ -15370,7 +15369,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_210.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsWinter_r500	{#ch06.211}
@@ -15445,7 +15444,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_211.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsWinter_r1250	{#ch06.212}
@@ -15520,7 +15519,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_212.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsWinter_r3000	{#ch06.213}
@@ -15595,7 +15594,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_213.png" width="100%" />
+
 
 
 ## FarmlandCrops_RapeseedsWinter_r10000	{#ch06.214}
@@ -15670,7 +15669,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_214.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_cell	{#ch06.215}
@@ -15773,7 +15772,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_215.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r500	{#ch06.216}
@@ -15848,7 +15847,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_216.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r1250	{#ch06.217}
@@ -15923,7 +15922,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_217.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r3000	{#ch06.218}
@@ -15998,7 +15997,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_218.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAbandoned_r10000	{#ch06.219}
@@ -16073,7 +16072,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_219.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAll_cell	{#ch06.220}
@@ -16161,7 +16160,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_220.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAll_r500	{#ch06.221}
@@ -16236,7 +16235,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_221.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAll_r1250	{#ch06.222}
@@ -16311,7 +16310,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_222.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAll_r3000	{#ch06.223}
@@ -16386,7 +16385,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_223.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsAll_r10000	{#ch06.224}
@@ -16461,7 +16460,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_224.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsPermanent_cell	{#ch06.225}
@@ -16567,7 +16566,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_225.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r500	{#ch06.226}
@@ -16642,7 +16641,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_226.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r1250	{#ch06.227}
@@ -16717,7 +16716,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_227.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r3000	{#ch06.228}
@@ -16792,7 +16791,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_228.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsPermanent_r10000	{#ch06.229}
@@ -16867,7 +16866,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_229.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsTemporary_cell	{#ch06.230}
@@ -16972,7 +16971,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_230.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r500	{#ch06.231}
@@ -17047,7 +17046,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_231.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r1250	{#ch06.232}
@@ -17122,7 +17121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_232.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r3000	{#ch06.233}
@@ -17197,7 +17196,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_233.png" width="100%" />
+
 
 
 ## FarmlandGrassland_GrasslandsTemporary_r10000	{#ch06.234}
@@ -17272,7 +17271,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_234.png" width="100%" />
+
 
 
 ## FarmlandParcels_FieldsActive_cell	{#ch06.235}
@@ -17373,7 +17372,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_235.png" width="100%" />
+
 
 
 ## FarmlandParcels_FieldsActive_r500	{#ch06.236}
@@ -17448,7 +17447,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_236.png" width="100%" />
+
 
 
 ## FarmlandParcels_FieldsActive_r1250	{#ch06.237}
@@ -17523,7 +17522,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_237.png" width="100%" />
+
 
 
 ## FarmlandParcels_FieldsActive_r3000	{#ch06.238}
@@ -17598,7 +17597,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_238.png" width="100%" />
+
 
 
 ## FarmlandParcels_FieldsActive_r10000	{#ch06.239}
@@ -17673,7 +17672,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_239.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallow_cell	{#ch06.240}
@@ -17784,7 +17783,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_240.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallow_r500	{#ch06.241}
@@ -17859,7 +17858,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_241.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallow_r1250	{#ch06.242}
@@ -17934,7 +17933,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_242.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallow_r3000	{#ch06.243}
@@ -18009,7 +18008,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_243.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallow_r10000	{#ch06.244}
@@ -18084,7 +18083,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_244.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_cell	{#ch06.245}
@@ -18196,7 +18195,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_245.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r500	{#ch06.246}
@@ -18271,7 +18270,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_246.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r1250	{#ch06.247}
@@ -18346,7 +18345,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_247.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r3000	{#ch06.248}
@@ -18421,7 +18420,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_248.png" width="100%" />
+
 
 
 ## FarmlandPloughed_CropsFallowTempGrass_r10000	{#ch06.249}
@@ -18496,7 +18495,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_249.png" width="100%" />
+
 
 
 ## FarmlandPloughed_Fallow_cell	{#ch06.250}
@@ -18600,7 +18599,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_250.png" width="100%" />
+
 
 
 ## FarmlandPloughed_Fallow_r500	{#ch06.251}
@@ -18675,7 +18674,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_251.png" width="100%" />
+
 
 
 ## FarmlandPloughed_Fallow_r1250	{#ch06.252}
@@ -18750,7 +18749,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_252.png" width="100%" />
+
 
 
 ## FarmlandPloughed_Fallow_r3000	{#ch06.253}
@@ -18825,7 +18824,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_253.png" width="100%" />
+
 
 
 ## FarmlandPloughed_Fallow_r10000	{#ch06.254}
@@ -18900,7 +18899,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_254.png" width="100%" />
+
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_cell	{#ch06.255}
@@ -19004,7 +19003,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_255.png" width="100%" />
+
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r500	{#ch06.256}
@@ -19079,7 +19078,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_256.png" width="100%" />
+
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r1250	{#ch06.257}
@@ -19154,7 +19153,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_257.png" width="100%" />
+
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r3000	{#ch06.258}
@@ -19229,7 +19228,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_258.png" width="100%" />
+
 
 
 ## FarmlandSubsidies_BiologicalSubsidies_r10000	{#ch06.259}
@@ -19304,7 +19303,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_259.png" width="100%" />
+
 
 
 ## FarmlandTrees_PermanentCrops_cell	{#ch06.260}
@@ -19421,7 +19420,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_260.png" width="100%" />
+
 
 
 ## FarmlandTrees_PermanentCrops_r500	{#ch06.261}
@@ -19496,7 +19495,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_261.png" width="100%" />
+
 
 
 ## FarmlandTrees_PermanentCrops_r1250	{#ch06.262}
@@ -19571,7 +19570,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_262.png" width="100%" />
+
 
 
 ## FarmlandTrees_PermanentCrops_r3000	{#ch06.263}
@@ -19646,7 +19645,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_263.png" width="100%" />
+
 
 
 
@@ -19722,7 +19721,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_264.png" width="100%" />
+
 
 
 ## FarmlandTrees_ShortRotationCoppice_cell	{#ch06.265}
@@ -19826,7 +19825,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_265.png" width="100%" />
+
 
 
 ## FarmlandTrees_ShortRotationCoppice_r500	{#ch06.266}
@@ -19901,7 +19900,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_266.png" width="100%" />
+
 
 
 ## FarmlandTrees_ShortRotationCoppice_r1250	{#ch06.267}
@@ -19976,7 +19975,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_267.png" width="100%" />
+
 
 
 ## FarmlandTrees_ShortRotationCoppice_r3000	{#ch06.268}
@@ -20050,7 +20049,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_268.png" width="100%" />
+
 
 
 ## FarmlandTrees_ShortRotationCoppice_r10000	{#ch06.269}
@@ -20125,7 +20124,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_269.png" width="100%" />
+
 
 
 ## ForestsAge_ClearcutsLowStands_cell	{#ch06.270}
@@ -20252,7 +20251,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_270.png" width="100%" />
+
 
 
 ## ForestsAge_ClearcutsLowStands_r500	{#ch06.271}
@@ -20327,7 +20326,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_271.png" width="100%" />
+
 
 
 ## ForestsAge_ClearcutsLowStands_r1250	{#ch06.272}
@@ -20402,7 +20401,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_272.png" width="100%" />
+
 
 
 ## ForestsAge_ClearcutsLowStands_r3000	{#ch06.273}
@@ -20477,7 +20476,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_273.png" width="100%" />
+
 
 
 ## ForestsAge_ClearcutsLowStands_r10000	{#ch06.274}
@@ -20552,7 +20551,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_274.png" width="100%" />
+
 
 
 ## ForestsAge_Middle_cell	{#ch06.275}
@@ -20686,7 +20685,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_275.png" width="100%" />
+
 
 
 ## ForestsAge_Middle_r500	{#ch06.276}
@@ -20761,7 +20760,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_276.png" width="100%" />
+
 
 
 ## ForestsAge_Middle_r1250	{#ch06.277}
@@ -20836,7 +20835,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_277.png" width="100%" />
+
 
 
 ## ForestsAge_Middle_r3000	{#ch06.278}
@@ -20911,7 +20910,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_278.png" width="100%" />
+
 
 
 ## ForestsAge_Middle_r10000	{#ch06.279}
@@ -20986,7 +20985,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_279.png" width="100%" />
+
 
 
 ## ForestsAge_Old_cell	{#ch06.280}
@@ -21120,7 +21119,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_280.png" width="100%" />
+
 
 
 ## ForestsAge_Old_r500	{#ch06.281}
@@ -21195,7 +21194,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_281.png" width="100%" />
+
 
 
 ## ForestsAge_Old_r1250	{#ch06.282}
@@ -21270,7 +21269,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_282.png" width="100%" />
+
 
 
 ## ForestsAge_Old_r3000	{#ch06.283}
@@ -21345,7 +21344,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_283.png" width="100%" />
+
 
 
 ## ForestsAge_Old_r10000	{#ch06.284}
@@ -21420,7 +21419,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_284.png" width="100%" />
+
 
 
 ## ForestsAge_YoungTallStandsShrubs_cell	{#ch06.285}
@@ -21556,7 +21555,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_285.png" width="100%" />
+
 
 
 ## ForestsAge_YoungTallStandsShrubs_r500	{#ch06.286}
@@ -21631,7 +21630,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_286.png" width="100%" />
+
 
 
 ## ForestsAge_YoungTallStandsShrubs_r1250	{#ch06.287}
@@ -21706,7 +21705,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_287.png" width="100%" />
+
 
 
 ## ForestsAge_YoungTallStandsShrubs_r3000	{#ch06.288}
@@ -21781,7 +21780,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_288.png" width="100%" />
+
 
 
 ## ForestsAge_YoungTallStandsShrubs_r10000	{#ch06.289}
@@ -21856,7 +21855,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_289.png" width="100%" />
+
 
 
 ## ForestsQuant_AgeProp-average_cell	{#ch06.290}
@@ -21882,7 +21881,8 @@ The registered age of dominant tree group was then divided by the stand specific
 legal rotation age. However, this introduced some extreme values that were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv290.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv290} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22027,7 +22027,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_290.png" width="100%" />
+
 
 
 ## ForestsQuant_DominantDiameter-max_cell	{#ch06.291}
@@ -22051,7 +22051,8 @@ inventoried forest stand - [State Forest Service's State Forest Registry](#Ch04.
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv291.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv291} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22171,7 +22172,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_291.png" width="100%" />
+
 
 
 ## ForestsQuant_LargestDiameter-max_cell	{#ch06.292}
@@ -22195,7 +22196,8 @@ inventoried forest stand - [State Forest Service's State Forest Registry](#Ch04.
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv292.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv292} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22318,7 +22320,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_292.png" width="100%" />
+
 
 
 ## ForestsQuant_TimeSinceDisturbance-average_cell	{#ch06.293}
@@ -22347,7 +22349,8 @@ minimum difference (age of time since disturbance) from the year 2024.
 As values in this attribute had some extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv293.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv293} 
 
 Resulting values at polygon geometries were rasterized (presence only). This raster 
 layer was then overlaid with reclassified year of tree cover loss (reclassified to 
@@ -22500,7 +22503,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_293.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeAspen-sum_cell	{#ch06.294}
@@ -22524,7 +22527,8 @@ aspen (species codes: 8, 19, 68; see tree species codes in [Terminology and acro
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv294.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv294} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22652,7 +22656,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_294.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeBirch-sum_cell	{#ch06.295}
@@ -22676,7 +22680,8 @@ birch (species code: 4; see tree species codes in [Terminology and acronyms](#Ch
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv295.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv295} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22803,7 +22808,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_295.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeBlackAlder-sum_cell	{#ch06.296}
@@ -22827,7 +22832,8 @@ black alder (species code: 6; see tree species codes in [Terminology and acronym
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv296.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv296} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -22954,7 +22960,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_296.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeBorealDeciduousOther-sum_cell	{#ch06.297}
@@ -22980,7 +22986,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv297.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv297} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23108,7 +23115,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_297.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeBorealDeciduousTotal-sum_cell	{#ch06.298}
@@ -23134,7 +23141,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv298.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv298} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23263,7 +23271,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_298.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeConiferous-sum_cell	{#ch06.299}
@@ -23289,7 +23297,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv299.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv299} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23417,7 +23426,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_299.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeOak-sum_cell	{#ch06.300}
@@ -23443,7 +23452,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv300.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv300} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23570,7 +23580,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_300.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeOakMaple-sum_cell	{#ch06.301}
@@ -23596,7 +23606,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv301.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv301} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23723,7 +23734,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_301.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumePine-sum_cell	{#ch06.302}
@@ -23749,7 +23760,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv302.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv302} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -23877,7 +23889,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_302.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeSpruce-sum_cell	{#ch06.303}
@@ -23903,7 +23915,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv303.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv303} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -24031,7 +24044,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_303.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell	{#ch06.304}
@@ -24058,7 +24071,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv304.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv304} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -24188,7 +24202,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_304.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeTemperateWithoutOak-sum_cell	{#ch06.305}
@@ -24215,7 +24229,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv305.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv305} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -24343,7 +24358,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_305.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell	{#ch06.306}
@@ -24370,7 +24385,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv306.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv306} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -24498,7 +24514,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_306.png" width="100%" />
+
 
 
 ## ForestsQuant_VolumeTotal-sum_cell	{#ch06.307}
@@ -24522,7 +24538,8 @@ stands - [State Forest Service's State Forest Registry](#Ch04.01).
 As values in this attribute had some impossible extreme values, they were limited 
 to the nearest integer showing only minimal accumulation in histogram.
 
-<img src="./Figures/Histogramms/hist_egv307.png" width="80%" />
+
+\includegraphics[width=0.8\linewidth]{./Figures/Histogramms/hist_egv307} 
 
 Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
 restricting to pixels outside the clearcut mask. No background values were assigned 
@@ -24645,7 +24662,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_307.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicDrained_cell	{#ch06.308}
@@ -24768,7 +24785,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_308.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicDrained_r500	{#ch06.309}
@@ -24843,7 +24860,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_309.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicDrained_r1250	{#ch06.310}
@@ -24918,7 +24935,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_310.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicDrained_r3000	{#ch06.311}
@@ -24993,7 +25010,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_311.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicDrained_r10000	{#ch06.312}
@@ -25068,7 +25085,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_312.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicMineral_cell	{#ch06.313}
@@ -25191,7 +25208,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_313.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicMineral_r500	{#ch06.314}
@@ -25266,7 +25283,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_314.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicMineral_r1250	{#ch06.315}
@@ -25341,7 +25358,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_315.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicMineral_r3000	{#ch06.316}
@@ -25416,7 +25433,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_316.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicMineral_r10000	{#ch06.317}
@@ -25491,7 +25508,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_317.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicOrganic_cell	{#ch06.318}
@@ -25614,7 +25631,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_318.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicOrganic_r500	{#ch06.319}
@@ -25689,7 +25706,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_319.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicOrganic_r1250	{#ch06.320}
@@ -25764,7 +25781,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_320.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicOrganic_r3000	{#ch06.321}
@@ -25839,7 +25856,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_321.png" width="100%" />
+
 
 
 ## ForestsSoil_EutrophicOrganic_r10000	{#ch06.322}
@@ -25914,7 +25931,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_322.png" width="100%" />
+
 
 
 ## ForestsSoil_MesotrophicMineral_cell	{#ch06.323}
@@ -26037,7 +26054,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_323.png" width="100%" />
+
 
 
 ## ForestsSoil_MesotrophicMineral_r500	{#ch06.324}
@@ -26112,7 +26129,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_324.png" width="100%" />
+
 
 
 ## ForestsSoil_MesotrophicMineral_r1250	{#ch06.325}
@@ -26187,7 +26204,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_325.png" width="100%" />
+
 
 
 ## ForestsSoil_MesotrophicMineral_r3000	{#ch06.326}
@@ -26262,7 +26279,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_326.png" width="100%" />
+
 
 
 ## ForestsSoil_MesotrophicMineral_r10000	{#ch06.327}
@@ -26337,7 +26354,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_327.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicDrained_cell	{#ch06.328}
@@ -26460,7 +26477,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_328.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicDrained_r500	{#ch06.329}
@@ -26535,7 +26552,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_329.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicDrained_r1250	{#ch06.330}
@@ -26610,7 +26627,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_330.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicDrained_r3000	{#ch06.331}
@@ -26685,7 +26702,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_331.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicDrained_r10000	{#ch06.332}
@@ -26760,7 +26777,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_332.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicMineral_cell	{#ch06.333}
@@ -26883,7 +26900,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_333.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicMineral_r500	{#ch06.334}
@@ -26958,7 +26975,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_334.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicMineral_r1250	{#ch06.335}
@@ -27033,7 +27050,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_335.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicMineral_r3000	{#ch06.336}
@@ -27108,7 +27125,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_336.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicMineral_r10000	{#ch06.337}
@@ -27183,7 +27200,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_337.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicOrganic_cell	{#ch06.338}
@@ -27306,7 +27323,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_338.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicOrganic_r500	{#ch06.339}
@@ -27381,7 +27398,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_339.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicOrganic_r1250	{#ch06.340}
@@ -27456,7 +27473,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_340.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicOrganic_r3000	{#ch06.341}
@@ -27531,7 +27548,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_341.png" width="100%" />
+
 
 
 ## ForestsSoil_OligotrophicOrganic_r10000	{#ch06.342}
@@ -27606,7 +27623,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_342.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousOld_cell	{#ch06.343}
@@ -27768,7 +27785,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_343.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r500	{#ch06.344}
@@ -27843,7 +27860,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_344.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r1250	{#ch06.345}
@@ -27918,7 +27935,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_345.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r3000	{#ch06.346}
@@ -27993,7 +28010,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_346.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r10000	{#ch06.347}
@@ -28068,7 +28085,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_347.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_cell	{#ch06.348}
@@ -28230,7 +28247,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_348.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r500	{#ch06.349}
@@ -28305,7 +28322,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_349.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r1250	{#ch06.350}
@@ -28380,7 +28397,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_350.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r3000	{#ch06.351}
@@ -28455,7 +28472,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_351.png" width="100%" />
+
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r10000	{#ch06.352}
@@ -28530,7 +28547,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_352.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousOld_cell	{#ch06.353}
@@ -28692,7 +28709,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_353.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousOld_r500	{#ch06.354}
@@ -28767,7 +28784,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_354.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousOld_r1250	{#ch06.355}
@@ -28842,7 +28859,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_355.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousOld_r3000	{#ch06.356}
@@ -28917,7 +28934,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_356.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousOld_r10000	{#ch06.357}
@@ -28992,7 +29009,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_357.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousYoung_cell	{#ch06.358}
@@ -29154,7 +29171,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_358.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousYoung_r500	{#ch06.359}
@@ -29229,7 +29246,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_359.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousYoung_r1250	{#ch06.360}
@@ -29304,7 +29321,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_360.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousYoung_r3000	{#ch06.361}
@@ -29379,7 +29396,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_361.png" width="100%" />
+
 
 
 ## ForestsTreesAge_ConiferousYoung_r10000	{#ch06.362}
@@ -29454,7 +29471,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_362.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedOld_cell	{#ch06.363}
@@ -29616,7 +29633,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_363.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedOld_r500	{#ch06.364}
@@ -29691,7 +29708,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_364.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedOld_r1250	{#ch06.365}
@@ -29766,7 +29783,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_365.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedOld_r3000	{#ch06.366}
@@ -29841,7 +29858,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_366.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedOld_r10000	{#ch06.367}
@@ -29916,7 +29933,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_367.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedYoung_cell	{#ch06.368}
@@ -30078,7 +30095,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_368.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedYoung_r500	{#ch06.369}
@@ -30153,7 +30170,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_369.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedYoung_r1250	{#ch06.370}
@@ -30228,7 +30245,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_370.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedYoung_r3000	{#ch06.371}
@@ -30303,7 +30320,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_371.png" width="100%" />
+
 
 
 ## ForestsTreesAge_MixedYoung_r10000	{#ch06.372}
@@ -30378,7 +30395,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_372.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_cell	{#ch06.373}
@@ -30540,7 +30557,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_373.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r500	{#ch06.374}
@@ -30615,7 +30632,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_374.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r1250	{#ch06.375}
@@ -30690,7 +30707,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_375.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r3000	{#ch06.376}
@@ -30765,7 +30782,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_376.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r10000	{#ch06.377}
@@ -30840,7 +30857,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_377.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_cell	{#ch06.378}
@@ -31002,7 +31019,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_378.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r500	{#ch06.379}
@@ -31077,7 +31094,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_379.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r1250	{#ch06.380}
@@ -31152,7 +31169,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_380.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r3000	{#ch06.381}
@@ -31227,7 +31244,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_381.png" width="100%" />
+
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r10000	{#ch06.382}
@@ -31302,7 +31319,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_382.png" width="100%" />
+
 
 
 ## ForestsTrees_BorealDeciduous_cell	{#ch06.383}
@@ -31464,7 +31481,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_383.png" width="100%" />
+
 
 
 ## ForestsTrees_BorealDeciduous_r500	{#ch06.384}
@@ -31539,7 +31556,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_384.png" width="100%" />
+
 
 
 ## ForestsTrees_BorealDeciduous_r1250	{#ch06.385}
@@ -31614,7 +31631,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_385.png" width="100%" />
+
 
 
 ## ForestsTrees_BorealDeciduous_r3000	{#ch06.386}
@@ -31689,7 +31706,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_386.png" width="100%" />
+
 
 
 ## ForestsTrees_BorealDeciduous_r10000	{#ch06.387}
@@ -31764,7 +31781,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_387.png" width="100%" />
+
 
 
 ## ForestsTrees_Coniferous_cell	{#ch06.388}
@@ -31926,7 +31943,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_388.png" width="100%" />
+
 
 
 ## ForestsTrees_Coniferous_r500	{#ch06.389}
@@ -32001,7 +32018,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_389.png" width="100%" />
+
 
 
 ## ForestsTrees_Coniferous_r1250	{#ch06.390}
@@ -32076,7 +32093,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_390.png" width="100%" />
+
 
 
 ## ForestsTrees_Coniferous_r3000	{#ch06.391}
@@ -32151,7 +32168,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_391.png" width="100%" />
+
 
 
 ## ForestsTrees_Coniferous_r10000	{#ch06.392}
@@ -32226,7 +32243,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_392.png" width="100%" />
+
 
 
 ## ForestsTrees_Mixed_cell	{#ch06.393}
@@ -32388,7 +32405,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_393.png" width="100%" />
+
 
 
 ## ForestsTrees_Mixed_r500	{#ch06.394}
@@ -32463,7 +32480,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_394.png" width="100%" />
+
 
 
 ## ForestsTrees_Mixed_r1250	{#ch06.395}
@@ -32538,7 +32555,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_395.png" width="100%" />
+
 
 
 ## ForestsTrees_Mixed_r3000	{#ch06.396}
@@ -32613,7 +32630,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_396.png" width="100%" />
+
 
 
 ## ForestsTrees_Mixed_r10000	{#ch06.397}
@@ -32688,7 +32705,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_397.png" width="100%" />
+
 
 
 ## ForestsTrees_TemperateDeciduous_cell	{#ch06.398}
@@ -32850,7 +32867,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_398.png" width="100%" />
+
 
 
 ## ForestsTrees_TemperateDeciduous_r500	{#ch06.399}
@@ -32925,7 +32942,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_399.png" width="100%" />
+
 
 
 ## ForestsTrees_TemperateDeciduous_r1250	{#ch06.400}
@@ -33000,7 +33017,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_400.png" width="100%" />
+
 
 
 ## ForestsTrees_TemperateDeciduous_r3000	{#ch06.401}
@@ -33075,7 +33092,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_401.png" width="100%" />
+
 
 
 ## ForestsTrees_TemperateDeciduous_r10000	{#ch06.402}
@@ -33150,7 +33167,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_402.png" width="100%" />
+
 
 
 ## General_AllotmentGardens_cell	{#ch06.403}
@@ -33228,7 +33245,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_403.png" width="100%" />
+
 
 
 ## General_AllotmentGardens_r500	{#ch06.404}
@@ -33303,7 +33320,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_404.png" width="100%" />
+
 
 
 ## General_AllotmentGardens_r1250	{#ch06.405}
@@ -33378,7 +33395,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_405.png" width="100%" />
+
 
 
 ## General_AllotmentGardens_r3000	{#ch06.406}
@@ -33453,7 +33470,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_406.png" width="100%" />
+
 
 
 ## General_AllotmentGardens_r10000	{#ch06.407}
@@ -33528,7 +33545,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_407.png" width="100%" />
+
 
 
 ## General_BareSoilQuarry_cell	{#ch06.408}
@@ -33606,7 +33623,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_408.png" width="100%" />
+
 
 
 ## General_BareSoilQuarry_r500	{#ch06.409}
@@ -33681,7 +33698,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_409.png" width="100%" />
+
 
 
 ## General_BareSoilQuarry_r1250	{#ch06.410}
@@ -33756,7 +33773,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_410.png" width="100%" />
+
 
 
 ## General_BareSoilQuarry_r3000	{#ch06.411}
@@ -33831,7 +33848,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_411.png" width="100%" />
+
 
 
 ## General_BareSoilQuarry_r10000	{#ch06.412}
@@ -33906,7 +33923,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_412.png" width="100%" />
+
 
 
 ## General_Builtup_cell	{#ch06.413}
@@ -33984,7 +34001,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_413.png" width="100%" />
+
 
 
 ## General_Builtup_r500	{#ch06.414}
@@ -34059,7 +34076,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_414.png" width="100%" />
+
 
 
 ## General_Builtup_r1250	{#ch06.415}
@@ -34134,7 +34151,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_415.png" width="100%" />
+
 
 
 ## General_Builtup_r3000	{#ch06.416}
@@ -34209,7 +34226,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_416.png" width="100%" />
+
 
 
 ## General_Builtup_r10000	{#ch06.417}
@@ -34284,7 +34301,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_417.png" width="100%" />
+
 
 
 ## General_Farmland_cell	{#ch06.418}
@@ -34362,7 +34379,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_418.png" width="100%" />
+
 
 
 ## General_Farmland_r500	{#ch06.419}
@@ -34437,7 +34454,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_419.png" width="100%" />
+
 
 
 ## General_Farmland_r1250	{#ch06.420}
@@ -34512,7 +34529,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_420.png" width="100%" />
+
 
 
 ## General_Farmland_r3000	{#ch06.421}
@@ -34587,7 +34604,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_421.png" width="100%" />
+
 
 
 ## General_Farmland_r10000	{#ch06.422}
@@ -34662,7 +34679,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_422.png" width="100%" />
+
 
 
 ## General_ForestsWithoutInventory_cell	{#ch06.423}
@@ -34753,7 +34770,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_423.png" width="100%" />
+
 
 
 ## General_ForestsWithoutInventory_r500	{#ch06.424}
@@ -34828,7 +34845,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_424.png" width="100%" />
+
 
 
 ## General_ForestsWithoutInventory_r1250	{#ch06.425}
@@ -34903,7 +34920,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_425.png" width="100%" />
+
 
 
 ## General_ForestsWithoutInventory_r3000	{#ch06.426}
@@ -34978,7 +34995,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_426.png" width="100%" />
+
 
 
 ## General_ForestsWithoutInventory_r10000	{#ch06.427}
@@ -35053,7 +35070,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_427.png" width="100%" />
+
 
 
 ## General_GardensOrchards_cell	{#ch06.428}
@@ -35131,7 +35148,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_428.png" width="100%" />
+
 
 
 ## General_GardensOrchards_r500	{#ch06.429}
@@ -35206,7 +35223,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_429.png" width="100%" />
+
 
 
 ## General_GardensOrchards_r1250	{#ch06.430}
@@ -35281,7 +35298,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_430.png" width="100%" />
+
 
 
 ## General_GardensOrchards_r3000	{#ch06.431}
@@ -35356,7 +35373,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_431.png" width="100%" />
+
 
 
 ## General_GardensOrchards_r10000	{#ch06.432}
@@ -35431,7 +35448,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_432.png" width="100%" />
+
 
 
 ## General_Roads_cell	{#ch06.433}
@@ -35509,7 +35526,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_433.png" width="100%" />
+
 
 
 ## General_ShrubsOrchards_cell	{#ch06.434}
@@ -35609,7 +35626,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_434.png" width="100%" />
+
 
 
 ## General_ShrubsOrchards_r500	{#ch06.435}
@@ -35684,7 +35701,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_435.png" width="100%" />
+
 
 
 ## General_ShrubsOrchards_r1250	{#ch06.436}
@@ -35759,7 +35776,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_436.png" width="100%" />
+
 
 
 ## General_ShrubsOrchards_r3000	{#ch06.437}
@@ -35834,7 +35851,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_437.png" width="100%" />
+
 
 
 ## General_ShrubsOrchards_r10000	{#ch06.438}
@@ -35909,7 +35926,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_438.png" width="100%" />
+
 
 
 ## General_ShrubsOrchardsGardens_cell	{#ch06.439}
@@ -36007,7 +36024,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_439.png" width="100%" />
+
 
 
 ## General_ShrubsOrchardsGardens_r500	{#ch06.440}
@@ -36082,7 +36099,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_440.png" width="100%" />
+
 
 
 ## General_ShrubsOrchardsGardens_r1250	{#ch06.441}
@@ -36157,7 +36174,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_441.png" width="100%" />
+
 
 
 ## General_ShrubsOrchardsGardens_r3000	{#ch06.442}
@@ -36232,7 +36249,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_442.png" width="100%" />
+
 
 
 ## General_ShrubsOrchardsGardens_r10000	{#ch06.443}
@@ -36307,7 +36324,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_443.png" width="100%" />
+
 
 
 ## General_SwampsMiresBogsHelophytes_cell	{#ch06.444}
@@ -36385,7 +36402,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_444.png" width="100%" />
+
 
 
 ## General_SwampsMiresBogsHelophytes_r500	{#ch06.445}
@@ -36460,7 +36477,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_445.png" width="100%" />
+
 
 
 ## General_SwampsMiresBogsHelophytes_r1250	{#ch06.446}
@@ -36535,7 +36552,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_446.png" width="100%" />
+
 
 
 ## General_SwampsMiresBogsHelophytes_r3000	{#ch06.447}
@@ -36610,7 +36627,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_447.png" width="100%" />
+
 
 
 ## General_SwampsMiresBogsHelophytes_r10000	{#ch06.448}
@@ -36685,7 +36702,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_448.png" width="100%" />
+
 
 
 ## General_Trees_cell	{#ch06.449}
@@ -36763,7 +36780,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_449.png" width="100%" />
+
 
 
 ## General_Trees_r500	{#ch06.450}
@@ -36838,7 +36855,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_450.png" width="100%" />
+
 
 
 ## General_Trees_r1250	{#ch06.451}
@@ -36913,7 +36930,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_451.png" width="100%" />
+
 
 
 ## General_Trees_r3000	{#ch06.452}
@@ -36988,7 +37005,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_452.png" width="100%" />
+
 
 
 ## General_Trees_r10000	{#ch06.453}
@@ -37063,7 +37080,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_453.png" width="100%" />
+
 
 
 ## General_TreesOutsideForests_cell	{#ch06.454}
@@ -37140,7 +37157,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_454.png" width="100%" />
+
 
 
 ## General_TreesOutsideForests_r500	{#ch06.455}
@@ -37215,7 +37232,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_455.png" width="100%" />
+
 
 
 ## General_TreesOutsideForests_r1250	{#ch06.456}
@@ -37290,7 +37307,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_456.png" width="100%" />
+
 
 
 ## General_TreesOutsideForests_r3000	{#ch06.457}
@@ -37365,7 +37382,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_457.png" width="100%" />
+
 
 
 ## General_TreesOutsideForests_r10000	{#ch06.458}
@@ -37440,7 +37457,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_458.png" width="100%" />
+
 
 
 ## General_Water_cell	{#ch06.459}
@@ -37517,7 +37534,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_459.png" width="100%" />
+
 
 
 ## General_Water_r500	{#ch06.460}
@@ -37592,7 +37609,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_460.png" width="100%" />
+
 
 
 ## General_Water_r1250	{#ch06.461}
@@ -37667,7 +37684,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_461.png" width="100%" />
+
 
 
 ## General_Water_r3000	{#ch06.462}
@@ -37742,7 +37759,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_462.png" width="100%" />
+
 
 
 ## General_Water_r10000	{#ch06.463}
@@ -37817,7 +37834,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_463.png" width="100%" />
+
 
 
 ## Wetlands_Bogs_cell	{#ch06.464}
@@ -37879,7 +37896,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_464.png" width="100%" />
+
 
 
 ## Wetlands_Bogs_r500	{#ch06.465}
@@ -37954,7 +37971,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_465.png" width="100%" />
+
 
 
 ## Wetlands_Bogs_r1250	{#ch06.466}
@@ -38029,7 +38046,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_466.png" width="100%" />
+
 
 
 ## Wetlands_Bogs_r3000	{#ch06.467}
@@ -38104,7 +38121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_467.png" width="100%" />
+
 
 
 ## Wetlands_Bogs_r10000	{#ch06.468}
@@ -38179,7 +38196,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_468.png" width="100%" />
+
 
 
 ## Wetlands_Mires_cell	{#ch06.469}
@@ -38241,7 +38258,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_469.png" width="100%" />
+
 
 
 ## Wetlands_Mires_r500	{#ch06.470}
@@ -38316,7 +38333,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_470.png" width="100%" />
+
 
 
 ## Wetlands_Mires_r1250	{#ch06.471}
@@ -38391,7 +38408,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_471.png" width="100%" />
+
 
 
 ## Wetlands_Mires_r3000	{#ch06.472}
@@ -38466,7 +38483,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_472.png" width="100%" />
+
 
 
 ## Wetlands_Mires_r10000	{#ch06.473}
@@ -38541,7 +38558,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_473.png" width="100%" />
+
 
 
 ## Wetlands_ReedSedgeRushBeds_cell	{#ch06.474}
@@ -38630,7 +38647,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_474.png" width="100%" />
+
 
 
 ## Wetlands_ReedSedgeRushBeds_r500	{#ch06.475}
@@ -38705,7 +38722,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_475.png" width="100%" />
+
 
 
 ## Wetlands_ReedSedgeRushBeds_r1250	{#ch06.476}
@@ -38780,7 +38797,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_476.png" width="100%" />
+
 
 
 ## Wetlands_ReedSedgeRushBeds_r3000	{#ch06.477}
@@ -38855,7 +38872,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_477.png" width="100%" />
+
 
 
 ## Wetlands_ReedSedgeRushBeds_r10000	{#ch06.478}
@@ -38930,7 +38947,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_478.png" width="100%" />
+
 
 
 ## EO_NDMI-LYmed-average_cell	{#ch06.479}
@@ -38985,7 +39002,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_479.png" width="100%" />
+
 
 
 ## EO_NDMI-LYmedian-iqr_cell	{#ch06.480}
@@ -39066,7 +39083,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_480.png" width="100%" />
+
 
 
 ## EO_NDMI-STiqr-median_cell	{#ch06.481}
@@ -39123,7 +39140,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_481.png" width="100%" />
+
 
 
 ## EO_NDMI-STmedian-average_cell	{#ch06.482}
@@ -39179,7 +39196,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_482.png" width="100%" />
+
 
 
 ## EO_NDMI-STmedian-iqr_cell	{#ch06.483}
@@ -39263,7 +39280,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_483.png" width="100%" />
+
 
 
 ## EO_NDMI-STp25-min_cell	{#ch06.484}
@@ -39321,7 +39338,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_484.png" width="100%" />
+
 
 
 ## EO_NDMI-STp75-max_cell	{#ch06.485}
@@ -39377,7 +39394,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_485.png" width="100%" />
+
 
 
 ## EO_NDVI-LYmedian-average_cell	{#ch06.486}
@@ -39433,7 +39450,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_486.png" width="100%" />
+
 
 
 ## EO_NDVI-LYmedian-iqr_cell	{#ch06.487}
@@ -39516,7 +39533,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_487.png" width="100%" />
+
 
 
 ## EO_NDVI-STiqr-median_cell	{#ch06.488}
@@ -39572,7 +39589,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_488.png" width="100%" />
+
 
 
 ## EO_NDVI-STmedian-average_cell	{#ch06.489}
@@ -39628,7 +39645,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_489.png" width="100%" />
+
 
 
 ## EO_NDVI-STmedian-iqr_cell	{#ch06.490}
@@ -39712,7 +39729,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_490.png" width="100%" />
+
 
 
 ## EO_NDVI-STp25-min_cell	{#ch06.491}
@@ -39768,7 +39785,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_491.png" width="100%" />
+
 
 
 ## EO_NDVI-STp75-max_cell	{#ch06.492}
@@ -39824,7 +39841,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_492.png" width="100%" />
+
 
 
 ## EO_NDWI-LYmedian-average_cell	{#ch06.493}
@@ -39878,7 +39895,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_493.png" width="100%" />
+
 
 
 ## EO_NDWI-LYmedian-iqr_cell	{#ch06.494}
@@ -39960,7 +39977,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_494.png" width="100%" />
+
 
 
 ## EO_NDWI-STiqr-median_cell	{#ch06.495}
@@ -40016,7 +40033,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_495.png" width="100%" />
+
 
 
 ## EO_NDWI-STmedian-average_cell	{#ch06.496}
@@ -40072,7 +40089,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_496.png" width="100%" />
+
 
 
 ## EO_NDWI-STmedian-iqr_cell	{#ch06.497}
@@ -40155,7 +40172,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_497.png" width="100%" />
+
 
 
 ## EO_NDWI-STp25-min_cell	{#ch06.498}
@@ -40211,7 +40228,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_498.png" width="100%" />
+
 
 
 ## EO_NDWI-STp75-max_cell	{#ch06.499}
@@ -40268,7 +40285,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_499.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-CN_cell	{#ch06.500}
@@ -40327,7 +40344,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_500.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-CaCo3_cell	{#ch06.501}
@@ -40387,7 +40404,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_501.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-K_cell	{#ch06.502}
@@ -40446,7 +40463,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_502.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-N_cell	{#ch06.503}
@@ -40505,7 +40522,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_503.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-P_cell	{#ch06.504}
@@ -40563,7 +40580,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_504.png" width="100%" />
+
 
 
 ## SoilChemistry_ESDAC-phH2O_cell	{#ch06.505}
@@ -40622,7 +40639,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_505.png" width="100%" />
+
 
 
 ## SoilTexture_Clay_cell	{#ch06.506}
@@ -40690,7 +40707,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_506.png" width="100%" />
+
 
 
 ## SoilTexture_Clay_r500	{#ch06.507}
@@ -40762,7 +40779,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_507.png" width="100%" />
+
 
 
 ## SoilTexture_Clay_r1250	{#ch06.508}
@@ -40835,7 +40852,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_508.png" width="100%" />
+
 
 
 ## SoilTexture_Clay_r3000	{#ch06.509}
@@ -40907,7 +40924,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_509.png" width="100%" />
+
 
 
 ## SoilTexture_Clay_r10000	{#ch06.510}
@@ -40980,7 +40997,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_510.png" width="100%" />
+
 
 
 ## SoilTexture_Organic_cell	{#ch06.511}
@@ -41048,7 +41065,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_511.png" width="100%" />
+
 
 
 ## SoilTexture_Organic_r500	{#ch06.512}
@@ -41119,7 +41136,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_512.png" width="100%" />
+
 
 
 ## SoilTexture_Organic_r1250	{#ch06.513}
@@ -41191,7 +41208,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_513.png" width="100%" />
+
 
 
 ## SoilTexture_Organic_r3000	{#ch06.514}
@@ -41262,7 +41279,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_514.png" width="100%" />
+
 
 
 ## SoilTexture_Organic_r10000	{#ch06.515}
@@ -41333,7 +41350,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_515.png" width="100%" />
+
 
 
 ## SoilTexture_Sand_cell	{#ch06.516}
@@ -41401,7 +41418,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_516.png" width="100%" />
+
 
 
 ## SoilTexture_Sand_r500	{#ch06.517}
@@ -41472,7 +41489,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_517.png" width="100%" />
+
 
 
 ## SoilTexture_Sand_r1250	{#ch06.518}
@@ -41543,7 +41560,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_518.png" width="100%" />
+
 
 
 ## SoilTexture_Sand_r3000	{#ch06.519}
@@ -41614,7 +41631,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_519.png" width="100%" />
+
 
 
 ## SoilTexture_Sand_r10000	{#ch06.520}
@@ -41685,7 +41702,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_520.png" width="100%" />
+
 
 
 ## SoilTexture_Silt_cell	{#ch06.521}
@@ -41752,7 +41769,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_521.png" width="100%" />
+
 
 
 ## SoilTexture_Silt_r500	{#ch06.522}
@@ -41823,7 +41840,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_522.png" width="100%" />
+
 
 
 ## SoilTexture_Silt_r1250	{#ch06.523}
@@ -41894,7 +41911,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_523.png" width="100%" />
+
 
 
 ## SoilTexture_Silt_r3000	{#ch06.524}
@@ -41966,7 +41983,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_524.png" width="100%" />
+
 
 
 ## SoilTexture_Silt_r10000	{#ch06.525}
@@ -42037,7 +42054,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_525.png" width="100%" />
+
 
 
 ## Terrain_ASL-average_cell	{#ch06.526}
@@ -42097,7 +42114,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_526.png" width="100%" />
+
 
 
 ## Terrain_Aspect-average_cell	{#ch06.527}
@@ -42158,7 +42175,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_527.png" width="100%" />
+
 
 
 ## Terrain_Aspect-iqr_cell	{#ch06.528}
@@ -42240,7 +42257,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_528.png" width="100%" />
+
 
 
 ## Terrain_DiS-area_cell	{#ch06.529}
@@ -42304,7 +42321,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_529.png" width="100%" />
+
 
 
 ## Terrain_DiS-area_r500	{#ch06.530}
@@ -42378,7 +42395,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_530.png" width="100%" />
+
 
 
 ## Terrain_DiS-area_r1250	{#ch06.531}
@@ -42451,7 +42468,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_531.png" width="100%" />
+
 
 
 ## Terrain_DiS-area_r3000	{#ch06.532}
@@ -42525,7 +42542,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_532.png" width="100%" />
+
 
 
 ## Terrain_DiS-area_r10000	{#ch06.533}
@@ -42600,7 +42617,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_533.png" width="100%" />
+
 
 
 ## Terrain_DiS-max_cell	{#ch06.534}	
@@ -42660,7 +42677,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_534.png" width="100%" />
+
 
 
 ## Terrain_DiS-mean_cell	{#ch06.535}	
@@ -42720,7 +42737,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_535.png" width="100%" />
+
 
 
 ## Terrain_Slope-average_cell	{#ch06.536}	
@@ -42781,7 +42798,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_536.png" width="100%" />
+
 
 
 ## Terrain_Slope-iqr_cell	{#ch06.537}	
@@ -42863,7 +42880,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_537.png" width="100%" />
+
 
 
 ## Terrain_TWI-average_cell	{#ch06.538}	
@@ -42924,5 +42941,5 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_538.png" width="100%" />
+
 
