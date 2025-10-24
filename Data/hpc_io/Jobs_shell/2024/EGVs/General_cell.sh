@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=Wetlands			 # Job name
+#SBATCH --job-name=Gen-cell			 # Job name
 #SBATCH --partition=regular			 # Partition name
 #SBATCH --ntasks=1				 # Number of tasks
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=3000G				 # Kopējā atmiņa
+#SBATCH --mem=300G				 # Kopējā atmiņa
 #SBATCH --time=80:00:00			 # Time limit, hrs:min:sec
-#SBATCH --output=hpc_io/Outfiles/2024/EGVs/Wetlands_cell.out			 # Standard output and error log
+#SBATCH --output=hpc_io/Outfiles/2024/EGVs/General_cell.out			 # Standard output and error log
 
 
 
@@ -15,7 +15,7 @@ set -euo pipefail
 PROJECT_ROOT="/home/hiqbiodiv"
 IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251016.sif"
 WORKDIR="${PROJECT_ROOT}"
-SCRIPT="${WORKDIR}/RScripts_final/egvs06_Wetlands.R"
+SCRIPT="${WORKDIR}/RScripts_final/egvs06_General_cell.R"
 
 echo "Starting job"
 echo "Date = $(date)"

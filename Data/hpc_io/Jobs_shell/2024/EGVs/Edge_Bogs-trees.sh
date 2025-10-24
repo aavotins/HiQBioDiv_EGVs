@@ -13,9 +13,9 @@ set -euo pipefail
 
 # Absolute paths (avoid ../ relative surprises)
 PROJECT_ROOT="/home/hiqbiodiv"
-IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251016.sif"
+IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251020.sif"
 WORKDIR="${PROJECT_ROOT}"
-SCRIPT="${WORKDIR}/RScripts_final/egvs06_Edges_Bogs-Trees.R"
+SCRIPT="${WORKDIR}/RScripts_final/egvs06_Egdes_Bogs-Trees.R"
 
 echo "Starting job"
 echo "Date = $(date)"

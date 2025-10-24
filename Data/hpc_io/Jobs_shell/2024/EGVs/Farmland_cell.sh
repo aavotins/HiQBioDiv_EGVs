@@ -3,7 +3,7 @@
 #SBATCH --partition=regular			 # Partition name
 #SBATCH --ntasks=1				 # Number of tasks
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=60G				 # Kopējā atmiņa
+#SBATCH --mem=300G				 # Kopējā atmiņa
 #SBATCH --time=80:00:00			 # Time limit, hrs:min:sec
 #SBATCH --output=hpc_io/Outfiles/2024/EGVs/Farmland_cell.out			 # Standard output and error log
 

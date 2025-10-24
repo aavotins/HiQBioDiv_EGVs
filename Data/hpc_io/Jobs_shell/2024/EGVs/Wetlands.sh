@@ -3,7 +3,7 @@
 #SBATCH --partition=regular			 # Partition name
 #SBATCH --ntasks=1				 # Number of tasks
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=3000G				 # Kopējā atmiņa
+#SBATCH --mem=300G				 # Kopējā atmiņa
 #SBATCH --time=80:00:00			 # Time limit, hrs:min:sec
 #SBATCH --output=hpc_io/Outfiles/2024/EGVs/Wetlands_cell.out			 # Standard output and error log
 
@@ -13,7 +13,7 @@ set -euo pipefail
 
 # Absolute paths (avoid ../ relative surprises)
 PROJECT_ROOT="/home/hiqbiodiv"
-IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251016.sif"
+IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251020.sif"
 WORKDIR="${PROJECT_ROOT}"
 SCRIPT="${WORKDIR}/RScripts_final/egvs06_Wetlands.R"
 

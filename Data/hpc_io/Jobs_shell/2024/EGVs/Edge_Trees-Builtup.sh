@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=eTreBuild			 # Job name
-#SBATCH --partition=weakold			 # Partition name
+#SBATCH --partition=regular			 # Partition name
 #SBATCH --ntasks=1				 # Number of tasks
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=240G				 # Kopējā atmiņa
@@ -13,7 +13,7 @@ set -euo pipefail
 
 # Absolute paths (avoid ../ relative surprises)
 PROJECT_ROOT="/home/hiqbiodiv"
-IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251016.sif"
+IMG="${PROJECT_ROOT}/hiqbiodiv-container_20251020.sif"
 WORKDIR="${PROJECT_ROOT}"
 SCRIPT="${WORKDIR}/RScripts_final/egvs06_Edges_Trees-Builtup.R"
 
