@@ -106,6 +106,25 @@ stand-level-inventory database:
     
     - robinia (69)
 
+
+Forest stand **age groups** as used in the national forest 
+stand-level-inventory database:
+
+    - young stands (vgr = 1) in coniferous trees, ashes and oaks - until 40 years, 
+    in grey alder - until 10 years, in other tree species - until 20 years;
+    
+    - medium aged stands (vgr = 2 or vgr = 3) are between young stands (vgr = 1) and legal rotation age;
+    
+    - old stands (vgr = 4 or vgr = 5) are stands exceeding legal rotation age. This is 
+    defined in [by law](https://likumi.lv/ta/id/2825#p9) based on tree species and 
+    site quality class (bonity). Generally for oaks, pines and larches it is 101 or 121 year, 
+    for spruces, ashes, limes, elms and maples it is 81 year, for birches it is 71 or 51 year, 
+    for black alder it is 71 year, for aspens it is 41 year. Currently, there is no minimum 
+    rotation age in grey alder. We used 35 years, as it is the age of the youngest 
+    stand registered as “full grown” in the databse. This was necessary for the 
+    harmonization of EGVs throughout forests.
+
+
 Acronyms:
 
 **CRS** - coordinate reference system
