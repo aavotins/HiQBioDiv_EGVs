@@ -1,3 +1,15 @@
 # Data access {#Ch07}
 
-This chapter provides access to EGVs described in previous parts
+When using code or data disclosed in this document, please cite our article and 
+data repository:
+
+- article reference
+
+- repository reference
+
+
+Standardised ecogeographical variables are available for download from projects 
+Zenodo repository.
+
+
+Layers can be interacted with via Google Earth Engine application.

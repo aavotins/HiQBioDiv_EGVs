@@ -12846,7 +12846,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -13253,7 +13253,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -13658,7 +13658,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -14064,7 +14064,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -14470,7 +14470,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -14876,7 +14876,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -15283,7 +15283,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -16090,7 +16090,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once selected, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -16480,7 +16480,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -16886,7 +16886,7 @@ were then rasterized to input resolution, ensuring value 1 at the polygon locati
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -17291,7 +17291,7 @@ were rasterized to input resolution, ensuring value 1 at the polygon locations
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -17692,7 +17692,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -18103,7 +18103,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -18515,7 +18515,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -18919,7 +18919,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -19323,7 +19323,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -19741,7 +19741,7 @@ Geometries were then rasterized to input resolution, ensuring value 1 at the pol
 and value 0 elsewhere. Rasterization was performed with `egvtools::polygon2input()`. 
 Once rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -20138,12 +20138,121 @@ writeRaster(merogots,
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+To prepare this EGV, stands in land category 10 and 
+lower than 5 m were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized. After rasterization, this layer was covered over 
+clear cut mask. The resulting layer was then aggregated to EGV resolution 
+with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsAge_ClearcutsLowStands_cell.tif	egv_270 ----
+zemas_audzes=mvr %>% 
+  filter(zkat=="10") %>% 
+  filter(h10<5) %>% 
+  dplyr::select(yes)
+r_zemasaudzes=fasterize(zemas_audzes,rastrs10,field="yes")
+t_zemasaudzes=rast(r_zemasaudzes)
+plot(t_zemasaudzes)
+
+cleacuts_low=cover(t_zemasaudzes,clearcut_mask)
+plot(cleacuts_low)
+
+i2e_rez=egvtools::input2egv(input=cleacuts_low,
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsAge_ClearcutsLowStands_cell.tif",
+                            layername = "egv_270",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(i2e_rez)
+rm(zemas_audzes)
+rm(r_zemasaudzes)
+rm(t_zemasaudzes)
+rm(cleacuts_low)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_ClearcutsLowStands_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_270.png" width="100%" />
 
 
 ## ForestsAge_ClearcutsLowStands_r500	{#ch06.271}
@@ -20156,12 +20265,69 @@ writeRaster(merogots,
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.270) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_cell.tif"),
+  layer_prefixes = c("ForestsAge_ClearcutsLowStands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_ClearcutsLowStands_r500.tif	egv_271
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r500.tif")
+names(slanis)="egv_271"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_ClearcutsLowStands_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_271.png" width="100%" />
 
 
 ## ForestsAge_ClearcutsLowStands_r1250	{#ch06.272}
@@ -20174,12 +20340,69 @@ writeRaster(merogots,
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.270) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_cell.tif"),
+  layer_prefixes = c("ForestsAge_ClearcutsLowStands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_ClearcutsLowStands_r1250.tif	egv_272
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r1250.tif")
+names(slanis)="egv_272"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_ClearcutsLowStands_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_272.png" width="100%" />
 
 
 ## ForestsAge_ClearcutsLowStands_r3000	{#ch06.273}
@@ -20192,12 +20415,69 @@ writeRaster(merogots,
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.270) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_cell.tif"),
+  layer_prefixes = c("ForestsAge_ClearcutsLowStands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_ClearcutsLowStands_r3000.tif	egv_273
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r3000.tif")
+names(slanis)="egv_273"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_ClearcutsLowStands_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_273.png" width="100%" />
 
 
 ## ForestsAge_ClearcutsLowStands_r10000	{#ch06.274}
@@ -20210,12 +20490,69 @@ writeRaster(merogots,
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.270) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_cell.tif"),
+  layer_prefixes = c("ForestsAge_ClearcutsLowStands"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_ClearcutsLowStands_r10000.tif	egv_274
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r10000.tif")
+names(slanis)="egv_274"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_ClearcutsLowStands_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_ClearcutsLowStands_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_274.png" width="100%" />
 
 
 ## ForestsAge_Middle_cell	{#ch06.275}
@@ -20228,12 +20565,128 @@ writeRaster(merogots,
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+To prepare this EGV, stands in land category 10 and 
+age groups two and three were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized. Rasterization was performed with 
+`egvtools::polygon2input()` (presence = 1, absence = 0) restricting presence 
+locations only outside the clear cut mask. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsAge_Middle_cell.tif	egv_275 ----
+videjas_audzes=mvr %>% 
+  filter(zkat=="10") %>% 
+  #filter(h10>=5) %>% 
+  filter(vgr %in% c("2","3")) %>% 
+  dplyr::select(yes)
+
+p2i_rez=egvtools::polygon2input(vector_data = videjas_audzes,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsAge_Middle_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsAge_Middle_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsAge_Middle_cell.tif",
+                            layername = "egv_275",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(videjas_audzes)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsAge_Middle_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Middle_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_275.png" width="100%" />
 
 
 ## ForestsAge_Middle_r500	{#ch06.276}
@@ -20246,12 +20699,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.275) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_cell.tif"),
+  layer_prefixes = c("ForestsAge_Middle"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Middle_r500.tif	egv_276
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r500.tif")
+names(slanis)="egv_276"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Middle_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_276.png" width="100%" />
 
 
 ## ForestsAge_Middle_r1250	{#ch06.277}
@@ -20264,12 +20774,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.275) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_cell.tif"),
+  layer_prefixes = c("ForestsAge_Middle"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Middle_r1250.tif	egv_277
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r1250.tif")
+names(slanis)="egv_277"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Middle_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_277.png" width="100%" />
 
 
 ## ForestsAge_Middle_r3000	{#ch06.278}
@@ -20282,12 +20849,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.275) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_cell.tif"),
+  layer_prefixes = c("ForestsAge_Middle"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Middle_r3000.tif	egv_278
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r3000.tif")
+names(slanis)="egv_278"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Middle_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_278.png" width="100%" />
 
 
 ## ForestsAge_Middle_r10000	{#ch06.279}
@@ -20300,12 +20924,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.275) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_cell.tif"),
+  layer_prefixes = c("ForestsAge_Middle"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Middle_r10000.tif	egv_279
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r10000.tif")
+names(slanis)="egv_279"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Middle_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Middle_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_279.png" width="100%" />
 
 
 ## ForestsAge_Old_cell	{#ch06.280}
@@ -20318,12 +20999,128 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+To prepare this EGV, stands in land category 10 and 
+age groups four and five were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized. Rasterization was performed with 
+`egvtools::polygon2input()` (presence = 1, absence = 0) restricting presence 
+locations only outside the clear cut mask. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsAge_Old_cell.tif	egv_280 ----
+vecas=mvr %>% 
+  filter(zkat=="10") %>% 
+  #filter(h10>=5) %>% 
+  filter(vgr %in% c("4","5")) %>% 
+  dplyr::select(yes)
+
+p2i_rez=egvtools::polygon2input(vector_data = vecas,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsAge_Old_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsAge_Old_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsAge_Old_cell.tif",
+                            layername = "egv_280",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(vecas)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsAge_Old_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Old_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_280.png" width="100%" />
 
 
 ## ForestsAge_Old_r500	{#ch06.281}
@@ -20334,14 +21131,71 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Old (over rotation age) Forests within the 0.5 km landscape		
 
-**Latvian name:** Vecu (kopš cirtmeta)mežu platības īpatsvars 0,5 km ainavā
+**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.280) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Old_cell.tif"),
+  layer_prefixes = c("ForestsAge_Old"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Old_r500.tif	egv_281
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Old_r500.tif")
+names(slanis)="egv_281"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Old_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Old_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_281.png" width="100%" />
 
 
 ## ForestsAge_Old_r1250	{#ch06.282}
@@ -20354,12 +21208,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.280) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Old_cell.tif"),
+  layer_prefixes = c("ForestsAge_Old"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Old_r1250.tif	egv_282
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Old_r1250.tif")
+names(slanis)="egv_282"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Old_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Old_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_282.png" width="100%" />
 
 
 ## ForestsAge_Old_r3000	{#ch06.283}
@@ -20372,12 +21283,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.280) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Old_cell.tif"),
+  layer_prefixes = c("ForestsAge_Old"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Old_r3000.tif	egv_283
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Old_r3000.tif")
+names(slanis)="egv_283"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Old_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Old_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_283.png" width="100%" />
 
 
 ## ForestsAge_Old_r10000	{#ch06.284}
@@ -20390,12 +21358,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.280) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_Old_cell.tif"),
+  layer_prefixes = c("ForestsAge_Old"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_Old_r10000.tif	egv_284
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_Old_r10000.tif")
+names(slanis)="egv_284"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_Old_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_Old_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_284.png" width="100%" />
 
 
 ## ForestsAge_YoungTallStandsShrubs_cell	{#ch06.285}
@@ -20408,12 +21433,130 @@ writeRaster(merogots,
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+To prepare this EGV, stands in land category 10 and 
+age group 1 with height above 5 m were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). This layer was then covered category 
+620 from [Landscape classification](#Ch05.03) (presence = 1, 0 otherwise). Values 
+in pixels matching clearcut mask were set to 0. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsAge_YoungTallStandsShrubs_cell.tif	egv_285 ----
+jaunasaugstas=mvr %>% 
+  filter(zkat=="10") %>% 
+  filter(h10>=5) %>% 
+  filter(vgr %in% c("1")) %>% 
+  dplyr::select(yes)
+r_jaunasaugstas=fasterize(jaunasaugstas,rastrs10,field="yes")
+t_jaunasaugstas=rast(r_jaunasaugstas)
+plot(t_jaunasaugstas)
+
+shrubs=ifel(simple_landscape==620,1,0)
+
+younshrubs=cover(t_jaunasaugstas,shrubs)
+plot(younshrubs)
+
+younshrubs2=ifel(younshrubs==1&clearcut_mask==0,1,0)
+plot(younshrubs2)
+
+i2e_rez=egvtools::input2egv(input=younshrubs2,
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsAge_YoungTallStandsShrubs_cell.tif",
+                            layername = "egv_285",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(jaunasaugstas)
+rm(r_jaunasaugstas)
+rm(t_jaunasaugstas)
+rm(shrubs)
+rm(younshrubs)
+rm(younshrubs2)
+rm(i2e_rez)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_YoungTallStandsShrubs_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_285.png" width="100%" />
 
 
 ## ForestsAge_YoungTallStandsShrubs_r500	{#ch06.286}
@@ -20426,12 +21569,69 @@ writeRaster(merogots,
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.285) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_cell.tif"),
+  layer_prefixes = c("ForestsAge_YoungTallStandsShrubs"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_YoungTallStandsShrubs_r500.tif	egv_286
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r500.tif")
+names(slanis)="egv_286"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_YoungTallStandsShrubs_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_286.png" width="100%" />
 
 
 ## ForestsAge_YoungTallStandsShrubs_r1250	{#ch06.287}
@@ -20444,12 +21644,69 @@ writeRaster(merogots,
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.285) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_cell.tif"),
+  layer_prefixes = c("ForestsAge_YoungTallStandsShrubs"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_YoungTallStandsShrubs_r1250.tif	egv_287
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r1250.tif")
+names(slanis)="egv_287"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_YoungTallStandsShrubs_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_287.png" width="100%" />
 
 
 ## ForestsAge_YoungTallStandsShrubs_r3000	{#ch06.288}
@@ -20462,12 +21719,69 @@ writeRaster(merogots,
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.285) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_cell.tif"),
+  layer_prefixes = c("ForestsAge_YoungTallStandsShrubs"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_YoungTallStandsShrubs_r3000.tif	egv_288
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r3000.tif")
+names(slanis)="egv_288"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_YoungTallStandsShrubs_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_288.png" width="100%" />
 
 
 ## ForestsAge_YoungTallStandsShrubs_r10000	{#ch06.289}
@@ -20480,12 +21794,69 @@ writeRaster(merogots,
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.285) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_cell.tif"),
+  layer_prefixes = c("ForestsAge_YoungTallStandsShrubs"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsAge_YoungTallStandsShrubs_r10000.tif	egv_289
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r10000.tif")
+names(slanis)="egv_289"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsAge_YoungTallStandsShrubs_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsAge_YoungTallStandsShrubs_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_289.png" width="100%" />
 
 
 ## ForestsQuant_AgeProp-average_cell	{#ch06.290}
@@ -20498,12 +21869,165 @@ writeRaster(merogots,
 
 **Latvian name:** Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, every forest stand had assigned [legal rotation age](https://likumi.lv/ta/id/2825#p9), based on dominant tree species and bonity class 
+as registered in the [State Forest Service's State Forest Registry](#Ch04.01). 35 years 
+were assumed for grey alder. 
+The registered age of dominant tree group was then divided by the stand specific 
+legal rotation age. However, this introduced some extreme values that were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv290.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_AgeProp-average_cell.tif	egv_290 ----
+
+#Meža likums, 9. pants. https://likumi.lv/ta/id/2825#p9
+ozoli=c("10","61")
+priedes_lapegles=c("1","13","14","22")
+eolgvk=c("3","15","23","11","64","12","62","16","65","24","63")
+berzi=c("4")
+melnalksni=c("6")
+apses=c("8","19","68")
+
+bonA=c("0","1")
+bonB=c("2","3")
+bonC=c("4","5","6")
+bonAB=c("0","1","2","3")
+
+nogabali=mvr %>% 
+  mutate(cirtmets=ifelse((s10 %in% ozoli)&(bon %in% bonA),101,
+                         ifelse((s10 %in% ozoli),121,NA))) %>% 
+  mutate(cirtmets=ifelse((s10 %in% priedes_lapegles)&(bon %in% bonAB),101,
+                         ifelse((s10 %in% priedes_lapegles),121,cirtmets))) %>% 
+  mutate(cirtmets=ifelse((s10 %in% eolgvk),81,cirtmets)) %>% 
+  mutate(cirtmets=ifelse((s10 %in% berzi)&(bon %in% bonAB),71,
+                         ifelse((s10 %in% berzi),51,cirtmets))) %>% 
+  mutate(cirtmets=ifelse((s10 %in% melnalksni),71,cirtmets))  %>% 
+  mutate(cirtmets=ifelse((s10 %in% apses),41,cirtmets))   %>% 
+  mutate(cirtmets=ifelse(is.na(cirtmets)&zkat=="10",35,cirtmets)) %>% 
+  mutate(nogvec=a10/cirtmets) %>% 
+  mutate(nogvec2=ifelse(nogvec>3,3,nogvec)) %>% 
+  filter(!is.na(nogvec2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$nogvec,main="Original",xlab="Relative age")
+hist(nogabali$nogvec2,main="Limited",xlab="Relative age")
+par(mfrow=c(1,1))
+options(scipen=0)
+# 700*400
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                  template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                  out_path = "./RasterGrids_10m/2024/",
+                  file_name = "ForestQuant_AgeProp.tif",
+                  value_field = "nogvec2",
+                  fun="max",
+                  prepare=FALSE,
+                  restrict_to = clearcut_mask,
+                  restrict_values = 0,
+                  plot_result=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestQuant_AgeProp.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "average",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_AgeProp-average_cell.tif",
+                  layername = "egv_290",
+                  plot_final=TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestQuant_AgeProp.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_AgeProp-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_290.png" width="100%" />
 
 
 ## ForestsQuant_DominantDiameter-max_cell	{#ch06.291}
@@ -20516,12 +22040,138 @@ writeRaster(merogots,
 
 **Latvian name:** Koku stumbra diametrs, valdaudzes maksimālais analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of dominant tree species per 
+inventoried forest stand - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv291.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating maximum value. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_DominantDiameter-max_cell.tif	egv_291 ----
+nogabali=mvr %>% 
+  mutate(valddiam=ifelse(d10>70,70,d10)) %>% 
+  filter(!is.na(valddiam))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$d10,main="Original",xlab="Dominant diameter")
+hist(nogabali$valddiam,main="Limited",xlab="Dominant diameter")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestQuant_DominantDiameter.tif",
+                      value_field = "valddiam",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestQuant_DominantDiameter.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "max",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_DominantDiameter-max_cell.tif",
+                  layername = "egv_291",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestQuant_DominantDiameter.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_DominantDiameter-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_291.png" width="100%" />
 
 
 ## ForestsQuant_LargestDiameter-max_cell	{#ch06.292}
@@ -20534,12 +22184,141 @@ writeRaster(merogots,
 
 **Latvian name:** Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of the largest tree diameter per 
+inventoried forest stand - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv292.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating maximum value. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_LargestDiameter-max_cell.tif	egv_292 ----
+nogabali=mvr %>%
+  rowwise() %>% 
+  mutate(maxDiam=max(c(d10,d11,d12,d13,d14,d22,d23,d24),na.rm=TRUE)) %>% 
+  ungroup() %>% 
+  mutate(maxDiam2=ifelse(maxDiam>100,100,maxDiam)) %>% 
+  filter(!is.na(maxDiam2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$maxDiam,main="Original",xlab="Largest diameter")
+hist(nogabali$maxDiam2,main="Limited",xlab="Largest diameter")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_LargestDiameter.tif",
+                      value_field = "maxDiam2",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_LargestDiameter.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "max",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_LargestDiameter-max_cell.tif",
+                  layername = "egv_292",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_LargestDiameter.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_LargestDiameter-max_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_292.png" width="100%" />
 
 
 ## ForestsQuant_TimeSinceDisturbance-average_cell	{#ch06.293}
@@ -20552,12 +22331,176 @@ writeRaster(merogots,
 
 **Latvian name:** Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared primarily based on the information of the forestry related 
+disturbances as registered per 
+inventoried forest stand - [State Forest Service's State Forest Registry](#Ch04.01). 
+The regiter however includes obvious errors - values later than 2024 and earlier than 
+1500 were set to NA. Other values were subtracted from 2024. In stands were no 
+disturbance was registered, the age of dominant tree group was used to calculate 
+minimum difference (age of time since disturbance) from the year 2024. 
+As values in this attribute had some extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv293.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized (presence only). This raster 
+layer was then overlaid with reclassified year of tree cover loss (reclassified to 
+difference from the year 2024) and per pixel minimum value was retained. As not all 
+the forests or tree covered areas are inventoried, classes from [Landscape classification](#Ch05.03) 
+were used to impute assumption of time since tree growing disturbance - for class 620 
+five years were assumed, whereas for classes 630 and 640 - 50 years and 0 otherwise. 
+Per pixel minimum layer was then overlaid the assumed time since disturbance layer. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean value. After the aggregation, inverse distance 
+weighted (power = 2) gap filling was initialized to avoid possible gaps at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_TimeSinceDisturbance-average_cell.tif	egv_293 ----
+nogabali=mvr %>% 
+  mutate(new_PDG=ifelse(p_darbg>2024,NA,
+                        ifelse(p_darbv %in% c("1","4","5","6","7","10","11"),p_darbg,NA)),
+         new_PDG2=ifelse(new_PDG<1500,NA,new_PDG),
+         new_PCG=ifelse(p_cirg>2024,NA,p_cirg),
+         new_PCG2=ifelse(new_PCG<1500,NA,new_PCG),
+         vecumam=ifelse(a10==0,NA,a10),
+         new_PCG3=2024-new_PCG2,
+         new_PDG3=2024-new_PDG2) %>% 
+  rowwise() %>% 
+  mutate(Laikam=min(c(vecumam,new_PDG3,new_PCG3),na.rm=TRUE)) %>% 
+  ungroup() %>% 
+  mutate(KopsTraucejuma=ifelse(is.infinite(Laikam),NA,Laikam)) %>% 
+  mutate(KopsTraucejuma2=ifelse(KopsTraucejuma>200,200,KopsTraucejuma)) %>% 
+  filter(!is.na(KopsTraucejuma2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$KopsTraucejuma,main="Original",xlab="Time since disturbance")
+hist(nogabali$KopsTraucejuma2,main="Limited",xlab="Time since disturbance")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+mvr_trauclaiks=fasterize::fasterize(nogabali,rastrs10,field="KopsTraucejuma2",fun = "min")
+t_MVRtrauclaiks=rast(mvr_trauclaiks)
+plot(t_MVRtrauclaiks)
+
+gfw=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+plot(gfw)
+gfw2=ifel(gfw>=0,24-gfw,NA)
+plot(gfw2)
+
+
+# No ainavas:
+## Mežaudzes un koki = 50
+## Krūmāji un parki = 5
+## pārējais = 0
+aizpildisanai=ifel(simple_landscape==630|simple_landscape==640,50,
+                   ifel(simple_landscape==620,5,0))
+freq(aizpildisanai)
+
+trauclaiks1=terra::app(c(gfw2,t_MVRtrauclaiks),fun="min",na.rm=TRUE)
+plot(trauclaiks1)
+trauclaiks2=cover(trauclaiks1,aizpildisanai)
+plot(trauclaiks2)
+
+i2e_rez=input2egv(input=trauclaiks2,
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "average",
+                  missing_job = "FillOutput",
+                  idw_weight = 2,
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_TimeSinceDisturbance-average_cell.tif",
+                  layername = "egv_293",
+                  plot_final=TRUE)
+i2e_rez
+rm(nogabali)
+rm(mvr_trauclaiks)
+rm(t_MVRtrauclaiks)
+rm(gfw)
+rm(gfw2)
+rm(aizpildisanai)
+rm(trauclaiks1)
+rm(trauclaiks2)
+rm(i2e_rez)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_TimeSinceDisturbance-average_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_293.png" width="100%" />
 
 
 ## ForestsQuant_VolumeAspen-sum_cell	{#ch06.294}
@@ -20570,12 +22513,146 @@ writeRaster(merogots,
 
 **Latvian name:** Apšu, papeļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+aspen (species codes: 8, 19, 68; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv294.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeAspen-sum_cell.tif	egv_294 ----
+
+apses=c("8","19","68")
+nogabali=mvr %>% 
+  mutate(ApsuKraja=ifelse(s10 %in% apses, v10, 0)+ifelse(s11 %in% apses,v11,0)+
+           ifelse(s12 %in% apses, v12,0)+ifelse(s13 %in% apses,v13,0)+
+           ifelse(s14 %in% apses, v14,0)) %>% 
+  mutate(ApsuKraja2=ApsuKraja/10000*10*10) %>% 
+  mutate(ApsuKraja3=ifelse(ApsuKraja2>5,5,ApsuKraja2)) %>% 
+  filter(!is.na(ApsuKraja2))
+
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$ApsuKraja2,main="Original",xlab="Aspen volume")
+hist(nogabali$ApsuKraja3,main="Limited",xlab="Aspen volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeAspen.tif",
+                      value_field = "ApsuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeAspen.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeAspen-sum_cell.tif",
+                  layername = "egv_294",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(apses)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeAspen.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeAspen-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_294.png" width="100%" />
 
 
 ## ForestsQuant_VolumeBirch-sum_cell	{#ch06.295}
@@ -20588,12 +22665,145 @@ writeRaster(merogots,
 
 **Latvian name:** Bērzu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+birch (species code: 4; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv295.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeBirch-sum_cell.tif	egv_295 ----
+
+berzi=c("4")
+nogabali=mvr %>% 
+  mutate(BerzuKraja=ifelse(s10 %in% berzi, v10, 0)+ifelse(s11 %in% berzi,v11,0)+
+           ifelse(s12 %in% berzi, v12,0)+ifelse(s13 %in% berzi,v13,0)+
+           ifelse(s14 %in% berzi, v14,0)) %>% 
+  mutate(BerzuKraja2=BerzuKraja/10000*10*10) %>% 
+  mutate(BerzuKraja3=ifelse(BerzuKraja2>5,5,BerzuKraja2)) %>% 
+  filter(!is.na(BerzuKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$BerzuKraja2,main="Original",xlab="Birch volume")
+hist(nogabali$BerzuKraja3,main="Limited",xlab="Birch volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeBirch.tif",
+                      value_field = "BerzuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeBirch.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeBirch-sum_cell.tif",
+                  layername = "egv_295",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(berzi)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBirch.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeBirch-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_295.png" width="100%" />
 
 
 ## ForestsQuant_VolumeBlackAlder-sum_cell	{#ch06.296}
@@ -20606,12 +22816,145 @@ writeRaster(merogots,
 
 **Latvian name:** Melnalkšņu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+black alder (species code: 6; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv296.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeBlackAlder-sum_cell.tif	egv_296 ----
+
+melnalksni=c("6")
+nogabali=mvr %>% 
+  mutate(MeKraja=ifelse(s10 %in% melnalksni, v10, 0)+ifelse(s11 %in% melnalksni,v11,0)+
+           ifelse(s12 %in% melnalksni, v12,0)+ifelse(s13 %in% melnalksni,v13,0)+
+           ifelse(s14 %in% melnalksni, v14,0)) %>% 
+  mutate(MeKraja2=MeKraja/10000*10*10) %>% 
+  mutate(MeKraja3=ifelse(MeKraja2>4,4,MeKraja2)) %>% 
+  filter(!is.na(MeKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$MeKraja2,main="Original",xlab="Black alder volume")
+hist(nogabali$MeKraja3,main="Limited",xlab="Black alder volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeBlackAlder.tif",
+                      value_field = "MeKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeBlackAlder.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeBlackAlder-sum_cell.tif",
+                  layername = "egv_296",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(melnalksni)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBlackAlder.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeBlackAlder-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_296.png" width="100%" />
 
 
 ## ForestsQuant_VolumeBorealDeciduousOther-sum_cell	{#ch06.297}
@@ -20624,12 +22967,148 @@ writeRaster(merogots,
 
 **Latvian name:** Citu šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+boreal deciduous tree species not separately described 
+(species codes: 9, 20, 21, 32, 35, 50; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv297.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif	egv_297 ----
+
+sl_citi=c("9","20","21","32","35","50")
+nogabali=mvr %>% 
+  mutate(SaurlapjuCKraja=ifelse(s10 %in% sl_citi, v10, 0)+ifelse(s11 %in% sl_citi,v11,0)+
+           ifelse(s12 %in% sl_citi, v12,0)+ifelse(s13 %in% sl_citi,v13,0)+
+           ifelse(s14 %in% sl_citi, v14,0)) %>% 
+  mutate(SaurlapjuCKraja2=SaurlapjuCKraja/10000*10*10) %>% 
+  mutate(SaurlapjuCKraja3=ifelse(SaurlapjuCKraja2>3,3,SaurlapjuCKraja2)) %>% 
+  filter(!is.na(SaurlapjuCKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$SaurlapjuCKraja2,main="Original",xlab="Other boreal deciduous volume")
+hist(nogabali$SaurlapjuCKraja3,main="Limited",xlab="Other boreal deciduous volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeBorealDeciduousOther.tif",
+                      value_field = "SaurlapjuCKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousOther.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif",
+                  layername = "egv_297",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(sl_citi)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousOther.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_297.png" width="100%" />
 
 
 ## ForestsQuant_VolumeBorealDeciduousTotal-sum_cell	{#ch06.298}
@@ -20642,12 +23121,149 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+boreal deciduous tree species 
+(species codes: 4, 6, 8, 9, 19, 20, 21, 32, 35, 50, 68; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv298.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif	egv_298 ----
+
+sl_visi=c("4","6","8","9","19","20","21","32","35","50","68")
+nogabali=mvr %>% 
+  mutate(SaurlapjuVKraja=ifelse(s10 %in% sl_visi, v10, 0)+ifelse(s11 %in% sl_visi,v11,0)+
+           ifelse(s12 %in% sl_visi, v12,0)+ifelse(s13 %in% sl_visi,v13,0)+
+           ifelse(s14 %in% sl_visi, v14,0)) %>% 
+  mutate(SaurlapjuVKraja2=SaurlapjuVKraja/10000*10*10) %>% 
+  mutate(SaurlapjuVKraja3=ifelse(SaurlapjuVKraja2>6,6,SaurlapjuVKraja2)) %>% 
+  filter(!is.na(SaurlapjuVKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$SaurlapjuVKraja2,main="Original",xlab="All boreal deciduous volume")
+hist(nogabali$SaurlapjuVKraja3,main="Limited",xlab="All boreal deciduous volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeBorealDeciduousTotal.tif",
+                      value_field = "SaurlapjuVKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousTotal.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif",
+                  layername = "egv_298",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(sl_visi)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousTotal.tif")
+
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_298.png" width="100%" />
 
 
 ## ForestsQuant_VolumeConiferous-sum_cell	{#ch06.299}
@@ -20660,12 +23276,148 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+coniferous tree species 
+(species codes: 1, 14, 22, 3, 13, 15, 23; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv299.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeConiferous-sum_cell.tif	egv_299 ----
+
+skujkoki=c("1","14","22","3","13","15","23")
+nogabali=mvr %>% 
+  mutate(SkujkokuKraja=ifelse(s10 %in% skujkoki, v10, 0)+ifelse(s11 %in% skujkoki,v11,0)+
+           ifelse(s12 %in% skujkoki, v12,0)+ifelse(s13 %in% skujkoki,v13,0)+
+           ifelse(s14 %in% skujkoki, v14,0)) %>% 
+  mutate(SkujkokuKraja2=SkujkokuKraja/10000*10*10) %>% 
+  mutate(SkujkokuKraja3=ifelse(SkujkokuKraja2>7,7,SkujkokuKraja2)) %>% 
+  filter(!is.na(SkujkokuKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$SkujkokuKraja2,main="Original",xlab="Coniferous volume")
+hist(nogabali$SkujkokuKraja3,main="Limited",xlab="Coniferous volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeConiferous.tif",
+                      value_field = "SkujkokuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeConiferous.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeConiferous-sum_cell.tif",
+                  layername = "egv_299",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(skujkoki)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeConiferous.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeConiferous-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_299.png" width="100%" />
 
 
 ## ForestsQuant_VolumeOak-sum_cell	{#ch06.300}
@@ -20678,12 +23430,147 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+oaks 
+(species codes: 10, 61; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv300.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeOak-sum_cell.tif	egv_300 ----
+ozoli=c("10","61")
+nogabali=mvr %>% 
+  mutate(OzoluKraja=ifelse(s10 %in% ozoli, v10, 0)+ifelse(s11 %in% ozoli,v11,0)+
+           ifelse(s12 %in% ozoli, v12,0)+ifelse(s13 %in% ozoli,v13,0)+
+           ifelse(s14 %in% ozoli, v14,0)) %>% 
+  mutate(OzoluKraja2=OzoluKraja/10000*10*10) %>% 
+  mutate(OzoluKraja3=ifelse(OzoluKraja2>2,2,OzoluKraja2)) %>% 
+  filter(!is.na(OzoluKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$OzoluKraja2,main="Original",xlab="Oak volume")
+hist(nogabali$OzoluKraja3,main="Limited",xlab="Oak volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeOak.tif",
+                      value_field = "OzoluKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeOak.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeOak-sum_cell.tif",
+                  layername = "egv_300",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(ozoli)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeOak.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeOak-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_300.png" width="100%" />
 
 
 ## ForestsQuant_VolumeOakMaple-sum_cell	{#ch06.301}
@@ -20696,12 +23583,147 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu, kļavu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+oaks and maples 
+(species codes: 10, 61, 24, 63; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv301.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeOakMaple-sum_cell.tif	egv_301 ----
+ozolklavas=c("10","61","24","63")
+nogabali=mvr %>% 
+  mutate(OzolKlavuKraja=ifelse(s10 %in% ozolklavas, v10, 0)+ifelse(s11 %in% ozolklavas,v11,0)+
+           ifelse(s12 %in% ozolklavas, v12,0)+ifelse(s13 %in% ozolklavas,v13,0)+
+           ifelse(s14 %in% ozolklavas, v14,0)) %>% 
+  mutate(OzolKlavuKraja2=OzolKlavuKraja/10000*10*10) %>% 
+  mutate(OzolKlavuKraja3=ifelse(OzolKlavuKraja2>3,3,OzolKlavuKraja2)) %>% 
+  filter(!is.na(OzolKlavuKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$OzolKlavuKraja2,main="Original",xlab="Oak and maple volume")
+hist(nogabali$OzolKlavuKraja3,main="Limited",xlab="Oak and maple volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeOakMaple.tif",
+                      value_field = "OzolKlavuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeOakMaple.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeOakMaple-sum_cell.tif",
+                  layername = "egv_301",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(ozolklavas)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeOakMaple.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeOakMaple-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_301.png" width="100%" />
 
 
 ## ForestsQuant_VolumePine-sum_cell	{#ch06.302}
@@ -20714,12 +23736,148 @@ writeRaster(merogots,
 
 **Latvian name:** Priežu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+pines 
+(species codes: 1, 14, 22; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv302.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumePine-sum_cell.tif	egv_302 ----
+
+priedes=c("1","14","22")
+nogabali=mvr %>% 
+  mutate(PriezuKraja=ifelse(s10 %in% priedes, v10, 0)+ifelse(s11 %in% priedes,v11,0)+
+           ifelse(s12 %in% priedes, v12,0)+ifelse(s13 %in% priedes,v13,0)+
+           ifelse(s14 %in% priedes, v14,0)) %>% 
+  mutate(PriezuKraja2=PriezuKraja/10000*10*10) %>% 
+  mutate(PriezuKraja3=ifelse(PriezuKraja2>6,6,PriezuKraja2)) %>% 
+  filter(!is.na(PriezuKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$PriezuKraja2,main="Original",xlab="Pine volume")
+hist(nogabali$PriezuKraja3,main="Limited",xlab="Pine volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumePine.tif",
+                      value_field = "PriezuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumePine.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumePine-sum_cell.tif",
+                  layername = "egv_302",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(priedes)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumePine.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumePine-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_302.png" width="100%" />
 
 
 ## ForestsQuant_VolumeSpruce-sum_cell	{#ch06.303}
@@ -20732,12 +23890,148 @@ writeRaster(merogots,
 
 **Latvian name:** Egļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+spruces  
+(species codes: 3, 13, 15, 23; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv303.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeSpruce-sum_cell.tif	egv_303 ----
+
+egles=c("3","13","15","23")
+nogabali=mvr %>% 
+  mutate(EgluKraja=ifelse(s10 %in% egles, v10, 0)+ifelse(s11 %in% egles,v11,0)+
+           ifelse(s12 %in% egles, v12,0)+ifelse(s13 %in% egles,v13,0)+
+           ifelse(s14 %in% egles, v14,0)) %>% 
+  mutate(EgluKraja2=EgluKraja/10000*10*10) %>% 
+  mutate(EgluKraja3=ifelse(EgluKraja2>5,5,EgluKraja2)) %>% 
+  filter(!is.na(EgluKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$EgluKraja2,main="Original",xlab="Spruce volume")
+hist(nogabali$EgluKraja3,main="Limited",xlab="Spruce volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeSpruce.tif",
+                      value_field = "EgluKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeSpruce.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeSpruce-sum_cell.tif",
+                  layername = "egv_303",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(egles)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeSpruce.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeSpruce-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_303.png" width="100%" />
 
 
 ## ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell	{#ch06.304}
@@ -20750,12 +24044,151 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+temperate deciduous tree species   
+(species codes: 10, 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 61, 
+62, 63, 64, 65, 66, 67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv304.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif	egv_304 ----
+
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69")
+nogabali=mvr %>% 
+  mutate(PlatKraja=ifelse(s10 %in% platlapji, v10, 0)+ifelse(s11 %in% platlapji,v11,0)+
+           ifelse(s12 %in% platlapji, v12,0)+ifelse(s13 %in% platlapji,v13,0)+
+           ifelse(s14 %in% platlapji, v14,0)) %>% 
+  mutate(PlatKraja2=PlatKraja/10000*10*10) %>% 
+  mutate(PlatKraja3=ifelse(PlatKraja2>4,4,PlatKraja2)) %>% 
+  filter(!is.na(PlatKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$PlatKraja2,main="Original",xlab="Total volume\ntemperate deciduous")
+hist(nogabali$PlatKraja3,main="Limited",xlab="Total volume\ntemperate deciduous")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeTemperateDeciduousTotal.tif",
+                      value_field = "PlatKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateDeciduousTotal.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif",
+                  layername = "egv_304",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(platlapji)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateDeciduousTotal.tif")
+
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_304.png" width="100%" />
 
 
 ## ForestsQuant_VolumeTemperateWithoutOak-sum_cell	{#ch06.305}
@@ -20768,12 +24201,149 @@ writeRaster(merogots,
 
 **Latvian name:** Paltlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+temperate deciduous tree species except oaks   
+(species codes: 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 62, 63, 64, 65, 66, 
+67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv305.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif	egv_305 ----
+neozoli=c("11","12","16","17","18","24","25","26","27","28","29",
+          "62","63","64","65","66","67","69")
+nogabali=mvr %>% 
+  mutate(BezOzoluKraja=ifelse(s10 %in% neozoli, v10, 0)+ifelse(s11 %in% neozoli,v11,0)+
+           ifelse(s12 %in% neozoli, v12,0)+ifelse(s13 %in% neozoli,v13,0)+
+           ifelse(s14 %in% neozoli, v14,0)) %>% 
+  mutate(BezOzoluKraja2=BezOzoluKraja/10000*10*10) %>% 
+  mutate(BezOzoluKraja3=ifelse(BezOzoluKraja2>3,3,BezOzoluKraja2)) %>% 
+  filter(!is.na(BezOzoluKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$BezOzoluKraja2,main="Original",xlab="Temperate deciduous volume\n without oak")
+hist(nogabali$BezOzoluKraja3,main="Limited",xlab="Temperate deciduous volume\nwithout oak")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeTemperateWithoutOak.tif",
+                      value_field = "BezOzoluKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateWithoutOak.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif",
+                  layername = "egv_305",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(neozoli)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateWithoutOak.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_305.png" width="100%" />
 
 
 ## ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell	{#ch06.306}
@@ -20786,12 +24356,149 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume of 
+teperate deciduous trees except oaks and maples   
+(species codes: 11, 12, 16, 17, 18, 25, 26, 27, 28, 29, 62, 64, 65, 66, 67, 69; 
+see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv306.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif	egv_306 ----
+neozolklavas=c("11","12","16","17","18","25","26","27","28","29",
+               "62","64","65","66","67","69")
+nogabali=mvr %>% 
+  mutate(BezOzolKlavuKraja=ifelse(s10 %in% neozolklavas, v10, 0)+ifelse(s11 %in% neozolklavas,v11,0)+
+           ifelse(s12 %in% neozolklavas, v12,0)+ifelse(s13 %in% neozolklavas,v13,0)+
+           ifelse(s14 %in% neozolklavas, v14,0)) %>% 
+  mutate(BezOzolKlavuKraja2=BezOzolKlavuKraja/10000*10*10) %>% 
+  mutate(BezOzolKlavuKraja3=ifelse(BezOzolKlavuKraja2>3,3,BezOzolKlavuKraja2)) %>% 
+  filter(!is.na(BezOzolKlavuKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$BezOzolKlavuKraja2,main="Original",xlab="Temperate deciduous volume\n without oak and maple")
+hist(nogabali$BezOzolKlavuKraja3,main="Limited",xlab="Temperate deciduous volume\nwithout oak and maple")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeTemperateWithoutOakMaple.tif",
+                      value_field = "BezOzolKlavuKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateWithoutOakMaple.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif",
+                  layername = "egv_306",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(neozolklavas)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateWithoutOakMaple.tif")
+
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_306.png" width="100%" />
 
 
 ## ForestsQuant_VolumeTotal-sum_cell	{#ch06.307}
@@ -20804,12 +24511,141 @@ writeRaster(merogots,
 
 **Latvian name:** Kopējā krāja analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+This EGV was prepared based on the information of timber volume in the inventoried forest 
+stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+As values in this attribute had some impossible extreme values, they were limited 
+to the nearest integer showing only minimal accumulation in histogram.
+
+<img src="./Figures/Histogramms/hist_egv307.png" width="80%" />
+
+Resulting values at polygon geometries were rasterized with `egvtools::polygon2input()`,
+restricting to pixels outside the clearcut mask. No background values were assigned 
+during rasterization. The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating sum of pixel values. After the aggregation, cells with no forest information 
+were filled with value 0. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsQuant_VolumeTotal-sum_cell.tif	egv_307 ----
+
+nogabali=mvr %>% 
+  mutate(KopejaKraja=v10+v11+v12+v13+v14) %>% 
+  mutate(KopejaKraja2=KopejaKraja/10000*10*10) %>% 
+  mutate(KopejaKraja3=ifelse(KopejaKraja2>8,8,KopejaKraja2)) %>% 
+  filter(!is.na(KopejaKraja2))
+
+par(mfrow=c(1,2))
+options(scipen=999)
+hist(nogabali$KopejaKraja2,main="Original",xlab="Timber volume")
+hist(nogabali$KopejaKraja3,main="Limited",xlab="Timber volume")
+par(mfrow=c(1,1))
+options(scipen=0)
+
+p2i_rez=polygon2input(vector_data=nogabali,
+                      template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                      out_path = "./RasterGrids_10m/2024/",
+                      file_name = "ForestsQuant_VolumeTotal.tif",
+                      value_field = "KopejaKraja3",
+                      fun="max",
+                      prepare=FALSE,
+                      restrict_to = clearcut_mask,
+                      restrict_values = 0,
+                      plot_result=TRUE,
+                      overwrite=TRUE)
+p2i_rez
+i2e_rez=input2egv(input="./RasterGrids_10m/2024/ForestsQuant_VolumeTotal.tif",
+                  egv_template = "./Templates/TemplateRasters/LV100m_10km.tif",
+                  summary_function = "sum",
+                  missing_job = "CoverOutput",
+                  output_bg = "./Templates/TemplateRasters/nulls_LV100m_10km.tif",
+                  outlocation = "./RasterGrids_100m/2024/RAW/",
+                  outfilename = "ForestsQuant_VolumeTotal-sum_cell.tif",
+                  layername = "egv_307",
+                  plot_final=TRUE)
+i2e_rez
+rm(p2i_rez)
+rm(nogabali)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTotal.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsQuant_VolumeTotal-sum_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_307.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicDrained_cell	{#ch06.308}
@@ -20822,12 +24658,117 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "19", "21", "24" or "25" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_EutrophicDrained_cell.tif	egv_308 ----
+EutrophicDrained=mvr %>% 
+  filter(mt %in% c("19","21","24","25"))
+p2i_rez=egvtools::polygon2input(vector_data = EutrophicDrained,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_EutrophicDrained_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_EutrophicDrained_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_EutrophicDrained_cell.tif",
+                            layername = "egv_308",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(EutrophicDrained)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_EutrophicDrained_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicDrained_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_308.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicDrained_r500	{#ch06.309}
@@ -20840,12 +24781,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.308) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicDrained_r500.tif	egv_309
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r500.tif")
+names(slanis)="egv_309"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicDrained_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_309.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicDrained_r1250	{#ch06.310}
@@ -20858,12 +24856,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.308) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicDrained_r1250.tif	egv_310
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r1250.tif")
+names(slanis)="egv_310"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicDrained_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_310.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicDrained_r3000	{#ch06.311}
@@ -20876,12 +24931,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.308) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicDrained_r3000.tif	egv_311
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r3000.tif")
+names(slanis)="egv_311"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicDrained_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_311.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicDrained_r10000	{#ch06.312}
@@ -20894,12 +25006,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.308) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicDrained_r10000.tif	egv_312
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r10000.tif")
+names(slanis)="egv_312"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicDrained_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicDrained_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_312.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicMineral_cell	{#ch06.313}
@@ -20912,12 +25081,117 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "5" "6" "10" or "11" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_EutrophicMineral_cell.tif	egv_313 ----
+EutrophicMineral=mvr %>% 
+  filter(mt %in% c("5","6","10","11"))
+p2i_rez=egvtools::polygon2input(vector_data = EutrophicMineral,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_EutrophicMineral_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_EutrophicMineral_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_EutrophicMineral_cell.tif",
+                            layername = "egv_313",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(EutrophicMineral)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_EutrophicMineral_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicMineral_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_313.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicMineral_r500	{#ch06.314}
@@ -20930,12 +25204,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.313) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicMineral_r500.tif	egv_314
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r500.tif")
+names(slanis)="egv_314"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicMineral_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_314.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicMineral_r1250	{#ch06.315}
@@ -20948,12 +25279,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.313) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicMineral_r1250.tif	egv_315
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r1250.tif")
+names(slanis)="egv_315"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicMineral_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_315.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicMineral_r3000	{#ch06.316}
@@ -20966,12 +25354,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.313) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicMineral_r3000.tif	egv_316
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r3000.tif")
+names(slanis)="egv_316"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicMineral_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_316.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicMineral_r10000	{#ch06.317}
@@ -20984,12 +25429,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.313) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicMineral_r10000.tif	egv_317
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r10000.tif")
+names(slanis)="egv_317"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicMineral_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicMineral_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_317.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicOrganic_cell	{#ch06.318}
@@ -21002,12 +25504,117 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "15" or "16" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_EutrophicOrganic_cell.tif	egv_318 ----
+EutrophicOrganic=mvr %>% 
+  filter(mt %in% c("15","16"))
+p2i_rez=egvtools::polygon2input(vector_data = EutrophicOrganic,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_EutrophicOrganic_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_EutrophicOrganic_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_EutrophicOrganic_cell.tif",
+                            layername = "egv_318",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(EutrophicOrganic)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_EutrophicOrganic_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicOrganic_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_318.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicOrganic_r500	{#ch06.319}
@@ -21020,12 +25627,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.318) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicOrganic_r500.tif	egv_319
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r500.tif")
+names(slanis)="egv_319"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicOrganic_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_319.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicOrganic_r1250	{#ch06.320}
@@ -21038,12 +25702,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.318) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicOrganic_r1250.tif	egv_320
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r1250.tif")
+names(slanis)="egv_320"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicOrganic_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_320.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicOrganic_r3000	{#ch06.321}
@@ -21056,12 +25777,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.318) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicOrganic_r3000.tif	egv_321
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r3000.tif")
+names(slanis)="egv_321"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicOrganic_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_321.png" width="100%" />
 
 
 ## ForestsSoil_EutrophicOrganic_r10000	{#ch06.322}
@@ -21074,12 +25852,69 @@ writeRaster(merogots,
 
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.318) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_EutrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_EutrophicOrganic_r10000.tif	egv_322
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r10000.tif")
+names(slanis)="egv_322"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_EutrophicOrganic_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_EutrophicOrganic_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_322.png" width="100%" />
 
 
 ## ForestsSoil_MesotrophicMineral_cell	{#ch06.323}
@@ -21092,12 +25927,117 @@ writeRaster(merogots,
 
 **Latvian name:** Mezotrofu mežu minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "4" or "9" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_MesotrophicMineral_cell.tif	egv_323 ----
+MesotrophicMineral=mvr %>% 
+  filter(mt %in% c("4","9"))
+p2i_rez=egvtools::polygon2input(vector_data = MesotrophicMineral,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_MesotrophicMineral_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_MesotrophicMineral_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_MesotrophicMineral_cell.tif",
+                            layername = "egv_323",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(MesotrophicMineral)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_MesotrophicMineral_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_MesotrophicMineral_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_323.png" width="100%" />
 
 
 ## ForestsSoil_MesotrophicMineral_r500	{#ch06.324}
@@ -21110,12 +26050,69 @@ writeRaster(merogots,
 
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.323) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_MesotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_MesotrophicMineral_r500.tif	egv_324
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r500.tif")
+names(slanis)="egv_324"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_MesotrophicMineral_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_324.png" width="100%" />
 
 
 ## ForestsSoil_MesotrophicMineral_r1250	{#ch06.325}
@@ -21128,12 +26125,69 @@ writeRaster(merogots,
 
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.323) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_MesotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_MesotrophicMineral_r1250.tif	egv_325
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r1250.tif")
+names(slanis)="egv_325"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_MesotrophicMineral_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_325.png" width="100%" />
 
 
 ## ForestsSoil_MesotrophicMineral_r3000	{#ch06.326}
@@ -21146,12 +26200,69 @@ writeRaster(merogots,
 
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.323) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_MesotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_MesotrophicMineral_r3000.tif	egv_326
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r3000.tif")
+names(slanis)="egv_326"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_MesotrophicMineral_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_326.png" width="100%" />
 
 
 ## ForestsSoil_MesotrophicMineral_r10000	{#ch06.327}
@@ -21164,12 +26275,69 @@ writeRaster(merogots,
 
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.323) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_MesotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_MesotrophicMineral_r10000.tif	egv_327
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r10000.tif")
+names(slanis)="egv_327"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_MesotrophicMineral_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_MesotrophicMineral_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_327.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicDrained_cell	{#ch06.328}
@@ -21182,12 +26350,117 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "17", "18", "22" or "23" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_OligotrophicDrained_cell.tif	egv_328 ----
+OligotrophicDrained=mvr %>% 
+  filter(mt %in% c("17","18","22","23"))
+p2i_rez=egvtools::polygon2input(vector_data = OligotrophicDrained,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_OligotrophicDrained_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_OligotrophicDrained_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_OligotrophicDrained_cell.tif",
+                            layername = "egv_328",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(OligotrophicDrained)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_OligotrophicDrained_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicDrained_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_328.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicDrained_r500	{#ch06.329}
@@ -21200,12 +26473,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.328) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicDrained_r500.tif	egv_329
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r500.tif")
+names(slanis)="egv_329"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicDrained_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_329.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicDrained_r1250	{#ch06.330}
@@ -21218,12 +26548,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.328) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicDrained_r1250.tif	egv_330
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r1250.tif")
+names(slanis)="egv_330"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicDrained_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_330.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicDrained_r3000	{#ch06.331}
@@ -21236,12 +26623,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.328) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicDrained_r3000.tif	egv_331
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r3000.tif")
+names(slanis)="egv_331"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicDrained_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_331.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicDrained_r10000	{#ch06.332}
@@ -21254,12 +26698,69 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.328) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicDrained"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicDrained_r10000.tif	egv_332
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r10000.tif")
+names(slanis)="egv_332"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicDrained_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicDrained_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_332.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicMineral_cell	{#ch06.333}
@@ -21272,12 +26773,117 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "1", "2", "3", "7" or "8" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_OligotrophicMineral_cell.tif	egv_333 ----
+OligotrophicMineral=mvr %>% 
+  filter(mt %in% c("1","2","3","7","8"))
+p2i_rez=egvtools::polygon2input(vector_data = OligotrophicMineral,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_OligotrophicMineral_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_OligotrophicMineral_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_OligotrophicMineral_cell.tif",
+                            layername = "egv_333",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(OligotrophicMineral)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_OligotrophicMineral_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_333.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicMineral_r500	{#ch06.334}
@@ -21290,12 +26896,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.333) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicMineral_r500.tif	egv_334
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r500.tif")
+names(slanis)="egv_334"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_334.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicMineral_r1250	{#ch06.335}
@@ -21308,12 +26971,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.333) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicMineral_r1250.tif	egv_335
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r1250.tif")
+names(slanis)="egv_335"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_335.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicMineral_r3000	{#ch06.336}
@@ -21326,12 +27046,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.333) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicMineral_r3000.tif	egv_336
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r3000.tif")
+names(slanis)="egv_336"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_336.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicMineral_r10000	{#ch06.337}
@@ -21344,12 +27121,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.333) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicMineral"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicMineral_r10000.tif	egv_337
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r10000.tif")
+names(slanis)="egv_337"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicMineral_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_337.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicOrganic_cell	{#ch06.338}
@@ -21362,12 +27196,117 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "12" or "14" 
+were selected from [State Forest Service's State Forest Registry](#Ch04.01) 
+and rasterized (presence = 1, NA otherwise). Resulting geometries were then rasterized 
+with `egvtools::polygon2input()` with background covering (value 0). This layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. 
+
+At the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsSoil_OligotrophicOrganic_cell.tif	egv_338 ----
+OligotrophicOrganic=mvr %>% 
+  filter(mt %in% c("12","14"))
+p2i_rez=egvtools::polygon2input(vector_data = OligotrophicOrganic,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsSoil_OligotrophicOrganic_input.tif",
+                                value_field = "yes",
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsSoil_OligotrophicOrganic_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsSoil_OligotrophicOrganic_cell.tif",
+                            layername = "egv_338",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(OligotrophicOrganic)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsSoil_OligotrophicOrganic_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicMineral_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_338.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicOrganic_r500	{#ch06.339}
@@ -21380,12 +27319,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.338) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicOrganic_r500.tif	egv_339
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r500.tif")
+names(slanis)="egv_339"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicOrganic_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_339.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicOrganic_r1250	{#ch06.340}
@@ -21398,12 +27394,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.338) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicOrganic_r1250.tif	egv_340
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r1250.tif")
+names(slanis)="egv_340"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicOrganic_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_340.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicOrganic_r3000	{#ch06.341}
@@ -21416,12 +27469,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.338) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicOrganic_r3000.tif	egv_341
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r3000.tif")
+names(slanis)="egv_341"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicOrganic_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_341.png" width="100%" />
 
 
 ## ForestsSoil_OligotrophicOrganic_r10000	{#ch06.342}
@@ -21434,12 +27544,69 @@ writeRaster(merogots,
 
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.338) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_cell.tif"),
+  layer_prefixes = c("ForestsSoil_OligotrophicOrganic"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsSoil_OligotrophicOrganic_r10000.tif	egv_342
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r10000.tif")
+names(slanis)="egv_342"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsSoil_OligotrophicOrganic_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsSoil_OligotrophicOrganic_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_342.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousOld_cell	{#ch06.343}
@@ -21452,12 +27619,156 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then boreal deciduous stands exceeding the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_BorealDeciduousOld_cell.tif	egv_343 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="saurlapju"&(vgr=="4"|vgr=="5"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_BorealDeciduousOld_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_BorealDeciduousOld_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_BorealDeciduousOld_cell.tif",
+                            layername = "egv_343",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_BorealDeciduousOld_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousOld_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_343.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r500	{#ch06.344}
@@ -21470,12 +27781,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.343) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousOld_r500.tif	egv_344
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r500.tif")
+names(slanis)="egv_344"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousOld_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_344.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r1250	{#ch06.345}
@@ -21488,12 +27856,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.343) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousOld_r1250.tif	egv_345
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r1250.tif")
+names(slanis)="egv_345"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousOld_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_345.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r3000	{#ch06.346}
@@ -21506,12 +27931,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.343) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousOld_r3000.tif	egv_346
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r3000.tif")
+names(slanis)="egv_346"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousOld_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_346.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousOld_r10000	{#ch06.347}
@@ -21524,12 +28006,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.343) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousOld_r10000.tif	egv_347
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r10000.tif")
+names(slanis)="egv_347"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousOld_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousOld_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_347.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_cell	{#ch06.348}
@@ -21542,12 +28081,156 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then boreal deciduous stands younger than the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_BorealDeciduousYoung_cell.tif	egv_348 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="saurlapju"&(vgr=="1"|vgr=="2"|vgr=="3"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_BorealDeciduousYoung_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_BorealDeciduousYoung_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_BorealDeciduousYoung_cell.tif",
+                            layername = "egv_348",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_BorealDeciduousYoung_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousYoung_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_348.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r500	{#ch06.349}
@@ -21560,12 +28243,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.348) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousYoung_r500.tif	egv_349
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r500.tif")
+names(slanis)="egv_349"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousYoung_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_349.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r1250	{#ch06.350}
@@ -21578,12 +28318,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.348) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousYoung_r1250.tif	egv_350
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r1250.tif")
+names(slanis)="egv_350"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousYoung_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_350.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r3000	{#ch06.351}
@@ -21596,12 +28393,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.348) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousYoung_r3000.tif	egv_351
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r3000.tif")
+names(slanis)="egv_351"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousYoung_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_351.png" width="100%" />
 
 
 ## ForestsTreesAge_BorealDeciduousYoung_r10000	{#ch06.352}
@@ -21614,12 +28468,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.348) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_BorealDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_BorealDeciduousYoung_r10000.tif	egv_352
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r10000.tif")
+names(slanis)="egv_352"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_BorealDeciduousYoung_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_BorealDeciduousYoung_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_352.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousOld_cell	{#ch06.353}
@@ -21632,12 +28543,156 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then coniferous stands exceeding the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_ConiferousOld_cell.tif	egv_353 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="skujkoku"&(vgr=="4"|vgr=="5"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_ConiferousOld_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_ConiferousOld_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_ConiferousOld_cell.tif",
+                            layername = "egv_353",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_ConiferousOld_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousOld_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_353.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousOld_r500	{#ch06.354}
@@ -21650,12 +28705,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.353) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousOld_r500.tif	egv_354
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r500.tif")
+names(slanis)="egv_354"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousOld_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_354.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousOld_r1250	{#ch06.355}
@@ -21668,12 +28780,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.353) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousOld_r1250.tif	egv_355
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r1250.tif")
+names(slanis)="egv_355"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousOld_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_355.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousOld_r3000	{#ch06.356}
@@ -21686,12 +28855,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.353) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousOld_r3000.tif	egv_356
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r3000.tif")
+names(slanis)="egv_356"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousOld_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_356.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousOld_r10000	{#ch06.357}
@@ -21704,12 +28930,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.353) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousOld_r10000.tif	egv_357
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r10000.tif")
+names(slanis)="egv_357"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousOld_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousOld_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_357.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousYoung_cell	{#ch06.358}
@@ -21722,12 +29005,156 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then coniferous stands younger than the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_ConiferousYoung_cell.tif	egv_358 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="skujkoku"&(vgr=="1"|vgr=="2"|vgr=="3"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_ConiferousYoung_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_ConiferousYoung_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_ConiferousYoung_cell.tif",
+                            layername = "egv_358",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_ConiferousYoung_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousYoung_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_358.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousYoung_r500	{#ch06.359}
@@ -21740,12 +29167,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.358) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousYoung_r500.tif	egv_359
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r500.tif")
+names(slanis)="egv_359"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousYoung_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_359.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousYoung_r1250	{#ch06.360}
@@ -21758,12 +29242,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.358) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousYoung_r1250.tif	egv_360
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r1250.tif")
+names(slanis)="egv_360"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousYoung_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_360.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousYoung_r3000	{#ch06.361}
@@ -21776,12 +29317,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.358) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousYoung_r3000.tif	egv_361
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r3000.tif")
+names(slanis)="egv_361"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousYoung_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_361.png" width="100%" />
 
 
 ## ForestsTreesAge_ConiferousYoung_r10000	{#ch06.362}
@@ -21794,12 +29392,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.358) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_ConiferousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_ConiferousYoung_r10000.tif	egv_362
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r10000.tif")
+names(slanis)="egv_362"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_ConiferousYoung_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_ConiferousYoung_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_362.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedOld_cell	{#ch06.363}
@@ -21812,12 +29467,156 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then mixed stands exceeding the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_MixedOld_cell.tif	egv_363 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="jauktu koku"&(vgr=="4"|vgr=="5"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_MixedOld_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_MixedOld_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_MixedOld_cell.tif",
+                            layername = "egv_363",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_MixedOld_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedOld_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_363.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedOld_r500	{#ch06.364}
@@ -21830,12 +29629,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.363) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedOld_r500.tif	egv_364
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r500.tif")
+names(slanis)="egv_364"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedOld_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_364.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedOld_r1250	{#ch06.365}
@@ -21848,12 +29704,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.363) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedOld_r1250.tif	egv_365
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r1250.tif")
+names(slanis)="egv_365"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedOld_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_365.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedOld_r3000	{#ch06.366}
@@ -21866,12 +29779,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.363) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedOld_r3000.tif	egv_366
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r3000.tif")
+names(slanis)="egv_366"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedOld_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_366.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedOld_r10000	{#ch06.367}
@@ -21884,12 +29854,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.363) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedOld_r10000.tif	egv_367
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r10000.tif")
+names(slanis)="egv_367"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedOld_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedOld_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_367.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedYoung_cell	{#ch06.368}
@@ -21902,12 +29929,156 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then mixed stands younger than the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_MixedYoung_cell.tif	egv_368 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="jauktu koku"&(vgr=="1"|vgr=="2"|vgr=="3"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_MixedYoung_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_MixedYoung_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_MixedYoung_cell.tif",
+                            layername = "egv_368",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_MixedYoung_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedYoung_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_368.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedYoung_r500	{#ch06.369}
@@ -21920,12 +30091,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.368) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedYoung_r500.tif	egv_369
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r500.tif")
+names(slanis)="egv_369"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedYoung_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_369.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedYoung_r1250	{#ch06.370}
@@ -21938,12 +30166,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.368) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedYoung_r1250.tif	egv_370
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r1250.tif")
+names(slanis)="egv_370"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedYoung_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_370.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedYoung_r3000	{#ch06.371}
@@ -21956,12 +30241,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.368) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedYoung_r3000.tif	egv_371
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r3000.tif")
+names(slanis)="egv_371"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedYoung_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_371.png" width="100%" />
 
 
 ## ForestsTreesAge_MixedYoung_r10000	{#ch06.372}
@@ -21974,12 +30316,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.368) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_MixedYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_MixedYoung_r10000.tif	egv_372
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r10000.tif")
+names(slanis)="egv_372"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_MixedYoung_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_MixedYoung_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_372.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_cell	{#ch06.373}
@@ -21992,12 +30391,156 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then temperate deciduous stands exceeding the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_TemperateDeciduousOld_cell.tif	egv_373 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="platlapju"&(vgr=="4"|vgr=="5"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_TemperateDeciduousOld_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_TemperateDeciduousOld_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_TemperateDeciduousOld_cell.tif",
+                            layername = "egv_373",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_TemperateDeciduousOld_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousOld_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_373.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r500	{#ch06.374}
@@ -22010,12 +30553,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.373) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousOld_r500.tif	egv_374
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r500.tif")
+names(slanis)="egv_374"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousOld_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_374.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r1250	{#ch06.375}
@@ -22028,12 +30628,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.373) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousOld_r1250.tif	egv_375
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r1250.tif")
+names(slanis)="egv_375"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousOld_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_375.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r3000	{#ch06.376}
@@ -22046,12 +30703,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.373) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousOld_r3000.tif	egv_376
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r3000.tif")
+names(slanis)="egv_376"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousOld_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_376.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousOld_r10000	{#ch06.377}
@@ -22064,12 +30778,69 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.373) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousOld"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousOld_r10000.tif	egv_377
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r10000.tif")
+names(slanis)="egv_377"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousOld_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousOld_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_377.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_cell	{#ch06.378}
@@ -22082,12 +30853,156 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then temperate deciduous stands younger than the legal rotation age were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTreesAge_TemperateDeciduousYoung_cell.tif	egv_378 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="platlapju"&(vgr=="1"|vgr=="2"|vgr=="3"))
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTreesAge_TemperateDeciduousYoung_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTreesAge_TemperateDeciduousYoung_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTreesAge_TemperateDeciduousYoung_cell.tif",
+                            layername = "egv_378",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTreesAge_TemperateDeciduousYoung_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousYoung_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_378.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r500	{#ch06.379}
@@ -22100,12 +31015,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.378) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousYoung_r500.tif	egv_379
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r500.tif")
+names(slanis)="egv_379"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousYoung_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_379.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r1250	{#ch06.380}
@@ -22118,12 +31090,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.378) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousYoung_r1250.tif	egv_380
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r1250.tif")
+names(slanis)="egv_380"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousYoung_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_380.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r3000	{#ch06.381}
@@ -22136,12 +31165,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.378) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousYoung_r3000.tif	egv_381
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r3000.tif")
+names(slanis)="egv_381"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousYoung_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_381.png" width="100%" />
 
 
 ## ForestsTreesAge_TemperateDeciduousYoung_r10000	{#ch06.382}
@@ -22154,12 +31240,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.378) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_cell.tif"),
+  layer_prefixes = c("ForestsTreesAge_TemperateDeciduousYoung"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTreesAge_TemperateDeciduousYoung_r10000.tif	egv_382
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r10000.tif")
+names(slanis)="egv_382"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTreesAge_TemperateDeciduousYoung_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTreesAge_TemperateDeciduousYoung_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_382.png" width="100%" />
 
 
 ## ForestsTrees_BorealDeciduous_cell	{#ch06.383}
@@ -22172,12 +31315,156 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then boreal deciduous stands were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTrees_BorealDeciduous_cell.tif	egv_383 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="saurlapju")
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTrees_BorealDeciduous_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTrees_BorealDeciduous_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTrees_BorealDeciduous_cell.tif",
+                            layername = "egv_383",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTrees_BorealDeciduous_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_BorealDeciduous_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_383.png" width="100%" />
 
 
 ## ForestsTrees_BorealDeciduous_r500	{#ch06.384}
@@ -22190,12 +31477,69 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.383) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_BorealDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_BorealDeciduous_r500.tif	egv_384
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r500.tif")
+names(slanis)="egv_384"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_BorealDeciduous_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_384.png" width="100%" />
 
 
 ## ForestsTrees_BorealDeciduous_r1250	{#ch06.385}
@@ -22208,12 +31552,69 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.383) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_BorealDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_BorealDeciduous_r1250.tif	egv_385
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r1250.tif")
+names(slanis)="egv_385"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_BorealDeciduous_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_385.png" width="100%" />
 
 
 ## ForestsTrees_BorealDeciduous_r3000	{#ch06.386}
@@ -22226,12 +31627,69 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.383) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_BorealDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_BorealDeciduous_r3000.tif	egv_386
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r3000.tif")
+names(slanis)="egv_386"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_BorealDeciduous_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_386.png" width="100%" />
 
 
 ## ForestsTrees_BorealDeciduous_r10000	{#ch06.387}
@@ -22244,12 +31702,69 @@ writeRaster(merogots,
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.383) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_BorealDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_BorealDeciduous_r10000.tif	egv_387
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r10000.tif")
+names(slanis)="egv_387"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_BorealDeciduous_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_BorealDeciduous_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_387.png" width="100%" />
 
 
 ## ForestsTrees_Coniferous_cell	{#ch06.388}
@@ -22262,12 +31777,156 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then coniferous stands were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTrees_Coniferous_cell.tif	egv_388 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="skujkoku")
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTrees_Coniferous_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTrees_Coniferous_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTrees_Coniferous_cell.tif",
+                            layername = "egv_388",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTrees_Coniferous_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Coniferous_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_388.png" width="100%" />
 
 
 ## ForestsTrees_Coniferous_r500	{#ch06.389}
@@ -22280,12 +31939,69 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.388) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Coniferous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Coniferous_r500.tif	egv_389
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r500.tif")
+names(slanis)="egv_389"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Coniferous_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_389.png" width="100%" />
 
 
 ## ForestsTrees_Coniferous_r1250	{#ch06.390}
@@ -22298,12 +32014,69 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.388) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Coniferous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Coniferous_r1250.tif	egv_390
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r1250.tif")
+names(slanis)="egv_390"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Coniferous_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_390.png" width="100%" />
 
 
 ## ForestsTrees_Coniferous_r3000	{#ch06.391}
@@ -22316,12 +32089,69 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.388) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Coniferous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Coniferous_r3000.tif	egv_391
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r3000.tif")
+names(slanis)="egv_391"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Coniferous_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_391.png" width="100%" />
 
 
 ## ForestsTrees_Coniferous_r10000	{#ch06.392}
@@ -22334,12 +32164,69 @@ writeRaster(merogots,
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.388) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Coniferous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Coniferous_r10000.tif	egv_392
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r10000.tif")
+names(slanis)="egv_392"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Coniferous_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Coniferous_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_392.png" width="100%" />
 
 
 ## ForestsTrees_Mixed_cell	{#ch06.393}
@@ -22352,12 +32239,156 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then mixed stands were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTrees_Mixed_cell.tif	egv_393 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="jauktu koku")
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTrees_Mixed_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTrees_Mixed_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTrees_Mixed_cell.tif",
+                            layername = "egv_393",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTrees_Mixed_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Mixed_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_393.png" width="100%" />
 
 
 ## ForestsTrees_Mixed_r500	{#ch06.394}
@@ -22370,12 +32401,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.393) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Mixed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Mixed_r500.tif	egv_394
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r500.tif")
+names(slanis)="egv_394"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Mixed_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_394.png" width="100%" />
 
 
 ## ForestsTrees_Mixed_r1250	{#ch06.395}
@@ -22388,12 +32476,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.393) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Mixed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Mixed_r1250.tif	egv_395
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r1250.tif")
+names(slanis)="egv_395"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Mixed_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_395.png" width="100%" />
 
 
 ## ForestsTrees_Mixed_r3000	{#ch06.396}
@@ -22406,12 +32551,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.393) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Mixed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Mixed_r3000.tif	egv_396
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r3000.tif")
+names(slanis)="egv_396"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Mixed_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_396.png" width="100%" />
 
 
 ## ForestsTrees_Mixed_r10000	{#ch06.397}
@@ -22424,12 +32626,69 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.393) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_cell.tif"),
+  layer_prefixes = c("ForestsTrees_Mixed"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_Mixed_r10000.tif	egv_397
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r10000.tif")
+names(slanis)="egv_397"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_Mixed_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_Mixed_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_397.png" width="100%" />
 
 
 ## ForestsTrees_TemperateDeciduous_cell	{#ch06.398}
@@ -22442,12 +32701,156 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** 
+**Procedure:** Most of forests describing EGVs are spatially restricted outside 
+clearcuts and dead stands. Mask for this is created 
+from [State Forest Service's State Forest Registry](#Ch04.01) land category 12 and 14 
+combined with [The Global Forest Watch](#Ch04.09) pixels classified as lost tree 
+canopy cover since 2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this EGV, stands from [State Forest Service's State Forest Registry](#Ch04.01) 
+were classified into (in order):
+
+- coniferous (see [Terminology and acronyms](#Ch01) for species codes) if timber volume of those species exceeded 75%;
+
+- boreal deciduous if timber volume of those species exceeded 75%;
+
+- temperate deciduous if timber volume of those species exceeded 50%;
+
+- mixed otherwise;
+
+then temperate deciduous stands were selected and 
+geometries were rasterized (presence = 1, NA otherwise). Rasterization was 
+performed by `egvtools:polygon2input()` 
+restricting to pixels outside clearcut mask and covering background with value 0. 
+The resulting layer was then 
+aggregated to EGV resolution with `egvtools::input2egv()` 
+by calculating arithmetic mean, thus resulting in cover fraction. 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
+output was initialized to ensure no missing values at the edges. At 
+the very end, layer was standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+
+# templates ----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+rastrs10=raster(template10)
+
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
+nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
+
+
+# simple landscape ----
+simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
+
+# mvr ----
+mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
+mvr$yes=1
+
+# clear cut mask ----
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
+t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
+plot(t_izcirtumi_mvr)
+
+tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
+tcl2=ifel(tcl<20,0,1)
+tclX=cover(tcl2,nulls10)
+plot(tclX)
+
+clearcut_mask=cover(t_izcirtumi_mvr,tclX,
+                    filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
+                    overwrite=TRUE)
+plot(clearcut_mask)
+
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+rm(t_izcirtumi_mvr)
+rm(tcl)
+rm(tcl2)
+rm(tclX)
+
+# ForestsTrees_TemperateDeciduous_cell.tif	egv_398 ----
+skujkoki=c("1","3","13","14","15","22","23") # 7
+saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+            "61","62","63","64","65","66","67","69") # 20
+mvr=mvr %>% 
+  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
+           ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
+           ifelse(s13 %in% skujkoki,v13,0)+ifelse(s14 %in% skujkoki,v14,0),
+         kraja_saurlapju=ifelse(s10 %in% saurlapji,v10,0)+
+           ifelse(s11 %in% saurlapji,v11,0)+ifelse(s12 %in% saurlapji,v12,0)+
+           ifelse(s13 %in% saurlapji,v13,0)+ifelse(s14 %in% saurlapji,v14,0),
+         kraja_platlapju=ifelse(s10 %in% platlapji,v10,0)+
+           ifelse(s11 %in% platlapji,v11,0)+ifelse(s12 %in% platlapji,v12,0)+
+           ifelse(s13 %in% platlapji,v13,0)+ifelse(s14 %in% platlapji,v14,0)) %>% 
+  mutate(kopeja_kraja=kraja_skujkoku+kraja_platlapju+kraja_saurlapju) %>% 
+  mutate(tips=ifelse(kraja_skujkoku/kopeja_kraja>=0.75,"skujkoku",
+                     ifelse(kraja_saurlapju/kopeja_kraja>=0.75,"saurlapju",
+                            ifelse(kraja_platlapju/kopeja_kraja>0.5,"platlapju",
+                                   "jauktu koku"))))
+nogabali=mvr %>% 
+  filter(zkat=="10"&tips=="platlapju")
+
+p2i_rez=egvtools::polygon2input(vector_data = nogabali,
+                                template_path = "./Templates/TemplateRasters/LV10m_10km.tif",
+                                out_path = "./RasterGrids_10m/2024/",
+                                file_name = "ForestsTrees_TemperateDeciduous_input.tif",
+                                value_field = "yes",
+                                restrict_to = clearcut_mask,
+                                restrict_values = 0,
+                                prepare=FALSE,
+                                background_raster = "./Templates/TemplateRasters/nulls_LV10m_10km.tif",
+                                plot_result = TRUE)
+p2i_rez
+i2e_rez=egvtools::input2egv(input=paste0("./RasterGrids_10m/2024/",
+                                         "ForestsTrees_TemperateDeciduous_input.tif"),
+                            egv_template= "./Templates/TemplateRasters/LV100m_10km.tif",
+                            summary_function = "average",
+                            missing_job = "FillOutput",
+                            outlocation = "./RasterGrids_100m/2024/RAW/",
+                            outfilename = "ForestsTrees_TemperateDeciduous_cell.tif",
+                            layername = "egv_398",
+                            idw_weight = 2,
+                            plot_gaps = FALSE,plot_final = TRUE)
+i2e_rez
+rm(nogabali)
+rm(p2i_rez)
+rm(i2e_rez)
+unlink("./RasterGrids_10m/2024/ForestsTrees_TemperateDeciduous_input.tif")
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_TemperateDeciduous_cell.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_398.png" width="100%" />
 
 
 ## ForestsTrees_TemperateDeciduous_r500	{#ch06.399}
@@ -22460,12 +32863,69 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.398) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_TemperateDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r500"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_TemperateDeciduous_r500.tif	egv_399
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r500.tif")
+names(slanis)="egv_399"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r500.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_TemperateDeciduous_r500.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_399.png" width="100%" />
 
 
 ## ForestsTrees_TemperateDeciduous_r1250	{#ch06.400}
@@ -22478,12 +32938,69 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.398) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_TemperateDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r1250"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_TemperateDeciduous_r1250.tif	egv_400
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r1250.tif")
+names(slanis)="egv_400"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r1250.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_TemperateDeciduous_r1250.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_400.png" width="100%" />
 
 
 ## ForestsTrees_TemperateDeciduous_r3000	{#ch06.401}
@@ -22496,12 +33013,69 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.398) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_TemperateDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r3000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_TemperateDeciduous_r3000.tif	egv_401
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r3000.tif")
+names(slanis)="egv_401"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r3000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_TemperateDeciduous_r3000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_401.png" width="100%" />
 
 
 ## ForestsTrees_TemperateDeciduous_r10000	{#ch06.402}
@@ -22514,12 +33088,69 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** 
+**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
+calculated as the area-weighted sum of [analysis cells](#ch06.398) inside the 
+buffer with `egvtools::radius_function`. During calculation of landscape metric, 
+inverse distance weighted (power = 2) gap filling on the output is initialized 
+to ensure no missing values at the edges. Finally, layer is rewritten to ensure 
+layers name. At 
+the very end, layer is standardized by subtracting arithmetic mean and dividing 
+by root mean squared error.
 
 
 ``` r
-# libs ----
+# Libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
+
+
+# Templates -----
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+
+# radii ----
+radius_function(
+  kvadrati_path  = "./Templates/TemplateGrids/tiles/",
+  radii_path     = "./Templates/TemplateGridPoints/tiles/",
+  tikls100_path  = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
+  template_path  = "./Templates/TemplateRasters/LV100m_10km.tif",
+  input_layers   = c("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_cell.tif"),
+  layer_prefixes = c("ForestsTrees_TemperateDeciduous"),
+  output_dir     = "./RasterGrids_100m/2024/RAW/",
+  n_workers      = 6,
+  radii          = c("r10000"),
+  radius_mode    = "sparse",
+  extract_fun    = "mean",
+  fill_missing   = TRUE,
+  IDW_weight     = 2,
+  future_max_size = 40 * 1024^3)
+
+
+# ForestsTrees_TemperateDeciduous_r10000.tif	egv_402
+slanis=rast("./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r10000.tif")
+names(slanis)="egv_402"
+slanis2=project(slanis,template100)
+writeRaster(slanis2,
+            "./RasterGrids_100m/2024/RAW/ForestsTrees_TemperateDeciduous_r10000.tif",
+            overwrite=TRUE)
+
+# standardization ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+
+nosaukums="ForestsTrees_TemperateDeciduous_r10000.tif"
+ielasisanas_cels=paste0("./RasterGrids_100m/2024/RAW/",nosaukums)
+saglabasanas_cels=paste0("./RasterGrids_100m/2024/Scaled/",nosaukums)
+slanis=rast(ielasisanas_cels)
+videjais=global(slanis,fun="mean",na.rm=TRUE)
+centrets=slanis-videjais[,1]
+standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+merogots=centrets/standartnovirze[,1]
+writeRaster(merogots,
+            filename=saglabasanas_cels,
+            overwrite=TRUE)
 ```
+
+<img src="./Figures/maps4book/egv_402.png" width="100%" />
 
 
 ## General_AllotmentGardens_cell	{#ch06.403}
@@ -22536,7 +33167,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -22914,7 +33545,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -23292,7 +33923,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -23670,7 +34301,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -24047,7 +34678,7 @@ writeRaster(merogots,
 **Procedure:** First, clearcuts and forest stands from [State Forest Service's State Forest Registry](#Ch04.01) were rasterized to match inputs (value 1 and NA elsewhere). Then, from [Landscape classification](#Ch05.03) class 630 was reclassified to value 1, others to 0). These layers were then combined so that values 1 from the second layer, where spatially matching NA values in the first layer as classified as 1 and 0 otherwise. 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -24439,7 +35070,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -24817,7 +35448,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -24896,7 +35527,7 @@ writeRaster(merogots,
 value 1, others as 0). The first layer was then covered over the second.
 Once covered, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -25296,7 +35927,7 @@ writeRaster(merogots,
 value 1, others as 0). The first layer was then covered over the second.
 Once covered, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -25693,7 +36324,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -26071,7 +36702,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -26448,7 +37079,7 @@ writeRaster(merogots,
 **Procedure:** First, tree outside forest stands from [Landscape classification](#Ch05.03) were selected (values equal to 640 were reclassified to
 value 1, others as 0). Then the layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -26825,7 +37456,7 @@ writeRaster(merogots,
 **Procedure:** First, water from [Landscape classification](#Ch05.03) were selected (values equal to 200 were reclassified to
 value 1, others as 0). Then the layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -27927,7 +38558,7 @@ writeRaster(merogots,
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 
-During caggregation, inverse distance weighted (power = 2) gap filling on the 
+During aggregation, inverse distance weighted (power = 2) gap filling on the 
 output was initialized to ensure no missing values at the edges. At 
 the very end, layer was standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
