@@ -9,7 +9,7 @@ data repository:
 
 
 Standardised ecogeographical variables are available for download from projects 
-Zenodo repository.
+Zenodo [repository]().
 
 
-Layers can be interacted with via Google Earth Engine application.
+Layers can be interacted with via Google Earth Engine [application](https://aavj.users.earthengine.app/view/egvs-2024).
