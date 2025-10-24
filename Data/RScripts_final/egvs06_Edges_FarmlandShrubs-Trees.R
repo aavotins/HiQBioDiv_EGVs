@@ -2,10 +2,11 @@
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+
 # Templates -----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
-# Edges_FarmlandShrubs-Trees_cell.tif	egv_135
+# Edges_FarmlandShrubs-Trees_cell.tif	egv_135 ----
 landscape_function(
   landscape      = "./RasterGrids_10m/2024/Edges_FarmlandShrubs-Trees_input.tif",
   zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
@@ -19,14 +20,14 @@ landscape_function(
   lm_args          = list(count_boundary = FALSE),
   rasterize_engine = "fasterize",
   n_workers      = 12,
-  future_max_size = 5 * 1024^3,
+  future_max_size = 20 * 1024^3,
   fill_gaps      = TRUE,
   plot_gaps      = FALSE,
   plot_result    = FALSE
 )
 
 
-
+# radii ----
 radius_function(
   kvadrati_path  = "./Templates/TemplateGrids/tiles/",
   radii_path     = "./Templates/TemplateGridPoints/tiles/",
@@ -38,13 +39,13 @@ radius_function(
   n_workers      = 12,
   radii          = c("r500","r1250","r3000","r10000"),
   radius_mode    = "sparse",
-  extract_fun    = "mean",
+  extract_fun    = "sum",
   fill_missing   = TRUE,
   IDW_weight     = 2,
-  future_max_size = 5 * 1024^3)
+  future_max_size = 20 * 1024^3)
 
 
-# Edges_FarmlandShrubs-Trees_r500.tif	egv_136
+# Edges_FarmlandShrubs-Trees_r500.tif	egv_136 ----
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r500.tif")
 names(slanis)="egv_136"
 slanis2=project(slanis,template100)
@@ -54,7 +55,7 @@ writeRaster(slanis2,
 
 
 
-# Edges_FarmlandShrubs-Trees_r1250.tif	egv_137
+# Edges_FarmlandShrubs-Trees_r1250.tif	egv_137 ----
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r1250.tif")
 names(slanis)="egv_137"
 slanis2=project(slanis,template100)
@@ -64,7 +65,7 @@ writeRaster(slanis2,
 
 
 
-# Edges_FarmlandShrubs-Trees_r3000.tif	egv_138
+# Edges_FarmlandShrubs-Trees_r3000.tif	egv_138 ----
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r3000.tif")
 names(slanis)="egv_138"
 slanis2=project(slanis,template100)
@@ -74,7 +75,7 @@ writeRaster(slanis2,
 
 
 
-# Edges_FarmlandShrubs-Trees_r10000.tif	egv_139
+# Edges_FarmlandShrubs-Trees_r10000.tif	egv_139 ----
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_FarmlandShrubs-Trees_r10000.tif")
 names(slanis)="egv_139"
 slanis2=project(slanis,template100)

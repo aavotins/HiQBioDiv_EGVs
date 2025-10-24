@@ -262,17 +262,34 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 
 # class 400 ----
 
-# topo
+# topo apbuves
+viensvasar=st_read_parquet("./Geodata/2024/TopographicMap/BuildA_v3.parquet")
+table(viensvasar$FNAME,useNA="always")
+viensvasar=viensvasar %>% 
+  filter(FNAME %in% c("poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve")) %>% 
+  mutate(yes=410) %>% 
+  dplyr::select(yes)
+r_viensetasvasarnicas=fasterize(viensvasar,template_r,field="yes")
+raster::writeRaster(r_viensetasvasarnicas,
+                    "./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# cleaning
+rm(viensvasar)
+rm(r_viensetasvasarnicas)
+
+
+# topo darzi
 darzini_topo=st_read_parquet("./Geodata/2024/TopographicMap/LandusA_COMB.parquet")
 table(darzini_topo$FNAME,useNA="always")
 darzini_topo=darzini_topo %>% 
   filter(FNAME %in% c("poligons_Augludarzs","poligons_Augļudārzs","poligons_Sakņudārzs",
                       "poligons_Ogulājs","poligons_Ogulajs","poligons_Saknudarzs")) %>% 
-  mutate(yes=410) %>% 
+  mutate(yes=420) %>% 
   dplyr::select(yes)
 r_darzini_topo=fasterize(darzini_topo,template_r,field="yes")
 raster::writeRaster(r_darzini_topo,
-                    "./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif",
+                    "./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif",
                     progress="text",
                     overwrite=TRUE)
 # cleaning
@@ -301,18 +318,22 @@ rm(lad)
 rm(r_darzini_lad)
 
 # merging
-a400=rast("./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif")
-b400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
+a400=rast("./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif")
+b400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
+c400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 
-allotment_cover=cover(a400,b400,
-                     filename="./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif",
-                     overwrite=TRUE)
+allotment_cover=cover(a400,b400)
+allotment_cover=cover(allotment_cover,c400,
+                      filename="./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif",
+                      overwrite=TRUE)
 
 # cleaning
 rm(a400)
 rm(b400)
+rm(c400)
 rm(allotment_cover)
-unlink("./RasterGrids_10m/2024/SimpleLandscape_class410_darzini_topo.tif")
+unlink("./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif")
+unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 
 

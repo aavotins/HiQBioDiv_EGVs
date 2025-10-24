@@ -11,6 +11,7 @@ if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 
 # Templates -----
 template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 
 # simple landscape ----
 simple_landscape=rast("./RasterGrids_10m/2024/Ainava_vienk_mask.tif")
@@ -33,8 +34,7 @@ freq(simple_landscape)
 # 15     1   730    156649
 # 16     1   800   1811879
 
-# Edges_Bogs-Trees_input.tif
-
+# Edges_Bogs-Trees_input.tif ----
 trees_from620=ifel(simple_landscape>=620 & simple_landscape<700,0,NA)
 plot(trees_from620)
 
@@ -57,9 +57,7 @@ edge_bm_trees=project(bm_trees,template10,
 rm(edge_bm_trees)
 rm(bm_trees)
 
-# Edges_Bogs-Water_input.tif
-
-
+# Edges_Bogs-Water_input.tif ----
 bogs=rast("./RasterGrids_10m/2024/EDI_BogsYN.tif")
 bogs=subst(bogs,0,NA)
 plot(bogs)
@@ -81,8 +79,7 @@ edge_bm_water=project(bm_water,template10,
 rm(edge_bm_water)
 rm(bm_water)
 
-# Edges_Farmland-Builtup_input.tif
-
+# Edges_Farmland-Builtup_input.tif ----
 farmland=ifel(simple_landscape>300 & simple_landscape<400,1,NA)
 plot(farmland)
 
@@ -98,8 +95,7 @@ edge_farmland_builtup=project(farmland_builtup,template10,
 rm(edge_farmland_builtup)
 rm(farmland_builtup)
 
-# Edges_Trees-Builtup_input.tif
-
+# Edges_Trees-Builtup_input.tif ----
 trees_from630=ifel(simple_landscape>=630 & simple_landscape<700,1,NA)
 plot(trees_from630)
 
@@ -115,10 +111,10 @@ edge_trees630_builtup=project(trees630_builtup,template10,
 rm(edge_trees630_builtup)
 rm(trees630_builtup)
 
-# Edges_CropsFallow_input.tif
-
-
+# Edges_CropsFallow_input.tif ----
 cropsfallow=ifel(simple_landscape>=310 & simple_landscape<325,1,NA)
+plot(cropsfallow)
+cropsfallow=cover(cropsfallow,nulls10)
 plot(cropsfallow)
 
 edge_cropsfallow=project(cropsfallow,template10,
@@ -126,8 +122,7 @@ edge_cropsfallow=project(cropsfallow,template10,
                        overwrite=TRUE)
 rm(edge_cropsfallow)
 
-# Edges_FarmlandShrubs-Trees_input.tif
-
+# Edges_FarmlandShrubs-Trees_input.tif ----
 farmshrub=ifel((simple_landscape>300 & simple_landscape<400)|
                  (simple_landscape>600 & simple_landscape<630),0,NA)
 
@@ -143,9 +138,10 @@ edge_farmshrub_trees630=project(farmshrub_trees630,template10,
 rm(edge_farmshrub_trees630)
 rm(farmshrub_trees630)
 
-# Edges_Grasslands_input.tif
-
+# Edges_Grasslands_input.tif ----
 grassland=ifel(simple_landscape==330,1,NA)
+plot(grassland)
+grassland=cover(grassland,nulls10)
 plot(grassland)
 
 edge_grassland=project(grassland,template10,
@@ -153,8 +149,7 @@ edge_grassland=project(grassland,template10,
                            overwrite=TRUE)
 rm(edge_grassland)
 
-# Edges_OldForests_input.tif
-
+# Edges_OldForests_input.tif ----
 mvr=sfarrow::st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr2=mvr %>% 
   mutate(forest_age=ifelse(vgr=="4"|vgr=="5",1,NA)) %>% 
@@ -162,6 +157,8 @@ mvr2=mvr %>%
 
 rast_old=fasterize(mvr2,raster(template10),field="forest_age")
 terra_old=rast(rast_old)
+plot(terra_old)
+terra_old=cover(terra_old,nulls10)
 plot(terra_old)
 
 edge_old=project(terra_old,template10,
@@ -173,10 +170,10 @@ rm(rast_old)
 rm(terra_old)
 rm(edge_old)
 
-# Edges_Roads_input.tif
-
-
+# Edges_Roads_input.tif ----
 roads=ifel(simple_landscape==100,1,NA)
+plot(roads)
+roads=cover(roads,nulls10)
 plot(roads)
 
 edge_roads=project(roads,template10,
@@ -185,9 +182,10 @@ edge_roads=project(roads,template10,
 rm(edge_roads)
 
 
-# Edges_Trees_input.tif
-
+# Edges_Trees_input.tif ----
 trees_from630=ifel(simple_landscape>=630 & simple_landscape<700,1,NA)
+plot(trees_from630)
+trees_from630=cover(trees_from630,nulls10)
 plot(trees_from630)
 
 edge_trees_from630=project(trees_from630,template10,
@@ -195,9 +193,10 @@ edge_trees_from630=project(trees_from630,template10,
                    overwrite=TRUE)
 rm(edge_trees_from630)
 
-# Edges_Water_input.tif
-
-water=ifel(simple_landscape==200,0,NA)
+# Edges_Water_input.tif ----
+water=ifel(simple_landscape==200,1,0)
+plot(water)
+water=cover(water,nulls10)
 plot(water)
 
 edge_water=project(water,template10,
@@ -205,8 +204,7 @@ edge_water=project(water,template10,
                             overwrite=TRUE)
 rm(edge_water)
 
-# Edges_Water-Farmland_input.tif
-
+# Edges_Water-Farmland_input.tif ----
 water=ifel(simple_landscape==200,0,NA)
 plot(water)
 
@@ -222,8 +220,7 @@ edge_water_farmland=project(water_farmland,template10,
 rm(edge_water_farmland)
 rm(water_farmland)
 
-# Edges_Water-Grassland_input.tif
-
+# Edges_Water-Grassland_input.tif ----
 water=ifel(simple_landscape==200,0,NA)
 plot(water)
 
@@ -239,8 +236,7 @@ edge_water_grassland=project(water_grassland,template10,
 rm(edge_water_grassland)
 rm(water_grassland)
 
-# Edges_ReedSedgeRushBeds-Water_input.tif
-
+# Edges_ReedSedgeRushBeds-Water_input.tif ----
 water=ifel(simple_landscape==200,0,NA)
 plot(water)
 

@@ -1,5 +1,5 @@
 # Libs ----
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
 # templates ----
@@ -20,7 +20,7 @@ radius_function(
                      "Diversity_Forest",
                      "Diversity_Total"),
   output_dir     = "./RasterGrids_100m/2024/RAW/",
-  n_workers      = 12,
+  n_workers      = 4,
   radii          = c("r500","r1250","r3000","r10000"),
   radius_mode    = "sparse",
   extract_fun    = "mean",

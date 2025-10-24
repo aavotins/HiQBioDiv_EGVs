@@ -2,6 +2,7 @@
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+
 # Templates -----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
@@ -19,7 +20,7 @@ landscape_function(
   lm_args          = list(count_boundary = FALSE),
   rasterize_engine = "fasterize",
   n_workers      = 12,
-  future_max_size = 5 * 1024^3,
+  future_max_size = 20 * 1024^3,
   fill_gaps      = TRUE,
   plot_gaps      = FALSE,
   plot_result    = FALSE
@@ -38,10 +39,10 @@ radius_function(
   n_workers      = 12,
   radii          = c("r500","r1250","r3000","r10000"),
   radius_mode    = "sparse",
-  extract_fun    = "mean",
+  extract_fun    = "sum",
   fill_missing   = TRUE,
   IDW_weight     = 2,
-  future_max_size = 5 * 1024^3)
+  future_max_size = 20 * 1024^3)
 
 
 # Edges_Water-Farmland_r500.tif	egv_166

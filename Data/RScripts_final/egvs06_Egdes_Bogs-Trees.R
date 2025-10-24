@@ -2,6 +2,7 @@
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
+
 # Templates -----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
@@ -20,7 +21,7 @@ landscape_function(
   lm_args          = list(count_boundary = FALSE),
   rasterize_engine = "fasterize",
   n_workers      = 12,
-  future_max_size = 5 * 1024^3,
+  future_max_size = 20 * 1024^3,
   fill_gaps      = TRUE,
   plot_gaps      = FALSE,
   plot_result    = FALSE
@@ -36,18 +37,16 @@ radius_function(
   input_layers   = c("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_cell.tif"),
   layer_prefixes = c("Edges_Bogs-Trees"),
   output_dir     = "./RasterGrids_100m/2024/RAW/",
-  n_workers      = 12,
+  n_workers      = 4,
   radii          = c("r500","r1250","r3000","r10000"),
   radius_mode    = "sparse",
-  extract_fun    = "mean",
+  extract_fun    = "sum",
   fill_missing   = TRUE,
   IDW_weight     = 2,
-  future_max_size = 5 * 1024^3)
+  future_max_size = 20 * 1024^3)
 
 
 # Edges_Bogs-Trees_r500.tif	egv_111
-
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r500.tif")
 names(slanis)="egv_111"
 slanis2=project(slanis,template100)
@@ -58,7 +57,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Trees_r1250.tif	egv_112
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r1250.tif")
 names(slanis)="egv_112"
 slanis2=project(slanis,template100)
@@ -69,7 +67,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Trees_r3000.tif	egv_113
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r3000.tif")
 names(slanis)="egv_113"
 slanis2=project(slanis,template100)
@@ -80,7 +77,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Trees_r10000.tif	egv_114
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Trees_r10000.tif")
 names(slanis)="egv_114"
 slanis2=project(slanis,template100)

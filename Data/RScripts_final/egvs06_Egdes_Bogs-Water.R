@@ -5,8 +5,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # Templates -----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
 
-# Edges_Bogs-Water_cell.tif	egv_115
-
+# Edges_Bogs-Water_cell.tif	egv_115 ----
 landscape_function(
   landscape      = "./RasterGrids_10m/2024/Edges_Bogs-Water_input.tif",
   zones          = "./Templates/TemplateGrids/tikls100_sauzeme.parquet",
@@ -20,14 +19,14 @@ landscape_function(
   lm_args          = list(count_boundary = FALSE),
   rasterize_engine = "fasterize",
   n_workers      = 12,
-  future_max_size = 5 * 1024^3,
+  future_max_size = 20 * 1024^3,
   fill_gaps      = TRUE,
   plot_gaps      = FALSE,
   plot_result    = FALSE
 )
 
 
-
+# radii ----
 radius_function(
   kvadrati_path  = "./Templates/TemplateGrids/tiles/",
   radii_path     = "./Templates/TemplateGridPoints/tiles/",
@@ -39,15 +38,13 @@ radius_function(
   n_workers      = 12,
   radii          = c("r500","r1250","r3000","r10000"),
   radius_mode    = "sparse",
-  extract_fun    = "mean",
+  extract_fun    = "sum",
   fill_missing   = TRUE,
   IDW_weight     = 2,
-  future_max_size = 5 * 1024^3)
+  future_max_size = 20 * 1024^3)
 
 
 # Edges_Bogs-Water_r500.tif	egv_116
-
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r500.tif")
 names(slanis)="egv_116"
 slanis2=project(slanis,template100)
@@ -58,7 +55,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Water_r1250.tif	egv_117
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r1250.tif")
 names(slanis)="egv_117"
 slanis2=project(slanis,template100)
@@ -69,7 +65,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Water_r3000.tif	egv_118
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r3000.tif")
 names(slanis)="egv_118"
 slanis2=project(slanis,template100)
@@ -80,7 +75,6 @@ writeRaster(slanis2,
 
 
 # Edges_Bogs-Water_r10000.tif	egv_119
-
 slanis=rast("./RasterGrids_100m/2024/RAW/Edges_Bogs-Water_r10000.tif")
 names(slanis)="egv_119"
 slanis2=project(slanis,template100)

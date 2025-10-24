@@ -6,7 +6,7 @@ if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 if(!require(raster)) {install.packages("raster"); require(raster)}
 if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
 # templates ----
 template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
@@ -110,7 +110,7 @@ distegv
 sea=st_read("./Geodata/2024/LV_EEZ/LV_EEZ.shp")
 
 # quick rasterization
-sea_r=fasterize(sea,rastrs10,field="LV_EEZ")
+sea_r=fasterize(sea,rastra_pamatne,field="LV_EEZ")
 sea_rast=rast(sea_r)
 
 # # raster to 1=Cell of interest, 0=background

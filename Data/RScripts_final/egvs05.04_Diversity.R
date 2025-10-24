@@ -1,5 +1,5 @@
 # Libs ----
-if(!require(egvtools)) {install.packages("egvtools"); require(egvtools)}
+if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
@@ -112,7 +112,7 @@ rm(diversity_classes2)
 
 ## Diversity index at 25ha -----
 
-
+source("../../../00_Repo/egvtools/R/landscape_function.R")
 res_tbl <- landscape_function(
   landscape      = "./RasterGrids_10m/2024/Diversity_GeneralLandscapeBroad.tif",
   zones          = "./Templates/TemplateGrids/tikls500_sauzeme.parquet",
@@ -170,10 +170,14 @@ polygon2input(vector_data = lad,
 rm(lad)
 
 
+# simple landscapes input 
+simple_farmland=rast("./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif")
+
 ## Covered classes for farmland diversity ----
 
 farmland_codes=rast("./RasterGrids_10m/2024/Diversity_FarmlandCodes_only.tif")
 farmland_covered=cover(farmland_codes,farmland_broad)
+farmland_covered=cover(farmland_covered,simple_farmland)
 farmland_covered2=cover(farmland_covered,template_t,
                         filename="./RasterGrids_10m/2024/Diversity_FarmlandDetailed.tif",
                         overwrite=TRUE)
@@ -183,6 +187,7 @@ plot(farmland_covered2)
 rm(farmland_codes)
 rm(farmland_covered)
 rm(farmland_covered2)
+rm(simple_farmland)
 rm(farmland_broad)
 
 
@@ -247,11 +252,15 @@ polygon2input(vector_data = mvr,
 # cleaning
 rm(mvr)
 
+# simple forests
+simple_forests=rast("./RasterGrids_10m/2024/SimpleLandscape_class600_meziem_premask.tif")
+
 ## Covered classes for forest diversity ----
 
 forest_codes=rast("./RasterGrids_10m/2024/Diversity_ForestCodes_only.tif")
 plot(forest_codes)
 forest_covered=cover(forest_codes,forest_broad)
+forest_covered=cover(forest_covered,simple_forests)
 plot(forest_covered)
 
 forest_covered2=cover(forest_covered,template_t,
@@ -264,6 +273,7 @@ rm(forest_codes)
 rm(forest_covered)
 rm(forest_covered2)
 rm(forest_broad)
+rm(simple_forests)
 
 
 
