@@ -94,7 +94,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_1.png")
 ```
 
@@ -155,7 +155,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_2.png")
 ```
 
@@ -217,7 +217,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_3.png")
 ```
 
@@ -279,7 +279,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_4.png")
 ```
 
@@ -341,7 +341,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_5.png")
 ```
 
@@ -403,7 +403,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_6.png")
 ```
 
@@ -465,7 +465,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_7.png")
 ```
 
@@ -527,7 +527,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_8.png")
 ```
 
@@ -589,7 +589,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_9.png")
 ```
 
@@ -651,7 +651,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_10.png")
 ```
 
@@ -713,7 +713,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_11.png")
 ```
 
@@ -775,7 +775,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_12.png")
 ```
 
@@ -837,7 +837,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_13.png")
 ```
 
@@ -899,7 +899,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_14.png")
 ```
 
@@ -961,7 +961,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_15.png")
 ```
 
@@ -1023,7 +1023,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_16.png")
 ```
 
@@ -1085,7 +1085,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_17.png")
 ```
 
@@ -1147,7 +1147,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_18.png")
 ```
 
@@ -1209,7 +1209,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_19.png")
 ```
 
@@ -1271,7 +1271,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_20.png")
 ```
 
@@ -1333,7 +1333,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_21.png")
 ```
 
@@ -1395,7 +1395,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_22.png")
 ```
 
@@ -1457,7 +1457,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_23.png")
 ```
 
@@ -1519,7 +1519,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_24.png")
 ```
 
@@ -1581,7 +1581,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_25.png")
 ```
 
@@ -1643,7 +1643,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_26.png")
 ```
 
@@ -1705,7 +1705,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_27.png")
 ```
 
@@ -1767,7 +1767,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_28.png")
 ```
 
@@ -1829,7 +1829,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_29.png")
 ```
 
@@ -1891,7 +1891,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_30.png")
 ```
 
@@ -1953,7 +1953,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_31.png")
 ```
 
@@ -2015,7 +2015,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_32.png")
 ```
 
@@ -2077,7 +2077,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_33.png")
 ```
 
@@ -2139,7 +2139,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_34.png")
 ```
 
@@ -2201,7 +2201,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_35.png")
 ```
 
@@ -2263,7 +2263,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_36.png")
 ```
 
@@ -2325,7 +2325,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_37.png")
 ```
 
@@ -2387,7 +2387,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_38.png")
 ```
 
@@ -2449,7 +2449,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_39.png")
 ```
 
@@ -2511,7 +2511,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_40.png")
 ```
 
@@ -2573,7 +2573,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_41.png")
 ```
 
@@ -2635,7 +2635,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_42.png")
 ```
 
@@ -2697,7 +2697,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_43.png")
 ```
 
@@ -2759,7 +2759,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_44.png")
 ```
 
@@ -2821,7 +2821,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_45.png")
 ```
 
@@ -2883,7 +2883,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_46.png")
 ```
 
@@ -2945,7 +2945,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_47.png")
 ```
 
@@ -3007,7 +3007,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_48.png")
 ```
 
@@ -3069,7 +3069,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_49.png")
 ```
 
@@ -3131,7 +3131,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_50.png")
 ```
 
@@ -3193,7 +3193,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_51.png")
 ```
 
@@ -3255,7 +3255,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_52.png")
 ```
 
@@ -3317,7 +3317,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_53.png")
 ```
 
@@ -3379,7 +3379,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_54.png")
 ```
 
@@ -3441,7 +3441,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_55.png")
 ```
 
@@ -3503,7 +3503,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_56.png")
 ```
 
@@ -3565,7 +3565,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_57.png")
 ```
 
@@ -3627,7 +3627,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_58.png")
 ```
 
@@ -3689,7 +3689,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_59.png")
 ```
 
@@ -3751,7 +3751,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_60.png")
 ```
 
@@ -3813,7 +3813,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_61.png")
 ```
 
@@ -3875,7 +3875,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_62.png")
 ```
 
@@ -3937,7 +3937,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_63.png")
 ```
 
@@ -3999,7 +3999,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_64.png")
 ```
 
@@ -4061,7 +4061,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_65.png")
 ```
 
@@ -4123,7 +4123,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_66.png")
 ```
 
@@ -4185,7 +4185,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_67.png")
 ```
 
@@ -4247,7 +4247,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_68.png")
 ```
 
@@ -4309,7 +4309,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_69.png")
 ```
 
@@ -4407,7 +4407,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_70.png")
 ```
 
@@ -4505,7 +4505,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_71.png")
 ```
 
@@ -4603,7 +4603,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_72.png")
 ```
 
@@ -4701,7 +4701,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_73.png")
 ```
 
@@ -4799,7 +4799,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_74.png")
 ```
 
@@ -4897,7 +4897,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_75.png")
 ```
 
@@ -4995,7 +4995,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_76.png")
 ```
 
@@ -5093,7 +5093,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_77.png")
 ```
 
@@ -5191,7 +5191,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_78.png")
 ```
 
@@ -5289,7 +5289,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_79.png")
 ```
 
@@ -5387,7 +5387,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_80.png")
 ```
 
@@ -5485,7 +5485,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_81.png")
 ```
 
@@ -5583,7 +5583,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_82.png")
 ```
 
@@ -5681,7 +5681,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_83.png")
 ```
 
@@ -5779,7 +5779,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_84.png")
 ```
 
@@ -5877,7 +5877,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_85.png")
 ```
 
@@ -5975,7 +5975,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_86.png")
 ```
 
@@ -6073,7 +6073,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_87.png")
 ```
 
@@ -6171,7 +6171,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_88.png")
 ```
 
@@ -6233,7 +6233,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_89.png")
 ```
 
@@ -6295,7 +6295,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_90.png")
 ```
 
@@ -6379,7 +6379,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_91.png")
 ```
 
@@ -6461,7 +6461,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_92.png")
 ```
 
@@ -6550,7 +6550,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_93.png")
 ```
 
@@ -6612,7 +6612,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_94.png")
 ```
 
@@ -6702,7 +6702,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_95.png")
 ```
 
@@ -6763,7 +6763,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_96.png")
 ```
 
@@ -6825,7 +6825,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_97.png")
 ```
 
@@ -6899,7 +6899,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_98.png")
 ```
 
@@ -6973,7 +6973,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_99.png")
 ```
 
@@ -7047,7 +7047,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_100.png")
 ```
 
@@ -7121,7 +7121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_101.png")
 ```
 
@@ -7195,7 +7195,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_102.png")
 ```
 
@@ -7269,7 +7269,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_103.png")
 ```
 
@@ -7343,7 +7343,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_104.png")
 ```
 
@@ -7417,7 +7417,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_105.png")
 ```
 
@@ -7491,7 +7491,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_106.png")
 ```
 
@@ -7565,7 +7565,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_107.png")
 ```
 
@@ -7639,7 +7639,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_108.png")
 ```
 
@@ -7713,7 +7713,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_109.png")
 ```
 
@@ -7817,7 +7817,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_110.png")
 ```
 
@@ -7887,7 +7887,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_111.png")
 ```
 
@@ -7957,7 +7957,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_112.png")
 ```
 
@@ -8027,7 +8027,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_113.png")
 ```
 
@@ -8097,7 +8097,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_114.png")
 ```
 
@@ -8198,7 +8198,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_115.png")
 ```
 
@@ -8268,7 +8268,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_116.png")
 ```
 
@@ -8338,7 +8338,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_117.png")
 ```
 
@@ -8408,7 +8408,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_118.png")
 ```
 
@@ -8478,7 +8478,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_119.png")
 ```
 
@@ -8573,7 +8573,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_120.png")
 ```
 
@@ -8644,7 +8644,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_121.png")
 ```
 
@@ -8715,7 +8715,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_122.png")
 ```
 
@@ -8786,7 +8786,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_123.png")
 ```
 
@@ -8857,7 +8857,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_124.png")
 ```
 
@@ -8952,7 +8952,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_125.png")
 ```
 
@@ -9023,7 +9023,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_126.png")
 ```
 
@@ -9094,7 +9094,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_127.png")
 ```
 
@@ -9165,7 +9165,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_128.png")
 ```
 
@@ -9236,7 +9236,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_129.png")
 ```
 
@@ -9326,7 +9326,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_130.png")
 ```
 
@@ -9397,7 +9397,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_131.png")
 ```
 
@@ -9468,7 +9468,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_132.png")
 ```
 
@@ -9539,7 +9539,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_133.png")
 ```
 
@@ -9610,7 +9610,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_134.png")
 ```
 
@@ -9705,7 +9705,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_135.png")
 ```
 
@@ -9776,7 +9776,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_136.png")
 ```
 
@@ -9847,7 +9847,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_137.png")
 ```
 
@@ -9918,7 +9918,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_138.png")
 ```
 
@@ -9989,7 +9989,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_139.png")
 ```
 
@@ -10079,7 +10079,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_140.png")
 ```
 
@@ -10150,7 +10150,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_141.png")
 ```
 
@@ -10221,7 +10221,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_142.png")
 ```
 
@@ -10292,7 +10292,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_143.png")
 ```
 
@@ -10363,7 +10363,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_144.png")
 ```
 
@@ -10463,7 +10463,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_145.png")
 ```
 
@@ -10534,7 +10534,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_146.png")
 ```
 
@@ -10605,7 +10605,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_147.png")
 ```
 
@@ -10676,7 +10676,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_148.png")
 ```
 
@@ -10747,7 +10747,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_149.png")
 ```
 
@@ -10837,7 +10837,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_150.png")
 ```
 
@@ -10908,7 +10908,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_151.png")
 ```
 
@@ -10979,7 +10979,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_152.png")
 ```
 
@@ -11050,7 +11050,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_153.png")
 ```
 
@@ -11121,7 +11121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_154.png")
 ```
 
@@ -11211,7 +11211,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_155.png")
 ```
 
@@ -11283,7 +11283,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_156.png")
 ```
 
@@ -11354,7 +11354,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_157.png")
 ```
 
@@ -11426,7 +11426,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_158.png")
 ```
 
@@ -11497,7 +11497,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_159.png")
 ```
 
@@ -11586,7 +11586,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_160.png")
 ```
 
@@ -11657,7 +11657,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_161.png")
 ```
 
@@ -11728,7 +11728,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_162.png")
 ```
 
@@ -11799,7 +11799,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_163.png")
 ```
 
@@ -11870,7 +11870,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_164.png")
 ```
 
@@ -11965,7 +11965,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_165.png")
 ```
 
@@ -12036,7 +12036,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_166.png")
 ```
 
@@ -12107,7 +12107,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_167.png")
 ```
 
@@ -12178,7 +12178,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_168.png")
 ```
 
@@ -12249,7 +12249,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_169.png")
 ```
 
@@ -12344,7 +12344,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_170.png")
 ```
 
@@ -12415,7 +12415,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_171.png")
 ```
 
@@ -12486,7 +12486,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_172.png")
 ```
 
@@ -12557,7 +12557,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_173.png")
 ```
 
@@ -12628,7 +12628,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_174.png")
 ```
 
@@ -12724,7 +12724,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_175.png")
 ```
 
@@ -12795,7 +12795,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_176.png")
 ```
 
@@ -12866,7 +12866,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_177.png")
 ```
 
@@ -12937,7 +12937,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_178.png")
 ```
 
@@ -13008,7 +13008,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_179.png")
 ```
 
@@ -13113,7 +13113,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_180.png")
 ```
 
@@ -13190,7 +13190,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_181.png")
 ```
 
@@ -13267,7 +13267,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_182.png")
 ```
 
@@ -13344,7 +13344,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_183.png")
 ```
 
@@ -13421,7 +13421,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_184.png")
 ```
 
@@ -13528,7 +13528,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_185.png")
 ```
 
@@ -13604,7 +13604,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_186.png")
 ```
 
@@ -13680,7 +13680,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_187.png")
 ```
 
@@ -13756,7 +13756,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_188.png")
 ```
 
@@ -13832,7 +13832,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_189.png")
 ```
 
@@ -13939,7 +13939,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_190.png")
 ```
 
@@ -14016,7 +14016,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_191.png")
 ```
 
@@ -14092,7 +14092,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_192.png")
 ```
 
@@ -14168,7 +14168,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_193.png")
 ```
 
@@ -14244,7 +14244,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_194.png")
 ```
 
@@ -14352,7 +14352,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_195.png")
 ```
 
@@ -14428,7 +14428,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_196.png")
 ```
 
@@ -14504,7 +14504,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_197.png")
 ```
 
@@ -14580,7 +14580,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_198.png")
 ```
 
@@ -14656,7 +14656,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_199.png")
 ```
 
@@ -14764,7 +14764,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_200.png")
 ```
 
@@ -14840,7 +14840,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_201.png")
 ```
 
@@ -14916,7 +14916,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_202.png")
 ```
 
@@ -14992,7 +14992,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_203.png")
 ```
 
@@ -15068,7 +15068,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_204.png")
 ```
 
@@ -15177,7 +15177,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_205.png")
 ```
 
@@ -15253,7 +15253,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_206.png")
 ```
 
@@ -15329,7 +15329,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_207.png")
 ```
 
@@ -15405,7 +15405,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_208.png")
 ```
 
@@ -15481,7 +15481,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_209.png")
 ```
 
@@ -15589,7 +15589,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_210.png")
 ```
 
@@ -15665,7 +15665,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_211.png")
 ```
 
@@ -15741,7 +15741,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_212.png")
 ```
 
@@ -15817,7 +15817,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_213.png")
 ```
 
@@ -15893,7 +15893,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_214.png")
 ```
 
@@ -15998,7 +15998,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_215.png")
 ```
 
@@ -16074,7 +16074,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_216.png")
 ```
 
@@ -16150,7 +16150,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_217.png")
 ```
 
@@ -16226,7 +16226,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_218.png")
 ```
 
@@ -16302,7 +16302,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_219.png")
 ```
 
@@ -16392,7 +16392,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_220.png")
 ```
 
@@ -16468,7 +16468,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_221.png")
 ```
 
@@ -16544,7 +16544,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_222.png")
 ```
 
@@ -16620,7 +16620,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_223.png")
 ```
 
@@ -16696,7 +16696,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_224.png")
 ```
 
@@ -16804,7 +16804,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_225.png")
 ```
 
@@ -16880,7 +16880,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_226.png")
 ```
 
@@ -16956,7 +16956,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_227.png")
 ```
 
@@ -17032,7 +17032,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_228.png")
 ```
 
@@ -17108,7 +17108,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_229.png")
 ```
 
@@ -17215,7 +17215,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_230.png")
 ```
 
@@ -17291,7 +17291,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_231.png")
 ```
 
@@ -17367,7 +17367,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_232.png")
 ```
 
@@ -17443,7 +17443,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_233.png")
 ```
 
@@ -17519,7 +17519,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_234.png")
 ```
 
@@ -17622,7 +17622,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_235.png")
 ```
 
@@ -17698,7 +17698,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_236.png")
 ```
 
@@ -17774,7 +17774,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_237.png")
 ```
 
@@ -17850,7 +17850,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_238.png")
 ```
 
@@ -17926,7 +17926,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_239.png")
 ```
 
@@ -18039,7 +18039,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_240.png")
 ```
 
@@ -18115,7 +18115,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_241.png")
 ```
 
@@ -18191,7 +18191,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_242.png")
 ```
 
@@ -18267,7 +18267,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_243.png")
 ```
 
@@ -18343,7 +18343,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_244.png")
 ```
 
@@ -18457,7 +18457,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_245.png")
 ```
 
@@ -18533,7 +18533,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_246.png")
 ```
 
@@ -18609,7 +18609,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_247.png")
 ```
 
@@ -18685,7 +18685,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_248.png")
 ```
 
@@ -18761,7 +18761,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_249.png")
 ```
 
@@ -18867,7 +18867,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_250.png")
 ```
 
@@ -18943,7 +18943,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_251.png")
 ```
 
@@ -19019,7 +19019,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_252.png")
 ```
 
@@ -19095,7 +19095,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_253.png")
 ```
 
@@ -19171,7 +19171,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_254.png")
 ```
 
@@ -19277,7 +19277,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_255.png")
 ```
 
@@ -19353,7 +19353,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_256.png")
 ```
 
@@ -19429,7 +19429,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_257.png")
 ```
 
@@ -19505,7 +19505,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_258.png")
 ```
 
@@ -19581,7 +19581,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_259.png")
 ```
 
@@ -19700,7 +19700,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_260.png")
 ```
 
@@ -19776,7 +19776,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_261.png")
 ```
 
@@ -19852,7 +19852,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_262.png")
 ```
 
@@ -19928,7 +19928,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_263.png")
 ```
 
@@ -20005,7 +20005,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_264.png")
 ```
 
@@ -20111,7 +20111,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_265.png")
 ```
 
@@ -20187,7 +20187,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_266.png")
 ```
 
@@ -20263,7 +20263,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_267.png")
 ```
 
@@ -20338,7 +20338,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_268.png")
 ```
 
@@ -20414,7 +20414,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_269.png")
 ```
 
@@ -20542,7 +20542,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_270.png")
 ```
 
@@ -20618,7 +20618,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_271.png")
 ```
 
@@ -20694,7 +20694,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_272.png")
 ```
 
@@ -20770,7 +20770,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_273.png")
 ```
 
@@ -20846,7 +20846,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_274.png")
 ```
 
@@ -20981,7 +20981,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_275.png")
 ```
 
@@ -21057,7 +21057,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_276.png")
 ```
 
@@ -21133,7 +21133,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_277.png")
 ```
 
@@ -21209,7 +21209,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_278.png")
 ```
 
@@ -21285,7 +21285,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_279.png")
 ```
 
@@ -21420,7 +21420,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_280.png")
 ```
 
@@ -21496,7 +21496,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_281.png")
 ```
 
@@ -21572,7 +21572,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_282.png")
 ```
 
@@ -21648,7 +21648,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_283.png")
 ```
 
@@ -21724,7 +21724,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_284.png")
 ```
 
@@ -21861,7 +21861,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_285.png")
 ```
 
@@ -21937,7 +21937,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_286.png")
 ```
 
@@ -22013,7 +22013,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_287.png")
 ```
 
@@ -22089,7 +22089,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_288.png")
 ```
 
@@ -22165,7 +22165,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_289.png")
 ```
 
@@ -22339,7 +22339,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_290.png")
 ```
 
@@ -22486,7 +22486,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_291.png")
 ```
 
@@ -22636,7 +22636,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_292.png")
 ```
 
@@ -22821,7 +22821,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_293.png")
 ```
 
@@ -22976,7 +22976,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_294.png")
 ```
 
@@ -23130,7 +23130,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_295.png")
 ```
 
@@ -23284,7 +23284,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_296.png")
 ```
 
@@ -23441,7 +23441,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_297.png")
 ```
 
@@ -23599,7 +23599,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_298.png")
 ```
 
@@ -23756,7 +23756,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_299.png")
 ```
 
@@ -23912,7 +23912,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_300.png")
 ```
 
@@ -24068,7 +24068,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_301.png")
 ```
 
@@ -24225,7 +24225,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_302.png")
 ```
 
@@ -24382,7 +24382,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_303.png")
 ```
 
@@ -24542,7 +24542,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_304.png")
 ```
 
@@ -24700,7 +24700,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_305.png")
 ```
 
@@ -24858,7 +24858,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_306.png")
 ```
 
@@ -25008,7 +25008,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_307.png")
 ```
 
@@ -25132,7 +25132,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_308.png")
 ```
 
@@ -25208,7 +25208,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_309.png")
 ```
 
@@ -25284,7 +25284,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_310.png")
 ```
 
@@ -25360,7 +25360,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_311.png")
 ```
 
@@ -25436,7 +25436,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_312.png")
 ```
 
@@ -25560,7 +25560,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_313.png")
 ```
 
@@ -25636,7 +25636,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_314.png")
 ```
 
@@ -25712,7 +25712,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_315.png")
 ```
 
@@ -25788,7 +25788,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_316.png")
 ```
 
@@ -25864,7 +25864,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_317.png")
 ```
 
@@ -25988,7 +25988,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_318.png")
 ```
 
@@ -26064,7 +26064,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_319.png")
 ```
 
@@ -26140,7 +26140,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_320.png")
 ```
 
@@ -26216,7 +26216,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_321.png")
 ```
 
@@ -26292,7 +26292,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_322.png")
 ```
 
@@ -26416,7 +26416,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_323.png")
 ```
 
@@ -26492,7 +26492,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_324.png")
 ```
 
@@ -26568,7 +26568,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_325.png")
 ```
 
@@ -26644,7 +26644,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_326.png")
 ```
 
@@ -26720,7 +26720,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_327.png")
 ```
 
@@ -26844,7 +26844,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_328.png")
 ```
 
@@ -26920,7 +26920,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_329.png")
 ```
 
@@ -26996,7 +26996,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_330.png")
 ```
 
@@ -27072,7 +27072,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_331.png")
 ```
 
@@ -27148,7 +27148,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_332.png")
 ```
 
@@ -27272,7 +27272,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_333.png")
 ```
 
@@ -27348,7 +27348,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_334.png")
 ```
 
@@ -27424,7 +27424,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_335.png")
 ```
 
@@ -27500,7 +27500,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_336.png")
 ```
 
@@ -27576,7 +27576,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_337.png")
 ```
 
@@ -27700,7 +27700,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_338.png")
 ```
 
@@ -27776,7 +27776,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_339.png")
 ```
 
@@ -27852,7 +27852,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_340.png")
 ```
 
@@ -27928,7 +27928,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_341.png")
 ```
 
@@ -28004,7 +28004,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_342.png")
 ```
 
@@ -28167,7 +28167,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_343.png")
 ```
 
@@ -28243,7 +28243,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_344.png")
 ```
 
@@ -28319,7 +28319,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_345.png")
 ```
 
@@ -28395,7 +28395,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_346.png")
 ```
 
@@ -28471,7 +28471,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_347.png")
 ```
 
@@ -28634,7 +28634,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_348.png")
 ```
 
@@ -28710,7 +28710,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_349.png")
 ```
 
@@ -28786,7 +28786,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_350.png")
 ```
 
@@ -28862,7 +28862,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_351.png")
 ```
 
@@ -28938,7 +28938,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_352.png")
 ```
 
@@ -29101,7 +29101,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_353.png")
 ```
 
@@ -29177,7 +29177,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_354.png")
 ```
 
@@ -29253,7 +29253,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_355.png")
 ```
 
@@ -29329,7 +29329,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_356.png")
 ```
 
@@ -29405,7 +29405,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_357.png")
 ```
 
@@ -29568,7 +29568,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_358.png")
 ```
 
@@ -29644,7 +29644,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_359.png")
 ```
 
@@ -29720,7 +29720,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_360.png")
 ```
 
@@ -29796,7 +29796,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_361.png")
 ```
 
@@ -29872,7 +29872,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_362.png")
 ```
 
@@ -30035,7 +30035,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_363.png")
 ```
 
@@ -30111,7 +30111,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_364.png")
 ```
 
@@ -30187,7 +30187,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_365.png")
 ```
 
@@ -30263,7 +30263,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_366.png")
 ```
 
@@ -30339,7 +30339,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_367.png")
 ```
 
@@ -30502,7 +30502,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_368.png")
 ```
 
@@ -30578,7 +30578,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_369.png")
 ```
 
@@ -30654,7 +30654,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_370.png")
 ```
 
@@ -30730,7 +30730,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_371.png")
 ```
 
@@ -30806,7 +30806,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_372.png")
 ```
 
@@ -30969,7 +30969,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_373.png")
 ```
 
@@ -31045,7 +31045,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_374.png")
 ```
 
@@ -31121,7 +31121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_375.png")
 ```
 
@@ -31197,7 +31197,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_376.png")
 ```
 
@@ -31273,7 +31273,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_377.png")
 ```
 
@@ -31436,7 +31436,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_378.png")
 ```
 
@@ -31512,7 +31512,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_379.png")
 ```
 
@@ -31588,7 +31588,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_380.png")
 ```
 
@@ -31664,7 +31664,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_381.png")
 ```
 
@@ -31740,7 +31740,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_382.png")
 ```
 
@@ -31903,7 +31903,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_383.png")
 ```
 
@@ -31979,7 +31979,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_384.png")
 ```
 
@@ -32055,7 +32055,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_385.png")
 ```
 
@@ -32131,7 +32131,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_386.png")
 ```
 
@@ -32207,7 +32207,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_387.png")
 ```
 
@@ -32370,7 +32370,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_388.png")
 ```
 
@@ -32446,7 +32446,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_389.png")
 ```
 
@@ -32522,7 +32522,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_390.png")
 ```
 
@@ -32598,7 +32598,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_391.png")
 ```
 
@@ -32674,7 +32674,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_392.png")
 ```
 
@@ -32837,7 +32837,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_393.png")
 ```
 
@@ -32913,7 +32913,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_394.png")
 ```
 
@@ -32989,7 +32989,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_395.png")
 ```
 
@@ -33065,7 +33065,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_396.png")
 ```
 
@@ -33141,7 +33141,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_397.png")
 ```
 
@@ -33304,7 +33304,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_398.png")
 ```
 
@@ -33380,7 +33380,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_399.png")
 ```
 
@@ -33456,7 +33456,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_400.png")
 ```
 
@@ -33532,7 +33532,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_401.png")
 ```
 
@@ -33608,7 +33608,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_402.png")
 ```
 
@@ -33688,7 +33688,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_403.png")
 ```
 
@@ -33764,7 +33764,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_404.png")
 ```
 
@@ -33840,7 +33840,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_405.png")
 ```
 
@@ -33916,7 +33916,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_406.png")
 ```
 
@@ -33992,7 +33992,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_407.png")
 ```
 
@@ -34072,7 +34072,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_408.png")
 ```
 
@@ -34148,7 +34148,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_409.png")
 ```
 
@@ -34224,7 +34224,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_410.png")
 ```
 
@@ -34300,7 +34300,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_411.png")
 ```
 
@@ -34376,7 +34376,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_412.png")
 ```
 
@@ -34456,7 +34456,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_413.png")
 ```
 
@@ -34532,7 +34532,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_414.png")
 ```
 
@@ -34608,7 +34608,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_415.png")
 ```
 
@@ -34684,7 +34684,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_416.png")
 ```
 
@@ -34760,7 +34760,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_417.png")
 ```
 
@@ -34840,7 +34840,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_418.png")
 ```
 
@@ -34916,7 +34916,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_419.png")
 ```
 
@@ -34992,7 +34992,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_420.png")
 ```
 
@@ -35068,7 +35068,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_421.png")
 ```
 
@@ -35144,7 +35144,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_422.png")
 ```
 
@@ -35237,7 +35237,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_423.png")
 ```
 
@@ -35313,7 +35313,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_424.png")
 ```
 
@@ -35389,7 +35389,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_425.png")
 ```
 
@@ -35465,7 +35465,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_426.png")
 ```
 
@@ -35541,7 +35541,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_427.png")
 ```
 
@@ -35621,7 +35621,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_428.png")
 ```
 
@@ -35697,7 +35697,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_429.png")
 ```
 
@@ -35773,7 +35773,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_430.png")
 ```
 
@@ -35849,7 +35849,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_431.png")
 ```
 
@@ -35925,7 +35925,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_432.png")
 ```
 
@@ -36005,7 +36005,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_433.png")
 ```
 
@@ -36107,7 +36107,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_434.png")
 ```
 
@@ -36183,7 +36183,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_435.png")
 ```
 
@@ -36259,7 +36259,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_436.png")
 ```
 
@@ -36335,7 +36335,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_437.png")
 ```
 
@@ -36411,7 +36411,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_438.png")
 ```
 
@@ -36511,7 +36511,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_439.png")
 ```
 
@@ -36587,7 +36587,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_440.png")
 ```
 
@@ -36663,7 +36663,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_441.png")
 ```
 
@@ -36739,7 +36739,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_442.png")
 ```
 
@@ -36815,7 +36815,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_443.png")
 ```
 
@@ -36895,7 +36895,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_444.png")
 ```
 
@@ -36971,7 +36971,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_445.png")
 ```
 
@@ -37047,7 +37047,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_446.png")
 ```
 
@@ -37123,7 +37123,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_447.png")
 ```
 
@@ -37199,7 +37199,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_448.png")
 ```
 
@@ -37279,7 +37279,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_449.png")
 ```
 
@@ -37355,7 +37355,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_450.png")
 ```
 
@@ -37431,7 +37431,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_451.png")
 ```
 
@@ -37507,7 +37507,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_452.png")
 ```
 
@@ -37583,7 +37583,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_453.png")
 ```
 
@@ -37662,7 +37662,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_454.png")
 ```
 
@@ -37738,7 +37738,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_455.png")
 ```
 
@@ -37814,7 +37814,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_456.png")
 ```
 
@@ -37890,7 +37890,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_457.png")
 ```
 
@@ -37966,7 +37966,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_458.png")
 ```
 
@@ -38045,7 +38045,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_459.png")
 ```
 
@@ -38121,7 +38121,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_460.png")
 ```
 
@@ -38197,7 +38197,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_461.png")
 ```
 
@@ -38273,7 +38273,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_462.png")
 ```
 
@@ -38349,7 +38349,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_463.png")
 ```
 
@@ -38412,7 +38412,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_464.png")
 ```
 
@@ -38488,7 +38488,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_465.png")
 ```
 
@@ -38564,7 +38564,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_466.png")
 ```
 
@@ -38640,7 +38640,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_467.png")
 ```
 
@@ -38716,7 +38716,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_468.png")
 ```
 
@@ -38779,7 +38779,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_469.png")
 ```
 
@@ -38855,7 +38855,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_470.png")
 ```
 
@@ -38931,7 +38931,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_471.png")
 ```
 
@@ -39007,7 +39007,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_472.png")
 ```
 
@@ -39083,7 +39083,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_473.png")
 ```
 
@@ -39174,7 +39174,7 @@ writeRaster(merogots,
 
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_474.png")
 ```
 
@@ -39250,7 +39250,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_475.png")
 ```
 
@@ -39326,7 +39326,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_476.png")
 ```
 
@@ -39402,7 +39402,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_477.png")
 ```
 
@@ -39478,7 +39478,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_478.png")
 ```
 
@@ -39534,7 +39534,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_479.png")
 ```
 
@@ -39616,7 +39616,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_480.png")
 ```
 
@@ -39674,7 +39674,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_481.png")
 ```
 
@@ -39731,7 +39731,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_482.png")
 ```
 
@@ -39816,7 +39816,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_483.png")
 ```
 
@@ -39875,7 +39875,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_484.png")
 ```
 
@@ -39932,7 +39932,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_485.png")
 ```
 
@@ -39989,7 +39989,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_486.png")
 ```
 
@@ -40073,7 +40073,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_487.png")
 ```
 
@@ -40130,7 +40130,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_488.png")
 ```
 
@@ -40187,7 +40187,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_489.png")
 ```
 
@@ -40272,7 +40272,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_490.png")
 ```
 
@@ -40329,7 +40329,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_491.png")
 ```
 
@@ -40386,7 +40386,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_492.png")
 ```
 
@@ -40441,7 +40441,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_493.png")
 ```
 
@@ -40524,7 +40524,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_494.png")
 ```
 
@@ -40581,7 +40581,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_495.png")
 ```
 
@@ -40638,7 +40638,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_496.png")
 ```
 
@@ -40722,7 +40722,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_497.png")
 ```
 
@@ -40779,7 +40779,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_498.png")
 ```
 
@@ -40837,7 +40837,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_499.png")
 ```
 
@@ -40897,7 +40897,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_500.png")
 ```
 
@@ -40958,7 +40958,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_501.png")
 ```
 
@@ -41018,7 +41018,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_502.png")
 ```
 
@@ -41078,7 +41078,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_503.png")
 ```
 
@@ -41137,7 +41137,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_504.png")
 ```
 
@@ -41197,7 +41197,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_505.png")
 ```
 
@@ -41266,7 +41266,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_506.png")
 ```
 
@@ -41339,7 +41339,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_507.png")
 ```
 
@@ -41413,7 +41413,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_508.png")
 ```
 
@@ -41486,7 +41486,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_509.png")
 ```
 
@@ -41560,7 +41560,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_510.png")
 ```
 
@@ -41629,7 +41629,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_511.png")
 ```
 
@@ -41701,7 +41701,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_512.png")
 ```
 
@@ -41774,7 +41774,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_513.png")
 ```
 
@@ -41846,7 +41846,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_514.png")
 ```
 
@@ -41918,7 +41918,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_515.png")
 ```
 
@@ -41987,7 +41987,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_516.png")
 ```
 
@@ -42059,7 +42059,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_517.png")
 ```
 
@@ -42131,7 +42131,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_518.png")
 ```
 
@@ -42203,7 +42203,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_519.png")
 ```
 
@@ -42275,7 +42275,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_520.png")
 ```
 
@@ -42343,7 +42343,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_521.png")
 ```
 
@@ -42415,7 +42415,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_522.png")
 ```
 
@@ -42487,7 +42487,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_523.png")
 ```
 
@@ -42560,7 +42560,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_524.png")
 ```
 
@@ -42632,7 +42632,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_525.png")
 ```
 
@@ -42693,7 +42693,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_526.png")
 ```
 
@@ -42755,7 +42755,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_527.png")
 ```
 
@@ -42838,7 +42838,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_528.png")
 ```
 
@@ -42903,7 +42903,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_529.png")
 ```
 
@@ -42978,7 +42978,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_530.png")
 ```
 
@@ -43052,7 +43052,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_531.png")
 ```
 
@@ -43127,7 +43127,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_532.png")
 ```
 
@@ -43203,7 +43203,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_533.png")
 ```
 
@@ -43264,7 +43264,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_534.png")
 ```
 
@@ -43325,7 +43325,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_535.png")
 ```
 
@@ -43387,7 +43387,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_536.png")
 ```
 
@@ -43470,7 +43470,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_537.png")
 ```
 
@@ -43532,7 +43532,7 @@ writeRaster(merogots,
             overwrite=TRUE)
 ```
 
-```{r, echo=FALSE, eval=FALSE, out.width = '100%'}
+```{r, echo=FALSE, eval=TRUE, out.width = '100%'}
 knitr::include_graphics("./Figures/maps4book/egv_538.png")
 ```
 
