@@ -52,9 +52,14 @@ to [version 1.0.1](https://zenodo.org/records/14277114) of the dataset;
 
 - [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
 summary statistics from raster layers using buffered polygon zones of multiple 
-radii and rasterizes them onto a common template grid. Insternally connected to 
-exact parts of the file names used in this project. If they are kept, can 
-be used in other places.
+radii and rasterizes them onto a common template grid. Internally hard coded to 
+use filenames (first and second part in the result of tiling functions) as used 
+in this project. If the filenames are kept, function can easily be used for 
+other projects, regions etc. Function can be used to run sequentially, however much 
+faster compute will be with parallel computing. If fast swap disk is available, 
+this function needs only c.a. 5 GiBs of RAM per worked to perform tasks in this 
+project. However, if the swap disk is not available, at least 20 GiBs of RAM per 
+worker need to be assigned.
 
 
 ### General purpose functions {#Ch02.01.02} 
@@ -116,7 +121,11 @@ that yields one value per zone and per input layer. Runs tile-by-tile (by
 tile_field), writes per-tile rasters, merges to final per-layer GeoTIFF(s), 
 then performs gap analysis (NA count within the template footprint and optional 
 maximum gap width) and optional IDW gap filling via WhiteboxTools. Returns a 
-compact data.frame with per-layer stats and timing.
+compact data.frame with per-layer stats and timing. Function can be used to run 
+sequentially, however much faster compute will be with parallel computing. If fast 
+swap disk is available, this function needs only 3 GiBs of RAM per worked 
+to perform tasks in this project. However, if the swap disk is not available, at 
+least 20 GiBs of RAM per worker need to be assigned.
 
 
 ## Other utility functions {#Ch02.02}
