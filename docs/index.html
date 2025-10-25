@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-10-24" />
+<meta name="date" content="2025-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -794,7 +794,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024</h1>
 <p class="author"><em>Andris Avotiņš</em></p>
-<p class="date"><em>2025-10-24</em></p>
+<p class="date"><em>2025-10-25</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -825,7 +825,7 @@ reproducing the work using verified command lines. A desirable side effect
 is to promote openness and reproducibility in scientific practice and practical
 science.</p>
 <ul>
-<li>Repo: <a href="https://github.com/aavotins/HiQBioDiv_EGVs">aavotins/HiQBioDiv_EGVs</a></li>
+<li>Home repository of this material: <a href="https://github.com/aavotins/HiQBioDiv_EGVs">aavotins/HiQBioDiv_EGVs</a></li>
 <li>Cite as needed using <code>book/book.bib</code>.</li>
 </ul>
 <div id="about-this-material" class="section level2 unnumbered hasAnchor">
@@ -879,8 +879,18 @@ function (at the end of it).</p>
 <p>Command lines are the most important part of this material for reproducibility.
 However, the person using them must ensure the availability of input data and
 maintain correct paths in the file tree.</p>
-<p>Command lines can also be found in text, for example, <code># comment as a command line in text</code>.</p>
-<p>Sometimes I will refer to R packages in the text, I will put them in curly
+<p>In this material code chunks are formatted as individual pieces to better pinpoint
+commands used for a job described in the text around. However, in practical setting the
+creation of ecogeographical variables will be much faster, if they will be combined
+in loops or other batch processing setup. Practically used command lines are available
+in the <a href="https://github.com/aavotins/HiQBioDiv_EGVs">home repository</a> of this material at<br />
+<code>Data/RScripts_final</code>, they can be executed in an alphanumeric order, if not
+specifically. We performed parts of the compute on the University of Latvia
+Intitute of Numerical Modelling HPC cluster with the same file tree as in this
+material. Shell scripts used to run R commands are available in
+the <a href="https://github.com/aavotins/HiQBioDiv_EGVs">home repository</a> of this material at<br />
+<code>Data/hpc_io/Jobs_shell/2024/EGVs</code>.</p>
+<p>Sometimes we will refer to R packages in the text, we will put them in curly
 brackets, for example, {package}.</p>
 <ul>
 <li><p><em>graphics</em> - occasional diagrams that describe the workflow or data

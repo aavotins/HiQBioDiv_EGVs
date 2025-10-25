@@ -17,6 +17,18 @@ with data and executing command lines will replicate our work. Another option fo
 to clone the [template](https://github.com/aavotins/HiQBioDiv_FileTree) repository. Regardless of the 
 option chosen, it is the user's responsibility to acquire the geodata itself.
 
+In the documentation code chunks are formatted as individual pieces to better pinpoint 
+commands used for a job described in the text around. However, in practical setting the 
+creation of ecogeographical variables will be much faster, if they will be combined 
+in loops or other batch processing setup. Practically used command lines are available 
+in the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
+`Data/RScripts_final`, they can be executed in an alphanumeric order, if not 
+specifically. We performed parts of the compute on the University of Latvia 
+Intitute of Numerical Modelling HPC cluster with the same file tree as in this 
+material. Shell scripts used to run R commands are available in 
+the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
+`Data/hpc_io/Jobs_shell/2024/EGVs`.
+
 Our workflows rely heavily on the R package [{egvtools}](https://aavotins.github.io/egvtools/), which 
 we created specifically for this purpose and which is guaranteed to work with a 
 dedicated [container](https://hub.docker.com/repository/docker/aavotins/hiqbiodiv-container/general) even 

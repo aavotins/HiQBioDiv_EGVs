@@ -1,7 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
 author: "Andris Avotiņš"
-date: "2025-10-24"
+date: "2025-10-25"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, refs.bib]
@@ -54,7 +54,7 @@ reproducing the work using verified command lines. A desirable side effect
 is to promote openness and reproducibility in scientific practice and practical 
 science.
 
-- Repo: [aavotins/HiQBioDiv_EGVs](https://github.com/aavotins/HiQBioDiv_EGVs)
+- Home repository of this material: [aavotins/HiQBioDiv_EGVs](https://github.com/aavotins/HiQBioDiv_EGVs)
 - Cite as needed using `book/book.bib`.
 
 
@@ -117,11 +117,21 @@ function (at the end of it).
 
 Command lines are the most important part of this material for reproducibility. 
 However, the person using them must ensure the availability of input data and 
-maintain correct paths in the file tree.
+maintain correct paths in the file tree. 
 
-Command lines can also be found in text, for example, `# comment as a command line in text`.
+In this material code chunks are formatted as individual pieces to better pinpoint 
+commands used for a job described in the text around. However, in practical setting the 
+creation of ecogeographical variables will be much faster, if they will be combined 
+in loops or other batch processing setup. Practically used command lines are available 
+in the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
+`Data/RScripts_final`, they can be executed in an alphanumeric order, if not 
+specifically. We performed parts of the compute on the University of Latvia 
+Intitute of Numerical Modelling HPC cluster with the same file tree as in this 
+material. Shell scripts used to run R commands are available in 
+the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
+`Data/hpc_io/Jobs_shell/2024/EGVs`.
 
-Sometimes I will refer to R packages in the text, I will put them in curly 
+Sometimes we will refer to R packages in the text, we will put them in curly 
 brackets, for example, {package}.
 
 * *graphics* - occasional diagrams that describe the workflow or data 
