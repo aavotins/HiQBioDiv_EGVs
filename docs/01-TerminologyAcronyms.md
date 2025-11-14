@@ -129,6 +129,8 @@ Acronyms:
 
 **CRS** - coordinate reference system
 
+**DW** - [Dynamic World](#Ch04.08)
+
 **EGV** - ecogeographical variables
 
 **SDM** - species distribution modelling

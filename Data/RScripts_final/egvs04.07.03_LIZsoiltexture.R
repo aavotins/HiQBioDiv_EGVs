@@ -19,7 +19,7 @@ tuksas=augsnes %>%
 
 # classification
 clay=c("M","M1","Mp","M2","sM1","sMp1")
-silt=c("sM", "sMp", "M2", "sM2", "sMp2", "sM3", "sMp3")
+silt=c("sM", "sMp", "sM2", "sMp2", "sM3", "sMp3")
 sand=c("mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D")
 peat=c("l", "vd", "vj", "n","T")
 augsnes=augsnes %>% 

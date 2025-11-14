@@ -2047,17 +2047,28 @@ sfarrow::st_write_parquet(clcLV3, "./Geodata/2024/CLC/CLC_LV_2018.parquet")
 ## Publicly available LVM data {#Ch04.06}
 
 [Latvian State Forests geospatial data on forest infrastructure and its description](https://data.gov.lv/dati/lv/dataset/as-latvijas-valsts-mezi-mezsaimniecibas-infrastruktura). The 
-following data sets were used in the project:
+following datasets were used in the project:
+
 - roads:
+
     - forest roads;
+    
     - forest roads to be developed;
+    
     - turning areas;
+    
     - changeover areas;
+    
     - driveways;
+    
 - drainage systems:
+
     - ditches;
+    
     - drainage systems;
+    
     - renovated drainage facilities.
+    
 Initially, no additional processing of this data was performed. It was used to 
 prepare [geodata products](#Ch05) (more specifically, [Landscape classification](#Ch05.03)).
 
@@ -2067,15 +2078,14 @@ Data were downloaded to `Geodata/2024/LVM_OpenData`
 
 Directory `Geodata/2024/Soils/` contains various soil related datasets that need 
 to be combined (soil texture) or can be used individually (soil chemistry). These 
-datasets and their location in the filetree are documented in following subchapters.
+datasets and their location in the file tree are documented in following subchapters.
 
 ### Soil chemistry {#Ch04.07.01}
 
 Data on soil chemistry are obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
 Soil database [@esdac2]. Dataset decribing soil chemistry is derived from [LUCAS 
-2009/2012 topsoil data](https://esdac.jrc.ec.europa.eu/content/chemical-properties-european-scale-based-lucas-topsoil-data). There are several chemical properties available with 
-download, however not all of them are experts chosen for SDM, therefore not used 
-further in this work:
+2009/2012 topsoil data](https://esdac.jrc.ec.europa.eu/content/chemical-properties-european-scale-based-lucas-topsoil-data). There are several chemical properties available for 
+download, however not all of them were choser by experts for SDM:
 
 - "P": used;
 
@@ -2089,7 +2099,7 @@ further in this work:
 
 - "pH_CaCl": not used;
 
-- "ph_H2o_ration_ph_CaCl": not used;
+- "ph_H2O_ration_ph_CaCl": not used;
 
 - "pH_H2O": used;
 
@@ -2100,15 +2110,15 @@ was carried out.
 
 ### Soil texture: Europe {#Ch04.07.02}
 
-Data on soil texture are obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
+Data on soil texture were obtained from [European Soil Data Centre's](https://esdac.jrc.ec.europa.eu/) European 
 Soil database [@esdac2]. Dataset is available as [European Soil Database v2 Raster Library 1kmx1km](https://esdac.jrc.ec.europa.eu/content/european-soil-database-v2-raster-library-1kmx1km). There 
-are several properties available with download, `TXT` was used to 
-create [soil texture product](#Ch05.02). Files were downloaded to `eodata/2024/Soils/ESDAC/texture/`. 
+are several properties available for download, `TXT` was used to 
+create [soil texture product](#Ch05.02). Files were downloaded to `Geodata/2024/Soils/ESDAC/texture/`. 
 
-During the preprocessing (code below) layer was 
+During the preprocessing (see code below) the layer was 
 projected to match 10 m template with "near" as interpolation method, value `0` 
-substituted with `NA` and masked and cropped to template. Result was saved for further 
-processing.
+substituted with `NA` and the result wars masked and cropped to the template. 
+Result was saved for further processing.
 
 
 ``` r
@@ -2143,31 +2153,31 @@ plot(sdTEXT2)
 
 Topsoil characteristics in Latvia were mapped in the mid-20th century, almost 
 exclusively in farmlands. With time, data were digitised and combined with some 
-other information creating artefacts. Therefore preprocessing was necessary. The 
-version we used was obtained form project "GOODWATER" C1D1_Deliverable_R2.
+other information resulting in artefacts. Therefore preprocessing was necessary. The 
+version we used was obtained from the project "GOODWATER" C1D1_Deliverable_R2.
 
 File is stored at `Geodata/2024/Soils/TopSoil_LV/`.
 
 Preprocessing included:
 
-- reclassification:
+- reclassification based on the field `GrSast`:
 
-    - we coded as `clay` (3) following labels from field `GrSast` - "M","M1","Mp","M2","sM1","sMp1";
+    - `sand` (1): "mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D";
     
-    - we coded as `silt` (2) following labels from field `GrSast` - "sM", "sMp", "M2", "sM2", "sMp2", "sM3", "sMp3";
+    - `silt` (2): "sM", "sMp", "sM2", "sMp2", "sM3", "sMp3";
 
-    - we coded as `sand` (1) following labels from field `GrSast` - "mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D";
+    - `clay` (3): "M","M1","Mp","M2","sM1","sMp1";
     
-    - we coded as `organic` (4) following labels from field `GrSast` - "l", "vd", "vj", "n","T";
+    - `organic` (4): "l", "vd", "vj", "n","T";
     
-    - left others as unclassified.
+    - and other categories were left unclassified.
     
 - coordinate transformation to epsg:3059;
 
-- invsestigated resulting layer looking for anomalies by scrolling in interactive 
-GIS. Investigations led to exclusion of land parcels from 200 ha.
+- invsestigation of the resulting layer looking for anomalies by scrolling in interactive 
+GIS, which led to exclusion of land parcels larger than 200 ha.
 
-- rasterization to 10 m template with highest class code prevailing.
+- rasterization to 10 m template with the highest class code prevailing.
 
 
 
@@ -2193,7 +2203,7 @@ tuksas=augsnes %>%
 
 # classification
 clay=c("M","M1","Mp","M2","sM1","sMp1")
-silt=c("sM", "sMp", "M2", "sM2", "sMp2", "sM3", "sMp3")
+silt=c("sM", "sMp", "sM2", "sMp2", "sM3", "sMp3")
 sand=c("mS", "mSp", "S", "sS", "iS", "Gr", "mGr", "D")
 peat=c("l", "vd", "vj", "n","T")
 augsnes=augsnes %>% 
@@ -2230,29 +2240,29 @@ plot(virsaugsnem2)
 
 ### Soil texture: Quaternary {#Ch04.07.04}
 
-Data on Quaternary Geology are digitised and stored by University of Latvia 
-Geology group.
+Data on Quaternary Geology are digitised and stored by the University of Latvia 
+Department of Geology.
 
 File is stored at `Geodata/2024/Soils/QuaternaryGeology_LV/`.
 
 Preprocessing included:
 
-- reclassification:
+- reclassification based on field `Litologija`:
 
-    - we coded as `sand` (1) following values from field `Litologija` - "smilts", "smilts_aleiritiska", 
+    - `sand` (1): "smilts", "smilts_aleiritiska", 
     "smilts_dunjaina", "smilts_grants", "smilts_grants_oli", "smilts_grants_oli_aleirits", "smilts_kudraina", 
     "smilts_videjgraudaina, malsmilts", "smilts_videjgraudaina"~"Sand";
     
-    - we coded as `silt` (2) following values from field `Litologija` - "aleirits", "aleirits_malains",
+    - `silt` (2): "aleirits", "aleirits_malains",
     "morena", "smilts_aleirits_mals", "smilts_aleirits_sapropelis", "smilts_malaina_dazadgraudaina, malsmilts";
     
-    - we coded as `clay` (3) following values from field `Litologija` - "mals", "mals_aleiritisks";
+    - `clay` (3): "mals", "mals_aleiritisks";
     
-    - we coded as `organic` (4) following values from field `Litologija` - "dunjas", "kudra";
+    - `organic` (4): "dunjas", "kudra";
 
 - coordinate transformation to epsg:3059;
 
-- rasterization to 10 m template with highest class code prevailing.
+- rasterization to 10 m template with the highest class code prevailing.
 
 
 
@@ -2317,15 +2327,15 @@ plot(apaksaugsnem)
 
 ### Organic soils: SILAVA {#Ch04.07.05}
 
-The distribution of organic soils was modelled by EU LIFE Programme project 
+The distribution of organic soils was modelled under the EU LIFE Programme project 
 "Demonstration of climate change mitigation potential of nutrients rich organic 
 soils in Baltic States and Finland" at the scientific institue SILAVA. Results are 
 available from their web service: https://silava.forestradar.com/geoserver/silava
 
 Downloaded file was stored at `Geodata/2024/Soils/OrganicSoils_SILAVA/`.
 
-Even tough the layer covers whole of Latvia, it has visible inconsistencies, 
-particularly stripes. These were drawn manually (as vector polygons) and masked 
+Even though the layer covers all of Latvia, it has visible inconsistencies, 
+particularly stripes. These were digitised manually (as vector polygons) and masked 
 out as a part of preprocessing. 
 
 For further soil texture analysis we saved a GeoTIFF file with only presences.
@@ -2370,7 +2380,7 @@ writeRaster(silava_BezStripam,
 ### Organic soils: LU {#Ch04.07.06}
 
 The distribution of organic soils in farmlands was modelled by the University of 
-Latvia project "Improvement of sustainable soil resource management in agriculture".
+Latvia project "Improvement of sustainable soil resource management in agriculture: E2SOILAGRI".
 
 From all the results we used layer `YN_prognozes_smooth.tif` stored 
 at `Geodata/2024/Soils/OrganicSoils_LU/`.
@@ -2411,7 +2421,7 @@ classifies land cover and land use (LULC) into nine categories (0=water, 1=trees
 8=snow_and_ice), for each ESA Copernicus Sentinel-2 image with identified 
 cloudiness ≤35, allowing for filtering and various aggregations [@DynWorld].
 
-DW input information - raster layer for each season in each year - prepared on 
+DW input information - raster layer for each season in each year - was prepared on 
 the Google Earth Engine platform [@GEEpaper] using 
 a [replication script](https://code.earthengine.google.com/0f9fd61ee41af11d218ce8692abebe9b). 
 To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
@@ -2487,15 +2497,15 @@ canopy cover in 2000, its annual growth from 2001 to 2012, and its annual
 loss from 2001 to the current version, which is updated annually [@theGFW]. The 
 data is available both on the [project website](https://data.globalforestwatch.org/documents/941f17325a494ed78c4817f9bb20f33a/explore) 
 and on [GEE](https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2024_v1_12), where 
-it was developed. This project uses v1.12, in which the last year of tree loss 
-dating is 2024, preparing it for download on the GEE platform with 
+it was developed. This project used v1.12, in which the last year of tree loss 
+dating was 2024, preparing it for download on the GEE platform with 
 this [replication script](https://code.earthengine.google.com/4a12b7504ceafe7f422dd7efbe804b67). 
 To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
 and sufficient space on Google Drive. When executing the command lines, you will 
 be offered to download the file, which you need to save to Google Drive.
 
 After executing the command lines and preparing the results in Google Drive, 
-four files are available for download. The location to download them is 
+four files become available for download. The location to download them is 
 `Geodata/2024/Trees/GFW/RAW/`. After download, these files need to be projected 
 to match the reference raster.
 
@@ -2525,8 +2535,8 @@ reflectance classification of forest and non-forest land with a pixel
 resolution of 25 m. Forests are classified as areas of at least 0.5 ha covered 
 with trees, where tree cover (at least 5 m high) is at least 10% [@PALSARForest]. 
 The data is available at [GEE](https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_FNF4). 
-This project uses a 4-class version (1=Dense Forest, 2=Non-dense Forest, 
-3=Non-Forest, 4=Water), in which the last tree cover dating year is 2020, 
+This project used a 4-class version (1=Dense Forest, 2=Non-dense Forest, 
+3=Non-Forest, 4=Water), in which the last tree cover dating year was 2020, 
 prepared for download on the GEE platform with this 
 [replication script](https://code.earthengine.google.com/3ec78ab057e6c8910cb1546002132b34). 
 To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
@@ -2534,15 +2544,14 @@ and sufficient space on Google Drive. When executing the command lines, you will
 be offered to download the file, which you need to save to Google Drive.
 
 After executing the command lines and preparing the results in Google Drive, 
-four files are available for download. The location to download them is 
+four files become available for download. The location to download them is 
 `Geodata/2024/Trees/Palsar/RAW/`. After download, these files need to be projected 
 to match the reference raster and merged. In this resource, trees are coded into 
 two groups: 1=Dense Forest and 2=Non-dense Forest, which need to be merged and 
-the rest converted to missing values (code below).
+the rest converted to missing values (see code below).
 
-Although the data in this resource describes the situation in 2020 rather 
-than 2024, it has been used because [The Global Forest Watch data](#Ch04.09) is 
-available to describe the disappearance of tree canopy cover, but the appearance 
+Although this resource reflects conditions in 2020 rather 
+than 2024, we used it because [The Global Forest Watch data](#Ch04.09) provides reliable data on canopy loss, but the appearance 
 of canopy cover is not so rapid that there would be significant changes over a 
 four-year period.
 
@@ -2589,16 +2598,15 @@ Climatologies at high resolution for the Earth's land surface areas (CHELSA) is
 is based on statistical downscaling of atmospheric temperatures. The precipitation 
 algorithm incorporates orographic predictors including wind fields, valley 
 exposition, and boundary layer height, with a subsequent bias correction. CHELSA 
-climatological data has a similar accuracy as other products for temperature, but 
-that its predictions of precipitation patterns are better [@CHELSA]. Data 
+climatological data has a similar accuracy as other products for temperature, but  its predictions of precipitation patterns are better [@CHELSA]. Data 
 (1980-2010 baseline) are freely available for download 
 from [homepage](https://chelsa-climate.org/) forwarding 
 to download server, providing download links for selected products. There is also technical 
 specification available, to decode layer names (https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf).
 
-The download links we used together with renaming scheme are [available](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv) 
+The download links we used together with the renaming scheme are [included](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv) 
 with this document. The following command lines perform download, crop to the 
-extent of Latvia (using 1 km vector grid) and saves files for further processing 
+extent of Latvia (using 1 km vector grid) and save the files for further processing 
 described with other [EGVs](#Ch06).
 
 
@@ -2657,7 +2665,7 @@ worldclim [@worldclim_hijmans]. We downloaded (to `Geodata/2024/HydroClim/`)
 averaged upstream climate from [Zenodo repository](https://zenodo.org/records/5089529) 
 (available also from [Dryad](https://datadryad.org/dataset/doi:10.5061/dryad.dv920)) 
 and cropped to the extent of Latvia and renamed files for further processing 
-with the code below. Renaming scheme is [published with document](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv)
+with the code below. Renaming scheme is [published with document](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv).
 
 
 ``` r
@@ -2713,10 +2721,9 @@ with the first images available earlier. Each satellite captures high-resolution
 images (from 10 m (at the equator) pixel resolution) in 13 spectral channels 
 with a return time of up to 5 days (more frequently closer to the poles) (https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2). The 
 data from this mission is freely available, including on the Google Earth Engine 
-platform [@GEEpaper] for various large-scale pre-processing and analysis. We use 
+platform [@GEEpaper] for various large-scale pre-processing and analysis. We used 
 the harmonized Level-2A (https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED#description) product, applying a cloud mask that includes not only cloud filtering but also 
-shadow filtering, so that for each filtered (cloud and seasonal - from April to 
-October and from 2020 to 2024) to calculate the normalized difference vegetation 
+shadow filtering. For each filtered image (cloud-free, April-October, 2020-2024), we computed the normalized difference vegetation 
 index (NDVI), the normalized difference moisture index (NDMI), and the 
 normalized difference water index (NDWI) as well as various metrics. 
 A [replication script](https://code.earthengine.google.com/78024b3354cccb526159fd865b214771) 
@@ -2822,10 +2829,10 @@ for(i in seq_along(unikalie)){
 
 ## Waste and garbage disposal sites, landfills {#Ch04.14}
 
-Information on landfills has been compiled from [VARAM](https://www.varam.gov.lv/sites/varam/files/content/files/atkritumu_poligoni_lv_karte.pdf) and 
-Latvian Environment, Geology and Meteorology Center 
+Information on landfills has been compiled from [The Ministry of Smart Administration and Regional Development](https://www.varam.gov.lv/sites/varam/files/content/files/atkritumu_poligoni_lv_karte.pdf) and 
+Latvian Environment, Geology and Meteorology Centre's report,  
 ["Report on landfills in Latvia in 2023"](https://videscentrs.lvgmc.lv/files/Vide/Atkritumi_un_radiacijas_objekti/Nr_3_parskats_par_atkritumiem/3Atkritumi_kopsavilkums_2023.pdf) listed landfills and their addresses. The coordinates required 
-for the preparation of EGVs were found by combining the 
+for the preparation of EGVs were obtained by combining the 
 resources https://www.google.com/maps and https://balticmaps.eu/. In addition to 
 the resources mentioned above, an object was added at the address 
 "Dardedzes C, Mārupes pag., Mārupes nov., Latvia, LV-2166".
@@ -2842,28 +2849,28 @@ and [added](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/20
 
 With the publication of continuous aerial laser scanning data for the territory of Latvia (https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0), various 
 high-resolution (1 m and higher) digital surface models (DSM) and 
-digital elevation models (DEM) have been developed. Since the input data is the 
-same in all cases, the values of these (corresponding) models are identical 
+digital elevation models (DEM) have been developed. Since the input data was the 
+same in all cases, the values of these (corresponding) models were identical 
 across almost the entire territory of the country. However, airborne laser 
-scanning data (1) is not available for the entire territory of the country, 
-and (2) there are differences between the models in terms of filling (availability 
+scanning data (1) was not available for the entire territory of the country, 
+and (2) there were differences between the models in terms of filling (availability 
 of values) outside inland waters and (3) filling of water bodies themselves. 
-However, for areas covered by data on land, the values are almost 
-identical (Pearson's correlation coefficients between the DEMs developed 
-by LU ĢZZF, LVMI Silava, and LĢIA are greater than 0.999999).
+However, for areas covered by data on land, the values were almost 
+identical. Pearson's correlation coefficients between the DEMs developed 
+by LU ĢZZF, LVMI Silava, and LĢIA were greater than 0.999999.
 
-The arithmetic mean between the DEMs developed by LU ĢZZF and LVMI Silava, 
-prepared in the University of Latvia project "Improvement of sustainable soil resource management 
-in agriculture", was used as the base DEM. The resolution of this DEM is 1 m, 
-which is not necessary for species distribution modeling input data, therefore 
-the layer is designed to correspond to the reference 10 m raster.
+The two DEMs (LU ĢZZF and LVMI Silava) were combined (arithmetic mean) within 
+the University of Latvia project "Improvement of sustainable soil resource management 
+in agriculture: E2SOILAGRI", was used as the working DEM. The resolution of this DEM is 1 m, 
+which is too detailed for species distribution modeling input data, therefore 
+the layer was designed to correspond to the reference 10 m raster.
 
-When comparing the projected DEM with the reference, there are clearly 
-distinguishable areas where there is no data. This has been solved by using 
+When investigating the combined DEM, there were clearly 
+visible areas with no data. This has been solved by using 
 the DEM with a resolution of 10 m developed by Māris Nartišs (LU ĢZZF) in 2018, 
-which covers the entire territory of Latvia without gaps. To prevent sharp 
-edges from forming in the fill areas (smooth transitions), an arithmetic mean 
-layer was created, covering the entire territory of Latvia and matching the 
+which covers the entire territory of Latvia without gaps. To avoid sharp 
+edges and ensure smooth transitions, we created an arithmetic mean 
+layer covering all of Latvia and aligned to the 
 reference raster.
 
 A slope layer has also been created from this raster, which is designed in 
@@ -2952,13 +2959,13 @@ analogically connected to the coastline file obtained from the same resource.
 ## Bogs and Mires: EDI {#Ch04.17}
 
 Data (training and classification) used in project "Remote Sensing and Machine 
-Learning for Peatland Habitat Monitoring (PurvEO)" by Institute of electronics 
-and computer science are stored at `Geodata/2024/Bogs_EDI`.
+Learning for Peatland Habitat Monitoring (PurvEO)" by the Institute of electronics 
+and computer science were stored at `Geodata/2024/Bogs_EDI`.
 
-Preprocessing combines this information to create two layers:
+Preprocessing was carried out to create two layers:
 
 - `EDI_BogsYN.tif`: training and classification results on open raised bogs (EU 
-protected habitat codes 7110 and 7120) and locations where on of those overlaps 
+protected habitat codes 7110 and 7120) and locations where one of those overlapped 
 with transitional mires (EU protected habitat code 7140);
 
 - `EDI_TransitionalMiresYN.tif`: training and classification results on 
