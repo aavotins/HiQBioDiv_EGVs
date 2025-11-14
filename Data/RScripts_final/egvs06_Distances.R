@@ -26,7 +26,7 @@ distegv=distance2egv(input = builtup,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Builtup_cell.tif",
-                     layername = "egv_89")
+                     layername = "egv_089")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Builtup_cell.tif"))
 rm(builtup)
@@ -42,7 +42,7 @@ distegv=distance2egv(input = trees_inside,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_ForestInside_cell.tif",
-                     layername = "egv_90")
+                     layername = "egv_090")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_ForestInside_cell.tif"))
 rm(trees_inside)
@@ -66,7 +66,7 @@ distegv=distance2egv(input = permgrass_t2,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_GrasslandPermanent_cell.tif",
-                     layername = "egv_91")
+                     layername = "egv_091")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_GrasslandPermanent_cell.tif"))
 rm(distegv)
@@ -101,7 +101,7 @@ distegv=distance2egv(input = landfills_bg,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Landfill_cell.tif",
-                     layername = "egv_92")
+                     layername = "egv_092")
 distegv
 
 # Distance_Sea_cell.tif	egv_93 ----
@@ -125,7 +125,7 @@ distegv=distance2egv(input = sea_bg,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Sea_cell.tif",
-                     layername = "egv_93")
+                     layername = "egv_093")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Sea_cell.tif"))
 rm(sea)
@@ -144,7 +144,7 @@ distegv=distance2egv(input = trees,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Trees_cell.tif",
-                     layername = "egv_94")
+                     layername = "egv_094")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Trees_cell.tif"))
 rm(trees)
@@ -174,7 +174,7 @@ distegv=distance2egv(input = wastw_bg,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Waste_cell.tif",
-                     layername = "egv_95")
+                     layername = "egv_095")
 distegv
 rm(waste)
 rm(waste2)
@@ -196,7 +196,7 @@ distegv=distance2egv(input = water,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Water_cell.tif",
-                     layername = "egv_96")
+                     layername = "egv_096")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Water_cell.tif"))
 rm(water)
@@ -214,7 +214,7 @@ distegv=distance2egv(input = water_outside,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_WaterInside_cell.tif",
-                     layername = "egv_97")
+                     layername = "egv_097")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_WaterInside_cell.tif"))
 rm(water_outside)

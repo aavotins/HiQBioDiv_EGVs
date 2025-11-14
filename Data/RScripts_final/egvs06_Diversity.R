@@ -36,7 +36,7 @@ radius_function(
 
 # Diversity_Farmland_r500.tif	egv_98
 slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif")
-names(slanis)="egv_98"
+names(slanis)="egv_098"
 slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif",
@@ -44,7 +44,7 @@ writeRaster(slanis2,
 
 # Diversity_Farmland_r1250.tif	egv_99
 slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif")
-names(slanis)="egv_99"
+names(slanis)="egv_099"
 slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif",
