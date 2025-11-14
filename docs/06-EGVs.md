@@ -4262,7 +4262,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4359,7 +4359,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4456,7 +4456,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4553,7 +4553,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4650,7 +4650,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4747,7 +4747,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4844,7 +4844,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -4941,7 +4941,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5038,7 +5038,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5135,7 +5135,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5232,7 +5232,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - min - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5329,7 +5329,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5426,7 +5426,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5523,7 +5523,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5620,7 +5620,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5717,7 +5717,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5814,7 +5814,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -5911,7 +5911,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -6008,7 +6008,7 @@ is used. First, basin CRS is transformed to epsg:3059. Then zonal statistics (pe
 layer specific summary function - max - are calculated (`exactextractr::exact_extract()`) 
 and then rasterized with `egvtools::polygon2input()`. Once rasterized to input data, 
 EGV is created with `egvtools::input2egv()`. To prevent from gaps at the edges, 
-inderse distance weighted (power = 2) gap filling is implemented. To save disk space, 
+inverse distance weighted (power = 2) gap filling is implemented. To save disk space, 
 intermediate input layer is unlinked. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
 by root mean squared error.
@@ -6618,7 +6618,7 @@ writeRaster(merogots,
 
 **English name:** Distance to Waterbodies, average within the analysis cell (1 ha)
 
-**Latvian name:** Attālums līdz ūdenstilpēn, vidējais analīzes šūnā (1 ha)
+**Latvian name:** Attālums līdz ūdenstilpēm, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200 
 reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. 
@@ -11347,7 +11347,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpju malu garums nalīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values equal to 200 and from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the layer (1=presence) is covered over 
 the nulls layer (presence=0) and written to file (matching the input). Finally, with 
@@ -11715,7 +11715,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Farmland within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then values equal to 200 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then, the first layer (1=presence) is covered over 
 the second layer (presence=0) and written to file (matching the input). Finally, with 
@@ -11809,7 +11809,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Farmland within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 0,5 km ainavā
 
 **Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -11879,7 +11879,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Farmland within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 1,25 km ainavā
 
 **Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -11949,7 +11949,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Farmland within the 3 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 3 km ainavā
 
 **Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12019,7 +12019,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Farmland within the 10 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar lauksaimniecības zemēm garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 10 km ainavā
 
 **Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12089,7 +12089,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Grassland within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpu malu ar zālājiem garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu ar zālājiem garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values lequal to 330 from [Landscape classification](#Ch05.03) are coded as 1 and everything else as NA. Then values equal to 200 from [Landscape classification](#Ch05.03) are coded as 0 and everything else as NA. Then, the first layer (1=presence) is covered over 
 the second layer (presence=0) and written to file (matching the input). Finally, with 
@@ -12183,7 +12183,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Grassland within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar zālājiem garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem garums 0,5 km ainavā
 
 **Procedure:** Total edge at 500 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12253,7 +12253,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Grassland within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar zālājiem garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem garums 1,25 km ainavā
 
 **Procedure:** Total edge at 1250 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12323,7 +12323,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Grassland within the 3 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar zālājiem garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem garums 3 km ainavā
 
 **Procedure:** Total edge at 3000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12393,7 +12393,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water bordering with Grassland within the 10 km landscape
 
-**Latvian name:** Ūdenstilpu malu ar zālājiem garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem garums 10 km ainavā
 
 **Procedure:** Total edge at 10000 m radius around the analysis grid cell, is calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the buffer with `egvtools::radius_function`. During calculation of landscape metric, inverse distance weighted (power = 2) gap filling on the output is initialized to ensure no missing values at the edges. Finally, layer is rewritten to ensure layers name. At 
 the very end, layer is standardized by subtracting arithmetic mean and dividing 
@@ -12838,7 +12838,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Crops (all types) within the analysis cell (1 ha)
 
-**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars analīzes šūnā (1 ha)
+**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels with any type of crops are selected from 
 [Rural Support Service's information on declared fields](#Ch04.02). These geometries 
@@ -12941,7 +12941,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Crops (all types) within the 0.5 km landscape
 
-**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 0,5 km ainavā
+**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības īpatsvars 0,5 km ainavā
 
 **Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was 
 calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
@@ -13017,7 +13017,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Crops (all types) within the 1.25 km landscape
 
-**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 1,25 km ainavā
+**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības īpatsvars 1,25 km ainavā
 
 **Procedure:** Cover fraction at 1250 m radius around the analysis grid cell, was 
 calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
@@ -13093,7 +13093,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Crops (all types) within the 3 km landscape
 
-**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 3 km ainavā
+**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības īpatsvars 3 km ainavā
 
 **Procedure:** Cover fraction at 3000 m radius around the analysis grid cell, was 
 calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
@@ -13169,7 +13169,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Crops (all types) within the 10 km landscape
 
-**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūru) platības īpatsvars 10 km ainavā
+**Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības īpatsvars 10 km ainavā
 
 **Procedure:** Cover fraction at 10000 m radius around the analysis grid cell, was 
 calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the 
@@ -24199,7 +24199,7 @@ writeRaster(merogots,
 
 **English name:** Timber volume of Temperate Deciduous trees (without oaks) within the analysis cell (1 ha)	
 
-**Latvian name:** Paltlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
+**Latvian name:** Platlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside 
 clearcuts and dead stands. Mask for this is created 
@@ -31311,7 +31311,7 @@ writeRaster(merogots,
 
 **layername:** `egv_383`	
 
-**English name:** Fractional cover of Boeral Deciduous Forests within the analysis cell (1 ha)	
+**English name:** Fractional cover of Boreal Deciduous Forests within the analysis cell (1 ha)	
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
@@ -38996,7 +38996,7 @@ writeRaster(merogots,
 
 **English name:** Spatial variability of last year's median vegetation water content (NDMI) within the analysis cell (1 ha)	
 
-**Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+**Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens satura veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:**  Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
@@ -39190,7 +39190,7 @@ writeRaster(merogots,
 
 **English name:** Spatial variability of short-term median vegetation water content (NDMI) within the analysis cell (1 ha)	
 
-**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens saturam veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens satura veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3 
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting 
@@ -40338,7 +40338,7 @@ writeRaster(merogots,
 
 **English name:** Average value of Topsoil Calcium Carbonates Content (ESDAC v2.0) within the analysis cell (1 ha)	
 
-**Latvian name:** Augsnes virskārtas kalcija karbonātu apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+**Latvian name:** Augsnes virskārtas kalcija karbonātu saturs (ESDAC v2.0) analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
@@ -40398,7 +40398,7 @@ writeRaster(merogots,
 
 **English name:** Average value of Topsoil Sodium Content (ESDAC v2.0) within the analysis cell (1 ha)	
 
-**Latvian name:** Augsnes virskārtas kālija apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+**Latvian name:** Augsnes virskārtas kālija saturs (ESDAC v2.0) analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
@@ -40457,7 +40457,7 @@ writeRaster(merogots,
 
 **English name:** Average value of Topsoil Nitrogen Content (ESDAC v2.0) within the analysis cell (1 ha)	
 
-**Latvian name:** Augsnes virskārtas slāpekļa apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+**Latvian name:** Augsnes virskārtas slāpekļa saturs (ESDAC v2.0) analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
@@ -40516,7 +40516,7 @@ writeRaster(merogots,
 
 **English name:** Average value of Topsoil Phosphorous Content (ESDAC v2.0) within the analysis cell (1 ha)	
 
-**Latvian name:** Augsnes virskārtas fosfora apjoms (ESDAC v2.0) analīzes šūnā (1 ha)
+**Latvian name:** Augsnes virskārtas fosfora saturs (ESDAC v2.0) analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed 
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse 
