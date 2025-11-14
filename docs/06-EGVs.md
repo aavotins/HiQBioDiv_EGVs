@@ -45,7 +45,7 @@ did not create this EGV at the analysis cells scale.
 
 **filename:** `Climate_CHELSAv2.1-bio1_cell.tif`	
 
-**layername:** `egv_1`	
+**layername:** `egv_001`	
 
 **English name:** Mean annual daily mean air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -64,7 +64,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 
 # job ----
 localname="Climate_CHELSAv2.1-bio1_cell.tif"
-layername="egv_1"
+layername="egv_001"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio1_cell.tif"
 
 df <- downscale2egv(
@@ -103,7 +103,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio10_cell.tif`	
 
-**layername:** `egv_2`	
+**layername:** `egv_002`	
 
 **English name:** Mean daily mean air temperatures (°C) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -123,7 +123,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio10_cell.tif"
-layername="egv_2"
+layername="egv_002"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio10_cell.tif"
 
 df <- downscale2egv(
@@ -164,7 +164,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio11_cell.tif`	
 
-**layername:** `egv_3`	
+**layername:** `egv_003`	
 
 **English name:** Mean daily mean air temperatures (°C) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -184,7 +184,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio11_cell.tif"
-layername="egv_3"
+layername="egv_003"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio11_cell.tif"
 
 df <- downscale2egv(
@@ -225,7 +225,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio12_cell.tif`	
 
-**layername:** `egv_4`	
+**layername:** `egv_004`	
 
 **English name:** Annual precipitation amount (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -245,7 +245,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio12_cell.tif"
-layername="egv_4"
+layername="egv_004"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio12_cell.tif"
 
 df <- downscale2egv(
@@ -286,7 +286,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio13_cell.tif`	
 
-**layername:** `egv_5`	
+**layername:** `egv_005`	
 
 **English name:** Precipitation amount (kg m⁻² month⁻¹) of the wettest month (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -306,7 +306,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio13_cell.tif"
-layername="egv_5"
+layername="egv_005"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio13_cell.tif"
 
 df <- downscale2egv(
@@ -347,7 +347,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio14_cell.tif`	
 
-**layername:** `egv_6`	
+**layername:** `egv_006`	
 
 **English name:** Precipitation amount (kg m⁻² month⁻¹) of the driest month (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -367,7 +367,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio14_cell.tif"
-layername="egv_6"
+layername="egv_006"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio14_cell.tif"
 
 df <- downscale2egv(
@@ -408,7 +408,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio15_cell.tif`	
 
-**layername:** `egv_7`	
+**layername:** `egv_007`	
 
 **English name:** Precipitation seasonality (kg m⁻²) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -428,7 +428,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio15_cell.tif"
-layername="egv_7"
+layername="egv_007"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio15_cell.tif"
 
 df <- downscale2egv(
@@ -469,7 +469,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio16_cell.tif`	
 
-**layername:** `egv_8`	
+**layername:** `egv_008`	
 
 **English name:** Mean monthly precipitation amount (kg m⁻² month⁻¹) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -489,7 +489,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio16_cell.tif"
-layername="egv_8"
+layername="egv_008"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio16_cell.tif"
 
 df <- downscale2egv(
@@ -530,7 +530,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio17_cell.tif`	
 
-**layername:** `egv_9`	
+**layername:** `egv_009`	
 
 **English name:** Mean monthly precipitation amount (kg m⁻² month⁻¹) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -550,7 +550,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio17_cell.tif"
-layername="egv_9"
+layername="egv_009"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio17_cell.tif"
 
 df <- downscale2egv(
@@ -591,7 +591,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio18_cell.tif`	
 
-**layername:** `egv_10`	
+**layername:** `egv_010`	
 
 **English name:** Mean monthly precipitation amount (kg m⁻² month⁻¹) of the warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -611,7 +611,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio18_cell.tif"
-layername="egv_10"
+layername="egv_010"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio18_cell.tif"
 
 df <- downscale2egv(
@@ -652,7 +652,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio19_cell.tif`	
 
-**layername:** `egv_11`	
+**layername:** `egv_011`	
 
 **English name:** Mean monthly precipitation amount (kg m⁻² month⁻¹) of the coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -672,7 +672,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio19_cell.tif"
-layername="egv_11"
+layername="egv_011"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio19_cell.tif"
 
 df <- downscale2egv(
@@ -713,7 +713,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio2_cell.tif`	
 
-**layername:** `egv_12`	
+**layername:** `egv_012`	
 
 **English name:** Mean diurnal air temperature range (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -733,7 +733,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio2_cell.tif"
-layername="egv_12"
+layername="egv_012"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio2_cell.tif"
 
 df <- downscale2egv(
@@ -774,7 +774,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio3_cell.tif`	
 
-**layername:** `egv_13`	
+**layername:** `egv_013`	
 
 **English name:** Isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -794,7 +794,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio3_cell.tif"
-layername="egv_13"
+layername="egv_013"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio3_cell.tif"
 
 df <- downscale2egv(
@@ -835,7 +835,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio4_cell.tif`	
 
-**layername:** `egv_14`	
+**layername:** `egv_014`	
 
 **English name:** Temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -855,7 +855,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio4_cell.tif"
-layername="egv_14"
+layername="egv_014"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio4_cell.tif"
 
 df <- downscale2egv(
@@ -896,7 +896,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio5_cell.tif`	
 
-**layername:** `egv_15`	
+**layername:** `egv_015`	
 
 **English name:** Mean daily maximum air temperature (°C) of the warmest month (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -916,7 +916,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio5_cell.tif"
-layername="egv_15"
+layername="egv_015"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio5_cell.tif"
 
 df <- downscale2egv(
@@ -957,7 +957,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio6_cell.tif`	
 
-**layername:** `egv_16`	
+**layername:** `egv_016`	
 
 **English name:** Mean daily minimum air temperature (°C) of the coldest month (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -977,7 +977,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio6_cell.tif"
-layername="egv_16"
+layername="egv_016"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio6_cell.tif"
 
 df <- downscale2egv(
@@ -1018,7 +1018,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio7_cell.tif`	
 
-**layername:** `egv_17`	
+**layername:** `egv_017`	
 
 **English name:** Annual range of air temperature (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1038,7 +1038,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio7_cell.tif"
-layername="egv_17"
+layername="egv_017"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio7_cell.tif"
 
 df <- downscale2egv(
@@ -1079,7 +1079,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio8_cell.tif`	
 
-**layername:** `egv_18`	
+**layername:** `egv_018`	
 
 **English name:** Mean daily mean air temperatures (°C) of the wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1099,7 +1099,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio8_cell.tif"
-layername="egv_18"
+layername="egv_018"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio8_cell.tif"
 
 df <- downscale2egv(
@@ -1140,7 +1140,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-bio9_cell.tif`	
 
-**layername:** `egv_19`	
+**layername:** `egv_019`	
 
 **English name:** Mean daily mean air temperatures (°C) of the driest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1160,7 +1160,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-bio9_cell.tif"
-layername="egv_19"
+layername="egv_019"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-bio9_cell.tif"
 
 df <- downscale2egv(
@@ -1201,7 +1201,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-clt-max_cell.tif`	
 
-**layername:** `egv_20`	
+**layername:** `egv_020`	
 
 **English name:** Maximum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1221,7 +1221,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-clt-max_cell.tif"
-layername="egv_20"
+layername="egv_020"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-max_cell.tif"
 
 df <- downscale2egv(
@@ -1262,7 +1262,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-clt-mean_cell.tif`	
 
-**layername:** `egv_21`	
+**layername:** `egv_021`	
 
 **English name:** Mean monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1282,7 +1282,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-clt-mean_cell.tif"
-layername="egv_21"
+layername="egv_021"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-mean_cell.tif"
 
 df <- downscale2egv(
@@ -1323,7 +1323,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-clt-min_cell.tif`	
 
-**layername:** `egv_22`	
+**layername:** `egv_022`	
 
 **English name:** Minimum monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1343,7 +1343,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-clt-min_cell.tif"
-layername="egv_22"
+layername="egv_022"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-min_cell.tif"
 
 df <- downscale2egv(
@@ -1384,7 +1384,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-clt-range_cell.tif`	
 
-**layername:** `egv_23`	
+**layername:** `egv_023`	
 
 **English name:** Annual range of monthly cloud area fraction (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1404,7 +1404,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-clt-range_cell.tif"
-layername="egv_23"
+layername="egv_023"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-clt-range_cell.tif"
 
 df <- downscale2egv(
@@ -1445,7 +1445,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-cmi-max_cell.tif`	
 
-**layername:** `egv_24`	
+**layername:** `egv_024`	
 
 **English name:** Maximum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1465,7 +1465,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-cmi-max_cell.tif"
-layername="egv_24"
+layername="egv_024"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-max_cell.tif"
 
 df <- downscale2egv(
@@ -1506,7 +1506,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-cmi-mean_cell.tif`	
 
-**layername:** `egv_25`	
+**layername:** `egv_025`	
 
 **English name:** Mean monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1526,7 +1526,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-cmi-mean_cell.tif"
-layername="egv_25"
+layername="egv_025"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-mean_cell.tif"
 
 df <- downscale2egv(
@@ -1567,7 +1567,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-cmi-min_cell.tif`	
 
-**layername:** `egv_26`	
+**layername:** `egv_026`	
 
 **English name:** Minimum monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1587,7 +1587,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-cmi-min_cell.tif"
-layername="egv_26"
+layername="egv_026"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-min_cell.tif"
 
 df <- downscale2egv(
@@ -1628,7 +1628,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-cmi-range_cell.tif`	
 
-**layername:** `egv_27`	
+**layername:** `egv_027`	
 
 **English name:** Annual range of monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1648,7 +1648,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-cmi-range_cell.tif"
-layername="egv_27"
+layername="egv_027"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-cmi-range_cell.tif"
 
 df <- downscale2egv(
@@ -1689,7 +1689,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-fcf_cell.tif`	
 
-**layername:** `egv_28`	
+**layername:** `egv_028`	
 
 **English name:** Frost change frequency (number of events in which tmin or tmax go above or below 0°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1709,7 +1709,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-fcf_cell.tif"
-layername="egv_28"
+layername="egv_028"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-fcf_cell.tif"
 
 df <- downscale2egv(
@@ -1750,7 +1750,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-fgd_cell.tif`	
 
-**layername:** `egv_29`	
+**layername:** `egv_029`	
 
 **English name:** First day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1770,7 +1770,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-fgd_cell.tif"
-layername="egv_29"
+layername="egv_029"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-fgd_cell.tif"
 
 df <- downscale2egv(
@@ -1811,7 +1811,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdd0_cell.tif`	
 
-**layername:** `egv_30`	
+**layername:** `egv_030`	
 
 **English name:** Growing degree days heat sum above 0°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1831,7 +1831,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdd0_cell.tif"
-layername="egv_30"
+layername="egv_030"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd0_cell.tif"
 
 df <- downscale2egv(
@@ -1872,7 +1872,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdd10_cell.tif`	
 
-**layername:** `egv_31`	
+**layername:** `egv_031`	
 
 **English name:** Growing degree days heat sum above 10°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1892,7 +1892,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdd10_cell.tif"
-layername="egv_31"
+layername="egv_031"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd10_cell.tif"
 
 df <- downscale2egv(
@@ -1933,7 +1933,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdd5_cell.tif`	
 
-**layername:** `egv_32`	
+**layername:** `egv_032`	
 
 **English name:** Growing degree days heat sum above 5°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -1953,7 +1953,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdd5_cell.tif"
-layername="egv_32"
+layername="egv_032"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdd5_cell.tif"
 
 df <- downscale2egv(
@@ -1994,7 +1994,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gddlgd0_cell.tif`	
 
-**layername:** `egv_33`	
+**layername:** `egv_033`	
 
 **English name:** Last growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2014,7 +2014,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gddlgd0_cell.tif"
-layername="egv_33"
+layername="egv_033"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd0_cell.tif"
 
 df <- downscale2egv(
@@ -2055,7 +2055,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gddlgd10_cell.tif`	
 
-**layername:** `egv_34`	
+**layername:** `egv_034`	
 
 **English name:** Last growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2075,7 +2075,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gddlgd10_cell.tif"
-layername="egv_34"
+layername="egv_034"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd10_cell.tif"
 
 df <- downscale2egv(
@@ -2116,7 +2116,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gddlgd5_cell.tif`	
 
-**layername:** `egv_35`	
+**layername:** `egv_035`	
 
 **English name:** Last growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2136,7 +2136,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gddlgd5_cell.tif"
-layername="egv_35"
+layername="egv_035"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gddlgd5_cell.tif"
 
 df <- downscale2egv(
@@ -2177,7 +2177,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdgfgd0_cell.tif`	
 
-**layername:** `egv_36`	
+**layername:** `egv_036`	
 
 **English name:** First growing degree day above 0°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2197,7 +2197,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdgfgd0_cell.tif"
-layername="egv_36"
+layername="egv_036"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd0_cell.tif"
 
 df <- downscale2egv(
@@ -2238,7 +2238,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdgfgd10_cell.tif`	
 
-**layername:** `egv_37`	
+**layername:** `egv_037`	
 
 **English name:** First growing degree day above 10°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2258,7 +2258,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdgfgd10_cell.tif"
-layername="egv_37"
+layername="egv_037"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd10_cell.tif"
 
 df <- downscale2egv(
@@ -2299,7 +2299,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gdgfgd5_cell.tif`	
 
-**layername:** `egv_38`	
+**layername:** `egv_038`	
 
 **English name:** First growing degree day above 5°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2319,7 +2319,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gdgfgd5_cell.tif"
-layername="egv_38"
+layername="egv_038"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gdgfgd5_cell.tif"
 
 df <- downscale2egv(
@@ -2360,7 +2360,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gsl_cell.tif`	
 
-**layername:** `egv_39`	
+**layername:** `egv_039`	
 
 **English name:** Length of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2380,7 +2380,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gsl_cell.tif"
-layername="egv_39"
+layername="egv_039"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gsl_cell.tif"
 
 df <- downscale2egv(
@@ -2421,7 +2421,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gsp_cell.tif`	
 
-**layername:** `egv_40`	
+**layername:** `egv_040`	
 
 **English name:** Accumulated precipitation amount (kg m⁻² year⁻¹) on growing season days (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2441,7 +2441,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gsp_cell.tif"
-layername="egv_40"
+layername="egv_040"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gsp_cell.tif"
 
 df <- downscale2egv(
@@ -2482,7 +2482,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-gst_cell.tif`	
 
-**layername:** `egv_41`	
+**layername:** `egv_041`	
 
 **English name:** Mean temperature of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2502,7 +2502,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-gst_cell.tif"
-layername="egv_41"
+layername="egv_041"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-gst_cell.tif"
 
 df <- downscale2egv(
@@ -2543,7 +2543,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-hurs-max_cell.tif`	
 
-**layername:** `egv_42`	
+**layername:** `egv_042`	
 
 **English name:** Maximum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2563,7 +2563,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-hurs-max_cell.tif"
-layername="egv_42"
+layername="egv_042"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-max_cell.tif"
 
 df <- downscale2egv(
@@ -2604,7 +2604,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-hurs-mean_cell.tif`	
 
-**layername:** `egv_43`	
+**layername:** `egv_043`	
 
 **English name:** Mean monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2624,7 +2624,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-hurs-mean_cell.tif"
-layername="egv_43"
+layername="egv_043"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-mean_cell.tif"
 
 df <- downscale2egv(
@@ -2665,7 +2665,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-hurs-min_cell.tif`	
 
-**layername:** `egv_44`	
+**layername:** `egv_044`	
 
 **English name:** Minimum monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2685,7 +2685,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-hurs-min_cell.tif"
-layername="egv_44"
+layername="egv_044"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-min_cell.tif"
 
 df <- downscale2egv(
@@ -2726,7 +2726,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-hurs-range_cell.tif`	
 
-**layername:** `egv_45`	
+**layername:** `egv_045`	
 
 **English name:** Annual range of monthly near-surface relative humidity (%) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2746,7 +2746,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-hurs-range_cell.tif"
-layername="egv_45"
+layername="egv_045"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-hurs-range_cell.tif"
 
 df <- downscale2egv(
@@ -2787,7 +2787,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-lgd_cell.tif`	
 
-**layername:** `egv_46`	
+**layername:** `egv_046`	
 
 **English name:** Last day of the growing season (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2807,7 +2807,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-lgd_cell.tif"
-layername="egv_46"
+layername="egv_046"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-lgd_cell.tif"
 
 df <- downscale2egv(
@@ -2848,7 +2848,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-ngd0_cell.tif`	
 
-**layername:** `egv_47`	
+**layername:** `egv_047`	
 
 **English name:** Number of days at which 2m air temperature > 0°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2868,7 +2868,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-ngd0_cell.tif"
-layername="egv_47"
+layername="egv_047"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd0_cell.tif"
 
 df <- downscale2egv(
@@ -2909,7 +2909,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-ngd10_cell.tif`	
 
-**layername:** `egv_48`	
+**layername:** `egv_048`	
 
 **English name:** Number of days at which 2m air temperature > 10°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2929,7 +2929,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-ngd10_cell.tif"
-layername="egv_48"
+layername="egv_048"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd10_cell.tif"
 
 df <- downscale2egv(
@@ -2970,7 +2970,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-ngd5_cell.tif`	
 
-**layername:** `egv_49`	
+**layername:** `egv_049`	
 
 **English name:** Number of days at which 2m air temperature > 5°C (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -2990,7 +2990,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-ngd5_cell.tif"
-layername="egv_49"
+layername="egv_049"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-ngd5_cell.tif"
 
 df <- downscale2egv(
@@ -3031,7 +3031,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-npp_cell.tif`	
 
-**layername:** `egv_50`	
+**layername:** `egv_050`	
 
 **English name:** Net primary productivity (g C m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3051,7 +3051,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-npp_cell.tif"
-layername="egv_50"
+layername="egv_050"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-npp_cell.tif"
 
 df <- downscale2egv(
@@ -3092,7 +3092,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-max_cell.tif`	
 
-**layername:** `egv_51`	
+**layername:** `egv_051`	
 
 **English name:** Maximum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3112,7 +3112,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-pet-penman-max_cell.tif"
-layername="egv_51"
+layername="egv_051"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-max_cell.tif"
 
 df <- downscale2egv(
@@ -3153,7 +3153,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-mean_cell.tif`	
 
-**layername:** `egv_52`	
+**layername:** `egv_052`	
 
 **English name:** Mean monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3173,7 +3173,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-pet-penman-mean_cell.tif"
-layername="egv_52"
+layername="egv_052"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-mean_cell.tif"
 
 df <- downscale2egv(
@@ -3214,7 +3214,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-min_cell.tif`	
 
-**layername:** `egv_53`	
+**layername:** `egv_053`	
 
 **English name:** Minimum monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3234,7 +3234,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-pet-penman-min_cell.tif"
-layername="egv_53"
+layername="egv_053"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-min_cell.tif"
 
 df <- downscale2egv(
@@ -3275,7 +3275,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-pet-penman-range_cell.tif`	
 
-**layername:** `egv_54`	
+**layername:** `egv_054`	
 
 **English name:** Annual range of monthly potential evapotranspiration (kg m⁻² month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3295,7 +3295,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-pet-penman-range_cell.tif"
-layername="egv_54"
+layername="egv_054"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-pet-penman-range_cell.tif"
 
 df <- downscale2egv(
@@ -3336,7 +3336,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-rsds-max_cell.tif`	
 
-**layername:** `egv_55`	
+**layername:** `egv_055`	
 
 **English name:** Maximum monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3356,7 +3356,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-rsds-max_cell.tif"
-layername="egv_55"
+layername="egv_055"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-max_cell.tif"
 
 df <- downscale2egv(
@@ -3397,7 +3397,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-rsds-mean_cell.tif`	
 
-**layername:** `egv_56`	
+**layername:** `egv_056`	
 
 **English name:** Mean monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3417,7 +3417,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-rsds-mean_cell.tif"
-layername="egv_56"
+layername="egv_056"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-mean_cell.tif"
 
 df <- downscale2egv(
@@ -3458,7 +3458,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-rsds-min_cell.tif`	
 
-**layername:** `egv_57`	
+**layername:** `egv_057`	
 
 **English name:** Minimum monthly surface shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3478,7 +3478,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-rsds-min_cell.tif"
-layername="egv_57"
+layername="egv_057"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-min_cell.tif"
 
 df <- downscale2egv(
@@ -3519,7 +3519,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-rsds-range_cell.tif`	
 
-**layername:** `egv_58`	
+**layername:** `egv_058`	
 
 **English name:** Annual range of monthly surface downwelling shortwave flux in air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3539,7 +3539,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-rsds-range_cell.tif"
-layername="egv_58"
+layername="egv_058"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-rsds-range_cell.tif"
 
 df <- downscale2egv(
@@ -3580,7 +3580,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-scd_cell.tif`	
 
-**layername:** `egv_59`	
+**layername:** `egv_059`	
 
 **English name:** Number of days with snow cover (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3600,7 +3600,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-scd_cell.tif"
-layername="egv_59"
+layername="egv_059"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-scd_cell.tif"
 
 df <- downscale2egv(
@@ -3641,7 +3641,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-max_cell.tif`	
 
-**layername:** `egv_60`	
+**layername:** `egv_060`	
 
 **English name:** Maximum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3661,7 +3661,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-sfcWind-max_cell.tif"
-layername="egv_60"
+layername="egv_060"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-max_cell.tif"
 
 df <- downscale2egv(
@@ -3702,7 +3702,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-mean_cell.tif`	
 
-**layername:** `egv_61`	
+**layername:** `egv_061`	
 
 **English name:** Mean monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3722,7 +3722,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-sfcWind-mean_cell.tif"
-layername="egv_61"
+layername="egv_061"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-mean_cell.tif"
 
 df <- downscale2egv(
@@ -3763,7 +3763,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-min_cell.tif`	
 
-**layername:** `egv_62`	
+**layername:** `egv_062`	
 
 **English name:** Minimum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3783,7 +3783,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-sfcWind-min_cell.tif"
-layername="egv_62"
+layername="egv_062"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-min_cell.tif"
 
 df <- downscale2egv(
@@ -3824,7 +3824,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-sfcWind-range_cell.tif`	
 
-**layername:** `egv_63`	
+**layername:** `egv_063`	
 
 **English name:** Annual range of monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3844,7 +3844,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-sfcWind-range_cell.tif"
-layername="egv_63"
+layername="egv_063"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-sfcWind-range_cell.tif"
 
 df <- downscale2egv(
@@ -3885,7 +3885,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-swb_cell.tif`	
 
-**layername:** `egv_64`	
+**layername:** `egv_064`	
 
 **English name:** Site water balance (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3905,7 +3905,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-swb_cell.tif"
-layername="egv_64"
+layername="egv_064"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-swb_cell.tif"
 
 df <- downscale2egv(
@@ -3946,7 +3946,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-swe_cell.tif`	
 
-**layername:** `egv_65`	
+**layername:** `egv_065`	
 
 **English name:** Snow water equivalent (kg m⁻² year⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -3966,7 +3966,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-swe_cell.tif"
-layername="egv_65"
+layername="egv_065"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-swe_cell.tif"
 
 df <- downscale2egv(
@@ -4007,7 +4007,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-vpd-max_cell.tif`	
 
-**layername:** `egv_66`	
+**layername:** `egv_066`	
 
 **English name:** Maximum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -4027,7 +4027,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-vpd-max_cell.tif"
-layername="egv_66"
+layername="egv_066"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-max_cell.tif"
 
 df <- downscale2egv(
@@ -4068,7 +4068,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-vpd-mean_cell.tif`	
 
-**layername:** `egv_67`	
+**layername:** `egv_067`	
 
 **English name:** Mean monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -4088,7 +4088,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-vpd-mean_cell.tif"
-layername="egv_67"
+layername="egv_067"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-mean_cell.tif"
 
 df <- downscale2egv(
@@ -4129,7 +4129,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-vpd-min_cell.tif`	
 
-**layername:** `egv_68`	
+**layername:** `egv_068`	
 
 **English name:** Minimum monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -4149,7 +4149,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-vpd-min_cell.tif"
-layername="egv_68"
+layername="egv_068"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-min_cell.tif"
 
 df <- downscale2egv(
@@ -4190,7 +4190,7 @@ writeRaster(merogots,
 
 **filename:** `Climate_CHELSAv2.1-vpd-range_cell.tif`	
 
-**layername:** `egv_69`	
+**layername:** `egv_069`	
 
 **English name:** Annual range of monthly vapor pressure deficit (Pa) (CHELSA v2.1) within the analysis cell (1 ha)
 
@@ -4210,7 +4210,7 @@ if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(eg
 # job ----
 
 localname="Climate_CHELSAv2.1-vpd-range_cell.tif"
-layername="egv_69"
+layername="egv_069"
 reading="./Geodata/2024/CHELSA/Climate_CHELSAv2.1-vpd-range_cell.tif"
 
 df <- downscale2egv(
@@ -4251,7 +4251,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_01-max_cell.tif`	
 
-**layername:** `egv_70`	
+**layername:** `egv_070`	
 
 **English name:** Maximum per subcatchment upstream mean annual air temperature (°C) (HydroClim) within the analysis cell (1 ha)
 
@@ -4289,7 +4289,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_01-max_cell.tif"
-layername="egv_70"
+layername="egv_070"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4348,7 +4348,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_02-max_cell.tif`	
 
-**layername:** `egv_71`	
+**layername:** `egv_071`	
 
 **English name:** Maximum per subcatchment upstream mean diurnal air temperature range (°C) (HydroClim) within the analysis cell (1 ha)
 
@@ -4386,7 +4386,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_02-max_cell.tif"
-layername="egv_71"
+layername="egv_071"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4445,7 +4445,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_03-max_cell.tif`	
 
-**layername:** `egv_72`	
+**layername:** `egv_072`	
 
 **English name:** Maximum per subcatchment upstream isothermality (ratio of diurnal variation to annual variation in temperatures) (°C) (HydroClim) within the analysis cell (1 ha)
 
@@ -4483,7 +4483,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_03-max_cell.tif"
-layername="egv_72"
+layername="egv_072"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4542,7 +4542,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_04-max_cell.tif`	
 
-**layername:** `egv_73`	
+**layername:** `egv_073`	
 
 **English name:** Maximum per subcatchment upstream temperature seasonality (standard deviation of the monthly mean temperatures) (°C/100) (HydroClim) within the analysis cell (1 ha)
 
@@ -4580,7 +4580,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_04-max_cell.tif"
-layername="egv_73"
+layername="egv_073"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4639,7 +4639,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_05-max_cell.tif`	
 
-**layername:** `egv_74`	
+**layername:** `egv_074`	
 
 **English name:** Maximum per subcatchment upstream mean daily maximum air temperature (°C) of the warmest month (HydroClim) within the analysis cell (1 ha)
 
@@ -4677,7 +4677,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_05-max_cell.tif"
-layername="egv_74"
+layername="egv_074"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4736,7 +4736,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_06-min_cell.tif`	
 
-**layername:** `egv_75`	
+**layername:** `egv_075`	
 
 **English name:** Minimum per subcatchment upstream mean daily minimum air temperature (°C) of the coldest month (HydroClim) within the analysis cell (1 ha)
 
@@ -4774,7 +4774,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_06-min_cell.tif"
-layername="egv_75"
+layername="egv_075"
 summary_function="min"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4833,7 +4833,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_07-max_cell.tif`	
 
-**layername:** `egv_76`	
+**layername:** `egv_076`	
 
 **English name:** Maximum per subcatchment upstream annual range of air temperature (°C) (HydroClim) within the analysis cell (1 ha)
 
@@ -4871,7 +4871,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_07-max_cell.tif"
-layername="egv_76"
+layername="egv_076"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -4930,7 +4930,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_08-max_cell.tif`	
 
-**layername:** `egv_77`	
+**layername:** `egv_077`	
 
 **English name:** Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the wettest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -4968,7 +4968,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_08-max_cell.tif"
-layername="egv_77"
+layername="egv_077"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5027,7 +5027,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_09-min_cell.tif`	
 
-**layername:** `egv_78`	
+**layername:** `egv_078`	
 
 **English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the driest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5065,7 +5065,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_09-min_cell.tif"
-layername="egv_78"
+layername="egv_078"
 summary_function="min"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5124,7 +5124,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_10-max_cell.tif`	
 
-**layername:** `egv_79`	
+**layername:** `egv_079`	
 
 **English name:** Maximum per subcatchment upstream mean daily mean air temperatures (°C) of the warmest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5162,7 +5162,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_10-max_cell.tif"
-layername="egv_79"
+layername="egv_079"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5221,7 +5221,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_11-min_cell.tif`	
 
-**layername:** `egv_80`	
+**layername:** `egv_080`	
 
 **English name:** Minimum per subcatchment upstream mean daily mean air temperatures (°C) of the coldest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5259,7 +5259,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_11-min_cell.tif"
-layername="egv_80"
+layername="egv_080"
 summary_function="min"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5318,7 +5318,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_12-max_cell.tif`	
 
-**layername:** `egv_81`	
+**layername:** `egv_081`	
 
 **English name:** Maximum per subcatchment upstream annual precipitation amount (kg m⁻² year⁻¹) (HydroClim) within the analysis cell (1 ha)
 
@@ -5356,7 +5356,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_12-max_cell.tif"
-layername="egv_81"
+layername="egv_081"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5415,7 +5415,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_13-max_cell.tif`	
 
-**layername:** `egv_82`	
+**layername:** `egv_082`	
 
 **English name:** Maximum per subcatchment upstream precipitation amount (kg m⁻² year⁻¹) of the wettest month (HydroClim) within the analysis cell (1 ha)
 
@@ -5453,7 +5453,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_13-max_cell.tif"
-layername="egv_82"
+layername="egv_082"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5512,7 +5512,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_14-max_cell.tif`	
 
-**layername:** `egv_83`	
+**layername:** `egv_083`	
 
 **English name:** Maximum per subcatchment upstream precipitation amount (kg m⁻² year⁻¹) of the driest month (HydroClim) within the analysis cell (1 ha)
 
@@ -5550,7 +5550,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_14-max_cell.tif"
-layername="egv_83"
+layername="egv_083"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5609,7 +5609,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_15-max_cell.tif`	
 
-**layername:** `egv_84`	
+**layername:** `egv_084`	
 
 **English name:** Maximum per subcatchment upstream precipitation seasonality (kg m⁻²) (HydroClim) within the analysis cell (1 ha)
 
@@ -5647,7 +5647,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_15-max_cell.tif"
-layername="egv_84"
+layername="egv_084"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5706,7 +5706,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_16-max_cell.tif`	
 
-**layername:** `egv_85`	
+**layername:** `egv_085`	
 
 **English name:** Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the wettest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5744,7 +5744,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_16-max_cell.tif"
-layername="egv_85"
+layername="egv_085"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5803,7 +5803,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_17-max_cell.tif`	
 
-**layername:** `egv_86`	
+**layername:** `egv_086`	
 
 **English name:** Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the driest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5841,7 +5841,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_17-max_cell.tif"
-layername="egv_86"
+layername="egv_086"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5900,7 +5900,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_18-max_cell.tif`	
 
-**layername:** `egv_87`	
+**layername:** `egv_087`	
 
 **English name:** Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the warmest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -5938,7 +5938,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_18-max_cell.tif"
-layername="egv_87"
+layername="egv_087"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -5997,7 +5997,7 @@ writeRaster(merogots,
 
 **filename:** `HydroClim_19-max_cell.tif`	
 
-**layername:** `egv_88`	
+**layername:** `egv_088`	
 
 **English name:** Maximum per subcatchment upstream mean monthly precipitation amount (kg m⁻² year⁻¹) of the coldest quarter (HydroClim) within the analysis cell (1 ha)
 
@@ -6035,7 +6035,7 @@ level12=st_make_valid(level12)
 # job ----
 
 localname="HydroClim_19-max_cell.tif"
-layername="egv_88"
+layername="egv_088"
 summary_function="max"
   
 slanis=rast(paste0("./Geodata/2024/HydroClim/",localname))
@@ -6094,7 +6094,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Builtup_cell.tif`	
 
-**layername:** `egv_89`	
+**layername:** `egv_089`	
 
 **English name:** Distance to Built-Up features, average within the analysis cell (1 ha)
 
@@ -6124,7 +6124,7 @@ distegv=distance2egv(input = builtup,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Builtup_cell.tif",
-                     layername = "egv_89")
+                     layername = "egv_089")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Builtup_cell.tif"))
 rm(builtup)
@@ -6155,7 +6155,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_ForestInside_cell.tif`	
 
-**layername:** `egv_90`	
+**layername:** `egv_090`	
 
 **English name:** Distance to Forest Edge Inside Forests, average within the analysis cell (1 ha)
 
@@ -6185,7 +6185,7 @@ distegv=distance2egv(input = trees_inside,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_ForestInside_cell.tif",
-                     layername = "egv_90")
+                     layername = "egv_090")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_ForestInside_cell.tif"))
 rm(trees_inside)
@@ -6216,7 +6216,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_GrasslandPermanent_cell.tif`	
 
-**layername:** `egv_91`	
+**layername:** `egv_091`	
 
 **English name:** Distance to Permanent Grasslands, average within the analysis cell (1 ha)
 
@@ -6263,7 +6263,7 @@ distegv=distance2egv(input = permgrass_t2,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_GrasslandPermanent_cell.tif",
-                     layername = "egv_91")
+                     layername = "egv_091")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_GrasslandPermanent_cell.tif"))
 rm(distegv)
@@ -6299,7 +6299,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Landfill_cell.tif`	
 
-**layername:** `egv_92`	
+**layername:** `egv_092`	
 
 **English name:** Distance to Landfills, average within the analysis cell (1 ha)
 
@@ -6350,7 +6350,7 @@ distegv=distance2egv(input = landfills_bg,
              fill_gaps = TRUE, idw_weight = 2,
              outlocation = "RasterGrids_100m/2024/RAW/",
              outfilename = "Distance_Landfill_cell.tif",
-             layername = "egv_92")
+             layername = "egv_092")
 distegv
 
 # standardization ----
@@ -6378,7 +6378,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Sea_cell.tif`	
 
-**layername:** `egv_93`	
+**layername:** `egv_093`	
 
 **English name:** Distance to Sea, average within the analysis cell (1 ha)
 
@@ -6436,7 +6436,7 @@ distegv=distance2egv(input = sea_bg,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Sea_cell.tif",
-                     layername = "egv_93")
+                     layername = "egv_093")
 distegv
 
 # standardization ----
@@ -6464,7 +6464,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Trees_cell.tif`	
 
-**layername:** `egv_94`	
+**layername:** `egv_094`	
 
 **English name:** Distance to Trees, average within the analysis cell (1 ha)
 
@@ -6494,7 +6494,7 @@ distegv=distance2egv(input = trees,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Trees_cell.tif",
-                     layername = "egv_94")
+                     layername = "egv_094")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Trees_cell.tif"))
 rm(trees)
@@ -6525,7 +6525,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Waste_cell.tif`	
 
-**layername:** `egv_95`	
+**layername:** `egv_095`	
 
 **English name:** Distance to Waste disposal sites, average within the analysis cell (1 ha)
 
@@ -6586,7 +6586,7 @@ distegv=distance2egv(input = wastw_bg,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Waste_cell.tif",
-                     layername = "egv_95")
+                     layername = "egv_095")
 distegv
 
 # standardization ----
@@ -6614,7 +6614,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_Water_cell.tif`	
 
-**layername:** `egv_96`	
+**layername:** `egv_096`	
 
 **English name:** Distance to Waterbodies, average within the analysis cell (1 ha)
 
@@ -6643,7 +6643,7 @@ distegv=distance2egv(input = water,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_Water_cell.tif",
-                     layername = "egv_96")
+                     layername = "egv_096")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_Water_cell.tif"))
 rm(water)
@@ -6674,7 +6674,7 @@ writeRaster(merogots,
 
 **filename:** `Distance_WaterInside_cell.tif`	
 
-**layername:** `egv_97`	
+**layername:** `egv_097`	
 
 **English name:** Distance to Waterbody Edge Inside Waterbody, average within the analysis cell (1 ha)
 
@@ -6703,7 +6703,7 @@ distegv=distance2egv(input = water_outside,
                      fill_gaps = TRUE, idw_weight = 2,
                      outlocation = "RasterGrids_100m/2024/RAW/",
                      outfilename = "Distance_WaterInside_cell.tif",
-                     layername = "egv_97")
+                     layername = "egv_097")
 distegv
 plot(rast("RasterGrids_100m/2024/RAW/Distance_WaterInside_cell.tif"))
 rm(water_outside)
@@ -6734,7 +6734,7 @@ writeRaster(merogots,
 
 **filename:** `Diversity_Farmland_r500.tif`	
 
-**layername:** `egv_98`	
+**layername:** `egv_098`	
 
 **English name:** Average farmland class α-diversity of 500 m grid cells within the 0.5 km landscape
 
@@ -6776,7 +6776,7 @@ radius_function(
 
 # Diversity_Farmland_r500.tif	egv_98
 slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif")
-names(slanis)="egv_98"
+names(slanis)="egv_098"
 slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r500.tif",
@@ -6807,7 +6807,7 @@ writeRaster(merogots,
 
 **filename:** `Diversity_Farmland_r1250.tif`	
 
-**layername:** `egv_99`	
+**layername:** `egv_099`	
 
 **English name:** Average farmland class α-diversity of 500 m grid cells within the 1.25 km landscape
 
@@ -6849,7 +6849,7 @@ radius_function(
 
 # Diversity_Farmland_r1250.tif	egv_99
 slanis=rast("./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif")
-names(slanis)="egv_99"
+names(slanis)="egv_099"
 slanis2=project(slanis,template100)
 writeRaster(slanis2,
             "./RasterGrids_100m/2024/RAW/Diversity_Farmland_r1250.tif",
