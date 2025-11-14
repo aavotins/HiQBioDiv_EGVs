@@ -9,7 +9,7 @@ if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
 nosaukumiem=read_excel("./RasterGrids_100m/2024/HiQBioDiv_EGVnosaukumi_20250831.xlsx")
 nosaukumiem=nosaukumiem %>% 
   mutate(egv_filename=new_filename,
-         egv_layername=new_layername,
+         egv_layername=layername,
          egv_radius=radius,
          egv_mean=NA,
          egv_rms=NA) %>% 
