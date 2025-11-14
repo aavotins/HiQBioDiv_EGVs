@@ -2,18 +2,18 @@
 
 This chapter describes raw geodata used and the preliminary processing conducted on them.
 
-## State Forest Service's State Forest Registry {#Ch04.01}
+## State Forest Service's State Forest Register {#Ch04.01}
 
-The State Forest Service's Forest State Register database (ESRI file geodatabase), 
+The State Forest Service's State Forest Register database (ESRI file geodatabase), 
 which compiles indicators and spatial data characterizing forest compartments 
 (stand level inventory database), was received by the University of 
 Latvia on January 7, 2024, to support study and research processes. The structure 
 of the received database version corresponds to 
-the [Forest State Register Forest Inventory File Structure](https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura), but 
+the [State Forest Register Forest Inventory File Structure](https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura), but 
 lowercase letters are used in field names. 
 
 After downloading, the CRS is guarded, geometries are checked and saved in 
-geoparquet format.
+GeoParquet format.
 
 Files are stored at `Geodata/2024/MVR/`.
 
@@ -49,12 +49,12 @@ sfarrow::st_write_parquet(nogabali4, "./Geodata/2024/MVR/nogabali_2024janv.parqu
 ## Rural Support Service's information on declared fields {#Ch04.02}
 
 The Rural Support Service maintains [regularly updated information on the open 
-data portal](https://data.gov.lv/dati/lv/organization/lad). An archive (since 2015) is 
+data portal](https://data.gov.lv/dati/lv/organization/lad). An archive (since 2016) is 
 also available there, and the data sets that can be used contain the keyword “deklarētās platības”. 
 
 After downloading files to `Geodata/2024/LAD/downloads/`, they are unzipped and read into R. 
-it is checked, empty files are deleted and the rest are validated, and all individual 
-files are combined into one, which is saved in geopackage and geoparquet formats 
+Files are checked, empty geometries are deleted and the rest are validated, and all individual 
+files are combined into one, which is saved in GeoPackage and GeoParquet formats 
 at `Geodata/2024/LAD/`. At the end, downloaded files are unlinked.
 
 
@@ -102,7 +102,7 @@ rm(list=ls())
 
 The Land Improvement Cadastre Information System database was downloaded layer 
 by layer from Geoserver. Geometries were tested and validated for each layer, and 
-layers were all combined into a single geopackage file stored at `Geodata/2024/MKIS/`.
+layers were all combined into a single GeoPackage file stored at `Geodata/2024/MKIS/`.
 
 Initially, no additional processing was performed on this data. It was used to 
 prepare [Geodata products](#Ch05) - both [Terrain products](#Ch05.01) and [Landscape classification](#Ch05.03).
@@ -130,7 +130,7 @@ bwk_client
 bwk_client$getFeatureTypes(pretty = TRUE)
 
 
-# aizsargdambji ----
+# dams ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
@@ -152,7 +152,7 @@ write_sf(aizsargdambji,
          append=FALSE)
 rm(aizsargdambji)
 
-# dabiskas udensteces ----
+# watercourses ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
@@ -177,7 +177,7 @@ rm(DabiskasUdensteces)
 
 
 
-# dambju piketi ----
+# dam pickets ----
 
 
 bwk_client$getFeatureTypes(pretty = TRUE)
@@ -202,7 +202,7 @@ write_sf(DambjuPiketi,
 rm(DambjuPiketi)
 
 
-# drenas ----
+# drainpipes ----
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
@@ -268,12 +268,12 @@ rm(list=ls())
 
 
 
-# drenu kolektori ----
+# drain collectors ----
 
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 bwk_client$getFeatureTypes(pretty = TRUE)
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -285,7 +285,7 @@ request <- build_url(url)
 geometrijam <- read_sf(request)
 geometrijam
 
-# skaitam
+# count
 url$query <- list(service = "wfs",
                   request = "GetFeature",
                   srsName="EPSG:3059",
@@ -361,7 +361,7 @@ rm(list=ls())
 
 
 
-# drenazas tikla būves ----
+# drenage network structures ----
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
 url=parse_url(link)
@@ -372,7 +372,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -449,7 +449,7 @@ rm(list=ls())
 
 
 
-# gravji -----
+# dithces -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -461,7 +461,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -538,7 +538,7 @@ rm(list=ls())
 
 
 
-# hidrometriskie posteni ----
+# hydrometric posts ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -550,7 +550,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -625,7 +625,7 @@ write_sf(HidrometriskiePosteni_all2,
 rm(list=ls())
 
 
-# liela diametra kolektori ----
+# large diameter drain collectors ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -637,7 +637,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -714,7 +714,7 @@ rm(list=ls())
 
 
 
-# piketi ----
+# river pickets ----
 
 
 
@@ -727,7 +727,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -802,7 +802,7 @@ write_sf(Piketi_all2,
 rm(list=ls())
 
 
-# polderu suknu stacijas -----
+# polder pumping stations -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -814,7 +814,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -890,7 +890,7 @@ rm(list=ls())
 
 
 
-# polderu teritorijas -----
+# polders -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -902,7 +902,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -993,7 +993,7 @@ write_sf(PolderuTeritorijas_all2,
 rm(list=ls())
 
 
-# sateces baseini ----
+# catchment basins ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1005,7 +1005,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1095,7 +1095,7 @@ write_sf(SatecesBaseini_all3,
 rm(list=ls())
 
 
-# savienojumi ----
+# drenage connection points ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1107,7 +1107,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1185,7 +1185,7 @@ write_sf(Savienojumi_all2,
 rm(list=ls())
 
 
-# valsts nozimes ūdensnotekas -----
+# state controlled rivers -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1197,7 +1197,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1287,7 +1287,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1378,7 +1378,7 @@ rm(list=ls())
 
 
 
-# udensnotekas (novadgravji) -----
+# water drenage ditches -----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1390,7 +1390,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1470,7 +1470,7 @@ rm(list=ls())
 
 
 
-# udensnoteku un gravju piketi ----
+# ditch pickets ----
 
 
 
@@ -1483,7 +1483,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1559,7 +1559,7 @@ rm(list=ls())
 
 
 
-# udenstecu asis ----
+# state river axis ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1571,7 +1571,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1650,7 +1650,7 @@ rm(list=ls())
 
 
 
-# udens virsmas laukumi ----
+# river surface ----
 
 
 link="https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?"
@@ -1662,7 +1662,7 @@ bwk_client <- WFSClient$new(link,serviceVersion = "2.0.0")
 
 bwk_client$getFeatureTypes(pretty = TRUE)
 
-# geometrijam
+# geoms
 
 url$query <- list(service = "wfs",
                   request = "GetFeature",
@@ -1751,25 +1751,25 @@ rm(list=ls())
 ```
 
 
-## TopographicMap {#Ch04.04}
+## Topographic Map {#Ch04.04}
 
-To ensure the research process at the University of Latvia, the third (completed 
+To support research process at the University of Latvia, the third (completed 
 by January 1, 2018) and fourth (unfinished) versions of the Latvian Geospatial 
 Information Agency's topographic map M:10000 vector geodatabase were received. 
 The most recent version is available for [public viewing](https://kartes.lgia.gov.lv/karte/?x=311986.74&y=506887.35&zoom=3&basemap=topokarte), 
-but access to vector data is restricted.
+but access to the vector data is restricted.
 
 For the purposes of this project, the ESRI geodatabase has been converted to a 
-geopackage file. As part of the file format change, geometries (empty, their 
+GeoPackage file. As part of the file format change, geometries (empty, their 
 validity checked and corrected where necessary) and coordinate system have 
 been checked.
 
 Files were stored at `Geodata/2024/TopographicMap/`.
 
-After dealing with each database seperately, layers used in this project were 
-combined, preffering the most timely per mapping page. These layers are:
+After processing each database separately, we combined the layers used in this 
+project, selecting the most recent layer per map sheet. These layers are:
 
-- `bride_L`, describing bridges as lines;
+- `brigde_L`, describing bridges as lines;
 
 - `bridge_P`, describing bridges as points;
 
@@ -1781,14 +1781,15 @@ combined, preffering the most timely per mapping page. These layers are:
 
 - `road_A`, describing larger roads as polygons;
 
-- `road_L`, describing different including very small and unused roads as lines;
+- `road_L`, including very small or disused ones, as lines;
 
 - `swamp_A`, describing bogs as polygons;
 
 - `flora_L`, describing linear tree and shrub formations;
 
-- `build_A`, describing types of builtup areas. Version 4 available at the 
-University of Latvia does not have all the classes as version 3, therefore version 3 is used.
+- `build_A`, describing types of built-up areas. Version 4 available at the 
+University of Latvia does not include all the classes present in Version 3, 
+therefore version 3 is used.
 
 
 ``` r
@@ -2010,7 +2011,7 @@ use, such as workflow testing and observation filtering. This project uses
 data from 2018.
 
 The downloaded data set has been transformed into the Latvian coordinate 
-system (EPSG:3059), and the file format has been changed to geoparquet to 
+system (EPSG:3059), and the file format has been changed to GeoParquet to 
 facilitate and speed up further work. As part of the file format change, 
 geometries (empty, validity) have been checked.
 

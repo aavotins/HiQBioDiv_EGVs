@@ -26,17 +26,17 @@ data.
 
 - **ecogeographical variables** (EGVs) - this is the final product of the workflow 
 describing environment for statistical analysis (e.g. *species distribution modelling*). 
-They are suitable also for publishing due to standadisation of the values. In other 
-words, these are standardised landscape ecological variables in the for of 
+They are suitable also for publishing due to standardisation of the values. In other 
+words, these are standardised landscape ecological variables in the form of 
 high-resolution raster layers (we use 1 ha cells). Each layer contains values 
 representing the environment within the cell footprint or a summary of focal 
 neighbours. In our case, each layer is of quantitative data describing a natural 
 quantity (e.g. timber volume, mean annual temperature), or quantified information of 
 categories (e.g. the fraction of class's area in an analysis cell or some neighbourhood, 
 the number of pixels creating an edge of a certain class or between two classes in the 
-analysis cell or some neighbourhood). The values of each layer are standardised - from 
-every cells value layers mean is subtracted and then every cells value is divided 
-by layers root mean square error. Therefore, the values are more suitable for 
+analysis cell or some neighbourhood). The values of each layer are standardised: 
+for each cell, the layer mean is subtracted and the result is divided 
+by the root mean square error. Therefore, the values are more suitable for 
 modelling, and the layers can be made publicly available as they do not directly 
 provide exact sensitive information.
 
@@ -54,7 +54,7 @@ stand-level-inventory database:
     
     - larch (13)
     
-    - fir (23, 28)
+    - firs (23, 28)
 
 **boreal deciduous** - following species (codes) as used in the national forest 
 stand-level-inventory database:
@@ -129,13 +129,23 @@ Acronyms:
 
 **CRS** - coordinate reference system
 
-**EGV** - ecogeoraphical variables
+**EGV** - ecogeographical variables
 
 **SDM** - species distribution modelling
 
 **SDMs** - species distribution models
 
-**LAD** - Rural support service
+**LAD** - Rural Support Service
+
+**LĢIA** - Latvian Geospatial Information Agency
+
+**LULC** - Land use and land cover
+
+**LU ĢZZF** - University of Latvia Faculty of Geography and Earth Sciences
+
+**LVM** - state owned Joint Stock Company "Latvia's State Forests"
+
+**LVMI Silava** - Latvian State Forest Research Institute "Silava"
 
 **NDMI** - normalized difference moisture index
 

@@ -1,6 +1,6 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
-author: "Andris Avotiņš"
+author: "Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -51,16 +51,15 @@ options(
 Welcome! This book documents the geodata and processing workflows used to create
 ecogeographical variables (EGVs) for species distribution modelling in Latvia (2024).
 
-This material has been developed to present the results of three projects 
-implemented at the University of Latvia, which are deeply rooted in species 
-distribution modeling, and, more importantly, to demonstrate and explain the 
-work process and decisions made in order to ensure their repeatability and 
+This material presents the results of three University of Latvia projects deeply 
+rooted in species distribution modelling and, more importantly, explains the workflow 
+and decisions made to ensure their repeatability and 
 reproducibility. These projects are:
 
 - The project "Preparation of a geospatial data layer covering existing 
 protected areas for the implementation of the EU Biodiversity Strategy 
-2030" (No. 1-08/73/2023), funded by the Latvian Environmental Protection Fund 
-Administration;
+2030" (No. 1-08/73/2023), funded by the Administrations of the Latvian 
+Environmental Protection Fund;
 
 - Scientific research service project commissioned by AS "Latvijas valsts 
 meži" (Latvian State Forests) "Improvement of the monitoring of the northern 
@@ -161,8 +160,8 @@ brackets, for example, {package}.
 characteristics and maps;
 
 * *links to other resources*, especially to higher-level products and results 
-created within the project, but also to input data, if it is publicly 
-available. The results are intended for practical use.
+created within the project, as well as any publicly available data. The results 
+are intended for practical use.
 
 Within reason, the material describes all data sets used and provides metadata 
 related to ensuring reproducibility. Since not all data sets are freely available, 

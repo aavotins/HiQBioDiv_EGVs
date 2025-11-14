@@ -26,7 +26,7 @@ create ecogeographical variables (EGVs) for species distribution modelling
 describing Latvia, 2024.</p>" />
   
 
-<meta name="author" content="Andris Avotiņš" />
+<meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš" />
 
 
 <meta name="date" content="2025-11-14" />
@@ -186,17 +186,17 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.02"><i class="fa fa-check"></i><b>2.2</b> Other utility functions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="Ch03.html"><a href="Ch03.html"><i class="fa fa-check"></i><b>3</b> Templates and utilities</a>
+<li class="chapter" data-level="3" data-path="Ch03.html"><a href="Ch03.html"><i class="fa fa-check"></i><b>3</b> Templates files</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Ch03.html"><a href="Ch03.html#Ch03.01"><i class="fa fa-check"></i><b>3.1</b> Vector data</a></li>
 <li class="chapter" data-level="3.2" data-path="Ch03.html"><a href="Ch03.html#Ch03.02"><i class="fa fa-check"></i><b>3.2</b> Raster data</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Ch04.html"><a href="Ch04.html"><i class="fa fa-check"></i><b>4</b> Raw geodata</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Service’s State Forest Registry</a></li>
+<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Service’s State Forest Register</a></li>
 <li class="chapter" data-level="4.2" data-path="Ch04.html"><a href="Ch04.html#Ch04.02"><i class="fa fa-check"></i><b>4.2</b> Rural Support Service’s information on declared fields</a></li>
 <li class="chapter" data-level="4.3" data-path="Ch04.html"><a href="Ch04.html#Ch04.03"><i class="fa fa-check"></i><b>4.3</b> Melioration Cadaster</a></li>
-<li class="chapter" data-level="4.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.04"><i class="fa fa-check"></i><b>4.4</b> TopographicMap</a></li>
+<li class="chapter" data-level="4.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.04"><i class="fa fa-check"></i><b>4.4</b> Topographic Map</a></li>
 <li class="chapter" data-level="4.5" data-path="Ch04.html"><a href="Ch04.html#Ch04.05"><i class="fa fa-check"></i><b>4.5</b> Corine Land Cover 2018</a></li>
 <li class="chapter" data-level="4.6" data-path="Ch04.html"><a href="Ch04.html#Ch04.06"><i class="fa fa-check"></i><b>4.6</b> Publicly available LVM data</a></li>
 <li class="chapter" data-level="4.7" data-path="Ch04.html"><a href="Ch04.html#Ch04.07"><i class="fa fa-check"></i><b>4.7</b> Soil data</a>
@@ -824,12 +824,12 @@ working environments - template files and their locations in the file tree.</p>
 <ul>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/download_raster_templates.html"><code>download_raster_templates()</code></a> — fetch template rasters from Zenodo repository
 and place them in user specified location on disk, or by default - the
-one we used. By default this functions links
-to <a href="https://zenodo.org/records/14497070">version 2.0.0</a> of the dataset;</p></li>
+one we used. By default this function links
+to the <a href="https://zenodo.org/records/14497070">version 2.0.0</a> of the dataset;</p></li>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/download_vector_templates.html"><code>download_vector_templates()</code></a> - fetch template vector grids/points from Zenodo
 repository and place them in user specified location on disk, or by default - the
-one we used. By default this functions links
-to <a href="https://zenodo.org/records/14277114">version 1.0.1</a> of the dataset;</p></li>
+one we used. By default this function links
+to the <a href="https://zenodo.org/records/14277114">version 1.0.1</a> of the dataset;</p></li>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/radius_function.html">radius_function()</a> — extracts
 summary statistics from raster layers using buffered polygon zones of multiple
 radii and rasterizes them onto a common template grid. Internally hard coded to
@@ -844,8 +844,8 @@ worker need to be assigned.</p></li>
 </div>
 <div id="Ch02.01.02" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> General purpose functions<a href="Ch02.html#Ch02.01.02" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Each of those functions are small workflows themselves, that can be combined
-into larger workflows and used more widely, than for Latvia.</p>
+<p>Each of those functions are small workflows themselves that can be combined
+into larger workflows and used more widely than for Latvia.</p>
 <ul>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/tile_vector_grid.html"><code>tile_vector_grid()</code></a> — tile template (vector) grid for chunked processing. The function internally is linked to our file naming
 convention. As long as it is maintained, function can be used to create tiled grid
@@ -869,7 +869,7 @@ spatial cover, resolution, coordinate reference system, exact pixel matching, et
 Creation of layers with default background values is faster than recreating them
 several times in workflows preparing EGVs;</p></li>
 <li><p><a href="">polygon2input()</a> — rasterize polygons to input layers. Handles only polygon data,
-other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to
+other geometry types need to be buffered. Rasterizes polygon/multipolygon sf data to
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer
 built from the template (so grids normally match). Projection is optional
 (project_mode). Missing values are counted only over valid template cells. User

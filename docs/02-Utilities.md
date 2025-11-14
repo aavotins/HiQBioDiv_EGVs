@@ -43,13 +43,13 @@ These functions are:
 
 - [`download_raster_templates()`](https://aavotins.github.io/egvtools/reference/download_raster_templates.html) — fetch template rasters from Zenodo repository 
 and place them in user specified location on disk, or by default - the 
-one we used. By default this functions links 
-to [version 2.0.0](https://zenodo.org/records/14497070) of the dataset;
+one we used. By default this function links 
+to the [version 2.0.0](https://zenodo.org/records/14497070) of the dataset;
 
 - [`download_vector_templates()`](https://aavotins.github.io/egvtools/reference/download_vector_templates.html) - fetch template vector grids/points from Zenodo 
 repository and place them in user specified location on disk, or by default - the 
-one we used. By default this functions links 
-to [version 1.0.1](https://zenodo.org/records/14277114) of the dataset;
+one we used. By default this function links 
+to the [version 1.0.1](https://zenodo.org/records/14277114) of the dataset;
 
 - [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
 summary statistics from raster layers using buffered polygon zones of multiple 
@@ -65,8 +65,8 @@ worker need to be assigned.
 
 ### General purpose functions {#Ch02.01.02} 
 
-Each of those functions are small workflows themselves, that can be combined 
-into larger workflows and used more widely, than for Latvia.
+Each of those functions are small workflows themselves that can be combined 
+into larger workflows and used more widely than for Latvia.
 
 - [`tile_vector_grid()`](https://aavotins.github.io/egvtools/reference/tile_vector_grid.html) — tile template (vector) grid for chunked processing. The function internally is linked to our file naming 
 convention. As long as it is maintained, function can be used to create tiled grid 
@@ -93,7 +93,7 @@ Creation of layers with default background values is faster than recreating them
 several times in workflows preparing EGVs;
 
 - [polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
-other geometry types need to buffered. Rasterizes polygon/multipolygon sf data to 
+other geometry types need to be buffered. Rasterizes polygon/multipolygon sf data to 
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer 
 built from the template (so grids normally match). Projection is optional 
 (project_mode). Missing values are counted only over valid template cells. User 

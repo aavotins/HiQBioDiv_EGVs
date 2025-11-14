@@ -33919,7 +33919,7 @@ writeRaster(merogots,
 
 **Latvian name:** Apbūves platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, builtup areas from [Landscape classification](#Ch05.03) were selected (value 500 reclassified to
+**Procedure:** First, built-up areas from [Landscape classification](#Ch05.03) were selected (value 500 reclassified to
 value 1, others as 0). 
 Once reclassified, layer was aggregated to EGV resolution with `egvtools::input2egv()` 
 by calculating arithmetic mean, thus resulting in cover fraction. 

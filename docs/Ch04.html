@@ -26,7 +26,7 @@ create ecogeographical variables (EGVs) for species distribution modelling
 describing Latvia, 2024.</p>" />
   
 
-<meta name="author" content="Andris Avotiņš" />
+<meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš" />
 
 
 <meta name="date" content="2025-11-14" />
@@ -186,17 +186,17 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="Ch02.html"><a href="Ch02.html#Ch02.02"><i class="fa fa-check"></i><b>2.2</b> Other utility functions</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="Ch03.html"><a href="Ch03.html"><i class="fa fa-check"></i><b>3</b> Templates and utilities</a>
+<li class="chapter" data-level="3" data-path="Ch03.html"><a href="Ch03.html"><i class="fa fa-check"></i><b>3</b> Templates files</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Ch03.html"><a href="Ch03.html#Ch03.01"><i class="fa fa-check"></i><b>3.1</b> Vector data</a></li>
 <li class="chapter" data-level="3.2" data-path="Ch03.html"><a href="Ch03.html#Ch03.02"><i class="fa fa-check"></i><b>3.2</b> Raster data</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Ch04.html"><a href="Ch04.html"><i class="fa fa-check"></i><b>4</b> Raw geodata</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Service’s State Forest Registry</a></li>
+<li class="chapter" data-level="4.1" data-path="Ch04.html"><a href="Ch04.html#Ch04.01"><i class="fa fa-check"></i><b>4.1</b> State Forest Service’s State Forest Register</a></li>
 <li class="chapter" data-level="4.2" data-path="Ch04.html"><a href="Ch04.html#Ch04.02"><i class="fa fa-check"></i><b>4.2</b> Rural Support Service’s information on declared fields</a></li>
 <li class="chapter" data-level="4.3" data-path="Ch04.html"><a href="Ch04.html#Ch04.03"><i class="fa fa-check"></i><b>4.3</b> Melioration Cadaster</a></li>
-<li class="chapter" data-level="4.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.04"><i class="fa fa-check"></i><b>4.4</b> TopographicMap</a></li>
+<li class="chapter" data-level="4.4" data-path="Ch04.html"><a href="Ch04.html#Ch04.04"><i class="fa fa-check"></i><b>4.4</b> Topographic Map</a></li>
 <li class="chapter" data-level="4.5" data-path="Ch04.html"><a href="Ch04.html#Ch04.05"><i class="fa fa-check"></i><b>4.5</b> Corine Land Cover 2018</a></li>
 <li class="chapter" data-level="4.6" data-path="Ch04.html"><a href="Ch04.html#Ch04.06"><i class="fa fa-check"></i><b>4.6</b> Publicly available LVM data</a></li>
 <li class="chapter" data-level="4.7" data-path="Ch04.html"><a href="Ch04.html#Ch04.07"><i class="fa fa-check"></i><b>4.7</b> Soil data</a>
@@ -795,16 +795,16 @@ div.csl-indent {
 <h1><span class="header-section-number">4</span> Raw geodata<a href="Ch04.html#Ch04" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This chapter describes raw geodata used and the preliminary processing conducted on them.</p>
 <div id="Ch04.01" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> State Forest Service’s State Forest Registry<a href="Ch04.html#Ch04.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The State Forest Service’s Forest State Register database (ESRI file geodatabase),
+<h2><span class="header-section-number">4.1</span> State Forest Service’s State Forest Register<a href="Ch04.html#Ch04.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The State Forest Service’s State Forest Register database (ESRI file geodatabase),
 which compiles indicators and spatial data characterizing forest compartments
 (stand level inventory database), was received by the University of
 Latvia on January 7, 2024, to support study and research processes. The structure
 of the received database version corresponds to
-the <a href="https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura">Forest State Register Forest Inventory File Structure</a>, but
+the <a href="https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura">State Forest Register Forest Inventory File Structure</a>, but
 lowercase letters are used in field names.</p>
 <p>After downloading, the CRS is guarded, geometries are checked and saved in
-geoparquet format.</p>
+GeoParquet format.</p>
 <p>Files are stored at <code>Geodata/2024/MVR/</code>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="Ch04.html#cb13-1" tabindex="-1"></a><span class="co"># libs</span></span>
@@ -836,11 +836,11 @@ geoparquet format.</p>
 <div id="Ch04.02" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Rural Support Service’s information on declared fields<a href="Ch04.html#Ch04.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Rural Support Service maintains <a href="https://data.gov.lv/dati/lv/organization/lad">regularly updated information on the open
-data portal</a>. An archive (since 2015) is
+data portal</a>. An archive (since 2016) is
 also available there, and the data sets that can be used contain the keyword “deklarētās platības”.</p>
 <p>After downloading files to <code>Geodata/2024/LAD/downloads/</code>, they are unzipped and read into R.
-it is checked, empty files are deleted and the rest are validated, and all individual
-files are combined into one, which is saved in geopackage and geoparquet formats
+Files are checked, empty geometries are deleted and the rest are validated, and all individual
+files are combined into one, which is saved in GeoPackage and GeoParquet formats
 at <code>Geodata/2024/LAD/</code>. At the end, downloaded files are unlinked.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="Ch04.html#cb14-1" tabindex="-1"></a><span class="co"># libs</span></span>
@@ -884,7 +884,7 @@ at <code>Geodata/2024/LAD/</code>. At the end, downloaded files are unlinked.</p
 <h2><span class="header-section-number">4.3</span> Melioration Cadaster<a href="Ch04.html#Ch04.03" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Land Improvement Cadastre Information System database was downloaded layer
 by layer from Geoserver. Geometries were tested and validated for each layer, and
-layers were all combined into a single geopackage file stored at <code>Geodata/2024/MKIS/</code>.</p>
+layers were all combined into a single GeoPackage file stored at <code>Geodata/2024/MKIS/</code>.</p>
 <p>Initially, no additional processing was performed on this data. It was used to
 prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#Ch05.01">Terrain products</a> and <a href="Ch05.html#Ch05.03">Landscape classification</a>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -908,7 +908,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-18"><a href="Ch04.html#cb15-18" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-19"><a href="Ch04.html#cb15-19" tabindex="-1"></a></span>
 <span id="cb15-20"><a href="Ch04.html#cb15-20" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="Ch04.html#cb15-21" tabindex="-1"></a><span class="co"># aizsargdambji ----</span></span>
+<span id="cb15-21"><a href="Ch04.html#cb15-21" tabindex="-1"></a><span class="co"># dams ----</span></span>
 <span id="cb15-22"><a href="Ch04.html#cb15-22" tabindex="-1"></a></span>
 <span id="cb15-23"><a href="Ch04.html#cb15-23" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-24"><a href="Ch04.html#cb15-24" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
@@ -930,7 +930,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-40"><a href="Ch04.html#cb15-40" tabindex="-1"></a>         <span class="at">append=</span><span class="cn">FALSE</span>)</span>
 <span id="cb15-41"><a href="Ch04.html#cb15-41" tabindex="-1"></a><span class="fu">rm</span>(aizsargdambji)</span>
 <span id="cb15-42"><a href="Ch04.html#cb15-42" tabindex="-1"></a></span>
-<span id="cb15-43"><a href="Ch04.html#cb15-43" tabindex="-1"></a><span class="co"># dabiskas udensteces ----</span></span>
+<span id="cb15-43"><a href="Ch04.html#cb15-43" tabindex="-1"></a><span class="co"># watercourses ----</span></span>
 <span id="cb15-44"><a href="Ch04.html#cb15-44" tabindex="-1"></a></span>
 <span id="cb15-45"><a href="Ch04.html#cb15-45" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-46"><a href="Ch04.html#cb15-46" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
@@ -955,7 +955,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-65"><a href="Ch04.html#cb15-65" tabindex="-1"></a></span>
 <span id="cb15-66"><a href="Ch04.html#cb15-66" tabindex="-1"></a></span>
 <span id="cb15-67"><a href="Ch04.html#cb15-67" tabindex="-1"></a></span>
-<span id="cb15-68"><a href="Ch04.html#cb15-68" tabindex="-1"></a><span class="co"># dambju piketi ----</span></span>
+<span id="cb15-68"><a href="Ch04.html#cb15-68" tabindex="-1"></a><span class="co"># dam pickets ----</span></span>
 <span id="cb15-69"><a href="Ch04.html#cb15-69" tabindex="-1"></a></span>
 <span id="cb15-70"><a href="Ch04.html#cb15-70" tabindex="-1"></a></span>
 <span id="cb15-71"><a href="Ch04.html#cb15-71" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
@@ -980,7 +980,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-90"><a href="Ch04.html#cb15-90" tabindex="-1"></a><span class="fu">rm</span>(DambjuPiketi)</span>
 <span id="cb15-91"><a href="Ch04.html#cb15-91" tabindex="-1"></a></span>
 <span id="cb15-92"><a href="Ch04.html#cb15-92" tabindex="-1"></a></span>
-<span id="cb15-93"><a href="Ch04.html#cb15-93" tabindex="-1"></a><span class="co"># drenas ----</span></span>
+<span id="cb15-93"><a href="Ch04.html#cb15-93" tabindex="-1"></a><span class="co"># drainpipes ----</span></span>
 <span id="cb15-94"><a href="Ch04.html#cb15-94" tabindex="-1"></a></span>
 <span id="cb15-95"><a href="Ch04.html#cb15-95" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-96"><a href="Ch04.html#cb15-96" tabindex="-1"></a></span>
@@ -1046,12 +1046,12 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-156"><a href="Ch04.html#cb15-156" tabindex="-1"></a></span>
 <span id="cb15-157"><a href="Ch04.html#cb15-157" tabindex="-1"></a></span>
 <span id="cb15-158"><a href="Ch04.html#cb15-158" tabindex="-1"></a></span>
-<span id="cb15-159"><a href="Ch04.html#cb15-159" tabindex="-1"></a><span class="co"># drenu kolektori ----</span></span>
+<span id="cb15-159"><a href="Ch04.html#cb15-159" tabindex="-1"></a><span class="co"># drain collectors ----</span></span>
 <span id="cb15-160"><a href="Ch04.html#cb15-160" tabindex="-1"></a></span>
 <span id="cb15-161"><a href="Ch04.html#cb15-161" tabindex="-1"></a></span>
 <span id="cb15-162"><a href="Ch04.html#cb15-162" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-163"><a href="Ch04.html#cb15-163" tabindex="-1"></a></span>
-<span id="cb15-164"><a href="Ch04.html#cb15-164" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-164"><a href="Ch04.html#cb15-164" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-165"><a href="Ch04.html#cb15-165" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-166"><a href="Ch04.html#cb15-166" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-167"><a href="Ch04.html#cb15-167" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1063,7 +1063,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-173"><a href="Ch04.html#cb15-173" tabindex="-1"></a>geometrijam <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(request)</span>
 <span id="cb15-174"><a href="Ch04.html#cb15-174" tabindex="-1"></a>geometrijam</span>
 <span id="cb15-175"><a href="Ch04.html#cb15-175" tabindex="-1"></a></span>
-<span id="cb15-176"><a href="Ch04.html#cb15-176" tabindex="-1"></a><span class="co"># skaitam</span></span>
+<span id="cb15-176"><a href="Ch04.html#cb15-176" tabindex="-1"></a><span class="co"># count</span></span>
 <span id="cb15-177"><a href="Ch04.html#cb15-177" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-178"><a href="Ch04.html#cb15-178" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
 <span id="cb15-179"><a href="Ch04.html#cb15-179" tabindex="-1"></a>                  <span class="at">srsName=</span><span class="st">&quot;EPSG:3059&quot;</span>,</span>
@@ -1139,7 +1139,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-249"><a href="Ch04.html#cb15-249" tabindex="-1"></a></span>
 <span id="cb15-250"><a href="Ch04.html#cb15-250" tabindex="-1"></a></span>
 <span id="cb15-251"><a href="Ch04.html#cb15-251" tabindex="-1"></a></span>
-<span id="cb15-252"><a href="Ch04.html#cb15-252" tabindex="-1"></a><span class="co"># drenazas tikla būves ----</span></span>
+<span id="cb15-252"><a href="Ch04.html#cb15-252" tabindex="-1"></a><span class="co"># drenage network structures ----</span></span>
 <span id="cb15-253"><a href="Ch04.html#cb15-253" tabindex="-1"></a></span>
 <span id="cb15-254"><a href="Ch04.html#cb15-254" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
 <span id="cb15-255"><a href="Ch04.html#cb15-255" tabindex="-1"></a>url<span class="ot">=</span><span class="fu">parse_url</span>(link)</span>
@@ -1150,7 +1150,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-260"><a href="Ch04.html#cb15-260" tabindex="-1"></a></span>
 <span id="cb15-261"><a href="Ch04.html#cb15-261" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-262"><a href="Ch04.html#cb15-262" tabindex="-1"></a></span>
-<span id="cb15-263"><a href="Ch04.html#cb15-263" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-263"><a href="Ch04.html#cb15-263" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-264"><a href="Ch04.html#cb15-264" tabindex="-1"></a></span>
 <span id="cb15-265"><a href="Ch04.html#cb15-265" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-266"><a href="Ch04.html#cb15-266" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1227,7 +1227,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-337"><a href="Ch04.html#cb15-337" tabindex="-1"></a></span>
 <span id="cb15-338"><a href="Ch04.html#cb15-338" tabindex="-1"></a></span>
 <span id="cb15-339"><a href="Ch04.html#cb15-339" tabindex="-1"></a></span>
-<span id="cb15-340"><a href="Ch04.html#cb15-340" tabindex="-1"></a><span class="co"># gravji -----</span></span>
+<span id="cb15-340"><a href="Ch04.html#cb15-340" tabindex="-1"></a><span class="co"># dithces -----</span></span>
 <span id="cb15-341"><a href="Ch04.html#cb15-341" tabindex="-1"></a></span>
 <span id="cb15-342"><a href="Ch04.html#cb15-342" tabindex="-1"></a></span>
 <span id="cb15-343"><a href="Ch04.html#cb15-343" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1239,7 +1239,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-349"><a href="Ch04.html#cb15-349" tabindex="-1"></a></span>
 <span id="cb15-350"><a href="Ch04.html#cb15-350" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-351"><a href="Ch04.html#cb15-351" tabindex="-1"></a></span>
-<span id="cb15-352"><a href="Ch04.html#cb15-352" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-352"><a href="Ch04.html#cb15-352" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-353"><a href="Ch04.html#cb15-353" tabindex="-1"></a></span>
 <span id="cb15-354"><a href="Ch04.html#cb15-354" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-355"><a href="Ch04.html#cb15-355" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1316,7 +1316,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-426"><a href="Ch04.html#cb15-426" tabindex="-1"></a></span>
 <span id="cb15-427"><a href="Ch04.html#cb15-427" tabindex="-1"></a></span>
 <span id="cb15-428"><a href="Ch04.html#cb15-428" tabindex="-1"></a></span>
-<span id="cb15-429"><a href="Ch04.html#cb15-429" tabindex="-1"></a><span class="co"># hidrometriskie posteni ----</span></span>
+<span id="cb15-429"><a href="Ch04.html#cb15-429" tabindex="-1"></a><span class="co"># hydrometric posts ----</span></span>
 <span id="cb15-430"><a href="Ch04.html#cb15-430" tabindex="-1"></a></span>
 <span id="cb15-431"><a href="Ch04.html#cb15-431" tabindex="-1"></a></span>
 <span id="cb15-432"><a href="Ch04.html#cb15-432" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1328,7 +1328,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-438"><a href="Ch04.html#cb15-438" tabindex="-1"></a></span>
 <span id="cb15-439"><a href="Ch04.html#cb15-439" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-440"><a href="Ch04.html#cb15-440" tabindex="-1"></a></span>
-<span id="cb15-441"><a href="Ch04.html#cb15-441" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-441"><a href="Ch04.html#cb15-441" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-442"><a href="Ch04.html#cb15-442" tabindex="-1"></a></span>
 <span id="cb15-443"><a href="Ch04.html#cb15-443" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-444"><a href="Ch04.html#cb15-444" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1403,7 +1403,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-513"><a href="Ch04.html#cb15-513" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb15-514"><a href="Ch04.html#cb15-514" tabindex="-1"></a></span>
 <span id="cb15-515"><a href="Ch04.html#cb15-515" tabindex="-1"></a></span>
-<span id="cb15-516"><a href="Ch04.html#cb15-516" tabindex="-1"></a><span class="co"># liela diametra kolektori ----</span></span>
+<span id="cb15-516"><a href="Ch04.html#cb15-516" tabindex="-1"></a><span class="co"># large diameter drain collectors ----</span></span>
 <span id="cb15-517"><a href="Ch04.html#cb15-517" tabindex="-1"></a></span>
 <span id="cb15-518"><a href="Ch04.html#cb15-518" tabindex="-1"></a></span>
 <span id="cb15-519"><a href="Ch04.html#cb15-519" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1415,7 +1415,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-525"><a href="Ch04.html#cb15-525" tabindex="-1"></a></span>
 <span id="cb15-526"><a href="Ch04.html#cb15-526" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-527"><a href="Ch04.html#cb15-527" tabindex="-1"></a></span>
-<span id="cb15-528"><a href="Ch04.html#cb15-528" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-528"><a href="Ch04.html#cb15-528" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-529"><a href="Ch04.html#cb15-529" tabindex="-1"></a></span>
 <span id="cb15-530"><a href="Ch04.html#cb15-530" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-531"><a href="Ch04.html#cb15-531" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1492,7 +1492,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-602"><a href="Ch04.html#cb15-602" tabindex="-1"></a></span>
 <span id="cb15-603"><a href="Ch04.html#cb15-603" tabindex="-1"></a></span>
 <span id="cb15-604"><a href="Ch04.html#cb15-604" tabindex="-1"></a></span>
-<span id="cb15-605"><a href="Ch04.html#cb15-605" tabindex="-1"></a><span class="co"># piketi ----</span></span>
+<span id="cb15-605"><a href="Ch04.html#cb15-605" tabindex="-1"></a><span class="co"># river pickets ----</span></span>
 <span id="cb15-606"><a href="Ch04.html#cb15-606" tabindex="-1"></a></span>
 <span id="cb15-607"><a href="Ch04.html#cb15-607" tabindex="-1"></a></span>
 <span id="cb15-608"><a href="Ch04.html#cb15-608" tabindex="-1"></a></span>
@@ -1505,7 +1505,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-615"><a href="Ch04.html#cb15-615" tabindex="-1"></a></span>
 <span id="cb15-616"><a href="Ch04.html#cb15-616" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-617"><a href="Ch04.html#cb15-617" tabindex="-1"></a></span>
-<span id="cb15-618"><a href="Ch04.html#cb15-618" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-618"><a href="Ch04.html#cb15-618" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-619"><a href="Ch04.html#cb15-619" tabindex="-1"></a></span>
 <span id="cb15-620"><a href="Ch04.html#cb15-620" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-621"><a href="Ch04.html#cb15-621" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1580,7 +1580,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-690"><a href="Ch04.html#cb15-690" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb15-691"><a href="Ch04.html#cb15-691" tabindex="-1"></a></span>
 <span id="cb15-692"><a href="Ch04.html#cb15-692" tabindex="-1"></a></span>
-<span id="cb15-693"><a href="Ch04.html#cb15-693" tabindex="-1"></a><span class="co"># polderu suknu stacijas -----</span></span>
+<span id="cb15-693"><a href="Ch04.html#cb15-693" tabindex="-1"></a><span class="co"># polder pumping stations -----</span></span>
 <span id="cb15-694"><a href="Ch04.html#cb15-694" tabindex="-1"></a></span>
 <span id="cb15-695"><a href="Ch04.html#cb15-695" tabindex="-1"></a></span>
 <span id="cb15-696"><a href="Ch04.html#cb15-696" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1592,7 +1592,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-702"><a href="Ch04.html#cb15-702" tabindex="-1"></a></span>
 <span id="cb15-703"><a href="Ch04.html#cb15-703" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-704"><a href="Ch04.html#cb15-704" tabindex="-1"></a></span>
-<span id="cb15-705"><a href="Ch04.html#cb15-705" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-705"><a href="Ch04.html#cb15-705" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-706"><a href="Ch04.html#cb15-706" tabindex="-1"></a></span>
 <span id="cb15-707"><a href="Ch04.html#cb15-707" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-708"><a href="Ch04.html#cb15-708" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1668,7 +1668,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-778"><a href="Ch04.html#cb15-778" tabindex="-1"></a></span>
 <span id="cb15-779"><a href="Ch04.html#cb15-779" tabindex="-1"></a></span>
 <span id="cb15-780"><a href="Ch04.html#cb15-780" tabindex="-1"></a></span>
-<span id="cb15-781"><a href="Ch04.html#cb15-781" tabindex="-1"></a><span class="co"># polderu teritorijas -----</span></span>
+<span id="cb15-781"><a href="Ch04.html#cb15-781" tabindex="-1"></a><span class="co"># polders -----</span></span>
 <span id="cb15-782"><a href="Ch04.html#cb15-782" tabindex="-1"></a></span>
 <span id="cb15-783"><a href="Ch04.html#cb15-783" tabindex="-1"></a></span>
 <span id="cb15-784"><a href="Ch04.html#cb15-784" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1680,7 +1680,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-790"><a href="Ch04.html#cb15-790" tabindex="-1"></a></span>
 <span id="cb15-791"><a href="Ch04.html#cb15-791" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-792"><a href="Ch04.html#cb15-792" tabindex="-1"></a></span>
-<span id="cb15-793"><a href="Ch04.html#cb15-793" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-793"><a href="Ch04.html#cb15-793" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-794"><a href="Ch04.html#cb15-794" tabindex="-1"></a></span>
 <span id="cb15-795"><a href="Ch04.html#cb15-795" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-796"><a href="Ch04.html#cb15-796" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1771,7 +1771,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-881"><a href="Ch04.html#cb15-881" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb15-882"><a href="Ch04.html#cb15-882" tabindex="-1"></a></span>
 <span id="cb15-883"><a href="Ch04.html#cb15-883" tabindex="-1"></a></span>
-<span id="cb15-884"><a href="Ch04.html#cb15-884" tabindex="-1"></a><span class="co"># sateces baseini ----</span></span>
+<span id="cb15-884"><a href="Ch04.html#cb15-884" tabindex="-1"></a><span class="co"># catchment basins ----</span></span>
 <span id="cb15-885"><a href="Ch04.html#cb15-885" tabindex="-1"></a></span>
 <span id="cb15-886"><a href="Ch04.html#cb15-886" tabindex="-1"></a></span>
 <span id="cb15-887"><a href="Ch04.html#cb15-887" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1783,7 +1783,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-893"><a href="Ch04.html#cb15-893" tabindex="-1"></a></span>
 <span id="cb15-894"><a href="Ch04.html#cb15-894" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-895"><a href="Ch04.html#cb15-895" tabindex="-1"></a></span>
-<span id="cb15-896"><a href="Ch04.html#cb15-896" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-896"><a href="Ch04.html#cb15-896" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-897"><a href="Ch04.html#cb15-897" tabindex="-1"></a></span>
 <span id="cb15-898"><a href="Ch04.html#cb15-898" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-899"><a href="Ch04.html#cb15-899" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1873,7 +1873,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-983"><a href="Ch04.html#cb15-983" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb15-984"><a href="Ch04.html#cb15-984" tabindex="-1"></a></span>
 <span id="cb15-985"><a href="Ch04.html#cb15-985" tabindex="-1"></a></span>
-<span id="cb15-986"><a href="Ch04.html#cb15-986" tabindex="-1"></a><span class="co"># savienojumi ----</span></span>
+<span id="cb15-986"><a href="Ch04.html#cb15-986" tabindex="-1"></a><span class="co"># drenage connection points ----</span></span>
 <span id="cb15-987"><a href="Ch04.html#cb15-987" tabindex="-1"></a></span>
 <span id="cb15-988"><a href="Ch04.html#cb15-988" tabindex="-1"></a></span>
 <span id="cb15-989"><a href="Ch04.html#cb15-989" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1885,7 +1885,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-995"><a href="Ch04.html#cb15-995" tabindex="-1"></a></span>
 <span id="cb15-996"><a href="Ch04.html#cb15-996" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-997"><a href="Ch04.html#cb15-997" tabindex="-1"></a></span>
-<span id="cb15-998"><a href="Ch04.html#cb15-998" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-998"><a href="Ch04.html#cb15-998" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-999"><a href="Ch04.html#cb15-999" tabindex="-1"></a></span>
 <span id="cb15-1000"><a href="Ch04.html#cb15-1000" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1001"><a href="Ch04.html#cb15-1001" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -1963,7 +1963,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1073"><a href="Ch04.html#cb15-1073" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb15-1074"><a href="Ch04.html#cb15-1074" tabindex="-1"></a></span>
 <span id="cb15-1075"><a href="Ch04.html#cb15-1075" tabindex="-1"></a></span>
-<span id="cb15-1076"><a href="Ch04.html#cb15-1076" tabindex="-1"></a><span class="co"># valsts nozimes ūdensnotekas -----</span></span>
+<span id="cb15-1076"><a href="Ch04.html#cb15-1076" tabindex="-1"></a><span class="co"># state controlled rivers -----</span></span>
 <span id="cb15-1077"><a href="Ch04.html#cb15-1077" tabindex="-1"></a></span>
 <span id="cb15-1078"><a href="Ch04.html#cb15-1078" tabindex="-1"></a></span>
 <span id="cb15-1079"><a href="Ch04.html#cb15-1079" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -1975,7 +1975,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1085"><a href="Ch04.html#cb15-1085" tabindex="-1"></a></span>
 <span id="cb15-1086"><a href="Ch04.html#cb15-1086" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1087"><a href="Ch04.html#cb15-1087" tabindex="-1"></a></span>
-<span id="cb15-1088"><a href="Ch04.html#cb15-1088" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1088"><a href="Ch04.html#cb15-1088" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1089"><a href="Ch04.html#cb15-1089" tabindex="-1"></a></span>
 <span id="cb15-1090"><a href="Ch04.html#cb15-1090" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1091"><a href="Ch04.html#cb15-1091" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2065,7 +2065,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1175"><a href="Ch04.html#cb15-1175" tabindex="-1"></a></span>
 <span id="cb15-1176"><a href="Ch04.html#cb15-1176" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1177"><a href="Ch04.html#cb15-1177" tabindex="-1"></a></span>
-<span id="cb15-1178"><a href="Ch04.html#cb15-1178" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1178"><a href="Ch04.html#cb15-1178" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1179"><a href="Ch04.html#cb15-1179" tabindex="-1"></a></span>
 <span id="cb15-1180"><a href="Ch04.html#cb15-1180" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1181"><a href="Ch04.html#cb15-1181" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2156,7 +2156,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1266"><a href="Ch04.html#cb15-1266" tabindex="-1"></a></span>
 <span id="cb15-1267"><a href="Ch04.html#cb15-1267" tabindex="-1"></a></span>
 <span id="cb15-1268"><a href="Ch04.html#cb15-1268" tabindex="-1"></a></span>
-<span id="cb15-1269"><a href="Ch04.html#cb15-1269" tabindex="-1"></a><span class="co"># udensnotekas (novadgravji) -----</span></span>
+<span id="cb15-1269"><a href="Ch04.html#cb15-1269" tabindex="-1"></a><span class="co"># water drenage ditches -----</span></span>
 <span id="cb15-1270"><a href="Ch04.html#cb15-1270" tabindex="-1"></a></span>
 <span id="cb15-1271"><a href="Ch04.html#cb15-1271" tabindex="-1"></a></span>
 <span id="cb15-1272"><a href="Ch04.html#cb15-1272" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -2168,7 +2168,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1278"><a href="Ch04.html#cb15-1278" tabindex="-1"></a></span>
 <span id="cb15-1279"><a href="Ch04.html#cb15-1279" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1280"><a href="Ch04.html#cb15-1280" tabindex="-1"></a></span>
-<span id="cb15-1281"><a href="Ch04.html#cb15-1281" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1281"><a href="Ch04.html#cb15-1281" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1282"><a href="Ch04.html#cb15-1282" tabindex="-1"></a></span>
 <span id="cb15-1283"><a href="Ch04.html#cb15-1283" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1284"><a href="Ch04.html#cb15-1284" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2248,7 +2248,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1358"><a href="Ch04.html#cb15-1358" tabindex="-1"></a></span>
 <span id="cb15-1359"><a href="Ch04.html#cb15-1359" tabindex="-1"></a></span>
 <span id="cb15-1360"><a href="Ch04.html#cb15-1360" tabindex="-1"></a></span>
-<span id="cb15-1361"><a href="Ch04.html#cb15-1361" tabindex="-1"></a><span class="co"># udensnoteku un gravju piketi ----</span></span>
+<span id="cb15-1361"><a href="Ch04.html#cb15-1361" tabindex="-1"></a><span class="co"># ditch pickets ----</span></span>
 <span id="cb15-1362"><a href="Ch04.html#cb15-1362" tabindex="-1"></a></span>
 <span id="cb15-1363"><a href="Ch04.html#cb15-1363" tabindex="-1"></a></span>
 <span id="cb15-1364"><a href="Ch04.html#cb15-1364" tabindex="-1"></a></span>
@@ -2261,7 +2261,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1371"><a href="Ch04.html#cb15-1371" tabindex="-1"></a></span>
 <span id="cb15-1372"><a href="Ch04.html#cb15-1372" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1373"><a href="Ch04.html#cb15-1373" tabindex="-1"></a></span>
-<span id="cb15-1374"><a href="Ch04.html#cb15-1374" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1374"><a href="Ch04.html#cb15-1374" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1375"><a href="Ch04.html#cb15-1375" tabindex="-1"></a></span>
 <span id="cb15-1376"><a href="Ch04.html#cb15-1376" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1377"><a href="Ch04.html#cb15-1377" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2337,7 +2337,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1447"><a href="Ch04.html#cb15-1447" tabindex="-1"></a></span>
 <span id="cb15-1448"><a href="Ch04.html#cb15-1448" tabindex="-1"></a></span>
 <span id="cb15-1449"><a href="Ch04.html#cb15-1449" tabindex="-1"></a></span>
-<span id="cb15-1450"><a href="Ch04.html#cb15-1450" tabindex="-1"></a><span class="co"># udenstecu asis ----</span></span>
+<span id="cb15-1450"><a href="Ch04.html#cb15-1450" tabindex="-1"></a><span class="co"># state river axis ----</span></span>
 <span id="cb15-1451"><a href="Ch04.html#cb15-1451" tabindex="-1"></a></span>
 <span id="cb15-1452"><a href="Ch04.html#cb15-1452" tabindex="-1"></a></span>
 <span id="cb15-1453"><a href="Ch04.html#cb15-1453" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -2349,7 +2349,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1459"><a href="Ch04.html#cb15-1459" tabindex="-1"></a></span>
 <span id="cb15-1460"><a href="Ch04.html#cb15-1460" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1461"><a href="Ch04.html#cb15-1461" tabindex="-1"></a></span>
-<span id="cb15-1462"><a href="Ch04.html#cb15-1462" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1462"><a href="Ch04.html#cb15-1462" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1463"><a href="Ch04.html#cb15-1463" tabindex="-1"></a></span>
 <span id="cb15-1464"><a href="Ch04.html#cb15-1464" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1465"><a href="Ch04.html#cb15-1465" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2428,7 +2428,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1538"><a href="Ch04.html#cb15-1538" tabindex="-1"></a></span>
 <span id="cb15-1539"><a href="Ch04.html#cb15-1539" tabindex="-1"></a></span>
 <span id="cb15-1540"><a href="Ch04.html#cb15-1540" tabindex="-1"></a></span>
-<span id="cb15-1541"><a href="Ch04.html#cb15-1541" tabindex="-1"></a><span class="co"># udens virsmas laukumi ----</span></span>
+<span id="cb15-1541"><a href="Ch04.html#cb15-1541" tabindex="-1"></a><span class="co"># river surface ----</span></span>
 <span id="cb15-1542"><a href="Ch04.html#cb15-1542" tabindex="-1"></a></span>
 <span id="cb15-1543"><a href="Ch04.html#cb15-1543" tabindex="-1"></a></span>
 <span id="cb15-1544"><a href="Ch04.html#cb15-1544" tabindex="-1"></a>link<span class="ot">=</span><span class="st">&quot;https://lvmgeoserver.lvm.lv/geoserver/zmni/ows?&quot;</span></span>
@@ -2440,7 +2440,7 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 <span id="cb15-1550"><a href="Ch04.html#cb15-1550" tabindex="-1"></a></span>
 <span id="cb15-1551"><a href="Ch04.html#cb15-1551" tabindex="-1"></a>bwk_client<span class="sc">$</span><span class="fu">getFeatureTypes</span>(<span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb15-1552"><a href="Ch04.html#cb15-1552" tabindex="-1"></a></span>
-<span id="cb15-1553"><a href="Ch04.html#cb15-1553" tabindex="-1"></a><span class="co"># geometrijam</span></span>
+<span id="cb15-1553"><a href="Ch04.html#cb15-1553" tabindex="-1"></a><span class="co"># geoms</span></span>
 <span id="cb15-1554"><a href="Ch04.html#cb15-1554" tabindex="-1"></a></span>
 <span id="cb15-1555"><a href="Ch04.html#cb15-1555" tabindex="-1"></a>url<span class="sc">$</span>query <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">service =</span> <span class="st">&quot;wfs&quot;</span>,</span>
 <span id="cb15-1556"><a href="Ch04.html#cb15-1556" tabindex="-1"></a>                  <span class="at">request =</span> <span class="st">&quot;GetFeature&quot;</span>,</span>
@@ -2529,31 +2529,32 @@ prepare <a href="Ch05.html#Ch05">Geodata products</a> - both <a href="Ch05.html#
 </details>
 </div>
 <div id="Ch04.04" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> TopographicMap<a href="Ch04.html#Ch04.04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To ensure the research process at the University of Latvia, the third (completed
+<h2><span class="header-section-number">4.4</span> Topographic Map<a href="Ch04.html#Ch04.04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To support research process at the University of Latvia, the third (completed
 by January 1, 2018) and fourth (unfinished) versions of the Latvian Geospatial
 Information Agency’s topographic map M:10000 vector geodatabase were received.
 The most recent version is available for <a href="https://kartes.lgia.gov.lv/karte/?x=311986.74&amp;y=506887.35&amp;zoom=3&amp;basemap=topokarte">public viewing</a>,
-but access to vector data is restricted.</p>
+but access to the vector data is restricted.</p>
 <p>For the purposes of this project, the ESRI geodatabase has been converted to a
-geopackage file. As part of the file format change, geometries (empty, their
+GeoPackage file. As part of the file format change, geometries (empty, their
 validity checked and corrected where necessary) and coordinate system have
 been checked.</p>
 <p>Files were stored at <code>Geodata/2024/TopographicMap/</code>.</p>
-<p>After dealing with each database seperately, layers used in this project were
-combined, preffering the most timely per mapping page. These layers are:</p>
+<p>After processing each database separately, we combined the layers used in this
+project, selecting the most recent layer per map sheet. These layers are:</p>
 <ul>
-<li><p><code>bride_L</code>, describing bridges as lines;</p></li>
+<li><p><code>brigde_L</code>, describing bridges as lines;</p></li>
 <li><p><code>bridge_P</code>, describing bridges as points;</p></li>
 <li><p><code>hidro_A</code>, describing waterbodies as polygons;</p></li>
 <li><p><code>hidro_L</code>, describing ditches and small rivers as lines;</p></li>
 <li><p><code>landus_A</code>, describing LULC as polygons;</p></li>
 <li><p><code>road_A</code>, describing larger roads as polygons;</p></li>
-<li><p><code>road_L</code>, describing different including very small and unused roads as lines;</p></li>
+<li><p><code>road_L</code>, including very small or disused ones, as lines;</p></li>
 <li><p><code>swamp_A</code>, describing bogs as polygons;</p></li>
 <li><p><code>flora_L</code>, describing linear tree and shrub formations;</p></li>
-<li><p><code>build_A</code>, describing types of builtup areas. Version 4 available at the
-University of Latvia does not have all the classes as version 3, therefore version 3 is used.</p></li>
+<li><p><code>build_A</code>, describing types of built-up areas. Version 4 available at the
+University of Latvia does not include all the classes present in Version 3,
+therefore version 3 is used.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="Ch04.html#cb16-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2771,7 +2772,7 @@ that are at least 100 m wide – it provides sufficient information for general
 use, such as workflow testing and observation filtering. This project uses
 data from 2018.</p>
 <p>The downloaded data set has been transformed into the Latvian coordinate
-system (EPSG:3059), and the file format has been changed to geoparquet to
+system (EPSG:3059), and the file format has been changed to GeoParquet to
 facilitate and speed up further work. As part of the file format change,
 geometries (empty, validity) have been checked.</p>
 <p>Data are stored at <code>Geodata/2024/CLC/</code>.</p>

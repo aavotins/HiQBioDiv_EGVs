@@ -1,4 +1,4 @@
-# Templates and utilities {#Ch03}
+# Templates files {#Ch03}
 
 This chapter defines template files. They define the analysis space and ensure 
 harmonisation of georeferenced data creation, and facilitate connection with 
@@ -6,9 +6,9 @@ other Latvian geodata.
 
 ## Vector data  {#Ch03.01}
 
-Baseline template (or reference) vector grid and point files are publically available 
-at [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14277114). Command lines 
-and data used to create these files are documented at 
+Baseline template (or reference) vector grid and point files are publiclly available 
+in the [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14277114). The command lines 
+and data used to create these files are documented in 
 the HiQBioDiv main code repository's [file](https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Vector.R).
 
 The easiest way to obtain these files is to run determined 
@@ -55,16 +55,16 @@ yet make stability promises.  We do not yet recommend using this in a production
 rewrite your Parquet/Feather files.`
 
 
-2. Point files are tiled and buffered. In workflows creating EGVs described in this document, 
-we used "sparse" grid:
+2. Point files are tiled and buffered. In the workflows creating EGVs described in this document, 
+we used a "sparse" grid:
 
-    - 500m buffers around every 100m grids center;
+    - 500m buffers around every 100m grid cell's center;
     
-    - 1250m buffers around every 100m grids center;
+    - 1250m buffers around every 100m grid cell's center;
     
-    - 3000m buffers around every 300m grids center (to speed up neighbourhood analysis ~9 times, while loosing <0.001% of precission);
+    - 3000m buffers around every 300m grid cell's center (to speed up neighbourhood analysis ~9 times, while loosing <0.001% of precission);
     
-    - 10000m buffers around every 1000m grids center (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
+    - 10000m buffers around every 1000m grid cell's center (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
 
 ```{r,eval=FALSE}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
@@ -90,15 +90,15 @@ of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata spe
 yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to
 rewrite your Parquet/Feather files.`
 
-Apperance of file `pts300_r3000_NA.parquet`, i.e. without a tile number, is expected, 
+Appearance of file `pts300_r3000_NA.parquet`, i.e. without a tile number, is expected, 
 due to slight mismatch of 300 m grid with the 50 km one.
 
 ## Raster data  {#Ch03.02}
 
 
 Baseline template (or reference) raster grid and point files are publically available 
-at [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14497070). Command lines 
-and data used to create these files are documented at 
+in the [HiQBioDiv's Zenodo repository](https://zenodo.org/records/14497070). The command lines 
+and data used to create these files are documented in 
 the HiQBioDiv main code repository's [file](https://github.com/aavotins/HiQBioDiv/blob/main/Templates/TemplateGrids_Raster.R).
 
 The easiest way to obtain these files is to run determined 
@@ -115,9 +115,9 @@ download_raster_templates(
 )
 ```
 
-During EGV creation background covering to deal with missing values may be 
-necessary. All the EGVs described in this document where such an excercise might 
-be necessary can be considered quantities of ratio scale, therefore backgrounds 
+During EGV creation, background filling to handle missing values may be 
+necessary. For all EGVs described in this document where such an exercise might 
+be required, the variables can be considered quantities of ratio scale, therefore backgrounds 
 with value `0` are created.
 
 ```{r, eval=FALSE}
