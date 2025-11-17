@@ -1078,22 +1078,22 @@ to be removed. This was done by overlaying arithmetic mean values of these polyg
 </div>
 <div id="Ch05.02" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Soil texture product<a href="Ch05.html#Ch05.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this section one united layer describing categorised soil texture (sand=1,
-silt=2, clay=3, organic=4) is created from multiple preprocessed soil texture
-data sources. Creation of soil texture product consisted of multiple overlay steps.
-These steps are illustrated together with processed geodata used:</p>
+<p>In this section, a unified layer describing categorised soil texture (sand = 1,
+silt = 2, clay = 3, organic = 4) was created from multiple preprocessed soil texture
+data sources. The creation of the soil texture product consisted of multiple overlay steps.
+These steps, along with the processed geodata used, are illustrated as follows:</p>
 <ol style="list-style-type: decimal">
-<li><p>the basis soil texture source was <a href="Ch04.html#Ch04.07.02">Soil texture from the European Soil Database</a>,
-this layer had to be reclassified to match other layers as it was not performed
+<li><p>the base soil texture source was <a href="Ch04.html#Ch04.07.02">Soil texture layer from the European Soil Database</a>.
+This layer had to be reclassified to match the other layers, as this was not performed
 during preprocessing;</p></li>
-<li><p>the layer from the first step was overlaid by <a href="Ch04.html#Ch04.07.04">Latvian Quarternary geology data</a>
-written as numeric starting with 1;</p></li>
-<li><p>the layer from the second step was overlaid by <a href="Ch04.html#Ch04.07.03">20th century topsoil in Latvian farmland</a>
-written as numeric starting with 1;</p></li>
-<li><p>the layer from <a href="Ch04.html#Ch04.07.05">Organic soils as modelled by Silava</a> (presence-only)
-was overlaid by <a href="Ch04.html#Ch04.07.06">Organic soils as modelled by University of Latvia</a>
+<li><p>the layer from the first step was overlaid with the <a href="Ch04.html#Ch04.07.04">Latvian Quarternary geology data</a>
+coded as numeric starting with 1;</p></li>
+<li><p>the layer from the second step was overlaid with the <a href="Ch04.html#Ch04.07.03">20th century topsoil data in Latvian farmland</a>
+coded as numeric starting with 1;</p></li>
+<li><p>the layer from <a href="Ch04.html#Ch04.07.05">Organic soils as modelled by the LVMI Silava</a> (presence-only)
+was overlaid with the <a href="Ch04.html#Ch04.07.06">Organic soils as modelled by the University of Latvia</a>
 (presence-absence). After the overlay, it was classified as presence-only;</p></li>
-<li><p>the layer from the third step was overlaid by the layer from the fourth and
+<li><p>the layer from the third step was the overlaid with the layer from the fourth step and
 saved for EGV creation.</p></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
