@@ -1,26 +1,26 @@
 # Geodata products {#Ch05}
 
-Some raw data need extensive processing before EGVs can be created, many EGVs 
-depend on processing raw geodata into geodata products before EGVs can be create, 
-and in some cases, EGV itself could be created from ras geodata, but it has 
+Some raw data need extensive processing prior to EGVs creation. Often, EGVs 
+relay on transforming raw geodata into intermediate products; in other cases, an EGV 
+itself could be created from raw geodata, but it has 
 to be spatially restricted to certain locations. This chapter describes these geodata 
-products and procedures involved in creating them.
+products and the procedures involved in creating them.
 
 ## Terrain products {#Ch05.01}
 
-In order to develop part of the relief-related EGV, such as the topographic 
-moisture index (TWI) and non-drainage depressions, it is necessary to address 
+In order to develop the topographic wetness index (TWI) and non-drainage depressions, 
+it was necessary to address 
 water flow in the environment. This is a multi-step procedure that is logical 
-and reliable in mountainous areas and environments with little hydrological 
-impact. However, in the context of Latvia, this is challenging. These challenges 
+and reliable in mountainous areas and in environments with little hydrological 
+impact. However, in the context of Latvia, this was challenging. These challenges 
 can be addressed in various ways. For example, if reliable (accurate) information 
 on the exact locations of rivers and ditches were available, it could be 
 incorporated into the terrain. Unfortunately, there is no sufficiently 
 accurate information available. Therefore, information about network 
 structures from the [Melioration Cadastre Information System database](#Ch04.03) 
 buffered by 10 m, bridges from the [topographic map](#Ch04.04) and transport structures and bridges 
-from [LVM Open Data](#Ch04.06) was used to address the challenges (both buffered 
-by 10 m) - information about the minimum height above sea level was incorporated into the 
+from [LVM Open Data](#Ch04.06) were used to address the challenges (both buffered 
+by 10 m). Information about the minimum height above sea level was incorporated into the 
 DEM to be used in further processing.
 
 ```{r, eval=FALSE}
@@ -37,7 +37,7 @@ template=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
 # part one ----
 
-# reljefs
+# dem raster
 reljefs=rast("./Geodata/2024/DEM/mozDEM_10m.tif")
 
 # drainage network structures
@@ -89,22 +89,21 @@ rm(visi_buferi)
 rm(caurumains)
 ```
 
-This DEM was then used for geoprocessing to find terrain depressions and 
-determine the topographic wetness index (TWI). The topographic 
-wetness index was prepared and the search for non-runoff depressions was conducted:
+This DEM was then used for geoprocessing to identify terrain depressions and 
+determine the topographic wetness index (TWI):
 
 1. drainage depressions and their depth layers were prepared after 
 incorporating flow breaks;
 
-2. to calculate the topographic wetness index, the terrain depressions without 
-runoff were reviewed, allowing up to ten cell breaks in places of lower 
-resistance, the rest were filled in;
+2. to calculate the topographic wetness index, terrain depressions without 
+runoff were reviewed, allowing up to ten cell breaks in areas of lower 
+resistance; the rest were filled in;
 
-3. for additional security, the result of the second step was repeated to 
+3. for additional security, the procedure of the second step was repeated to 
 search for and fill in terrain depressions [@WangLiu2006];
 
 4. the result of the third step was used to determine the specific catchment 
-area using d-infinity flow division;
+area using D-infinity flow direction;
 
 5. by combining the specific catchment area layer with the slope layer, 
 the topographic wetness index was calculated. A graphical evaluation revealed 
@@ -168,7 +167,7 @@ wbt_wetness_index(sca = "./Geodata/2024/DEM/caurtDEM_DInfAccu_SCA.tif",
                   slope = "./Geodata/2024/DEM/Terrain_Slope_10m.tif",
                   output = "./Geodata/2024/DEM/TWI_caurtDEM.tif")
 twi=rast("./Geodata/2024/DEM/TWI_caurtDEM.tif")
-hist(twi) # vietumis ir sevišķi ekscesīvas vērtības
+hist(twi) # excessively large values
 plot(twi)
 twi2=ifel(twi>20,20,twi)
 plot(twi2)
@@ -185,8 +184,8 @@ rm(twi2)
 ```
 
 Since the initial DEM input was created by filling in water bodies using 
-interpolation methods, the water bodies show a pronounced terrain, which needs 
-to be removed. This is done by inserting average values into these polygons.
+interpolation methods, the water bodies show a pronounced terrain, which had 
+to be removed. This was done by overlaying arithmetic mean values of these polygons.
 
 
 ```{r, eval=FALSE}

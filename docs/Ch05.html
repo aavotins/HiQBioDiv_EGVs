@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš" />
 
 
-<meta name="date" content="2025-11-14" />
+<meta name="date" content="2025-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -793,26 +793,26 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Ch05" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Geodata products<a href="Ch05.html#Ch05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Some raw data need extensive processing before EGVs can be created, many EGVs
-depend on processing raw geodata into geodata products before EGVs can be create,
-and in some cases, EGV itself could be created from ras geodata, but it has
+<p>Some raw data need extensive processing prior to EGVs creation. Often, EGVs
+relay on transforming raw geodata into intermediate products; in other cases, an EGV
+itself could be created from raw geodata, but it has
 to be spatially restricted to certain locations. This chapter describes these geodata
-products and procedures involved in creating them.</p>
+products and the procedures involved in creating them.</p>
 <div id="Ch05.01" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Terrain products<a href="Ch05.html#Ch05.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In order to develop part of the relief-related EGV, such as the topographic
-moisture index (TWI) and non-drainage depressions, it is necessary to address
+<p>In order to develop the topographic wetness index (TWI) and non-drainage depressions,
+it was necessary to address
 water flow in the environment. This is a multi-step procedure that is logical
-and reliable in mountainous areas and environments with little hydrological
-impact. However, in the context of Latvia, this is challenging. These challenges
+and reliable in mountainous areas and in environments with little hydrological
+impact. However, in the context of Latvia, this was challenging. These challenges
 can be addressed in various ways. For example, if reliable (accurate) information
 on the exact locations of rivers and ditches were available, it could be
 incorporated into the terrain. Unfortunately, there is no sufficiently
 accurate information available. Therefore, information about network
 structures from the <a href="Ch04.html#Ch04.03">Melioration Cadastre Information System database</a>
 buffered by 10 m, bridges from the <a href="Ch04.html#Ch04.04">topographic map</a> and transport structures and bridges
-from <a href="Ch04.html#Ch04.06">LVM Open Data</a> was used to address the challenges (both buffered
-by 10 m) - information about the minimum height above sea level was incorporated into the
+from <a href="Ch04.html#Ch04.06">LVM Open Data</a> were used to address the challenges (both buffered
+by 10 m). Information about the minimum height above sea level was incorporated into the
 DEM to be used in further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="Ch05.html#cb31-1" tabindex="-1"></a><span class="co"># libs</span></span>
@@ -828,7 +828,7 @@ DEM to be used in further processing.</p>
 <span id="cb31-11"><a href="Ch05.html#cb31-11" tabindex="-1"></a></span>
 <span id="cb31-12"><a href="Ch05.html#cb31-12" tabindex="-1"></a><span class="co"># part one ----</span></span>
 <span id="cb31-13"><a href="Ch05.html#cb31-13" tabindex="-1"></a></span>
-<span id="cb31-14"><a href="Ch05.html#cb31-14" tabindex="-1"></a><span class="co"># reljefs</span></span>
+<span id="cb31-14"><a href="Ch05.html#cb31-14" tabindex="-1"></a><span class="co"># dem raster</span></span>
 <span id="cb31-15"><a href="Ch05.html#cb31-15" tabindex="-1"></a>reljefs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/mozDEM_10m.tif&quot;</span>)</span>
 <span id="cb31-16"><a href="Ch05.html#cb31-16" tabindex="-1"></a></span>
 <span id="cb31-17"><a href="Ch05.html#cb31-17" tabindex="-1"></a><span class="co"># drainage network structures</span></span>
@@ -879,19 +879,18 @@ DEM to be used in further processing.</p>
 <span id="cb31-62"><a href="Ch05.html#cb31-62" tabindex="-1"></a><span class="fu">rm</span>(visi_buferi)</span>
 <span id="cb31-63"><a href="Ch05.html#cb31-63" tabindex="-1"></a><span class="fu">rm</span>(caurumains)</span></code></pre></div>
 </details>
-<p>This DEM was then used for geoprocessing to find terrain depressions and
-determine the topographic wetness index (TWI). The topographic
-wetness index was prepared and the search for non-runoff depressions was conducted:</p>
+<p>This DEM was then used for geoprocessing to identify terrain depressions and
+determine the topographic wetness index (TWI):</p>
 <ol style="list-style-type: decimal">
 <li><p>drainage depressions and their depth layers were prepared after
 incorporating flow breaks;</p></li>
-<li><p>to calculate the topographic wetness index, the terrain depressions without
-runoff were reviewed, allowing up to ten cell breaks in places of lower
-resistance, the rest were filled in;</p></li>
-<li><p>for additional security, the result of the second step was repeated to
+<li><p>to calculate the topographic wetness index, terrain depressions without
+runoff were reviewed, allowing up to ten cell breaks in areas of lower
+resistance; the rest were filled in;</p></li>
+<li><p>for additional security, the procedure of the second step was repeated to
 search for and fill in terrain depressions <span class="citation">(<a href="#ref-WangLiu2006">Wang and Liu, 2006</a>)</span>;</p></li>
 <li><p>the result of the third step was used to determine the specific catchment
-area using d-infinity flow division;</p></li>
+area using D-infinity flow direction;</p></li>
 <li><p>by combining the specific catchment area layer with the slope layer,
 the topographic wetness index was calculated. A graphical evaluation revealed
 individual extreme values, which were limited to <strong>20</strong>.</p></li>
@@ -953,7 +952,7 @@ individual extreme values, which were limited to <strong>20</strong>.</p></li>
 <span id="cb32-54"><a href="Ch05.html#cb32-54" tabindex="-1"></a>                  <span class="at">slope =</span> <span class="st">&quot;./Geodata/2024/DEM/Terrain_Slope_10m.tif&quot;</span>,</span>
 <span id="cb32-55"><a href="Ch05.html#cb32-55" tabindex="-1"></a>                  <span class="at">output =</span> <span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
 <span id="cb32-56"><a href="Ch05.html#cb32-56" tabindex="-1"></a>twi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/DEM/TWI_caurtDEM.tif&quot;</span>)</span>
-<span id="cb32-57"><a href="Ch05.html#cb32-57" tabindex="-1"></a><span class="fu">hist</span>(twi) <span class="co"># vietumis ir sevišķi ekscesīvas vērtības</span></span>
+<span id="cb32-57"><a href="Ch05.html#cb32-57" tabindex="-1"></a><span class="fu">hist</span>(twi) <span class="co"># excessively large values</span></span>
 <span id="cb32-58"><a href="Ch05.html#cb32-58" tabindex="-1"></a><span class="fu">plot</span>(twi)</span>
 <span id="cb32-59"><a href="Ch05.html#cb32-59" tabindex="-1"></a>twi2<span class="ot">=</span><span class="fu">ifel</span>(twi<span class="sc">&gt;</span><span class="dv">20</span>,<span class="dv">20</span>,twi)</span>
 <span id="cb32-60"><a href="Ch05.html#cb32-60" tabindex="-1"></a><span class="fu">plot</span>(twi2)</span>
@@ -969,8 +968,8 @@ individual extreme values, which were limited to <strong>20</strong>.</p></li>
 <span id="cb32-70"><a href="Ch05.html#cb32-70" tabindex="-1"></a><span class="fu">rm</span>(twi2)</span></code></pre></div>
 </details>
 <p>Since the initial DEM input was created by filling in water bodies using
-interpolation methods, the water bodies show a pronounced terrain, which needs
-to be removed. This is done by inserting average values into these polygons.</p>
+interpolation methods, the water bodies show a pronounced terrain, which had
+to be removed. This was done by overlaying arithmetic mean values of these polygons.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="Ch05.html#cb33-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb33-2"><a href="Ch05.html#cb33-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
