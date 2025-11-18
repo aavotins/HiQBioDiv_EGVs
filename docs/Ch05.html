@@ -1622,11 +1622,11 @@ processing.</p>
 </details>
 <ul>
 <li><p>Class <code>500</code> - <strong>Built-up</strong>: built-up areas, filled in at the end (see section
-“merging and filling” of this chapter) using information from Dynamic World about
+“merging and filling” of this chapter) using information from Dynamic World for
 places not covered by other classes.</p></li>
 <li><p>Class <code>600</code> - <strong>Forests, Shrublands, Clearings</strong>: areas covered with trees and
-shrubs, clearings, and dead forest stands, <strong>filled in order</strong> - dominates
-classes with higher values. The following have been combined to create this
+shrubs, clearings, and dead forest stands, <strong>filled in order</strong> - dominates over
+classes with higher values. The following sources have been combined to create this
 class (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.09">The Global Forest Watch</a> layer records of tree canopy cover
 loss since 2020, coded as <code>610</code>;</p>
@@ -1636,19 +1636,19 @@ of which is coded as <code>610</code>;</p>
 and seed production plantations, the result of which is coded as <code>620</code>;</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>FloraL_COMB</code> classes related to shrubs,
 buffered by 10 m, coded as <code>620</code>;</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layers <code>LandusA_COMB</code> clases “poligons_Krūmājs”,
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layers <code>LandusA_COMB</code> classes: “poligons_Krūmājs”,
 “poligons_Krumajs”, “poligons_Krūmaugu_plant”, “poligons_Plantacija_krum”, coded as <code>620</code>;</p>
 <p>– <a href="Ch04.html#Ch04.02">LAD database</a> group (classes are
 available <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">here</a>)
 “krūmveida ilggadīgie stādījumi”, the result of which is coded with <code>620</code>;</p>
 <p>– <a href="Ch04.html#Ch04.01">Forest State Register</a> forest stands with a height of at least 5 m,
 coded as <code>630</code>;</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes “poligons_Parks”,
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes: “poligons_Parks”,
 “poligons_Meza_kapi”, “poligons_Kapi”, “poligons_Kapi_meza”, the result of
 which is coded as <code>640</code>;</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>FloraL_COMB</code> with tree-related classes
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>FloraL_COMB</code> with tree-related classes,
 buffered by 10 m, coded as <code>640</code>;</p>
-<p>– <a href="Ch04.html#Ch04.10">Palsar Forests</a> layer, coded as <code>630</code>.</p></li>
+<p>– <a href="Ch04.html#Ch04.10">PALSAR Forests</a> layer, coded as <code>630</code>.</p></li>
 </ul>
 <p>The command lines below create a layer with landscape class <code>600</code>, which is saved
 in the file <code>SimpleLandscape_class600_meziem_premask.tif</code> for further processing.</p>
@@ -1881,18 +1881,18 @@ in the file <code>SimpleLandscape_class600_meziem_premask.tif</code> for further
 </details>
 <ul>
 <li><p>Class <code>700</code> - <strong>Wetlands</strong>: combining geospatial data related to reed beds,
-marshes, mires and bogs, <strong>filled in order except class <code>720</code> that dominates over waters</strong> -
-dominates classes with higher values. To create this class, the following were
+marshes, mires, and bogs, <strong>filled in order except class <code>720</code> that dominates over waters</strong> -
+dominates classes with higher values. To create this class, the following sources are
 combined (in order of overlap):</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes “Meldrājs_ūdenī_poligons”,
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes: “Meldrājs_ūdenī_poligons”,
 “poligons_Grislajs”, “poligons_Grīslājs”, “poligons_Meldrajs”, “poligons_Meldrājs”,
 “poligons_Meldrajs_udeni”, “poligons_Nec_purvs_grīslājs”, “poligons_Nec_purvs_meldrājs”,
 “Sēklis_poligons”, the result of which is coded with <code>720</code>;</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> class “poligons_Nec_purvs_sūnājs”,
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes: “poligons_Nec_purvs_sūnājs”,
 “poligons_Sunajs”, “poligons_Sūnājs”, the result of which is coded with <code>710</code>;</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>SwampA_COMB</code>, the result of which is coded
 as <code>710</code>;</p>
-<p>– land categories “21”, “22”, “23” marked in the <a href="Ch04.html#Ch04.01">State Forest Register</a>,
+<p>– land categories “21”, “22”, and “23” marked in the <a href="Ch04.html#Ch04.01">State Forest Register</a>,
 the result of which is coded as <code>710</code>;</p>
 <p>– land categories “41” and “42” marked in the <a href="Ch04.html#Ch04.01">State Forest Register</a>,
 the result of which is coded as <code>730</code>;</p>
@@ -2039,9 +2039,9 @@ in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for furthe
 heaths, and quarries, <strong>filled in order</strong> - as this is the highest class, it
 dominates only over Dynamic World used to fill gaps. The following have been
 combined to create this class (in order of overlap):</p>
-<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes
+<p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes:
 “poligons_Smiltājs”, “poligons_Smiltajs”, “poligons_Grants”, “poligons_Kūdra”,
-“poligons_Virsajs” the result of which is coded with <code>800</code>;</p>
+“poligons_Virsajs”, the result of which is coded with <code>800</code>;</p>
 <p>– land categories “33” and “34” marked in the <a href="Ch04.html#Ch04.01">State Forest Register</a>,
 the result of which is coded as <code>800</code>.</p></li>
 </ul>
@@ -2113,10 +2113,10 @@ in the file <code>SimpleLandscape_class800_smiltaji_premask.tif</code> for furth
 <span id="cb42-63"><a href="Ch05.html#cb42-63" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <p><strong>Merging and filling</strong></p>
-<p>The command lines below combine the previously created layers with landscape
+<p>The command lines below combine the previously created layers with the landscape
 classes in the correct order and ensure that gaps are filled with the appropriately
 classified Dynamic World composite for April-August 2024. After masking to only
-the analysis space, layer is saved in the in the file <code>Ainava_vienk_mask.tif</code>
+the analysis space, the layer is saved in the file <code>Ainava_vienk_mask.tif</code>
 for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="Ch05.html#cb43-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>

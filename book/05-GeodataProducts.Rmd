@@ -870,12 +870,12 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 ```
 
 - Class `500` - **Built-up**: built-up areas, filled in at the end (see section 
-"merging and filling" of this chapter) using information from Dynamic World about 
+"merging and filling" of this chapter) using information from Dynamic World for 
 places not covered by other classes.
 
 - Class `600` - **Forests, Shrublands, Clearings**: areas covered with trees and 
-shrubs, clearings, and dead forest stands, **filled in order** - dominates 
-classes with higher values. The following have been combined to create this 
+shrubs, clearings, and dead forest stands, **filled in order** - dominates over
+classes with higher values. The following sources have been combined to create this 
 class (in order of overlap):
 
     – [The Global Forest Watch](#Ch04.09) layer records of tree canopy cover 
@@ -890,7 +890,7 @@ class (in order of overlap):
     – [topographic map](#Ch04.04) layer `FloraL_COMB` classes related to shrubs, 
     buffered by 10 m, coded as `620`;
 
-    – [topographic map](#Ch04.04) layers `LandusA_COMB` clases "poligons_Krūmājs", 
+    – [topographic map](#Ch04.04) layers `LandusA_COMB` classes: "poligons_Krūmājs", 
     "poligons_Krumajs", "poligons_Krūmaugu_plant", "poligons_Plantacija_krum", coded as `620`;
 
     – [LAD database](#Ch04.02) group (classes are 
@@ -900,14 +900,14 @@ class (in order of overlap):
     – [Forest State Register](#Ch04.01) forest stands with a height of at least 5 m, 
     coded as `630`;
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes "poligons_Parks", 
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: "poligons_Parks", 
     "poligons_Meza_kapi", "poligons_Kapi", "poligons_Kapi_meza", the result of 
     which is coded as `640`;
 
-    – [topographic map](#Ch04.04) layer `FloraL_COMB` with tree-related classes 
+    – [topographic map](#Ch04.04) layer `FloraL_COMB` with tree-related classes, 
     buffered by 10 m, coded as `640`;
 
-    – [Palsar Forests](#Ch04.10) layer, coded as `630`.
+    – [PALSAR Forests](#Ch04.10) layer, coded as `630`.
 
 The command lines below create a layer with landscape class `600`, which is saved 
 in the file `SimpleLandscape_class600_meziem_premask.tif` for further processing.
@@ -1142,22 +1142,22 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif")
 ```
 
 - Class `700` - **Wetlands**: combining geospatial data related to reed beds, 
-marshes, mires and bogs, **filled in order except class `720` that dominates over waters** - 
-dominates classes with higher values. To create this class, the following were 
+marshes, mires, and bogs, **filled in order except class `720` that dominates over waters** - 
+dominates classes with higher values. To create this class, the following sources are 
 combined (in order of overlap):
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes "Meldrājs_ūdenī_poligons", 
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: "Meldrājs_ūdenī_poligons", 
     "poligons_Grislajs", "poligons_Grīslājs", "poligons_Meldrajs", "poligons_Meldrājs", 
     "poligons_Meldrajs_udeni", "poligons_Nec_purvs_grīslājs", "poligons_Nec_purvs_meldrājs", 
     "Sēklis_poligons", the result of which is coded with `720`;
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB` class "poligons_Nec_purvs_sūnājs", 
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: "poligons_Nec_purvs_sūnājs", 
     "poligons_Sunajs", "poligons_Sūnājs", the result of which is coded with `710`;
 
     – [topographic map](#Ch04.04) layer `SwampA_COMB`, the result of which is coded 
     as `710`;
 
-    – land categories “21”, “22”, “23” marked in the [State Forest Register](#Ch04.01), 
+    – land categories “21”, “22”, and “23” marked in the [State Forest Register](#Ch04.01), 
     the result of which is coded as `710`;
 
     – land categories “41” and “42” marked in the [State Forest Register](#Ch04.01), 
@@ -1308,9 +1308,9 @@ heaths, and quarries, **filled in order** - as this is the highest class, it
 dominates only over Dynamic World used to fill gaps. The following have been 
 combined to create this class (in order of overlap):
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes 
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: 
     "poligons_Smiltājs", "poligons_Smiltajs", "poligons_Grants", "poligons_Kūdra", 
-    "poligons_Virsajs" the result of which is coded with `800`;
+    "poligons_Virsajs", the result of which is coded with `800`;
 
     – land categories "33" and "34" marked in the [State Forest Register](#Ch04.01), 
     the result of which is coded as `800`.
@@ -1387,10 +1387,10 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif")
 
 **Merging and filling**
 
-The command lines below combine the previously created layers with landscape 
+The command lines below combine the previously created layers with the landscape 
 classes in the correct order and ensure that gaps are filled with the appropriately 
 classified Dynamic World composite for April-August 2024. After masking to only 
-the analysis space, layer is saved in the in the file `Ainava_vienk_mask.tif` 
+the analysis space, the layer is saved in the file `Ainava_vienk_mask.tif` 
 for further processing.
 
 ```{r, eval=FALSE}
