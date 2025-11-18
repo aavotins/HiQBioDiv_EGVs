@@ -16,7 +16,7 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 
 
 ```{r flowchart, echo=FALSE, out.width = '100%', fig.cap='Relationships of ecogeographical variables created.'}
-knitr::include_graphics("./Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png")
+knitr::include_graphics("./Figures/EGV_FlowChartZ_17_11_25.png")
 ```
 
 <br>

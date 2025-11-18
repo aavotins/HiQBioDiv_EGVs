@@ -16,7 +16,7 @@ Names used in figure correspond to EGV layer names and follow naming convention:
 
 
 <div class="figure">
-<img src="./Figures/EGV_FlowChartY_eps_krasains_300dpi_2.png" alt="Relationships of ecogeographical variables created." width="100%" />
+<img src="./Figures/EGV_FlowChartZ_17_11_25.png" alt="Relationships of ecogeographical variables created." width="100%" />
 <p class="caption">(\#fig:flowchart)Relationships of ecogeographical variables created.</p>
 </div>
 
