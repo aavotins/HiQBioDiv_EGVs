@@ -54,6 +54,7 @@ is to promote openness and reproducibility in scientific practice and practical
 science.
 
 - Home repository of this material: [aavotins/HiQBioDiv_EGVs](https://github.com/aavotins/HiQBioDiv_EGVs)
+
 - Cite as needed using `book/book.bib`.
 
 

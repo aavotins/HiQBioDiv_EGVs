@@ -377,35 +377,37 @@ writeRaster(step5,
 ## Landscape classification {#Ch05.03}
 
 In this exercise, "landscape" refers to the representation of different types 
-of land cover and land use classes, where the order in which these classes are 
-drawn is important, because spatial data from different sources often have 
-mismatched boundaries, which requires addressing both their overlap (1) and 
-filling in gaps where there is no database information (2), and the choice of 
-how to emphasize objects with certain processing, such as buffering, because 
-some elements that are important for characterizing the environment (especially 
-edge effects) may be so small or so poorly positioned that they disappear during 
-the rasterization process (3). The general landscape layer also serves as a 
+of land cover and land use classes. The order in which these classes are 
+drawn is important because spatial data from different sources often have 
+mismatching boundaries. This requires addressing both their overlap (1) and 
+filling in gaps where no database information is available (2), as well as deciding 
+how to emphasize objects through certain processing steps, such as buffering. Some 
+elements that are important for characterizing the environment (especially 
+edge effects) may be so small or poorly positioned that they disappear during 
+the rasterization process (3). 
+
+The general landscape layer also serves as a 
 mask for the preparation of further environmental descriptions. This section 
 describes the development of a general (simple) landscape and, in the following 
 document, its enrichment with more specific environmental eco-geographical 
-variables. The general landscape is stored in the file `Ainava_vienk_mask.tif`, 
-in which the classes and the procedure for their creation are described in the 
-following list:
+variables. The general landscape is stored in the file `Ainava_vienk_mask.tif`. 
+The classes and the procedure for their creation are described in the 
+list below:
 
-- class `100` - **roads**: roads from various sources, **filled in sequence** - 
-dominates classes with higher values so that relatively small objects are not 
-lost and information about edges is provided. The following have been 
+- Class `100` - **Roads**: roads from various sources, **filled in sequence** - 
+dominates over classes with higher values so that relatively small objects are not 
+lost and information about edges is provided. The following sources have been 
 combined to create this class:
 
-    - layers `RoadA_COMB` and `RoadL_COMB` (except smallest size groups) from
+    - layers `RoadA_COMB` and `RoadL_COMB` (except the smallest size groups) from
     [topographic map](#Ch04.04), buffered by 10 m before rasterization;
     
     - [LVM open data](#Ch04.06) layers `LVM_MEZA_AUTOCELI`, `LVM_ATTISTAMIE_AUTOCELI`, 
-    `LVM_APGRIESANAS_LAUKUMI`, `LVM_IZMAINISANAS_VIETAS` and `LVM_NOBRAUKTUVES` 
+    `LVM_APGRIESANAS_LAUKUMI`, `LVM_IZMAINISANAS_VIETAS`, and `LVM_NOBRAUKTUVES` 
     buffered by 10 m;
     
-    - information from the State Forest Register on natural roads has not 
-    been used, as these do not usually form a continuous break in the canopy. 
+    - information from the State Forest Register on unpaved forest tracks has not 
+    been used, as these roads do not usually form a continuous break in the canopy. 
     Information on roads from this register is also available in other 
     resources and has not been duplicated.
 
@@ -517,10 +519,10 @@ rm(road_union1)
 rm(road_union2)
 ```
 
-- class `200` - **waters**: water bodies from various sources, filled in 
-sequence (but see "merging and filling" step of this section) - dominates classes 
-with higher values so that relatively small objects are not lost and information 
-about the edges is provided. The following were combined to create this class:
+- Class `200` - **Waters**: water bodies from various sources, filled in 
+sequence (but see "merging and filling" step of this section) - dominate over classes 
+with higher values ensuring that relatively small objects are not lost and information 
+about the edges is preserved. The following are combined to create this class:
 
     – [topographic map](#Ch04.04) layers `HidroA_COMB` and `HidroL_COMB` (buffered by 5 m);
 
@@ -528,9 +530,9 @@ about the edges is provided. The following were combined to create this class:
 
     – [LVM open data](#Ch04.06) layers `LVM_GRAVJI`, buffered by 5 m.
 
-    – Information about ditches from the State Forest Register has not been used, 
-    as it is also available in other resources, or is of so small structures that it does 
-    not cause a continuous break in the tree canopy.
+    – information about ditches from the State Forest Register was not used, 
+    as it is either already available in other resources or consists of structures 
+    so small that they do not cause a continuous break in the tree canopy.
 
 The command lines below create a layer with landscape class `200`, which is 
 saved in the file `SimpleLandscape_class200_udens_premask.tif` for further processing.
@@ -634,23 +636,23 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif")
 ```
 
 
-- class `300` - **farmland**: agricultural land in LAD database **filled in 
-sequence** - dominated by classes with higher values, but after the general 
-classes were created, the gaps were filled in with information from Dynamic 
-World. The following were combined to create this class:
+- Class `300` - **Farmland**: agricultural land in LAD database **filled in 
+sequence** - dominates over classes with higher values. After the general 
+classes are created, the gaps are filled in with information from Dynamic 
+World. The following sources are combined to create this class:
 
     – [LAD database](#Ch04.02), which, following the decision on grouping (classes are 
     available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)), 
     is divided into three broad groups (in order of overlap):
 
-    – arable land with class code `310`;
+        – arable land with class code `310`;
 
-    – fallow land with class code `320`;
+        – fallow land with class code `320`;
 
-    – grassland with class code `330`;
+        – grassland with class code `330`;
 
-    – orchards and perennial shrub plantations in the general landscape are placed 
-    in other landscape classes.
+        – orchards and perennial shrub plantations in the general landscape are 
+        placed in other landscape classes.
 
 The command lines below create a layer with landscape class `300` and its 
 subclasses, which are saved in the file `SimpleLandscape_class300_lauki_premask.tif` 
@@ -756,18 +758,20 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 ```
 
 
-- class `400` - **allotment gardens and orchards, cottages**, **filled in order** - 
-dominate classes with higher values. To create this class, the following were 
+- Class `400` - **Allotment Gardens, Orchards and Cottages**, **filled in order** - 
+dominates over classes with higher values. To create this class, the following are 
 combined (in order of overlap):
 
-    – [topographic map](#Ch04.04) layer `BuildA_v3` values "poligons_Vasarnīcu_apbūve","poligons_Viensētu_apbūve" coded with `410`;
+    – [topographic map](#Ch04.04) layer `BuildA_v3` values: "poligons_Vasarnīcu_apbūve", 
+    "poligons_Viensētu_apbūve", coded as `410`;
 
-    – [topographic map](#Ch04.04) layer `LandusA_COMB` values "poligons_Augludarzs", "poligons_Augļudārzs", "poligons_Sakņudārzs", "poligons_Ogulājs", "poligons_Ogulajs", 
-    "poligons_Saknudarzs" coded with `420`;
+    – [topographic map](#Ch04.04) layer `LandusA_COMB` values: "poligons_Augludarzs", 
+    "poligons_Augļudārzs", "poligons_Sakņudārzs", "poligons_Ogulājs", "poligons_Ogulajs", 
+    "poligons_Saknudarzs", coded as `420`;
 
     – [LAD database](#Ch04.02) rural information layer group (classes are 
     available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)) 
-    “augļudārzi”, the result of which is coded with `420`.
+    “augļudārzi”, the result of which is coded as `420`.
 
 The command lines below create a layer with landscape class `400`, which is saved 
 in the file `SimpleLandscape_class400_vasarnicas_premask.tif` for further 
@@ -793,7 +797,7 @@ template_r=raster(template_t)
 # class 400 ----
 
 
-# topo apbuves
+# topo built-up
 viensvasar=st_read_parquet("./Geodata/2024/TopographicMap/BuildA_v3.parquet")
 table(viensvasar$FNAME,useNA="always")
 viensvasar=viensvasar %>% 
@@ -865,11 +869,11 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 ```
 
-- class `500` - **built-up**: built-up areas, filled in at the end (see section 
+- Class `500` - **Built-up**: built-up areas, filled in at the end (see section 
 "merging and filling" of this chapter) using information from Dynamic World about 
 places not covered by other classes.
 
-- class `600` - **forests, shrublands, clearings**: areas covered with trees and 
+- Class `600` - **Forests, Shrublands, Clearings**: areas covered with trees and 
 shrubs, clearings, and dead forest stands, **filled in order** - dominates 
 classes with higher values. The following have been combined to create this 
 class (in order of overlap):
@@ -1137,7 +1141,7 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif")
 ```
 
-- class `700` - **wetlands**: combining geospatial data related to reed beds, 
+- Class `700` - **Wetlands**: combining geospatial data related to reed beds, 
 marshes, mires and bogs, **filled in order except class `720` that dominates over waters** - 
 dominates classes with higher values. To create this class, the following were 
 combined (in order of overlap):
@@ -1299,7 +1303,7 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
 ```
 
-- class `800` - **bare soil and quarries**: combining layers related to bare soil, 
+- Class `800` - **Bare Soil and Quarries**: combining layers related to bare soil, 
 heaths, and quarries, **filled in order** - as this is the highest class, it 
 dominates only over Dynamic World used to fill gaps. The following have been 
 combined to create this class (in order of overlap):
