@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš" />
 
 
-<meta name="date" content="2025-11-18" />
+<meta name="date" content="2025-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -226,7 +226,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.3" data-path="Ch05.html"><a href="Ch05.html#Ch05.03"><i class="fa fa-check"></i><b>5.3</b> Landscape classification</a></li>
 <li class="chapter" data-level="5.4" data-path="Ch05.html"><a href="Ch05.html#Ch05.04"><i class="fa fa-check"></i><b>5.4</b> Landscape diversity</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.01"><i class="fa fa-check"></i><b>5.4.1</b> Landscape in general diversity</a></li>
+<li class="chapter" data-level="5.4.1" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.01"><i class="fa fa-check"></i><b>5.4.1</b> Overall landscape</a></li>
 <li class="chapter" data-level="5.4.2" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.02"><i class="fa fa-check"></i><b>5.4.2</b> Forest diversity</a></li>
 <li class="chapter" data-level="5.4.3" data-path="Ch05.html"><a href="Ch05.html#Ch05.04.03"><i class="fa fa-check"></i><b>5.4.3</b> Farmland diversity</a></li>
 </ul></li>
@@ -2218,43 +2218,44 @@ for further processing.</p>
 <div id="Ch05.04" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Landscape diversity<a href="Ch05.html#Ch05.04" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This subsection summarizes the input products related to the landscape described
-in the previous section – raster layers prepared with a resolution of 10 m, which
-characterize the classes found in the landscape (environment) and the subsequent
-preprocessing for the preparation of the EGV.</p>
-<p>Shannon diversity index calculations are so resource-intensive that it is not
+in the previous section – raster layers prepared at a 10 m resolution, which
+characterize the classes found in the landscape (environment), as well as the subsequent
+preprocessing for the preparation of the EGVs.</p>
+<p>The calculations of the Shannon diversity index are so computationally intensive that it is not
 rationally possible to perform them at every landscape scale around each analysis
-cell. They cannot be directly aggregated to speed up the calculation. Therefore,
+cell (EGV-cell). Furthermore, they cannot be directly aggregated to speed up the calculation. Therefore,
 a decision has been made on the raster cell size, which:</p>
 <ul>
-<li><p>is formed as a multiplication of the analysis cell by an integer;</p></li>
-<li><p>is large enough to allow for environmental variability. Therefore, the analysis
-cell itself (or multiplication by 1) is not suitable - there is very little
-variability in land cover and land use in an area of 1 ha. This means that this
-cell must be as large as possible, but an analysis cell that is too large would
-mean an artificial intensification of spatial autocorrelation and a loss of
-spatial relevance;</p></li>
-<li><p>any landscape scale must be formed from several diversity-index-level cells.</p></li>
+<li><p>is formed as a multiplication of the EGV-cell by an integer;</p></li>
+<li><p>is large enough to account for environmental variability. Therefore, the EGV-cell
+itself (or multiplication by 1) is not suitable - there is very little
+variability in land cover and land use within an area of 1 ha. Consequently, the
+raster cell size for calculation of Shannon index should be as large as possible
+without becoming so large that it artificially inflates spatial autocorrelation
+and loose spatial relevance;</p></li>
+<li><p>allows to build every landscape scale from several diversity-index–level cells.</p></li>
 </ul>
-<p>Since we will use spatially weighted zonal statistics in the preparation of EGVs
-and the smallest landscape scale is r=500 m around the center of the EGV-cell,
+<p>Since we use spatially weighted zonal statistics in the preparation of EGVs,
+and the smallest landscape scale is r = 500 m around the centre of the EGV-cell,
 it has been decided to calculate the landscape diversity index for individual cells
-with a side length of 500 m, i.e., 25 ha landscapes. This means that the
+with a side length of 500 m (i.e., 25 ha landscapes). This means that the
 smallest number of units used for the development of the EGVs is nine (for a
-landscape scale of r=500 m around the center of the EGV-cell).</p>
-<p>Three principal environments are described using diversity indices: landscape in
-general, farmland and forests. To make them easier to reproduce and find, each
-one is described in a separate section below.</p>
+landscape scale of r = 500 m around the centre of the EGV-cell).</p>
+<p>Three principal environments are described using diversity indices: overall landscape,
+farmland, and forests. To make them easier to reproduce and locate, each
+is described in a separate section below.</p>
 <div id="Ch05.04.01" class="section level3 hasAnchor" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Landscape in general diversity<a href="Ch05.html#Ch05.04.01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Combination of three layers is involved to describe landscape in general diversity:</p>
+<h3><span class="header-section-number">5.4.1</span> Overall landscape<a href="Ch05.html#Ch05.04.01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combination of three layers is involved to describe overall landscape diversity:</p>
 <ul>
 <li><p>as the lowest in hierarchy is <code>Ainava_vienk_mask.tif</code>, prepared in section
 <a href="Ch05.html#Ch05.03">Landscape classification</a>;</p></li>
-<li><p>farmland diversity as a top layer in hierarhy. Prepared based on relatively
-broadly classified <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">agricultural codes (field - SDM_grupa_sakums)</a> from <a href="Ch04.html#Ch04.02">ural Support Service’s information on declared fields</a>. Only cells
-at declared fields have values, others are empty to be inherited from other layers during overlay. Codes used range from 351 to 362;</p></li>
-<li><p>forest diversity as a second layer in hierarchy. This layer describes tree
-species groups dominant in every stand with stand-level inventory interacted with
+<li><p>farmland diversity as the top layer in the hierarhy. Prepared based on relatively
+broad <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">agricultural codes (field - SDM_grupa_sakums)</a> from <a href="Ch04.html#Ch04.02">Rural Support Service’s information on declared fields</a>. Only cells
+corresponding to declared fields contain values; others are empty will inherit values
+from other layers during overlay. Codes used range from 351 to 362;</p></li>
+<li><p>forest diversity is the second layer in hierarchy. This layer describes dominant tree
+species groups in each stand with stand, derived from stand-level inventory data combined with
 age group as used in forestry practice. Values used in this classification are
 available from <a href="https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura">database description</a>.</p>
 <ul>
@@ -2263,24 +2264,28 @@ available from <a href="https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inve
 <li><p>coniferous species codes: “1”, “3”, “13”, “14”, “15”, “22”, “23”;</p></li>
 <li><p>boreal deciduous species codes: “4”, “6”, “8”, “9”, “19”, “20”, “21”,
 “32”, “35”, “50”, “68”;</p></li>
-<li><p>temperate dciduous species codes: “10”, “11”, “12”, “16”, “17”, “18”,
+<li><p>temperate deciduous species codes: “10”, “11”, “12”, “16”, “17”, “18”,
 “24”, “25”, “26”, “27”, “28”, “29”, “61”, “62”, “63”, “64”, “65”, “66”,
 “67”, “69”;</p></li>
-<li><p>classification: forest is considered coniferous, if timber volume of coniferous species in top tree layer is at least 75% of total timer volume, else it can be considered boreal deciduous if the respective proportion is at least 75%, else it can be considered temperate deciduous if the respective proportion is 50%, else it is considered mixed.</p></li>
+<li><p>classification: a forest is considered coniferous if timber volume of
+coniferous species in the top tree layer constitutes at least 75% of the total timer
+volume. Otherwise, it can be considered boreal deciduous if the respective
+proportion is at least 75%, or temperate deciduous
+if the respective proportion is at least 50%; else it is considered mixed.</p></li>
 </ul></li>
 <li><p>tree age groups:</p>
 <ul>
-<li><p>forests are considered young, if they are registered with age groups
+<li><p>forests are considered young if they are registered with age groups
 “1”, “2” or “3”;</p></li>
-<li><p>forests are considered old, if they are registered with age groups
+<li><p>forests are considered old if they are registered with age groups
 “4”, or “5”;</p></li>
 </ul></li>
-<li><p>created codes are formatted as factors and again as scalars with 660 added.</p></li>
+<li><p>created codes are formatted as factors and then again as scalars, with 660 added.</p></li>
 </ul></li>
 </ul>
-<p>Once the landscape classification is done, diversity index is calculated at 25 ha
-landscapes with function <code>egvtools::landscape_function</code>. To guard value coverage,
-inverse distance weighted (power=2) gap filling is incorporated, however,
+<p>Once the landscape classification is done, diversity index is calculated for 25 ha
+landscapes using the function <code>egvtools::landscape_function</code>. To guard value coverage,
+inverse distance weighted (power = 2) gap filling is incorporated; however,
 there were no gaps to fill.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="Ch05.html#cb44-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
@@ -2297,7 +2302,7 @@ there were no gaps to fill.</p>
 <span id="cb44-12"><a href="Ch05.html#cb44-12" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
 <span id="cb44-13"><a href="Ch05.html#cb44-13" tabindex="-1"></a></span>
 <span id="cb44-14"><a href="Ch05.html#cb44-14" tabindex="-1"></a></span>
-<span id="cb44-15"><a href="Ch05.html#cb44-15" tabindex="-1"></a><span class="co"># general diversity ----</span></span>
+<span id="cb44-15"><a href="Ch05.html#cb44-15" tabindex="-1"></a><span class="co"># overall diversity ----</span></span>
 <span id="cb44-16"><a href="Ch05.html#cb44-16" tabindex="-1"></a></span>
 <span id="cb44-17"><a href="Ch05.html#cb44-17" tabindex="-1"></a><span class="do">## Farmland broad ----</span></span>
 <span id="cb44-18"><a href="Ch05.html#cb44-18" tabindex="-1"></a></span>
@@ -2375,7 +2380,7 @@ there were no gaps to fill.</p>
 <span id="cb44-90"><a href="Ch05.html#cb44-90" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
 <span id="cb44-91"><a href="Ch05.html#cb44-91" tabindex="-1"></a><span class="fu">rm</span>(mvr2)</span>
 <span id="cb44-92"><a href="Ch05.html#cb44-92" tabindex="-1"></a></span>
-<span id="cb44-93"><a href="Ch05.html#cb44-93" tabindex="-1"></a><span class="do">## General classification ----</span></span>
+<span id="cb44-93"><a href="Ch05.html#cb44-93" tabindex="-1"></a><span class="do">## overall classification ----</span></span>
 <span id="cb44-94"><a href="Ch05.html#cb44-94" tabindex="-1"></a></span>
 <span id="cb44-95"><a href="Ch05.html#cb44-95" tabindex="-1"></a>simple_landscape<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/Ainava_vienk_mask.tif&quot;</span>)</span>
 <span id="cb44-96"><a href="Ch05.html#cb44-96" tabindex="-1"></a></span>
@@ -2422,20 +2427,20 @@ there were no gaps to fill.</p>
 </div>
 <div id="Ch05.04.02" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Forest diversity<a href="Ch05.html#Ch05.04.02" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>An input grid with a cell size of 10 m covering the entire territory of Latvia. It
+<p>An input grid with a cell size of 10 m covers the entire territory of Latvia. It
 contains the following values, in order of hierarchy:</p>
 <ul>
-<li><p><a href="Ch04.html#Ch04.01">State Forest Service Forest State Register</a> code, in which the
+<li><p><a href="Ch04.html#Ch04.01">State Forest Service’s Forest State Register</a> code, in which the
 code of the dominant tree species is multiplied by 1000 and the age group
 code is added. However, before rasterization, geometries in which no code has
-been created or one of the code components is 0 are excluded;</p></li>
-<li><p>forest diversity class values prepared in <a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>;</p></li>
+been assigned or one of the code components is 0 are excluded;</p></li>
+<li><p>forest diversity class values prepared in <a href="Ch05.html#Ch05.04.01">Overall landscape diversity</a>;</p></li>
 <li><p>forest classes from <a href="Ch05.html#Ch05.03">Landscape classification</a>;</p></li>
-<li><p>value 1 - other cells located in the territory of Latvia.</p></li>
+<li><p>value 1 for all other cells located in the territory of Latvia.</p></li>
 </ul>
-<p>Once the landscape classification is done, diversity index is calculated at 25 ha
-landscapes with function <code>egvtools::landscape_function</code>. To guard value coverage,
-inverse distance weighted (power=2) gap filling is incorporated, however,
+<p>Once the landscape classification is done, the Shannon’s diversity index is calculated for 25 ha
+landscapes using the function <code>egvtools::landscape_function</code>. To ensure value coverage,
+inverse distance weighted (power = 2) gap filling is incorporated; however,
 there were no gaps to fill.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="Ch05.html#cb45-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>
@@ -2535,17 +2540,17 @@ there were no gaps to fill.</p>
 </div>
 <div id="Ch05.04.03" class="section level3 hasAnchor" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> Farmland diversity<a href="Ch05.html#Ch05.04.03" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A grid with a cell size of 10 m covering the entire territory of Latvia. It
-contains the following values, in order of hierarchy:</p>
+<p>A grid with a cell size of 10 m covers the entire territory of Latvia. It
+contains the following values, listed in order of hierarchy:</p>
 <ul>
 <li><p><a href="Ch04.html#Ch04.02">Rural Support Service</a> crop codes with 1000 added;</p></li>
-<li><p>farmland diversity class values prepared in <a href="Ch05.html#Ch05.04.01">Landscape in general diversity</a>;</p></li>
+<li><p>farmland diversity class values prepared in <a href="Ch05.html#Ch05.04.01">Overall landscape diversity</a>;</p></li>
 <li><p>farmland classes from <a href="Ch05.html#Ch05.03">Landscape classification</a>;</p></li>
-<li><p>value 1 - other cells located in the territory of Latvia.</p></li>
+<li><p>value 1 for all other cells located within the territory of Latvia.</p></li>
 </ul>
-<p>Once the landscape classification is done, diversity index is calculated at 25 ha
+<p>Once the landscape classification is done, diversity index is calculated for 25 ha
 landscapes with function <code>egvtools::landscape_function</code>. To guard value coverage,
-inverse distance weighted (power=2) gap filling is incorporated, however,
+inverse distance weighted (power = 2) gap filling is incorporated; however,
 there were no gaps to fill.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="Ch05.html#cb46-1" tabindex="-1"></a><span class="co"># Libs ----</span></span>

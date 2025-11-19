@@ -60,13 +60,13 @@ rewrite your Parquet/Feather files.`
 2. Point files are tiled and buffered. In the workflows creating EGVs described in this document, 
 we used a "sparse" grid:
 
-    - 500m buffers around every 100m grid cell's center;
+    - 500m buffers around every 100m grid cell's centre;
     
-    - 1250m buffers around every 100m grid cell's center;
+    - 1250m buffers around every 100m grid cell's centre;
     
-    - 3000m buffers around every 300m grid cell's center (to speed up neighbourhood analysis ~9 times, while loosing <0.001% of precission);
+    - 3000m buffers around every 300m grid cell's centre (to speed up neighbourhood analysis ~9 times, while loosing <0.001% of precission);
     
-    - 10000m buffers around every 1000m grid cell's center (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
+    - 10000m buffers around every 1000m grid cell's centre (to speed up neighbourhood analysis ~100 times, while loosing <0.001% of precission)
 
 
 ``` r
