@@ -1,7 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
 author: "Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš"
-date: "2025-11-19"
+date: "2025-11-22"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, refs.bib]
@@ -37,7 +37,7 @@ protected areas for the implementation of the EU Biodiversity Strategy
 2030" (No. 1-08/73/2023), funded by the Administrations of the Latvian 
 Environmental Protection Fund;
 
-- Scientific research service project commissioned by AS "Latvijas valsts 
+- Scientific research service project commissioned by the Joint Stock Company "Latvijas valsts 
 meži" (Latvian State Forests) "Improvement of the monitoring of the northern 
 goshawk *Accipiter gentilis* and creation of a spatial model of habitat 
 suitability" (Latvian State Forests document No. 5-5.5.1_000r_101_23_27_6);
@@ -62,7 +62,7 @@ science.
 
 This material **is not**:
 
-* *an introduction to R or other programming languages*. On the contrary, it will 
+* *an introduction to R or other programming language*. On the contrary, it will 
 be most useful to those who already understand how to use command lines. 
 However, it will also be informative for other users regarding the approaches used;
 
@@ -75,13 +75,13 @@ guarantees, and reliability), but they are certainly not the only ones possible;
 tends to be intended for these purposes, in a situation where large amounts of 
 data and, at least in part, restricted access data are used for the work, this 
 is simply not possible. However, by ensuring data availability and placement in 
-accordance with the file structure of this project (availabe at `root/Data` or 
+accordance with the file structure of this project (available at `root/Data` or 
 by forking [template repository](https://github.com/aavotins/HiQBioDiv_FileTree)), the 
 command lines will be repeatable without changes and will produce the same results.
 
 This material **has been** prepared to provide a reproducible workflow, describing 
 the decisions made and solutions implemented in the preparation of ecogeographical 
-variables for species distribution (habitat suitability) modeling for biodiversity 
+variables for species distribution (habitat suitability) modelling for biodiversity 
 conservation planning. 
 
 For the most part, this material consists of:
@@ -91,7 +91,7 @@ For the most part, this material consists of:
 * *command lines*, which are hidden by default to make the text easier to read. 
 The locations of the command lines can be identified by the "|> Code" visible 
 on the left side of the page, just below this paragraph. Clicking on it will open 
-the code area, where the text on a gray background is command lines, for example:
+the code area, where the text on a grey background is command lines, for example:
 
 
 ``` r
@@ -122,11 +122,11 @@ maintain correct paths in the file tree.
 In this material code chunks are formatted as individual pieces to better pinpoint 
 commands used for a job described in the text around. However, in practical setting the 
 creation of ecogeographical variables will be much faster, if they will be combined 
-in loops or other batch processing setup. Practically used command lines are available 
+in loops or other batch processing setup. Command lines used in practice are available 
 in the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
 `Data/RScripts_final`, they can be executed in an alphanumeric order, if not 
-specifically. We performed parts of the compute on the University of Latvia 
-Intitute of Numerical Modelling HPC cluster with the same file tree as in this 
+specified differently. We performed parts of the compute on the University of Latvia 
+Institute of Numerical Modelling HPC cluster with the same file tree as in this 
 material. Shell scripts used to run R commands are available in 
 the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
 `Data/hpc_io/Jobs_shell/2024/EGVs`.

@@ -7,21 +7,21 @@ editor_options:
 # Ecogeographical variables {#Ch06}
 
 This section names and provides description (R code with its explanation in
-procedure) of every one of the 538 EGVs created.
+procedure) of each of the 538 EGVs created.
 
-For better undestanding of the relatedness of these vairable, refer to flowchart
-below (Fig. \@ref(fig:flowchart)). Names used in figure correspond to EGV layer
+For a better undestanding of the relatedness of these vairables, refer to the flowchart
+below (Fig. \@ref(fig:flowchart)). The names used in figure correspond to EGV layer
 names and follow naming convention: [group]*[specific name]*[scale], where:
 
--   group is broader collection of EGVs describing the same fenomena, ecosystem,
-    coming from the same source, etc.;
+-   group is abroader collection of EGVs describing the same phenomena or ecosystem,
+    derived from the same source, etc.;
 
--   specific name shortly describes landscape class and/or metrics used in
-    creation of the layer;
+-   specific name briefly describes the landscape class and/or metrics used in
+    the creation of the layer;
 
--   scale is one of: cell, 500, 1250, 3000, 10000 m around the centre of
-    EGV-cell. The resolution of every EGV is 1 ha, larger scales are summarised
-    to it.
+-   scale is one of: cell, 500, 1250, 3000, 10000 m around the centre of the 
+    EGV-cell. The resolution of each EGV is 1 ha; larger scales are summarised
+    to this resolution.
 
 <div class="figure">
 <img src="./Figures/EGV_FlowChartZ_17_11_25.png" alt="Relationships of ecogeographical variables created." width="100%" />
@@ -30,22 +30,22 @@ names and follow naming convention: [group]*[specific name]*[scale], where:
 
 <br>
 
-In cover fraction and edge variables, we first calculated values at the analysis
-cell resolution and then used {exactextract} to summarise values from larger
-scales. This package uses pixel area weight to calculate weighted summary
-statistic, thus the error created due to aggregation is negligible, particularly
-at larger scales, but reduces computation time thousunds up to even hundreds of
+For cover fraction and edge variables, we first calculated values at the EGV-cell 
+resolution and then used {exactextract} to summarise values from larger
+scales. This package uses pixel area weights to calculate weighted summary
+statistics, making the aggregation error negligible, particularly
+at larger scales, but reduces computation time thousands up to even hundreds of
 thousands times compared to input resolution (10 m). To further speed up the
 procedures, we used "sparse" mode in `egvtools::radius_function`, thus
 summarising zonal statistics every 300 m for 3000 m radius buffers and every
 1000 m for 10000 m buffers, obtaining near linear reduction in time relative to
-the number of zones (nine fold and 100 fold further computation time reduction),
-while loosing less than 0.001 % of variability altogether.
+the number of zones (ninefold and 100 fold further computation time reduction),
+while loosing less than 0.001 % of variability overall.
 
-We used slightly different approach with diversity metrics - first we calculated
-Shanons diversity index at 25 ha raster grid cells as there is nearly no
-variability of landscape classes at 1 ha grid cells. Further on we calculated
-arithmetic mean as zonal statictics value ("sparse" mode with
+We used a slightly different approach with diversity metrics. First, we calculated
+Shanon's diversity index at 25 ha raster grid cells, as there was nearly no
+variability of landscape classes at 1 ha grid cells. Next, we calculated
+arithmetic mean as zonal statictics value (using the "sparse" mode with
 `egvtools::radius_function`), but we did not create this EGV at the analysis
 cells scale.
 
@@ -61,11 +61,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -120,11 +120,11 @@ writeRaster(merogots,
 **Latvian name:** Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius every cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -181,11 +181,11 @@ writeRaster(merogots,
 **Latvian name:** Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -242,11 +242,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -303,11 +303,11 @@ writeRaster(merogots,
 **Latvian name:** Slapjākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -364,11 +364,11 @@ writeRaster(merogots,
 **Latvian name:** Sausākā mēneša nokrišņu daudzums (kg m⁻² mēnesī) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -425,11 +425,11 @@ analysis cell (1 ha)
 **Latvian name:** Nokrišņu sezonalitāte (kg m⁻²) (CHELSA v2.1) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -486,11 +486,11 @@ wettest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Slapjākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻²
 mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -547,11 +547,11 @@ driest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Sausākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻²
 mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -608,11 +608,11 @@ warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻²
 mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -669,11 +669,11 @@ coldest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Aukstākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻²
 mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -730,11 +730,11 @@ the analysis cell (1 ha)
 **Latvian name:** Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -791,11 +791,11 @@ in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Izotermalitāte (attiecība starp diennakts un gada temperatūras
 svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -852,11 +852,11 @@ mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Temperatūru sezonalitāte (mēneša vidējo temperatūru
 standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -913,11 +913,11 @@ writeRaster(merogots,
 **Latvian name:** Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -974,11 +974,11 @@ writeRaster(merogots,
 **Latvian name:** Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1035,11 +1035,11 @@ analysis cell (1 ha)
 **Latvian name:** Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1096,11 +1096,11 @@ writeRaster(merogots,
 **Latvian name:** Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra
 (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1157,11 +1157,11 @@ writeRaster(merogots,
 **Latvian name:** Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra
 (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1218,11 +1218,11 @@ the analysis cell (1 ha)
 **Latvian name:** Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1278,11 +1278,11 @@ analysis cell (1 ha)
 
 **Latvian name:** Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1339,11 +1339,11 @@ the analysis cell (1 ha)
 **Latvian name:** Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1400,11 +1400,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Gada mākoņu seguma amplitūda (%) (CHELSA v2.1) analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1461,11 +1461,11 @@ writeRaster(merogots,
 **Latvian name:** Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1522,11 +1522,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1583,11 +1583,11 @@ writeRaster(merogots,
 **Latvian name:** Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1644,11 +1644,11 @@ month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Gada klimata mitruma indeksa amplitūda (kg m⁻² month⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1705,11 +1705,11 @@ go above or below 0°C) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Sasalšanas gadījumu biežums (zemākā vai augstākā temperatūra
 šķērso 0°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1766,11 +1766,11 @@ the analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pirmā diena (TREELIM) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1827,11 +1827,11 @@ the analysis cell (1 ha)
 **Latvian name:** Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1888,11 +1888,11 @@ the analysis cell (1 ha)
 **Latvian name:** Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -1949,11 +1949,11 @@ the analysis cell (1 ha)
 **Latvian name:** Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2010,11 +2010,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2071,11 +2071,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2132,11 +2132,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2193,11 +2193,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2254,11 +2254,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2315,11 +2315,11 @@ analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2376,11 +2376,11 @@ the analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonas garums (TREELIM) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2437,11 +2437,11 @@ season days (TREELIM) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Veģetācijas sezonā (TREELIM) uzkrātais nokrišņu daudzums (kg
 m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2498,11 +2498,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā
 (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2559,11 +2559,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2620,11 +2620,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2681,11 +2681,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2742,11 +2742,11 @@ writeRaster(merogots,
 **Latvian name:** Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2803,11 +2803,11 @@ the analysis cell (1 ha)
 **Latvian name:** Pēdējā veģetācijas sezonas diena (TREELIM) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2864,11 +2864,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
 0°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2925,11 +2925,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
 10°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -2986,11 +2986,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
 5°C (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3047,11 +3047,11 @@ the analysis cell (1 ha)
 **Latvian name:** Neto primārā produkcija (g C m⁻² year⁻¹) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3108,11 +3108,11 @@ writeRaster(merogots,
 **Latvian name:** Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3169,11 +3169,11 @@ writeRaster(merogots,
 **Latvian name:** Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3230,11 +3230,11 @@ writeRaster(merogots,
 **Latvian name:** Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3291,11 +3291,11 @@ month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3352,11 +3352,11 @@ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules
 radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3413,11 +3413,11 @@ d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3474,11 +3474,11 @@ writeRaster(merogots,
 **Latvian name:** Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules
 radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3535,11 +3535,11 @@ air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 **Latvian name:** Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai
 (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3596,11 +3596,11 @@ the analysis cell (1 ha)
 **Latvian name:** Dienu ar sniega segu skaits (TREELIM) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3657,11 +3657,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3718,11 +3718,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3779,11 +3779,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3840,11 +3840,11 @@ writeRaster(merogots,
 **Latvian name:** Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3901,11 +3901,11 @@ analysis cell (1 ha)
 **Latvian name:** Ūdens bilance (kg m⁻² year⁻¹) (CHELSA v2.1) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -3962,11 +3962,11 @@ analysis cell (1 ha)
 **Latvian name:** Ūdens ekvivalents sniegā (kg m⁻² year⁻¹) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -4023,11 +4023,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts
 (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -4084,11 +4084,11 @@ the analysis cell (1 ha)
 **Latvian name:** Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -4145,11 +4145,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Minimālais mēneša vidējais iztvaikošanas spiediena deficīts
 (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -4206,11 +4206,11 @@ v2.1) within the analysis cell (1 ha)
 **Latvian name:** Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared with
+**Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
-2) gap filling and soft smoothing (power = 0.5) over 5 km radius of every cell.
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+2) gap filling and soft smoothing (power = 0.5) over 5 km radius around each cell.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -4267,15 +4267,15 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālā vidējā gaisa temperatūra
 augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4364,15 +4364,15 @@ range (°C) (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā diennakts gaisa temperatūras
 amplitūda augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4462,15 +4462,15 @@ the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā izotermalitāte augštecē (°C)
 (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4560,15 +4560,15 @@ within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā temperatūras sezonalitāte
 augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4658,15 +4658,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4756,15 +4756,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa
 temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - min - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (min) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4853,15 +4853,15 @@ temperature (°C) (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces gada gaisa
 temperatūru amplitūda (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -4951,15 +4951,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra mitrākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5049,15 +5049,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - min - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (min) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5147,15 +5147,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra siltākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5245,15 +5245,15 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - min - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (min) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5342,15 +5342,15 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 gadā (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5439,15 +5439,15 @@ year⁻¹) of the wettest month (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 mitrākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5536,15 +5536,15 @@ year⁻¹) of the driest month (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 sausākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5633,15 +5633,15 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzuma
 sezonalitāte (kg m⁻²) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5731,15 +5731,15 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5829,15 +5829,15 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -5927,15 +5927,15 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6025,15 +6025,15 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information - both basins and raster layers - from [HydroClim
-data](#Ch04.12) is used. First, basin CRS is transformed to epsg:3059. Then
-zonal statistics (per basin) with layer specific summary function - max - are
-calculated (`exactextractr::exact_extract()`) and then rasterized with
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created with
+**Procedure:** Information from [HydroClim
+data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
+zonal statistics (per basin) using a layer specific summary function (max) are
+calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
+`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
-intermediate input layer is unlinked. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+the intermediate input layer is unlinked. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6124,8 +6124,8 @@ cell (1 ha)
 **Procedure:** Derived from [Landscape classification](#Ch05.03) with class 500
 reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6184,7 +6184,7 @@ analysis cell (1 ha)
 a range from 630 to 700 reclassified as 0 and others as 1. Processed with
 `egvtools::distance2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -6244,8 +6244,8 @@ ha)
 fields](#Ch04.02) with `PRODUCT_CODE=="710"` classified as 1 and the rest of the
 country as 0. Processed with `egvtools::distance2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. At the very end, layer is standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+filling is implemented. Finally, the layer is standardized by subtracting
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6335,8 +6335,8 @@ read sheet "Poligoni";
     nothing to do with aggregation. It is because `egvtools::distance2egv()`
     already operate at egv-template not the input-template resolution. To
     protect against possible data loss at edge cells, inverse distance weighted
-    (power = 2) gap filling is implemented. At the very end, layer is
-    standardized by subtracting arithmetic mean and dividing by root mean
+    (power = 2) gap filling is implemented. Finally, the layer is
+    standardized by subtracting the arithmetic mean and dividing by the root mean
     squared error.
 
 
@@ -6415,7 +6415,7 @@ polygon](#Ch04.16). 1. Read layer as `sf` object (it already is epsg:3059);
     be projected to match egv-template (faster due to 10x aggregation of
     resolution). To protect against possible data loss at edge cells, inverse
     distance weighted (power = 2) gap filling is implemented. At the very end,
-    layer is standardized by subtracting arithmetic mean and dividing by root
+    layer is standardized by subtracting the arithmetic mean and dividing by root
     mean squared error.
 
 
@@ -6491,7 +6491,7 @@ writeRaster(merogots,
 a range from 630 to 700 reclassified as 1 and others as 0. Processed with
 `egvtools::distance2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -6564,8 +6564,8 @@ read sheet "AtkritumuVietas" and clean names;
     protect against possible data loss at edge cells, inverse distance weighted
     (power = 2) gap filling is implemented.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -6641,8 +6641,8 @@ ha)
 **Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200
 reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6700,8 +6700,8 @@ analīzes šūnā (1 ha)
 **Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200
 reclassified as 0 and others as 1. Processed with `egvtools::distance2egv()`. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6760,8 +6760,8 @@ ainavā
 [Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -6833,8 +6833,8 @@ ainavā
 [Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -6906,8 +6906,8 @@ ainavā
 [Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -6979,8 +6979,8 @@ ainavā
 [Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -7052,8 +7052,8 @@ ainavā
 [Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -7125,8 +7125,8 @@ ainavā
 [Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -7198,8 +7198,8 @@ ainavā
 [Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -7271,8 +7271,8 @@ ainavā
 [Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
 values calculated with `egvtools::radius_function()`. To guard against missing
 values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+allowed. File is written twice, to ensure layername. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -7345,7 +7345,7 @@ ainavā
 diversity index values calculated with `egvtools::radius_function()`. To guard
 against missing values at the edges, inverse distance wieghted (power = 2) gap
 filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting arithmetic mean and dividing by root mean
+layer is standardized by subtracting the arithmetic mean and dividing by the root mean
 squared error.
 
 
@@ -7418,7 +7418,7 @@ ainavā
 diversity index values calculated with `egvtools::radius_function()`. To guard
 against missing values at the edges, inverse distance wieghted (power = 2) gap
 filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting arithmetic mean and dividing by root mean
+layer is standardized by subtracting the arithmetic mean and dividing by the root mean
 squared error.
 
 
@@ -7491,7 +7491,7 @@ ainavā
 diversity index values calculated with `egvtools::radius_function()`. To guard
 against missing values at the edges, inverse distance wieghted (power = 2) gap
 filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting arithmetic mean and dividing by root mean
+layer is standardized by subtracting the arithmetic mean and dividing by the root mean
 squared error.
 
 
@@ -7564,7 +7564,7 @@ ainavā
 diversity index values calculated with `egvtools::radius_function()`. To guard
 against missing values at the edges, inverse distance wieghted (power = 2) gap
 filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting arithmetic mean and dividing by root mean
+layer is standardized by subtracting the arithmetic mean and dividing by the root mean
 squared error.
 
 
@@ -7639,8 +7639,8 @@ tree layer (presence=0) and written to file (matching the input). Finally, with
 the function `egvtools::landscape_function()` total edge between the two classes
 is calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -7742,8 +7742,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -7815,8 +7815,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -7888,8 +7888,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -7961,8 +7961,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8037,8 +8037,8 @@ written to file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8138,8 +8138,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8211,8 +8211,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8284,8 +8284,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8357,8 +8357,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8434,8 +8434,8 @@ second layer (presence=0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
-missing values at the edges. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+missing values at the edges. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8529,8 +8529,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8603,8 +8603,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8677,8 +8677,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8751,8 +8751,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8828,8 +8828,8 @@ second layer (presence=0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
-missing values at the edges. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+missing values at the edges. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8923,8 +8923,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -8997,8 +8997,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9071,8 +9071,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9145,8 +9145,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9221,8 +9221,8 @@ and written to file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9311,8 +9311,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9385,8 +9385,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9458,8 +9458,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9532,8 +9532,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9611,8 +9611,8 @@ written to file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9707,8 +9707,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9782,8 +9782,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9857,8 +9857,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -9932,8 +9932,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10007,8 +10007,8 @@ file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10096,8 +10096,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10169,8 +10169,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10242,8 +10242,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10315,8 +10315,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.140) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10392,8 +10392,8 @@ file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10492,8 +10492,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10566,8 +10566,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10640,8 +10640,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10714,8 +10714,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10789,8 +10789,8 @@ file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10878,8 +10878,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -10951,8 +10951,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11024,8 +11024,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11097,8 +11097,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.145) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11172,8 +11172,8 @@ written to file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11261,8 +11261,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.155) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11334,8 +11334,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.155) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11407,8 +11407,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.155) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11480,8 +11480,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.155) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11555,8 +11555,8 @@ file (matching the input). Finally, with the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
-at the edges. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+at the edges. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11643,8 +11643,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.160) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11716,8 +11716,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.160) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11789,8 +11789,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.160) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11862,8 +11862,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.160) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -11940,8 +11940,8 @@ the second layer (presence=0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
-missing values at the edges. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+missing values at the edges. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12036,8 +12036,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12111,8 +12111,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12185,8 +12185,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12259,8 +12259,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.165) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12336,8 +12336,8 @@ second layer (presence=0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
-missing values at the edges. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+missing values at the edges. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12431,8 +12431,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12505,8 +12505,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12579,8 +12579,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12653,8 +12653,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.170) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12731,8 +12731,8 @@ second layer (presence=0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
-missing values at the edges. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+missing values at the edges. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12828,8 +12828,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.175) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12903,8 +12903,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.175) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -12977,8 +12977,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.175) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13051,8 +13051,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.175) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13130,7 +13130,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13230,8 +13230,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.180) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13306,8 +13306,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.180) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13382,8 +13382,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.180) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13458,8 +13458,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.180) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13536,7 +13536,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13636,8 +13636,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.185) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13709,8 +13709,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.185) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13782,8 +13782,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.185) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13855,8 +13855,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.185) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13934,7 +13934,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14035,8 +14035,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.190) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14109,8 +14109,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.190) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14183,8 +14183,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.190) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14257,8 +14257,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.190) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14335,7 +14335,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14437,8 +14437,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.195) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14511,8 +14511,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.195) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14585,8 +14585,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.195) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14659,8 +14659,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.195) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14737,7 +14737,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14838,8 +14838,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.200) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14911,8 +14911,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.200) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -14984,8 +14984,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.200) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15057,8 +15057,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.200) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15135,7 +15135,7 @@ layer was aggregated to EGV resolution with `egvtools::input2egv()` by
 calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -15239,8 +15239,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.205) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15313,8 +15313,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.205) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15387,8 +15387,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.205) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15461,8 +15461,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.205) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15539,7 +15539,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15641,8 +15641,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.210) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15715,8 +15715,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.210) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15789,8 +15789,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.210) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15863,8 +15863,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.210) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15942,7 +15942,7 @@ layer. Once matched, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -16042,8 +16042,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.215) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16116,8 +16116,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.215) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16190,8 +16190,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.215) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16264,8 +16264,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.215) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16339,7 +16339,7 @@ was aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16424,8 +16424,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.220) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16497,8 +16497,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.220) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16570,8 +16570,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.220) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16643,8 +16643,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.220) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16721,7 +16721,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16823,8 +16823,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.225) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16897,8 +16897,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.225) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -16971,8 +16971,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.225) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17045,8 +17045,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.225) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17123,7 +17123,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17224,8 +17224,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.230) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17298,8 +17298,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.230) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17372,8 +17372,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.230) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17446,8 +17446,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.230) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17523,7 +17523,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17620,8 +17620,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.235) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17694,8 +17694,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.235) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17768,8 +17768,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.235) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17842,8 +17842,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.235) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -17920,7 +17920,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18027,8 +18027,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.240) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18101,8 +18101,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.240) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18175,8 +18175,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.240) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18249,8 +18249,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.240) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18328,7 +18328,7 @@ rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()`
 by calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -18438,8 +18438,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.245) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18513,8 +18513,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.245) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18588,8 +18588,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.245) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18663,8 +18663,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.245) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18741,7 +18741,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18840,8 +18840,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.250) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18913,8 +18913,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.250) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18986,8 +18986,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.250) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19059,8 +19059,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.250) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19138,7 +19138,7 @@ layer was aggregated to EGV resolution with `egvtools::input2egv()` by
 calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -19240,8 +19240,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.255) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19315,8 +19315,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.255) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19390,8 +19390,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.255) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19465,8 +19465,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.255) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19543,7 +19543,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19656,8 +19656,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.260) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19730,8 +19730,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.260) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19803,8 +19803,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.260) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19876,8 +19876,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.260) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -19955,7 +19955,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20056,8 +20056,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.265) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20131,8 +20131,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.265) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20206,8 +20206,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.265) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20280,8 +20280,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.265) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20362,7 +20362,7 @@ was then aggregated to EGV resolution with `egvtools::input2egv()` by
 calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -20482,8 +20482,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.270) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20557,8 +20557,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.270) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20632,8 +20632,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.270) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20707,8 +20707,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.270) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20790,7 +20790,7 @@ resulting layer was then aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -20915,8 +20915,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.275) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -20989,8 +20989,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.275) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21063,8 +21063,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.275) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21137,8 +21137,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.275) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21220,7 +21220,7 @@ resulting layer was then aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -21345,8 +21345,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.280) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21419,8 +21419,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.280) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21493,8 +21493,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.280) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21567,8 +21567,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.280) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21651,7 +21651,7 @@ then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21778,8 +21778,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.285) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21853,8 +21853,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.285) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -21928,8 +21928,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.285) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22003,8 +22003,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.285) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22095,7 +22095,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean. After the aggregation, cells with no forest information were
 filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22265,7 +22265,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 maximum value. After the aggregation, cells with no forest information were
 filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22408,7 +22408,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 maximum value. After the aggregation, cells with no forest information were
 filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22565,7 +22565,7 @@ then overlaid the assumed time since disturbance layer. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean value. After the aggregation, inverse distance weighted (power =
 2) gap filling was initialized to avoid possible gaps at the edges. At the very
-end, layer was standardized by subtracting arithmetic mean and dividing by root
+end, layer was standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -22739,7 +22739,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22891,7 +22891,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23042,7 +23042,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23195,7 +23195,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23348,7 +23348,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23502,7 +23502,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23654,7 +23654,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23805,7 +23805,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23956,7 +23956,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24108,7 +24108,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24263,7 +24263,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24420,7 +24420,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24574,7 +24574,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24725,7 +24725,7 @@ background values were assigned during rasterization. The resulting layer was
 then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24861,8 +24861,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -24980,8 +24980,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.308) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25054,8 +25054,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.308) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25128,8 +25128,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.308) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25202,8 +25202,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.308) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25281,8 +25281,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -25401,8 +25401,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.313) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25476,8 +25476,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.313) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25551,8 +25551,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.313) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25626,8 +25626,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.313) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25705,8 +25705,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -25825,8 +25825,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.318) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25900,8 +25900,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.318) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -25975,8 +25975,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.318) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26050,8 +26050,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.318) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26129,8 +26129,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -26249,8 +26249,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.323) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26324,8 +26324,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.323) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26399,8 +26399,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.323) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26474,8 +26474,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.323) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26553,8 +26553,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -26672,8 +26672,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.328) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26746,8 +26746,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.328) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26820,8 +26820,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.328) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26894,8 +26894,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.328) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -26973,8 +26973,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -27093,8 +27093,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.333) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27168,8 +27168,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.333) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27243,8 +27243,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.333) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27318,8 +27318,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.333) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27397,8 +27397,8 @@ covering (value 0). This layer was then aggregated to EGV resolution with
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges.
 
-At the very end, layer was standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+At the very end, layer was standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -27517,8 +27517,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.338) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27592,8 +27592,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.338) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27667,8 +27667,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.338) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27742,8 +27742,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.338) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27838,7 +27838,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -27979,8 +27979,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.343) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28054,8 +28054,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.343) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28129,8 +28129,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.343) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28204,8 +28204,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.343) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28300,7 +28300,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28441,8 +28441,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.348) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28516,8 +28516,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.348) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28591,8 +28591,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.348) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28666,8 +28666,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.348) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28762,7 +28762,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28903,8 +28903,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.353) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -28978,8 +28978,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.353) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29053,8 +29053,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.353) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29128,8 +29128,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.353) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29224,7 +29224,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29365,8 +29365,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.358) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29440,8 +29440,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.358) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29515,8 +29515,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.358) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29590,8 +29590,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.358) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29686,7 +29686,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29827,8 +29827,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.363) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29902,8 +29902,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.363) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29977,8 +29977,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.363) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30052,8 +30052,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.363) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30148,7 +30148,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30289,8 +30289,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.368) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30364,8 +30364,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.368) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30439,8 +30439,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.368) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30514,8 +30514,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.368) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30610,7 +30610,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30751,8 +30751,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.373) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30826,8 +30826,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.373) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30901,8 +30901,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.373) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -30976,8 +30976,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.373) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31072,7 +31072,7 @@ was then aggregated to EGV resolution with `egvtools::input2egv()` by
 calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -31214,8 +31214,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.378) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31289,8 +31289,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.378) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31364,8 +31364,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.378) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31439,8 +31439,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.378) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31534,7 +31534,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31674,8 +31674,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.383) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31748,8 +31748,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.383) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31822,8 +31822,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.383) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31896,8 +31896,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.383) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31990,7 +31990,7 @@ restricting to pixels outside clearcut mask and covering background with value
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -32131,8 +32131,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.388) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32205,8 +32205,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.388) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32279,8 +32279,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.388) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32353,8 +32353,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.388) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32447,7 +32447,7 @@ restricting to pixels outside clearcut mask and covering background with value
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -32587,8 +32587,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.393) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32660,8 +32660,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.393) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32733,8 +32733,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.393) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32806,8 +32806,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.393) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -32901,7 +32901,7 @@ resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
 resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33041,8 +33041,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.398) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33115,8 +33115,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.398) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33189,8 +33189,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.398) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33263,8 +33263,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.398) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33338,7 +33338,7 @@ others as 0). Once reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -33415,8 +33415,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.403) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33489,8 +33489,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.403) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33563,8 +33563,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.403) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33637,8 +33637,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.403) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33713,7 +33713,7 @@ others as 0). Once reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -33790,8 +33790,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.408) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33864,8 +33864,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.408) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33938,8 +33938,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.408) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34012,8 +34012,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.408) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34087,7 +34087,7 @@ reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -34163,8 +34163,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.413) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34237,8 +34237,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.413) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34310,8 +34310,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.413) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34383,8 +34383,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.413) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34458,7 +34458,7 @@ Once reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -34535,8 +34535,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.418) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34609,8 +34609,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.418) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34683,8 +34683,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.418) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34757,8 +34757,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.418) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34836,7 +34836,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -34926,8 +34926,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.423) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35000,8 +35000,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.423) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35074,8 +35074,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.423) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35148,8 +35148,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.423) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35225,7 +35225,7 @@ to EGV resolution with `egvtools::input2egv()` by calculating arithmetic mean,
 thus resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35302,8 +35302,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.428) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35377,8 +35377,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.428) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35452,8 +35452,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.428) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35527,8 +35527,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.428) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35601,7 +35601,7 @@ reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -35683,7 +35683,7 @@ over the second. Once covered, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -35782,8 +35782,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.434) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35857,8 +35857,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.434) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35932,8 +35932,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.434) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36007,8 +36007,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.434) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36087,7 +36087,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36183,8 +36183,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.439) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36258,8 +36258,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.439) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36333,8 +36333,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.439) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36408,8 +36408,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.439) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36485,7 +36485,7 @@ aggregated to EGV resolution with `egvtools::input2egv()` by calculating
 arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialized to
 ensure no missing values at the edges. At the very end, layer was standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36562,8 +36562,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.444) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36637,8 +36637,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.444) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36712,8 +36712,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.444) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36787,8 +36787,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.444) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36864,7 +36864,7 @@ to EGV resolution with `egvtools::input2egv()` by calculating arithmetic mean,
 thus resulting in cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialized to ensure no missing
 values at the edges. At the very end, layer was standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36940,8 +36940,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.449) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37014,8 +37014,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.449) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37088,8 +37088,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.449) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37162,8 +37162,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.449) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37238,7 +37238,7 @@ to value 1, others as 0). Then the layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -37316,8 +37316,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.454) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37391,8 +37391,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.454) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37466,8 +37466,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.454) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37541,8 +37541,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.454) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37616,7 +37616,7 @@ the layer was aggregated to EGV resolution with `egvtools::input2egv()` by
 calculating arithmetic mean, thus resulting in cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
 initialized to ensure no missing values at the edges. At the very end, layer was
-standardized by subtracting arithmetic mean and dividing by root mean squared
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -37692,8 +37692,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.459) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37765,8 +37765,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.459) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37838,8 +37838,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.459) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37911,8 +37911,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.459) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -37985,8 +37985,8 @@ classified as 1 with 0 elsewhere. Then processed with `egvtools::input2egv()`
 with `fill gaps = TRUE` performing inverse distance weighted (power = 2) filling
 of gaps at the border.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -38046,8 +38046,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.464) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38119,8 +38119,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.464) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38192,8 +38192,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.464) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38265,8 +38265,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.464) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38339,8 +38339,8 @@ mires were classified as 1 with 0 elsewhere. Then processed with
 `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -38401,8 +38401,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.469) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38475,8 +38475,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.469) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38549,8 +38549,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.469) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38623,8 +38623,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.469) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38699,7 +38699,7 @@ others as 0). Once reclassified, layer was aggregated to EGV resolution with
 `egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialized to ensure no missing values at the edges. At the
-very end, layer was standardized by subtracting arithmetic mean and dividing by
+very end, layer was standardized by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -38787,8 +38787,8 @@ calculated as the area-weighted sum of [analysis cells](#ch06.474) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
 to ensure no missing values at the edges. Finally, layer is rewritten to ensure
-layers name. At the very end, layer is standardized by subtracting arithmetic
-mean and dividing by root mean squared error.
+layers name. Finally, the layer is standardized by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38861,8 +38861,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.474) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -38935,8 +38935,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.474) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -39009,8 +39009,8 @@ was calculated as the area-weighted sum of [analysis cells](#ch06.474) inside
 the buffer with `egvtools::radius_function`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
 initialized to ensure no missing values at the edges. Finally, layer is
-rewritten to ensure layers name. At the very end, layer is standardized by
-subtracting arithmetic mean and dividing by root mean squared error.
+rewritten to ensure layers name. Finally, the layer is standardized by
+subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -39084,8 +39084,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39142,8 +39142,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39224,8 +39224,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39283,8 +39283,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39343,8 +39343,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term corresponds to last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39427,8 +39427,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39487,8 +39487,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39545,8 +39545,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39604,8 +39604,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39688,8 +39688,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39746,8 +39746,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39805,8 +39805,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term corresponds to last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39889,8 +39889,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -39947,8 +39947,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40005,8 +40005,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40062,8 +40062,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Last year is 2024.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40145,8 +40145,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40203,8 +40203,8 @@ at analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40262,8 +40262,8 @@ Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term corresponds to last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40345,8 +40345,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40403,8 +40403,8 @@ analysis cell calculated with `egvtools::input2egv()`. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Short-term is last five years (2020-2024).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40463,8 +40463,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40523,8 +40523,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40584,8 +40584,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40644,8 +40644,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40704,8 +40704,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40763,8 +40763,8 @@ distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
 involved when projecting from 500 m to 100 m resolution of different CRS).
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40821,8 +40821,8 @@ reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40888,8 +40888,8 @@ with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -40959,8 +40959,8 @@ with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -41031,8 +41031,8 @@ with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -41102,8 +41102,8 @@ with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -41175,8 +41175,8 @@ reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
 
-At the very end, layer is standardized by subtracting arithmetic mean and
-dividing by root mean squared error.
+Finally, the layer is standardized by subtracting the arithmetic mean and
+dividing by the root mean squared error.
 
 
 ``` r
@@ -41240,8 +41240,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) gap filling is implemented. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41310,8 +41310,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) gap filling is implemented. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41381,8 +41381,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) gap filling is implemented. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41451,8 +41451,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) gap filling is implemented. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41521,8 +41521,8 @@ analīzes šūnā (1 ha)
 **Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) filling of gaps at the border. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41588,8 +41588,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41657,8 +41657,8 @@ writeRaster(merogots,
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41726,8 +41726,8 @@ km ainavā
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41795,8 +41795,8 @@ km ainavā
 **Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41864,8 +41864,8 @@ platības īpatsvars analīzes šūnā (1 ha)
 **Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. At the very end, layer is
-standardized by subtracting arithmetic mean and dividing by root mean squared
+weighted (power = 2) filling of gaps at the border. Finally, the layer is
+standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -41930,8 +41930,8 @@ platības īpatsvars 0,5 km ainavā
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41999,8 +41999,8 @@ platības īpatsvars 1,25 km ainavā
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -42068,8 +42068,8 @@ platības īpatsvars 3 km ainavā
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -42138,8 +42138,8 @@ platības īpatsvars 10 km ainavā
 **Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. At the very end, layer is standardized
-by subtracting arithmetic mean and dividing by root mean squared error.
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -42207,7 +42207,7 @@ analysis cell (1 ha)
 **Procedure:** Derived from [Digital elevation/terrain models](#Ch04.15).
 Processed with `egvtools::input2egv()`. To protect against possible data loss at
 edge cells, inverse distance weighted (power = 2) gap filling is implemented. At
-the very end, layer is standardized by subtracting arithmetic mean and dividing
+the very end, layer is standardized by subtracting the arithmetic mean and dividing
 by root mean squared error.
 
 
@@ -42265,7 +42265,7 @@ cell (1 ha)
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42324,8 +42324,8 @@ cell (1 ha)
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. At the very end, layer is standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+filling is implemented. Finally, the layer is standardized by subtracting
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -42404,7 +42404,7 @@ analīzes šūnā (1 ha)
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42466,7 +42466,7 @@ km ainavā
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
-is standardized by subtracting arithmetic mean and dividing by root mean squared
+is standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -42539,7 +42539,7 @@ writeRaster(merogots,
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
-is standardized by subtracting arithmetic mean and dividing by root mean squared
+is standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -42611,7 +42611,7 @@ km ainavā
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
-is standardized by subtracting arithmetic mean and dividing by root mean squared
+is standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -42684,7 +42684,7 @@ km ainavā
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
-is standardized by subtracting arithmetic mean and dividing by root mean squared
+is standardized by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
 
@@ -42755,7 +42755,7 @@ writeRaster(merogots,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42812,7 +42812,7 @@ writeRaster(merogots,
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42870,7 +42870,7 @@ cell (1 ha)
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42929,8 +42929,8 @@ writeRaster(merogots,
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. At the very end, layer is standardized by subtracting
-arithmetic mean and dividing by root mean squared error.
+filling is implemented. Finally, the layer is standardized by subtracting
+arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -43009,7 +43009,7 @@ ha)
 **Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting arithmetic mean and dividing by root
+end, layer is standardized by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 

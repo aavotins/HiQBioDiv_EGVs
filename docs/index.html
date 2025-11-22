@@ -29,7 +29,7 @@ describing Latvia, 2024.</p>" />
 <meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš" />
 
 
-<meta name="date" content="2025-11-19" />
+<meta name="date" content="2025-11-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -794,7 +794,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024</h1>
 <p class="author"><em>Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš</em></p>
-<p class="date"><em>2025-11-19</em></p>
+<p class="date"><em>2025-11-22</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -809,7 +809,7 @@ reproducibility. These projects are:</p>
 protected areas for the implementation of the EU Biodiversity Strategy
 2030” (No. 1-08/73/2023), funded by the Administrations of the Latvian
 Environmental Protection Fund;</p></li>
-<li><p>Scientific research service project commissioned by AS “Latvijas valsts
+<li><p>Scientific research service project commissioned by the Joint Stock Company “Latvijas valsts
 meži” (Latvian State Forests) “Improvement of the monitoring of the northern
 goshawk <em>Accipiter gentilis</em> and creation of a spatial model of habitat
 suitability” (Latvian State Forests document No. 5-5.5.1_000r_101_23_27_6);</p></li>
@@ -831,7 +831,7 @@ science.</p>
 <h2>About this material<a href="index.html#about-this-material" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This material <strong>is not</strong>:</p>
 <ul>
-<li><p><em>an introduction to R or other programming languages</em>. On the contrary, it will
+<li><p><em>an introduction to R or other programming language</em>. On the contrary, it will
 be most useful to those who already understand how to use command lines.
 However, it will also be informative for other users regarding the approaches used;</p></li>
 <li><p><em>a tutorial on geoprocessing</em>. This material summarizes the approaches that,
@@ -842,13 +842,13 @@ guarantees, and reliability), but they are certainly not the only ones possible;
 tends to be intended for these purposes, in a situation where large amounts of
 data and, at least in part, restricted access data are used for the work, this
 is simply not possible. However, by ensuring data availability and placement in
-accordance with the file structure of this project (availabe at <code>root/Data</code> or
+accordance with the file structure of this project (available at <code>root/Data</code> or
 by forking <a href="https://github.com/aavotins/HiQBioDiv_FileTree">template repository</a>), the
 command lines will be repeatable without changes and will produce the same results.</p></li>
 </ul>
 <p>This material <strong>has been</strong> prepared to provide a reproducible workflow, describing
 the decisions made and solutions implemented in the preparation of ecogeographical
-variables for species distribution (habitat suitability) modeling for biodiversity
+variables for species distribution (habitat suitability) modelling for biodiversity
 conservation planning.</p>
 <p>For the most part, this material consists of:</p>
 <ul>
@@ -856,7 +856,7 @@ conservation planning.</p>
 <li><p><em>command lines</em>, which are hidden by default to make the text easier to read.
 The locations of the command lines can be identified by the “|&gt; Code” visible
 on the left side of the page, just below this paragraph. Clicking on it will open
-the code area, where the text on a gray background is command lines, for example:</p></li>
+the code area, where the text on a grey background is command lines, for example:</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>object<span class="ot">=</span><span class="cf">function</span>(arguments1,arguments2,</span>
@@ -881,11 +881,11 @@ maintain correct paths in the file tree.</p>
 <p>In this material code chunks are formatted as individual pieces to better pinpoint
 commands used for a job described in the text around. However, in practical setting the
 creation of ecogeographical variables will be much faster, if they will be combined
-in loops or other batch processing setup. Practically used command lines are available
+in loops or other batch processing setup. Command lines used in practice are available
 in the <a href="https://github.com/aavotins/HiQBioDiv_EGVs">home repository</a> of this material at<br />
 <code>Data/RScripts_final</code>, they can be executed in an alphanumeric order, if not
-specifically. We performed parts of the compute on the University of Latvia
-Intitute of Numerical Modelling HPC cluster with the same file tree as in this
+specified differently. We performed parts of the compute on the University of Latvia
+Institute of Numerical Modelling HPC cluster with the same file tree as in this
 material. Shell scripts used to run R commands are available in
 the <a href="https://github.com/aavotins/HiQBioDiv_EGVs">home repository</a> of this material at<br />
 <code>Data/hpc_io/Jobs_shell/2024/EGVs</code>.</p>
