@@ -2170,7 +2170,7 @@ Preprocessing included:
     
     - and other categories were left unclassified.
     
-- coordinate transformation to epsg:3059;
+- coordinate transformation to EPSG:3059;
 
 - invsestigation of the resulting layer looking for anomalies by scrolling in interactive 
 GIS, which led to exclusion of land parcels larger than 200 ha.
@@ -2257,7 +2257,7 @@ Preprocessing included:
     
     - `organic` (4): "dunjas", "kudra";
 
-- coordinate transformation to epsg:3059;
+- coordinate transformation to EPSG:3059;
 
 - rasterisation to 10 m template with the highest class code prevailing.
 
