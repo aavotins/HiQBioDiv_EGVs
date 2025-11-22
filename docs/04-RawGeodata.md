@@ -2329,10 +2329,8 @@ plot(apaksaugsnem)
 
 The distribution of organic soils was modelled under the EU LIFE Programme project 
 "Demonstration of climate change mitigation potential of nutrients rich organic 
-soils in Baltic States and Finland" at the scientific institue SILAVA. Results are 
-available from their web service: https://silava.forestradar.com/geoserver/silava
-
-Downloaded file was stored at `Geodata/2024/Soils/OrganicSoils_SILAVA/`.
+soils in Baltic States and Finland" at the scientific institue SILAVA. Results 
+were downloaded and stored at `Geodata/2024/Soils/OrganicSoils_SILAVA/`.
 
 Even though the layer covers all of Latvia, it has visible inconsistencies, 
 particularly stripes. These were digitised manually (as vector polygons) and masked 
