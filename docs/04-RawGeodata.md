@@ -2177,7 +2177,7 @@ Preprocessing included:
 - invsestigation of the resulting layer looking for anomalies by scrolling in interactive 
 GIS, which led to exclusion of land parcels larger than 200 ha.
 
-- rasterization to 10 m template with the highest class code prevailing.
+- rasterisation to 10 m template with the highest class code prevailing.
 
 
 
@@ -2230,7 +2230,7 @@ augsnes_3059small=augsnes_3059 %>%
   filter(!is.na(grupas_num)) %>% 
   filter(platiba_ha<200)
 
-# rasterization
+# rasterisation
 virsaugsnem2=rasterize(augsnes_3059small,template10,field="grupas_num",fun="max",
                        filename="./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif",
                        overwrite=TRUE)
@@ -2262,7 +2262,7 @@ Preprocessing included:
 
 - coordinate transformation to epsg:3059;
 
-- rasterization to 10 m template with the highest class code prevailing.
+- rasterisation to 10 m template with the highest class code prevailing.
 
 
 
@@ -2316,7 +2316,7 @@ kvartars_3059=st_transform(kvartars,crs=3059)
 kvartars_3059=kvartars_3059 %>% 
   filter(!is.na(grupas_num))
 
-# rasterization
+# rasterisation
 apaksaugsnem=rasterize(kvartars_3059,template10,field="grupas_num",fun="max",
                        filename="./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif",
                        overwrite=TRUE)
@@ -2358,7 +2358,7 @@ plot(organika_silava)
 organika_silava=ifel(organika_silava==2,1,NA)
 organika_silavaLV=project(organika_silava,template10)
 
-# stripes drawn manually, rasterization
+# stripes drawn manually, rasterisation
 silavas_telpai=st_read("./Geodata/2024/Soils/OrganicSoils_SILAVA/stripam.gpkg",
                        layer="stripam")
 silavas_telpai=st_transform(silavas_telpai,crs=3059)

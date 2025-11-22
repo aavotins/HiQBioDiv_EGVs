@@ -2905,7 +2905,7 @@ version we used was obtained from the project “GOODWATER” C1D1_Deliverable_R
 <li><p>coordinate transformation to epsg:3059;</p></li>
 <li><p>invsestigation of the resulting layer looking for anomalies by scrolling in interactive
 GIS, which led to exclusion of land parcels larger than 200 ha.</p></li>
-<li><p>rasterization to 10 m template with the highest class code prevailing.</p></li>
+<li><p>rasterisation to 10 m template with the highest class code prevailing.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="Ch04.html#cb19-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2956,7 +2956,7 @@ GIS, which led to exclusion of land parcels larger than 200 ha.</p></li>
 <span id="cb19-46"><a href="Ch04.html#cb19-46" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(grupas_num)) <span class="sc">%&gt;%</span> </span>
 <span id="cb19-47"><a href="Ch04.html#cb19-47" tabindex="-1"></a>  <span class="fu">filter</span>(platiba_ha<span class="sc">&lt;</span><span class="dv">200</span>)</span>
 <span id="cb19-48"><a href="Ch04.html#cb19-48" tabindex="-1"></a></span>
-<span id="cb19-49"><a href="Ch04.html#cb19-49" tabindex="-1"></a><span class="co"># rasterization</span></span>
+<span id="cb19-49"><a href="Ch04.html#cb19-49" tabindex="-1"></a><span class="co"># rasterisation</span></span>
 <span id="cb19-50"><a href="Ch04.html#cb19-50" tabindex="-1"></a>virsaugsnem2<span class="ot">=</span><span class="fu">rasterize</span>(augsnes_3059small,template10,<span class="at">field=</span><span class="st">&quot;grupas_num&quot;</span>,<span class="at">fun=</span><span class="st">&quot;max&quot;</span>,</span>
 <span id="cb19-51"><a href="Ch04.html#cb19-51" tabindex="-1"></a>                       <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_topSoilLV.tif&quot;</span>,</span>
 <span id="cb19-52"><a href="Ch04.html#cb19-52" tabindex="-1"></a>                       <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
@@ -2981,7 +2981,7 @@ Department of Geology.</p>
 <li><p><code>organic</code> (4): “dunjas”, “kudra”;</p></li>
 </ul></li>
 <li><p>coordinate transformation to epsg:3059;</p></li>
-<li><p>rasterization to 10 m template with the highest class code prevailing.</p></li>
+<li><p>rasterisation to 10 m template with the highest class code prevailing.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="Ch04.html#cb20-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -3033,7 +3033,7 @@ Department of Geology.</p>
 <span id="cb20-47"><a href="Ch04.html#cb20-47" tabindex="-1"></a>kvartars_3059<span class="ot">=</span>kvartars_3059 <span class="sc">%&gt;%</span> </span>
 <span id="cb20-48"><a href="Ch04.html#cb20-48" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(grupas_num))</span>
 <span id="cb20-49"><a href="Ch04.html#cb20-49" tabindex="-1"></a></span>
-<span id="cb20-50"><a href="Ch04.html#cb20-50" tabindex="-1"></a><span class="co"># rasterization</span></span>
+<span id="cb20-50"><a href="Ch04.html#cb20-50" tabindex="-1"></a><span class="co"># rasterisation</span></span>
 <span id="cb20-51"><a href="Ch04.html#cb20-51" tabindex="-1"></a>apaksaugsnem<span class="ot">=</span><span class="fu">rasterize</span>(kvartars_3059,template10,<span class="at">field=</span><span class="st">&quot;grupas_num&quot;</span>,<span class="at">fun=</span><span class="st">&quot;max&quot;</span>,</span>
 <span id="cb20-52"><a href="Ch04.html#cb20-52" tabindex="-1"></a>                       <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_QuarternaryLV.tif&quot;</span>,</span>
 <span id="cb20-53"><a href="Ch04.html#cb20-53" tabindex="-1"></a>                       <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
@@ -3069,7 +3069,7 @@ out as a part of preprocessing.</p>
 <span id="cb21-16"><a href="Ch04.html#cb21-16" tabindex="-1"></a>organika_silava<span class="ot">=</span><span class="fu">ifel</span>(organika_silava<span class="sc">==</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
 <span id="cb21-17"><a href="Ch04.html#cb21-17" tabindex="-1"></a>organika_silavaLV<span class="ot">=</span><span class="fu">project</span>(organika_silava,template10)</span>
 <span id="cb21-18"><a href="Ch04.html#cb21-18" tabindex="-1"></a></span>
-<span id="cb21-19"><a href="Ch04.html#cb21-19" tabindex="-1"></a><span class="co"># stripes drawn manually, rasterization</span></span>
+<span id="cb21-19"><a href="Ch04.html#cb21-19" tabindex="-1"></a><span class="co"># stripes drawn manually, rasterisation</span></span>
 <span id="cb21-20"><a href="Ch04.html#cb21-20" tabindex="-1"></a>silavas_telpai<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/Soils/OrganicSoils_SILAVA/stripam.gpkg&quot;</span>,</span>
 <span id="cb21-21"><a href="Ch04.html#cb21-21" tabindex="-1"></a>                       <span class="at">layer=</span><span class="st">&quot;stripam&quot;</span>)</span>
 <span id="cb21-22"><a href="Ch04.html#cb21-22" tabindex="-1"></a>silavas_telpai<span class="ot">=</span><span class="fu">st_transform</span>(silavas_telpai,<span class="at">crs=</span><span class="dv">3059</span>)</span>

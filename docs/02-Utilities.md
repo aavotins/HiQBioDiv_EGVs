@@ -53,7 +53,7 @@ to the [version 1.0.1](https://zenodo.org/records/14277114) of the dataset;
 
 - [radius_function()](https://aavotins.github.io/egvtools/reference/radius_function.html) — extracts 
 summary statistics from raster layers using buffered polygon zones of multiple 
-radii and rasterizes them onto a common template grid. Internally hard coded to 
+radii and rasterises them onto a common template grid. Internally hard coded to 
 use filenames (first and second part in the result of tiling functions) as used 
 in this project. If the filenames are kept, function can easily be used for 
 other projects, regions etc. Function can be used to run sequentially, however much 
@@ -92,7 +92,7 @@ spatial cover, resolution, coordinate reference system, exact pixel matching, et
 Creation of layers with default background values is faster than recreating them 
 several times in workflows preparing EGVs;
 
-- [polygon2input()]() — rasterize polygons to input layers. Handles only polygon data, 
+- [polygon2input()]() — rasterise polygons to input layers. Handles only polygon data, 
 other geometry types need to be buffered. Rasterizes polygon/multipolygon sf data to 
 a raster aligned to a template GeoTIFF. Rasterization targets a raster::RasterLayer 
 built from the template (so grids normally match). Projection is optional 

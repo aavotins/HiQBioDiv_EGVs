@@ -13,7 +13,7 @@ For a better undestanding of the relatedness of these vairables, refer to the fl
 below (Fig. \@ref(fig:flowchart)). The names used in figure correspond to EGV layer
 names and follow naming convention: [group]*[specific name]*[scale], where:
 
--  group is abroader collection of EGVs describing the same phenomena or ecosystem,
+-  group is a broader collection of EGVs describing the same phenomena or ecosystem,
   derived from the same source, etc.;
 
 -  specific name briefly describes the landscape class and/or metrics used in
@@ -36,7 +36,7 @@ scales. This package uses pixel area weights to calculate weighted summary
 statistics, making the aggregation error negligible, particularly
 at larger scales, but reduces computation time thousands up to even hundreds of
 thousands times compared to input resolution (10 m). To further speed up the
-procedures, we used "sparse" mode in `egvtools::radius_function`, thus
+procedures, we used "sparse" mode in `egvtools::radius_function()`, thus
 summarising zonal statistics every 300 m for 3000 m radius buffers and every
 1000 m for 10000 m buffers, obtaining near linear reduction in time relative to
 the number of zones (ninefold and 100 fold further computation time reduction),
@@ -46,7 +46,7 @@ We used a slightly different approach with diversity metrics. First, we calculat
 Shanon's diversity index at 25 ha raster grid cells, as there was nearly no
 variability of landscape classes at 1 ha grid cells. Next, we calculated
 arithmetic mean as zonal statictics value (using the "sparse" mode with
-`egvtools::radius_function`), but we did not create this EGV at the analysis
+`egvtools::radius_function()`), but we did not create this EGV at the analysis
 cells scale.
 
 ## Climate_CHELSAv2.1-bio1_cell {#ch06.001}
@@ -4267,11 +4267,11 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālā vidējā gaisa temperatūra
 augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4364,11 +4364,11 @@ range (°C) (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā diennakts gaisa temperatūras
 amplitūda augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4462,11 +4462,11 @@ the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā izotermalitāte augštecē (°C)
 (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4560,11 +4560,11 @@ within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā temperatūras sezonalitāte
 augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4658,11 +4658,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4756,11 +4756,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa
 temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4853,11 +4853,11 @@ temperature (°C) (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces gada gaisa
 temperatūru amplitūda (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -4951,11 +4951,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra mitrākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5049,11 +5049,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5147,11 +5147,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra siltākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5245,11 +5245,11 @@ ha)
 **Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
 temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5342,11 +5342,11 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 gadā (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5439,11 +5439,11 @@ year⁻¹) of the wettest month (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 mitrākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5536,11 +5536,11 @@ year⁻¹) of the driest month (HydroClim) within the analysis cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 sausākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5633,11 +5633,11 @@ writeRaster(merogots,
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzuma
 sezonalitāte (kg m⁻²) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5731,11 +5731,11 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5829,11 +5829,11 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -5927,11 +5927,11 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -6025,11 +6025,11 @@ cell (1 ha)
 **Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
 vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
-**Procedure:** Information from [HydroClim
+**Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to epsg:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterized using
-`egvtools::polygon2input()`. Once rasterized to input data, EGV is created using
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised using
+`egvtools::polygon2input()`. Once rasterised to input data, EGV is created using
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
 the intermediate input layer is unlinked. Finally, the layer is standardised by
@@ -6121,7 +6121,7 @@ cell (1 ha)
 
 **Latvian name:** Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 500
+**Procedure:** Derived from the [Landscape classification](#Ch05.03), with class 500
 reclassified as 1 and others as 0. Processed using `egvtools::distance2egv()`. To
 prevent potential data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -6180,7 +6180,7 @@ analysis cell (1 ha)
 **Latvian name:** Attālums līdz meža malai tā iekšienē, vidējais analīzes šūnā
 (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03), with values in
+**Procedure:** Derived from the [Landscape classification](#Ch05.03), with values in
 a range from 630 to 700 reclassified as 0 and others as 1. Processed 
 using `egvtools::distance2egv()`. To
 prevent potential data loss at edge cells, inverse distance weighted
@@ -6240,7 +6240,7 @@ cell (1 ha)
 **Latvian name:** Attālums līdz ilggadīgiem zālājiem, vidējais analīzes šūnā (1
 ha)
 
-**Procedure:** Derived from [Rural Support Service's information on declared
+**Procedure:** Derived from the [Rural Support Service's information on declared
 fields](#Ch04.02) where `PRODUCT_CODE=="710"` classified as 1 and the rest of the
 country as 0. Processed using `egvtools::distance2egv()`. To
 prevent potential data loss at edge cells, inverse distance weighted
@@ -6491,7 +6491,7 @@ writeRaster(merogots,
 
 **Latvian name:** Attālums līdz kokiem, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03), with values in
+**Procedure:** Derived from the [Landscape classification](#Ch05.03), with values in
 a range from 630 to 700 reclassified as 1 and all others as 0. Processed using 
 `egvtools::distance2egv()`. To prevent possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
@@ -6644,7 +6644,7 @@ ha)
 
 **Latvian name:** Attālums līdz ūdenstilpēm, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 200
+**Procedure:** Derived from the [Landscape classification](#Ch05.03), with class 200
 reclassified as 1 and all others as 0. Processed using `egvtools::distance2egv()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -6703,7 +6703,7 @@ the analysis cell (1 ha)
 **Latvian name:** Attālums līdz ūdenstilpes malai tās iekšienē, vidējais
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 200
+**Procedure:** Derived from the [Landscape classification](#Ch05.03), with class 200
 reclassified as 0 and all others as 1. Processed using `egvtools::distance2egv()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -6762,9 +6762,9 @@ the 0.5 km landscape
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -6835,9 +6835,9 @@ the 1.25 km landscape
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -6908,9 +6908,9 @@ the 3 km landscape
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 3 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -6981,9 +6981,9 @@ the 10 km landscape
 **Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 10 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7054,9 +7054,9 @@ the 0.5 km landscape
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7127,9 +7127,9 @@ the 1.25 km landscape
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7200,9 +7200,9 @@ the 3 km landscape
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 3 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7273,9 +7273,9 @@ the 10 km landscape
 **Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 10 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7346,9 +7346,9 @@ within the 0.5 km landscape
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7419,9 +7419,9 @@ within the 1.25 km landscape
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7492,9 +7492,9 @@ within the 3 km landscape
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 3 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7565,9 +7565,9 @@ within the 10 km landscape
 **Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 10 km
 ainavā
 
-**Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
+**Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
 [Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
-values was calculated using `egvtools::radius_function()`. To
+values is calculated using `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
 layername. Finally, the layer is standardised
@@ -7637,9 +7637,9 @@ analysis cell (1 ha)
 
 **Latvian name:** Purvu malu ar kokiem garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values from 620 to 700 from [Landscape
+**Procedure:** First, values from 620 to 700 from the [Landscape
 classification](#Ch05.03) are coded as 0, and all other values as NA. Then bog and
-transitional mire layers from [EDI](#Ch04.17) are reclassified to presence-only
+transitional mire layers from the [EDI](#Ch04.17) are reclassified to presence-only
 (value 1) and combined. Then, bog-and-mire layer (1 = presence) is covered over
 tree layer (presence = 0) and written to file (matching the input). Then, with
 the function `egvtools::landscape_function()` total edge between the two classes
@@ -7745,7 +7745,7 @@ km landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -7818,7 +7818,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -7891,7 +7891,7 @@ km landscape
 
 **Procedure:** Total edge witinh a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -7964,7 +7964,7 @@ km landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8035,7 +8035,7 @@ analysis cell (1 ha)
 
 **Latvian name:** Purvu malu ar ūdeni garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values 200 from [Landscape classification](#Ch05.03) are
+**Procedure:** First, values 200 from the [Landscape classification](#Ch05.03) are
 coded as 0, and all other values as NA. Then bog and transitional mire layers from
 [EDI](#Ch04.17) are reclassified to presence-only (value 1) and combined. Then,
 bog-and-mire layer (1 = presence) is covered over water layer (presence = 0) and
@@ -8141,7 +8141,7 @@ km landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8214,7 +8214,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8287,7 +8287,7 @@ km landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8360,7 +8360,7 @@ km landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8434,7 +8434,7 @@ ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from
 [Landscape classification](#Ch05.03) are coded as 1, and all other values as NA.
-Then values 500 from [Landscape classification](#Ch05.03) are coded as 0, and all 
+Then values 500 from the [Landscape classification](#Ch05.03) are coded as 0, and all 
 other values as NA. Then, the first layer (1 = presence) is covered over the
 second layer (presence = 0) and written to file (matching the input). Next,
 using the function `egvtools::landscape_function()` total edge between the two
@@ -8532,7 +8532,7 @@ the 0.5 km landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8606,7 +8606,7 @@ the 1.25 km landscape
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8680,7 +8680,7 @@ the 3 km landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8754,7 +8754,7 @@ the 10 km landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -8828,7 +8828,7 @@ analysis cell (1 ha)
 
 **Procedure:** First, values larger than 630 and smaller than 700 from
 [Landscape classification](#Ch05.03) are coded as 1, and other values as NA.
-Then values 500 from [Landscape classification](#Ch05.03) are coded as 0, and
+Then values 500 from the [Landscape classification](#Ch05.03) are coded as 0, and
 other values as NA. Then, the first layer (1 = presence) is covered over the
 second layer (presence = 0) and written to file (matching the input). Next,
 using the function `egvtools::landscape_function()` total edge between the two
@@ -8926,7 +8926,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9000,7 +9000,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9074,7 +9074,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9148,7 +9148,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9221,7 +9221,7 @@ writeRaster(merogots,
 **Latvian name:** Aramzemju malu garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than or equal to 310 and smaller than 325
-from [Landscape classification](#Ch05.03) are coded as 1, and all other values as
+from the [Landscape classification](#Ch05.03) are coded as 1, and all other values as
 NA. Then, the layer (1 = presence) is covered over the nulls layer (presence = 0)
 and written to file (matching the input). Next, using the function
 `egvtools::landscape_function()` total edge between the two classes is
@@ -9314,7 +9314,7 @@ landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9388,7 +9388,7 @@ landscape
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9461,7 +9461,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9535,7 +9535,7 @@ landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9610,7 +9610,7 @@ analīzes šūnā (1 ha)
 
 **Procedure:** First, values between 300 and 400 and between 600 and 630 from
 [Landscape classification](#Ch05.03) are coded as 0, and all other values as NA.
-Then values larger than or equal to 630 but smaller than 700 from [Landscape
+Then values larger than or equal to 630 but smaller than 700 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then, the
 first layer (0 = presence) is covered over the second layer (presence = 1) and
 written to file (matching the input). Next, using the function
@@ -9710,7 +9710,7 @@ Trees within the 0.5 km landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.135) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9785,7 +9785,7 @@ Trees within the 1.25 km landscape
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.135) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9860,7 +9860,7 @@ Trees within the 3 km landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.135) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -9935,7 +9935,7 @@ Trees within the 10 km landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.135) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10006,7 +10006,7 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju malu garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values equal to 330 from [Landscape
+**Procedure:** First, values equal to 330 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then, the
 layer (1 = presence) is covered over the nulls layer (presence = 0) and written to
 file (matching the input). Then, using the function
@@ -10099,7 +10099,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10172,7 +10172,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10245,7 +10245,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10318,7 +10318,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10391,7 +10391,7 @@ cell (1 ha)
 **Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums analīzes šūnā (1
 ha)
 
-**Procedure:** First, the raster layer with forest stands from [MVR](#Ch04.01) at
+**Procedure:** First, the raster layer with forest stands from the [MVR](#Ch04.01) at
 age groups 4 and 5 is prepared (presence = 1, everything else = NA). Then, the
 layer (1 = presence) is covered over the nulls layer (presence = 0) and written to
 file (matching the input). Then, using the function
@@ -10495,7 +10495,7 @@ landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10569,7 +10569,7 @@ landscape
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10643,7 +10643,7 @@ landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10717,7 +10717,7 @@ landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10788,7 +10788,7 @@ writeRaster(merogots,
 
 **Latvian name:** Ceļu malu garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values equal to 100 from [Landscape
+**Procedure:** First, values equal to 100 from the [Landscape
 classification](#Ch05.03) are coded as 1, and other values as NA. Then, the
 layer (1 = presence) is covered over the nulls layer (presence = 0) and written to
 file (matching the input). Finally, with the function
@@ -10881,7 +10881,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -10954,7 +10954,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11027,7 +11027,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11100,7 +11100,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11264,7 +11264,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11337,7 +11337,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11410,7 +11410,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11483,7 +11483,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11554,7 +11554,7 @@ writeRaster(merogots,
 
 **Latvian name:** Ūdenstilpju malu garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values equal to 200 from [Landscape
+**Procedure:** First, values equal to 200 from the [Landscape
 classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the
 layer (1 = presence) is covered over the nulls layer (presence = 0) and written to
 file (matching the input). Finally, with the function
@@ -11646,7 +11646,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11719,7 +11719,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11792,7 +11792,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11865,7 +11865,7 @@ writeRaster(merogots,
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -11940,7 +11940,7 @@ analysis cell (1 ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from
 [Landscape classification](#Ch05.03) are coded as 1, and all other values as NA.
-Then values equal to 200 from [Landscape classification](#Ch05.03) are coded as
+Then values equal to 200 from the [Landscape classification](#Ch05.03) are coded as
 0, and all other values as NA. Then, the first layer (1 = presence) is covered over
 the second layer (presence = 0) and written to file (matching the input). Finally,
 using the function `egvtools::landscape_function()` total edge between the two
@@ -12039,7 +12039,7 @@ ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12114,7 +12114,7 @@ ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12188,7 +12188,7 @@ landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12262,7 +12262,7 @@ landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12334,9 +12334,9 @@ analysis cell (1 ha)
 
 **Latvian name:** Ūdenstilpju malu ar zālājiem garums analīzes šūnā (1 ha)
 
-**Procedure:** First, values lequal to 330 from [Landscape
+**Procedure:** First, values lequal to 330 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then values
-equal to 200 from [Landscape classification](#Ch05.03) are coded as 0, and
+equal to 200 from the [Landscape classification](#Ch05.03) are coded as 0, and
 all other values as NA. Then, the first layer (1 = presence) is covered over the
 second layer (presence = 0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
@@ -12434,7 +12434,7 @@ km landscape
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12508,7 +12508,7 @@ km landscape
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12582,7 +12582,7 @@ landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12656,7 +12656,7 @@ landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12729,9 +12729,9 @@ within the analysis cell (1 ha)
 **Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums analīzes
 šūnā (1 ha)
 
-**Procedure:** First, values equal to 720 from [Landscape
+**Procedure:** First, values equal to 720 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then values
-equal to 200 from [Landscape classification](#Ch05.03) are coded as 0, and
+equal to 200 from the [Landscape classification](#Ch05.03) are coded as 0, and
 all other values as NA. Then, the first layer (1 = presence) is covered over the
 second layer (presence = 0) and written to file (matching the input). Finally,
 with the function `egvtools::landscape_function()` total edge between the two
@@ -12831,7 +12831,7 @@ ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12906,7 +12906,7 @@ ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -12980,7 +12980,7 @@ within the 3 km landscape
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -13054,7 +13054,7 @@ within the 10 km landscape
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -13128,15 +13128,15 @@ writeRaster(merogots,
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels with any type of crops are selected
-from [Rural Support Service's information on declared fields](#Ch04.02). These
-geometries were then rasterized to input resolution, ensuring value 1 at the
-polygon locations and value 0 elsewhere. Rasterization was performed with
-`egvtools::polygon2input()`. Once rasterized, layer was aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+from the [Rural Support Service's information on declared fields](#Ch04.02). These
+geometries were then rasterised to input resolution, ensuring value 1 at the
+polygon locations and value 0 elsewhere. Rasterisation was performed using the function 
+`egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13158,7 +13158,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -13231,9 +13231,9 @@ landscape
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -13307,11 +13307,11 @@ landscape
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13383,11 +13383,11 @@ landscape
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13459,11 +13459,11 @@ landscape
 **Latvian name:** Aramzemju (dažādu lauksaimniecības kultūraugu) platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.180) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13533,16 +13533,16 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels with hoed crops were selected from
+**Procedure:** First, agricultural parcels with hoed crops were selected from the 
 [Rural Support Service's information on declared fields](#Ch04.02). These
-geometries were then rasterized to input resolution, ensuring value 1 at the
-polygon locations and value 0 elsewhere. Rasterization was performed with
-`egvtools::polygon2input()`. Once rasterized, layer was aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+geometries were then rasterised to input resolution, ensuring value 1 at the
+polygon locations and value 0 elsewhere. Rasterisation was performed using the function 
+`egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -13564,7 +13564,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -13637,9 +13637,9 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -13710,11 +13710,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13783,11 +13783,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13856,11 +13856,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vagu un rušināmkultūru platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.185) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -13932,14 +13932,13 @@ ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels with otherwise not differentiated
-crops were selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+crops were selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation was performed using the function `egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -13962,7 +13961,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -14036,9 +14035,9 @@ writeRaster(merogots,
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -14110,11 +14109,11 @@ writeRaster(merogots,
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14184,11 +14183,11 @@ writeRaster(merogots,
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14258,11 +14257,11 @@ writeRaster(merogots,
 **Latvian name:** Citu lauksaimniecības kultūraugu aramzemēs platības īpatsvars
 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.190) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14332,15 +14331,14 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels with declared as spring sawn crops
-were selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+**Procedure:** First, agricultural parcels declared as spring sown crops
+were selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation was performed using the function `egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -14363,7 +14361,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -14438,9 +14436,9 @@ landscape
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -14512,11 +14510,11 @@ landscape
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14586,11 +14584,11 @@ landscape
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14660,11 +14658,11 @@ landscape
 
 **Latvian name:** Vasarāju aramzemēs platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.195) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14734,15 +14732,14 @@ ha)
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels with declared as winter crops were
-selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+**Procedure:** First, agricultural parcels declared as winter crops were
+selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation was performed using the function `egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -14765,7 +14762,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -14839,9 +14836,9 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -14912,11 +14909,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -14985,11 +14982,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15058,11 +15055,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ziemāju aramzemēs platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.200) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15132,17 +15129,16 @@ the analysis cell (1 ha)
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels with declared as spring sawn
-rapeseed, turnip or corn were selected from [Rural Support Service's information
-on declared fields](#Ch04.02). These geometries were then rasterized to input
+**Procedure:** First, agricultural parcels declared as spring sown
+rapeseed, turnip or corn were selected from the [Rural Support Service's information
+on declared fields](#Ch04.02). These geometries were then rasterised to input
 resolution, ensuring value 1 at the polygon locations and value 0 elsewhere.
-Rasterization was performed with `egvtools::polygon2input()`. Once rasterized,
-layer was aggregated to EGV resolution with `egvtools::input2egv()` by
-calculating arithmetic mean, thus resulting in cover fraction. During
-aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+Rasterisation was performed using the function `egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse
+distance weighted (power = 2) gap filling on the output was initialised to
+ensure no missing values at the edges. Finally, the layer was standardised
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -15164,7 +15160,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -15240,9 +15236,9 @@ the 0.5 km landscape
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -15314,11 +15310,11 @@ the 1.25 km landscape
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15388,11 +15384,11 @@ the 3 km landscape
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15462,11 +15458,11 @@ the 10 km landscape
 
 **Latvian name:** Vasaras rapša, ripša, kukurūzas platība 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.205) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15536,15 +15532,14 @@ analysis cell (1 ha)
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels with declared as winter rapeseed or
-turnip were selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+**Procedure:** First, agricultural parcels declared as winter rapeseed or
+turnip were selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation was performed using the function `egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -15567,7 +15562,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -15642,9 +15637,9 @@ landscape
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -15716,11 +15711,11 @@ landscape
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15790,11 +15785,11 @@ landscape
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15864,11 +15859,11 @@ landscape
 
 **Latvian name:** Ziemas rapša, ripša platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.210) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -15938,14 +15933,14 @@ cell (1 ha)
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, grasslands from [Landscape classification](#Ch05.03) were
+**Procedure:** First, grasslands from the [Landscape classification](#Ch05.03) were
 selected (value 330 reclassified to value 1, others as NA). Then agricultural
-parcels declared as grasslands were selected from [Rural Support Service's
+parcels declared as grasslands were selected from the [Rural Support Service's
 information on declared fields](#Ch04.02). Then cells with grasslands in
 [Landscape classification](#Ch05.03) but not in [Rural Support Service's
 information on declared fields](#Ch04.02) were selected and matched to input
 layer. Once matched, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -15971,7 +15966,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -16043,9 +16038,9 @@ landscape
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -16117,11 +16112,11 @@ landscape
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16191,11 +16186,11 @@ landscape
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16265,11 +16260,11 @@ landscape
 
 **Latvian name:** Neapsaimniekotu zālāju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.215) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16339,12 +16334,12 @@ ha)
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, grasslands from [Landscape classification](#Ch05.03) were
+**Procedure:** First, grasslands from the [Landscape classification](#Ch05.03) were
 selected (value 330 reclassified to value 1, others as 0). Once selected, layer
-was aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+was aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -16367,7 +16362,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -16425,9 +16420,9 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -16498,11 +16493,11 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16571,11 +16566,11 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16644,11 +16639,11 @@ writeRaster(merogots,
 
 **Latvian name:** Zālāju (visu veidu) platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.220) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16719,14 +16714,14 @@ cell (1 ha)
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as permanent grasslands were
-selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation
+was performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -16749,7 +16744,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -16824,9 +16819,9 @@ landscape
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -16898,11 +16893,11 @@ landscape
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -16972,11 +16967,11 @@ landscape
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17046,11 +17041,11 @@ landscape
 
 **Latvian name:** Ilggadīgu zālāju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.225) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17121,14 +17116,14 @@ cell (1 ha)
 **Latvian name:** Zālāju-aramzemē platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as grasslands in arable
-lands were selected from [Rural Support Service's information on declared
-fields](#Ch04.02). These geometries were then rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+lands were selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). These geometries were then rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation
+was performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -17151,7 +17146,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -17225,9 +17220,9 @@ landscape
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -17299,11 +17294,11 @@ landscape
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17373,11 +17368,11 @@ landscape
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17447,11 +17442,11 @@ landscape
 
 **Latvian name:** Zālāju-aramzemē platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.230) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17521,14 +17516,14 @@ analysis cell (1 ha)
 
 **Latvian name:** Lauku bloku platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels from [Rural Support Service's
-information on declared fields](#Ch04.02) were rasterized to input resolution,
-ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterization
-was performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+**Procedure:** First, agricultural parcels from the [Rural Support Service's
+information on declared fields](#Ch04.02) were rasterised to input resolution,
+ensuring value 1 at the polygon locations and value 0 elsewhere. Rasterisation
+was performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -17551,7 +17546,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -17621,9 +17616,9 @@ km landscape
 
 **Latvian name:** Lauku bloku platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -17695,11 +17690,11 @@ km landscape
 
 **Latvian name:** Lauku bloku platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17769,11 +17764,11 @@ landscape
 
 **Latvian name:** Lauku bloku platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17843,11 +17838,11 @@ landscape
 
 **Latvian name:** Lauku bloku platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.235) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -17918,14 +17913,14 @@ cell (1 ha)
 **Latvian name:** Aramzemju, papuvju platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as crops or fallow land were
-selected from [Rural Support Service's information on declared
-fields](#Ch04.02). Geometries were then rasterized to input resolution, ensuring
-value 1 at the polygon locations and value 0 elsewhere. Rasterization was
-performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). Geometries were then rasterised to input resolution, ensuring
+value 1 at the polygon locations and value 0 elsewhere. Rasterisation was
+performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -17948,7 +17943,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -18028,9 +18023,9 @@ landscape
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -18102,11 +18097,11 @@ landscape
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18176,11 +18171,11 @@ landscape
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18250,11 +18245,11 @@ landscape
 
 **Latvian name:** Aramzemju, papuvju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.240) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18326,14 +18321,14 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as crops, fallow land or
-grasslands in arable land were selected from [Rural Support Service's
-information on declared fields](#Ch04.02). Geometries were then rasterized to
+grasslands in arable land were selected from the [Rural Support Service's
+information on declared fields](#Ch04.02). Geometries were then rasterised to
 input resolution, ensuring value 1 at the polygon locations and value 0
-elsewhere. Rasterization was performed with `egvtools::polygon2input()`. Once
-rasterized, layer was aggregated to EGV resolution with `egvtools::input2egv()`
-by calculating arithmetic mean, thus resulting in cover fraction. During
+elsewhere. Rasterisation was performed using the function  `egvtools::polygon2input()`. Once
+rasterised, layer was aggregated to EGV resolution using the function `egvtools::input2egv()`
+by calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
+initialised to ensure no missing values at the edges. Finally, the layer was
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -18357,7 +18352,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -18439,9 +18434,9 @@ within the 0.5 km landscape
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -18514,11 +18509,11 @@ within the 1.25 km landscape
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18589,11 +18584,11 @@ within the 3 km landscape
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18664,11 +18659,11 @@ within the 10 km landscape
 **Latvian name:** Aramzemju, papuvju, zālāju-aramzemē platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.245) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18739,15 +18734,15 @@ ha)
 **Latvian name:** Papuvju platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as fallow land were selected
-from [Rural Support Service's information on declared fields](#Ch04.02).
-Geometries were then rasterized to input resolution, ensuring value 1 at the
-polygon locations and value 0 elsewhere. Rasterization was performed with
-`egvtools::polygon2input()`. Once rasterized, layer was aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+from the [Rural Support Service's information on declared fields](#Ch04.02).
+Geometries were then rasterised to input resolution, ensuring value 1 at the
+polygon locations and value 0 elsewhere. Rasterisation was performed using the function 
+`egvtools::polygon2input()`. Once rasterised, the layer was aggregated to EGV
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -18769,7 +18764,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -18841,9 +18836,9 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -18914,11 +18909,11 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -18987,11 +18982,11 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19060,11 +19055,11 @@ writeRaster(merogots,
 
 **Latvian name:** Papuvju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.250) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19136,14 +19131,14 @@ Biological Agriculture within the analysis cell (1 ha)
 lauksaimniecības platību īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as receiving subsidies for
-biological agriculture were selected from [Rural Support Service's information
-on declared fields](#Ch04.02). Geometries were then rasterized to input
+biological agriculture were selected from the [Rural Support Service's information
+on declared fields](#Ch04.02). Geometries were then rasterised to input
 resolution, ensuring value 1 at the polygon locations and value 0 elsewhere.
-Rasterization was performed with `egvtools::polygon2input()`. Once rasterized,
-layer was aggregated to EGV resolution with `egvtools::input2egv()` by
-calculating arithmetic mean, thus resulting in cover fraction. During
+Rasterisation was performed using the function  `egvtools::polygon2input()`. Once rasterised,
+layer was aggregated to EGV resolution using the function `egvtools::input2egv()` by
+calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
+initialised to ensure no missing values at the edges. Finally, the layer was
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -19167,7 +19162,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -19241,9 +19236,9 @@ Biological Agriculture within the 0.5 km landscape
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto
 lauksaimniecības platību īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -19316,11 +19311,11 @@ Biological Agriculture within the 1.25 km landscape
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto
 lauksaimniecības platību īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19391,11 +19386,11 @@ Biological Agriculture within the 3 km landscape
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto
 lauksaimniecības platību īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19466,11 +19461,11 @@ Biological Agriculture within the 10 km landscape
 **Latvian name:** Bioloģiskās lauksaimniecības atbalstam pieteikto
 lauksaimniecības platību īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.255) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19541,14 +19536,14 @@ writeRaster(merogots,
 **Latvian name:** Augļudārzu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as permanent crops were
-selected from [Rural Support Service's information on declared
-fields](#Ch04.02). Geometries were then rasterized to input resolution, ensuring
-value 1 at the polygon locations and value 0 elsewhere. Rasterization was
-performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). Geometries were then rasterised to input resolution, ensuring
+value 1 at the polygon locations and value 0 elsewhere. Rasterisation was
+performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -19571,7 +19566,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -19657,9 +19652,9 @@ landscape
 
 **Latvian name:** Augļudārzu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -19731,11 +19726,11 @@ landscape
 
 **Latvian name:** Augļudārzu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19804,11 +19799,11 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19877,11 +19872,11 @@ writeRaster(merogots,
 
 **Latvian name:** Augļudārzu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -19953,14 +19948,14 @@ Energy Crops within the analysis cell (1 ha)
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as short rotation coppice
-were selected from [Rural Support Service's information on declared
-fields](#Ch04.02). Geometries were then rasterized to input resolution, ensuring
-value 1 at the polygon locations and value 0 elsewhere. Rasterization was
-performed with `egvtools::polygon2input()`. Once rasterized, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+were selected from the [Rural Support Service's information on declared
+fields](#Ch04.02). Geometries were then rasterised to input resolution, ensuring
+value 1 at the polygon locations and value 0 elsewhere. Rasterisation was
+performed with `egvtools::polygon2input()`. Once rasterised, the layer was
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -19983,7 +19978,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -20057,9 +20052,9 @@ Energy Crops within the 0.5 km landscape
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -20132,11 +20127,11 @@ Energy Crops within the 1.25 km landscape
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20207,11 +20202,11 @@ Energy Crops within the 3 km landscape
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20281,11 +20276,11 @@ Energy Crops within the 10 km landscape
 **Latvian name:** Īscirtmeta atvasāju un enerģijai audzētu kokaugu platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.265) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20357,17 +20352,17 @@ the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
-EGV, stands in land category 10 and lower than 5 m were selected from [State
-Forest Service's State Forest Registry](#Ch04.01) and rasterized. After
+EGV, stands in land category 10 and lower than 5 m were selected from the [State
+Forest Service's State Forest Registry](#Ch04.01) and rasterised. After
 rasterization, this layer was covered over clear cut mask. The resulting layer
-was then aggregated to EGV resolution with `egvtools::input2egv()` by
-calculating arithmetic mean, thus resulting in cover fraction. During
+was then aggregated to EGV resolution using the function `egvtools::input2egv()` by
+calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
+initialised to ensure no missing values at the edges. Finally, the layer was
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -20483,9 +20478,9 @@ the 0.5 km landscape
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -20558,11 +20553,11 @@ the 1.25 km landscape
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20633,11 +20628,11 @@ the 3 km landscape
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3
 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20708,11 +20703,11 @@ the 10 km landscape
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10
 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.270) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -20784,16 +20779,16 @@ cell (1 ha)
 (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
 EGV, stands in land category 10 and age groups two and three were selected from
-[State Forest Service's State Forest Registry](#Ch04.01) and rasterized.
-Rasterization was performed with `egvtools::polygon2input()` (presence = 1,
+[State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
+Rasterisation was performed using the function  `egvtools::polygon2input()` (presence = 1,
 absence = 0) restricting presence locations only outside the clear cut mask. The
 resulting layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -20916,9 +20911,9 @@ landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -20990,11 +20985,11 @@ landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21064,11 +21059,11 @@ landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21138,11 +21133,11 @@ landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.275) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21214,16 +21209,16 @@ analysis cell (1 ha)
 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
 EGV, stands in land category 10 and age groups four and five were selected from
-[State Forest Service's State Forest Registry](#Ch04.01) and rasterized.
-Rasterization was performed with `egvtools::polygon2input()` (presence = 1,
+[State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
+Rasterisation was performed using the function  `egvtools::polygon2input()` (presence = 1,
 absence = 0) restricting presence locations only outside the clear cut mask. The
 resulting layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -21346,9 +21341,9 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -21420,11 +21415,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21494,11 +21489,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21568,11 +21563,11 @@ writeRaster(merogots,
 
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21644,19 +21639,19 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
 EGV, stands in land category 10 and age group 1 with height above 5 m were
-selected from [State Forest Service's State Forest Registry](#Ch04.01) and
-rasterized (presence = 1, NA otherwise). This layer was then covered category
-620 from [Landscape classification](#Ch05.03) (presence = 1, 0 otherwise).
+selected from the [State Forest Service's State Forest Registry](#Ch04.01) and
+rasterised (presence = 1, NA otherwise). This layer was then covered category
+620 from the [Landscape classification](#Ch05.03) (presence = 1, 0 otherwise).
 Values in pixels matching clearcut mask were set to 0. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -21779,9 +21774,9 @@ within the 0.5 km landscape
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -21854,11 +21849,11 @@ within the 1.25 km landscape
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -21929,11 +21924,11 @@ within the 3 km landscape
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -22004,11 +21999,11 @@ within the 10 km landscape
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10
 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.285) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -22080,7 +22075,7 @@ cell (1 ha)
 šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22095,13 +22090,13 @@ integer showing only minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv290.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 arithmetic mean. After the aggregation, cells with no forest information were
-filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22252,7 +22247,7 @@ writeRaster(merogots,
 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22265,13 +22260,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv291.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 maximum value. After the aggregation, cells with no forest information were
-filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22395,7 +22390,7 @@ writeRaster(merogots,
 **Latvian name:** Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22408,13 +22403,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv292.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 maximum value. After the aggregation, cells with no forest information were
-filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22543,7 +22538,7 @@ analysis cell (1 ha)
 šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22560,15 +22555,15 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv293.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized (presence only). This
+Resulting values at polygon geometries were rasterised (presence only). This
 raster layer was then overlaid with reclassified year of tree cover loss
 (reclassified to difference from the year 2024) and per pixel minimum value was
 retained. As not all the forests or tree covered areas are inventoried, classes
-from [Landscape classification](#Ch05.03) were used to impute assumption of time
+from the [Landscape classification](#Ch05.03) were used to impute assumption of time
 since tree growing disturbance - for class 620 five years were assumed, whereas
 for classes 630 and 640 - 50 years and 0 otherwise. Per pixel minimum layer was
 then overlaid the assumed time since disturbance layer. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 arithmetic mean value. After the aggregation, inverse distance weighted (power =
 2) gap filling was initialised to avoid possible gaps at the edges. At the very
 end, layer was standardised by subtracting the arithmetic mean and dividing by root
@@ -22725,7 +22720,7 @@ ha)
 **Latvian name:** Apšu, papeļu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22739,13 +22734,13 @@ minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv294.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -22877,7 +22872,7 @@ writeRaster(merogots,
 **Latvian name:** Bērzu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -22891,13 +22886,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv295.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23028,7 +23023,7 @@ writeRaster(merogots,
 **Latvian name:** Melnalkšņu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23042,13 +23037,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv296.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23180,7 +23175,7 @@ analysis cell (1 ha)
 **Latvian name:** Citu šaurlapju krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23195,13 +23190,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv297.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23334,7 +23329,7 @@ cell (1 ha)
 **Latvian name:** Šaurlapju krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23348,13 +23343,13 @@ to the nearest integer showing only minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv298.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23488,7 +23483,7 @@ ha)
 **Latvian name:** Skujkoku krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23502,13 +23497,13 @@ showing only minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv299.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23640,7 +23635,7 @@ writeRaster(merogots,
 **Latvian name:** Ozolu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23654,13 +23649,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv300.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23791,7 +23786,7 @@ writeRaster(merogots,
 **Latvian name:** Ozolu, kļavu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23805,13 +23800,13 @@ minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv301.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -23942,7 +23937,7 @@ writeRaster(merogots,
 **Latvian name:** Priežu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -23956,13 +23951,13 @@ minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv302.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24094,7 +24089,7 @@ writeRaster(merogots,
 **Latvian name:** Egļu krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -24108,13 +24103,13 @@ minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv303.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24247,7 +24242,7 @@ cell (1 ha)
 **Latvian name:** Platlapju krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -24263,13 +24258,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv304.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24404,7 +24399,7 @@ within the analysis cell (1 ha)
 **Latvian name:** Platlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -24420,13 +24415,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv305.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24559,7 +24554,7 @@ maples) within the analysis cell (1 ha)
 **Latvian name:** Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -24574,13 +24569,13 @@ to the nearest integer showing only minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv306.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24712,7 +24707,7 @@ writeRaster(merogots,
 **Latvian name:** Kopējā krāja analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
@@ -24725,13 +24720,13 @@ accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv307.png" width="80%" />
 
-Resulting values at polygon geometries were rasterized with
+Resulting values at polygon geometries were rasterised with
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
 background values were assigned during rasterization. The resulting layer was
-then aggregated to EGV resolution with `egvtools::input2egv()` by calculating
+then aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+were filled with value 0. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -24859,15 +24854,15 @@ analysis cell (1 ha)
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to
-"19", "21", "24" or "25" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+"19", "21", "24" or "25" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -24981,9 +24976,9 @@ km landscape
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -25055,11 +25050,11 @@ km landscape
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25129,11 +25124,11 @@ landscape
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25203,11 +25198,11 @@ landscape
 
 **Latvian name:** Susinātu eitrofu mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.308) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25279,15 +25274,15 @@ Soils within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "5"
-"6" "10" or "11" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+"6" "10" or "11" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -25402,9 +25397,9 @@ Soils within the 0.5 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -25477,11 +25472,11 @@ Soils within the 1.25 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25552,11 +25547,11 @@ Soils within the 3 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3
 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25627,11 +25622,11 @@ Soils within the 10 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 10
 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.313) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25703,15 +25698,15 @@ Soils within the analysis cell (1 ha)
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "15"
-or "16" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+or "16" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -25826,9 +25821,9 @@ Soils within the 0.5 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -25901,11 +25896,11 @@ Soils within the 1.25 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -25976,11 +25971,11 @@ Soils within the 3 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26051,11 +26046,11 @@ Soils within the 10 km landscape
 **Latvian name:** Eitrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.318) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26127,15 +26122,15 @@ Soils within the analysis cell (1 ha)
 (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "4"
-or "9" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+or "9" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -26250,9 +26245,9 @@ Soils within the 0.5 km landscape
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -26325,11 +26320,11 @@ Soils within the 1.25 km landscape
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26400,11 +26395,11 @@ Soils within the 3 km landscape
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars 3
 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26475,11 +26470,11 @@ Soils within the 10 km landscape
 **Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.323) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26551,15 +26546,15 @@ analysis cell (1 ha)
 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to
-"17", "18", "22" or "23" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+"17", "18", "22" or "23" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -26673,9 +26668,9 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -26747,11 +26742,11 @@ writeRaster(merogots,
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26821,11 +26816,11 @@ km landscape
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26895,11 +26890,11 @@ km landscape
 
 **Latvian name:** Susinātu oligotrofu mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.328) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -26971,15 +26966,15 @@ Soils within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "1",
-"2", "3", "7" or "8" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+"2", "3", "7" or "8" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -27094,9 +27089,9 @@ Soils within the 0.5 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -27169,11 +27164,11 @@ Soils within the 1.25 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27244,11 +27239,11 @@ Soils within the 3 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27319,11 +27314,11 @@ Soils within the 10 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.333) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27395,15 +27390,15 @@ Soils within the analysis cell (1 ha)
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "12"
-or "14" were selected from [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterized (presence = 1, NA otherwise). Resulting
-geometries were then rasterized with `egvtools::polygon2input()` with background
+or "14" were selected from the [State Forest Service's State Forest
+Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
+geometries were then rasterised with `egvtools::polygon2input()` with background
 covering (value 0). This layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges.
 
-At the very end, layer was standardised by subtracting the arithmetic mean and
+Finally, the layer was standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -27518,9 +27513,9 @@ Soils within the 0.5 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -27593,11 +27588,11 @@ Soils within the 1.25 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27668,11 +27663,11 @@ Soils within the 3 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27743,11 +27738,11 @@ Soils within the 10 km landscape
 **Latvian name:** Oligotrofu mežu nesusinātās organiskajās augsnēs platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.338) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -27819,12 +27814,12 @@ Forests within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -27837,13 +27832,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then boreal deciduous stands exceeding the legal rotation age were selected and
-geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -27980,9 +27975,9 @@ Forests within the 0.5 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -28055,11 +28050,11 @@ Forests within the 1.25 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28130,11 +28125,11 @@ Forests within the 3 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28205,11 +28200,11 @@ Forests within the 10 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.343) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28281,12 +28276,12 @@ Forests within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -28299,13 +28294,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then boreal deciduous stands younger than the legal rotation age were selected
-and geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+and geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -28442,9 +28437,9 @@ Forests within the 0.5 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -28517,11 +28512,11 @@ Forests within the 1.25 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28592,11 +28587,11 @@ Forests within the 3 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28667,11 +28662,11 @@ Forests within the 10 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.348) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -28743,12 +28738,12 @@ within the analysis cell (1 ha)
 šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -28761,13 +28756,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then coniferous stands exceeding the legal rotation age were selected and
-geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -28904,9 +28899,9 @@ within the 0.5 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -28979,11 +28974,11 @@ within the 1.25 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29054,11 +29049,11 @@ within the 3 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29129,11 +29124,11 @@ within the 10 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.353) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29205,12 +29200,12 @@ Forests within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -29223,13 +29218,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then coniferous stands younger than the legal rotation age were selected and
-geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -29366,9 +29361,9 @@ Forests within the 0.5 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -29441,11 +29436,11 @@ Forests within the 1.25 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29516,11 +29511,11 @@ Forests within the 3 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29591,11 +29586,11 @@ Forests within the 10 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.358) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29667,12 +29662,12 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -29685,14 +29680,14 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then mixed stands exceeding the legal rotation age were selected and geometries
-were rasterized (presence = 1, NA otherwise). Rasterization was performed by
+were rasterised (presence = 1, NA otherwise). Rasterisation was performed by
 `egvtools:polygon2input()` restricting to pixels outside clearcut mask and
 covering background with value 0. The resulting layer was then aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -29828,9 +29823,9 @@ within the 0.5 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -29903,11 +29898,11 @@ within the 1.25 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -29978,11 +29973,11 @@ within the 3 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30053,11 +30048,11 @@ within the 10 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.363) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30129,12 +30124,12 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -30147,13 +30142,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then mixed stands younger than the legal rotation age were selected and
-geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -30290,9 +30285,9 @@ within the 0.5 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -30365,11 +30360,11 @@ within the 1.25 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30440,11 +30435,11 @@ within the 3 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 3
 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30515,11 +30510,11 @@ within the 10 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars 10
 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.368) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30591,12 +30586,12 @@ Deciduous Forests within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -30609,13 +30604,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then temperate deciduous stands exceeding the legal rotation age were selected
-and geometries were rasterized (presence = 1, NA otherwise). Rasterization was
+and geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
 performed by `egvtools:polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -30752,9 +30747,9 @@ Deciduous Forests within the 0.5 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -30827,11 +30822,11 @@ Deciduous Forests within the 1.25 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30902,11 +30897,11 @@ Deciduous Forests within the 3 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -30977,11 +30972,11 @@ Deciduous Forests within the 10 km landscape
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.373) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31053,12 +31048,12 @@ Deciduous Forests within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -31071,13 +31066,13 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then temperate deciduous stands younger than the legal rotation age were
-selected and geometries were rasterized (presence = 1, NA otherwise).
-Rasterization was performed by `egvtools:polygon2input()` restricting to pixels
+selected and geometries were rasterised (presence = 1, NA otherwise).
+Rasterisation was performed by `egvtools:polygon2input()` restricting to pixels
 outside clearcut mask and covering background with value 0. The resulting layer
-was then aggregated to EGV resolution with `egvtools::input2egv()` by
-calculating arithmetic mean, thus resulting in cover fraction. During
+was then aggregated to EGV resolution using the function `egvtools::input2egv()` by
+calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
+initialised to ensure no missing values at the edges. Finally, the layer was
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -31215,9 +31210,9 @@ Deciduous Forests within the 0.5 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -31290,11 +31285,11 @@ Deciduous Forests within the 1.25 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31365,11 +31360,11 @@ Deciduous Forests within the 3 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31440,11 +31435,11 @@ Deciduous Forests within the 10 km landscape
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.378) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31515,12 +31510,12 @@ analysis cell (1 ha)
 **Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -31532,15 +31527,15 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then boreal deciduous stands were selected and geometries were rasterized
-(presence = 1, NA otherwise). Rasterization was performed by
+then boreal deciduous stands were selected and geometries were rasterised
+(presence = 1, NA otherwise). Rasterisation was performed by
 `egvtools:polygon2input()` restricting to pixels outside clearcut mask and
 covering background with value 0. The resulting layer was then aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -31675,9 +31670,9 @@ landscape
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -31749,11 +31744,11 @@ km landscape
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31823,11 +31818,11 @@ landscape
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31897,11 +31892,11 @@ landscape
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.383) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -31972,12 +31967,12 @@ cell (1 ha)
 **Latvian name:** Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -31989,11 +31984,11 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then coniferous stands were selected and geometries were rasterized (presence =
-1, NA otherwise). Rasterization was performed by `egvtools:polygon2input()`
+then coniferous stands were selected and geometries were rasterised (presence =
+1, NA otherwise). Rasterisation was performed by `egvtools:polygon2input()`
 restricting to pixels outside clearcut mask and covering background with value
 0. The resulting layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -32132,9 +32127,9 @@ landscape
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -32206,11 +32201,11 @@ landscape
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32280,11 +32275,11 @@ landscape
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32354,11 +32349,11 @@ landscape
 
 **Latvian name:** Skujkoku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.388) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32429,12 +32424,12 @@ ha)
 **Latvian name:** Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -32446,11 +32441,11 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then mixed stands were selected and geometries were rasterized (presence = 1, NA
-otherwise). Rasterization was performed by `egvtools:polygon2input()`
+then mixed stands were selected and geometries were rasterised (presence = 1, NA
+otherwise). Rasterisation was performed by `egvtools:polygon2input()`
 restricting to pixels outside clearcut mask and covering background with value
 0. The resulting layer was then aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -32588,9 +32583,9 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -32661,11 +32656,11 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32734,11 +32729,11 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32807,11 +32802,11 @@ writeRaster(merogots,
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.393) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -32882,12 +32877,12 @@ analysis cell (1 ha)
 **Latvian name:** Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from [State Forest Service's
+clearcuts and dead stands. Mask for this is created from the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-To prepare this EGV, stands from [State Forest Service's State Forest
+To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
@@ -32899,15 +32894,15 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then temperate deciduous stands were selected and geometries were rasterized
-(presence = 1, NA otherwise). Rasterization was performed by
+then temperate deciduous stands were selected and geometries were rasterised
+(presence = 1, NA otherwise). Rasterisation was performed by
 `egvtools:polygon2input()` restricting to pixels outside clearcut mask and
 covering background with value 0. The resulting layer was then aggregated to EGV
-resolution with `egvtools::input2egv()` by calculating arithmetic mean, thus
-resulting in cover fraction. During aggregation, inverse distance weighted
+resolution using the function `egvtools::input2egv()`, which calculates the arithmetic mean and thus
+results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -33042,9 +33037,9 @@ km landscape
 
 **Latvian name:** Platlapju mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -33116,11 +33111,11 @@ writeRaster(merogots,
 
 **Latvian name:** Platlapju mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33190,11 +33185,11 @@ km landscape
 
 **Latvian name:** Platlapju mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33264,11 +33259,11 @@ km landscape
 
 **Latvian name:** Platlapju mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.398) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33338,10 +33333,10 @@ writeRaster(merogots,
 
 **Latvian name:** Vasarnīcu kompleksu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, allotment gardens and farmsteads from [Landscape
+**Procedure:** First, allotment gardens and farmsteads from the [Landscape
 classification](#Ch05.03) were selected (value 410 reclassified to value 1,
 others as 0). Once reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -33416,9 +33411,9 @@ landscape
 
 **Latvian name:** Vasarnīcu kompleksu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -33490,11 +33485,11 @@ landscape
 
 **Latvian name:** Vasarnīcu kompleksu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33564,11 +33559,11 @@ landscape
 
 **Latvian name:** Vasarnīcu kompleksu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33638,11 +33633,11 @@ landscape
 
 **Latvian name:** Vasarnīcu kompleksu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.403) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33713,10 +33708,10 @@ analysis cell (1 ha)
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars analīzes šūnā
 (1 ha)
 
-**Procedure:** First, bare soil and querry areas from [Landscape
+**Procedure:** First, bare soil and querry areas from the [Landscape
 classification](#Ch05.03) were selected (value 800 reclassified to value 1,
 others as 0). Once reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -33791,9 +33786,9 @@ writeRaster(merogots,
 
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -33865,11 +33860,11 @@ writeRaster(merogots,
 
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -33939,11 +33934,11 @@ writeRaster(merogots,
 
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34013,11 +34008,11 @@ writeRaster(merogots,
 
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.408) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34087,10 +34082,10 @@ ha)
 
 **Latvian name:** Apbūves platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, built-up areas from [Landscape classification](#Ch05.03)
+**Procedure:** First, built-up areas from the [Landscape classification](#Ch05.03)
 were selected (value 500 reclassified to value 1, others as 0). Once
 reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -34164,9 +34159,9 @@ writeRaster(merogots,
 
 **Latvian name:** Apbūves platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -34238,11 +34233,11 @@ landscape
 
 **Latvian name:** Apbūves platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34311,11 +34306,11 @@ writeRaster(merogots,
 
 **Latvian name:** Apbūves platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34384,11 +34379,11 @@ writeRaster(merogots,
 
 **Latvian name:** Apbūves platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.413) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34458,10 +34453,10 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** First, farmlands from [Landscape classification](#Ch05.03) were
+**Procedure:** First, farmlands from the [Landscape classification](#Ch05.03) were
 selected (values between 300 and 400 were reclassified to value 1, others as 0).
 Once reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -34536,9 +34531,9 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -34610,11 +34605,11 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34684,11 +34679,11 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34758,11 +34753,11 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.418) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -34832,16 +34827,16 @@ analysis cell (1 ha)
 
 **Latvian name:** Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, clearcuts and forest stands from [State Forest Service's
-State Forest Registry](#Ch04.01) were rasterized to match inputs (value 1 and NA
-elsewhere). Then, from [Landscape classification](#Ch05.03) class 630 was
+**Procedure:** First, clearcuts and forest stands from the [State Forest Service's
+State Forest Registry](#Ch04.01) were rasterised to match inputs (value 1 and NA
+elsewhere). Then, from the [Landscape classification](#Ch05.03) class 630 was
 reclassified to value 1, others to 0). These layers were then combined so that
 values 1 from the second layer, where spatially matching NA values in the first
 layer as classified as 1 and 0 otherwise. Once reclassified, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -34927,9 +34922,9 @@ km landscape
 
 **Latvian name:** Netaksēto mežu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -35001,11 +34996,11 @@ km landscape
 
 **Latvian name:** Netaksēto mežu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35075,11 +35070,11 @@ landscape
 
 **Latvian name:** Netaksēto mežu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35149,11 +35144,11 @@ landscape
 
 **Latvian name:** Netaksēto mežu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.423) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35224,14 +35219,14 @@ analysis cell (1 ha)
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** First, allotment gardens and ochards from [Landscape
+**Procedure:** First, allotment gardens and ochards from the [Landscape
 classification](#Ch05.03) were selected (values between 400 and 500 were
 reclassified to value 1, others as 0). Once reclassified, layer was aggregated
-to EGV resolution with `egvtools::input2egv()` by calculating arithmetic mean,
-thus resulting in cover fraction. During aggregation, inverse distance weighted
+to EGV resolution using the function `egvtools::input2egv()` by calculating arithmetic mean,
+thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -35303,9 +35298,9 @@ km landscape
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -35378,11 +35373,11 @@ writeRaster(merogots,
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35453,11 +35448,11 @@ km landscape
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35528,11 +35523,11 @@ km landscape
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.428) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35601,10 +35596,10 @@ writeRaster(merogots,
 
 **Latvian name:** Ceļu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, roads from [Landscape classification](#Ch05.03) were
+**Procedure:** First, roads from the [Landscape classification](#Ch05.03) were
 selected (values equal to 100 were reclassified to value 1, others as 0). Once
 reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -35681,12 +35676,12 @@ analysis cell (1 ha)
 šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as short term coppice were
-selected from [Rural Support Service's information on declared fields](#Ch04.02)
-and rasterized to match inputs. Then orchards and shrubs-low forest stands from
+selected from the [Rural Support Service's information on declared fields](#Ch04.02)
+and rasterised to match inputs. Then orchards and shrubs-low forest stands from
 [Landscape classification](#Ch05.03) were selected (values equal to 420 or 620
 were reclassified to value 1, others as 0). The first layer was then covered
 over the second. Once covered, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -35783,9 +35778,9 @@ writeRaster(merogots,
 **Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -35858,11 +35853,11 @@ writeRaster(merogots,
 **Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -35933,11 +35928,11 @@ writeRaster(merogots,
 **Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36008,11 +36003,11 @@ writeRaster(merogots,
 **Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.434) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36084,15 +36079,15 @@ gardens within the analysis cell (1 ha)
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as short term coppice were
-selected from [Rural Support Service's information on declared fields](#Ch04.02)
-and rasterized to match inputs. Then orchards, allotment gardens and shrubs-low
-forest stands from [Landscape classification](#Ch05.03) were selected (values
+selected from the [Rural Support Service's information on declared fields](#Ch04.02)
+and rasterised to match inputs. Then orchards, allotment gardens and shrubs-low
+forest stands from the [Landscape classification](#Ch05.03) were selected (values
 between 400 and 500 or equal to 620 were reclassified to value 1, others as 0).
 The first layer was then covered over the second. Once covered, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -36184,9 +36179,9 @@ gardens within the 0.5 km landscape
 **Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -36259,11 +36254,11 @@ gardens within the 1.25 km landscape
 **Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36334,11 +36329,11 @@ gardens within the 3 km landscape
 **Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36409,11 +36404,11 @@ gardens within the 10 km landscape
 **Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.439) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36487,10 +36482,10 @@ analīzes šūnā (1 ha)
 **Procedure:** First, swamps, mires, bogs and reed, sedge, rush beds from
 [Landscape classification](#Ch05.03) were selected (values between 700 and 800
 were reclassified to value 1, others as 0). Once reclassified, layer was
-aggregated to EGV resolution with `egvtools::input2egv()` by calculating
-arithmetic mean, thus resulting in cover fraction. During aggregation, inverse
+aggregated to EGV resolution using the function `egvtools::input2egv()` by calculating
+arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output was initialised to
-ensure no missing values at the edges. At the very end, layer was standardised
+ensure no missing values at the edges. Finally, the layer was standardised
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -36563,9 +36558,9 @@ Beds within the 0.5 km landscape
 **Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km
 ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -36638,11 +36633,11 @@ Beds within the 1.25 km landscape
 **Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km
 ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36713,11 +36708,11 @@ Beds within the 3 km landscape
 **Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36788,11 +36783,11 @@ Beds within the 10 km landscape
 **Latvian name:** Purvu, niedrāju, grīslāju, meldrāju platības īpatsvars 10 km
 ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.444) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -36863,14 +36858,14 @@ analysis cell (1 ha)
 **Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars analīzes šūnā (1
 ha)
 
-**Procedure:** First, trees, shrubs and clear cuts from [Landscape
+**Procedure:** First, trees, shrubs and clear cuts from the [Landscape
 classification](#Ch05.03) were selected (values between 600 and 700 were
 reclassified to value 1, others as 0). Once reclassified, layer was aggregated
-to EGV resolution with `egvtools::input2egv()` by calculating arithmetic mean,
-thus resulting in cover fraction. During aggregation, inverse distance weighted
+to EGV resolution using the function `egvtools::input2egv()` by calculating arithmetic mean,
+thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output was initialised to ensure no missing
-values at the edges. At the very end, layer was standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+values at the edges. Finally, the layer was standardised by subtracting
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -36941,9 +36936,9 @@ km landscape
 
 **Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -37015,11 +37010,11 @@ km landscape
 
 **Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37089,11 +37084,11 @@ landscape
 
 **Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37163,11 +37158,11 @@ landscape
 
 **Latvian name:** Koku, krūmu un izcirtumu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.449) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37238,10 +37233,10 @@ the analysis cell (1 ha)
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** First, tree outside forest stands from [Landscape
+**Procedure:** First, tree outside forest stands from the [Landscape
 classification](#Ch05.03) were selected (values equal to 640 were reclassified
 to value 1, others as 0). Then the layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -37317,9 +37312,9 @@ the 0.5 km landscape
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -37392,11 +37387,11 @@ the 1.25 km landscape
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37467,11 +37462,11 @@ the 3 km landscape
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 3
 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37542,11 +37537,11 @@ the 10 km landscape
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars 10
 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.454) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37616,12 +37611,12 @@ ha)
 
 **Latvian name:** Ūdenstilpju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, water from [Landscape classification](#Ch05.03) were
+**Procedure:** First, water from the [Landscape classification](#Ch05.03) were
 selected (values equal to 200 were reclassified to value 1, others as 0). Then
-the layer was aggregated to EGV resolution with `egvtools::input2egv()` by
-calculating arithmetic mean, thus resulting in cover fraction. During
+the layer was aggregated to EGV resolution using the function `egvtools::input2egv()` by
+calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output was
-initialised to ensure no missing values at the edges. At the very end, layer was
+initialised to ensure no missing values at the edges. Finally, the layer was
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -37693,9 +37688,9 @@ writeRaster(merogots,
 
 **Latvian name:** Ūdenstilpju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -37766,11 +37761,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ūdenstilpju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37839,11 +37834,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ūdenstilpju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37912,11 +37907,11 @@ writeRaster(merogots,
 
 **Latvian name:** Ūdenstilpju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.459) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -37986,7 +37981,7 @@ ha)
 
 **Latvian name:** Augsto purvu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Bogs and Mires: EDI](#Ch04.17), where bogs were
+**Procedure:** Derived from the [Bogs and Mires: EDI](#Ch04.17), where bogs were
 classified as 1 with 0 elsewhere. Then processed with `egvtools::input2egv()`
 with `fill gaps = TRUE` performing inverse distance weighted (power = 2) filling
 of gaps at the border.
@@ -38047,9 +38042,9 @@ writeRaster(merogots,
 
 **Latvian name:** Augsto purvu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -38120,11 +38115,11 @@ writeRaster(merogots,
 
 **Latvian name:** Augsto purvu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38193,11 +38188,11 @@ writeRaster(merogots,
 
 **Latvian name:** Augsto purvu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38266,11 +38261,11 @@ writeRaster(merogots,
 
 **Latvian name:** Augsto purvu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.464) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38340,7 +38335,7 @@ cell (1 ha)
 
 **Latvian name:** Pārejas purvu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Bogs and Mires: EDI](#Ch04.17), where transitional
+**Procedure:** Derived from the [Bogs and Mires: EDI](#Ch04.17), where transitional
 mires were classified as 1 with 0 elsewhere. Then processed with
 `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
@@ -38402,9 +38397,9 @@ landscape
 
 **Latvian name:** Pārejas purvu platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -38476,11 +38471,11 @@ landscape
 
 **Latvian name:** Pārejas purvu platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38550,11 +38545,11 @@ landscape
 
 **Latvian name:** Pārejas purvu platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38624,11 +38619,11 @@ landscape
 
 **Latvian name:** Pārejas purvu platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.469) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38699,10 +38694,10 @@ analysis cell (1 ha)
 **Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars analīzes šūnā
 (1 ha)
 
-**Procedure:** First, reed, sedge and rush beds from [Landscape
+**Procedure:** First, reed, sedge and rush beds from the [Landscape
 classification](#Ch05.03) were selected (value 720 reclassified to value 1,
 others as 0). Once reclassified, layer was aggregated to EGV resolution with
-`egvtools::input2egv()` by calculating arithmetic mean, thus resulting in cover
+`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output was initialised to ensure no missing values at the edges. At the
 very end, layer was standardised by subtracting the arithmetic mean and dividing by
@@ -38728,7 +38723,7 @@ rastrs10=raster(template10)
 nulls10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 nulls100=rast("./Templates/TemplateRasters/nulls_LV100m_10km.tif")
 
-# kodi ----
+# codes ----
 kodi=read_excel("./Geodata/2024/LAD/KulturuKodi_2024.xlsx")
 kodi$kods=as.character(kodi$kods)
 # LAD ----
@@ -38788,9 +38783,9 @@ km landscape
 
 **Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Cover fraction at 500 m radius around the analysis grid cell, was
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside the
-buffer, using the `egvtools::radius_function`. During the calculation of the landscape metric,
+buffer, using the `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialised
 to ensure no missing values at the edges. Then the layer is rewritten to ensure
 the layer's name. Finally, the layer is standardised by subtracting the arithmetic
@@ -38862,11 +38857,11 @@ km landscape
 
 **Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Cover fraction at 1250 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -38936,11 +38931,11 @@ landscape
 
 **Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 3 km ainavā
 
-**Procedure:** Cover fraction at 3000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -39010,11 +39005,11 @@ km landscape
 
 **Latvian name:** Niedrāju, grīslāju, meldrāju platības īpatsvars 10 km ainavā
 
-**Procedure:** Cover fraction at 10000 m radius around the analysis grid cell,
-was calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
-the buffer, using the `egvtools::radius_function`. During calculation of landscape
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
+is calculated as the area-weighted sum of the [analysis cells](#ch06.474) inside
+the buffer, using the `egvtools::radius_function()`. During calculation of landscape
 metric, inverse distance weighted (power = 2) gap filling on the output is
-initialised to ensure no missing values at the edges. Finally, layer is
+initialised to ensure no missing values at the edges. Then the layer is
 rewritten to ensure the layer's name. Finally, the layer is standardised by
 subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -40463,7 +40458,7 @@ within the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas oglekļa-slāpekļa attiecība (ESDAC v2.0)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40523,7 +40518,7 @@ v2.0) within the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas kalcija karbonātu saturs (ESDAC v2.0)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40584,7 +40579,7 @@ the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas kālija saturs (ESDAC v2.0) analīzes šūnā (1
 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40644,7 +40639,7 @@ the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas slāpekļa saturs (ESDAC v2.0) analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40704,7 +40699,7 @@ within the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas fosfora saturs (ESDAC v2.0) analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40763,7 +40758,7 @@ within the analysis cell (1 ha)
 **Latvian name:** Augsnes virskārtas reakcija (pH) ūdens šķīdumā (ESDAC v2.0)
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly derived from [Soil chemistry](#Ch04.07.01). Processed
+**Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
 with `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
 distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
 to keep as original values as reasonable (there is bilinear interpolation
@@ -40822,7 +40817,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
@@ -40889,7 +40884,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed
+**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
@@ -40960,7 +40955,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed
+**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
@@ -41032,7 +41027,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed
+**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
@@ -41103,7 +41098,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 10
 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Clay_cell](#ch06.506). First processed
+**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented.
@@ -41176,7 +41171,7 @@ ha)
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
@@ -41243,7 +41238,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
+**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
 weighted (power = 2) gap filling is implemented. Finally, the layer is
@@ -41313,7 +41308,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
+**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
 weighted (power = 2) gap filling is implemented. Finally, the layer is
@@ -41384,7 +41379,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
+**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
 weighted (power = 2) gap filling is implemented. Finally, the layer is
@@ -41454,7 +41449,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Organic_cell](#ch06.511). First
+**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
 processed with `egvtools::radius_function()`, then rewritten to ensure
 layername. To protect against possible data loss at edge cells, inverse distance
 weighted (power = 2) gap filling is implemented. Finally, the layer is
@@ -41524,7 +41519,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border. Finally, the layer is
@@ -41591,7 +41586,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
+**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -41660,7 +41655,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
+**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -41729,7 +41724,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 3
 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
+**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -41798,7 +41793,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 10
 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Sand_cell](#ch06.516). First processed
+**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -41867,7 +41862,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border. Finally, the layer is
@@ -41933,7 +41928,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
+**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -42002,7 +41997,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
+**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -42071,7 +42066,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 3 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
+**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -42141,7 +42136,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 10 km ainavā
 
-**Procedure:** Derived from [SoilTexture_Silt_cell](#ch06.521). First processed
+**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
 with `egvtools::radius_function()`, then rewritten to ensure layername. To
 protect against possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardised
@@ -42210,7 +42205,7 @@ analysis cell (1 ha)
 
 **Latvian name:** Augstums virs jūras līmeņa (m) analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Digital elevation/terrain models](#Ch04.15).
+**Procedure:** Derived from the [Digital elevation/terrain models](#Ch04.15).
 Processed with `egvtools::input2egv()`. To protect against possible data loss at
 edge cells, inverse distance weighted (power = 2) gap filling is implemented. At
 the very end, layer is standardised by subtracting the arithmetic mean and dividing
@@ -42268,7 +42263,7 @@ cell (1 ha)
 
 **Latvian name:** Nogāzes vidējais vērsuma virziens analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
@@ -42326,12 +42321,12 @@ cell (1 ha)
 
 **Latvian name:** Nogāzes vērsuma variabilitāte analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). First Q1 and then Q3
+**Procedure:** Derived from the [Terrain products](#Ch05.01). First Q1 and then Q3
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Finally, the layer is standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -42407,7 +42402,7 @@ ha)
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
@@ -42468,7 +42463,7 @@ writeRaster(merogots,
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
@@ -42541,7 +42536,7 @@ writeRaster(merogots,
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
@@ -42613,7 +42608,7 @@ writeRaster(merogots,
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 3
 km ainavā
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
@@ -42686,7 +42681,7 @@ writeRaster(merogots,
 **Latvian name:** Reljefa depresiju bez virszemes noteces platības īpatsvars 10
 km ainavā
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
 zonal statistics, file is rewritten to ensure layername. At the very end, layer
@@ -42758,7 +42753,7 @@ writeRaster(merogots,
 
 **Latvian name:** Reljefa depresiju lielākais dziļums analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
@@ -42815,7 +42810,7 @@ writeRaster(merogots,
 
 **Latvian name:** Reljefa depresiju vidējais dziļums analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
@@ -42873,7 +42868,7 @@ cell (1 ha)
 
 **Latvian name:** Nogāzes slīpuma vidējā vērtība analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
@@ -42931,12 +42926,12 @@ writeRaster(merogots,
 
 **Latvian name:** Nogāzes slīpuma variabilitāte analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). First Q1 and then Q3
+**Procedure:** Derived from the [Terrain products](#Ch05.01). First Q1 and then Q3
 is calculated for every cell with `egvtools::input2egv()`. Finally, subtracting
 Q1 from Q3 and writing final raster with specified layername. To protect against
 possible data loss at edge cells, inverse distance weighted (power = 2) gap
 filling is implemented. Finally, the layer is standardised by subtracting
-arithmetic mean and dividing by the root mean squared error.
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -43012,7 +43007,7 @@ analysis cell (1 ha)
 **Latvian name:** Topogrāfiskā mitruma indeksa vidējā vērtība analīzes šūnā (1
 ha)
 
-**Procedure:** Derived from [Terrain products](#Ch05.01). Processed with
+**Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
 inverse distance weighted (power = 2) gap filling is implemented. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root

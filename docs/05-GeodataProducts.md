@@ -388,7 +388,7 @@ filling in gaps where no database information is available (2), as well as decid
 how to emphasize objects through certain processing steps, such as buffering. Some 
 elements that are important for characterizing the environment (especially 
 edge effects) may be so small or poorly positioned that they disappear during 
-the rasterization process (3). 
+the rasterisation process (3). 
 
 The general landscape layer also serves as a 
 mask for the preparation of further environmental descriptions. This section 
@@ -404,7 +404,7 @@ lost and information about edges is provided. The following sources have been
 combined to create this class:
 
     - layers `RoadA_COMB` and `RoadL_COMB` (except the smallest size groups) from
-    [topographic map](#Ch04.04), buffered by 10 m before rasterization;
+    [topographic map](#Ch04.04), buffered by 10 m before rasterisation;
     
     - [LVM open data](#Ch04.06) layers `LVM_MEZA_AUTOCELI`, `LVM_ATTISTAMIE_AUTOCELI`, 
     `LVM_APGRIESANAS_LAUKUMI`, `LVM_IZMAINISANAS_VIETAS`, and `LVM_NOBRAUKTUVES` 
@@ -1736,7 +1736,7 @@ contains the following values, in order of hierarchy:
 
 - [State Forest Service's Forest State Register](#Ch04.01) code, in which the 
 code of the dominant tree species is multiplied by 1000 and the age group 
-code is added. However, before rasterization, geometries in which no code has 
+code is added. However, before rasterisation, geometries in which no code has 
 been assigned or one of the code components is 0 are excluded;
 
 - forest diversity class values prepared in [Overall landscape diversity](#Ch05.04.01);
