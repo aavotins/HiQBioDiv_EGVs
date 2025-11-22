@@ -11,7 +11,7 @@ procedure) of each of the 538 EGVs created.
 
 For a better undestanding of the relatedness of these vairables, refer to the flowchart
 below (Fig. \@ref(fig:flowchart)). The names used in figure correspond to EGV layer
-names and follow naming convention: [group] [specific name] [scale], where:
+names and follow naming convention: [group] _ [specific name] _ [scale], where:
 
 -  group is a broader collection of EGVs describing the same phenomena or ecosystem,
   derived from the same source, etc.;
@@ -7889,7 +7889,7 @@ km landscape
 
 **Latvian name:** Purvu malu ar kokiem garums 3 km ainavā
 
-**Procedure:** Total edge witinh a 3000 m radius around the analysis grid cell is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
 buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is applied
@@ -20359,11 +20359,14 @@ the analysis cell (1 ha)
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
+2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this
 EGV, stands in land category 10 and lower than 5 m are selected from the [State
 Forest Service's State Forest Registry](#Ch04.01) and rasterised. After
 rasterization, this layer was covered over clear cut mask. The resulting layer
@@ -20786,11 +20789,14 @@ cell (1 ha)
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā
 (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
+2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this
 EGV, stands in land category 10 and age groups two and three are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
@@ -21216,11 +21222,14 @@ analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1
 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
+2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this
 EGV, stands in land category 10 and age groups four and five are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
@@ -21646,11 +21655,14 @@ within the analysis cell (1 ha)
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). To prepare this
+2020 (raster layer matching input, presence = 1, absence = 0). 
+
+To prepare this
 EGV, stands in land category 10 and age group 1 with height above 5 m were
 selected from the [State Forest Service's State Forest Registry](#Ch04.01) and
 rasterised (presence = 1, NA otherwise). This layer was then covered category
@@ -22082,11 +22094,12 @@ cell (1 ha)
 **Latvian name:** Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, every forest stand had assigned [legal rotation
 age](https://likumi.lv/ta/id/2825#p9), based on dominant tree species and bonity
@@ -22397,11 +22410,12 @@ writeRaster(merogots,
 
 **Latvian name:** Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of the largest tree diameter per
 inventoried forest stand - [State Forest Service's State Forest
@@ -22545,11 +22559,12 @@ analysis cell (1 ha)
 **Latvian name:** Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared primarily based on the information of the forestry related
 disturbances as registered per inventoried forest stand - [State Forest
@@ -22727,11 +22742,12 @@ ha)
 
 **Latvian name:** Apšu, papeļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of aspen
 (species codes: 8, 19, 68; see tree species codes in [Terminology and
@@ -22879,11 +22895,12 @@ writeRaster(merogots,
 
 **Latvian name:** Bērzu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of birch
 (species code: 4; see tree species codes in [Terminology and acronyms](#Ch01))
@@ -23030,11 +23047,12 @@ writeRaster(merogots,
 
 **Latvian name:** Melnalkšņu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of black alder
 (species code: 6; see tree species codes in [Terminology and acronyms](#Ch01))
@@ -23182,11 +23200,12 @@ analysis cell (1 ha)
 
 **Latvian name:** Citu šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of boreal
 deciduous tree species not separately described (species codes: 9, 20, 21, 32,
@@ -23336,11 +23355,12 @@ cell (1 ha)
 
 **Latvian name:** Šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of boreal
 deciduous tree species (species codes: 4, 6, 8, 9, 19, 20, 21, 32, 35, 50, 68;
@@ -23490,11 +23510,12 @@ ha)
 
 **Latvian name:** Skujkoku krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of coniferous
 tree species (species codes: 1, 14, 22, 3, 13, 15, 23; see tree species codes in
@@ -23642,11 +23663,12 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of oaks (species
 codes: 10, 61; see tree species codes in [Terminology and acronyms](#Ch01)) in
@@ -23793,11 +23815,12 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu, kļavu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of oaks and
 maples (species codes: 10, 61, 24, 63; see tree species codes in [Terminology
@@ -23944,11 +23967,12 @@ writeRaster(merogots,
 
 **Latvian name:** Priežu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of pines
 (species codes: 1, 14, 22; see tree species codes in [Terminology and
@@ -24096,11 +24120,12 @@ writeRaster(merogots,
 
 **Latvian name:** Egļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of spruces\
 (species codes: 3, 13, 15, 23; see tree species codes in [Terminology and
@@ -24249,11 +24274,12 @@ cell (1 ha)
 
 **Latvian name:** Platlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of temperate
 deciduous tree species\
@@ -24406,11 +24432,12 @@ within the analysis cell (1 ha)
 
 **Latvian name:** Platlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of temperate
 deciduous tree species except oaks\
@@ -24561,11 +24588,12 @@ maples) within the analysis cell (1 ha)
 
 **Latvian name:** Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume of teperate
 deciduous trees except oaks and maples\
@@ -24714,11 +24742,12 @@ writeRaster(merogots,
 
 **Latvian name:** Kopējā krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV was prepared based on the information of timber volume in the
 inventoried forest stands - [State Forest Service's State Forest
@@ -27821,11 +27850,12 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -28283,11 +28313,12 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -28745,11 +28776,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -29207,11 +29239,12 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -29669,11 +29702,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -30131,11 +30165,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -30593,11 +30628,12 @@ Deciduous Forests within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -31055,11 +31091,12 @@ Deciduous Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -31517,11 +31554,12 @@ analysis cell (1 ha)
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -31974,11 +32012,12 @@ cell (1 ha)
 
 **Latvian name:** Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -32431,11 +32470,12 @@ ha)
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
@@ -32884,11 +32924,12 @@ analysis cell (1 ha)
 
 **Latvian name:** Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of forests describing EGVs are spatially restricted outside
-clearcuts and dead stands. Mask for this is created from the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
+**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
+of clearcuts and dead stands. The mask for this is created using a combination of 
+the [State Forest Service's
+State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0).
+2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
 Registry](#Ch04.01) were classified into (in order):
