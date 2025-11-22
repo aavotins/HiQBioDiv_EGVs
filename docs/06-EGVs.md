@@ -4270,7 +4270,7 @@ augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4367,7 +4367,7 @@ amplitūda augštecē (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4465,7 +4465,7 @@ the analysis cell (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4563,7 +4563,7 @@ augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4661,7 +4661,7 @@ temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4759,7 +4759,7 @@ temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4856,7 +4856,7 @@ temperatūru amplitūda (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -4954,7 +4954,7 @@ temperatūra mitrākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5052,7 +5052,7 @@ temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5150,7 +5150,7 @@ temperatūra siltākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5248,7 +5248,7 @@ temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (min) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5345,7 +5345,7 @@ gadā (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5442,7 +5442,7 @@ mitrākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5539,7 +5539,7 @@ sausākajā mēnesī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5636,7 +5636,7 @@ sezonalitāte (kg m⁻²) (HydroClim) analīzes šūnā (1 ha)
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5734,7 +5734,7 @@ mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5832,7 +5832,7 @@ sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -5930,7 +5930,7 @@ siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
@@ -6028,7 +6028,7 @@ vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha
 **Procedure:** Information from the [HydroClim
 data](#Ch04.12) - including both basin and raster layers - is used. First, basin CRS is transformed to EPSG:3059. Then,
 zonal statistics (per basin) using a layer specific summary function (max) are
-calculated (`exactextractr::exact_extract()`), and the the results are rasterised using the 
+calculated (`exactextractr::exact_extract()`), and the the results are rasterised with the workflow 
 `egvtools::polygon2input()`. Once rasterised to input data, EGV is created using the workflow 
 `egvtools::input2egv()`. To prevent from gaps at the edges, inverse distance
 weighted (power = 2) gap filling is implemented. To save disk space,
