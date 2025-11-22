@@ -6759,20 +6759,20 @@ writeRaster(merogots,
 **English name:** Average farmland class α-diversity of 500 m grid cells within
 the 0.5 km landscape
 
-**Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0.5 km
+**Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -6832,20 +6832,20 @@ writeRaster(merogots,
 **English name:** Average farmland class α-diversity of 500 m grid cells within
 the 1.25 km landscape
 
-**Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1.25 km
+**Latvian name:** Vidējā lauku ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -6909,16 +6909,16 @@ the 3 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -6982,16 +6982,16 @@ the 10 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7051,20 +7051,20 @@ writeRaster(merogots,
 **English name:** Average forest class α-diversity of 500 m grid cells within
 the 0.5 km landscape
 
-**Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km
+**Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7124,20 +7124,20 @@ writeRaster(merogots,
 **English name:** Average forest class α-diversity of 500 m grid cells within
 the 1.25 km landscape
 
-**Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km
+**Latvian name:** Vidējā mežu ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7201,16 +7201,16 @@ the 3 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7274,16 +7274,16 @@ the 10 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Forest diversity](#Ch05.04.02). Average value of 25 ha cells diversity index
-values calculated with `egvtools::radius_function()`. To guard against missing
-values at the edges, inverse distance wieghted (power = 2) gap filling is
-allowed. File is written twice, to ensure layername. Finally, the layer is
-standardized by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+[Forest diversity](#Ch05.04.02). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7343,20 +7343,20 @@ writeRaster(merogots,
 **English name:** Average combined landscape α-diversity of 500 m grid cells
 within the 0.5 km landscape
 
-**Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0.5 km
+**Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 0,5 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Landscape in general diversity](#Ch05.04.01). Average value of 25 ha cells
-diversity index values calculated with `egvtools::radius_function()`. To guard
-against missing values at the edges, inverse distance wieghted (power = 2) gap
-filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting the arithmetic mean and dividing by the root mean
-squared error.
+[Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7416,20 +7416,20 @@ writeRaster(merogots,
 **English name:** Average combined landscape α-diversity of 500 m grid cells
 within the 1.25 km landscape
 
-**Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1.25 km
+**Latvian name:** Vidējā visu ainavas klašu 500 m šūnu α-daudzveidība 1,25 km
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Landscape in general diversity](#Ch05.04.01). Average value of 25 ha cells
-diversity index values calculated with `egvtools::radius_function()`. To guard
-against missing values at the edges, inverse distance wieghted (power = 2) gap
-filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting the arithmetic mean and dividing by the root mean
-squared error.
+[Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7493,16 +7493,16 @@ within the 3 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Landscape in general diversity](#Ch05.04.01). Average value of 25 ha cells
-diversity index values calculated with `egvtools::radius_function()`. To guard
-against missing values at the edges, inverse distance wieghted (power = 2) gap
-filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting the arithmetic mean and dividing by the root mean
-squared error.
+[Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -7566,16 +7566,16 @@ within the 10 km landscape
 ainavā
 
 **Procedure:** Derived from [Landscape diversity](#Ch05.04), more precisely
-[Landscape in general diversity](#Ch05.04.01). Average value of 25 ha cells
-diversity index values calculated with `egvtools::radius_function()`. To guard
-against missing values at the edges, inverse distance wieghted (power = 2) gap
-filling is allowed. File is written twice, to ensure layername. At the very end,
-layer is standardized by subtracting the arithmetic mean and dividing by the root mean
-squared error.
+[Overall landscape diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
+values was calculated using `egvtools::radius_function()`. To
+prevent possible data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented.  File is written twice, to ensure 
+layername. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
