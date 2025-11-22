@@ -6443,7 +6443,7 @@ rastrs10=raster::raster(template10)
 # sea layer, sf
 sea=st_read("./Geodata/2024/LV_EEZ/LV_EEZ.shp")
 
-# quick rasterization
+# quick rasterisation
 sea_r=fasterize(sea,rastrs10,field="LV_EEZ")
 sea_rast=rast(sea_r)
 
@@ -18331,7 +18331,7 @@ layer is aggregated to EGV resolution using the workflow `egvtools::input2egv()`
 which calculates the arithmetic mean and thus
 results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is 
-applied to ensure no missing values at the edges. Finally, the layer was
+applied to ensure no missing values at the edges. Finally, the layer is
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -20359,21 +20359,21 @@ the analysis cell (1 ha)
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this
-EGV, stands in land category 10 and lower than 5 m are selected from the [State
+EGV, stands in land category 10 with a height of less than 5 m are selected from the [State
 Forest Service's State Forest Registry](#Ch04.01) and rasterised. After
-rasterization, this layer was covered over clear cut mask. The resulting layer
-was then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by
-calculating arithmetic mean, thus results in a cover fraction. During
-aggregation, inverse distance weighted (power = 2) gap filling on the output was
-applied to ensure no missing values at the edges. Finally, the layer was
+rasterisation, this layer is covered by a clear cut mask. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -20789,8 +20789,8 @@ cell (1 ha)
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā
 (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -20800,13 +20800,13 @@ To prepare this
 EGV, stands in land category 10 and age groups two and three are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
-absence = 0) restricting presence locations only outside the clear cut mask. The
-resulting layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
-root mean squared error.
+absence = 0) restricting presence locations only outside the clear cut mask. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -21222,8 +21222,8 @@ analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1
 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -21233,13 +21233,13 @@ To prepare this
 EGV, stands in land category 10 and age groups four and five are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
-absence = 0) restricting presence locations only outside the clear cut mask. The
-resulting layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
-root mean squared error.
+absence = 0) restricting presence locations only outside the clear cut mask. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -21655,24 +21655,25 @@ within the analysis cell (1 ha)
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this
-EGV, stands in land category 10 and age group 1 with height above 5 m were
+EGV, stands in land category 10 and age group 1 with height above 5 m are
 selected from the [State Forest Service's State Forest Registry](#Ch04.01) and
-rasterised (presence = 1, NA otherwise). This layer was then covered category
+rasterised (presence = 1, NA otherwise). This layer is then combined with the category
 620 from the [Landscape classification](#Ch05.03) (presence = 1, 0 otherwise).
-Values in pixels matching clearcut mask were set to 0. The resulting layer was
-then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+Values in pixels matching the clearcut mask are set to 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -22094,8 +22095,8 @@ cell (1 ha)
 **Latvian name:** Mežaudzes vecuma attiecība pret cirtmetu, vidējais analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -22104,18 +22105,18 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 To prepare this EGV, every forest stand had assigned [legal rotation
 age](https://likumi.lv/ta/id/2825#p9), based on dominant tree species and bonity
 class as registered in the [State Forest Service's State Forest
-Registry](#Ch04.01). 35 years were assumed for grey alder. The registered age of
-dominant tree group was then divided by the stand specific legal rotation age.
-However, this introduced some extreme values that were limited to the nearest
+Registry](#Ch04.01). We assumed 35 years for grey alder. The registered age of
+dominant tree group is then divided by the stand specific legal rotation age.
+However, this introduce some extreme values. We chose limiting to the nearest
 integer showing only minimal accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv290.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean. After the aggregation, cells with no forest information were
+arithmetic mean. After the aggregation, cells with no forest information are
 filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
@@ -22273,19 +22274,19 @@ State Forest Registry](#Ch04.01) land category 12 and 14 combined with [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0).
 
-This EGV was prepared based on the information of dominant tree species per
+This EGV is prepared based on the information of dominant tree species per
 inventoried forest stand - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). Values in this attribute have some impossible extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv291.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is 
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-maximum value. After the aggregation, cells with no forest information were
+maximum value. After the aggregation, cells with no forest information are
 filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
@@ -22410,26 +22411,26 @@ writeRaster(merogots,
 
 **Latvian name:** Lielākais koka stumbra diametrs analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of the largest tree diameter per
+This EGV is prepared based on the information of the largest tree diameter per
 inventoried forest stand - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). Values in this attribute have some impossible extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv292.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow
+Resulting values at polygon geometries are rasterised with the workflow
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-maximum value. After the aggregation, cells with no forest information were
+maximum value. After the aggregation, cells with no forest information are
 filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
@@ -22559,36 +22560,36 @@ analysis cell (1 ha)
 **Latvian name:** Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared primarily based on the information of the forestry related
+This EGV is prepared primarily based on the information of the forestry related
 disturbances as registered per inventoried forest stand - [State Forest
-Service's State Forest Registry](#Ch04.01). The regiter however includes obvious
-errors - values later than 2024 and earlier than 1500 were set to NA. Other
-values were subtracted from 2024. In stands were no disturbance was registered,
-the age of dominant tree group was used to calculate minimum difference (age of
-time since disturbance) from the year 2024. As values in this attribute had some
-extreme values, they were limited to the nearest integer showing only minimal
+Service's State Forest Registry](#Ch04.01). The register however includes obvious
+errors - values later than 2024 and earlier than 1500 that are set to NA. Remaining 
+values are subtracted from 2024. In stands with no disturbance registered,
+the age of dominant tree group is used to calculate minimum difference (age of
+time since disturbance) from the year 2024. Values in this attribute have some impossible extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv293.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised (presence only). This
-raster layer was then overlaid with reclassified year of tree cover loss
-(reclassified to difference from the year 2024) and per pixel minimum value was
+Resulting values at polygon geometries are rasterised (presence only). This
+raster layer is then overlaid with reclassified year of tree cover loss
+(reclassified to difference from the year 2024) and per pixel minimum value is
 retained. As not all the forests or tree covered areas are inventoried, classes
-from the [Landscape classification](#Ch05.03) were used to impute assumption of time
-since tree growing disturbance - for class 620 five years were assumed, whereas
-for classes 630 and 640 - 50 years and 0 otherwise. Per pixel minimum layer was
-then overlaid the assumed time since disturbance layer. The resulting layer was
+from the [Landscape classification](#Ch05.03) are used to impute assumption of time
+since tree growing disturbance - for class 620 we assume five years, whereas
+for classes 630 and 640 - 50 years and 0 otherwise. Per pixel minimum layer is
+then overlaid the assumed time since disturbance layer. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean value. After the aggregation, inverse distance weighted (power =
-2) gap filling was applied to avoid possible gaps at the edges. At the very
+2) gap filling is applied to avoid possible gaps at the edges. At the very
 end, layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
@@ -22742,8 +22743,8 @@ ha)
 
 **Latvian name:** Apšu, papeļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -22760,7 +22761,7 @@ minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -22895,8 +22896,8 @@ writeRaster(merogots,
 
 **Latvian name:** Bērzu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -22913,7 +22914,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23047,8 +23048,8 @@ writeRaster(merogots,
 
 **Latvian name:** Melnalkšņu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23065,7 +23066,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23200,8 +23201,8 @@ analysis cell (1 ha)
 
 **Latvian name:** Citu šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23219,7 +23220,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23355,8 +23356,8 @@ cell (1 ha)
 
 **Latvian name:** Šaurlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23373,7 +23374,7 @@ to the nearest integer showing only minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23510,8 +23511,8 @@ ha)
 
 **Latvian name:** Skujkoku krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23528,7 +23529,7 @@ showing only minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23663,8 +23664,8 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23681,7 +23682,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23815,8 +23816,8 @@ writeRaster(merogots,
 
 **Latvian name:** Ozolu, kļavu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23833,7 +23834,7 @@ minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -23967,8 +23968,8 @@ writeRaster(merogots,
 
 **Latvian name:** Priežu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -23985,7 +23986,7 @@ minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24120,8 +24121,8 @@ writeRaster(merogots,
 
 **Latvian name:** Egļu krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -24138,7 +24139,7 @@ minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24274,8 +24275,8 @@ cell (1 ha)
 
 **Latvian name:** Platlapju krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -24294,7 +24295,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24432,8 +24433,8 @@ within the analysis cell (1 ha)
 
 **Latvian name:** Platlapju (bez ozoliem) krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -24452,7 +24453,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24588,8 +24589,8 @@ maples) within the analysis cell (1 ha)
 
 **Latvian name:** Platlapju (bez ozoliem, kļavām) krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -24607,7 +24608,7 @@ to the nearest integer showing only minimal accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24742,8 +24743,8 @@ writeRaster(merogots,
 
 **Latvian name:** Kopējā krāja analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -24759,7 +24760,7 @@ accumulation in histogram.
 
 Resulting values at polygon geometries were rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterization. The resulting layer was
+background values were assigned during rasterisation. The resulting layer was
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
 were filled with value 0. Finally, the layer is standardised by subtracting
@@ -24894,13 +24895,13 @@ analysis cell (1 ha)
 "19", "21", "24" or "25" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -25314,13 +25315,13 @@ analīzes šūnā (1 ha)
 "6" "10" or "11" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -25738,13 +25739,13 @@ Soils within the analysis cell (1 ha)
 or "16" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -26162,13 +26163,13 @@ Soils within the analysis cell (1 ha)
 or "9" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -26586,13 +26587,13 @@ ha)
 "17", "18", "22" or "23" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -27006,13 +27007,13 @@ analīzes šūnā (1 ha)
 "2", "3", "7" or "8" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -27430,13 +27431,13 @@ Soils within the analysis cell (1 ha)
 or "14" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
 geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
-covering (value 0). This layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+covering (value 0). The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -27850,8 +27851,8 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) šaurlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -27870,14 +27871,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then boreal deciduous stands exceeding the legal rotation age are selected and
-geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -28313,8 +28315,8 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) šaurlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -28333,14 +28335,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then boreal deciduous stands younger than the legal rotation age are selected
-and geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -28776,8 +28779,8 @@ within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) skujkoku mežu platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -28796,14 +28799,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then coniferous stands exceeding the legal rotation age are selected and
-geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -29239,8 +29243,8 @@ Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) skujkoku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -29259,14 +29263,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then coniferous stands younger than the legal rotation age are selected and
-geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -29702,8 +29707,8 @@ within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) jauktu koku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -29721,15 +29726,16 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then mixed stands exceeding the legal rotation age are selected and geometries
-were rasterised (presence = 1, NA otherwise). Rasterisation is performed with the workflow 
-`egvtools::polygon2input()` restricting to pixels outside clearcut mask and
-covering background with value 0. The resulting layer was then aggregated to EGV
-resolution using the workflow `egvtools::input2egv()`, which calculates the arithmetic mean and thus
-results in a cover fraction. During aggregation, inverse distance weighted
-(power = 2) gap filling on the output is applied to ensure no missing
-values at the edges. Finally, the layer is standardised by subtracting
-the arithmetic mean and dividing by the root mean squared error.
+then mixed stands exceeding the legal rotation age are selected and 
+geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -30165,8 +30171,8 @@ within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) jauktu koku mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -30185,14 +30191,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then mixed stands younger than the legal rotation age are selected and
-geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -30628,8 +30635,8 @@ Deciduous Forests within the analysis cell (1 ha)
 **Latvian name:** Vecu (kopš cirtmeta) platlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -30648,14 +30655,15 @@ Registry](#Ch04.01) were classified into (in order):
 -  mixed otherwise;
 
 then temperate deciduous stands exceeding the legal rotation age are selected
-and geometries were rasterised (presence = 1, NA otherwise). Rasterisation was
+and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
-mask and covering background with value 0. The resulting layer was then
-aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
-arithmetic mean, thus results in a cover fraction. During aggregation, inverse
-distance weighted (power = 2) gap filling on the output is applied to
-ensure no missing values at the edges. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -31091,8 +31099,8 @@ Deciduous Forests within the analysis cell (1 ha)
 **Latvian name:** Jaunu (pirms cirtmeta) platlapju mežu platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -31110,14 +31118,14 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then temperate deciduous stands younger than the legal rotation age were
-selected and geometries were rasterised (presence = 1, NA otherwise).
-Rasterisation is performed using the workflow `egvtools::polygon2input()` restricting to pixels
-outside clearcut mask and covering background with value 0. The resulting layer
-was then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by
-calculating arithmetic mean, thus results in a cover fraction. During
-aggregation, inverse distance weighted (power = 2) gap filling on the output was
-applied to ensure no missing values at the edges. Finally, the layer was
+then temperate deciduous stands younger than the legal rotation age are
+selected and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -31554,8 +31562,8 @@ analysis cell (1 ha)
 
 **Latvian name:** Šaurlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -31573,15 +31581,16 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then boreal deciduous stands are selected and geometries were rasterised
-(presence = 1, NA otherwise). Rasterisation is performed with the workflow 
-`egvtools::polygon2input()` restricting to pixels outside clearcut mask and
-covering background with value 0. The resulting layer was then aggregated to EGV
-resolution using the workflow `egvtools::input2egv()`, which calculates the arithmetic mean and thus
-results in a cover fraction. During aggregation, inverse distance weighted
-(power = 2) gap filling on the output is applied to ensure no missing
-values at the edges. Finally, the layer is standardised by subtracting
-the arithmetic mean and dividing by the root mean squared error.
+then boreal deciduous stands are selected and geometries are 
+rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -32012,8 +32021,8 @@ cell (1 ha)
 
 **Latvian name:** Skujkoku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -32031,15 +32040,16 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then coniferous stands are selected and geometries were rasterised (presence =
-1, NA otherwise). Rasterisation is performed using the workflow `egvtools::polygon2input()`
-restricting to pixels outside clearcut mask and covering background with value
-0. The resulting layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
-root mean squared error.
+then coniferous stands are selected and geometries are 
+rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -32470,8 +32480,8 @@ ha)
 
 **Latvian name:** Jauktu koku mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -32489,15 +32499,16 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then mixed stands are selected and geometries were rasterised (presence = 1, NA
-otherwise). Rasterisation is performed using the workflow `egvtools::polygon2input()`
-restricting to pixels outside clearcut mask and covering background with value
-0. The resulting layer was then aggregated to EGV resolution with the workflow 
-`egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
-fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
-root mean squared error.
+then mixed stands are selected and geometries are 
+rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -32924,8 +32935,8 @@ analysis cell (1 ha)
 
 **Latvian name:** Platlapju mežu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Most of EGVs that describe forests are spatially restricted to areas outside
-of clearcuts and dead stands. The mask for this is created using a combination of 
+**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
+of clearcuts and dead stands. This mask is created using a combination of 
 the [State Forest Service's
 State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
@@ -32943,15 +32954,16 @@ Registry](#Ch04.01) were classified into (in order):
 
 -  mixed otherwise;
 
-then temperate deciduous stands are selected and geometries were rasterised
-(presence = 1, NA otherwise). Rasterisation is performed with the workflow 
-`egvtools::polygon2input()` restricting to pixels outside clearcut mask and
-covering background with value 0. The resulting layer was then aggregated to EGV
-resolution using the workflow `egvtools::input2egv()`, which calculates the arithmetic mean and thus
-results in a cover fraction. During aggregation, inverse distance weighted
-(power = 2) gap filling on the output is applied to ensure no missing
-values at the edges. Finally, the layer is standardised by subtracting
-the arithmetic mean and dividing by the root mean squared error.
+then temperate deciduous stands are selected and geometries are 
+rasterised (presence = 1, NA otherwise). Rasterisation is
+performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+mask and covering background with value 0. The resulting layer
+is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
+calculates the arithmetic mean to determine the cover fraction. During
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
+standardised by subtracting the arithmetic mean and dividing by the root mean squared
+error.
 
 
 ``` r
@@ -37664,8 +37676,8 @@ ha)
 selected (values equal to 200 were reclassified to value 1, others as 0). Then
 the layer is aggregated to EGV resolution using the workflow `egvtools::input2egv()` by
 calculating arithmetic mean, thus results in a cover fraction. During
-aggregation, inverse distance weighted (power = 2) gap filling on the output was
-applied to ensure no missing values at the edges. Finally, the layer was
+aggregation, inverse distance weighted (power = 2) gap filling on the output is
+applied to ensure no missing values at the edges. Finally, the layer is
 standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
