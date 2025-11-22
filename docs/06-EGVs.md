@@ -7638,10 +7638,10 @@ analysis cell (1 ha)
 **Latvian name:** Purvu malu ar kokiem garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values from 620 to 700 from [Landscape
-classification](#Ch05.03) are coded as 0 and everything else as NA. Then bog and
+classification](#Ch05.03) are coded as 0, and all other values as NA. Then bog and
 transitional mire layers from [EDI](#Ch04.17) are reclassified to presence-only
-(value 1) and combined. Then, bog-and-mire layer (1=presence) is covered over
-tree layer (presence=0) and written to file (matching the input). Finally, with
+(value 1) and combined. Then, bog-and-mire layer (1 = presence) is covered over
+tree layer (presence = 0) and written to file (matching the input). Then, with
 the function `egvtools::landscape_function()` total edge between the two classes
 is calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
@@ -7650,7 +7650,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -7743,17 +7743,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar kokiem garums 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -7816,17 +7816,17 @@ writeRaster(merogots,
 
 **Latvian name:** Purvu malu ar kokiem garums 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -7889,17 +7889,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar kokiem garums 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge witinh a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -7962,17 +7962,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar kokiem garums 10 km ainavā
 
-**Procedure:**Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.110) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8036,10 +8036,10 @@ analysis cell (1 ha)
 **Latvian name:** Purvu malu ar ūdeni garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values 200 from [Landscape classification](#Ch05.03) are
-coded as 0 and everything else as NA. Then bog and transitional mire layers from
+coded as 0, and all other values as NA. Then bog and transitional mire layers from
 [EDI](#Ch04.17) are reclassified to presence-only (value 1) and combined. Then,
-bog-and-mire layer (1=presence) is covered over water layer (presence=0) and
-written to file (matching the input). Finally, with the function
+bog-and-mire layer (1 = presence) is covered over water layer (presence = 0) and
+written to file (matching the input). Then, using the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
@@ -8048,7 +8048,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8139,17 +8139,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar ūdeni garums 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8212,17 +8212,17 @@ writeRaster(merogots,
 
 **Latvian name:** Purvu malu ar ūdeni garums 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8285,17 +8285,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar ūdeni garums 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8358,17 +8358,17 @@ km landscape
 
 **Latvian name:** Purvu malu ar ūdeni garums 10 km ainavā
 
-**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.115) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8433,11 +8433,11 @@ the analysis cell (1 ha)
 ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from
-[Landscape classification](#Ch05.03) are coded as 1 and everything else as NA.
-Then values 500 from [Landscape classification](#Ch05.03) are coded as 0 and
-everything else as NA. Then, the first layer (1=presence) is covered over the
-second layer (presence=0) and written to file (matching the input). Finally,
-with the function `egvtools::landscape_function()` total edge between the two
+[Landscape classification](#Ch05.03) are coded as 1, and all other values as NA.
+Then values 500 from [Landscape classification](#Ch05.03) are coded as 0, and all 
+other values as NA. Then, the first layer (1 = presence) is covered over the
+second layer (presence = 0) and written to file (matching the input). Next,
+using the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
 missing values at the edges. Finally, the layer is standardized by
@@ -8445,7 +8445,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8530,17 +8530,17 @@ the 0.5 km landscape
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8604,17 +8604,17 @@ the 1.25 km landscape
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8678,17 +8678,17 @@ the 3 km landscape
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8752,17 +8752,17 @@ the 10 km landscape
 
 **Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 10 km ainavā
 
-**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.120) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8827,11 +8827,11 @@ analysis cell (1 ha)
 **Latvian name:** Koku malu ar apbūvi garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than 630 and smaller than 700 from
-[Landscape classification](#Ch05.03) are coded as 1 and everything else as NA.
-Then values 500 from [Landscape classification](#Ch05.03) are coded as 0 and
-everything else as NA. Then, the first layer (1=presence) is covered over the
-second layer (presence=0) and written to file (matching the input). Finally,
-with the function `egvtools::landscape_function()` total edge between the two
+[Landscape classification](#Ch05.03) are coded as 1, and other values as NA.
+Then values 500 from [Landscape classification](#Ch05.03) are coded as 0, and
+other values as NA. Then, the first layer (1 = presence) is covered over the
+second layer (presence = 0) and written to file (matching the input). Next,
+using the function `egvtools::landscape_function()` total edge between the two
 classes is calculated. During calculation of landscape metric, inverse distance
 weighted (power = 2) gap filling on the output is initialized to ensure no
 missing values at the edges. Finally, the layer is standardized by
@@ -8839,7 +8839,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8924,17 +8924,17 @@ writeRaster(merogots,
 
 **Latvian name:** Koku malu ar apbūvi garums 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -8998,17 +8998,17 @@ writeRaster(merogots,
 
 **Latvian name:** Koku malu ar apbūvi garums 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9072,17 +9072,17 @@ writeRaster(merogots,
 
 **Latvian name:** Koku malu ar apbūvi garums 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9146,17 +9146,17 @@ writeRaster(merogots,
 
 **Latvian name:** Koku malu ar apbūvi garums 10 km ainavā
 
-**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.125) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9221,9 +9221,9 @@ writeRaster(merogots,
 **Latvian name:** Aramzemju malu garums analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than or equal to 310 and smaller than 325
-from [Landscape classification](#Ch05.03) are coded as 1 and everything else as
-NA. Then, the layer (1=presence) is covered over the nulls layer (presence=0)
-and written to file (matching the input). Finally, with the function
+from [Landscape classification](#Ch05.03) are coded as 1, and all other values as
+NA. Then, the layer (1 = presence) is covered over the nulls layer (presence = 0)
+and written to file (matching the input). Next, using the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
@@ -9232,7 +9232,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9312,17 +9312,17 @@ landscape
 
 **Latvian name:** Aramzemju malu garums 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9386,17 +9386,17 @@ landscape
 
 **Latvian name:** Aramzemju malu garums 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9459,17 +9459,17 @@ writeRaster(merogots,
 
 **Latvian name:** Aramzemju malu garums 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9533,17 +9533,17 @@ landscape
 
 **Latvian name:** Aramzemju malu garums 10 km ainavā
 
-**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.130) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9609,11 +9609,11 @@ Trees within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** First, values between 300 and 400 and between 600 and 630 from
-[Landscape classification](#Ch05.03) are coded as 0 and everything else as NA.
-Then values larger than or equal to 630 to 700 from [Landscape
-classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the
-first layer (1=presence) is covered over the second layer (presence=0) and
-written to file (matching the input). Finally, with the function
+[Landscape classification](#Ch05.03) are coded as 0, and all other values as NA.
+Then values larger than or equal to 630 but smaller than 700 from [Landscape
+classification](#Ch05.03) are coded as 1, and all other values as NA. Then, the
+first layer (0 = presence) is covered over the second layer (presence = 1) and
+written to file (matching the input). Next, using the function
 `egvtools::landscape_function()` total edge between the two classes is
 calculated. During calculation of landscape metric, inverse distance weighted
 (power = 2) gap filling on the output is initialized to ensure no missing values
@@ -9622,7 +9622,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9708,17 +9708,17 @@ Trees within the 0.5 km landscape
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
 0,5 km ainavā
 
-**Procedure:** Total edge at 500 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9783,17 +9783,17 @@ Trees within the 1.25 km landscape
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
 1,25 km ainavā
 
-**Procedure:** Total edge at 1250 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9858,17 +9858,17 @@ Trees within the 3 km landscape
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
 3 km ainavā
 
-**Procedure:** Total edge at 3000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 3000 m radius around the analysis grid cell, is
 calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
-buffer with `egvtools::radius_function`. During calculation of landscape metric,
+buffer using `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -9933,17 +9933,17 @@ Trees within the 10 km landscape
 **Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
 10 km ainavā
 
-**Procedure:** Total edge at 10000 m radius around the analysis grid cell, is
+**Procedure:** Total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of [analysis cells](#ch06.135) inside the
 buffer with `egvtools::radius_function`. During calculation of landscape metric,
 inverse distance weighted (power = 2) gap filling on the output is initialized
-to ensure no missing values at the edges. Finally, layer is rewritten to ensure
+to ensure no missing values at the edges. Then, layer is rewritten to ensure
 layers name. Finally, the layer is standardized by subtracting the arithmetic
 mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10018,7 +10018,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10107,7 +10107,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10180,7 +10180,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10253,7 +10253,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10326,7 +10326,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10403,7 +10403,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10503,7 +10503,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10577,7 +10577,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10651,7 +10651,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10725,7 +10725,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10800,7 +10800,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10889,7 +10889,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -10962,7 +10962,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11035,7 +11035,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11108,7 +11108,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11183,7 +11183,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11272,7 +11272,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11345,7 +11345,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11418,7 +11418,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11491,7 +11491,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11566,7 +11566,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11654,7 +11654,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11727,7 +11727,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11800,7 +11800,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11873,7 +11873,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -11951,7 +11951,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12047,7 +12047,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12122,7 +12122,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12196,7 +12196,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12270,7 +12270,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12347,7 +12347,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12442,7 +12442,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12516,7 +12516,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12590,7 +12590,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12664,7 +12664,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12742,7 +12742,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12839,7 +12839,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12914,7 +12914,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -12988,7 +12988,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13062,7 +13062,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13140,7 +13140,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -13241,7 +13241,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13317,7 +13317,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13393,7 +13393,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13469,7 +13469,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13546,7 +13546,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -13647,7 +13647,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13720,7 +13720,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13793,7 +13793,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13866,7 +13866,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -13944,7 +13944,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -14046,7 +14046,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14120,7 +14120,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14194,7 +14194,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14268,7 +14268,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14345,7 +14345,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -14448,7 +14448,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14522,7 +14522,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14596,7 +14596,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14670,7 +14670,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14747,7 +14747,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -14849,7 +14849,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14922,7 +14922,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -14995,7 +14995,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15068,7 +15068,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15146,7 +15146,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -15250,7 +15250,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15324,7 +15324,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15398,7 +15398,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15472,7 +15472,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15549,7 +15549,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -15652,7 +15652,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15726,7 +15726,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15800,7 +15800,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15874,7 +15874,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -15953,7 +15953,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -16053,7 +16053,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16127,7 +16127,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16201,7 +16201,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16275,7 +16275,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16349,7 +16349,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -16435,7 +16435,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16508,7 +16508,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16581,7 +16581,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16654,7 +16654,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16731,7 +16731,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -16834,7 +16834,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16908,7 +16908,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -16982,7 +16982,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17056,7 +17056,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17133,7 +17133,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -17235,7 +17235,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17309,7 +17309,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17383,7 +17383,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17457,7 +17457,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17533,7 +17533,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -17631,7 +17631,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17705,7 +17705,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17779,7 +17779,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17853,7 +17853,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -17930,7 +17930,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -18038,7 +18038,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18112,7 +18112,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18186,7 +18186,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18260,7 +18260,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18339,7 +18339,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -18449,7 +18449,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18524,7 +18524,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18599,7 +18599,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18674,7 +18674,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18751,7 +18751,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -18851,7 +18851,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18924,7 +18924,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -18997,7 +18997,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19070,7 +19070,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19149,7 +19149,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -19251,7 +19251,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19326,7 +19326,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19401,7 +19401,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19476,7 +19476,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19553,7 +19553,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -19667,7 +19667,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19741,7 +19741,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19814,7 +19814,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19887,7 +19887,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -19965,7 +19965,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -20067,7 +20067,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20142,7 +20142,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20217,7 +20217,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20291,7 +20291,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20373,7 +20373,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -20493,7 +20493,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20568,7 +20568,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20643,7 +20643,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20718,7 +20718,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -20801,7 +20801,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -20926,7 +20926,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21000,7 +21000,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21074,7 +21074,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21148,7 +21148,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21231,7 +21231,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -21356,7 +21356,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21430,7 +21430,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21504,7 +21504,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21578,7 +21578,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21661,7 +21661,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -21789,7 +21789,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21864,7 +21864,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -21939,7 +21939,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -22014,7 +22014,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -22105,7 +22105,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -22275,7 +22275,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -22418,7 +22418,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -22576,7 +22576,7 @@ mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -22749,7 +22749,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -22901,7 +22901,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23052,7 +23052,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23205,7 +23205,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23358,7 +23358,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23512,7 +23512,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23664,7 +23664,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23815,7 +23815,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -23966,7 +23966,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24118,7 +24118,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24273,7 +24273,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24430,7 +24430,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24584,7 +24584,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24735,7 +24735,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24872,7 +24872,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -24991,7 +24991,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25065,7 +25065,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25139,7 +25139,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25213,7 +25213,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25292,7 +25292,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -25412,7 +25412,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25487,7 +25487,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25562,7 +25562,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25637,7 +25637,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25716,7 +25716,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -25836,7 +25836,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25911,7 +25911,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -25986,7 +25986,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26061,7 +26061,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26140,7 +26140,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -26260,7 +26260,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26335,7 +26335,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26410,7 +26410,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26485,7 +26485,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26564,7 +26564,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -26683,7 +26683,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26757,7 +26757,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26831,7 +26831,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26905,7 +26905,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -26984,7 +26984,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -27104,7 +27104,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27179,7 +27179,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27254,7 +27254,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27329,7 +27329,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27408,7 +27408,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -27528,7 +27528,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27603,7 +27603,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27678,7 +27678,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27753,7 +27753,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -27848,7 +27848,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -27990,7 +27990,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28065,7 +28065,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28140,7 +28140,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28215,7 +28215,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28310,7 +28310,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -28452,7 +28452,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28527,7 +28527,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28602,7 +28602,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28677,7 +28677,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28772,7 +28772,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -28914,7 +28914,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -28989,7 +28989,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29064,7 +29064,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29139,7 +29139,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29234,7 +29234,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -29376,7 +29376,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29451,7 +29451,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29526,7 +29526,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29601,7 +29601,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29696,7 +29696,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -29838,7 +29838,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29913,7 +29913,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -29988,7 +29988,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30063,7 +30063,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30158,7 +30158,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -30300,7 +30300,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30375,7 +30375,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30450,7 +30450,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30525,7 +30525,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30620,7 +30620,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -30762,7 +30762,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30837,7 +30837,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30912,7 +30912,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -30987,7 +30987,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31083,7 +31083,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -31225,7 +31225,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31300,7 +31300,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31375,7 +31375,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31450,7 +31450,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31544,7 +31544,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -31685,7 +31685,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31759,7 +31759,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31833,7 +31833,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -31907,7 +31907,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32001,7 +32001,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -32142,7 +32142,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32216,7 +32216,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32290,7 +32290,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32364,7 +32364,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32458,7 +32458,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -32598,7 +32598,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32671,7 +32671,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32744,7 +32744,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32817,7 +32817,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -32911,7 +32911,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -33052,7 +33052,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33126,7 +33126,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33200,7 +33200,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33274,7 +33274,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33349,7 +33349,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -33426,7 +33426,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33500,7 +33500,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33574,7 +33574,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33648,7 +33648,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33724,7 +33724,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -33801,7 +33801,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33875,7 +33875,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -33949,7 +33949,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34023,7 +34023,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34098,7 +34098,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -34174,7 +34174,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34248,7 +34248,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34321,7 +34321,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34394,7 +34394,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34469,7 +34469,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -34546,7 +34546,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34620,7 +34620,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34694,7 +34694,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34768,7 +34768,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -34846,7 +34846,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -34937,7 +34937,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35011,7 +35011,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35085,7 +35085,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35159,7 +35159,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35235,7 +35235,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -35313,7 +35313,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35388,7 +35388,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35463,7 +35463,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35538,7 +35538,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35612,7 +35612,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -35694,7 +35694,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -35793,7 +35793,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35868,7 +35868,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -35943,7 +35943,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36018,7 +36018,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36097,7 +36097,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -36194,7 +36194,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36269,7 +36269,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36344,7 +36344,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36419,7 +36419,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36495,7 +36495,7 @@ by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -36573,7 +36573,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36648,7 +36648,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36723,7 +36723,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36798,7 +36798,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -36874,7 +36874,7 @@ arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -36951,7 +36951,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37025,7 +37025,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37099,7 +37099,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37173,7 +37173,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37249,7 +37249,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -37327,7 +37327,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37402,7 +37402,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37477,7 +37477,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37552,7 +37552,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37627,7 +37627,7 @@ error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -37703,7 +37703,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37776,7 +37776,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37849,7 +37849,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37922,7 +37922,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -37996,7 +37996,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -38057,7 +38057,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38130,7 +38130,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38203,7 +38203,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38276,7 +38276,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38350,7 +38350,7 @@ dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -38412,7 +38412,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38486,7 +38486,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38560,7 +38560,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38634,7 +38634,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38710,7 +38710,7 @@ root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -38798,7 +38798,7 @@ mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38872,7 +38872,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -38946,7 +38946,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
@@ -39020,7 +39020,7 @@ subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
-# Libs ----
+# libs ----
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(egvtools)) {remotes::install_github("aavotins/egvtools"); require(egvtools)}
 
