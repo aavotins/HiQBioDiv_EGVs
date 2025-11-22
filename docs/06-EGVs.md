@@ -6121,9 +6121,9 @@ cell (1 ha)
 
 **Latvian name:** Attālums līdz apbūvei, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03) with class 500
-reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. To
-protect against possible data loss at edge cells, inverse distance weighted
+**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 500
+reclassified as 1 and others as 0. Processed using `egvtools::distance2egv()`. To
+prevent potential data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardized
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -6180,12 +6180,12 @@ analysis cell (1 ha)
 **Latvian name:** Attālums līdz meža malai tā iekšienē, vidējais analīzes šūnā
 (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03) with values in
-a range from 630 to 700 reclassified as 0 and others as 1. Processed with
-`egvtools::distance2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting the arithmetic mean and dividing by root
-mean squared error.
+**Procedure:** Derived from [Landscape classification](#Ch05.03), with values in
+a range from 630 to 700 reclassified as 0 and others as 1. Processed 
+using `egvtools::distance2egv()`. To
+prevent potential data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6241,11 +6241,11 @@ cell (1 ha)
 ha)
 
 **Procedure:** Derived from [Rural Support Service's information on declared
-fields](#Ch04.02) with `PRODUCT_CODE=="710"` classified as 1 and the rest of the
-country as 0. Processed with `egvtools::distance2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Finally, the layer is standardized by subtracting
-arithmetic mean and dividing by the root mean squared error.
+fields](#Ch04.02) where `PRODUCT_CODE=="710"` classified as 1 and the rest of the
+country as 0. Processed using `egvtools::distance2egv()`. To
+prevent potential data loss at edge cells, inverse distance weighted
+(power = 2) gap filling is implemented. Finally, the layer is standardized
+by subtracting the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -6323,21 +6323,23 @@ writeRaster(merogots,
 ha)
 
 **Procedure:** Directly follows [Waste and garbage disposal sites,
-landfills](#Ch04.14). 1. From the [attachaed
-file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx)
+landfills](#Ch04.14). 
+
+1. From the [attachaed
+file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx),
 read sheet "Poligoni";
 
 2.  Create an `sf` object (epsg:3059);
 
 3.  Rasterize and cover so that cells of interest are 1 and others are 0;
 
-4.  create an egv with `egvtools::distance2egv()`. Expect warning regarding
-    nothing to do with aggregation. It is because `egvtools::distance2egv()`
-    already operate at egv-template not the input-template resolution. To
-    protect against possible data loss at edge cells, inverse distance weighted
-    (power = 2) gap filling is implemented. Finally, the layer is
-    standardized by subtracting the arithmetic mean and dividing by the root mean
-    squared error.
+4.  create an EGV using `egvtools::distance2egv()`. Expect warning regarding
+    nothing to do with aggregation. This occurs because `egvtools::distance2egv()`
+    already operate at EGV template not the input template resolution. Processed 
+    using `egvtools::distance2egv()`. To prevent potential data loss at edge cells, 
+    inverse distance weighted (power = 2) gap filling is implemented. 
+    Finally, the layer is standardized by subtracting the arithmetic mean 
+    and dividing by the root mean squared error.
 
 
 ``` r
@@ -6403,20 +6405,22 @@ writeRaster(merogots,
 **Latvian name:** Attālums līdz jūrai, vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [Latvian Exclusive Economic Zone
-polygon](#Ch04.16). 1. Read layer as `sf` object (it already is epsg:3059);
+polygon](#Ch04.16). 
+
+1. Read layer as `sf` object (it already is epsg:3059);
 
 2.  Rasterize and cover so that cells of interest are 1 and others are 0;
 
-3.  create an egv with `egvtools::distance2egv()`. {fasterize} does not write
-    CRS with `WKT` from epsg-string. Therefore it is better to use
+3.  create an egv with `egvtools::distance2egv()`. The {fasterize} package does not write
+    CRS with `WKT` from the epsg-string; therefore, it is better to use
     `project_to_template_input=TRUE` and define input-template. However, the
     only difference is in how the CRS is stored, therefore this can ignored -
     distance will be calculated on the input CRS and only resulting layer will
-    be projected to match egv-template (faster due to 10x aggregation of
+    be projected to match EGV template (faster due to 10x aggregation of
     resolution). To protect against possible data loss at edge cells, inverse
-    distance weighted (power = 2) gap filling is implemented. At the very end,
-    layer is standardized by subtracting the arithmetic mean and dividing by root
-    mean squared error.
+    distance weighted (power = 2) gap filling is implemented. Finally, the layer 
+    is standardized by subtracting the arithmetic mean and dividing by the 
+    root mean squared error.
 
 
 ``` r
@@ -6443,7 +6447,7 @@ sea=st_read("./Geodata/2024/LV_EEZ/LV_EEZ.shp")
 sea_r=fasterize(sea,rastrs10,field="LV_EEZ")
 sea_rast=rast(sea_r)
 
-# # raster to 1=Cell of interest, 0=background
+# raster to 1=Cell of interest, 0=background
 sea_bg=cover(sea_rast,nulls10)
 
 # create an egv
@@ -6487,12 +6491,12 @@ writeRaster(merogots,
 
 **Latvian name:** Attālums līdz kokiem, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03) with values in
-a range from 630 to 700 reclassified as 1 and others as 0. Processed with
-`egvtools::distance2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardized by subtracting the arithmetic mean and dividing by root
-mean squared error.
+**Procedure:** Derived from [Landscape classification](#Ch05.03), with values in
+a range from 630 to 700 reclassified as 1 and all others as 0. Processed using 
+`egvtools::distance2egv()`. To prevent possible data loss at edge cells,
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardized by subtracting the arithmetic mean and dividing by the 
+root mean squared error.
 
 
 ``` r
@@ -6548,8 +6552,10 @@ cell (1 ha)
 vidējais analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [Waste and garbage disposal sites,
-landfills](#Ch04.14). 1. From the [attachaed
-file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx)
+landfills](#Ch04.14). 
+
+1. From the [attachaed
+file](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx),
 read sheet "AtkritumuVietas" and clean names;
 
 2.  Create an `sf` object (epsg:3059);
@@ -6558,13 +6564,13 @@ read sheet "AtkritumuVietas" and clean names;
 
 4.  Rasterize and cover so that cells of interest are 1 and others are 0;
 
-5.  create an egv with `egvtools::distance2egv()`. Expect warning regarding
-    nothing to do with aggregation. It is because `egvtools::distance2egv()`
-    already operate at egv-template not the input-template resolution. To
-    protect against possible data loss at edge cells, inverse distance weighted
+5.  Create an EGV using `egvtools::distance2egv()`. Expect warning regarding
+    nothing to do with aggregation. That is because function `egvtools::distance2egv()`
+    already operate at EGV template not the input template resolution. To
+    prevent possible data loss at edge cells, inverse distance weighted
     (power = 2) gap filling is implemented.
-
-Finally, the layer is standardized by subtracting the arithmetic mean and
+    
+6. Finally, the layer is standardized by subtracting the arithmetic mean and 
 dividing by the root mean squared error.
 
 
@@ -6638,9 +6644,9 @@ ha)
 
 **Latvian name:** Attālums līdz ūdenstilpēm, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200
-reclassified as 1 and others as 0. Processed with `egvtools::distance2egv()`. To
-protect against possible data loss at edge cells, inverse distance weighted
+**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 200
+reclassified as 1 and all others as 0. Processed using `egvtools::distance2egv()`. To
+prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardized
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
@@ -6697,9 +6703,9 @@ the analysis cell (1 ha)
 **Latvian name:** Attālums līdz ūdenstilpes malai tās iekšienē, vidējais
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from [Landscape classification](#Ch05.03) with class 200
-reclassified as 0 and others as 1. Processed with `egvtools::distance2egv()`. To
-protect against possible data loss at edge cells, inverse distance weighted
+**Procedure:** Derived from [Landscape classification](#Ch05.03), with class 200
+reclassified as 0 and all others as 1. Processed using `egvtools::distance2egv()`. To
+prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. Finally, the layer is standardized
 by subtracting the arithmetic mean and dividing by the root mean squared error.
 
