@@ -23505,7 +23505,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of timber volume of Boreal
 deciduous tree species not separately described with own EGVs (species codes: 9, 20, 21, 32,
-35, 50; see tree species codes in [Terminology and acronyms](#Ch01)) in the
+35; see tree species codes in [Terminology and acronyms](#Ch01)) in the
 inventoried forest stands - [State Forest Service's State Forest
 Registry](#Ch04.01). This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
@@ -23662,7 +23662,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV is prepared based on the information of timber volume of Boreal
-deciduous tree species (species codes: 4, 6, 8, 9, 19, 20, 21, 32, 35, 50, 68;
+deciduous tree species (species codes: 4, 6, 8, 9, 19, 20, 21, 32, 35, 68;
 see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried
 forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
 This attribute has some extreme
@@ -23821,7 +23821,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV is prepared based on the information of timber volume of coniferous
-tree species (species codes: 1, 14, 22, 3, 13, 15, 23; see tree species codes in
+tree species (species codes: 1, 14, 22, 3, 13, 15, 23, 28; see tree species codes in
 [Terminology and acronyms](#Ch01)) in the inventoried forest stands - [State
 Forest Service's State Forest Registry](#Ch04.01). This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
@@ -24443,7 +24443,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 This EGV is prepared based on the information of timber volume of spruces\
-(species codes: 3, 13, 15, 23; see tree species codes in [Terminology and
+(species codes: 3, 13, 15, 23, 28; see tree species codes in [Terminology and
 acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's
 State Forest Registry](#Ch04.01). This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
@@ -24601,7 +24601,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of timber volume of temperate
 deciduous tree species 
-(species codes: 10, 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 61, 62, 63, 64,
+(species codes: 10, 11, 12, 16, 17, 18, 24, 25, 26, 27, 29, 50, 61, 62, 63, 64,
 65, 66, 67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in
 the inventoried forest stands - [State Forest Service's State Forest
 Registry](#Ch04.01). This attribute has some extreme
@@ -24762,7 +24762,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of timber volume of temperate
 deciduous tree species except oaks 
-(species codes: 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 62, 63, 64, 65, 66,
+(species codes: 11, 12, 16, 17, 18, 24, 25, 26, 27, 29, 50, 62, 63, 64, 65, 66,
 67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in the
 inventoried forest stands - [State Forest Service's State Forest
 Registry](#Ch04.01). This attribute has some extreme
@@ -24921,7 +24921,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of timber volume of teperate
 deciduous trees except oaks and maples
-(species codes: 11, 12, 16, 17, 18, 25, 26, 27, 28, 29, 62, 64, 65, 66, 67, 69;
+(species codes: 11, 12, 16, 17, 18, 25, 26, 27, 29, 50, 62, 64, 65, 66, 67, 69;
 see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried
 forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
 This attribute has some extreme
