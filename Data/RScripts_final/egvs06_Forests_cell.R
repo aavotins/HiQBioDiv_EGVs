@@ -389,10 +389,10 @@ unlink("./RasterGrids_10m/2024/ForestsSoil_OligotrophicOrganic_input.tif")
 
 
 # ForestsTreesAge_BorealDeciduousOld_cell.tif	egv_343 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -441,10 +441,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_BorealDeciduousOld_input.tif")
 
 
 # ForestsTreesAge_BorealDeciduousYoung_cell.tif	egv_348 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -492,10 +492,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_BorealDeciduousYoung_input.tif")
 
 
 # ForestsTreesAge_ConiferousOld_cell.tif	egv_353 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -543,10 +543,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_ConiferousOld_input.tif")
 
 
 # ForestsTreesAge_ConiferousYoung_cell.tif	egv_358 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -594,10 +594,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_ConiferousYoung_input.tif")
 
 
 # ForestsTreesAge_MixedOld_cell.tif	egv_363 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -645,10 +645,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_MixedOld_input.tif")
 
 
 # ForestsTreesAge_MixedYoung_cell.tif	egv_368 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -696,10 +696,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_MixedYoung_input.tif")
 
 
 # ForestsTreesAge_TemperateDeciduousOld_cell.tif	egv_373 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -747,10 +747,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_TemperateDeciduousOld_input.tif")
 
 
 # ForestsTreesAge_TemperateDeciduousYoung_cell.tif	egv_378 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -798,10 +798,10 @@ unlink("./RasterGrids_10m/2024/ForestsTreesAge_TemperateDeciduousYoung_input.tif
 
 
 # ForestsTrees_BorealDeciduous_cell.tif	egv_383 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -849,10 +849,10 @@ unlink("./RasterGrids_10m/2024/ForestsTrees_BorealDeciduous_input.tif")
 
 
 # ForestsTrees_Coniferous_cell.tif	egv_388 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -900,10 +900,10 @@ unlink("./RasterGrids_10m/2024/ForestsTrees_Coniferous_input.tif")
 
 
 # ForestsTrees_Mixed_cell.tif	egv_393 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -951,10 +951,10 @@ unlink("./RasterGrids_10m/2024/ForestsTrees_Mixed_input.tif")
 
 
 # ForestsTrees_TemperateDeciduous_cell.tif	egv_398 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+

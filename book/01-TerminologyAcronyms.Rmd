@@ -48,7 +48,7 @@ Tree species groups:
 **coniferous** - following species (codes) as used in the national forest 
 stand-level-inventory database:
 
-    - pines (1, 12, 22)
+    - pines (1, 14, 22)
     
     - spruces (3, 15)
     

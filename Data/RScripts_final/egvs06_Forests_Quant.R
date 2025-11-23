@@ -29,10 +29,10 @@ mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 
 
 ## tree species groups ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-            "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+            "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
   mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
            ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -413,7 +413,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBlackAlder.tif")
 
 # ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif	egv_297 ----
 
-sl_citi=c("9","20","21","32","35","50")
+sl_citi=c("9","20","21","32","35")
 nogabali=mvr %>% 
   mutate(SaurlapjuCKraja=ifelse(s10 %in% sl_citi, v10, 0)+ifelse(s11 %in% sl_citi,v11,0)+
            ifelse(s12 %in% sl_citi, v12,0)+ifelse(s13 %in% sl_citi,v13,0)+
@@ -461,7 +461,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousOther.tif")
 
 # ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif	egv_298 ----
 
-sl_visi=c("4","6","8","9","19","20","21","32","35","50","68")
+sl_visi=c("4","6","8","9","19","20","21","32","35","68")
 nogabali=mvr %>% 
   mutate(SaurlapjuVKraja=ifelse(s10 %in% sl_visi, v10, 0)+ifelse(s11 %in% sl_visi,v11,0)+
            ifelse(s12 %in% sl_visi, v12,0)+ifelse(s13 %in% sl_visi,v13,0)+
@@ -509,7 +509,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeBorealDeciduousTotal.tif")
 
 # ForestsQuant_VolumeConiferous-sum_cell.tif	egv_299 ----
 
-skujkoki=c("1","14","22","3","13","15","23")
+skujkoki=c("1","14","22","3","13","15","23","28")
 nogabali=mvr %>% 
   mutate(SkujkokuKraja=ifelse(s10 %in% skujkoki, v10, 0)+ifelse(s11 %in% skujkoki,v11,0)+
            ifelse(s12 %in% skujkoki, v12,0)+ifelse(s13 %in% skujkoki,v13,0)+
@@ -700,7 +700,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumePine.tif")
 
 # ForestsQuant_VolumeSpruce-sum_cell.tif	egv_303 ----
 
-egles=c("3","13","15","23")
+egles=c("3","13","15","23","28")
 nogabali=mvr %>% 
   mutate(EgluKraja=ifelse(s10 %in% egles, v10, 0)+ifelse(s11 %in% egles,v11,0)+
            ifelse(s12 %in% egles, v12,0)+ifelse(s13 %in% egles,v13,0)+
@@ -748,7 +748,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeSpruce.tif")
 
 # ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif	egv_304 ----
 
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+platlapji=c("10","11","12","16","17","18","24","25","26","27","29","50",
             "61","62","63","64","65","66","67","69")
 nogabali=mvr %>% 
   mutate(PlatKraja=ifelse(s10 %in% platlapji, v10, 0)+ifelse(s11 %in% platlapji,v11,0)+
@@ -796,7 +796,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateDeciduousTotal.tif")
 
 
 # ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif	egv_305 ----
-neozoli=c("11","12","16","17","18","24","25","26","27","28","29",
+neozoli=c("11","12","16","17","18","24","25","26","27","29","50",
           "62","63","64","65","66","67","69")
 nogabali=mvr %>% 
   mutate(BezOzoluKraja=ifelse(s10 %in% neozoli, v10, 0)+ifelse(s11 %in% neozoli,v11,0)+
@@ -845,7 +845,7 @@ unlink("./RasterGrids_10m/2024/ForestsQuant_VolumeTemperateWithoutOak.tif")
 
 
 # ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif	egv_306 ----
-neozolklavas=c("11","12","16","17","18","25","26","27","28","29",
+neozolklavas=c("11","12","16","17","18","25","26","27","29","50",
                "62","64","65","66","67","69")
 nogabali=mvr %>% 
   mutate(BezOzolKlavuKraja=ifelse(s10 %in% neozolklavas, v10, 0)+ifelse(s11 %in% neozolklavas,v11,0)+

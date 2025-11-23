@@ -43,7 +43,7 @@ the number of zones (ninefold and 100 fold further computation time reduction),
 while loosing less than 0.001 % of variability overall.
 
 We used a slightly different approach with diversity metrics. First, we calculated
-Shanon's diversity index at 25 ha raster grid cells, as there was nearly no
+Shanon's diversity index at 25 ha raster grid cells, as there is nearly no
 variability of landscape classes at 1 ha grid cells. Next, we calculated
 arithmetic mean as zonal statictics value (using the "sparse" mode with the workflow 
 `egvtools::radius_function()`), but we did not create this EGV at the analysis
@@ -20359,14 +20359,7 @@ the analysis cell (1 ha)
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
-of clearcuts and dead stands. This mask is created using a combination of 
-the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14, and [The
-Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). 
-
-To prepare this
+**Procedure:** To prepare this
 EGV, stands in land category 10 with a height of less than 5 m are selected from the [State
 Forest Service's State Forest Registry](#Ch04.01) and rasterised. After
 rasterisation, this layer is covered by a clear cut mask. The resulting layer
@@ -20405,30 +20398,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsAge_ClearcutsLowStands_cell.tif	egv_270 ----
 zemas_audzes=mvr %>% 
@@ -22107,8 +22076,9 @@ age](https://likumi.lv/ta/id/2825#p9), based on dominant tree species and bonity
 class as registered in the [State Forest Service's State Forest
 Registry](#Ch04.01). We assumed 35 years for grey alder. The registered age of
 dominant tree group is then divided by the stand specific legal rotation age.
-However, this introduce some extreme values. We chose limiting to the nearest
-integer showing only minimal accumulation in histogram.
+This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv290.png" width="80%" />
 
@@ -22175,7 +22145,7 @@ rm(tclX)
 
 # ForestsQuant_AgeProp-average_cell.tif	egv_290 ----
 
-#Meža likums, 9. pants. https://likumi.lv/ta/id/2825#p9
+#Forest law https://likumi.lv/ta/id/2825#p9
 ozoli=c("10","61")
 priedes_lapegles=c("1","13","14","22")
 eolgvk=c("3","15","23","11","64","12","62","16","65","24","63")
@@ -22276,7 +22246,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of dominant tree species per
 inventoried forest stand - [State Forest Service's State Forest
-Registry](#Ch04.01). Values in this attribute have some impossible extreme
+Registry](#Ch04.01). This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
@@ -22420,7 +22390,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 
 This EGV is prepared based on the information of the largest tree diameter per
 inventoried forest stand - [State Forest Service's State Forest
-Registry](#Ch04.01). Values in this attribute have some impossible extreme
+Registry](#Ch04.01). This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
@@ -22560,20 +22530,13 @@ analysis cell (1 ha)
 **Latvian name:** Laiks kopš pēdējā ar koku augšanu saistītā traucējuma analīzes
 šūnā (1 ha)
 
-**Procedure:** Most EGVs describing forests are spatially restricted to areas outside
-of clearcuts and dead stands. This mask is created using a combination of 
-the [State Forest Service's
-State Forest Registry](#Ch04.01) land category 12 and 14, and [The
-Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
-2020 (raster layer matching input, presence = 1, absence = 0). 
-
-This EGV is prepared primarily based on the information of the forestry related
+**Procedure:** This EGV is prepared primarily based on the information of the forestry related
 disturbances as registered per inventoried forest stand - [State Forest
 Service's State Forest Registry](#Ch04.01). The register however includes obvious
 errors - values later than 2024 and earlier than 1500 that are set to NA. Remaining 
 values are subtracted from 2024. In stands with no disturbance registered,
 the age of dominant tree group is used to calculate minimum difference (age of
-time since disturbance) from the year 2024. Values in this attribute have some impossible extreme
+time since disturbance) from the year 2024. This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
@@ -22590,7 +22553,7 @@ then overlaid the assumed time since disturbance layer. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean value. After the aggregation, inverse distance weighted (power =
 2) gap filling is applied to avoid possible gaps at the edges. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+end, layer is standardised by subtracting the arithmetic mean and dividing by the root
 mean squared error.
 
 
@@ -22750,21 +22713,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of aspen
+This EGV is prepared based on the information of timber volume of aspen
 (species codes: 8, 19, 68; see tree species codes in [Terminology and
 acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's
-State Forest Registry](#Ch04.01). As values in this attribute had some
-impossible extreme values, they were limited to the nearest integer showing only
-minimal accumulation in histogram.
+State Forest Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv294.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -22903,21 +22866,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of birch
+This EGV is prepared based on the information of timber volume of birch
 (species code: 4; see tree species codes in [Terminology and acronyms](#Ch01))
 in the inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv295.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23055,21 +23018,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of black alder
+This EGV is prepared based on the information of timber volume of black alder
 (species code: 6; see tree species codes in [Terminology and acronyms](#Ch01))
 in the inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv296.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23208,22 +23171,22 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of boreal
-deciduous tree species not separately described (species codes: 9, 20, 21, 32,
+This EGV is prepared based on the information of timber volume of Boreal
+deciduous tree species not separately described with own EGVs (species codes: 9, 20, 21, 32,
 35, 50; see tree species codes in [Terminology and acronyms](#Ch01)) in the
 inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv297.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23281,7 +23244,7 @@ rm(tclX)
 
 # ForestsQuant_VolumeBorealDeciduousOther-sum_cell.tif	egv_297 ----
 
-sl_citi=c("9","20","21","32","35","50")
+sl_citi=c("9","20","21","32","35")
 nogabali=mvr %>% 
  mutate(SaurlapjuCKraja=ifelse(s10 %in% sl_citi, v10, 0)+ifelse(s11 %in% sl_citi,v11,0)+
       ifelse(s12 %in% sl_citi, v12,0)+ifelse(s13 %in% sl_citi,v13,0)+
@@ -23292,8 +23255,8 @@ nogabali=mvr %>%
 
 par(mfrow=c(1,2))
 options(scipen=999)
-hist(nogabali$SaurlapjuCKraja2,main="Original",xlab="Other boreal deciduous volume")
-hist(nogabali$SaurlapjuCKraja3,main="Limited",xlab="Other boreal deciduous volume")
+hist(nogabali$SaurlapjuCKraja2,main="Original",xlab="Other Boreal deciduous volume")
+hist(nogabali$SaurlapjuCKraja3,main="Limited",xlab="Other Boreal deciduous volume")
 par(mfrow=c(1,1))
 options(scipen=0)
 
@@ -23363,21 +23326,22 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of boreal
+This EGV is prepared based on the information of timber volume of Boreal
 deciduous tree species (species codes: 4, 6, 8, 9, 19, 20, 21, 32, 35, 50, 68;
 see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried
-forest stands - [State Forest Service's State Forest Registry](#Ch04.01). As
-values in this attribute had some impossible extreme values, they were limited
-to the nearest integer showing only minimal accumulation in histogram.
+forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv298.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23435,7 +23399,7 @@ rm(tclX)
 
 # ForestsQuant_VolumeBorealDeciduousTotal-sum_cell.tif	egv_298 ----
 
-sl_visi=c("4","6","8","9","19","20","21","32","35","50","68")
+sl_visi=c("4","6","8","9","19","20","21","32","35","68")
 nogabali=mvr %>% 
  mutate(SaurlapjuVKraja=ifelse(s10 %in% sl_visi, v10, 0)+ifelse(s11 %in% sl_visi,v11,0)+
       ifelse(s12 %in% sl_visi, v12,0)+ifelse(s13 %in% sl_visi,v13,0)+
@@ -23446,8 +23410,8 @@ nogabali=mvr %>%
 
 par(mfrow=c(1,2))
 options(scipen=999)
-hist(nogabali$SaurlapjuVKraja2,main="Original",xlab="All boreal deciduous volume")
-hist(nogabali$SaurlapjuVKraja3,main="Limited",xlab="All boreal deciduous volume")
+hist(nogabali$SaurlapjuVKraja2,main="Original",xlab="All Boreal deciduous volume")
+hist(nogabali$SaurlapjuVKraja3,main="Limited",xlab="All Boreal deciduous volume")
 par(mfrow=c(1,1))
 options(scipen=0)
 
@@ -23518,21 +23482,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of coniferous
+This EGV is prepared based on the information of timber volume of coniferous
 tree species (species codes: 1, 14, 22, 3, 13, 15, 23; see tree species codes in
 [Terminology and acronyms](#Ch01)) in the inventoried forest stands - [State
-Forest Service's State Forest Registry](#Ch04.01). As values in this attribute
-had some impossible extreme values, they were limited to the nearest integer
-showing only minimal accumulation in histogram.
+Forest Service's State Forest Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv299.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23590,7 +23554,7 @@ rm(tclX)
 
 # ForestsQuant_VolumeConiferous-sum_cell.tif	egv_299 ----
 
-skujkoki=c("1","14","22","3","13","15","23")
+skujkoki=c("1","14","22","3","13","15","23","28")
 nogabali=mvr %>% 
  mutate(SkujkokuKraja=ifelse(s10 %in% skujkoki, v10, 0)+ifelse(s11 %in% skujkoki,v11,0)+
       ifelse(s12 %in% skujkoki, v12,0)+ifelse(s13 %in% skujkoki,v13,0)+
@@ -23671,21 +23635,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of oaks (species
+This EGV is prepared based on the information of timber volume of oaks (species
 codes: 10, 61; see tree species codes in [Terminology and acronyms](#Ch01)) in
 the inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv300.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23823,21 +23787,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of oaks and
+This EGV is prepared based on the information of timber volume of oaks and
 maples (species codes: 10, 61, 24, 63; see tree species codes in [Terminology
 and acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's
-State Forest Registry](#Ch04.01). As values in this attribute had some
-impossible extreme values, they were limited to the nearest integer showing only
-minimal accumulation in histogram.
+State Forest Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv301.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -23975,21 +23939,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of pines
+This EGV is prepared based on the information of timber volume of pines
 (species codes: 1, 14, 22; see tree species codes in [Terminology and
 acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's
-State Forest Registry](#Ch04.01). As values in this attribute had some
-impossible extreme values, they were limited to the nearest integer showing only
-minimal accumulation in histogram.
+State Forest Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv302.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24128,21 +24092,21 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of spruces\
+This EGV is prepared based on the information of timber volume of spruces\
 (species codes: 3, 13, 15, 23; see tree species codes in [Terminology and
 acronyms](#Ch01)) in the inventoried forest stands - [State Forest Service's
-State Forest Registry](#Ch04.01). As values in this attribute had some
-impossible extreme values, they were limited to the nearest integer showing only
-minimal accumulation in histogram.
+State Forest Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv303.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24200,7 +24164,7 @@ rm(tclX)
 
 # ForestsQuant_VolumeSpruce-sum_cell.tif	egv_303 ----
 
-egles=c("3","13","15","23")
+egles=c("3","13","15","23","28")
 nogabali=mvr %>% 
  mutate(EgluKraja=ifelse(s10 %in% egles, v10, 0)+ifelse(s11 %in% egles,v11,0)+
       ifelse(s12 %in% egles, v12,0)+ifelse(s13 %in% egles,v13,0)+
@@ -24282,23 +24246,23 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of temperate
-deciduous tree species\
+This EGV is prepared based on the information of timber volume of temperate
+deciduous tree species 
 (species codes: 10, 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 61, 62, 63, 64,
 65, 66, 67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in
 the inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv304.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24356,7 +24320,7 @@ rm(tclX)
 
 # ForestsQuant_VolumeTemperateDeciduousTotal-sum_cell.tif	egv_304 ----
 
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
+platlapji=c("10","11","12","16","17","18","24","25","26","27","29","50",
       "61","62","63","64","65","66","67","69")
 nogabali=mvr %>% 
  mutate(PlatKraja=ifelse(s10 %in% platlapji, v10, 0)+ifelse(s11 %in% platlapji,v11,0)+
@@ -24440,23 +24404,23 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of temperate
-deciduous tree species except oaks\
+This EGV is prepared based on the information of timber volume of temperate
+deciduous tree species except oaks 
 (species codes: 11, 12, 16, 17, 18, 24, 25, 26, 27, 28, 29, 62, 63, 64, 65, 66,
 67, 69; see tree species codes in [Terminology and acronyms](#Ch01)) in the
 inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv305.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24513,7 +24477,7 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsQuant_VolumeTemperateWithoutOak-sum_cell.tif	egv_305 ----
-neozoli=c("11","12","16","17","18","24","25","26","27","28","29",
+neozoli=c("11","12","16","17","18","24","25","26","27","29","50",
      "62","63","64","65","66","67","69")
 nogabali=mvr %>% 
  mutate(BezOzoluKraja=ifelse(s10 %in% neozoli, v10, 0)+ifelse(s11 %in% neozoli,v11,0)+
@@ -24596,22 +24560,23 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume of teperate
-deciduous trees except oaks and maples\
+This EGV is prepared based on the information of timber volume of teperate
+deciduous trees except oaks and maples
 (species codes: 11, 12, 16, 17, 18, 25, 26, 27, 28, 29, 62, 64, 65, 66, 67, 69;
 see tree species codes in [Terminology and acronyms](#Ch01)) in the inventoried
-forest stands - [State Forest Service's State Forest Registry](#Ch04.01). As
-values in this attribute had some impossible extreme values, they were limited
-to the nearest integer showing only minimal accumulation in histogram.
+forest stands - [State Forest Service's State Forest Registry](#Ch04.01). 
+This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
+accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv306.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24668,7 +24633,7 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsQuant_VolumeTemperateWithoutOakMaple-sum_cell.tif	egv_306 ----
-neozolklavas=c("11","12","16","17","18","25","26","27","28","29",
+neozolklavas=c("11","12","16","17","18","25","26","27","29","50",
         "62","64","65","66","67","69")
 nogabali=mvr %>% 
  mutate(BezOzolKlavuKraja=ifelse(s10 %in% neozolklavas, v10, 0)+ifelse(s11 %in% neozolklavas,v11,0)+
@@ -24750,20 +24715,20 @@ State Forest Registry](#Ch04.01) land category 12 and 14, and [The
 Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
-This EGV was prepared based on the information of timber volume in the
+This EGV is prepared based on the information of timber volume in the
 inventoried forest stands - [State Forest Service's State Forest
-Registry](#Ch04.01). As values in this attribute had some impossible extreme
-values, they were limited to the nearest integer showing only minimal
+Registry](#Ch04.01). This attribute has some extreme
+values. We chose to limit them to the nearest integer showing only minimal
 accumulation in histogram.
 
 <img src="./Figures/Histogramms/hist_egv307.png" width="80%" />
 
-Resulting values at polygon geometries were rasterised with the workflow 
+Resulting values at polygon geometries are rasterised with the workflow 
 `egvtools::polygon2input()`, restricting to pixels outside the clearcut mask. No
-background values were assigned during rasterisation. The resulting layer was
+background values are assigned during rasterisation. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 sum of pixel values. After the aggregation, cells with no forest information
-were filled with value 0. Finally, the layer is standardised by subtracting
+are filled with value 0. Finally, the layer is standardised by subtracting
 the arithmetic mean and dividing by the root mean squared error.
 
 
@@ -24931,30 +24896,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_EutrophicDrained_cell.tif	egv_308 ----
 EutrophicDrained=mvr %>% 
@@ -25351,30 +25292,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_EutrophicMineral_cell.tif	egv_313 ----
 EutrophicMineral=mvr %>% 
@@ -25775,30 +25692,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_EutrophicOrganic_cell.tif	egv_318 ----
 EutrophicOrganic=mvr %>% 
@@ -26199,30 +26092,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_MesotrophicMineral_cell.tif	egv_323 ----
 MesotrophicMineral=mvr %>% 
@@ -26623,30 +26492,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_OligotrophicDrained_cell.tif	egv_328 ----
 OligotrophicDrained=mvr %>% 
@@ -27043,30 +26888,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_OligotrophicMineral_cell.tif	egv_333 ----
 OligotrophicMineral=mvr %>% 
@@ -27467,30 +27288,6 @@ simple_landscape=rast("RasterGrids_10m/2024/Ainava_vienk_mask.tif")
 mvr=st_read_parquet("./Geodata/2024/MVR/nogabali_2024janv.parquet")
 mvr$yes=1
 
-# clear cut mask ----
-izcirtumi=mvr %>% 
- filter(zkat %in% c("12","14")) %>% 
- dplyr::select(yes)
-r_izcirtumi_mvr=fasterize(izcirtumi,rastrs10,field="yes")
-t_izcirtumi_mvr=rast(r_izcirtumi_mvr)
-plot(t_izcirtumi_mvr)
-
-tcl=rast("./Geodata/2024/Trees/GFW/TreeCoverLoss_v1_12.tif")
-tcl2=ifel(tcl<20,0,1)
-tclX=cover(tcl2,nulls10)
-plot(tclX)
-
-clearcut_mask=cover(t_izcirtumi_mvr,tclX,
-          filename="./RasterGrids_10m/2024/Mask_clearcuts.tif",
-          overwrite=TRUE)
-plot(clearcut_mask)
-
-rm(izcirtumi)
-rm(r_izcirtumi_mvr)
-rm(t_izcirtumi_mvr)
-rm(tcl)
-rm(tcl2)
-rm(tclX)
 
 # ForestsSoil_OligotrophicOrganic_cell.tif	egv_338 ----
 OligotrophicOrganic=mvr %>% 
@@ -27859,18 +27656,18 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
 -  mixed otherwise;
 
-then boreal deciduous stands exceeding the legal rotation age are selected and
+then Boreal deciduous stands exceeding the legal rotation age are selected and
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
@@ -27935,10 +27732,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_BorealDeciduousOld_cell.tif	egv_343 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -28323,18 +28120,18 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
 -  mixed otherwise;
 
-then boreal deciduous stands younger than the legal rotation age are selected
+then Boreal deciduous stands younger than the legal rotation age are selected
 and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
@@ -28399,10 +28196,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_BorealDeciduousYoung_cell.tif	egv_348 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -28787,12 +28584,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -28863,10 +28660,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_ConiferousOld_cell.tif	egv_353 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -29251,12 +29048,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -29327,10 +29124,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_ConiferousYoung_cell.tif	egv_358 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -29715,12 +29512,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -29791,10 +29588,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_MixedOld_cell.tif	egv_363 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -30179,12 +29976,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -30255,10 +30052,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_MixedYoung_cell.tif	egv_368 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -30643,12 +30440,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -30719,10 +30516,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_TemperateDeciduousOld_cell.tif	egv_373 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -31107,12 +30904,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -31183,10 +30980,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTreesAge_TemperateDeciduousYoung_cell.tif	egv_378 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -31570,18 +31367,18 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
 -  mixed otherwise;
 
-then boreal deciduous stands are selected and geometries are 
+then Boreal deciduous stands are selected and geometries are 
 rasterised (presence = 1, NA otherwise). Rasterisation is
 performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
@@ -31646,10 +31443,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTrees_BorealDeciduous_cell.tif	egv_383 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -32029,12 +31826,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -32105,10 +31902,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTrees_Coniferous_cell.tif	egv_388 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -32488,12 +32285,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -32564,10 +32361,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTrees_Mixed_cell.tif	egv_393 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -32943,12 +32740,12 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 2020 (raster layer matching input, presence = 1, absence = 0). 
 
 To prepare this EGV, stands from the [State Forest Service's State Forest
-Registry](#Ch04.01) were classified into (in order):
+Registry](#Ch04.01) are classified into (in order):
 
 -  coniferous (see [Terminology and acronyms](#Ch01) for species codes) if
   timber volume of those species exceeded 75%;
 
--  boreal deciduous if timber volume of those species exceeded 75%;
+-  Boreal deciduous if timber volume of those species exceeded 75%;
 
 -  temperate deciduous if timber volume of those species exceeded 50%;
 
@@ -33019,10 +32816,10 @@ rm(tcl2)
 rm(tclX)
 
 # ForestsTrees_TemperateDeciduous_cell.tif	egv_398 ----
-skujkoki=c("1","3","13","14","15","22","23") # 7
-saurlapji=c("4","6","8","9","19","20","21","32","35","50","68") # 11
-platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29",
-      "61","62","63","64","65","66","67","69") # 20
+skujkoki=c("1","3","13","14","15","22","23","28") # 8
+saurlapji=c("4","6","8","9","19","20","21","32","35","68") # 10
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","50",
+      "61","62","63","64","65","66","67","69") # 21
 mvr=mvr %>% 
  mutate(kraja_skujkoku=ifelse(s10 %in% skujkoki,v10,0)+
       ifelse(s11 %in% skujkoki,v11,0)+ifelse(s12 %in% skujkoki,v12,0)+
@@ -33396,7 +33193,7 @@ writeRaster(merogots,
 
 **Procedure:** First, allotment gardens and farmsteads from the [Landscape
 classification](#Ch05.03) are selected (value 410 reclassified to value 1,
-others as 0). Once reclassified, layer was aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -33771,7 +33568,7 @@ analysis cell (1 ha)
 
 **Procedure:** First, bare soil and querry areas from the [Landscape
 classification](#Ch05.03) are selected (value 800 reclassified to value 1,
-others as 0). Once reclassified, layer was aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -34145,7 +33942,7 @@ ha)
 
 **Procedure:** First, built-up areas from the [Landscape classification](#Ch05.03)
 are selected (value 500 reclassified to value 1, others as 0). Once
-reclassified, layer was aggregated to EGV resolution with the workflow 
+reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -34514,9 +34311,9 @@ writeRaster(merogots,
 **Latvian name:** Lauksaimniecībā izmantojamo zemju platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** First, farmlands from the [Landscape classification](#Ch05.03) were
-selected (values between 300 and 400 were reclassified to value 1, others as 0).
-Once reclassified, layer was aggregated to EGV resolution with the workflow 
+**Procedure:** First, farmlands from the [Landscape classification](#Ch05.03) are
+selected (values between 300 and 400 are reclassified to value 1, others as 0).
+Once reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -34889,11 +34686,11 @@ analysis cell (1 ha)
 **Latvian name:** Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, clearcuts and forest stands from the [State Forest Service's
-State Forest Registry](#Ch04.01) were rasterised to match inputs (value 1 and NA
-elsewhere). Then, from the [Landscape classification](#Ch05.03) class 630 was
-reclassified to value 1, others to 0). These layers were then combined so that
+State Forest Registry](#Ch04.01) are rasterised to match inputs (value 1 and NA
+elsewhere). Then, from the [Landscape classification](#Ch05.03) class 630 is
+reclassified to value 1, others to 0). These layers are then combined so that
 values 1 from the second layer, where spatially matching NA values in the first
-layer as classified as 1 and 0 otherwise. Once reclassified, layer was
+layer as classified as 1 and 0 otherwise. Once reclassified, layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -35281,8 +35078,8 @@ analysis cell (1 ha)
 šūnā (1 ha)
 
 **Procedure:** First, allotment gardens and ochards from the [Landscape
-classification](#Ch05.03) are selected (values between 400 and 500 were
-reclassified to value 1, others as 0). Once reclassified, layer was aggregated
+classification](#Ch05.03) are selected (values between 400 and 500 are
+reclassified to value 1, others as 0). Once reclassified, layer is aggregated
 to EGV resolution using the workflow `egvtools::input2egv()` by calculating arithmetic mean,
 thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output is applied to ensure no missing
@@ -35657,9 +35454,9 @@ writeRaster(merogots,
 
 **Latvian name:** Ceļu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, roads from the [Landscape classification](#Ch05.03) were
-selected (values equal to 100 were reclassified to value 1, others as 0). Once
-reclassified, layer was aggregated to EGV resolution with the workflow 
+**Procedure:** First, roads from the [Landscape classification](#Ch05.03) are
+selected (values equal to 100 are reclassified to value 1, others as 0). Once
+reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -35736,12 +35533,12 @@ analysis cell (1 ha)
 **Latvian name:** Krūmāju, jaunaudžu un augļudārzu platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels declared as short term coppice were
+**Procedure:** First, agricultural parcels declared as short term coppice are
 selected from the [Rural Support Service's information on declared fields](#Ch04.02)
 and rasterised to match inputs. Then orchards and shrubs-low forest stands from
 [Landscape classification](#Ch05.03) are selected (values equal to 420 or 620
-were reclassified to value 1, others as 0). The first layer was then covered
-over the second. Once covered, layer was aggregated to EGV resolution with the workflow 
+are reclassified to value 1, others as 0). The first layer is then covered
+over the second. Once covered, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
@@ -36139,12 +35936,12 @@ gardens within the analysis cell (1 ha)
 **Latvian name:** Krūmāju, jaunaudžu, augļudārzu un vasarnīcu kompleksu platības
 īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, agricultural parcels declared as short term coppice were
+**Procedure:** First, agricultural parcels declared as short term coppice are
 selected from the [Rural Support Service's information on declared fields](#Ch04.02)
 and rasterised to match inputs. Then orchards, allotment gardens and shrubs-low
 forest stands from the [Landscape classification](#Ch05.03) are selected (values
-between 400 and 500 or equal to 620 were reclassified to value 1, others as 0).
-The first layer was then covered over the second. Once covered, layer was
+between 400 and 500 or equal to 620 are reclassified to value 1, others as 0).
+The first layer is then covered over the second. Once covered, layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -36542,7 +36339,7 @@ analīzes šūnā (1 ha)
 
 **Procedure:** First, swamps, mires, bogs and reed, sedge, rush beds from
 [Landscape classification](#Ch05.03) are selected (values between 700 and 800
-were reclassified to value 1, others as 0). Once reclassified, layer was
+are reclassified to value 1, others as 0). Once reclassified, layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -36920,8 +36717,8 @@ analysis cell (1 ha)
 ha)
 
 **Procedure:** First, trees, shrubs and clear cuts from the [Landscape
-classification](#Ch05.03) are selected (values between 600 and 700 were
-reclassified to value 1, others as 0). Once reclassified, layer was aggregated
+classification](#Ch05.03) are selected (values between 600 and 700 are
+reclassified to value 1, others as 0). Once reclassified, layer is aggregated
 to EGV resolution using the workflow `egvtools::input2egv()` by calculating arithmetic mean,
 thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output is applied to ensure no missing
@@ -37295,7 +37092,7 @@ the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** First, tree outside forest stands from the [Landscape
-classification](#Ch05.03) are selected (values equal to 640 were reclassified
+classification](#Ch05.03) are selected (values equal to 640 are reclassified
 to value 1, others as 0). Then the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
@@ -37672,8 +37469,8 @@ ha)
 
 **Latvian name:** Ūdenstilpju platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** First, water from the [Landscape classification](#Ch05.03) were
-selected (values equal to 200 were reclassified to value 1, others as 0). Then
+**Procedure:** First, water from the [Landscape classification](#Ch05.03) are
+selected (values equal to 200 are reclassified to value 1, others as 0). Then
 the layer is aggregated to EGV resolution using the workflow `egvtools::input2egv()` by
 calculating arithmetic mean, thus results in a cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is
@@ -38042,7 +37839,7 @@ ha)
 
 **Latvian name:** Augsto purvu platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from the [Bogs and Mires: EDI](#Ch04.17), where bogs were
+**Procedure:** Derived from the [Bogs and Mires: EDI](#Ch04.17), where bogs are
 classified as 1 with 0 elsewhere. Then processed  with the workflow `egvtools::input2egv()`
 with `fill gaps = TRUE` performing inverse distance weighted (power = 2) filling
 of gaps at the border.
@@ -38397,7 +38194,7 @@ cell (1 ha)
 **Latvian name:** Pārejas purvu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Bogs and Mires: EDI](#Ch04.17), where transitional
-mires were classified as 1 with 0 elsewhere. Then processed with the workflow 
+mires are classified as 1 with 0 elsewhere. Then processed with the workflow 
 `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border.
 
@@ -38757,7 +38554,7 @@ analysis cell (1 ha)
 
 **Procedure:** First, reed, sedge and rush beds from the [Landscape
 classification](#Ch05.03) are selected (value 720 reclassified to value 1,
-others as 0). Once reclassified, layer was aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
 on the output is applied to ensure no missing values at the edges. At the
