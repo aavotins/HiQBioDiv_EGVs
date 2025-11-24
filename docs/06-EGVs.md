@@ -24858,7 +24858,8 @@ analysis cell (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to
 "19", "21", "24" or "25" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised. Rasterisation is performed using the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using the 
+workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -33565,7 +33566,7 @@ analysis cell (1 ha)
 **Latvian name:** Atklātas augsnes un karjeru platības īpatsvars analīzes šūnā
 (1 ha)
 
-**Procedure:** First, bare soil and querry areas from the [Landscape
+**Procedure:** First, bare soil and quarry areas from the [Landscape
 classification](#Ch05.03) are selected (value 800 reclassified to value 1,
 others as 0). Once reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
@@ -35076,7 +35077,7 @@ analysis cell (1 ha)
 **Latvian name:** Vasarnīcu kompleksu un augļudārzu platības īpatsvars analīzes
 šūnā (1 ha)
 
-**Procedure:** First, allotment gardens and ochards from the [Landscape
+**Procedure:** First, allotment gardens and orchards from the [Landscape
 classification](#Ch05.03) are selected (values between 400 and 500 are
 reclassified to value 1, others as 0). Once reclassified, the layer is aggregated
 to EGV resolution using the workflow `egvtools::input2egv()` by calculating arithmetic mean,
@@ -38937,13 +38938,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Mediānā pēdējā gada ūdens satura veģetācijā indeksa (NDMI)
 vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and 
+dividing by the root mean squared error. The "last year" is 2024. 
 
 
 ``` r
@@ -38994,14 +38994,13 @@ content (NDMI) within the analysis cell (1 ha)
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens satura
 veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "last year" is 2024. 
+
 
 
 ``` r
@@ -39077,13 +39076,12 @@ writeRaster(merogots,
 **Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens satura veģetācijā
 indeksa (NDMI) vērtībai, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39136,13 +39134,12 @@ analysis cell (1 ha)
 **Latvian name:** Mediānā pēdējo piecu gadu ūdens satura veģetācijā indeksa
 (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39195,14 +39192,13 @@ content (NDMI) within the analysis cell (1 ha)
 satura veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā
 (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term corresponds to last five years (2020-2024).
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "short-term" refers to the last 
+five years (2020-2024).
 
 
 ``` r
@@ -39280,13 +39276,12 @@ writeRaster(merogots,
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens satura
 veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39340,13 +39335,12 @@ writeRaster(merogots,
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens satura
 veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39398,13 +39392,12 @@ analysis cell (1 ha)
 **Latvian name:** Mediānā pēdējā gada veģetācijas indeksa (NDVI) vērtība,
 vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To protect against
+potential data loss at edge cells, inverse distance weighted (power = 2) gap
+filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and
+dividing by the root mean squared error. The "last year" is 2024. 
 
 
 ``` r
@@ -39456,14 +39449,12 @@ writeRaster(merogots,
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai veģetācijas
 indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "last year" is 2024. 
 
 
 ``` r
@@ -39541,13 +39532,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam veģetācijas indeksa
 (NDVI) vērtībai, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39599,13 +39589,12 @@ cell (1 ha)
 **Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība,
 vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39657,14 +39646,13 @@ writeRaster(merogots,
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai
 veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term corresponds to last five years (2020-2024).
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "short-term" refers to the last 
+five years (2020-2024).
 
 
 ``` r
@@ -39742,13 +39730,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu veģetācijas indeksa
 (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39800,13 +39787,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu veģetācijas
 indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -39858,13 +39844,12 @@ analysis cell (1 ha)
 **Latvian name:** Mediānā pēdējā gada ūdens indeksa (NDWI) vērtība, vidējais
 analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To protect against
+potential data loss at edge cells, inverse distance weighted (power = 2) gap
+filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and
+dividing by the root mean squared error. The "last year" is 2024. 
 
 
 ``` r
@@ -39914,14 +39899,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens indeksa
 (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Last year is 2024.
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "last year" is 2024. 
 
 
 ``` r
@@ -39998,13 +39981,12 @@ the analysis cell (1 ha)
 **Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens indeksa (NDWI)
 vērtībai, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -40056,13 +40038,12 @@ writeRaster(merogots,
 **Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība,
 vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Arithmetic mean value
-at analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -40114,14 +40095,13 @@ within the analysis cell (1 ha)
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens
 indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). First Q1 and then Q3
-is calculated for every cell with the workflow `egvtools::input2egv()`. Finally, subtracting
-Q1 from Q3 and writing final raster with specified layername. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term corresponds to last five years (2020-2024).
-
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The 
+workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
+To protect against potential data loss at the edges, inverse distance 
+weighted (power = 2) gap filling is implemented. Next, Q1 is subtracted from Q3. 
 Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+dividing by the root mean squared error. The "short-term" refers to the last 
+five years (2020-2024).
 
 
 ``` r
@@ -40198,13 +40178,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens indeksa
 (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Minimum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
@@ -40256,13 +40235,12 @@ within the analysis cell (1 ha)
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens indeksa
 (NDWI) vērtība, vidējais analīzes šūnā (1 ha)
 
-**Procedure:** Directly follows [preprocessing](#Ch04.13). Maximum value at
-analysis cell calculated with the workflow `egvtools::input2egv()`. To protect against
-possible data loss at edge cells, inverse distance weighted (power = 2) gap
-filling is implemented. Short-term is last five years (2020-2024).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
+at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
+protect against potential data loss at edge cells, inverse distance 
+weighted (power = 2) gap filling is implemented. Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error. The "short-term" refers to the last five years (2020-2024).
 
 
 ``` r
