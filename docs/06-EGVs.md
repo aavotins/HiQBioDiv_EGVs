@@ -40294,13 +40294,13 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40354,13 +40354,13 @@ v2.0) within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40415,13 +40415,13 @@ the analysis cell (1 ha)
 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40475,13 +40475,13 @@ the analysis cell (1 ha)
 (1 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40535,13 +40535,13 @@ within the analysis cell (1 ha)
 (1 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40594,13 +40594,13 @@ within the analysis cell (1 ha)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly derived from the [Soil chemistry](#Ch04.07.01). Processed
-with the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE` performing inverse
-distance weighted (power = 2) filling of gaps at the border and `smooth = FALSE`
-to keep as original values as reasonable (there is bilinear interpolation
-involved when projecting from 500 m to 100 m resolution of different CRS).
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+using the workflow `egvtools::downscale2egv()` with `fill gaps = TRUE`, performing 
+inverse distance weighted (power = 2) filling of gaps at the border 
+and `smooth = FALSE`. This is done to preserve the original values as much as 
+possible (bilinear interpolation is involved when projecting from a 500 m 
+resolution to a 100 m resolution in a different CRS). Finally, the layer is 
+standardised by subtracting the arithmetic mean and dividing by the root mean 
+squared error.
 
 
 ``` r
@@ -40653,11 +40653,11 @@ writeRaster(merogots,
 analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
-reclassified so that class of interest is 1, other classes are 0. Then processed
-with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. Finally, the layer is 
-standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+reclassified so that the class of interest is 1 and the other classes are 0. It 
+is then processed using the workflow `egvtools::input2egv()` 
+with `fill gaps = TRUE`, performing inverse distance weighted (power = 2) 
+filling of gaps at the border. Finally, the layer is standardised by subtracting 
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -40718,13 +40718,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 0,5
 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.506) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -40789,13 +40789,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 1,25
 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.506) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -40861,13 +40861,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 3 km
 ainavā
 
-**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.506) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -40932,13 +40932,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars 10
 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Clay_cell](#ch06.506). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.506) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41006,11 +41006,11 @@ ha)
 īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
-reclassified so that class of interest is 1, other classes are 0. Then processed
-with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. Finally, the layer is 
-standardised by subtracting the arithmetic mean and
-dividing by the root mean squared error.
+reclassified so that the class of interest is 1 and the other classes are 0. It 
+is then processed using the workflow `egvtools::input2egv()` 
+with `fill gaps = TRUE`, performing inverse distance weighted (power = 2) 
+filling of gaps at the border. Finally, the layer is standardised by subtracting 
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41071,12 +41071,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 0,5 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
-processed using the workflow `egvtools::radius_function()`, then rewritten to set
-layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.511) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41141,12 +41142,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 1,25 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
-processed using the workflow `egvtools::radius_function()`, then rewritten to set
-layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.511) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41212,12 +41214,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 3 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
-processed using the workflow `egvtools::radius_function()`, then rewritten to set
-layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.511) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41282,12 +41285,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars 10 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Organic_cell](#ch06.511). First
-processed using the workflow `egvtools::radius_function()`, then rewritten to set
-layername. To protect against possible data loss at edge cells, inverse distance
-weighted (power = 2) gap filling is implemented. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.511) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41353,11 +41357,11 @@ writeRaster(merogots,
 analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
-reclassified so that class of interest is 1, other classes are 0. Then processed
-with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+reclassified so that the class of interest is 1 and the other classes are 0. It 
+is then processed using the workflow `egvtools::input2egv()` 
+with `fill gaps = TRUE`, performing inverse distance weighted (power = 2) 
+filling of gaps at the border. Finally, the layer is standardised by subtracting 
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41419,11 +41423,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 0,5 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.516) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41488,11 +41494,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 1,25 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.516) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41557,11 +41565,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 3
 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.516) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41626,11 +41636,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars 10
 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Sand_cell](#ch06.516). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.516) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41696,11 +41708,11 @@ writeRaster(merogots,
 platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
-reclassified so that class of interest is 1, other classes are 0. Then processed
-with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border. Finally, the layer is
-standardised by subtracting the arithmetic mean and dividing by the root mean squared
-error.
+reclassified so that the class of interest is 1 and the other classes are 0. It 
+is then processed using the workflow `egvtools::input2egv()` 
+with `fill gaps = TRUE`, performing inverse distance weighted (power = 2) 
+filling of gaps at the border. Finally, the layer is standardised by subtracting 
+the arithmetic mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41761,11 +41773,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 0,5 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.521) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41830,11 +41844,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 1,25 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.521) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41899,11 +41915,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 3 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.521) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
@@ -41969,11 +41987,13 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars 10 km ainavā
 
-**Procedure:** Derived from the [SoilTexture_Silt_cell](#ch06.521). First processed
-using the workflow `egvtools::radius_function()`, then rewritten to set layername. To
-protect against possible data loss at edge cells, inverse distance weighted
-(power = 2) gap filling is implemented. Finally, the layer is standardised
-by subtracting the arithmetic mean and dividing by the root mean squared error.
+**Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell is
+calculated as the area-weighted sum of the [analysis cells](#ch06.521) inside the
+buffer, using the workflow `egvtools::radius_function()`. During the calculation of the landscape metric,
+inverse distance weighted (power = 2) gap filling on the output is applied
+to ensure no missing values at the edges. Then the layer is rewritten to set
+its name. Finally, the layer is standardised by subtracting the arithmetic
+mean and dividing by the root mean squared error.
 
 
 ``` r
