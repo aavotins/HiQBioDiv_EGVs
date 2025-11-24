@@ -22552,8 +22552,8 @@ for classes 630 and 640 - 50 years and 0 otherwise. Per pixel minimum layer is
 then overlaid the assumed time since disturbance layer. The resulting layer is
 then aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean value. After the aggregation, inverse distance weighted (power =
-2) gap filling is applied to avoid possible gaps at the edges. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by the root
+2) gap filling is applied to avoid possible gaps at the edges. Finally, the layer 
+is standardised by subtracting the arithmetic mean and dividing by the root
 mean squared error.
 
 
@@ -24858,8 +24858,7 @@ analysis cell (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to
 "19", "21", "24" or "25" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -25254,8 +25253,8 @@ analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "5"
 "6" "10" or "11" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using
+the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -25654,8 +25653,8 @@ Soils within the analysis cell (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "15"
 or "16" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using 
+the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -26054,8 +26053,8 @@ Soils within the analysis cell (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "4"
 or "9" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using the 
+workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -26454,8 +26453,8 @@ ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to
 "17", "18", "22" or "23" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using 
+the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -26850,8 +26849,8 @@ analīzes šūnā (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "1",
 "2", "3", "7" or "8" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using the 
+workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -27250,8 +27249,8 @@ Soils within the analysis cell (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "12"
 or "14" are selected from the [State Forest Service's State Forest
-Registry](#Ch04.01) and rasterised (presence = 1, NA otherwise). Resulting
-geometries are then rasterised with the workflow `egvtools::polygon2input()` with background
+Registry](#Ch04.01) and rasterised. Rasterisation is performed using 
+the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -33193,11 +33192,11 @@ writeRaster(merogots,
 
 **Procedure:** First, allotment gardens and farmsteads from the [Landscape
 classification](#Ch05.03) are selected (value 410 reclassified to value 1,
-others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -33568,11 +33567,11 @@ analysis cell (1 ha)
 
 **Procedure:** First, bare soil and querry areas from the [Landscape
 classification](#Ch05.03) are selected (value 800 reclassified to value 1,
-others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -33942,11 +33941,11 @@ ha)
 
 **Procedure:** First, built-up areas from the [Landscape classification](#Ch05.03)
 are selected (value 500 reclassified to value 1, others as 0). Once
-reclassified, layer is aggregated to EGV resolution with the workflow 
+reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -34313,11 +34312,11 @@ writeRaster(merogots,
 
 **Procedure:** First, farmlands from the [Landscape classification](#Ch05.03) are
 selected (values between 300 and 400 are reclassified to value 1, others as 0).
-Once reclassified, layer is aggregated to EGV resolution with the workflow 
+Once reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -34690,7 +34689,7 @@ State Forest Registry](#Ch04.01) are rasterised to match inputs (value 1 and NA
 elsewhere). Then, from the [Landscape classification](#Ch05.03) class 630 is
 reclassified to value 1, others to 0). These layers are then combined so that
 values 1 from the second layer, where spatially matching NA values in the first
-layer as classified as 1 and 0 otherwise. Once reclassified, layer is
+layer as classified as 1 and 0 otherwise. Once reclassified, the layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -35079,7 +35078,7 @@ analysis cell (1 ha)
 
 **Procedure:** First, allotment gardens and ochards from the [Landscape
 classification](#Ch05.03) are selected (values between 400 and 500 are
-reclassified to value 1, others as 0). Once reclassified, layer is aggregated
+reclassified to value 1, others as 0). Once reclassified, the layer is aggregated
 to EGV resolution using the workflow `egvtools::input2egv()` by calculating arithmetic mean,
 thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output is applied to ensure no missing
@@ -35456,11 +35455,11 @@ writeRaster(merogots,
 
 **Procedure:** First, roads from the [Landscape classification](#Ch05.03) are
 selected (values equal to 100 are reclassified to value 1, others as 0). Once
-reclassified, layer is aggregated to EGV resolution with the workflow 
+reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -35538,11 +35537,11 @@ selected from the [Rural Support Service's information on declared fields](#Ch04
 and rasterised to match inputs. Then orchards and shrubs-low forest stands from
 [Landscape classification](#Ch05.03) are selected (values equal to 420 or 620
 are reclassified to value 1, others as 0). The first layer is then covered
-over the second. Once covered, layer is aggregated to EGV resolution with the workflow 
+over the second. Once covered, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -35941,7 +35940,7 @@ selected from the [Rural Support Service's information on declared fields](#Ch04
 and rasterised to match inputs. Then orchards, allotment gardens and shrubs-low
 forest stands from the [Landscape classification](#Ch05.03) are selected (values
 between 400 and 500 or equal to 620 are reclassified to value 1, others as 0).
-The first layer is then covered over the second. Once covered, layer is
+The first layer is then covered over the second. Once covered, the layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -36339,7 +36338,7 @@ analīzes šūnā (1 ha)
 
 **Procedure:** First, swamps, mires, bogs and reed, sedge, rush beds from
 [Landscape classification](#Ch05.03) are selected (values between 700 and 800
-are reclassified to value 1, others as 0). Once reclassified, layer is
+are reclassified to value 1, others as 0). Once reclassified, the layer is
 aggregated to EGV resolution using the workflow `egvtools::input2egv()` by calculating
 arithmetic mean, thus results in a cover fraction. During aggregation, inverse
 distance weighted (power = 2) gap filling on the output is applied to
@@ -36718,7 +36717,7 @@ ha)
 
 **Procedure:** First, trees, shrubs and clear cuts from the [Landscape
 classification](#Ch05.03) are selected (values between 600 and 700 are
-reclassified to value 1, others as 0). Once reclassified, layer is aggregated
+reclassified to value 1, others as 0). Once reclassified, the layer is aggregated
 to EGV resolution using the workflow `egvtools::input2egv()` by calculating arithmetic mean,
 thus results in a cover fraction. During aggregation, inverse distance weighted
 (power = 2) gap filling on the output is applied to ensure no missing
@@ -37096,8 +37095,8 @@ classification](#Ch05.03) are selected (values equal to 640 are reclassified
 to value 1, others as 0). Then the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -38554,11 +38553,11 @@ analysis cell (1 ha)
 
 **Procedure:** First, reed, sedge and rush beds from the [Landscape
 classification](#Ch05.03) are selected (value 720 reclassified to value 1,
-others as 0). Once reclassified, layer is aggregated to EGV resolution with the workflow 
+others as 0). Once reclassified, the layer is aggregated to EGV resolution with the workflow 
 `egvtools::input2egv()`, which calculates the arithmetic mean and thus resulting in cover
 fraction. During aggregation, inverse distance weighted (power = 2) gap filling
-on the output is applied to ensure no missing values at the edges. At the
-very end, layer is standardised by subtracting the arithmetic mean and dividing by
+on the output is applied to ensure no missing values at the edges. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by
 root mean squared error.
 
 
@@ -40675,12 +40674,11 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "māls" platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
+weighted (power = 2) filling of gaps at the border. Finally, the layer is 
+standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -41029,12 +41027,11 @@ ha)
 **Latvian name:** Augsnes granulometriskās klases "organiskās augsnes" platības
 īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
-weighted (power = 2) filling of gaps at the border.
-
-Finally, the layer is standardised by subtracting the arithmetic mean and
+weighted (power = 2) filling of gaps at the border. Finally, the layer is 
+standardised by subtracting the arithmetic mean and
 dividing by the root mean squared error.
 
 
@@ -41377,7 +41374,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilts" platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border. Finally, the layer is
@@ -41720,7 +41717,7 @@ writeRaster(merogots,
 **Latvian name:** Augsnes granulometriskās klases "smilšmāls un mālsmilts"
 platības īpatsvars analīzes šūnā (1 ha)
 
-**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, layer is
+**Procedure:** Derived from the [Soil texture product](#Ch05.02). First, the layer is
 reclassified so that class of interest is 1, other classes are 0. Then processed
 with the workflow `egvtools::input2egv()` with `fill gaps = TRUE` performing inverse distance
 weighted (power = 2) filling of gaps at the border. Finally, the layer is
@@ -42065,8 +42062,8 @@ analysis cell (1 ha)
 
 **Procedure:** Derived from the [Digital elevation/terrain models](#Ch04.15).
 Processed with the workflow `egvtools::input2egv()`. To protect against possible data loss at
-edge cells, inverse distance weighted (power = 2) gap filling is implemented. At
-the very end, layer is standardised by subtracting the arithmetic mean and dividing
+edge cells, inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing
 by root mean squared error.
 
 
@@ -42123,8 +42120,8 @@ cell (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with the workflow 
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42262,8 +42259,8 @@ analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42324,7 +42321,7 @@ km ainavā
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed using the 
 workflow `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
-zonal statistics, file is rewritten to set layername. At the very end, layer
+zonal statistics, file is rewritten to set layername. Finally, the layer
 is standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -42397,7 +42394,7 @@ writeRaster(merogots,
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed using the 
 workflow `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
-zonal statistics, file is rewritten to set layername. At the very end, layer
+zonal statistics, file is rewritten to set layername. Finally, the layer
 is standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -42469,7 +42466,7 @@ km ainavā
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed using the 
 workflow `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
-zonal statistics, file is rewritten to set layername. At the very end, layer
+zonal statistics, file is rewritten to set layername. Finally, the layer
 is standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -42542,7 +42539,7 @@ km ainavā
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed using the 
 workflow `egvtools::radius_function()`. To protect against possible data loss at edge
 cells, inverse distance weighted (power = 2) gap filling is implemented. After
-zonal statistics, file is rewritten to set layername. At the very end, layer
+zonal statistics, file is rewritten to set layername. Finally, the layer
 is standardised by subtracting the arithmetic mean and dividing by the root mean squared
 error.
 
@@ -42613,8 +42610,8 @@ writeRaster(merogots,
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with the workflow 
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42670,8 +42667,8 @@ writeRaster(merogots,
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with the workflow 
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42728,8 +42725,8 @@ cell (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with the workflow 
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
@@ -42867,8 +42864,8 @@ ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). Processed with the workflow 
 `egvtools::input2egv()`. To protect against possible data loss at edge cells,
-inverse distance weighted (power = 2) gap filling is implemented. At the very
-end, layer is standardised by subtracting the arithmetic mean and dividing by root
+inverse distance weighted (power = 2) gap filling is implemented. Finally, the 
+layer is standardised by subtracting the arithmetic mean and dividing by root
 mean squared error.
 
 
