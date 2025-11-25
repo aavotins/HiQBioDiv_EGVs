@@ -393,14 +393,32 @@ the rasterisation process (3).
 The general landscape layer also serves as a 
 mask for the preparation of further environmental descriptions. This section 
 describes the development of a general (simple) landscape and, in the following 
-document, its enrichment with more specific environmental eco-geographical 
+document, its enrichment with more specific environmental ecogeographical 
 variables. The general landscape is stored in the file `Ainava_vienk_mask.tif`. 
-The classes and the procedure for their creation are described in the 
-list below:
+The classes in the order of overlay are as follow:
 
-- Class `100` - **Roads**: roads from various sources, **filled in sequence** - 
-dominates over classes with higher values so that relatively small objects are not 
-lost and information about edges is provided. The following sources have been 
+- Class `100` - Roads;
+
+- (Subclass `720` - Reed, Sedge, Rush beds;)
+
+- Class `200` - Waters;
+
+- Class `300` - Farmlands;
+
+- Class `400` - Allotment gardens, Orchards and Cottages;
+
+- Class `500` - Built-up;
+
+- Class `600` - Forests, Shrublands, Clearings;
+
+- Class `700` - Wetlands;
+
+- Class `800` - Bare Soil and Quarries.
+
+
+The procedures for their creation are described below:
+
+- Class `100` - **Roads**: roads from various sources. The following sources have been 
 combined to create this class:
 
     - layers `RoadA_COMB` and `RoadL_COMB` (except the smallest size groups) from
@@ -524,10 +542,8 @@ rm(road_union1)
 rm(road_union2)
 ```
 
-- Class `200` - **Waters**: water bodies from various sources, filled in 
-sequence (but see "merging and filling" step of this section) - dominate over classes 
-with higher values ensuring that relatively small objects are not lost and information 
-about the edges is preserved. The following are combined to create this class:
+- Class `200` - **Waters**: water bodies from various sources. The following are 
+combined to create this class:
 
     – [topographic map](#Ch04.04) layers `HidroA_COMB` and `HidroL_COMB` (buffered by 5 m);
 
@@ -642,14 +658,13 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif")
 ```
 
 
-- Class `300` - **Farmland**: agricultural land in LAD database **filled in 
-sequence** - dominates over classes with higher values. After the general 
-classes are created, the gaps are filled in with information from Dynamic 
-World. The following sources are combined to create this class:
+- Class `300` - **Farmland**: agricultural land from the LAD database. The following 
+sources are combined to create this class:
 
     – [LAD database](#Ch04.02), which, following the decision on grouping (classes are 
     available [here](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx)), 
-    is divided into three broad groups (in order of overlap):
+    is divided into three broad groups (in the order of overlap with lower 
+    number dominating):
 
         – arable land with class code `310`;
 
@@ -658,7 +673,7 @@ World. The following sources are combined to create this class:
         – grassland with class code `330`;
 
         – orchards and perennial shrub plantations in the general landscape are 
-        placed in other landscape classes.
+        part of other landscape classes.
 
 The command lines below create a layer with landscape class `300` and its 
 subclasses, which are saved in the file `SimpleLandscape_class300_lauki_premask.tif` 
@@ -765,9 +780,8 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 ```
 
 
-- Class `400` - **Allotment Gardens, Orchards and Cottages**, **filled in order** - 
-dominates over classes with higher values. To create this class, the following are 
-combined (in order of overlap):
+- Class `400` - **Allotment Gardens, Orchards and Cottages**. To create this 
+class, the following are combined (in order of overlap):
 
     – [topographic map](#Ch04.04) layer `BuildA_v3` values: "poligons_Vasarnīcu_apbūve", 
     "poligons_Viensētu_apbūve", coded as `410`;
@@ -877,14 +891,13 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 ```
 
-- Class `500` - **Built-up**: built-up areas, filled in at the end (see section 
-"merging and filling" of this chapter) using information from Dynamic World for 
-places not covered by other classes.
+- Class `500` - **Built-up**: built-up areas, no particular layer or data source used. 
+Filled in at the end (see section "merging and filling" of this chapter) using 
+information from the Dynamic World for places not covered by other classes.
 
 - Class `600` - **Forests, Shrublands, Clearings**: areas covered with trees and 
-shrubs, clearings, and dead forest stands, **filled in order** - dominates over
-classes with higher values. The following sources have been combined to create this 
-class (in order of overlap):
+shrubs, clearings, and dead forest stands. The following sources have been 
+combined to create this class (in order of overlap):
 
     – [The Global Forest Watch](#Ch04.09) layer records of tree canopy cover 
     loss since 2020, coded as `610`;
@@ -1150,10 +1163,9 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class620_zemas_mvr.tif")
 unlink("./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif")
 ```
 
-- Class `700` - **Wetlands**: combining geospatial data related to reed beds, 
-marshes, mires, and bogs, **filled in order except class `720` that dominates over waters** - 
-dominates classes with higher values. To create this class, the following sources are 
-combined (in order of overlap):
+- Class `700` - **Wetlands**: combining geospatial data related to reed, sedge and rush beds, 
+marshes, mires, and bogs, **filled in order except class `720` that dominates over waters**. 
+To create this class, the following sources are combined (in order of overlap):
 
     – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: "Meldrājs_ūdenī_poligons", 
     "poligons_Grislajs", "poligons_Grīslājs", "poligons_Meldrajs", "poligons_Meldrājs", 
@@ -1314,8 +1326,7 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif")
 ```
 
 - Class `800` - **Bare Soil and Quarries**: combining layers related to bare soil, 
-heaths, and quarries, **filled in order** - as this is the highest class, it 
-dominates only over Dynamic World used to fill gaps. The following have been 
+heaths, and quarries. The following have been 
 combined to create this class (in order of overlap):
 
     – [topographic map](#Ch04.04) layer `LandusA_COMB` classes: 
@@ -1400,7 +1411,7 @@ unlink("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif")
 
 The command lines below combine the previously created layers with the landscape 
 classes in the correct order and ensure that gaps are filled with the appropriately 
-classified Dynamic World composite for April-August 2024. After masking to only 
+classified Dynamic World composite for April-August 2024. After masking to match  
 the analysis space, the layer is saved in the file `Ainava_vienk_mask.tif` 
 for further processing.
 
@@ -1737,7 +1748,7 @@ contains the following values, in order of hierarchy:
 - [State Forest Service's Forest State Register](#Ch04.01) code, in which the 
 code of the dominant tree species is multiplied by 1000 and the age group 
 code is added. However, before rasterisation, geometries in which no code has 
-been assigned or one of the code components is 0 are excluded;
+been assigned or one of the code components is 0, are excluded;
 
 - forest diversity class values prepared in [Overall landscape diversity](#Ch05.04.01);
 

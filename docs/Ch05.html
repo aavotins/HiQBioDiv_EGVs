@@ -1161,14 +1161,23 @@ the rasterisation process (3).</p>
 <p>The general landscape layer also serves as a
 mask for the preparation of further environmental descriptions. This section
 describes the development of a general (simple) landscape and, in the following
-document, its enrichment with more specific environmental eco-geographical
+document, its enrichment with more specific environmental ecogeographical
 variables. The general landscape is stored in the file <code>Ainava_vienk_mask.tif</code>.
-The classes and the procedure for their creation are described in the
-list below:</p>
+The classes in the order of overlay are as follow:</p>
 <ul>
-<li><p>Class <code>100</code> - <strong>Roads</strong>: roads from various sources, <strong>filled in sequence</strong> -
-dominates over classes with higher values so that relatively small objects are not
-lost and information about edges is provided. The following sources have been
+<li><p>Class <code>100</code> - Roads;</p></li>
+<li><p>(Subclass <code>720</code> - Reed, Sedge, Rush beds;)</p></li>
+<li><p>Class <code>200</code> - Waters;</p></li>
+<li><p>Class <code>300</code> - Farmlands;</p></li>
+<li><p>Class <code>400</code> - Allotment gardens, Orchards and Cottages;</p></li>
+<li><p>Class <code>500</code> - Built-up;</p></li>
+<li><p>Class <code>600</code> - Forests, Shrublands, Clearings;</p></li>
+<li><p>Class <code>700</code> - Wetlands;</p></li>
+<li><p>Class <code>800</code> - Bare Soil and Quarries.</p></li>
+</ul>
+<p>The procedures for their creation are described below:</p>
+<ul>
+<li><p>Class <code>100</code> - <strong>Roads</strong>: roads from various sources. The following sources have been
 combined to create this class:</p>
 <ul>
 <li><p>layers <code>RoadA_COMB</code> and <code>RoadL_COMB</code> (except the smallest size groups) from
@@ -1288,10 +1297,8 @@ saved in the file <code>SimpleLandscape_class100_celi.tif</code> for further pro
 <span id="cb31-101"><a href="Ch05.html#cb31-101" tabindex="-1"></a><span class="fu">rm</span>(road_union2)</span></code></pre></div>
 </details>
 <ul>
-<li><p>Class <code>200</code> - <strong>Waters</strong>: water bodies from various sources, filled in
-sequence (but see “merging and filling” step of this section) - dominate over classes
-with higher values ensuring that relatively small objects are not lost and information
-about the edges is preserved. The following are combined to create this class:</p>
+<li><p>Class <code>200</code> - <strong>Waters</strong>: water bodies from various sources. The following are
+combined to create this class:</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layers <code>HidroA_COMB</code> and <code>HidroL_COMB</code> (buffered by 5 m);</p>
 <p>– <a href="Ch04.html#Ch04.03">MKIS</a> layer <code>Gravji</code>, buffered by 3 m;</p>
 <p>– <a href="Ch04.html#Ch04.06">LVM open data</a> layers <code>LVM_GRAVJI</code>, buffered by 5 m.</p>
@@ -1398,13 +1405,12 @@ saved in the file <code>SimpleLandscape_class200_udens_premask.tif</code> for fu
 <span id="cb32-94"><a href="Ch05.html#cb32-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class200_lvm.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li><p>Class <code>300</code> - <strong>Farmland</strong>: agricultural land in LAD database <strong>filled in
-sequence</strong> - dominates over classes with higher values. After the general
-classes are created, the gaps are filled in with information from Dynamic
-World. The following sources are combined to create this class:</p>
+<li><p>Class <code>300</code> - <strong>Farmland</strong>: agricultural land from the LAD database. The following
+sources are combined to create this class:</p>
 <p>– <a href="Ch04.html#Ch04.02">LAD database</a>, which, following the decision on grouping (classes are
 available <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/LAD/KulturuKodi_2024.xlsx">here</a>),
-is divided into three broad groups (in order of overlap):</p>
+is divided into three broad groups (in the order of overlap with lower
+number dominating):</p>
 <pre><code>  – arable land with class code `310`;
 
   – fallow land with class code `320`;
@@ -1412,7 +1418,7 @@ is divided into three broad groups (in order of overlap):</p>
   – grassland with class code `330`;
 
   – orchards and perennial shrub plantations in the general landscape are 
-  placed in other landscape classes.</code></pre></li>
+  part of other landscape classes.</code></pre></li>
 </ul>
 <p>The command lines below create a layer with landscape class <code>300</code> and its
 subclasses, which are saved in the file <code>SimpleLandscape_class300_lauki_premask.tif</code>
@@ -1515,9 +1521,8 @@ for further processing.</p>
 <span id="cb34-95"><a href="Ch05.html#cb34-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li><p>Class <code>400</code> - <strong>Allotment Gardens, Orchards and Cottages</strong>, <strong>filled in order</strong> -
-dominates over classes with higher values. To create this class, the following are
-combined (in order of overlap):</p>
+<li><p>Class <code>400</code> - <strong>Allotment Gardens, Orchards and Cottages</strong>. To create this
+class, the following are combined (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>BuildA_v3</code> values: “poligons_Vasarnīcu_apbūve”,
 “poligons_Viensētu_apbūve”, coded as <code>410</code>;</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> values: “poligons_Augludarzs”,
@@ -1621,13 +1626,12 @@ processing.</p>
 <span id="cb35-88"><a href="Ch05.html#cb35-88" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li><p>Class <code>500</code> - <strong>Built-up</strong>: built-up areas, filled in at the end (see section
-“merging and filling” of this chapter) using information from Dynamic World for
-places not covered by other classes.</p></li>
+<li><p>Class <code>500</code> - <strong>Built-up</strong>: built-up areas, no particular layer or data source used.
+Filled in at the end (see section “merging and filling” of this chapter) using
+information from the Dynamic World for places not covered by other classes.</p></li>
 <li><p>Class <code>600</code> - <strong>Forests, Shrublands, Clearings</strong>: areas covered with trees and
-shrubs, clearings, and dead forest stands, <strong>filled in order</strong> - dominates over
-classes with higher values. The following sources have been combined to create this
-class (in order of overlap):</p>
+shrubs, clearings, and dead forest stands. The following sources have been
+combined to create this class (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.09">The Global Forest Watch</a> layer records of tree canopy cover
 loss since 2020, coded as <code>610</code>;</p>
 <p>– <a href="Ch04.html#Ch04.01">Forest State Register</a> clearings and dead forest stands, the result
@@ -1880,10 +1884,9 @@ in the file <code>SimpleLandscape_class600_meziem_premask.tif</code> for further
 <span id="cb36-225"><a href="Ch05.html#cb36-225" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class610_izcirtumi_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
-<li><p>Class <code>700</code> - <strong>Wetlands</strong>: combining geospatial data related to reed beds,
-marshes, mires, and bogs, <strong>filled in order except class <code>720</code> that dominates over waters</strong> -
-dominates classes with higher values. To create this class, the following sources are
-combined (in order of overlap):</p>
+<li><p>Class <code>700</code> - <strong>Wetlands</strong>: combining geospatial data related to reed, sedge and rush beds,
+marshes, mires, and bogs, <strong>filled in order except class <code>720</code> that dominates over waters</strong>.
+To create this class, the following sources are combined (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes: “Meldrājs_ūdenī_poligons”,
 “poligons_Grislajs”, “poligons_Grīslājs”, “poligons_Meldrajs”, “poligons_Meldrājs”,
 “poligons_Meldrajs_udeni”, “poligons_Nec_purvs_grīslājs”, “poligons_Nec_purvs_meldrājs”,
@@ -2036,8 +2039,7 @@ in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for furthe
 </details>
 <ul>
 <li><p>Class <code>800</code> - <strong>Bare Soil and Quarries</strong>: combining layers related to bare soil,
-heaths, and quarries, <strong>filled in order</strong> - as this is the highest class, it
-dominates only over Dynamic World used to fill gaps. The following have been
+heaths, and quarries. The following have been
 combined to create this class (in order of overlap):</p>
 <p>– <a href="Ch04.html#Ch04.04">topographic map</a> layer <code>LandusA_COMB</code> classes:
 “poligons_Smiltājs”, “poligons_Smiltajs”, “poligons_Grants”, “poligons_Kūdra”,
@@ -2115,7 +2117,7 @@ in the file <code>SimpleLandscape_class800_smiltaji_premask.tif</code> for furth
 <p><strong>Merging and filling</strong></p>
 <p>The command lines below combine the previously created layers with the landscape
 classes in the correct order and ensure that gaps are filled with the appropriately
-classified Dynamic World composite for April-August 2024. After masking to only
+classified Dynamic World composite for April-August 2024. After masking to match<br />
 the analysis space, the layer is saved in the file <code>Ainava_vienk_mask.tif</code>
 for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -2433,7 +2435,7 @@ contains the following values, in order of hierarchy:</p>
 <li><p><a href="Ch04.html#Ch04.01">State Forest Service’s Forest State Register</a> code, in which the
 code of the dominant tree species is multiplied by 1000 and the age group
 code is added. However, before rasterisation, geometries in which no code has
-been assigned or one of the code components is 0 are excluded;</p></li>
+been assigned or one of the code components is 0, are excluded;</p></li>
 <li><p>forest diversity class values prepared in <a href="Ch05.html#Ch05.04.01">Overall landscape diversity</a>;</p></li>
 <li><p>forest classes from <a href="Ch05.html#Ch05.03">Landscape classification</a>;</p></li>
 <li><p>value 1 for all other cells located in the territory of Latvia.</p></li>
