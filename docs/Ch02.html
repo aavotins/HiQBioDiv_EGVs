@@ -794,14 +794,14 @@ div.csl-indent {
 <div id="Ch02" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Utilities<a href="Ch02.html#Ch02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This chapter provides a brief description of the utility functions used in this
-material. Most of these functions are packaged in the R package {egvtools}, which
+material. Most of these functions are available in the R package {egvtools}, which
 was created specifically for this work.</p>
 <div id="Ch02.01" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> R package egvtools<a href="Ch02.html#Ch02.01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>{egvtools} provides a coherent set of wrappers and utilities that facilitate the
 reproducible and efficient creation of large-scale EGVs on real datasets. The
 package relies on robust building blocks — {terra}, {sf}, {sfarrow}, {exactextractr}
-and {whitebox} — and standardises input/output, naming conventions and multi-scale
+and {whitebox} — and standardises input/output data, naming conventions and multi-scale
 zonal statistics, ensuring that the pipelines are repeatable across machines and
 projects.</p>
 <p>The package was developed for the project ‘HiQBioDiv: High-resolution
@@ -818,17 +818,17 @@ audience.</p>
 <p>or obtained as a <a href="https://hub.docker.com/repository/docker/aavotins/hiqbiodiv-container/general">Docker container</a> with all the necessary system and software dependencies.</p>
 <div id="Ch02.01.01" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Reproduction only functions<a href="Ch02.html#Ch02.01.01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>These functions are small wrappers, that helps to recreate our
+<p>These functions are small wrappers, that help to recreate our
 working environments - template files and their locations in the file tree.</p>
 <p>These functions are:</p>
 <ul>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/download_raster_templates.html"><code>download_raster_templates()</code></a> — fetch template rasters from Zenodo repository
-and place them in user specified location on disk, or by default - the
-one we used. By default this function links
+and place them in a user specified location on the disk, or by default - the
+place we used. By default this function links
 to the <a href="https://zenodo.org/records/14497070">version 2.0.0</a> of the dataset;</p></li>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/download_vector_templates.html"><code>download_vector_templates()</code></a> - fetch template vector grids/points from Zenodo
-repository and place them in user specified location on disk, or by default - the
-one we used. By default this function links
+repository and place them in a user specified location on the disk, or by default - the
+place we used. By default this function links
 to the <a href="https://zenodo.org/records/14277114">version 1.0.1</a> of the dataset;</p></li>
 <li><p><a href="https://aavotins.github.io/egvtools/reference/radius_function.html">radius_function()</a> — extracts
 summary statistics from raster layers using buffered polygon zones of multiple
@@ -837,7 +837,7 @@ use filenames (first and second part in the result of tiling functions) as used
 in this project. If the filenames are kept, function can easily be used for
 other projects, regions etc. Function can be used to run sequentially, however much
 faster compute will be with parallel computing. If fast swap disk is available,
-this function needs only c.a. 5 GiBs of RAM per worked to perform tasks in this
+this function needs only c.a. 5 GiBs of RAM per worker to perform tasks in this
 project. However, if the swap disk is not available, at least 20 GiBs of RAM per
 worker need to be assigned.</p></li>
 </ul>
@@ -894,7 +894,7 @@ that yields one value per zone and per input layer. Runs tile-by-tile (by
 tile_field), writes per-tile rasters, merges to final per-layer GeoTIFF(s),
 then performs gap analysis (NA count within the template footprint and optional
 maximum gap width) and optional IDW gap filling via WhiteboxTools. Returns a
-compact data.frame with per-layer stats and timing. Function can be used to run
+compact <code>data.frame</code> with per-layer stats and timing. Function can be used to run
 sequentially, however much faster compute will be with parallel computing. If fast
 swap disk is available, this function needs only 3 GiBs of RAM per worked
 to perform tasks in this project. However, if the swap disk is not available, at
