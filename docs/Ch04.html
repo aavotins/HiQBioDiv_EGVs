@@ -835,11 +835,11 @@ GeoParquet format.</p>
 </div>
 <div id="Ch04.02" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Rural Support Service’s information on declared fields<a href="Ch04.html#Ch04.02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Rural Support Service maintains <a href="https://data.gov.lv/dati/lv/organization/lad">regularly updated information on the open
+<p>The Rural Support Service maintains <a href="https://data.gov.lv/dati/lv/organization/lad">regularly updated information on their open
 data portal</a>. An archive (since 2016) is
-also available there, and the data sets that can be used contain the keyword “deklarētās platības”.</p>
+also available there, and the data of interest contain the keyword “deklarētās platības”.</p>
 <p>After downloading files to <code>Geodata/2024/LAD/downloads/</code>, they are unzipped and read into R.
-Files are checked, empty geometries are deleted and the rest are validated, and all individual
+Files are checked, empty geometries are deleted and the rest are validated. Then, all individual
 files are combined into one, which is saved in GeoPackage and GeoParquet formats
 at <code>Geodata/2024/LAD/</code>. At the end, downloaded files are unlinked.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -2762,7 +2762,7 @@ therefore version 3 is used.</p></li>
 </div>
 <div id="Ch04.05" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Corine Land Cover 2018<a href="Ch04.html#Ch04.05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Corine Land Cover is publicly available geodata that characterizes land cover
+<p>Corine Land Cover is a publicly available geodata that characterizes land cover
 and land use (LULC) across Europe over a long period of time using a generally
 consistent (comparable) methodology (<a href="https://land.copernicus.eu/content/corine-land" class="uri">https://land.copernicus.eu/content/corine-land</a> -cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf),
 providing results for individual years - 1990, 2000, 2006, 2012,
@@ -2774,7 +2774,7 @@ data from 2018.</p>
 <p>The downloaded data set has been transformed into the Latvian coordinate
 system (EPSG:3059), and the file format has been changed to GeoParquet to
 facilitate and speed up further work. As part of the file format change,
-geometries (empty, validity) have been checked.</p>
+geometries (empty, valid) have been checked.</p>
 <p>Data are stored at <code>Geodata/2024/CLC/</code>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="Ch04.html#cb13-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2856,7 +2856,7 @@ Soil database <span class="citation">(<a href="#ref-esdac2">Panagos et al., 2022
 are several properties available for download, <code>TXT</code> was used to
 create <a href="Ch05.html#Ch05.02">soil texture product</a>. Files were downloaded to <code>Geodata/2024/Soils/ESDAC/texture/</code>.</p>
 <p>During the preprocessing (see code below) the layer was
-projected to match 10 m template with “near” as interpolation method, value <code>0</code>
+projected to match the 10 m template with “near” as interpolation method, value <code>0</code>
 substituted with <code>NA</code> and the result wars masked and cropped to the template.
 Result was saved for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -2905,7 +2905,7 @@ version we used was obtained from the project “GOODWATER” C1D1_Deliverable_R
 <li><p>coordinate transformation to EPSG:3059;</p></li>
 <li><p>invsestigation of the resulting layer looking for anomalies by scrolling in interactive
 GIS, which led to exclusion of land parcels larger than 200 ha.</p></li>
-<li><p>rasterisation to 10 m template with the highest class code prevailing.</p></li>
+<li><p>rasterisation to match the 10 m template with the highest class code prevailing.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="Ch04.html#cb15-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2981,7 +2981,7 @@ Department of Geology.</p>
 <li><p><code>organic</code> (4): “dunjas”, “kudra”;</p></li>
 </ul></li>
 <li><p>coordinate transformation to EPSG:3059;</p></li>
-<li><p>rasterisation to 10 m template with the highest class code prevailing.</p></li>
+<li><p>rasterisation to match the 10 m template with the highest class code prevailing.</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="Ch04.html#cb16-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -3091,7 +3091,7 @@ out as a part of preprocessing.</p>
 Latvia project “Improvement of sustainable soil resource management in agriculture: E2SOILAGRI”.</p>
 <p>From all the results we used layer <code>YN_prognozes_smooth.tif</code> stored
 at <code>Geodata/2024/Soils/OrganicSoils_LU/</code>.</p>
-<p>Preprocessing consisted of projecting the layer to match 10 m template. Both presences
+<p>Preprocessing consisted of projecting the layer to match the 10 m template. Both presences
 and absences were saved for further processing.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="Ch04.html#cb18-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -3123,20 +3123,20 @@ classifies land cover and land use (LULC) into nine categories (0=water, 1=trees
 8=snow_and_ice), for each ESA Copernicus Sentinel-2 image with identified
 cloudiness ≤35, allowing for filtering and various aggregations <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span>.</p>
 <p>DW input information - raster layer for each season in each year - was prepared on
-the Google Earth Engine platform <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span> using
+the Google Earth Engine (GEE) platform <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span> using
 a <a href="https://code.earthengine.google.com/0f9fd61ee41af11d218ce8692abebe9b">replication script</a>.
 To use this script, you need a <a href="https://console.cloud.google.com/earth-engine/welcome">GEE account and project</a>
-and sufficient space on Google Drive. When executing the command line, a download
+and sufficient space on Google Drive. When executing the command lines, a download
 will be offered for a file covering the time period from the value in row 7 to
 the value in row 8 (the file name should be specified in row 32, its
 description in row 33 and the directory on Google Drive in row 31, or
 all of this can be specified by confirming the save). This script is not optimized
-for preparing all seasonal sections for all years, so in order to reproduce or
+for preparing all seasonal periods for all years, so in order to reproduce or
 expand this study, it is necessary to change it manually.</p>
 <p>Downloaded files are to be stored at <code>Geodata/2024/DynamicWorld/RAW/</code>.</p>
-<p>During download, it can be seen that each layer covering the whole of Latvia is
+<p>During download, it can be seen that each layer covering all of Latvia is
 divided into several sheets. This is because, in order to ensure a true zero
-class (class “water” rather than background), the layers are encoded as Float
+class (class “water” rather than background), the layers are encoded as <code>Float</code>
 rather than integers. All of these tiles need to be downloaded, and the following
 R command lines combine them, ensuring that the coordinate system and pixels
 correspond to the reference raster.</p>
@@ -3278,16 +3278,16 @@ four-year period.</p>
 </div>
 <div id="Ch04.11" class="section level2 hasAnchor" number="4.11">
 <h2><span class="header-section-number">4.11</span> CHELSA v2.1<a href="Ch04.html#Ch04.11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Climatologies at high resolution for the Earth’s land surface areas (CHELSA) is
+<p>Climatologies at high resolution for the Earth’s land surface areas (CHELSA) is a
 30 arc second global downscaled climate data set <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span>. The temperature algorithm
 is based on statistical downscaling of atmospheric temperatures. The precipitation
 algorithm incorporates orographic predictors including wind fields, valley
 exposition, and boundary layer height, with a subsequent bias correction. CHELSA
 climatological data has a similar accuracy as other products for temperature, but its predictions of precipitation patterns are better <span class="citation">(<a href="#ref-CHELSA">Karger et al., 2017</a>)</span>. Data
 (1980-2010 baseline) are freely available for download
-from <a href="https://chelsa-climate.org/">homepage</a> forwarding
-to download server, providing download links for selected products. There is also technical
-specification available, to decode layer names (<a href="https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf" class="uri">https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf</a>).</p>
+from the <a href="https://chelsa-climate.org/">homepage</a> forwarding
+to download server, with download links for selected products available. There is also technical
+specification available. In this project we used version 2.1.</p>
 <p>The download links we used together with the renaming scheme are <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv">included</a>
 with this document. The following command lines perform download, crop to the
 extent of Latvia (using 1 km vector grid) and save the files for further processing
@@ -3424,12 +3424,12 @@ following files will be offered for download:</p>
 <li><p><code>NDWI_iqr-ST-[runtag, 20250820 by default]</code> - NDWI short-term median (2020-2024) of inter-quartile ranges (April to October)</p></li>
 <li><p><code>NDWI_median-LY-[runtag, 20250820 by default]</code> - NDWI last-years (2024) median (April to October)</p></li>
 </ul>
-<p>After executing the command line and preparing the results in Google Drive, it
-can be seen that each layer covering the whole of Latvia is divided into
+<p>After executing the command lines and preparing the results in Google Drive, it
+can be seen that each layer covering all of Latvia is divided into
 several tiles. This is because the layers are encoded as Float and exceed 4 GB
 in size before GeoTIFF compression. All of these files need to be downloaded and
 located at <code>Geodata/2024/S2indices/RAW</code>. The following R commands combine them,
-ensuring the coordinate systems and its naming, and pixels match the reference
+ensuring the coordinate systems and its naming, and pixels matching to the reference
 raster, while renaming files to <code>EO_[index]-[term: ST or LY][statistic]</code>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="Ch04.html#cb24-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -3496,7 +3496,7 @@ resources <a href="https://www.google.com/maps" class="uri">https://www.google.c
 the resources mentioned above, an object was added at the address
 “Dardedzes C, Mārupes pag., Mārupes nov., Latvia, LV-2166”.</p>
 <p>In addition, information from the <a href="https://skiroviegli.lv/#/">State Environmental Service on
-separated waste and deposit packaging collection points</a>
+separate waste and deposit packaging collection points</a>
 was used, exporting it to an Excel file.</p>
 <p>Both data sets were combined into a single file
 and <a href="https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/GarbageWasteLandfills/Atkritumi.xlsx">added</a> to this material.</p>
@@ -3577,7 +3577,7 @@ direction.</p>
 <span id="cb25-44"><a href="Ch04.html#cb25-44" tabindex="-1"></a>  }</span>
 <span id="cb25-45"><a href="Ch04.html#cb25-45" tabindex="-1"></a>}</span>
 <span id="cb25-46"><a href="Ch04.html#cb25-46" tabindex="-1"></a></span>
-<span id="cb25-47"><a href="Ch04.html#cb25-47" tabindex="-1"></a><span class="co"># vrt un mozaic</span></span>
+<span id="cb25-47"><a href="Ch04.html#cb25-47" tabindex="-1"></a><span class="co"># vrt un mosaic</span></span>
 <span id="cb25-48"><a href="Ch04.html#cb25-48" tabindex="-1"></a>lapas_10<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">faili=</span><span class="fu">list.files</span>(<span class="st">&quot;./Geodata/2024/DEM/meanDEM_10m/&quot;</span>,<span class="at">pattern=</span><span class="st">&quot;*.tif$&quot;</span>))</span>
 <span id="cb25-49"><a href="Ch04.html#cb25-49" tabindex="-1"></a>lapas_10<span class="sc">$</span>celi1<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/DEM/meanDEM_10m/&quot;</span>,lapas_10<span class="sc">$</span>faili)</span>
 <span id="cb25-50"><a href="Ch04.html#cb25-50" tabindex="-1"></a>mozaikai<span class="ot">=</span><span class="fu">vrt</span>(lapas_10<span class="sc">$</span>celi1,<span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
@@ -3607,7 +3607,7 @@ analogically connected to the coastline file obtained from the same resource.</p
 <h2><span class="header-section-number">4.17</span> Bogs and Mires: EDI<a href="Ch04.html#Ch04.17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Data (training and classification) used in project “Remote Sensing and Machine
 Learning for Peatland Habitat Monitoring (PurvEO)” by the Institute of electronics
-and computer science were stored at <code>Geodata/2024/Bogs_EDI</code>.</p>
+and computer science (EDI) were stored at <code>Geodata/2024/Bogs_EDI</code>.</p>
 <p>Preprocessing was carried out to create two layers:</p>
 <ul>
 <li><p><code>EDI_BogsYN.tif</code>: training and classification results on open raised bogs (EU

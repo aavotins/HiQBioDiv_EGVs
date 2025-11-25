@@ -47,12 +47,12 @@ sfarrow::st_write_parquet(nogabali4, "./Geodata/2024/MVR/nogabali_2024janv.parqu
 
 ## Rural Support Service's information on declared fields {#Ch04.02}
 
-The Rural Support Service maintains [regularly updated information on the open 
+The Rural Support Service maintains [regularly updated information on their open 
 data portal](https://data.gov.lv/dati/lv/organization/lad). An archive (since 2016) is 
-also available there, and the data sets that can be used contain the keyword “deklarētās platības”. 
+also available there, and the data of interest contain the keyword “deklarētās platības”. 
 
 After downloading files to `Geodata/2024/LAD/downloads/`, they are unzipped and read into R. 
-Files are checked, empty geometries are deleted and the rest are validated, and all individual 
+Files are checked, empty geometries are deleted and the rest are validated. Then, all individual 
 files are combined into one, which is saved in GeoPackage and GeoParquet formats 
 at `Geodata/2024/LAD/`. At the end, downloaded files are unlinked.
 
@@ -1998,7 +1998,7 @@ sfarrow::st_write_parquet(data_3,"./Geodata/2024/TopographicMap/BuildA_v3.parque
 
 ## Corine Land Cover 2018 {#Ch04.05}
 
-Corine Land Cover is publicly available geodata that characterizes land cover 
+Corine Land Cover is a publicly available geodata that characterizes land cover 
 and land use (LULC) across Europe over a long period of time using a generally 
 consistent (comparable) methodology (https://land.copernicus.eu/content/corine-land -cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), 
 providing results for individual years - 1990, 2000, 2006, 2012, 
@@ -2011,7 +2011,7 @@ data from 2018.
 The downloaded data set has been transformed into the Latvian coordinate 
 system (EPSG:3059), and the file format has been changed to GeoParquet to 
 facilitate and speed up further work. As part of the file format change, 
-geometries (empty, validity) have been checked.
+geometries (empty, valid) have been checked.
 
 Data are stored at `Geodata/2024/CLC/`.
 
@@ -2114,7 +2114,7 @@ are several properties available for download, `TXT` was used to
 create [soil texture product](#Ch05.02). Files were downloaded to `Geodata/2024/Soils/ESDAC/texture/`. 
 
 During the preprocessing (see code below) the layer was 
-projected to match 10 m template with "near" as interpolation method, value `0` 
+projected to match the 10 m template with "near" as interpolation method, value `0` 
 substituted with `NA` and the result wars masked and cropped to the template. 
 Result was saved for further processing.
 
@@ -2175,7 +2175,7 @@ Preprocessing included:
 - invsestigation of the resulting layer looking for anomalies by scrolling in interactive 
 GIS, which led to exclusion of land parcels larger than 200 ha.
 
-- rasterisation to 10 m template with the highest class code prevailing.
+- rasterisation to match the 10 m template with the highest class code prevailing.
 
 
 ```{r,eval=FALSE}
@@ -2259,7 +2259,7 @@ Preprocessing included:
 
 - coordinate transformation to EPSG:3059;
 
-- rasterisation to 10 m template with the highest class code prevailing.
+- rasterisation to match the 10 m template with the highest class code prevailing.
 
 
 ```{r, eval=FALSE}
@@ -2378,7 +2378,7 @@ Latvia project "Improvement of sustainable soil resource management in agricultu
 From all the results we used layer `YN_prognozes_smooth.tif` stored 
 at `Geodata/2024/Soils/OrganicSoils_LU/`.
 
-Preprocessing consisted of projecting the layer to match 10 m template. Both presences 
+Preprocessing consisted of projecting the layer to match the 10 m template. Both presences 
 and absences were saved for further processing.
 
 ```{r,eval=FALSE}
@@ -2414,22 +2414,22 @@ classifies land cover and land use (LULC) into nine categories (0=water, 1=trees
 cloudiness ≤35, allowing for filtering and various aggregations [@DynWorld].
 
 DW input information - raster layer for each season in each year - was prepared on 
-the Google Earth Engine platform [@GEEpaper] using 
+the Google Earth Engine (GEE) platform [@GEEpaper] using 
 a [replication script](https://code.earthengine.google.com/0f9fd61ee41af11d218ce8692abebe9b). 
 To use this script, you need a [GEE account and project](https://console.cloud.google.com/earth-engine/welcome) 
-and sufficient space on Google Drive. When executing the command line, a download 
+and sufficient space on Google Drive. When executing the command lines, a download 
 will be offered for a file covering the time period from the value in row 7 to 
 the value in row 8 (the file name should be specified in row 32, its 
 description in row 33 and the directory on Google Drive in row 31, or 
 all of this can be specified by confirming the save). This script is not optimized 
-for preparing all seasonal sections for all years, so in order to reproduce or 
+for preparing all seasonal periods for all years, so in order to reproduce or 
 expand this study, it is necessary to change it manually.
 
 Downloaded files are to be stored at `Geodata/2024/DynamicWorld/RAW/`.
 
-During download, it can be seen that each layer covering the whole of Latvia is 
+During download, it can be seen that each layer covering all of Latvia is 
 divided into several sheets. This is because, in order to ensure a true zero 
-class (class "water" rather than background), the layers are encoded as Float 
+class (class "water" rather than background), the layers are encoded as `Float` 
 rather than integers. All of these tiles need to be downloaded, and the following 
 R command lines combine them, ensuring that the coordinate system and pixels 
 correspond to the reference raster.
@@ -2582,16 +2582,16 @@ fnf_XX=mask(fnf_X,template10,
 
 ## CHELSA v2.1 {#Ch04.11}
 
-Climatologies at high resolution for the Earth's land surface areas (CHELSA) is 
+Climatologies at high resolution for the Earth's land surface areas (CHELSA) is a 
 30 arc second global downscaled climate data set [@CHELSA]. The temperature algorithm 
 is based on statistical downscaling of atmospheric temperatures. The precipitation 
 algorithm incorporates orographic predictors including wind fields, valley 
 exposition, and boundary layer height, with a subsequent bias correction. CHELSA 
 climatological data has a similar accuracy as other products for temperature, but  its predictions of precipitation patterns are better [@CHELSA]. Data 
 (1980-2010 baseline) are freely available for download 
-from [homepage](https://chelsa-climate.org/) forwarding 
-to download server, providing download links for selected products. There is also technical 
-specification available, to decode layer names (https://chelsa-climate.org/wp-admin/download-page/CHELSA_tech_specification_V2.pdf).
+from the [homepage](https://chelsa-climate.org/) forwarding 
+to download server, with download links for selected products available. There is also technical 
+specification available. In this project we used version 2.1.
 
 The download links we used together with the renaming scheme are [included](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/CHELSA/CHELSAdownload_rename.csv) 
 with this document. The following command lines perform download, crop to the 
@@ -2653,7 +2653,7 @@ worldclim [@worldclim_hijmans]. We downloaded (to `Geodata/2024/HydroClim/`)
 averaged upstream climate from [Zenodo repository](https://zenodo.org/records/5089529) 
 (available also from [Dryad](https://datadryad.org/dataset/doi:10.5061/dryad.dv920)) 
 and cropped to the extent of Latvia and renamed files for further processing 
-with the code below. Renaming scheme is [published with document](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv).
+with the code below. Renaming scheme is [published with  document](https://github.com/aavotins/HiQBioDiv_EGVs/blob/main/Data/Geodata/2024/HydroClim/HydroClim_renaming.csv).
 
 ```{r,eval=FALSE}
 # libs ----
@@ -2749,12 +2749,12 @@ following files will be offered for download:
 
 - `NDWI_median-LY-[runtag, 20250820 by default]` - NDWI last-years (2024) median (April to October)
 
-After executing the command line and preparing the results in Google Drive, it 
-can be seen that each layer covering the whole of Latvia is divided into 
+After executing the command lines and preparing the results in Google Drive, it 
+can be seen that each layer covering all of Latvia is divided into 
 several tiles. This is because the layers are encoded as Float and exceed 4 GB 
 in size before GeoTIFF compression. All of these files need to be downloaded and 
 located at `Geodata/2024/S2indices/RAW`. The following R commands combine them, 
-ensuring the coordinate systems and its naming, and pixels match the reference 
+ensuring the coordinate systems and its naming, and pixels matching to the reference 
 raster, while renaming files to ``EO_[index]-[term: ST or LY][statistic]``.
 
 ```{r,eval=FALSE}
@@ -2824,7 +2824,7 @@ the resources mentioned above, an object was added at the address
 "Dardedzes C, Mārupes pag., Mārupes nov., Latvia, LV-2166".
 
 In addition, information from the [State Environmental Service on 
-separated waste and deposit packaging collection points](https://skiroviegli.lv/#/) 
+separate waste and deposit packaging collection points](https://skiroviegli.lv/#/) 
 was used, exporting it to an Excel file.
 
 Both data sets were combined into a single file 
@@ -2911,7 +2911,7 @@ for(i in 1:length(kvadrati$name)){
   }
 }
 
-# vrt un mozaic
+# vrt un mosaic
 lapas_10=data.frame(faili=list.files("./Geodata/2024/DEM/meanDEM_10m/",pattern="*.tif$"))
 lapas_10$celi1=paste0("./Geodata/2024/DEM/meanDEM_10m/",lapas_10$faili)
 mozaikai=vrt(lapas_10$celi1,overwrite=TRUE,
@@ -2945,7 +2945,7 @@ analogically connected to the coastline file obtained from the same resource.
 
 Data (training and classification) used in project "Remote Sensing and Machine 
 Learning for Peatland Habitat Monitoring (PurvEO)" by the Institute of electronics 
-and computer science were stored at `Geodata/2024/Bogs_EDI`.
+and computer science (EDI) were stored at `Geodata/2024/Bogs_EDI`.
 
 Preprocessing was carried out to create two layers:
 

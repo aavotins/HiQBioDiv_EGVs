@@ -136,6 +136,8 @@ Acronyms:
 
 **EGV** - ecogeographical variables
 
+**GEE** - Google Earth Engine
+
 **SDM** - species distribution modelling
 
 **SDMs** - species distribution models
