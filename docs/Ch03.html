@@ -805,32 +805,32 @@ the HiQBioDiv main code repository’s <a href="https://github.com/aavotins/HiQB
 <p>The easiest way to obtain these files is to run determined
 function <code>download_vector_templates()</code> from {egvtools}.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch03.html#cb8-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
-<span id="cb8-2"><a href="Ch03.html#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="Ch03.html#cb8-3" tabindex="-1"></a><span class="fu">download_vector_templates</span>(</span>
-<span id="cb8-4"><a href="Ch03.html#cb8-4" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14277114/files-archive&quot;</span>,</span>
-<span id="cb8-5"><a href="Ch03.html#cb8-5" tabindex="-1"></a>  <span class="at">grid_dir =</span> <span class="st">&quot;./Templates/TemplateGrids&quot;</span>,</span>
-<span id="cb8-6"><a href="Ch03.html#cb8-6" tabindex="-1"></a>  <span class="at">points_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
-<span id="cb8-7"><a href="Ch03.html#cb8-7" tabindex="-1"></a>  <span class="at">gpkg_dir =</span> <span class="st">&quot;./Templates&quot;</span>,</span>
-<span id="cb8-8"><a href="Ch03.html#cb8-8" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb8-9"><a href="Ch03.html#cb8-9" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
-<span id="cb8-10"><a href="Ch03.html#cb8-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Ch03.html#cb4-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb4-2"><a href="Ch03.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="Ch03.html#cb4-3" tabindex="-1"></a><span class="fu">download_vector_templates</span>(</span>
+<span id="cb4-4"><a href="Ch03.html#cb4-4" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14277114/files-archive&quot;</span>,</span>
+<span id="cb4-5"><a href="Ch03.html#cb4-5" tabindex="-1"></a>  <span class="at">grid_dir =</span> <span class="st">&quot;./Templates/TemplateGrids&quot;</span>,</span>
+<span id="cb4-6"><a href="Ch03.html#cb4-6" tabindex="-1"></a>  <span class="at">points_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
+<span id="cb4-7"><a href="Ch03.html#cb4-7" tabindex="-1"></a>  <span class="at">gpkg_dir =</span> <span class="st">&quot;./Templates&quot;</span>,</span>
+<span id="cb4-8"><a href="Ch03.html#cb4-8" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-9"><a href="Ch03.html#cb4-9" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-10"><a href="Ch03.html#cb4-10" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <p>Once template vector data are downloaded and unarchived, they need to be tiled:</p>
 <ol style="list-style-type: decimal">
 <li>Analysis grid is tiled in <code>tks50km</code> pages</li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Ch03.html#cb9-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
-<span id="cb9-2"><a href="Ch03.html#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="Ch03.html#cb9-3" tabindex="-1"></a><span class="fu">tile_vector_grid</span>(</span>
-<span id="cb9-4"><a href="Ch03.html#cb9-4" tabindex="-1"></a>  <span class="at">grid_path =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
-<span id="cb9-5"><a href="Ch03.html#cb9-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles&quot;</span>,</span>
-<span id="cb9-6"><a href="Ch03.html#cb9-6" tabindex="-1"></a>  <span class="at">tile_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb9-7"><a href="Ch03.html#cb9-7" tabindex="-1"></a>  <span class="at">chunk_size =</span> <span class="dv">50000</span><span class="dt">L</span>,</span>
-<span id="cb9-8"><a href="Ch03.html#cb9-8" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb9-9"><a href="Ch03.html#cb9-9" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
-<span id="cb9-10"><a href="Ch03.html#cb9-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Ch03.html#cb5-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb5-2"><a href="Ch03.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="Ch03.html#cb5-3" tabindex="-1"></a><span class="fu">tile_vector_grid</span>(</span>
+<span id="cb5-4"><a href="Ch03.html#cb5-4" tabindex="-1"></a>  <span class="at">grid_path =</span> <span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>,</span>
+<span id="cb5-5"><a href="Ch03.html#cb5-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGrids/tiles&quot;</span>,</span>
+<span id="cb5-6"><a href="Ch03.html#cb5-6" tabindex="-1"></a>  <span class="at">tile_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb5-7"><a href="Ch03.html#cb5-7" tabindex="-1"></a>  <span class="at">chunk_size =</span> <span class="dv">50000</span><span class="dt">L</span>,</span>
+<span id="cb5-8"><a href="Ch03.html#cb5-8" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-9"><a href="Ch03.html#cb5-9" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-10"><a href="Ch03.html#cb5-10" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <p>Expect to see warning:
 <code>This is an initial implementation of Parquet/Feather file support and geo metadata. This is tracking version 0.1.0 of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata specification may change and does not yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to rewrite your Parquet/Feather files.</code></p>
@@ -845,21 +845,21 @@ we used a “sparse” grid:</p>
 </ul></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="Ch03.html#cb10-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
-<span id="cb10-2"><a href="Ch03.html#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="Ch03.html#cb10-3" tabindex="-1"></a><span class="fu">tiled_buffers</span>(</span>
-<span id="cb10-4"><a href="Ch03.html#cb10-4" tabindex="-1"></a>  <span class="at">in_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
-<span id="cb10-5"><a href="Ch03.html#cb10-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles&quot;</span>,</span>
-<span id="cb10-6"><a href="Ch03.html#cb10-6" tabindex="-1"></a>  <span class="at">buffer_mode =</span> <span class="st">&quot;sparse&quot;</span>,</span>
-<span id="cb10-7"><a href="Ch03.html#cb10-7" tabindex="-1"></a>  <span class="at">mapping_sparse =</span> <span class="fu">list</span>(<span class="st">&quot;pts100_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1250</span>), </span>
-<span id="cb10-8"><a href="Ch03.html#cb10-8" tabindex="-1"></a>                        <span class="st">&quot;pts300_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="dv">3000</span>, </span>
-<span id="cb10-9"><a href="Ch03.html#cb10-9" tabindex="-1"></a>                        <span class="st">&quot;pts1000_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="dv">10000</span>),</span>
-<span id="cb10-10"><a href="Ch03.html#cb10-10" tabindex="-1"></a>  <span class="at">split_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
-<span id="cb10-11"><a href="Ch03.html#cb10-11" tabindex="-1"></a>  <span class="at">n_workers =</span> <span class="dv">4</span>,</span>
-<span id="cb10-12"><a href="Ch03.html#cb10-12" tabindex="-1"></a>  <span class="at">future_max_mem_gb =</span> <span class="dv">4</span>,</span>
-<span id="cb10-13"><a href="Ch03.html#cb10-13" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-14"><a href="Ch03.html#cb10-14" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
-<span id="cb10-15"><a href="Ch03.html#cb10-15" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Ch03.html#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb6-2"><a href="Ch03.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="Ch03.html#cb6-3" tabindex="-1"></a><span class="fu">tiled_buffers</span>(</span>
+<span id="cb6-4"><a href="Ch03.html#cb6-4" tabindex="-1"></a>  <span class="at">in_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints&quot;</span>,</span>
+<span id="cb6-5"><a href="Ch03.html#cb6-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateGridPoints/tiles&quot;</span>,</span>
+<span id="cb6-6"><a href="Ch03.html#cb6-6" tabindex="-1"></a>  <span class="at">buffer_mode =</span> <span class="st">&quot;sparse&quot;</span>,</span>
+<span id="cb6-7"><a href="Ch03.html#cb6-7" tabindex="-1"></a>  <span class="at">mapping_sparse =</span> <span class="fu">list</span>(<span class="st">&quot;pts100_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1250</span>), </span>
+<span id="cb6-8"><a href="Ch03.html#cb6-8" tabindex="-1"></a>                        <span class="st">&quot;pts300_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="dv">3000</span>, </span>
+<span id="cb6-9"><a href="Ch03.html#cb6-9" tabindex="-1"></a>                        <span class="st">&quot;pts1000_sauzeme.parquet&quot;</span> <span class="ot">=</span> <span class="dv">10000</span>),</span>
+<span id="cb6-10"><a href="Ch03.html#cb6-10" tabindex="-1"></a>  <span class="at">split_field =</span> <span class="st">&quot;tks50km&quot;</span>,</span>
+<span id="cb6-11"><a href="Ch03.html#cb6-11" tabindex="-1"></a>  <span class="at">n_workers =</span> <span class="dv">4</span>,</span>
+<span id="cb6-12"><a href="Ch03.html#cb6-12" tabindex="-1"></a>  <span class="at">future_max_mem_gb =</span> <span class="dv">4</span>,</span>
+<span id="cb6-13"><a href="Ch03.html#cb6-13" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-14"><a href="Ch03.html#cb6-14" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-15"><a href="Ch03.html#cb6-15" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <p>Expect to see warning:
 <code>This is an initial implementation of Parquet/Feather file support and geo metadata. This is tracking version 0.1.0 of the metadata (https://github.com/geopandas/geo-arrow-spec). This metadata specification may change and does not yet make stability promises.  We do not yet recommend using this in a production setting unless you are able to rewrite your Parquet/Feather files.</code></p>
@@ -875,27 +875,27 @@ the HiQBioDiv main code repository’s <a href="https://github.com/aavotins/HiQB
 <p>The easiest way to obtain these files is to run determined
 function <code>download_raster_templates()</code> from {egvtools}.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="Ch03.html#cb11-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
-<span id="cb11-2"><a href="Ch03.html#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="Ch03.html#cb11-3" tabindex="-1"></a><span class="fu">download_raster_templates</span>(</span>
-<span id="cb11-4"><a href="Ch03.html#cb11-4" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14497070/files-archive&quot;</span>,</span>
-<span id="cb11-5"><a href="Ch03.html#cb11-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters&quot;</span>,</span>
-<span id="cb11-6"><a href="Ch03.html#cb11-6" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-7"><a href="Ch03.html#cb11-7" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
-<span id="cb11-8"><a href="Ch03.html#cb11-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Ch03.html#cb7-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb7-2"><a href="Ch03.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="Ch03.html#cb7-3" tabindex="-1"></a><span class="fu">download_raster_templates</span>(</span>
+<span id="cb7-4"><a href="Ch03.html#cb7-4" tabindex="-1"></a>  <span class="at">url =</span> <span class="st">&quot;https://zenodo.org/api/records/14497070/files-archive&quot;</span>,</span>
+<span id="cb7-5"><a href="Ch03.html#cb7-5" tabindex="-1"></a>  <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters&quot;</span>,</span>
+<span id="cb7-6"><a href="Ch03.html#cb7-6" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-7"><a href="Ch03.html#cb7-7" tabindex="-1"></a>  <span class="at">quiet =</span> <span class="cn">FALSE</span></span>
+<span id="cb7-8"><a href="Ch03.html#cb7-8" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <p>During EGV creation, background filling to handle missing values may be
 necessary. For all EGVs described in this document where such an exercise might
 be required, the variables can be considered quantities of ratio scale, therefore backgrounds
 with value <code>0</code> are created.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="Ch03.html#cb12-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
-<span id="cb12-2"><a href="Ch03.html#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="Ch03.html#cb12-3" tabindex="-1"></a><span class="fu">create_backgrounds</span>(<span class="at">in_dir=</span><span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
-<span id="cb12-4"><a href="Ch03.html#cb12-4" tabindex="-1"></a>                   <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
-<span id="cb12-5"><a href="Ch03.html#cb12-5" tabindex="-1"></a>                   <span class="at">background_value =</span> <span class="dv">0</span>,</span>
-<span id="cb12-6"><a href="Ch03.html#cb12-6" tabindex="-1"></a>                   <span class="at">out_prefix =</span> <span class="st">&quot;nulls_&quot;</span>,</span>
-<span id="cb12-7"><a href="Ch03.html#cb12-7" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Ch03.html#cb8-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(egvtools)) {remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;aavotins/egvtools&quot;</span>); <span class="fu">require</span>(egvtools)}</span>
+<span id="cb8-2"><a href="Ch03.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="Ch03.html#cb8-3" tabindex="-1"></a><span class="fu">create_backgrounds</span>(<span class="at">in_dir=</span><span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
+<span id="cb8-4"><a href="Ch03.html#cb8-4" tabindex="-1"></a>                   <span class="at">out_dir =</span> <span class="st">&quot;./Templates/TemplateRasters/&quot;</span>,</span>
+<span id="cb8-5"><a href="Ch03.html#cb8-5" tabindex="-1"></a>                   <span class="at">background_value =</span> <span class="dv">0</span>,</span>
+<span id="cb8-6"><a href="Ch03.html#cb8-6" tabindex="-1"></a>                   <span class="at">out_prefix =</span> <span class="st">&quot;nulls_&quot;</span>,</span>
+<span id="cb8-7"><a href="Ch03.html#cb8-7" tabindex="-1"></a>                   <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 
 </div>

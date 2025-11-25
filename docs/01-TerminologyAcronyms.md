@@ -40,86 +40,87 @@ by the root mean square error. Therefore, the values are more suitable for
 modelling, and the layers can be made publicly available as they do not directly 
 provide exact sensitive information.
 
-In this material, we use the term *species distribution modelling* as a more used term, that 
-is synonymous with *ecological niche analysis* and *ecological niche modelling*.
+In this material, we use the term *species distribution modelling* **(SDM)** as 
+a more broadly used term, that is synonymous with *ecological niche analysis* 
+and *ecological niche modelling*.
 
 Tree species groups:
 
 **coniferous** - following species (codes) as used in the national forest 
 stand-level-inventory database:
 
-    - pines (1, 14, 22)
+  - pines (1, 14, 22)
     
-    - spruces (3, 15)
+  - spruces (3, 15)
     
-    - larch (13)
+  - larch (13)
     
-    - firs (23, 28)
+  - firs (23, 28)
 
 **boreal deciduous** - following species (codes) as used in the national forest 
 stand-level-inventory database:
 
-    - birches (4)
+  - birches (4)
     
-    - black alder (6)
+  - black alder (6)
     
-    - aspens (8, 19, 68)
+  - aspens (8, 19, 68)
     
-    - grey alder (9)
+  - grey alder (9)
     
-    - willows (20, 21)
+  - willows (20, 21)
     
-    - rowan (32)
+  - rowan (32)
     
-    - eve (35)
+  - eve (35)
 
 **temperate deciduous** - following species (codes) as used in the national forest 
 stand-level-inventory database:
 
-    - oaks (10, 61)
+  - oaks (10, 61)
     
-    - ashes (11, 64)
+  - ashes (11, 64)
     
-    - lindens (12, 62)
+  - lindens (12, 62)
     
-    - elms (16, 65)
+  - elms (16, 65)
     
-    - beech (17)
+  - beech (17)
     
-    - hornbeam (18)
+  - hornbeam (18)
     
-    - maples (24, 63)
+  - maples (24, 63)
     
-    - cherry (25)
+  - cherry (25)
     
-    - apple (26)
+  - apple (26)
     
-    - pear (27)
+  - pear (27)
     
-    - yew (29)
+  - yew (29)
     
-    - acacia (50)
+  - acacia (50)
     
-    - walnut (66)
+  - walnut (66)
     
-    - chestnut (67)
+  - chestnut (67)
     
-    - robinia (69)
+  - robinia (69)
 
 
-Forest stand **age groups** as used in the national forest 
+Forest stand **age groups** *(vgr)* as used in the national forest 
 stand-level-inventory database:
 
-    - young stands (vgr = 1) in coniferous trees, ashes and oaks - until 40 years, 
+  - young stands (vgr = 1) in coniferous trees, ashes and oaks - until 40 years, 
     in grey alder - until 10 years, in other tree species - until 20 years;
     
-    - medium aged stands (vgr = 2 or vgr = 3) are between young stands (vgr = 1) and legal rotation age;
+  - medium aged stands (vgr = 2 or vgr = 3) are between young stands (vgr = 1) and legal rotation age;
     
-    - old stands (vgr = 4 or vgr = 5) are stands exceeding legal rotation age. This is 
+  - old stands (vgr = 4 or vgr = 5) are stands exceeding legal rotation age. This is 
     defined in [by law](https://likumi.lv/ta/id/2825#p9) based on tree species and 
-    site quality class (bonity). Generally for oaks, pines and larches it is 101 or 121 year, 
-    for spruces, ashes, limes, elms and maples it is 81 year, for birches it is 71 or 51 year, 
-    for black alder it is 71 year, for aspens it is 41 year. Currently, there is no minimum 
+    site quality class (bonity). Generally for oaks, pines and larches it is 101 or 121 years, 
+    for spruces, ashes, limes, elms and maples it is 81 years, for birches it is 71 or 51 years, 
+    for black alder it is 71 years, for aspens it is 41 years. Currently, there is no minimum 
     rotation age in grey alder. We used 35 years, as it is the age of the youngest 
     stand registered as “full grown” in the databse. This was necessary for the 
     harmonization of EGVs throughout forests.
@@ -130,6 +131,8 @@ Acronyms:
 **CRS** - coordinate reference system
 
 **DW** - [Dynamic World](#Ch04.08)
+
+**EDI** - Institute of Electronics and Computer Sciences 
 
 **EGV** - ecogeographical variables
 
@@ -142,6 +145,8 @@ Acronyms:
 **LĢIA** - Latvian Geospatial Information Agency
 
 **LULC** - Land use and land cover
+
+**LU** - University of Latvia
 
 **LU ĢZZF** - University of Latvia Faculty of Geography and Earth Sciences
 

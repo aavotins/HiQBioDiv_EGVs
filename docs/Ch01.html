@@ -830,88 +830,74 @@ by the root mean square error. Therefore, the values are more suitable for
 modelling, and the layers can be made publicly available as they do not directly
 provide exact sensitive information.</p></li>
 </ul>
-<p>In this material, we use the term <em>species distribution modelling</em> as a more used term, that
-is synonymous with <em>ecological niche analysis</em> and <em>ecological niche modelling</em>.</p>
+<p>In this material, we use the term <em>species distribution modelling</em> <strong>(SDM)</strong> as
+a more broadly used term, that is synonymous with <em>ecological niche analysis</em>
+and <em>ecological niche modelling</em>.</p>
 <p>Tree species groups:</p>
 <p><strong>coniferous</strong> - following species (codes) as used in the national forest
 stand-level-inventory database:</p>
-<pre><code>- pines (1, 14, 22)
-
-- spruces (3, 15)
-
-- larch (13)
-
-- firs (23, 28)</code></pre>
+<ul>
+<li><p>pines (1, 14, 22)</p></li>
+<li><p>spruces (3, 15)</p></li>
+<li><p>larch (13)</p></li>
+<li><p>firs (23, 28)</p></li>
+</ul>
 <p><strong>boreal deciduous</strong> - following species (codes) as used in the national forest
 stand-level-inventory database:</p>
-<pre><code>- birches (4)
-
-- black alder (6)
-
-- aspens (8, 19, 68)
-
-- grey alder (9)
-
-- willows (20, 21)
-
-- rowan (32)
-
-- eve (35)</code></pre>
+<ul>
+<li><p>birches (4)</p></li>
+<li><p>black alder (6)</p></li>
+<li><p>aspens (8, 19, 68)</p></li>
+<li><p>grey alder (9)</p></li>
+<li><p>willows (20, 21)</p></li>
+<li><p>rowan (32)</p></li>
+<li><p>eve (35)</p></li>
+</ul>
 <p><strong>temperate deciduous</strong> - following species (codes) as used in the national forest
 stand-level-inventory database:</p>
-<pre><code>- oaks (10, 61)
-
-- ashes (11, 64)
-
-- lindens (12, 62)
-
-- elms (16, 65)
-
-- beech (17)
-
-- hornbeam (18)
-
-- maples (24, 63)
-
-- cherry (25)
-
-- apple (26)
-
-- pear (27)
-
-- yew (29)
-
-- acacia (50)
-
-- walnut (66)
-
-- chestnut (67)
-
-- robinia (69)</code></pre>
-<p>Forest stand <strong>age groups</strong> as used in the national forest
+<ul>
+<li><p>oaks (10, 61)</p></li>
+<li><p>ashes (11, 64)</p></li>
+<li><p>lindens (12, 62)</p></li>
+<li><p>elms (16, 65)</p></li>
+<li><p>beech (17)</p></li>
+<li><p>hornbeam (18)</p></li>
+<li><p>maples (24, 63)</p></li>
+<li><p>cherry (25)</p></li>
+<li><p>apple (26)</p></li>
+<li><p>pear (27)</p></li>
+<li><p>yew (29)</p></li>
+<li><p>acacia (50)</p></li>
+<li><p>walnut (66)</p></li>
+<li><p>chestnut (67)</p></li>
+<li><p>robinia (69)</p></li>
+</ul>
+<p>Forest stand <strong>age groups</strong> <em>(vgr)</em> as used in the national forest
 stand-level-inventory database:</p>
-<pre><code>- young stands (vgr = 1) in coniferous trees, ashes and oaks - until 40 years, 
-in grey alder - until 10 years, in other tree species - until 20 years;
-
-- medium aged stands (vgr = 2 or vgr = 3) are between young stands (vgr = 1) and legal rotation age;
-
-- old stands (vgr = 4 or vgr = 5) are stands exceeding legal rotation age. This is 
-defined in [by law](https://likumi.lv/ta/id/2825#p9) based on tree species and 
-site quality class (bonity). Generally for oaks, pines and larches it is 101 or 121 year, 
-for spruces, ashes, limes, elms and maples it is 81 year, for birches it is 71 or 51 year, 
-for black alder it is 71 year, for aspens it is 41 year. Currently, there is no minimum 
-rotation age in grey alder. We used 35 years, as it is the age of the youngest 
-stand registered as “full grown” in the databse. This was necessary for the 
-harmonization of EGVs throughout forests.</code></pre>
+<ul>
+<li><p>young stands (vgr = 1) in coniferous trees, ashes and oaks - until 40 years,
+in grey alder - until 10 years, in other tree species - until 20 years;</p></li>
+<li><p>medium aged stands (vgr = 2 or vgr = 3) are between young stands (vgr = 1) and legal rotation age;</p></li>
+<li><p>old stands (vgr = 4 or vgr = 5) are stands exceeding legal rotation age. This is
+defined in <a href="https://likumi.lv/ta/id/2825#p9">by law</a> based on tree species and
+site quality class (bonity). Generally for oaks, pines and larches it is 101 or 121 years,
+for spruces, ashes, limes, elms and maples it is 81 years, for birches it is 71 or 51 years,
+for black alder it is 71 years, for aspens it is 41 years. Currently, there is no minimum
+rotation age in grey alder. We used 35 years, as it is the age of the youngest
+stand registered as “full grown” in the databse. This was necessary for the
+harmonization of EGVs throughout forests.</p></li>
+</ul>
 <p>Acronyms:</p>
 <p><strong>CRS</strong> - coordinate reference system</p>
 <p><strong>DW</strong> - <a href="Ch04.html#Ch04.08">Dynamic World</a></p>
+<p><strong>EDI</strong> - Institute of Electronics and Computer Sciences</p>
 <p><strong>EGV</strong> - ecogeographical variables</p>
 <p><strong>SDM</strong> - species distribution modelling</p>
 <p><strong>SDMs</strong> - species distribution models</p>
 <p><strong>LAD</strong> - Rural Support Service</p>
 <p><strong>LĢIA</strong> - Latvian Geospatial Information Agency</p>
 <p><strong>LULC</strong> - Land use and land cover</p>
+<p><strong>LU</strong> - University of Latvia</p>
 <p><strong>LU ĢZZF</strong> - University of Latvia Faculty of Geography and Earth Sciences</p>
 <p><strong>LVM</strong> - state owned Joint Stock Company “Latvia’s State Forests”</p>
 <p><strong>LVMI Silava</strong> - Latvian State Forest Research Institute “Silava”</p>
