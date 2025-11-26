@@ -12,4 +12,4 @@ Standardised ecogeographical variables are available for download from the proje
 Zenodo [repository](https://doi.org/10.5281/zenodo.17428601).
 
 
-Layers can be interacted with via Google Earth Engine [application](https://aavj.users.earthengine.app/view/egvs-2024).
+Layers can be interacted with in the Google Earth Engine [application](https://aavj.users.earthengine.app/view/egvs-2024).

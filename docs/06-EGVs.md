@@ -1,17 +1,12 @@
----
-editor_options: 
- markdown: 
-  wrap: 80
----
-
 # Ecogeographical variables {#Ch06}
 
 This section names and provides description (R code with its explanation in
 procedure) of each of the 538 EGVs created.
 
-For a better undestanding of the relatedness of these vairables, refer to the flowchart
-below (Fig. \@ref(fig:flowchart)). The names used in figure correspond to EGV layer
-names and follow naming convention: [group] _ [specific name] _ [scale], where:
+Refer to the flowchart below (Fig. \@ref(fig:flowchart)) for a better 
+understanding of how these varable relate. The names used in the figure correspond 
+to EGV layer names and follow naming convention: [group] _ [specific name] _ [scale], 
+where:
 
 -  group is a broader collection of EGVs describing the same phenomena or ecosystem,
   derived from the same source, etc.;
@@ -24,8 +19,8 @@ names and follow naming convention: [group] _ [specific name] _ [scale], where:
   to this resolution.
 
 <div class="figure">
-<img src="./Figures/EGV_FlowChartZ_17_11_25.png" alt="Relationships of ecogeographical variables created." width="100%" />
-<p class="caption">(\#fig:flowchart)Relationships of ecogeographical variables created.</p>
+<img src="./Figures/EGV_FlowChartZ_17_11_25.png" alt="Relationships of the created ecogeographical variables." width="100%" />
+<p class="caption">(\#fig:flowchart)Relationships of the created ecogeographical variables.</p>
 </div>
 
 <br>
@@ -2858,7 +2853,7 @@ writeRaster(merogots,
 
 **layername:** `egv_047`
 
-**English name:** Number of days at which 2m air temperature \> 0°C (CHELSA
+**English name:** Number of days in which air temperature at 2 m is \> 0°C (CHELSA
 v2.1) within the analysis cell (1 ha)
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
@@ -2919,7 +2914,7 @@ writeRaster(merogots,
 
 **layername:** `egv_048`
 
-**English name:** Number of days at which 2m air temperature \> 10°C (CHELSA
+**English name:** Number of days in which air temperature at 2 m is \> 10°C (CHELSA
 v2.1) within the analysis cell (1 ha)
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
@@ -2980,7 +2975,7 @@ writeRaster(merogots,
 
 **layername:** `egv_049`
 
-**English name:** Number of days at which 2m air temperature \> 5°C (CHELSA
+**English name:** Number of days in which air temperature at 2 m is \> 5°C (CHELSA
 v2.1) within the analysis cell (1 ha)
 
 **Latvian name:** Dienu skaits, kurā gaisa temperatūra 2 m augstumā pārsniedz
@@ -4459,7 +4454,8 @@ writeRaster(merogots,
 diurnal variation to annual variation in temperatures) (°C) (HydroClim) within
 the analysis cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālā izotermalitāte augštecē (°C)
+**Latvian name:** Sateces apakšbaseina maksimālā izotermalitāte (diennakts un gada 
+temperatūru variabilitātes attiecība) augštecē (°C)
 (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -4557,7 +4553,7 @@ writeRaster(merogots,
 (standard deviation of the monthly mean temperatures) (°C/100) (HydroClim)
 within the analysis cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālā temperatūras sezonalitāte
+**Latvian name:** Sateces apakšbaseina maksimālā temperatūras sezonalitāte (mēneša vidējo temperatūru standartnovirze) 
 augštecē (°C/100) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -4655,7 +4651,7 @@ writeRaster(merogots,
 temperature (°C) of the warmest month (HydroClim) within the analysis cell (1
 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
+**Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas augstākā gaisa
 temperatūra siltākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -4753,7 +4749,7 @@ writeRaster(merogots,
 temperature (°C) of the coldest month (HydroClim) within the analysis cell (1
 ha)
 
-**Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa
+**Latvian name:** Sateces apakšbaseina minimālā augšteces dienas zemākā gaisa
 temperatūra vēsākajā mēnesī (°C) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -5046,7 +5042,7 @@ writeRaster(merogots,
 temperatures (°C) of the driest quarter (HydroClim) within the analysis cell (1
 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
+**Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa
 temperatūra sausākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -5242,7 +5238,7 @@ writeRaster(merogots,
 temperatures (°C) of the coldest quarter (HydroClim) within the analysis cell (1
 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālā augšteces dienas vidējā gaisa
+**Latvian name:** Sateces apakšbaseina minimālā augšteces dienas vidējā gaisa
 temperatūra vēsākajā ceturksnī (°C) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -5728,7 +5724,7 @@ writeRaster(merogots,
 amount (kg m⁻² year⁻¹) of the wettest quarter (HydroClim) within the analysis
 cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
+**Latvian name:** Sateces apakšbaseina maksimālais augšteces mēneša vidējais nokrišņu daudzums
 mitrākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -5826,7 +5822,7 @@ writeRaster(merogots,
 amount (kg m⁻² year⁻¹) of the driest quarter (HydroClim) within the analysis
 cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
+**Latvian name:** Sateces apakšbaseina maksimālais augšteces mēneša vidējais nokrišņu daudzums
 sausākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -5924,7 +5920,7 @@ writeRaster(merogots,
 amount (kg m⁻² year⁻¹) of the warmest quarter (HydroClim) within the analysis
 cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
+**Latvian name:** Sateces apakšbaseina maksimālais augšteces mēneša vidējais nokrišņu daudzums
 siltākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -6022,7 +6018,7 @@ writeRaster(merogots,
 amount (kg m⁻² year⁻¹) of the coldest quarter (HydroClim) within the analysis
 cell (1 ha)
 
-**Latvian name:** Sateces apakšbaseina maksimālais augšteces nokrišņu daudzums
+**Latvian name:** Sateces apakšbaseina maksimālais augšteces mēneša vidējais nokrišņu daudzums
 vēsākajā ceturksnī (kg m⁻² year⁻¹) (HydroClim) analīzes šūnā (1 ha)
 
 **Procedure:** Information from the [HydroClim
@@ -20362,7 +20358,7 @@ analīzes šūnā (1 ha)
 **Procedure:** To prepare this
 EGV, stands in land category 10 with a height of less than 5 m are selected from the [State
 Forest Service's State Forest Registry](#Ch04.01) and rasterised. After
-rasterisation, this layer is covered by a clear cut mask. The resulting layer
+rasterisation, this layer is covered by a clearcut mask. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is
@@ -20769,7 +20765,7 @@ To prepare this
 EGV, stands in land category 10 and age groups two and three are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
-absence = 0) restricting presence locations only outside the clear cut mask. The resulting layer
+absence = 0), restricting presence locations only outside the clearcut mask. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is
@@ -21202,7 +21198,7 @@ To prepare this
 EGV, stands in land category 10 and age groups four and five are selected from
 [State Forest Service's State Forest Registry](#Ch04.01) and rasterised.
 Rasterisation is performed using the workflow  `egvtools::polygon2input()` (presence = 1,
-absence = 0) restricting presence locations only outside the clear cut mask. The resulting layer
+absence = 0), restricting presence locations only outside the clearcut mask. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is
@@ -22074,7 +22070,7 @@ Global Forest Watch](#Ch04.09) pixels classified as lost tree canopy cover since
 To prepare this EGV, every forest stand had assigned [legal rotation
 age](https://likumi.lv/ta/id/2825#p9), based on dominant tree species and bonity
 class as registered in the [State Forest Service's State Forest
-Registry](#Ch04.01). We assumed 35 years for grey alder. The registered age of
+Registry](#Ch04.01). We assumed 35 years as the rotation age for grey alder. The registered age of the 
 dominant tree group is then divided by the stand specific legal rotation age.
 This attribute has some extreme
 values. We chose to limit them to the nearest integer showing only minimal
@@ -22532,7 +22528,7 @@ analysis cell (1 ha)
 
 **Procedure:** This EGV is prepared primarily based on the information of the forestry related
 disturbances as registered per inventoried forest stand - [State Forest
-Service's State Forest Registry](#Ch04.01). The register however includes obvious
+Service's State Forest Registry](#Ch04.01). The register, however, includes obvious
 errors - values later than 2024 and earlier than 1500 that are set to NA. Remaining 
 values are subtracted from 2024. In stands with no disturbance registered,
 the age of dominant tree group is used to calculate minimum difference (age of
@@ -25252,8 +25248,8 @@ Soils within the analysis cell (1 ha)
 **Latvian name:** Eitrofu mežu nesusinātās minerālaugsnēs platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** To prepare this EGV, forest stands with forest type equal to "5"
-"6" "10" or "11" are selected from the [State Forest Service's State Forest
+**Procedure:** To prepare this EGV, forest stands with forest type equal to "5",
+"6", "10" or "11" are selected from the [State Forest Service's State Forest
 Registry](#Ch04.01) and rasterised. Rasterisation is performed using
 the workflow `egvtools::polygon2input()` with background
 covering (value 0). The resulting layer
@@ -27669,7 +27665,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then Boreal deciduous stands exceeding the legal rotation age are selected and
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -28133,7 +28129,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then Boreal deciduous stands younger than the legal rotation age are selected
 and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -28597,7 +28593,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then coniferous stands exceeding the legal rotation age are selected and
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -29061,7 +29057,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then coniferous stands younger than the legal rotation age are selected and
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -29525,7 +29521,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then mixed stands exceeding the legal rotation age are selected and 
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -29989,7 +29985,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then mixed stands younger than the legal rotation age are selected and
 geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -30453,7 +30449,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then temperate deciduous stands exceeding the legal rotation age are selected
 and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -30917,7 +30913,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then temperate deciduous stands younger than the legal rotation age are
 selected and geometries are rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -31380,7 +31376,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then Boreal deciduous stands are selected and geometries are 
 rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -31839,7 +31835,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then coniferous stands are selected and geometries are 
 rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -32298,7 +32294,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then mixed stands are selected and geometries are 
 rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -32753,7 +32749,7 @@ Registry](#Ch04.01) are classified into (in order):
 
 then temperate deciduous stands are selected and geometries are 
 rasterised (presence = 1, NA otherwise). Rasterisation is
-performed using the workflow `egvtools::polygon2input()` restricting to pixels outside clearcut
+performed using the workflow `egvtools::polygon2input()`, restricting to pixels outside clearcut
 mask and covering background with value 0. The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
@@ -34689,11 +34685,11 @@ analysis cell (1 ha)
 **Latvian name:** Netaksēto mežu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, clearcuts and forest stands from the [State Forest Service's
-State Forest Registry](#Ch04.01) are rasterised to match inputs (value 1 and NA
+State Forest Registry](#Ch04.01) are rasterised to match inputs (presence as value 1; NA
 elsewhere). Then, from the [Landscape classification](#Ch05.03) class 630 is
 reclassified to value 1, others to 0). These layers are then combined so that
 values 1 from the second layer, where spatially matching NA values in the first
-layer as classified as 1 and 0 otherwise. The resulting layer
+layer and classified as 1; otherwise 0. The resulting layer 
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
 calculates the arithmetic mean to determine the cover fraction. During
 aggregation, inverse distance weighted (power = 2) gap filling on the output is
@@ -37100,7 +37096,7 @@ the analysis cell (1 ha)
 **Latvian name:** Ar kokiem klāto teritoriju ārpus mežiem platības īpatsvars
 analīzes šūnā (1 ha)
 
-**Procedure:** First, the trees outside forest stands from the [Landscape
+**Procedure:** First, the tree covered areas outside forest stands from the [Landscape
 classification](#Ch05.03) are selected (value 640 is reclassified to value 1; 
 all others are set to 0). The resulting layer
 is then aggregated to EGV resolution using the workflow `egvtools::input2egv()`, which
@@ -38945,11 +38941,11 @@ writeRaster(merogots,
 
 **layername:** `egv_479`
 
-**English name:** Median vegetation water content (NDMI) for the last year
+**English name:** Median vegetation water content index (NDMI) for the last year
 within the analysis cell (1 ha)
 
 **Latvian name:** Mediānā pēdējā gada ūdens satura veģetācijā indeksa (NDMI)
-vērtība, vidējais analīzes šūnā (1 ha)
+vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39002,10 +38998,10 @@ writeRaster(merogots,
 **layername:** `egv_480`
 
 **English name:** Spatial variability of last year's median vegetation water
-content (NDMI) within the analysis cell (1 ha)
+content index (NDMI) within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens satura
-veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+veģetācijā indeksa (NDMI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -39083,11 +39079,11 @@ writeRaster(merogots,
 
 **layername:** `egv_481`
 
-**English name:** Average short-term seasonality of vegetation water content
+**English name:** Average short-term seasonality of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens satura veģetācijā
-indeksa (NDMI) vērtībai, vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai ūdens satura veģetācijā
+indeksa (NDMI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39141,11 +39137,11 @@ writeRaster(merogots,
 
 **layername:** `egv_482`
 
-**English name:** Median short-term vegetation water content (NDMI) within the
+**English name:** Median short-term vegetation water content index (NDMI) within the
 analysis cell (1 ha)
 
 **Latvian name:** Mediānā pēdējo piecu gadu ūdens satura veģetācijā indeksa
-(NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+(NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39199,10 +39195,10 @@ writeRaster(merogots,
 **layername:** `egv_483`
 
 **English name:** Spatial variability of short-term median vegetation water
-content (NDMI) within the analysis cell (1 ha)
+content index (NDMI) within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens
-satura veģetācijā indeksa (NDMI) vērtībai, starpkvartiļu apgabals analīzes šūnā
+satura veģetācijā indeksa (NDMI) vērtībai analīzes šūnā
 (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
@@ -39283,11 +39279,11 @@ writeRaster(merogots,
 
 **layername:** `egv_484`
 
-**English name:** Minimum short-term 25th percentile of vegetation water content
+**English name:** Minimum short-term 25th percentile of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens satura
-veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+veģetācijā indeksa (NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39342,11 +39338,11 @@ writeRaster(merogots,
 
 **layername:** `egv_485`
 
-**English name:** Maximum short-term 75th percentile of vegetation water content
+**English name:** Maximum short-term 75th percentile of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens satura
-veģetācijā indeksa (NDMI) vērtība, vidējais analīzes šūnā (1 ha)
+veģetācijā indeksa (NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39402,8 +39398,7 @@ writeRaster(merogots,
 **English name:** Median vegetation index (NDVI) for the last year within the
 analysis cell (1 ha)
 
-**Latvian name:** Mediānā pēdējā gada veģetācijas indeksa (NDVI) vērtība,
-vidējais analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējā gada veģetācijas indeksa (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To protect against
@@ -39460,7 +39455,7 @@ writeRaster(merogots,
 (NDVI) within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai veģetācijas
-indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+indeksa (NDVI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -39542,8 +39537,8 @@ writeRaster(merogots,
 **English name:** Average short-term seasonality of vegetation index (NDVI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam veģetācijas indeksa
-(NDVI) vērtībai, vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai veģetācijas indeksa
+(NDVI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39599,8 +39594,7 @@ writeRaster(merogots,
 **English name:** Median short-term vegetation index (NDVI) within the analysis
 cell (1 ha)
 
-**Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība,
-vidējais analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39657,7 +39651,7 @@ writeRaster(merogots,
 (NDVI) within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai
-veģetācijas indeksa (NDVI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+veģetācijas indeksa (NDVI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -39741,7 +39735,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu veģetācijas indeksa
-(NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+(NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39798,7 +39792,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu veģetācijas
-indeksa (NDVI) vērtība, vidējais analīzes šūnā (1 ha)
+indeksa (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39854,8 +39848,7 @@ writeRaster(merogots,
 **English name:** Median water index (NDWI) for the last year within the
 analysis cell (1 ha)
 
-**Latvian name:** Mediānā pēdējā gada ūdens indeksa (NDWI) vērtība, vidējais
-analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējā gada ūdens indeksa (NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To protect against
@@ -39910,7 +39903,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējā gada mediānajai ūdens indeksa
-(NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+(NDWI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -39991,8 +39984,8 @@ writeRaster(merogots,
 **English name:** Average short-term seasonality of water index (NDWI) within
 the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējam ūdens indeksa (NDWI)
-vērtībai, vidējais analīzes šūnā (1 ha)
+**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai ūdens indeksa (NDWI)
+vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -40048,8 +40041,7 @@ writeRaster(merogots,
 **English name:** Median short-term water index (NDWI) within the analysis cell
 (1 ha)
 
-**Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība,
-vidējais analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -40106,7 +40098,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens
-indeksa (NDWI) vērtībai, starpkvartiļu apgabals analīzes šūnā (1 ha)
+indeksa (NDWI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -40189,7 +40181,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens indeksa
-(NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+(NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -40246,7 +40238,7 @@ writeRaster(merogots,
 within the analysis cell (1 ha)
 
 **Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens indeksa
-(NDWI) vērtība, vidējais analīzes šūnā (1 ha)
+(NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -40360,7 +40352,7 @@ writeRaster(merogots,
 
 **layername:** `egv_501`
 
-**English name:** Average value of Topsoil Calcium Carbonates Content (ESDAC
+**English name:** Average value of Topsoil Calcium Carbonate Content (ESDAC
 v2.0) within the analysis cell (1 ha)
 
 **Latvian name:** Augsnes virskārtas kalcija karbonātu saturs (ESDAC v2.0)
@@ -40421,7 +40413,7 @@ writeRaster(merogots,
 
 **layername:** `egv_502`
 
-**English name:** Average value of Topsoil Sodium Content (ESDAC v2.0) within
+**English name:** Average value of Topsoil Potassium Content (ESDAC v2.0) within
 the analysis cell (1 ha)
 
 **Latvian name:** Augsnes virskārtas kālija saturs (ESDAC v2.0) analīzes šūnā (1
@@ -42135,7 +42127,7 @@ writeRaster(merogots,
 **English name:** Average value of Terrain Aspect (degree) within the analysis
 cell (1 ha)
 
-**Latvian name:** Nogāzes vidējais vērsuma virziens analīzes šūnā (1 ha)
+**Latvian name:** Nogāzes vidējais vērsuma virziens (grādi) analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). 
 Processed using the workflow `egvtools::input2egv()`. Inverse distance 
@@ -42193,7 +42185,7 @@ writeRaster(merogots,
 **English name:** Variability of Terrain Aspect (degree) within the analysis
 cell (1 ha)
 
-**Latvian name:** Nogāzes vērsuma variabilitāte analīzes šūnā (1 ha)
+**Latvian name:** Nogāzes vērsuma (grādi) variabilitāte analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -42748,7 +42740,7 @@ writeRaster(merogots,
 **English name:** Average value of Terrain Slope (degree) within the analysis
 cell (1 ha)
 
-**Latvian name:** Nogāzes slīpuma vidējā vērtība analīzes šūnā (1 ha)
+**Latvian name:** Nogāzes slīpuma (grādi) vidējā vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). 
 Processed using the workflow `egvtools::input2egv()`. Inverse distance 
@@ -42806,7 +42798,7 @@ writeRaster(merogots,
 **English name:** Variability of Terrain Slope (degree) within the analysis cell
 (1 ha)
 
-**Latvian name:** Nogāzes slīpuma variabilitāte analīzes šūnā (1 ha)
+**Latvian name:** Nogāzes slīpuma (grādi) variabilitāte analīzes šūnā (1 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). The 
 workflow `egvtools::input2egv()` is used to calculate Q1 and Q3 for every cell. 
@@ -42886,7 +42878,7 @@ writeRaster(merogots,
 **English name:** Average value of Topographic Wetness Index (TWI) within the
 analysis cell (1 ha)
 
-**Latvian name:** Topogrāfiskā mitruma indeksa vidējā vērtība analīzes šūnā (1
+**Latvian name:** Topogrāfiskā mitruma indeksa (TWI) vidējā vērtība analīzes šūnā (1
 ha)
 
 **Procedure:** Derived from the [Terrain products](#Ch05.01). 
