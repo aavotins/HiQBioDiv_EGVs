@@ -1816,7 +1816,7 @@ writeRaster(merogots,
 
 **layername:** `egv_030`
 
-**English name:** Growing degree days heat sum above 0°C (CHELSA v2.1) within
+**English name:** Growing degree days temerature sum above 0°C (CHELSA v2.1) within
 the analysis cell (1 ha)
 
 **Latvian name:** Aktīvo temperatūru summa no 0°C (CHELSA v2.1) analīzes šūnā (1
@@ -1877,7 +1877,7 @@ writeRaster(merogots,
 
 **layername:** `egv_031`
 
-**English name:** Growing degree days heat sum above 10°C (CHELSA v2.1) within
+**English name:** Growing degree days temerature sum above 10°C (CHELSA v2.1) within
 the analysis cell (1 ha)
 
 **Latvian name:** Aktīvo temperatūru summa no 10°C (CHELSA v2.1) analīzes šūnā
@@ -1938,7 +1938,7 @@ writeRaster(merogots,
 
 **layername:** `egv_032`
 
-**English name:** Growing degree days heat sum above 5°C (CHELSA v2.1) within
+**English name:** Growing degree days temerature sum above 5°C (CHELSA v2.1) within
 the analysis cell (1 ha)
 
 **Latvian name:** Aktīvo temperatūru summa no 5°C (CHELSA v2.1) analīzes šūnā (1
@@ -2002,7 +2002,7 @@ writeRaster(merogots,
 **English name:** Last growing degree day above 0°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pēdējā diena no 0°C (CHELSA v2.1) analīzes
+**Latvian name:** Veģetācijas sezonas no 0°C pēdējā diena (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2063,7 +2063,7 @@ writeRaster(merogots,
 **English name:** Last growing degree day above 10°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pēdējā diena no 10°C (CHELSA v2.1)
+**Latvian name:** Veģetācijas sezonas no 10°C pēdējā diena (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2124,7 +2124,7 @@ writeRaster(merogots,
 **English name:** Last growing degree day above 5°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pēdējā diena no 5°C (CHELSA v2.1) analīzes
+**Latvian name:** Veģetācijas sezonas no 5°C pēdējā diena (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2185,7 +2185,7 @@ writeRaster(merogots,
 **English name:** First growing degree day above 0°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pirmā diena no 0°C (CHELSA v2.1) analīzes
+**Latvian name:** Veģetācijas sezonas no 0°C pirmā diena (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2246,7 +2246,7 @@ writeRaster(merogots,
 **English name:** First growing degree day above 10°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pirmā diena no 10°C (CHELSA v2.1) analīzes
+**Latvian name:** Veģetācijas sezonas no 10°C pirmā diena (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2307,7 +2307,7 @@ writeRaster(merogots,
 **English name:** First growing degree day above 5°C (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Veģetācijas sezonas pirmā diena no 5°C (CHELSA v2.1) analīzes
+**Latvian name:** Veģetācijas sezonas no 5°C pirmā diena (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2487,10 +2487,10 @@ writeRaster(merogots,
 
 **layername:** `egv_041`
 
-**English name:** Mean temperature of the growing season (TREELIM) (CHELSA v2.1)
+**English name:** Mean daily mean air temperature of the growing season (TREELIM) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) veģetācijas sezonā
+**Latvian name:** Vidējā ik dienas vidējā gaisa temperatūra (°C) veģetācijas sezonā
 (TREELIM) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
