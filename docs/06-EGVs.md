@@ -53,7 +53,7 @@ cells scale.
 **English name:** Mean annual daily mean air temperature (°C) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Vidējā ikdienas gaisa temperatūra (°C) (CHELSA v2.1) analīzes
+**Latvian name:** Gada vidējā ik dienas vidējā gaisa temperatūra (°C) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -112,7 +112,7 @@ writeRaster(merogots,
 **English name:** Mean daily mean air temperatures (°C) of the warmest quarter
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada siltākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA
+**Latvian name:** Gada siltākā ceturkšņa vidējā ik dienas vidējā gaisa temperatūra (°C) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -173,7 +173,7 @@ writeRaster(merogots,
 **English name:** Mean daily mean air temperatures (°C) of the coldest quarter
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada aukstākā ceturkšņa vidējā gaisa temperatūra (°C) (CHELSA
+**Latvian name:** Gada aukstākā ceturkšņa vidējā ik dienas vidējā gaisa temperatūra (°C) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -234,7 +234,7 @@ writeRaster(merogots,
 **English name:** Annual precipitation amount (kg m⁻² year⁻¹) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Gada nokrišņu daudzums (kg m⁻² gadā) (CHELSA v2.1) analīzes
+**Latvian name:** Nokrišņu daudzums (kg m⁻² gadā) gadā (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -600,7 +600,7 @@ writeRaster(merogots,
 **English name:** Mean monthly precipitation amount (kg m⁻² month⁻¹) of the
 warmest quarter (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Siltākā ceturkšņa vidējais nokrišņu daudzuma mēnesī (kg m⁻²
+**Latvian name:** Siltākā ceturkšņa vidējais nokrišņu daudzums mēnesī (kg m⁻²
 mēnesī) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -722,7 +722,7 @@ writeRaster(merogots,
 **English name:** Mean diurnal air temperature range (°C) (CHELSA v2.1) within
 the analysis cell (1 ha)
 
-**Latvian name:** Diennakts temperatūru amplitūda (°C) (CHELSA v2.1) analīzes
+**Latvian name:** Vidējā diennakts gaisa temperatūru amplitūda (°C) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -781,9 +781,9 @@ writeRaster(merogots,
 **layername:** `egv_013`
 
 **English name:** Isothermality (ratio of diurnal variation to annual variation
-in temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)
+in air temperatures) (°C) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Izotermalitāte (attiecība starp diennakts un gada temperatūras
+**Latvian name:** Izotermalitāte (attiecība starp diennakts un gada gaisa temperatūras
 svārstībām) (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -842,9 +842,9 @@ writeRaster(merogots,
 **layername:** `egv_014`
 
 **English name:** Temperature seasonality (standard deviation of the monthly
-mean temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)
+mean air temperatures) (°C/100) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Temperatūru sezonalitāte (mēneša vidējo temperatūru
+**Latvian name:** Temperatūru sezonalitāte (mēneša vidējo gaisa temperatūru
 standartnovirze) (°C/100) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -905,7 +905,7 @@ writeRaster(merogots,
 **English name:** Mean daily maximum air temperature (°C) of the warmest month
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Siltākā mēneša vidējā ikdienas augstākā gaisa temperatūra (°C)
+**Latvian name:** Siltākā mēneša vidējā ik dienas augstākā gaisa temperatūra (°C)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -966,7 +966,7 @@ writeRaster(merogots,
 **English name:** Mean daily minimum air temperature (°C) of the coldest month
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Aukstākā mēneša vidējā ikdienas zemākā gaisa temperatūra (°C)
+**Latvian name:** Aukstākā mēneša vidējā ik dienas zemākā gaisa temperatūra (°C)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1027,7 +1027,7 @@ writeRaster(merogots,
 **English name:** Annual range of air temperature (°C) (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Gada temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1
+**Latvian name:** Gada gaisa temperatūru amplitūda (°C) (CHELSA v2.1) analīzes šūnā (1
 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1088,7 +1088,7 @@ writeRaster(merogots,
 **English name:** Mean daily mean air temperatures (°C) of the wettest quarter
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Slapjākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra
+**Latvian name:** Slapjākā ceturkšņa vidējā ik dienas vidējā gaisa temperatūra
 (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1149,7 +1149,7 @@ writeRaster(merogots,
 **English name:** Mean daily mean air temperatures (°C) of the driest quarter
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Sausākā ceturkšņa vidējā ikdienas vidējā gaisa temperatūra
+**Latvian name:** Sausākā ceturkšņa vidējā ik dienas vidējā gaisa temperatūra
 (°C) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1207,10 +1207,10 @@ writeRaster(merogots,
 
 **layername:** `egv_020`
 
-**English name:** Maximum monthly cloud area fraction (%) (CHELSA v2.1) within
+**English name:** Mean of monthly maximum cloud area fraction (%) (CHELSA v2.1) within
 the analysis cell (1 ha)
 
-**Latvian name:** Maksimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1)
+**Latvian name:** Mēneša maksimumu vidējais mākoņu segums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1268,10 +1268,10 @@ writeRaster(merogots,
 
 **layername:** `egv_021`
 
-**English name:** Mean monthly cloud area fraction (%) (CHELSA v2.1) within the
+**English name:** Mean monthly mean cloud area fraction (%) (CHELSA v2.1) within the
 analysis cell (1 ha)
 
-**Latvian name:** Vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
+**Latvian name:** Vidējais ik mēneša vidējais mākoņu segums (%) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
 the workflow `egvtools::downscale2egv()` with inverse distance weighted (power =
@@ -1328,10 +1328,10 @@ writeRaster(merogots,
 
 **layername:** `egv_022`
 
-**English name:** Minimum monthly cloud area fraction (%) (CHELSA v2.1) within
+**English name:** Mean of monthly minimum cloud area fraction (%) (CHELSA v2.1) within
 the analysis cell (1 ha)
 
-**Latvian name:** Minimālais mēneša vidējais mākoņu segums (%) (CHELSA v2.1)
+**Latvian name:** Mēneša minimumu vidējais mākoņu segums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1450,10 +1450,10 @@ writeRaster(merogots,
 
 **layername:** `egv_024`
 
-**English name:** Maximum monthly climate moisture index (kg m⁻² month⁻¹)
+**English name:** Mean of monthly maximum climate moisture index (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
+**Latvian name:** Vidējais mēneša maksimālais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1511,10 +1511,10 @@ writeRaster(merogots,
 
 **layername:** `egv_025`
 
-**English name:** Mean monthly climate moisture index (kg m⁻² month⁻¹) (CHELSA
+**English name:** Mean of monthly mean climate moisture index (kg m⁻² month⁻¹) (CHELSA
 v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA
+**Latvian name:** Vidējais ik mēneša vidējais klimata mitruma indekss (kg m⁻² month⁻¹) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1572,10 +1572,10 @@ writeRaster(merogots,
 
 **layername:** `egv_026`
 
-**English name:** Minimum monthly climate moisture index (kg m⁻² month⁻¹)
+**English name:** Mean of monthly minimum climate moisture index (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Minimālais mēneša vidējais klimata mitruma indekss (kg m⁻²
+**Latvian name:** Vidējais mēneša minimālais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
