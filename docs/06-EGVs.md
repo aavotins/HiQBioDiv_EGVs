@@ -1453,7 +1453,7 @@ writeRaster(merogots,
 **English name:** Mean of monthly maximum climate moisture index (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Vidējais mēneša maksimālais klimata mitruma indekss (kg m⁻²
+**Latvian name:** Vidējais ik mēneša maksimālais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -1575,7 +1575,7 @@ writeRaster(merogots,
 **English name:** Mean of monthly minimum climate moisture index (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Vidējais mēneša minimālais klimata mitruma indekss (kg m⁻²
+**Latvian name:** Vidējais ik mēneša minimālais klimata mitruma indekss (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2548,10 +2548,10 @@ writeRaster(merogots,
 
 **layername:** `egv_042`
 
-**English name:** Maximum monthly near-surface relative humidity (%) (CHELSA
+**English name:** Mean of monthly maximum near-surface relative humidity (%) (CHELSA
 v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1)
+**Latvian name:** Vidējais ik mēneša maksimālais piezemes slāņa gaisa mitrums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2609,10 +2609,10 @@ writeRaster(merogots,
 
 **layername:** `egv_043`
 
-**English name:** Mean monthly near-surface relative humidity (%) (CHELSA v2.1)
+**English name:** Mean of monthly mean near-surface relative humidity (%) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Vidējais ikmēneša gaisa mitrums (%) (CHELSA v2.1) analīzes
+**Latvian name:** Vidējais ik mēneša vidējais piezemes slāņa gaisa mitrums (%) (CHELSA v2.1) analīzes
 šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2670,10 +2670,10 @@ writeRaster(merogots,
 
 **layername:** `egv_044`
 
-**English name:** Minimum monthly near-surface relative humidity (%) (CHELSA
+**English name:** Mean of monthly minimum near-surface relative humidity (%) (CHELSA
 v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Minimālais mēneša vidējais gaisa mitrums (%) (CHELSA v2.1)
+**Latvian name:** Vidējais ik mēneša minimālais gaisa mitrums (%) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -2734,7 +2734,7 @@ writeRaster(merogots,
 **English name:** Annual range of monthly near-surface relative humidity (%)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada gaisa mitruma amplitūda (%) (CHELSA v2.1) analīzes šūnā
+**Latvian name:** Gada gaisa mitruma piezemes slānī amplitūda (%) (CHELSA v2.1) analīzes šūnā
 (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3097,10 +3097,10 @@ writeRaster(merogots,
 
 **layername:** `egv_051`
 
-**English name:** Maximum monthly potential evapotranspiration (kg m⁻² month⁻¹)
+**English name:** Mean of monthly maximum potential evapotranspiration (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālā mēneša potenciālā evapotranspirācija (kg m⁻²
+**Latvian name:** Vidējā ik mēneša maksimālā potenciālā evapotranspirācija (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3158,10 +3158,10 @@ writeRaster(merogots,
 
 **layername:** `egv_052`
 
-**English name:** Mean monthly potential evapotranspiration (kg m⁻² month⁻¹)
+**English name:** Mean of monthly mean potential evapotranspiration (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Vidējā mēneša potenciālā evapotranspirācija (kg m⁻² month⁻¹)
+**Latvian name:** Vidējā ik mēneša vidējā potenciālā evapotranspirācija (kg m⁻² month⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3219,10 +3219,10 @@ writeRaster(merogots,
 
 **layername:** `egv_053`
 
-**English name:** Minimum monthly potential evapotranspiration (kg m⁻² month⁻¹)
+**English name:** Mean of monthly minimum potential evapotranspiration (kg m⁻² month⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Minimālā mēneša vidējā potenciālā evapotranspirācija (kg m⁻²
+**Latvian name:** Vidējā ik mēneša minimālā potenciālā evapotranspirācija (kg m⁻²
 month⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3283,7 +3283,7 @@ writeRaster(merogots,
 **English name:** Annual range of monthly potential evapotranspiration (kg m⁻²
 month⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada potenciālā evapotranspirācijas amplitūda (kg m⁻² month⁻¹)
+**Latvian name:** Gada potenciālās evapotranspirācijas amplitūda (kg m⁻² month⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3341,10 +3341,10 @@ writeRaster(merogots,
 
 **layername:** `egv_055`
 
-**English name:** Maximum monthly surface downwelling shortwave flux in air (MJ
+**English name:** Mean of monthly maximum surface downwelling shortwave flux in air (MJ
 m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālā mēneša vidējā Zemes virsmu sasniedzošā saules
+**Latvian name:** Vidējā ik mēneša maksimālā Zemes virsmu sasniedzošā saules
 radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3402,10 +3402,10 @@ writeRaster(merogots,
 
 **layername:** `egv_056`
 
-**English name:** Mean monthly surface downwelling shortwave flux in air (MJ m⁻²
+**English name:** Mean of monthly mean surface downwelling shortwave flux in air (MJ m⁻²
 d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹)
+**Latvian name:** Vidējā ik mēneša vidējā Zemes virsmu sasniedzošā saules radiācija (MJ m⁻² d⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3463,10 +3463,10 @@ writeRaster(merogots,
 
 **layername:** `egv_057`
 
-**English name:** Minimum monthly surface shortwave flux in air (MJ m⁻² d⁻¹)
+**English name:** Mean of monthly minimum surface shortwave flux in air (MJ m⁻² d⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Minimālā mēneša vidējā Zemes virsmu sasniedzošā saules
+**Latvian name:** Vidējā ik mēneša minimālā Zemes virsmu sasniedzošā saules
 radiācija (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3524,10 +3524,10 @@ writeRaster(merogots,
 
 **layername:** `egv_058`
 
-**English name:** Annual range of monthly surface downwelling shortwave flux in
+**English name:** Annual range of daily mean surface downwelling shortwave flux in
 air (MJ m⁻² d⁻¹) (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada amplitūda Zemes virsmu sasniedzošajai saules radiācijai
+**Latvian name:** Gada amplitūda ik dienas vidējai Zemes virsmu sasniedzošajai saules radiācijai
 (MJ m⁻² d⁻¹) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3646,10 +3646,10 @@ writeRaster(merogots,
 
 **layername:** `egv_060`
 
-**English name:** Maximum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1)
+**English name:** Mean of monthly maximum near-surface wind speed (m s⁻¹) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹)
+**Latvian name:** Vidējais ik mēneša maksimālais piezemes slāņa vēja ātrums (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3707,10 +3707,10 @@ writeRaster(merogots,
 
 **layername:** `egv_061`
 
-**English name:** Mean monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1)
+**English name:** Mean of monthly mean near-surface wind speed (m s⁻¹) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1)
+**Latvian name:** Vidējais ik mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3768,10 +3768,10 @@ writeRaster(merogots,
 
 **layername:** `egv_062`
 
-**English name:** Minimum monthly near-surface wind speed (m s⁻¹) (CHELSA v2.1)
+**English name:** Mean of monthly minimum near-surface wind speed (m s⁻¹) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Minimālais mēneša vidējais piezemes slāņa vēja ātrums (m s⁻¹)
+**Latvian name:** Vidējais ik mēneša minimālais piezemes slāņa vēja ātrums (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -3829,10 +3829,10 @@ writeRaster(merogots,
 
 **layername:** `egv_063`
 
-**English name:** Annual range of monthly near-surface wind speed (m s⁻¹)
+**English name:** Annual range of monthly mean near-surface wind speed (m s⁻¹)
 (CHELSA v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada amplitūda vidējam piezemes slāņa vēja ātrumam (m s⁻¹)
+**Latvian name:** Gada amplitūda ik mēneša vidējam piezemes slāņa vēja ātrumam (m s⁻¹)
 (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -4012,10 +4012,10 @@ writeRaster(merogots,
 
 **layername:** `egv_066`
 
-**English name:** Maximum monthly vapor pressure deficit (Pa) (CHELSA v2.1)
+**English name:** Mean of monthly maximum vapor pressure deficit (Pa) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālais mēneša vidējais iztvaikošanas spiediena deficīts
+**Latvian name:** Vidējais ik mēneša maksimālais iztvaikošanas spiediena deficīts
 (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -4073,10 +4073,10 @@ writeRaster(merogots,
 
 **layername:** `egv_067`
 
-**English name:** Mean monthly vapor pressure deficit (Pa) (CHELSA v2.1) within
+**English name:** Mean of monthly mean vapor pressure deficit (Pa) (CHELSA v2.1) within
 the analysis cell (1 ha)
 
-**Latvian name:** Vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1)
+**Latvian name:** Vidējais ik mēneša vidējais iztvaikošanas spiediena deficīts (Pa) (CHELSA v2.1)
 analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -4134,10 +4134,10 @@ writeRaster(merogots,
 
 **layername:** `egv_068`
 
-**English name:** Minimum monthly vapor pressure deficit (Pa) (CHELSA v2.1)
+**English name:** Mean of monthly minimum vapor pressure deficit (Pa) (CHELSA v2.1)
 within the analysis cell (1 ha)
 
-**Latvian name:** Minimālais mēneša vidējais iztvaikošanas spiediena deficīts
+**Latvian name:** Vidējais ik mēneša minimālais iztvaikošanas spiediena deficīts
 (Pa) (CHELSA v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -4195,10 +4195,10 @@ writeRaster(merogots,
 
 **layername:** `egv_069`
 
-**English name:** Annual range of monthly vapor pressure deficit (Pa) (CHELSA
+**English name:** Annual range of monthly mean vapor pressure deficit (Pa) (CHELSA
 v2.1) within the analysis cell (1 ha)
 
-**Latvian name:** Gada iztvaikošanas spiediena deficīta amplitūda (Pa) (CHELSA
+**Latvian name:** Gada iztvaikošanas spiediena deficīta ik mēneša vidējo amplitūda (Pa) (CHELSA
 v2.1) analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [CHELSA v2.1](#Ch04.11). EGV is prepared using
@@ -7631,7 +7631,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the
 analysis cell (1 ha)
 
-**Latvian name:** Purvu malu ar kokiem garums analīzes šūnā (1 ha)
+**Latvian name:** Purvu malu ar kokiem pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values from 620 to 700 from the [Landscape
 classification](#Ch05.03) are coded as 0, and all other values as NA. Then bog and
@@ -7737,7 +7737,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 0.5
 km landscape
 
-**Latvian name:** Purvu malu ar kokiem garums 0,5 km ainavā
+**Latvian name:** Purvu malu ar kokiem pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
@@ -7810,7 +7810,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the
 1.25 km landscape
 
-**Latvian name:** Purvu malu ar kokiem garums 1,25 km ainavā
+**Latvian name:** Purvu malu ar kokiem pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
@@ -7883,7 +7883,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 3
 km landscape
 
-**Latvian name:** Purvu malu ar kokiem garums 3 km ainavā
+**Latvian name:** Purvu malu ar kokiem pikseļu skaits 3 km ainavā
 
 **Procedure:** Total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
@@ -7956,7 +7956,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Trees within the 10
 km landscape
 
-**Latvian name:** Purvu malu ar kokiem garums 10 km ainavā
+**Latvian name:** Purvu malu ar kokiem pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.110) inside the
@@ -8029,7 +8029,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the
 analysis cell (1 ha)
 
-**Latvian name:** Purvu malu ar ūdeni garums analīzes šūnā (1 ha)
+**Latvian name:** Purvu malu ar ūdeni pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values 200 from the [Landscape classification](#Ch05.03) are
 coded as 0, and all other values as NA. Then bog and transitional mire layers from
@@ -8133,7 +8133,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 0.5
 km landscape
 
-**Latvian name:** Purvu malu ar ūdeni garums 0,5 km ainavā
+**Latvian name:** Purvu malu ar ūdeni pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
@@ -8206,7 +8206,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the
 1.25 km landscape
 
-**Latvian name:** Purvu malu ar ūdeni garums 1,25 km ainavā
+**Latvian name:** Purvu malu ar ūdeni pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
@@ -8279,7 +8279,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 3
 km landscape
 
-**Latvian name:** Purvu malu ar ūdeni garums 3 km ainavā
+**Latvian name:** Purvu malu ar ūdeni pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
@@ -8352,7 +8352,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Bogs, Mires bordering with Water within the 10
 km landscape
 
-**Latvian name:** Purvu malu ar ūdeni garums 10 km ainavā
+**Latvian name:** Purvu malu ar ūdeni pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.115) inside the
@@ -8425,7 +8425,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within
 the analysis cell (1 ha)
 
-**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums analīzes šūnā (1
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi pikseļu skaits analīzes šūnā (1
 ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from
@@ -8524,7 +8524,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within
 the 0.5 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 0,5 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
@@ -8598,7 +8598,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within
 the 1.25 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 1,25 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
@@ -8672,7 +8672,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within
 the 3 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 3 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
@@ -8746,7 +8746,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland bordering with Built-Up areas within
 the 10 km landscape
 
-**Latvian name:** Lauksaimniecības zemju malu ar apbūvi garums 10 km ainavā
+**Latvian name:** Lauksaimniecības zemju malu ar apbūvi pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.120) inside the
@@ -8820,7 +8820,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the
 analysis cell (1 ha)
 
-**Latvian name:** Koku malu ar apbūvi garums analīzes šūnā (1 ha)
+**Latvian name:** Koku malu ar apbūvi pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than 630 and smaller than 700 from
 [Landscape classification](#Ch05.03) are coded as 1, and other values as NA.
@@ -8918,7 +8918,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the
 0.5 km landscape
 
-**Latvian name:** Koku malu ar apbūvi garums 0,5 km ainavā
+**Latvian name:** Koku malu ar apbūvi pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
@@ -8992,7 +8992,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the
 1.25 km landscape
 
-**Latvian name:** Koku malu ar apbūvi garums 1,25 km ainavā
+**Latvian name:** Koku malu ar apbūvi pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
@@ -9066,7 +9066,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the
 3 km landscape
 
-**Latvian name:** Koku malu ar apbūvi garums 3 km ainavā
+**Latvian name:** Koku malu ar apbūvi pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
@@ -9140,7 +9140,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Trees bordering with Built-Up areas within the
 10 km landscape
 
-**Latvian name:** Koku malu ar apbūvi garums 10 km ainavā
+**Latvian name:** Koku malu ar apbūvi pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.125) inside the
@@ -9214,7 +9214,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Cropland, Fallow land within the analysis cell
 (1 ha)
 
-**Latvian name:** Aramzemju malu garums analīzes šūnā (1 ha)
+**Latvian name:** Aramzemju malu pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger than or equal to 310 and smaller than 325
 from the [Landscape classification](#Ch05.03) are coded as 1, and all other values as
@@ -9306,7 +9306,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Cropland, Fallow land within the 0.5 km
 landscape
 
-**Latvian name:** Aramzemju malu garums 0,5 km ainavā
+**Latvian name:** Aramzemju malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
@@ -9380,7 +9380,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Cropland, Fallow land within the 1.25 km
 landscape
 
-**Latvian name:** Aramzemju malu garums 1,25 km ainavā
+**Latvian name:** Aramzemju malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
@@ -9453,7 +9453,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Cropland, Fallow land within the 3 km landscape
 
-**Latvian name:** Aramzemju malu garums 3 km ainavā
+**Latvian name:** Aramzemju malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
@@ -9527,7 +9527,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Cropland, Fallow land within the 10 km
 landscape
 
-**Latvian name:** Aramzemju malu garums 10 km ainavā
+**Latvian name:** Aramzemju malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.130) inside the
@@ -9601,7 +9601,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with
 Trees within the analysis cell (1 ha)
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem pikseļu skaits
 analīzes šūnā (1 ha)
 
 **Procedure:** First, values between 300 and 400 and between 600 and 630 from
@@ -9701,7 +9701,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with
 Trees within the 0.5 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem pikseļu skaits
 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
@@ -9776,7 +9776,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with
 Trees within the 1.25 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem pikseļu skaits
 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
@@ -9851,7 +9851,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with
 Trees within the 3 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem pikseļu skaits
 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
@@ -9926,7 +9926,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Farmland, Clear-Cuts, Shrubs bordering with
 Trees within the 10 km landscape
 
-**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem garums
+**Latvian name:** Lauksaimniecības zemju, izcirtumu, krūmu malu ar kokiem pikseļu skaits
 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
@@ -10000,7 +10000,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Grassland within the analysis cell (1 ha)
 
-**Latvian name:** Zālāju malu garums analīzes šūnā (1 ha)
+**Latvian name:** Zālāju malu pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values equal to 330 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then, the
@@ -10091,7 +10091,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Grassland within the 0.5 km landscape
 
-**Latvian name:** Zālāju malu garums 0,5 km ainavā
+**Latvian name:** Zālāju malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
@@ -10164,7 +10164,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Grassland within the 1.25 km landscape
 
-**Latvian name:** Zālāju malu garums 1,25 km ainavā
+**Latvian name:** Zālāju malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
@@ -10237,7 +10237,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Grassland within the 3 km landscape
 
-**Latvian name:** Zālāju malu garums 3 km ainavā
+**Latvian name:** Zālāju malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
@@ -10310,7 +10310,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Grassland within the 10 km landscape
 
-**Latvian name:** Zālāju malu garums 10 km ainavā
+**Latvian name:** Zālāju malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.140) inside the
@@ -10384,7 +10384,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Forests Over Rotation Age within the analysis
 cell (1 ha)
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums analīzes šūnā (1
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu pikseļu skaits analīzes šūnā (1
 ha)
 
 **Procedure:** First, the raster layer with forest stands from the [MVR](#Ch04.01) at
@@ -10487,7 +10487,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Forests Over Rotation Age within the 0.5 km
 landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 0,5 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -10561,7 +10561,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Forests Over Rotation Age within the 1.25 km
 landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 1,25 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -10635,7 +10635,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Forests Over Rotation Age within the 3 km
 landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 3 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -10709,7 +10709,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Forests Over Rotation Age within the 10 km
 landscape
 
-**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu garums 10 km ainavā
+**Latvian name:** Pieaugušo un pāraugušo mežaudžu malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -10782,7 +10782,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Roads within the analysis cell (1 ha)
 
-**Latvian name:** Ceļu malu garums analīzes šūnā (1 ha)
+**Latvian name:** Ceļu malu pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values equal to 100 from the [Landscape
 classification](#Ch05.03) are coded as 1, and other values as NA. Then, the
@@ -10873,7 +10873,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Roads within the 0.5 km landscape
 
-**Latvian name:** Ceļu malu garums 0,5 km ainavā
+**Latvian name:** Ceļu malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -10946,7 +10946,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Roads within the 1.25 km landscape
 
-**Latvian name:** Ceļu malu garums 1,25 km ainavā
+**Latvian name:** Ceļu malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -11019,7 +11019,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Roads within the 3 km landscape
 
-**Latvian name:** Ceļu malu garums 3 km ainavā
+**Latvian name:** Ceļu malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -11092,7 +11092,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Roads within the 10 km landscape
 
-**Latvian name:** Ceļu malu garums 10 km ainavā
+**Latvian name:** Ceļu malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.145) inside the
@@ -11165,7 +11165,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Trees within the analysis cell (1 ha)
 
-**Latvian name:** Koku malu garums analīzes šūnā (1 ha)
+**Latvian name:** Koku malu pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values larger or equal to 630 and smaller than 700 from
 [Landscape classification](#Ch05.03) are coded as 1, and all other values as NA.
@@ -11256,7 +11256,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Trees within the 0.5 km landscape
 
-**Latvian name:** Koku malu garums 0,5 km ainavā
+**Latvian name:** Koku malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
@@ -11329,7 +11329,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Trees within the 1.25 km landscape
 
-**Latvian name:** Koku malu garums 1,25 km ainavā
+**Latvian name:** Koku malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
@@ -11402,7 +11402,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Trees within the 3 km landscape
 
-**Latvian name:** Koku malu garums 3 km ainavā
+**Latvian name:** Koku malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
@@ -11475,7 +11475,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Trees within the 10 km landscape
 
-**Latvian name:** Koku malu garums 10 km ainavā
+**Latvian name:** Koku malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.155) inside the
@@ -11548,7 +11548,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpju malu garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values equal to 200 from the [Landscape
 classification](#Ch05.03) are coded as 1 and everything else as NA. Then, the
@@ -11638,7 +11638,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the 0.5 km landscape
 
-**Latvian name:** Ūdenstilpju malu garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpju malu pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
@@ -11711,7 +11711,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the 1.25 km landscape
 
-**Latvian name:** Ūdenstilpju malu garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpju malu pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
@@ -11784,7 +11784,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the 3 km landscape
 
-**Latvian name:** Ūdenstilpju malu garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
@@ -11857,7 +11857,7 @@ writeRaster(merogots,
 
 **English name:** Edge pixels of Water within the 10 km landscape
 
-**Latvian name:** Ūdenstilpju malu garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.160) inside the
@@ -11931,7 +11931,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Farmland within the
 analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums analīzes
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm pikseļu skaits analīzes
 šūnā (1 ha)
 
 **Procedure:** First, values larger than 300 and smaller than 400 from
@@ -12030,7 +12030,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Farmland within the 0.5 km
 landscape
 
-**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 0,5 km
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm pikseļu skaits 0,5 km
 ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
@@ -12105,7 +12105,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Farmland within the 1.25
 km landscape
 
-**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 1,25 km
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm pikseļu skaits 1,25 km
 ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
@@ -12180,7 +12180,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Farmland within the 3 km
 landscape
 
-**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
@@ -12254,7 +12254,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Farmland within the 10 km
 landscape
 
-**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu ar lauksaimniecības zemēm pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.165) inside the
@@ -12328,7 +12328,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Grassland within the
 analysis cell (1 ha)
 
-**Latvian name:** Ūdenstilpju malu ar zālājiem garums analīzes šūnā (1 ha)
+**Latvian name:** Ūdenstilpju malu ar zālājiem pikseļu skaits analīzes šūnā (1 ha)
 
 **Procedure:** First, values lequal to 330 from the [Landscape
 classification](#Ch05.03) are coded as 1, and all other values as NA. Then values
@@ -12426,7 +12426,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Grassland within the 0.5
 km landscape
 
-**Latvian name:** Ūdenstilpju malu ar zālājiem garums 0,5 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem pikseļu skaits 0,5 km ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
@@ -12500,7 +12500,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Grassland within the 1.25
 km landscape
 
-**Latvian name:** Ūdenstilpju malu ar zālājiem garums 1,25 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem pikseļu skaits 1,25 km ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
@@ -12574,7 +12574,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Grassland within the 3 km
 landscape
 
-**Latvian name:** Ūdenstilpju malu ar zālājiem garums 3 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
@@ -12648,7 +12648,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Water bordering with Grassland within the 10 km
 landscape
 
-**Latvian name:** Ūdenstilpju malu ar zālājiem garums 10 km ainavā
+**Latvian name:** Ūdenstilpju malu ar zālājiem pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.170) inside the
@@ -12722,7 +12722,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water
 within the analysis cell (1 ha)
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums analīzes
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni pikseļu skaits analīzes
 šūnā (1 ha)
 
 **Procedure:** First, values equal to 720 from the [Landscape
@@ -12822,7 +12822,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water
 within the 0.5 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 0,5 km
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni pikseļu skaits 0,5 km
 ainavā
 
 **Procedure:** The total edge within a 500 m radius around the analysis grid cell is
@@ -12897,7 +12897,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water
 within the 1.25 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 1,25 km
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni pikseļu skaits 1,25 km
 ainavā
 
 **Procedure:** The total edge within a 1250 m radius around the analysis grid cell is
@@ -12972,7 +12972,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water
 within the 3 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 3 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni pikseļu skaits 3 km ainavā
 
 **Procedure:** The total edge within a 3000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
@@ -13046,7 +13046,7 @@ writeRaster(merogots,
 **English name:** Edge pixels of Reed-, Sedge-, Rush- Beds bordering with Water
 within the 10 km landscape
 
-**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni garums 10 km ainavā
+**Latvian name:** Niedrāju, grīslāju, meldrāju malu ar ūdeni pikseļu skaits 10 km ainavā
 
 **Procedure:** The total edge within a 10000 m radius around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.175) inside the
@@ -19535,7 +19535,7 @@ writeRaster(merogots,
 **English name:** Fractional cover of Permanent Crops within the analysis cell
 (1 ha)
 
-**Latvian name:** Augļudārzu platības īpatsvars analīzes šūnā (1 ha)
+**Latvian name:** Ilggadīgo kultūraugu platības īpatsvars analīzes šūnā (1 ha)
 
 **Procedure:** First, agricultural parcels declared as permanent crops are
 selected from the [Rural Support Service's information on declared
@@ -19653,7 +19653,7 @@ writeRaster(merogots,
 **English name:** Fractional cover of Permanent Crops within the 0.5 km
 landscape
 
-**Latvian name:** Augļudārzu platības īpatsvars 0,5 km ainavā
+**Latvian name:** Ilggadīgo kultūraugu platības īpatsvars 0,5 km ainavā
 
 **Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside the
@@ -19727,7 +19727,7 @@ writeRaster(merogots,
 **English name:** Fractional cover of Permanent Crops within the 1.25 km
 landscape
 
-**Latvian name:** Augļudārzu platības īpatsvars 1,25 km ainavā
+**Latvian name:** Ilggadīgo kultūraugu platības īpatsvars 1,25 km ainavā
 
 **Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
@@ -19800,7 +19800,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Permanent Crops within the 3 km landscape
 
-**Latvian name:** Augļudārzu platības īpatsvars 3 km ainavā
+**Latvian name:** Ilggadīgo kultūraugu platības īpatsvars 3 km ainavā
 
 **Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
@@ -19873,7 +19873,7 @@ writeRaster(merogots,
 
 **English name:** Fractional cover of Permanent Crops within the 10 km landscape
 
-**Latvian name:** Augļudārzu platības īpatsvars 10 km ainavā
+**Latvian name:** Ilggadīgo kultūraugu platības īpatsvars 10 km ainavā
 
 **Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.260) inside
@@ -20349,7 +20349,7 @@ writeRaster(merogots,
 
 **layername:** `egv_270`
 
-**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within
+**English name:** Fractional cover of Clearcuts and Forest Stands lower than 5 m within
 the analysis cell (1 ha)
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
@@ -20448,7 +20448,7 @@ writeRaster(merogots,
 
 **layername:** `egv_271`
 
-**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within
+**English name:** Fractional cover of Clearcuts and Forest Stands lower than 5 m within
 the 0.5 km landscape
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
@@ -20523,7 +20523,7 @@ writeRaster(merogots,
 
 **layername:** `egv_272`
 
-**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within
+**English name:** Fractional cover of Clearcuts and Forest Stands lower than 5 m within
 the 1.25 km landscape
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars
@@ -20598,7 +20598,7 @@ writeRaster(merogots,
 
 **layername:** `egv_273`
 
-**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within
+**English name:** Fractional cover of Clearcuts and Forest Stands lower than 5 m within
 the 3 km landscape
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 3
@@ -20673,7 +20673,7 @@ writeRaster(merogots,
 
 **layername:** `egv_274`
 
-**English name:** Fractional cover of Clearcuts and Stands lower than 5 m within
+**English name:** Fractional cover of Clearcuts and Forest Stands lower than 5 m within
 the 10 km landscape
 
 **Latvian name:** Izcirtumu un mežaudžu līdz 5 m augstumam platības īpatsvars 10
@@ -20748,7 +20748,7 @@ writeRaster(merogots,
 
 **layername:** `egv_275`
 
-**English name:** Fractional cover of Middle-Aged Forests within the analysis
+**English name:** Fractional cover of Middle-Aged Forest Stands within the analysis
 cell (1 ha)
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars analīzes šūnā
@@ -20885,7 +20885,7 @@ writeRaster(merogots,
 
 **layername:** `egv_276`
 
-**English name:** Fractional cover of Middle-Aged Forests within the 0.5 km
+**English name:** Fractional cover of Middle-Aged Forest Stands within the 0.5 km
 landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 0,5 km ainavā
@@ -20959,7 +20959,7 @@ writeRaster(merogots,
 
 **layername:** `egv_277`
 
-**English name:** Fractional cover of Middle-Aged Forests within the 1.25 km
+**English name:** Fractional cover of Middle-Aged Forest Stands within the 1.25 km
 landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 1,25 km ainavā
@@ -21033,7 +21033,7 @@ writeRaster(merogots,
 
 **layername:** `egv_278`
 
-**English name:** Fractional cover of Middle-Aged Forests within the 3 km
+**English name:** Fractional cover of Middle-Aged Forest Stands within the 3 km
 landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 3 km ainavā
@@ -21107,7 +21107,7 @@ writeRaster(merogots,
 
 **layername:** `egv_279`
 
-**English name:** Fractional cover of Middle-Aged Forests within the 10 km
+**English name:** Fractional cover of Middle-Aged Forest Stands within the 10 km
 landscape
 
 **Latvian name:** Vidēja vecuma un briestaudžu platības īpatsvars 10 km ainavā
@@ -21181,10 +21181,10 @@ writeRaster(merogots,
 
 **layername:** `egv_280`
 
-**English name:** Fractional cover of Old (over rotation age) Forests within the
+**English name:** Fractional cover of Old (over rotation age) Forest Stands within the
 analysis cell (1 ha)
 
-**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars analīzes šūnā (1
+**Latvian name:** Vecu (kopš cirtmeta) mežaudžu platības īpatsvars analīzes šūnā (1
 ha)
 
 **Procedure:** Most EGVs describing forests are spatially restricted to areas outside
@@ -21318,10 +21318,10 @@ writeRaster(merogots,
 
 **layername:** `egv_281`
 
-**English name:** Fractional cover of Old (over rotation age) Forests within the
+**English name:** Fractional cover of Old (over rotation age) Forest Stands within the
 0.5 km landscape
 
-**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 0,5 km ainavā
+**Latvian name:** Vecu (kopš cirtmeta) mežaudžu platības īpatsvars 0,5 km ainavā
 
 **Procedure:** The cover fraction within a radius of 500 m around the analysis grid cell is
 calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside the
@@ -21392,10 +21392,10 @@ writeRaster(merogots,
 
 **layername:** `egv_282`
 
-**English name:** Fractional cover of Old (over rotation age) Forests within the
+**English name:** Fractional cover of Old (over rotation age) Forest Stands within the
 1.25 km landscape
 
-**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 1,25 km ainavā
+**Latvian name:** Vecu (kopš cirtmeta) mežaudžu platības īpatsvars 1,25 km ainavā
 
 **Procedure:** The cover fraction within a radius of 1250 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
@@ -21466,10 +21466,10 @@ writeRaster(merogots,
 
 **layername:** `egv_283`
 
-**English name:** Fractional cover of Old (over rotation age) Forests within the
+**English name:** Fractional cover of Old (over rotation age) Forest Stands within the
 3 km landscape
 
-**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 3 km ainavā
+**Latvian name:** Vecu (kopš cirtmeta) mežaudžu platības īpatsvars 3 km ainavā
 
 **Procedure:** The cover fraction within a radius of 3000 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
@@ -21540,10 +21540,10 @@ writeRaster(merogots,
 
 **layername:** `egv_284`
 
-**English name:** Fractional cover of Old (over rotation age) Forests within the
+**English name:** Fractional cover of Old (over rotation age) Forest Stands within the
 10 km landscape
 
-**Latvian name:** Vecu (kopš cirtmeta) mežu platības īpatsvars 10 km ainavā
+**Latvian name:** Vecu (kopš cirtmeta) mežaudžu platības īpatsvars 10 km ainavā
 
 **Procedure:** The cover fraction within a radius of 10000 m around the analysis grid cell
 is calculated as the area-weighted sum of the [analysis cells](#ch06.280) inside
@@ -21614,7 +21614,7 @@ writeRaster(merogots,
 
 **layername:** `egv_285`
 
-**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall)
+**English name:** Fractional cover of Shrubs, Young Forest Stands (at least 5 m tall)
 within the analysis cell (1 ha)
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars
@@ -21754,7 +21754,7 @@ writeRaster(merogots,
 
 **layername:** `egv_286`
 
-**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall)
+**English name:** Fractional cover of Shrubs, Young Forest Stands (at least 5 m tall)
 within the 0.5 km landscape
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 0,5
@@ -21829,7 +21829,7 @@ writeRaster(merogots,
 
 **layername:** `egv_287`
 
-**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall)
+**English name:** Fractional cover of Shrubs, Young Forest Stands (at least 5 m tall)
 within the 1.25 km landscape
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 1,25
@@ -21904,7 +21904,7 @@ writeRaster(merogots,
 
 **layername:** `egv_288`
 
-**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall)
+**English name:** Fractional cover of Shrubs, Young Forest Stands (at least 5 m tall)
 within the 3 km landscape
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 3 km
@@ -21979,7 +21979,7 @@ writeRaster(merogots,
 
 **layername:** `egv_289`
 
-**English name:** Fractional cover of Shrubs, Young Stands (at least 5 m tall)
+**English name:** Fractional cover of Shrubs, Young Forest Stands (at least 5 m tall)
 within the 10 km landscape
 
 **Latvian name:** Krūmāju un jaunaudžu (no 5 m augstuma) platības īpatsvars 10
@@ -26045,7 +26045,7 @@ writeRaster(merogots,
 **English name:** Fractional cover of Mesotrophic Forests on undrained Mineral
 Soils within the analysis cell (1 ha)
 
-**Latvian name:** Mezotrofu mežu minerālaugsnēs platības īpatsvars analīzes šūnā
+**Latvian name:** Mezotrofu mežu nesusinātās minerālaugsnēs platības īpatsvars analīzes šūnā
 (1 ha)
 
 **Procedure:** To prepare this EGV, forest stands with forest type equal to "4"
@@ -39082,7 +39082,7 @@ writeRaster(merogots,
 **English name:** Average short-term seasonality of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai ūdens satura veģetācijā
+**Latvian name:** Sezonalitāte pēdējo gadu vidējai ūdens satura veģetācijā
 indeksa (NDMI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
@@ -39140,7 +39140,7 @@ writeRaster(merogots,
 **English name:** Median short-term vegetation water content index (NDMI) within the
 analysis cell (1 ha)
 
-**Latvian name:** Mediānā pēdējo piecu gadu ūdens satura veģetācijā indeksa
+**Latvian name:** Mediānā pēdējo gadu ūdens satura veģetācijā indeksa
 (NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
@@ -39197,7 +39197,7 @@ writeRaster(merogots,
 **English name:** Spatial variability of short-term median vegetation water
 content index (NDMI) within the analysis cell (1 ha)
 
-**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens
+**Latvian name:** Telpiskā variabilitāte pēdējo gadu mediānajai ūdens
 satura veģetācijā indeksa (NDMI) vērtībai analīzes šūnā
 (1 ha)
 
@@ -39282,7 +39282,7 @@ writeRaster(merogots,
 **English name:** Minimum short-term 25th percentile of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
-**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens satura
+**Latvian name:** Minimālā 25. procentiles pēdējo gadu ūdens satura
 veģetācijā indeksa (NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
@@ -39341,7 +39341,7 @@ writeRaster(merogots,
 **English name:** Maximum short-term 75th percentile of vegetation water content index 
 (NDMI) within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens satura
+**Latvian name:** Maksimālā 75. procentiles pēdējo gadu ūdens satura
 veģetācijā indeksa (NDMI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
@@ -39537,7 +39537,7 @@ writeRaster(merogots,
 **English name:** Average short-term seasonality of vegetation index (NDVI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai veģetācijas indeksa
+**Latvian name:** Sezonalitāte pēdējo gadu vidējai veģetācijas indeksa
 (NDVI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
@@ -39594,7 +39594,7 @@ writeRaster(merogots,
 **English name:** Median short-term vegetation index (NDVI) within the analysis
 cell (1 ha)
 
-**Latvian name:** Mediānā pēdējo piecu gadu veģetācijas indeksa (NDVI) vērtība analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējo gadu veģetācijas indeksa (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -39650,7 +39650,7 @@ writeRaster(merogots,
 **English name:** Spatial variability of short-term median vegetation index
 (NDVI) within the analysis cell (1 ha)
 
-**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai
+**Latvian name:** Telpiskā variabilitāte pēdējo gadu mediānajai
 veģetācijas indeksa (NDVI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
@@ -39734,7 +39734,7 @@ writeRaster(merogots,
 **English name:** Minimum short-term 25th percentile of vegetation index (NDVI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu veģetācijas indeksa
+**Latvian name:** Minimālā 25. procentiles pēdējo gadu veģetācijas indeksa
 (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
@@ -39791,7 +39791,7 @@ writeRaster(merogots,
 **English name:** Maximum short-term 75th percentile of vegetation index (NDVI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu veģetācijas
+**Latvian name:** Maksimālā 75. procentiles pēdējo gadu veģetācijas
 indeksa (NDVI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
@@ -39984,7 +39984,7 @@ writeRaster(merogots,
 **English name:** Average short-term seasonality of water index (NDWI) within
 the analysis cell (1 ha)
 
-**Latvian name:** Sezonalitāte pēdējo piecu gadu vidējai ūdens indeksa (NDWI)
+**Latvian name:** Sezonalitāte pēdējo gadu vidējai ūdens indeksa (NDWI)
 vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
@@ -40041,7 +40041,7 @@ writeRaster(merogots,
 **English name:** Median short-term water index (NDWI) within the analysis cell
 (1 ha)
 
-**Latvian name:** Mediānā pēdējo piecu gadu ūdens indeksa (NDWI) vērtība analīzes šūnā (1 ha)
+**Latvian name:** Mediānā pēdējo gadu ūdens indeksa (NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The arithmetic mean value
 at the analysis cell is calculated using the workflow `egvtools::input2egv()`. To 
@@ -40097,7 +40097,7 @@ writeRaster(merogots,
 **English name:** Spatial variability of short-term median water index (NDWI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Telpiskā variabilitāte pēdējo piecu gadu mediānajai ūdens
+**Latvian name:** Telpiskā variabilitāte pēdējo gadu mediānajai ūdens
 indeksa (NDWI) vērtībai analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The 
@@ -40180,7 +40180,7 @@ writeRaster(merogots,
 **English name:** Minimum short-term 25th percentile of water index (NDWI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Minimālā 25. procentiles pēdējo piecu gadu ūdens indeksa
+**Latvian name:** Minimālā 25. procentiles pēdējo gadu ūdens indeksa
 (NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The minimum value
@@ -40237,7 +40237,7 @@ writeRaster(merogots,
 **English name:** Maximum short-term 75th percentile of water index (NDWI)
 within the analysis cell (1 ha)
 
-**Latvian name:** Maksimālā 75. procentiles pēdējo piecu gadu ūdens indeksa
+**Latvian name:** Maksimālā 75. procentiles pēdējo gadu ūdens indeksa
 (NDWI) vērtība analīzes šūnā (1 ha)
 
 **Procedure:** Directly follows [preprocessing](#Ch04.13). The maximum value
