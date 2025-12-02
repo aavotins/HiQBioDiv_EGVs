@@ -1,7 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
-author: "Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Marks Arnolds Župerka, Ainārs Auniņš"
-date: "2025-11-26"
+author: "Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vineta Vērpēja, Ivo Vinogradovs, Ainārs Auniņš"
+date: "2025-12-02"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib, refs.bib]
