@@ -101,7 +101,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_1.png" width="100%" />
+<img src="./Figures/maps4book/egv_001.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio10_cell {#ch06.002}
 
@@ -162,7 +162,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_2.png" width="100%" />
+<img src="./Figures/maps4book/egv_002.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio11_cell {#ch06.003}
 
@@ -223,7 +223,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_3.png" width="100%" />
+<img src="./Figures/maps4book/egv_003.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio12_cell {#ch06.004}
 
@@ -284,7 +284,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_4.png" width="100%" />
+<img src="./Figures/maps4book/egv_004.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio13_cell {#ch06.005}
 
@@ -345,7 +345,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_5.png" width="100%" />
+<img src="./Figures/maps4book/egv_005.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio14_cell {#ch06.006}
 
@@ -406,7 +406,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_6.png" width="100%" />
+<img src="./Figures/maps4book/egv_006.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio15_cell {#ch06.007}
 
@@ -467,7 +467,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_7.png" width="100%" />
+<img src="./Figures/maps4book/egv_007.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio16_cell {#ch06.008}
 
@@ -528,7 +528,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_8.png" width="100%" />
+<img src="./Figures/maps4book/egv_008.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio17_cell {#ch06.009}
 
@@ -589,7 +589,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_9.png" width="100%" />
+<img src="./Figures/maps4book/egv_009.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio18_cell {#ch06.010}
 
@@ -650,7 +650,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_10.png" width="100%" />
+<img src="./Figures/maps4book/egv_010.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio19_cell {#ch06.011}
 
@@ -711,7 +711,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_11.png" width="100%" />
+<img src="./Figures/maps4book/egv_011.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio2_cell {#ch06.012}
 
@@ -772,7 +772,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_12.png" width="100%" />
+<img src="./Figures/maps4book/egv_012.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio3_cell {#ch06.013}
 
@@ -833,7 +833,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_13.png" width="100%" />
+<img src="./Figures/maps4book/egv_013.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio4_cell {#ch06.014}
 
@@ -894,7 +894,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_14.png" width="100%" />
+<img src="./Figures/maps4book/egv_014.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio5_cell {#ch06.015}
 
@@ -955,7 +955,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_15.png" width="100%" />
+<img src="./Figures/maps4book/egv_015.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio6_cell {#ch06.016}
 
@@ -1016,7 +1016,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_16.png" width="100%" />
+<img src="./Figures/maps4book/egv_016.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio7_cell {#ch06.017}
 
@@ -1077,7 +1077,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_17.png" width="100%" />
+<img src="./Figures/maps4book/egv_017.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio8_cell {#ch06.018}
 
@@ -1138,7 +1138,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_18.png" width="100%" />
+<img src="./Figures/maps4book/egv_018.png" width="100%" />
 
 ## Climate_CHELSAv2.1-bio9_cell {#ch06.019}
 
@@ -1199,7 +1199,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_19.png" width="100%" />
+<img src="./Figures/maps4book/egv_019.png" width="100%" />
 
 ## Climate_CHELSAv2.1-clt-max_cell {#ch06.020}
 
@@ -1260,7 +1260,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_20.png" width="100%" />
+<img src="./Figures/maps4book/egv_020.png" width="100%" />
 
 ## Climate_CHELSAv2.1-clt-mean_cell {#ch06.021}
 
@@ -1320,7 +1320,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_21.png" width="100%" />
+<img src="./Figures/maps4book/egv_021.png" width="100%" />
 
 ## Climate_CHELSAv2.1-clt-min_cell {#ch06.022}
 
@@ -1381,7 +1381,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_22.png" width="100%" />
+<img src="./Figures/maps4book/egv_022.png" width="100%" />
 
 ## Climate_CHELSAv2.1-clt-range_cell {#ch06.023}
 
@@ -1442,7 +1442,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_23.png" width="100%" />
+<img src="./Figures/maps4book/egv_023.png" width="100%" />
 
 ## Climate_CHELSAv2.1-cmi-max_cell {#ch06.024}
 
@@ -1503,7 +1503,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_24.png" width="100%" />
+<img src="./Figures/maps4book/egv_024.png" width="100%" />
 
 ## Climate_CHELSAv2.1-cmi-mean_cell {#ch06.025}
 
@@ -1564,7 +1564,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_25.png" width="100%" />
+<img src="./Figures/maps4book/egv_025.png" width="100%" />
 
 ## Climate_CHELSAv2.1-cmi-min_cell {#ch06.026}
 
@@ -1625,7 +1625,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_26.png" width="100%" />
+<img src="./Figures/maps4book/egv_026.png" width="100%" />
 
 ## Climate_CHELSAv2.1-cmi-range_cell {#ch06.027}
 
@@ -1686,7 +1686,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_27.png" width="100%" />
+<img src="./Figures/maps4book/egv_027.png" width="100%" />
 
 ## Climate_CHELSAv2.1-fcf_cell {#ch06.028}
 
@@ -1747,7 +1747,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_28.png" width="100%" />
+<img src="./Figures/maps4book/egv_028.png" width="100%" />
 
 ## Climate_CHELSAv2.1-fgd_cell {#ch06.029}
 
@@ -1808,7 +1808,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_29.png" width="100%" />
+<img src="./Figures/maps4book/egv_029.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdd0_cell {#ch06.030}
 
@@ -1869,7 +1869,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_30.png" width="100%" />
+<img src="./Figures/maps4book/egv_030.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdd10_cell {#ch06.031}
 
@@ -1930,7 +1930,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_31.png" width="100%" />
+<img src="./Figures/maps4book/egv_031.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdd5_cell {#ch06.032}
 
@@ -1991,7 +1991,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_32.png" width="100%" />
+<img src="./Figures/maps4book/egv_032.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gddlgd0_cell {#ch06.033}
 
@@ -2052,7 +2052,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_33.png" width="100%" />
+<img src="./Figures/maps4book/egv_033.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gddlgd10_cell {#ch06.034}
 
@@ -2113,7 +2113,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_34.png" width="100%" />
+<img src="./Figures/maps4book/egv_034.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gddlgd5_cell {#ch06.035}
 
@@ -2174,7 +2174,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_35.png" width="100%" />
+<img src="./Figures/maps4book/egv_035.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdgfgd0_cell {#ch06.036}
 
@@ -2235,7 +2235,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_36.png" width="100%" />
+<img src="./Figures/maps4book/egv_036.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdgfgd10_cell {#ch06.037}
 
@@ -2296,7 +2296,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_37.png" width="100%" />
+<img src="./Figures/maps4book/egv_037.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gdgfgd5_cell {#ch06.038}
 
@@ -2357,7 +2357,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_38.png" width="100%" />
+<img src="./Figures/maps4book/egv_038.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gsl_cell {#ch06.039}
 
@@ -2418,7 +2418,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_39.png" width="100%" />
+<img src="./Figures/maps4book/egv_039.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gsp_cell {#ch06.040}
 
@@ -2479,7 +2479,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_40.png" width="100%" />
+<img src="./Figures/maps4book/egv_040.png" width="100%" />
 
 ## Climate_CHELSAv2.1-gst_cell {#ch06.041}
 
@@ -2540,7 +2540,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_41.png" width="100%" />
+<img src="./Figures/maps4book/egv_041.png" width="100%" />
 
 ## Climate_CHELSAv2.1-hurs-max_cell {#ch06.042}
 
@@ -2601,7 +2601,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_42.png" width="100%" />
+<img src="./Figures/maps4book/egv_042.png" width="100%" />
 
 ## Climate_CHELSAv2.1-hurs-mean_cell {#ch06.043}
 
@@ -2662,7 +2662,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_43.png" width="100%" />
+<img src="./Figures/maps4book/egv_043.png" width="100%" />
 
 ## Climate_CHELSAv2.1-hurs-min_cell {#ch06.044}
 
@@ -2723,7 +2723,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_44.png" width="100%" />
+<img src="./Figures/maps4book/egv_044.png" width="100%" />
 
 ## Climate_CHELSAv2.1-hurs-range_cell {#ch06.045}
 
@@ -2784,7 +2784,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_45.png" width="100%" />
+<img src="./Figures/maps4book/egv_045.png" width="100%" />
 
 ## Climate_CHELSAv2.1-lgd_cell {#ch06.046}
 
@@ -2845,7 +2845,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_46.png" width="100%" />
+<img src="./Figures/maps4book/egv_046.png" width="100%" />
 
 ## Climate_CHELSAv2.1-ngd0_cell {#ch06.047}
 
@@ -2906,7 +2906,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_47.png" width="100%" />
+<img src="./Figures/maps4book/egv_047.png" width="100%" />
 
 ## Climate_CHELSAv2.1-ngd10_cell {#ch06.048}
 
@@ -2967,7 +2967,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_48.png" width="100%" />
+<img src="./Figures/maps4book/egv_048.png" width="100%" />
 
 ## Climate_CHELSAv2.1-ngd5_cell {#ch06.049}
 
@@ -3028,7 +3028,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_49.png" width="100%" />
+<img src="./Figures/maps4book/egv_049.png" width="100%" />
 
 ## Climate_CHELSAv2.1-npp_cell {#ch06.050}
 
@@ -3089,7 +3089,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_50.png" width="100%" />
+<img src="./Figures/maps4book/egv_050.png" width="100%" />
 
 ## Climate_CHELSAv2.1-pet-penman-max_cell {#ch06.051}
 
@@ -3150,7 +3150,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_51.png" width="100%" />
+<img src="./Figures/maps4book/egv_051.png" width="100%" />
 
 ## Climate_CHELSAv2.1-pet-penman-mean_cell {#ch06.052}
 
@@ -3211,7 +3211,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_52.png" width="100%" />
+<img src="./Figures/maps4book/egv_052.png" width="100%" />
 
 ## Climate_CHELSAv2.1-pet-penman-min_cell {#ch06.053}
 
@@ -3272,7 +3272,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_53.png" width="100%" />
+<img src="./Figures/maps4book/egv_053.png" width="100%" />
 
 ## Climate_CHELSAv2.1-pet-penman-range_cell {#ch06.054}
 
@@ -3333,7 +3333,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_54.png" width="100%" />
+<img src="./Figures/maps4book/egv_054.png" width="100%" />
 
 ## Climate_CHELSAv2.1-rsds-max_cell {#ch06.055}
 
@@ -3394,7 +3394,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_55.png" width="100%" />
+<img src="./Figures/maps4book/egv_055.png" width="100%" />
 
 ## Climate_CHELSAv2.1-rsds-mean_cell {#ch06.056}
 
@@ -3455,7 +3455,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_56.png" width="100%" />
+<img src="./Figures/maps4book/egv_056.png" width="100%" />
 
 ## Climate_CHELSAv2.1-rsds-min_cell {#ch06.057}
 
@@ -3516,7 +3516,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_57.png" width="100%" />
+<img src="./Figures/maps4book/egv_057.png" width="100%" />
 
 ## Climate_CHELSAv2.1-rsds-range_cell {#ch06.058}
 
@@ -3577,7 +3577,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_58.png" width="100%" />
+<img src="./Figures/maps4book/egv_058.png" width="100%" />
 
 ## Climate_CHELSAv2.1-scd_cell {#ch06.059}
 
@@ -3638,7 +3638,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_59.png" width="100%" />
+<img src="./Figures/maps4book/egv_059.png" width="100%" />
 
 ## Climate_CHELSAv2.1-sfcWind-max_cell {#ch06.060}
 
@@ -3699,7 +3699,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_60.png" width="100%" />
+<img src="./Figures/maps4book/egv_060.png" width="100%" />
 
 ## Climate_CHELSAv2.1-sfcWind-mean_cell {#ch06.061}
 
@@ -3760,7 +3760,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_61.png" width="100%" />
+<img src="./Figures/maps4book/egv_061.png" width="100%" />
 
 ## Climate_CHELSAv2.1-sfcWind-min_cell {#ch06.062}
 
@@ -3821,7 +3821,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_62.png" width="100%" />
+<img src="./Figures/maps4book/egv_062.png" width="100%" />
 
 ## Climate_CHELSAv2.1-sfcWind-range_cell {#ch06.063}
 
@@ -3882,7 +3882,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_63.png" width="100%" />
+<img src="./Figures/maps4book/egv_063.png" width="100%" />
 
 ## Climate_CHELSAv2.1-swb_cell {#ch06.064}
 
@@ -3943,7 +3943,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_64.png" width="100%" />
+<img src="./Figures/maps4book/egv_064.png" width="100%" />
 
 ## Climate_CHELSAv2.1-swe_cell {#ch06.065}
 
@@ -4004,7 +4004,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_65.png" width="100%" />
+<img src="./Figures/maps4book/egv_065.png" width="100%" />
 
 ## Climate_CHELSAv2.1-vpd-max_cell {#ch06.066}
 
@@ -4065,7 +4065,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_66.png" width="100%" />
+<img src="./Figures/maps4book/egv_066.png" width="100%" />
 
 ## Climate_CHELSAv2.1-vpd-mean_cell {#ch06.067}
 
@@ -4126,7 +4126,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_67.png" width="100%" />
+<img src="./Figures/maps4book/egv_067.png" width="100%" />
 
 ## Climate_CHELSAv2.1-vpd-min_cell {#ch06.068}
 
@@ -4187,7 +4187,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_68.png" width="100%" />
+<img src="./Figures/maps4book/egv_068.png" width="100%" />
 
 ## Climate_CHELSAv2.1-vpd-range_cell {#ch06.069}
 
@@ -4248,7 +4248,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_69.png" width="100%" />
+<img src="./Figures/maps4book/egv_069.png" width="100%" />
 
 ## HydroClim_01-max_cell {#ch06.070}
 
@@ -4345,7 +4345,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_70.png" width="100%" />
+<img src="./Figures/maps4book/egv_070.png" width="100%" />
 
 ## HydroClim_02-max_cell {#ch06.071}
 
@@ -4442,7 +4442,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_71.png" width="100%" />
+<img src="./Figures/maps4book/egv_071.png" width="100%" />
 
 ## HydroClim_03-max_cell {#ch06.072}
 
@@ -4541,7 +4541,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_72.png" width="100%" />
+<img src="./Figures/maps4book/egv_072.png" width="100%" />
 
 ## HydroClim_04-max_cell {#ch06.073}
 
@@ -4639,7 +4639,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_73.png" width="100%" />
+<img src="./Figures/maps4book/egv_073.png" width="100%" />
 
 ## HydroClim_05-max_cell {#ch06.074}
 
@@ -4737,7 +4737,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_74.png" width="100%" />
+<img src="./Figures/maps4book/egv_074.png" width="100%" />
 
 ## HydroClim_06-min_cell {#ch06.075}
 
@@ -4835,7 +4835,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_75.png" width="100%" />
+<img src="./Figures/maps4book/egv_075.png" width="100%" />
 
 ## HydroClim_07-max_cell {#ch06.076}
 
@@ -4932,7 +4932,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_76.png" width="100%" />
+<img src="./Figures/maps4book/egv_076.png" width="100%" />
 
 ## HydroClim_08-max_cell {#ch06.077}
 
@@ -5030,7 +5030,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_77.png" width="100%" />
+<img src="./Figures/maps4book/egv_077.png" width="100%" />
 
 ## HydroClim_09-min_cell {#ch06.078}
 
@@ -5128,7 +5128,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_78.png" width="100%" />
+<img src="./Figures/maps4book/egv_078.png" width="100%" />
 
 ## HydroClim_10-max_cell {#ch06.079}
 
@@ -5226,7 +5226,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_79.png" width="100%" />
+<img src="./Figures/maps4book/egv_079.png" width="100%" />
 
 ## HydroClim_11-min_cell {#ch06.080}
 
@@ -5324,7 +5324,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_80.png" width="100%" />
+<img src="./Figures/maps4book/egv_080.png" width="100%" />
 
 ## HydroClim_12-max_cell {#ch06.081}
 
@@ -5421,7 +5421,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_81.png" width="100%" />
+<img src="./Figures/maps4book/egv_081.png" width="100%" />
 
 ## HydroClim_13-max_cell {#ch06.082}
 
@@ -5518,7 +5518,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_82.png" width="100%" />
+<img src="./Figures/maps4book/egv_082.png" width="100%" />
 
 ## HydroClim_14-max_cell {#ch06.083}
 
@@ -5615,7 +5615,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_83.png" width="100%" />
+<img src="./Figures/maps4book/egv_083.png" width="100%" />
 
 ## HydroClim_15-max_cell {#ch06.084}
 
@@ -5712,7 +5712,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_84.png" width="100%" />
+<img src="./Figures/maps4book/egv_084.png" width="100%" />
 
 ## HydroClim_16-max_cell {#ch06.085}
 
@@ -5810,7 +5810,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_85.png" width="100%" />
+<img src="./Figures/maps4book/egv_085.png" width="100%" />
 
 ## HydroClim_17-max_cell {#ch06.086}
 
@@ -5908,7 +5908,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_86.png" width="100%" />
+<img src="./Figures/maps4book/egv_086.png" width="100%" />
 
 ## HydroClim_18-max_cell {#ch06.087}
 
@@ -6006,7 +6006,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_87.png" width="100%" />
+<img src="./Figures/maps4book/egv_087.png" width="100%" />
 
 ## HydroClim_19-max_cell {#ch06.088}
 
@@ -6104,7 +6104,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_88.png" width="100%" />
+<img src="./Figures/maps4book/egv_088.png" width="100%" />
 
 ## Distance_Builtup_cell {#ch06.089}
 
@@ -6162,7 +6162,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_89.png" width="100%" />
+<img src="./Figures/maps4book/egv_089.png" width="100%" />
 
 ## Distance_ForestInside_cell {#ch06.090}
 
@@ -6222,7 +6222,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_90.png" width="100%" />
+<img src="./Figures/maps4book/egv_090.png" width="100%" />
 
 ## Distance_GrasslandPermanent_cell {#ch06.091}
 
@@ -6305,7 +6305,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_91.png" width="100%" />
+<img src="./Figures/maps4book/egv_091.png" width="100%" />
 
 ## Distance_Landfill_cell {#ch06.092}
 
@@ -6388,7 +6388,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_92.png" width="100%" />
+<img src="./Figures/maps4book/egv_092.png" width="100%" />
 
 ## Distance_Sea_cell {#ch06.093}
 
@@ -6475,7 +6475,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_93.png" width="100%" />
+<img src="./Figures/maps4book/egv_093.png" width="100%" />
 
 ## Distance_Trees_cell {#ch06.094}
 
@@ -6533,7 +6533,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_94.png" width="100%" />
+<img src="./Figures/maps4book/egv_094.png" width="100%" />
 
 ## Distance_Waste_cell {#ch06.095}
 
@@ -6627,7 +6627,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_95.png" width="100%" />
+<img src="./Figures/maps4book/egv_095.png" width="100%" />
 
 ## Distance_Water_cell {#ch06.096}
 
@@ -6685,7 +6685,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_96.png" width="100%" />
+<img src="./Figures/maps4book/egv_096.png" width="100%" />
 
 ## Distance_WaterInside_cell {#ch06.097}
 
@@ -6744,7 +6744,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_97.png" width="100%" />
+<img src="./Figures/maps4book/egv_097.png" width="100%" />
 
 ## Diversity_Farmland_r500 {#ch06.098}
 
@@ -6817,7 +6817,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_98.png" width="100%" />
+<img src="./Figures/maps4book/egv_098.png" width="100%" />
 
 ## Diversity_Farmland_r1250 {#ch06.099}
 
@@ -6890,7 +6890,7 @@ writeRaster(merogots,
       overwrite=TRUE)
 ```
 
-<img src="./Figures/maps4book/egv_99.png" width="100%" />
+<img src="./Figures/maps4book/egv_099.png" width="100%" />
 
 ## Diversity_Farmland_r3000 {#ch06.100}
 
