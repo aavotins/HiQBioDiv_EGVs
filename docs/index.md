@@ -1,19 +1,33 @@
 --- 
-title: "High-resolution ecogeographical variables for species distribution modelling describing Latvia, 2024"
-author: "Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Ainārs Auniņš"
-date: "2025-12-02"
-site: bookdown::bookdown_site
+title: "High-resolution ecogeographical variables for species distribution modelling
+  describing Latvia, 2024"
+author:
+  - "Andris Avotiņš"
+  - "Jekaterīna Butkeviča"
+  - "Betija Rubene"
+  - "Solvita Rūsiņa"
+  - "Rūta Starka"
+  - "Vita Šakele"
+  - "Vineta Vērpēja"
+  - "Ivo Vinogradovs"
+  - "Ainārs Auniņš"
+date: "2025-12-03"
+output:
+  pdf_document: default
+  word_document: default
 documentclass: book
-bibliography: [book.bib, packages.bib, refs.bib]
-csl: elsevier-harvard.csl
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  Description of the geodata used and the geoprocessing workflows employed to 
-  create ecogeographical variables (EGVs) for species distribution modelling 
-  describing Latvia, 2024.
-link-citations: yes
+bibliography:
+- book.bib
+- packages.bib
+- refs.bib
+csl: "elsevier-harvard.csl"
+description: "Description of the geodata used and the geoprocessing workflows employed
+  to \ncreate ecogeographical variables (EGVs) for species distribution modelling
+  \ndescribing Latvia, 2024.\n"
+link-citations: true
 github-repo: aavotins/HiQBioDiv_EGVs
 url: https://aavotins.github.io/HiQBioDiv_EGVs/
+site: bookdown::bookdown_site
 ---
 
 
@@ -127,8 +141,8 @@ in the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this mat
 specified differently. We performed parts of the compute on the University of Latvia 
 Institute of Numerical Modelling HPC cluster with the same file tree as in this 
 material. Shell scripts used to run R commands are available in 
-the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material at  
-`Data/hpc_io/Jobs_shell/2024/EGVs`.
+the [home repository](https://github.com/aavotins/HiQBioDiv_EGVs) of this material 
+at  `Data/hpc_io/Jobs_shell/2024/EGVs`.
 
 Sometimes we will refer to R packages in the text, we will put them in curly 
 brackets, for example, {package}.

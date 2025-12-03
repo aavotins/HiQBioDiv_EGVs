@@ -1806,9 +1806,12 @@ slani_v4$geometrijai=as.character(slani_v4$geomtype)
 table(slani_v4$geometrijai)
 
 slani_v4$geometrijai2=ifelse(slani_v4$geometrijai=="3D Point","POINT",
-                                   ifelse(slani_v4$geometrijai=="Multi Polygon","MULTIPOLYGON",
-                                          ifelse(slani_v4$geometrijai=="3D Multi Line String","MULTILINESTRING",
-                                                 ifelse(slani_v4$geometrijai=="3D Multi Polygon","MULTIPOLYGON",NA))))
+                                   ifelse(slani_v4$geometrijai=="Multi Polygon",
+                                          "MULTIPOLYGON",
+                                          ifelse(slani_v4$geometrijai=="3D Multi Line String",
+                                                 "MULTILINESTRING",
+                                                 ifelse(slani_v4$geometrijai=="3D Multi Polygon",
+                                                        "MULTIPOLYGON",NA))))
 
 slani4x=data.frame(name=slani_v4$name,
                    geometrija=slani_v4$geometrijai2)
@@ -1821,10 +1824,13 @@ for(i in seq_along(ciklam4x)){
   objekts=slani4x %>% 
     filter(name==nosaukums)
   print(nosaukums)
-  slanis=read_sf("./Geodata/2024/TopographicMap/topo10v4/Latvija_LKS92_v4_20250703.gdb/",layer=nosaukums)
+  slanis=read_sf("./Geodata/2024/TopographicMap/topo10v4/Latvija_LKS92_v4_20250703.gdb/",
+                 layer=nosaukums)
   slanisZM=st_zm(slanis)
   slanis2=st_cast(slanisZM,to=objekts$geometrija)
-  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer=nosaukums,append=FALSE)
+  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+           layer=nosaukums,
+           append=FALSE)
   ilgums=Sys.time()-sakums
   print(ilgums)
 }
@@ -1839,12 +1845,18 @@ slani_v3$geometrijai=as.character(slani_v3$geomtype)
 table(slani_v3$geometrijai)
 
 slani_v3$geometrijai2=ifelse(slani_v3$geometrijai=="3D Point","POINT",
-                                   ifelse(slani_v3$geometrijai=="Multi Polygon","MULTIPOLYGON",
-                                          ifelse(slani_v3$geometrijai=="3D Multi Line String","MULTILINESTRING",
-                                                 ifelse(slani_v3$geometrijai=="3D Multi Polygon","MULTIPOLYGON",
+                                   ifelse(slani_v3$geometrijai=="Multi Polygon",
+                                          "MULTIPOLYGON",
+                                          ifelse(slani_v3$geometrijai=="3D Multi Line String",
+                                                 "MULTILINESTRING",
+                                                 ifelse(slani_v3$geometrijai=="3D Multi Polygon",
+                                                        "MULTIPOLYGON",
                                                         ifelse(slani_v3$geometrijai=="Point","POINT",
-                                                               ifelse(slani_v3$geometrijai=="Multi Line String","MULTILINESTRING",
-                                                                      ifelse(slani_v3$geometrijai=="3D Measured Point","POINT",NA)))))))
+                                                               ifelse(slani_v3$geometrijai=="Multi Line String",
+                                                                      "MULTILINESTRING",
+                                                                      ifelse(slani_v3$geometrijai=="3D Measured Point",
+                                                                             "POINT",
+                                                                             NA)))))))
 
 slani3x=data.frame(name=slani_v3$name,
                    geometrija=slani_v3$geometrijai2)
@@ -1857,10 +1869,13 @@ for(i in seq_along(ciklam3x)){
   objekts=slani3x %>% 
     filter(name==nosaukums)
   print(nosaukums)
-  slanis=read_sf("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/",layer=nosaukums)
+  slanis=read_sf("./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/",
+                 layer=nosaukums)
   slanisZM=st_zm(slanis)
   slanis2=st_cast(slanisZM,to=objekts$geometrija)
-  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer=nosaukums,append=FALSE)
+  write_sf(slanis2,"./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+           layer=nosaukums,
+           append=FALSE)
   ilgums=Sys.time()-sakums
   print(ilgums)
 }
@@ -1869,16 +1884,19 @@ for(i in seq_along(ciklam3x)){
 # combination ----
 st_layers("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg")
 
-pages4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="Topo10_lapas")
+pages4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="Topo10_lapas")
 pages4_united=st_union(pages4)
 ggplot(pages4_united)+geom_sf()
 
 # landus_A
-landus_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="landus_A")
+landus_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+                 layer="landus_A")
 landus_not4=st_difference(landus_3,pages4_united)
 landus_not4=landus_not4 %>% 
   dplyr::select(FNAME,FCODE)
-landus_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="landus_A")
+landus_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+                 layer="landus_A")
 landus_4=landus_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1886,11 +1904,13 @@ landus_new=rbind(landus_not4,landus_4)
 sfarrow::st_write_parquet(landus_new,"./Geodata/2024/TopographicMap/LandusA_COMB.parquet")
 
 # bridge_L
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_L")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="bridge_L")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="bridge_L")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="bridge_L")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1898,11 +1918,13 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeL_COMB.parquet")
 
 # bridge_P
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="bridge_P")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="bridge_P")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="bridge_P")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="bridge_P")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1910,11 +1932,13 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/BridgeP_COMB.parquet")
 
 # hidro_A
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_A")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="hidro_A")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="hidro_A")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="hidro_A")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1922,11 +1946,13 @@ data_new=rbind(data_not4,data_4)
 sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroA_COMB.parquet")
 
 # hidro_L
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="hidro_L")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="hidro_L")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="hidro_L")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="hidro_L")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1935,11 +1961,13 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/HidroL_COMB.pa
 
 
 # road_A
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_A")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="road_A")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="road_A")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="road_A")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1949,11 +1977,13 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadA_COMB.par
 
 
 # road_L
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="road_L")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="road_L")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="road_L")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="road_L")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1963,11 +1993,13 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/RoadL_COMB.par
 
 
 # swamp_A
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="swamp_A")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="swamp_A")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="swamp_A")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="swamp_A")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1977,11 +2009,13 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/SwampA_COMB.pa
 
 
 # flora_L
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="flora_L")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="flora_L")
 data_not4=st_difference(data_3,pages4_united)
 data_not4=data_not4 %>% 
   dplyr::select(FNAME,FCODE)
-data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",layer="flora_L")
+data_4=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg",
+               layer="flora_L")
 data_4=data_4 %>% 
   dplyr::select(FNAME,FCODE)
 
@@ -1990,7 +2024,8 @@ sfarrow::st_write_parquet(data_new,"./Geodata/2024/TopographicMap/FloraL_COMB.pa
 
 
 # build_A
-data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",layer="build_A")
+data_3=st_read("./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg",
+               layer="build_A")
 data_3=data_3 %>% 
   dplyr::select(FNAME,FCODE)
 sfarrow::st_write_parquet(data_3,"./Geodata/2024/TopographicMap/BuildA_v3.parquet")
@@ -2002,9 +2037,9 @@ sfarrow::st_write_parquet(data_3,"./Geodata/2024/TopographicMap/BuildA_v3.parque
 
 Corine Land Cover is a publicly available geodata that characterizes land cover 
 and land use (LULC) across Europe over a long period of time using a generally 
-consistent (comparable) methodology (https://land.copernicus.eu/content/corine-land -cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), 
-providing results for individual years - 1990, 2000, 2006, 2012, 
-2018 (https://land.copernicus.eu/en/products/corine-land-cover). 
+consistent (comparable) [methodology](https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), 
+providing results for [individual years](https://land.copernicus.eu/en/products/corine-land-cover) - 1990, 2000, 2006, 2012, 
+2018. 
 Although the dataset has a coarse resolution – the mapping unit is 25 ha areas 
 that are at least 100 m wide – it provides sufficient information for general 
 use, such as workflow testing and observation filtering. This project uses 
@@ -2132,7 +2167,8 @@ template10=rast("./Templates/TemplateRasters/LV10m_10km.tif")
 
 # ESDAC texture ----
 
-sdTEXT=rast("./Geodata/2024/Soils/ESDAC/texture/SoilDatabaseV2_raster/ESDB-Raster-Library-1k-GeoTIFF-20240507/TEXT/TEXT.tif")
+sdTEXT=rast(paste0("./Geodata/2024/Soils/ESDAC/texture/SoilDatabaseV2_raster/",
+                   "ESDB-Raster-Library-1k-GeoTIFF-20240507/TEXT/TEXT.tif"))
 plot(sdTEXT)
 
 sdTEXT=project(sdTEXT,template10,method="near")
@@ -2988,20 +3024,38 @@ nulles10=rast("./Templates/TemplateRasters/nulls_LV10m_10km.tif")
 
 
 # Bogs ----
-neatklata71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif")
+neatklata71107120=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                              "purvi/!LV_kopa_apv1020_30_05_2022/",
+                              "!LV_kopa_apv1020_30_05_2022/",
+                              "Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif"))
 neatklata71107120=ifel(neatklata71107120>0,1,NA)
 plot(neatklata71107120)
-neatklata7140=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7140.tif")
+neatklata7140=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                          "purvi/!LV_kopa_apv1020_30_05_2022/",
+                          "!LV_kopa_apv1020_30_05_2022/",
+                          "Neatklata_purviem_raksturiga_zemsedze_7140.tif"))
 neatklata7140=ifel(neatklata7140>0,1,NA)
 
-raskturiga71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7110_7120.tif")
+raskturiga71107120=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                               "purvi/!LV_kopa_apv1020_30_05_2022/",
+                               "!LV_kopa_apv1020_30_05_2022/",
+                               "Purviem_neraksturiga_zemsedze_7110_7120.tif"))
 raskturiga71107120=ifel(raskturiga71107120>0,1,NA)
-raksturiga7140=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7140.tif")
+raksturiga7140=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                           "purvi/!LV_kopa_apv1020_30_05_2022/",
+                           "!LV_kopa_apv1020_30_05_2022/",
+                           "Purviem_neraksturiga_zemsedze_7140.tif"))
 raksturiga7140=ifel(raksturiga7140>0,1,NA)
 
-labels71107120=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7110_7120.tif")
+labels71107120=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                           "purvi/!LV_kopa_apv1020_30_05_2022/",
+                           "!LV_kopa_apv1020_30_05_2022/",
+                           "latvija_Labels_B7110_7120.tif"))
 labels71107120=ifel(labels71107120>0,1,NA)
-labels7140=rast("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7140.tif")
+labels7140=rast(paste0("./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/",
+                       "purvi/!LV_kopa_apv1020_30_05_2022/",
+                       "!LV_kopa_apv1020_30_05_2022/","
+                       latvija_Labels_B7140.tif"))
 labels7140=ifel(labels7140>0,1,NA)
 
 augstie=cover(cover(neatklata71107120,raskturiga71107120),labels71107120)

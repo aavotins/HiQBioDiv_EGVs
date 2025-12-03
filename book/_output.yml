@@ -23,5 +23,6 @@ bookdown::pdf_book:
   latex_engine: xelatex
   includes:
     in_header: preamble.tex
-  keep_tex: yes
-  pandoc_args: ["--listings"]
+  link-citations: true    # <-- hyphen!
+  citation_package: default
+  keep_tex: true

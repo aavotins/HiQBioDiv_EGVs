@@ -1,61 +1,160 @@
+% --- Page layout
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
 
-% -------- Fonts (XeLaTeX) --------
+% --- Fonts (XeLaTeX)
 \usepackage{fontspec}
+\XeTeXinputnormalization=1
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-% Robust fallbacks so this works on different machines
 \IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{Times New Roman}}
 \IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{Arial}}
-\IfFontExistsTF{TeX Gyre Cursor}{\setmonofont{TeX Gyre Cursor}}{\setmonofont{Menlo}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}}{%
+  \IfFontExistsTF{Menlo}{\setmonofont{Menlo}}{\setmonofont{Latin Modern Mono}}%
+}
 
-% -------- Code blocks via listings (no Shaded/framed) --------
-\usepackage{xcolor}
-\usepackage{listings}
-\usepackage{listingsutf8}
+% --- Hyperlinks: colors + behaviors
+\definecolor{linkblue}{HTML}{0645AD}
 
-% Colors for code
+% Make sure hyperref picks our colors even if Pandoc touches it later
+\PassOptionsToPackage{unicode=true}{hyperref}
+\usepackage{hyperref}
+\usepackage{xurl}
+\urlstyle{same} % URLs use surrounding text font
+
+% Ensure final link colors after everything is loaded
+\makeatletter
+\AtBeginDocument{%
+  \hypersetup{
+    colorlinks=true,     % color actual text (no boxes)
+    linktoc=all,         % color ToC entries
+    linkcolor=linkblue,  % internal links (sections, figures, ToC)
+    citecolor=linkblue,  % in-text citations
+    urlcolor=linkblue    % external URLs
+  }%
+  % Also force the internal color registers hyperref uses
+  \def\@linkcolor{linkblue}\def\@anchorcolor{linkblue}%
+  \def\@citecolor{linkblue}\def\@urlcolor{linkblue}%
+}
+\makeatother
+
+% --- Underline helpers (for EXTERNAL links only)
+\usepackage[normalem]{ulem} % \uline
+\renewcommand{\ULdepth}{1.2pt}
+\renewcommand{\ULthickness}{0.6pt}
+% Keep PDF bookmarks clean
+\pdfstringdefDisableCommands{%
+  \def\uline#1{#1}%
+  \def\textcolor#1#2{#2}%
+}
+
+% Wrappers
+\makeatletter
+% Blue+underline text (used for external links/urls only)
+\DeclareRobustCommand{\EGV@ulineblue}[1]{\begingroup\color{linkblue}\uline{#1}\endgroup}
+% Blue (no underline) text (used for internal links & citations)
+\DeclareRobustCommand{\EGV@blue}[1]{\begingroup\color{linkblue}#1\endgroup}
+
+% --- EXTERNAL links: underline + blue
+\let\EGV@oldhref\href
+\renewcommand{\href}[2]{\EGV@oldhref{#1}{\EGV@ulineblue{#2}}}
+\let\EGV@oldurl\url
+\renewcommand{\url}[1]{\EGV@ulineblue{\EGV@oldurl{#1}}}
+
+% Provide a macro for code-links.lua (link literal code → blue+underlined)
+\newcommand{\linkcode}[2]{\href{#2}{\EGV@ulineblue{\texttt{#1}}}}
+
+% --- INTERNAL links (cross-refs, ToC, citations): blue, NO underline
+% \hyperref[<label>]{<text>}  (cross-refs/ToC entries)
+\let\EGV@oldhyperref\hyperref
+\renewcommand{\hyperref}[2][]{\EGV@oldhyperref[#1]{\EGV@blue{#2}}}
+% \hyperlink{<target>}{<text>} (citeproc often uses this for in-text citations)
+\let\EGV@oldhyperlink\hyperlink
+\renewcommand{\hyperlink}[2]{\EGV@oldhyperlink{#1}{\EGV@blue{#2}}}
+% Plain \ref / \pageref / \autoref numbers also blue (no underline)
+\let\EGV@oldref\ref
+\renewcommand{\ref}[1]{\EGV@blue{\EGV@oldref{#1}}}
+\let\EGV@oldpageref\pageref
+\renewcommand{\pageref}[1]{\EGV@blue{\EGV@oldpageref{#1}}}
+\@ifundefined{autoref}{}{%
+  \let\EGV@oldautoref\autoref
+  \renewcommand{\autoref}[1]{\EGV@blue{\EGV@oldautoref{#1}}}}
+\makeatother
+
+% IMPORTANT: Do NOT recolor the whole CSLReferences environment.
+% We want only the URL/DOI inside entries to be blue+underlined (handled by \url/\href above),
+% while the rest of the bibliography text remains black.
+
+% --- Unicode superscripts/subscripts in text
+\usepackage{newunicodechar}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+\newunicodechar{⁺}{\textsuperscript{+}}
+\newunicodechar{⁻}{\textsuperscript{-}}
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}
+\newunicodechar{₅}{\textsubscript{5}}
+\newunicodechar{₆}{\textsubscript{6}}
+\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{₈}{\textsubscript{8}}
+\newunicodechar{₉}{\textsubscript{9}}
+\newunicodechar{₊}{\textsubscript{+}}
+\newunicodechar{₋}{\textsubscript{-}}
+
+% --- Code blocks: framed + light background (no mdframed)
 \definecolor{codebg}{HTML}{F7F7F7}
-\definecolor{codekw}{HTML}{005CC5}
-\definecolor{codecom}{HTML}{6A737D}
-\definecolor{codestr}{HTML}{032F62}
 \definecolor{codeline}{HTML}{E0E0E0}
-
-% One tidy style for R code: shaded bg, wrapping, simple colors
-\lstdefinestyle{andrisR}{
-  language=R,
-  inputencoding=utf8,
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{%
   breaklines=true,
-  breakatwhitespace=false,
-  postbreak=\mbox{\textcolor{codecom}{$\hookrightarrow$}\space},
-  keepspaces=true,
-  columns=fullflexible,
-  upquote=true,
-  showstringspaces=false,
-  basicstyle=\ttfamily\small,
-  keywordstyle=\bfseries\color{codekw},
-  commentstyle=\itshape\color{codecom},
-  stringstyle=\color{codestr},
-  backgroundcolor=\color{codebg},
+  breaksymbol=\tiny\ensuremath{\hookrightarrow},
+  breakanywhere=true,
+  commandchars=\\\{\},
+  showtabs=false,
+  showspaces=false,
+  fontsize=\small,
+  baselinestretch=1.0,
+  formatcom=\ttfamily,
   frame=single,
   rulecolor=\color{codeline},
-  frameround=tttt,
+  framerule=0.4pt,
   framesep=6pt,
-  numbersep=6pt
-}
-\lstset{style=andrisR}
-
-% Latvian diacritics inside code (listings is verbatim, so map them)
-% Using Unicode code points keeps things stable under XeLaTeX.
-\lstset{literate=
-  {ā}{{\char"0101}}1 {ē}{{\char"0113}}1 {ī}{{\char"012B}}1 {ū}{{\char"016B}}1
-  {š}{{\char"0161}}1 {ž}{{\char"017E}}1 {č}{{\char"010D}}1
-  {ģ}{{\char"0123}}1 {ķ}{{\char"0137}}1 {ļ}{{\char"013C}}1 {ņ}{{\char"0146}}1
-  {Ā}{{\char"0100}}1 {Ē}{{\char"0112}}1 {Ī}{{\char"012A}}1 {Ū}{{\char"016A}}1
-  {Š}{{\char"0160}}1 {Ž}{{\char"017D}}1 {Č}{{\char"010C}}1
-  {Ģ}{{\char"0122}}1 {Ķ}{{\char"0136}}1 {Ļ}{{\char"013B}}1 {Ņ}{{\char"0145}}1
+  bgcolor=codebg
 }
 
-% Help regular text with long lines
+% Neutralize Pandoc’s Shaded wrapper (avoid double boxes / errors)
+\makeatletter
+\@ifundefined{Shaded}{}{\renewenvironment{Shaded}{\ignorespaces}{\unskip}}
+\makeatother
+
+% Inline code small mono (no background)
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\small #1}}
+
+% --- Page style
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+% --- Pandoc helpers
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setlength{\emergencystretch}{3em}
 \sloppy

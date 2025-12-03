@@ -3,9 +3,9 @@
 When using code or data disclosed in this document, please cite our article and 
 data repository:
 
-- article reference
+- article reference: `to be added`
 
-- repository reference
+- repository reference: `to be added`
 
 
 Standardised ecogeographical variables are available for download from the project's 

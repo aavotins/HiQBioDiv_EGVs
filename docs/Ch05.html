@@ -26,10 +26,18 @@ create ecogeographical variables (EGVs) for species distribution modelling
 describing Latvia, 2024.</p>" />
   
 
-<meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Ainārs Auniņš" />
+<meta name="author" content="Andris Avotiņš" />
+<meta name="author" content="Jekaterīna Butkeviča" />
+<meta name="author" content="Betija Rubene" />
+<meta name="author" content="Solvita Rūsiņa" />
+<meta name="author" content="Rūta Starka" />
+<meta name="author" content="Vita Šakele" />
+<meta name="author" content="Vineta Vērpēja" />
+<meta name="author" content="Ivo Vinogradovs" />
+<meta name="author" content="Ainārs Auniņš" />
 
 
-<meta name="date" content="2025-12-02" />
+<meta name="date" content="2025-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1505,20 +1513,22 @@ for further processing.</p>
 <span id="cb34-79"><a href="Ch05.html#cb34-79" tabindex="-1"></a>c300<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span>
 <span id="cb34-80"><a href="Ch05.html#cb34-80" tabindex="-1"></a></span>
 <span id="cb34-81"><a href="Ch05.html#cb34-81" tabindex="-1"></a>farmland_cover1<span class="ot">=</span><span class="fu">cover</span>(a300,b300)</span>
-<span id="cb34-82"><a href="Ch05.html#cb34-82" tabindex="-1"></a>farmland_cover2<span class="ot">=</span><span class="fu">cover</span>(farmland_cover1,c300,</span>
-<span id="cb34-83"><a href="Ch05.html#cb34-83" tabindex="-1"></a>                          <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif&quot;</span>,</span>
-<span id="cb34-84"><a href="Ch05.html#cb34-84" tabindex="-1"></a>                          <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb34-85"><a href="Ch05.html#cb34-85" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb34-86"><a href="Ch05.html#cb34-86" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
-<span id="cb34-87"><a href="Ch05.html#cb34-87" tabindex="-1"></a><span class="fu">rm</span>(lad_klasem)</span>
-<span id="cb34-88"><a href="Ch05.html#cb34-88" tabindex="-1"></a><span class="fu">rm</span>(a300)</span>
-<span id="cb34-89"><a href="Ch05.html#cb34-89" tabindex="-1"></a><span class="fu">rm</span>(b300)</span>
-<span id="cb34-90"><a href="Ch05.html#cb34-90" tabindex="-1"></a><span class="fu">rm</span>(c300)</span>
-<span id="cb34-91"><a href="Ch05.html#cb34-91" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover1)</span>
-<span id="cb34-92"><a href="Ch05.html#cb34-92" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover2)</span>
-<span id="cb34-93"><a href="Ch05.html#cb34-93" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class310_aramzemes_lad.tif&quot;</span>)</span>
-<span id="cb34-94"><a href="Ch05.html#cb34-94" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif&quot;</span>)</span>
-<span id="cb34-95"><a href="Ch05.html#cb34-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span></code></pre></div>
+<span id="cb34-82"><a href="Ch05.html#cb34-82" tabindex="-1"></a>farmland_cover2<span class="ot">=</span><span class="fu">cover</span>(farmland_cover1,</span>
+<span id="cb34-83"><a href="Ch05.html#cb34-83" tabindex="-1"></a>                      c300,</span>
+<span id="cb34-84"><a href="Ch05.html#cb34-84" tabindex="-1"></a>                      <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb34-85"><a href="Ch05.html#cb34-85" tabindex="-1"></a>                                      <span class="st">&quot;SimpleLandscape_class300_lauki_premask.tif&quot;</span>),</span>
+<span id="cb34-86"><a href="Ch05.html#cb34-86" tabindex="-1"></a>                      <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb34-87"><a href="Ch05.html#cb34-87" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb34-88"><a href="Ch05.html#cb34-88" tabindex="-1"></a><span class="fu">rm</span>(lad)</span>
+<span id="cb34-89"><a href="Ch05.html#cb34-89" tabindex="-1"></a><span class="fu">rm</span>(lad_klasem)</span>
+<span id="cb34-90"><a href="Ch05.html#cb34-90" tabindex="-1"></a><span class="fu">rm</span>(a300)</span>
+<span id="cb34-91"><a href="Ch05.html#cb34-91" tabindex="-1"></a><span class="fu">rm</span>(b300)</span>
+<span id="cb34-92"><a href="Ch05.html#cb34-92" tabindex="-1"></a><span class="fu">rm</span>(c300)</span>
+<span id="cb34-93"><a href="Ch05.html#cb34-93" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover1)</span>
+<span id="cb34-94"><a href="Ch05.html#cb34-94" tabindex="-1"></a><span class="fu">rm</span>(farmland_cover2)</span>
+<span id="cb34-95"><a href="Ch05.html#cb34-95" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class310_aramzemes_lad.tif&quot;</span>)</span>
+<span id="cb34-96"><a href="Ch05.html#cb34-96" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif&quot;</span>)</span>
+<span id="cb34-97"><a href="Ch05.html#cb34-97" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
 <li><p>Class <code>400</code> - <strong>Allotment Gardens, Orchards and Cottages</strong>. To create this
@@ -1613,17 +1623,19 @@ processing.</p>
 <span id="cb35-75"><a href="Ch05.html#cb35-75" tabindex="-1"></a>b400<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif&quot;</span>)</span>
 <span id="cb35-76"><a href="Ch05.html#cb35-76" tabindex="-1"></a>c400<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span>
 <span id="cb35-77"><a href="Ch05.html#cb35-77" tabindex="-1"></a></span>
-<span id="cb35-78"><a href="Ch05.html#cb35-78" tabindex="-1"></a>allotment_cover<span class="ot">=</span><span class="fu">cover</span>(a400,b400,</span>
-<span id="cb35-79"><a href="Ch05.html#cb35-79" tabindex="-1"></a>                     <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif&quot;</span>,</span>
-<span id="cb35-80"><a href="Ch05.html#cb35-80" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb35-81"><a href="Ch05.html#cb35-81" tabindex="-1"></a></span>
-<span id="cb35-82"><a href="Ch05.html#cb35-82" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb35-83"><a href="Ch05.html#cb35-83" tabindex="-1"></a><span class="fu">rm</span>(a400)</span>
-<span id="cb35-84"><a href="Ch05.html#cb35-84" tabindex="-1"></a><span class="fu">rm</span>(b400)</span>
-<span id="cb35-85"><a href="Ch05.html#cb35-85" tabindex="-1"></a><span class="fu">rm</span>(allotment_cover)</span>
-<span id="cb35-86"><a href="Ch05.html#cb35-86" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif&quot;</span>)</span>
-<span id="cb35-87"><a href="Ch05.html#cb35-87" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif&quot;</span>)</span>
-<span id="cb35-88"><a href="Ch05.html#cb35-88" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span></code></pre></div>
+<span id="cb35-78"><a href="Ch05.html#cb35-78" tabindex="-1"></a>allotment_cover<span class="ot">=</span><span class="fu">cover</span>(a400,</span>
+<span id="cb35-79"><a href="Ch05.html#cb35-79" tabindex="-1"></a>                      b400,</span>
+<span id="cb35-80"><a href="Ch05.html#cb35-80" tabindex="-1"></a>                     <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb35-81"><a href="Ch05.html#cb35-81" tabindex="-1"></a>                                     <span class="st">&quot;SimpleLandscape_class400_varnicas_premask.tif&quot;</span>),</span>
+<span id="cb35-82"><a href="Ch05.html#cb35-82" tabindex="-1"></a>                     <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-83"><a href="Ch05.html#cb35-83" tabindex="-1"></a></span>
+<span id="cb35-84"><a href="Ch05.html#cb35-84" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb35-85"><a href="Ch05.html#cb35-85" tabindex="-1"></a><span class="fu">rm</span>(a400)</span>
+<span id="cb35-86"><a href="Ch05.html#cb35-86" tabindex="-1"></a><span class="fu">rm</span>(b400)</span>
+<span id="cb35-87"><a href="Ch05.html#cb35-87" tabindex="-1"></a><span class="fu">rm</span>(allotment_cover)</span>
+<span id="cb35-88"><a href="Ch05.html#cb35-88" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_topo.tif&quot;</span>)</span>
+<span id="cb35-89"><a href="Ch05.html#cb35-89" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif&quot;</span>)</span>
+<span id="cb35-90"><a href="Ch05.html#cb35-90" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
 <li><p>Class <code>500</code> - <strong>Built-up</strong>: built-up areas, no particular layer or data source used.
@@ -2018,24 +2030,26 @@ in the file <code>SimpleLandscape_class700_mitraji_premask.tif</code> for furthe
 <span id="cb37-109"><a href="Ch05.html#cb37-109" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_purvi_mvr)</span>
 <span id="cb37-110"><a href="Ch05.html#cb37-110" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,r_bebri_mvr)</span>
 <span id="cb37-111"><a href="Ch05.html#cb37-111" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,miresY)</span>
-<span id="cb37-112"><a href="Ch05.html#cb37-112" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,bogsY,</span>
-<span id="cb37-113"><a href="Ch05.html#cb37-113" tabindex="-1"></a>                            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif&quot;</span>,</span>
-<span id="cb37-114"><a href="Ch05.html#cb37-114" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb37-115"><a href="Ch05.html#cb37-115" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb37-116"><a href="Ch05.html#cb37-116" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
-<span id="cb37-117"><a href="Ch05.html#cb37-117" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
-<span id="cb37-118"><a href="Ch05.html#cb37-118" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
-<span id="cb37-119"><a href="Ch05.html#cb37-119" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
-<span id="cb37-120"><a href="Ch05.html#cb37-120" tabindex="-1"></a><span class="fu">rm</span>(bogs)</span>
-<span id="cb37-121"><a href="Ch05.html#cb37-121" tabindex="-1"></a><span class="fu">rm</span>(bogsY)</span>
-<span id="cb37-122"><a href="Ch05.html#cb37-122" tabindex="-1"></a><span class="fu">rm</span>(mires)</span>
-<span id="cb37-123"><a href="Ch05.html#cb37-123" tabindex="-1"></a><span class="fu">rm</span>(miresY)</span>
-<span id="cb37-124"><a href="Ch05.html#cb37-124" tabindex="-1"></a><span class="fu">rm</span>(topo)</span>
-<span id="cb37-125"><a href="Ch05.html#cb37-125" tabindex="-1"></a><span class="fu">rm</span>(wetlands_cover)</span>
-<span id="cb37-126"><a href="Ch05.html#cb37-126" tabindex="-1"></a></span>
-<span id="cb37-127"><a href="Ch05.html#cb37-127" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
-<span id="cb37-128"><a href="Ch05.html#cb37-128" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
-<span id="cb37-129"><a href="Ch05.html#cb37-129" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
+<span id="cb37-112"><a href="Ch05.html#cb37-112" tabindex="-1"></a>wetlands_cover<span class="ot">=</span><span class="fu">cover</span>(wetlands_cover,</span>
+<span id="cb37-113"><a href="Ch05.html#cb37-113" tabindex="-1"></a>                     bogsY,</span>
+<span id="cb37-114"><a href="Ch05.html#cb37-114" tabindex="-1"></a>                     <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb37-115"><a href="Ch05.html#cb37-115" tabindex="-1"></a>                                     <span class="st">&quot;SimpleLandscape_class700_mitraji_premask.tif&quot;</span>),</span>
+<span id="cb37-116"><a href="Ch05.html#cb37-116" tabindex="-1"></a>                            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb37-117"><a href="Ch05.html#cb37-117" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb37-118"><a href="Ch05.html#cb37-118" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb37-119"><a href="Ch05.html#cb37-119" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb37-120"><a href="Ch05.html#cb37-120" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb37-121"><a href="Ch05.html#cb37-121" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb37-122"><a href="Ch05.html#cb37-122" tabindex="-1"></a><span class="fu">rm</span>(bogs)</span>
+<span id="cb37-123"><a href="Ch05.html#cb37-123" tabindex="-1"></a><span class="fu">rm</span>(bogsY)</span>
+<span id="cb37-124"><a href="Ch05.html#cb37-124" tabindex="-1"></a><span class="fu">rm</span>(mires)</span>
+<span id="cb37-125"><a href="Ch05.html#cb37-125" tabindex="-1"></a><span class="fu">rm</span>(miresY)</span>
+<span id="cb37-126"><a href="Ch05.html#cb37-126" tabindex="-1"></a><span class="fu">rm</span>(topo)</span>
+<span id="cb37-127"><a href="Ch05.html#cb37-127" tabindex="-1"></a><span class="fu">rm</span>(wetlands_cover)</span>
+<span id="cb37-128"><a href="Ch05.html#cb37-128" tabindex="-1"></a></span>
+<span id="cb37-129"><a href="Ch05.html#cb37-129" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb37-130"><a href="Ch05.html#cb37-130" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb37-131"><a href="Ch05.html#cb37-131" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class730_bebri_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <ul>
 <li><p>Class <code>800</code> - <strong>Bare Soil and Quarries</strong>: combining layers related to bare soil,
@@ -2103,16 +2117,18 @@ in the file <code>SimpleLandscape_class800_smiltaji_premask.tif</code> for furth
 <span id="cb38-51"><a href="Ch05.html#cb38-51" tabindex="-1"></a>r_smiltaji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>)</span>
 <span id="cb38-52"><a href="Ch05.html#cb38-52" tabindex="-1"></a>r_smiltaji_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span>
 <span id="cb38-53"><a href="Ch05.html#cb38-53" tabindex="-1"></a></span>
-<span id="cb38-54"><a href="Ch05.html#cb38-54" tabindex="-1"></a>bare_cover<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(r_smiltaji_topo,r_smiltaji_mvr,</span>
-<span id="cb38-55"><a href="Ch05.html#cb38-55" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>,</span>
-<span id="cb38-56"><a href="Ch05.html#cb38-56" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb38-57"><a href="Ch05.html#cb38-57" tabindex="-1"></a><span class="co"># cleaning</span></span>
-<span id="cb38-58"><a href="Ch05.html#cb38-58" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
-<span id="cb38-59"><a href="Ch05.html#cb38-59" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
-<span id="cb38-60"><a href="Ch05.html#cb38-60" tabindex="-1"></a><span class="fu">rm</span>(bare_cover)</span>
-<span id="cb38-61"><a href="Ch05.html#cb38-61" tabindex="-1"></a></span>
-<span id="cb38-62"><a href="Ch05.html#cb38-62" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>)</span>
-<span id="cb38-63"><a href="Ch05.html#cb38-63" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span></code></pre></div>
+<span id="cb38-54"><a href="Ch05.html#cb38-54" tabindex="-1"></a>bare_cover<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(r_smiltaji_topo,</span>
+<span id="cb38-55"><a href="Ch05.html#cb38-55" tabindex="-1"></a>                        r_smiltaji_mvr,</span>
+<span id="cb38-56"><a href="Ch05.html#cb38-56" tabindex="-1"></a>                        <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./RasterGrids_10m/2024/&quot;</span>,</span>
+<span id="cb38-57"><a href="Ch05.html#cb38-57" tabindex="-1"></a>                                        <span class="st">&quot;SimpleLandscape_class800_smiltaji_premask.tif&quot;</span>),</span>
+<span id="cb38-58"><a href="Ch05.html#cb38-58" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb38-59"><a href="Ch05.html#cb38-59" tabindex="-1"></a><span class="co"># cleaning</span></span>
+<span id="cb38-60"><a href="Ch05.html#cb38-60" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
+<span id="cb38-61"><a href="Ch05.html#cb38-61" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
+<span id="cb38-62"><a href="Ch05.html#cb38-62" tabindex="-1"></a><span class="fu">rm</span>(bare_cover)</span>
+<span id="cb38-63"><a href="Ch05.html#cb38-63" tabindex="-1"></a></span>
+<span id="cb38-64"><a href="Ch05.html#cb38-64" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif&quot;</span>)</span>
+<span id="cb38-65"><a href="Ch05.html#cb38-65" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif&quot;</span>)</span></code></pre></div>
 </details>
 <p><strong>Merging and filling</strong></p>
 <p>The command lines below combine the previously created layers with the landscape

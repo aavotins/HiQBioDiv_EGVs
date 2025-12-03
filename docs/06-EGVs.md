@@ -6759,7 +6759,7 @@ the 0.5 km landscape
 ainavā
 
 **Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+[Farmland diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
 values is calculated using the workflow `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
@@ -6832,7 +6832,7 @@ the 1.25 km landscape
 ainavā
 
 **Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+[Farmland diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
 values is calculated using the workflow `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
@@ -6905,7 +6905,7 @@ the 3 km landscape
 ainavā
 
 **Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+[Farmland diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
 values is calculated using the workflow `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 
@@ -6978,7 +6978,7 @@ the 10 km landscape
 ainavā
 
 **Procedure:** Derived from the [Landscape diversity](#Ch05.04), more precisely
-[Farmland diversity](#Ch05.04.0). The average value of 25 ha cells diversity index
+[Farmland diversity](#Ch05.04.01). The average value of 25 ha cells diversity index
 values is calculated using the workflow `egvtools::radius_function()`. To
 prevent possible data loss at edge cells, inverse distance weighted
 (power = 2) gap filling is implemented. File is written twice, to ensure 

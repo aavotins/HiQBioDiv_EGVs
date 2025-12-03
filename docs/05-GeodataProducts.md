@@ -763,9 +763,11 @@ b300=rast("./RasterGrids_10m/2024/SimpleLandscape_class320_papuves_lad.tif")
 c300=rast("./RasterGrids_10m/2024/SimpleLandscape_class330_zalaji_lad.tif")
 
 farmland_cover1=cover(a300,b300)
-farmland_cover2=cover(farmland_cover1,c300,
-                          filename="./RasterGrids_10m/2024/SimpleLandscape_class300_lauki_premask.tif",
-                          overwrite=TRUE)
+farmland_cover2=cover(farmland_cover1,
+                      c300,
+                      filename=paste0("./RasterGrids_10m/2024/",
+                                      "SimpleLandscape_class300_lauki_premask.tif"),
+                      overwrite=TRUE)
 # cleaning
 rm(lad)
 rm(lad_klasem)
@@ -878,8 +880,10 @@ a400=rast("./RasterGrids_10m/2024/SimpleLandscape_class410_vasarnicasviensetas_t
 b400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_topo.tif")
 c400=rast("./RasterGrids_10m/2024/SimpleLandscape_class420_darzini_lad.tif")
 
-allotment_cover=cover(a400,b400,
-                     filename="./RasterGrids_10m/2024/SimpleLandscape_class400_varnicas_premask.tif",
+allotment_cover=cover(a400,
+                      b400,
+                     filename=paste0("./RasterGrids_10m/2024/",
+                                     "SimpleLandscape_class400_varnicas_premask.tif"),
                      overwrite=TRUE)
 
 # cleaning
@@ -1305,8 +1309,10 @@ wetlands_cover=cover(r_niedraji_topo,r_purvi_topo)
 wetlands_cover=cover(wetlands_cover,r_purvi_mvr)
 wetlands_cover=cover(wetlands_cover,r_bebri_mvr)
 wetlands_cover=cover(wetlands_cover,miresY)
-wetlands_cover=cover(wetlands_cover,bogsY,
-                            filename="./RasterGrids_10m/2024/SimpleLandscape_class700_mitraji_premask.tif",
+wetlands_cover=cover(wetlands_cover,
+                     bogsY,
+                     filename=paste0("./RasterGrids_10m/2024/",
+                                     "SimpleLandscape_class700_mitraji_premask.tif"),
                             overwrite=TRUE)
 # cleaning
 rm(r_niedraji_topo)
@@ -1395,8 +1401,10 @@ rm(r_smiltaji_mvr)
 r_smiltaji_topo=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltajiKudra_topo.tif")
 r_smiltaji_mvr=rast("./RasterGrids_10m/2024/SimpleLandscape_class800_SmiltVirs_mvr.tif")
 
-bare_cover=terra::merge(r_smiltaji_topo,r_smiltaji_mvr,
-                               filename="./RasterGrids_10m/2024/SimpleLandscape_class800_smiltaji_premask.tif",
+bare_cover=terra::merge(r_smiltaji_topo,
+                        r_smiltaji_mvr,
+                        filename=paste0("./RasterGrids_10m/2024/",
+                                        "SimpleLandscape_class800_smiltaji_premask.tif"),
                                overwrite=TRUE)
 # cleaning
 rm(r_smiltaji_topo)

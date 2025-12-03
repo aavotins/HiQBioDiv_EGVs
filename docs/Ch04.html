@@ -26,10 +26,18 @@ create ecogeographical variables (EGVs) for species distribution modelling
 describing Latvia, 2024.</p>" />
   
 
-<meta name="author" content="Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Ainārs Auniņš" />
+<meta name="author" content="Andris Avotiņš" />
+<meta name="author" content="Jekaterīna Butkeviča" />
+<meta name="author" content="Betija Rubene" />
+<meta name="author" content="Solvita Rūsiņa" />
+<meta name="author" content="Rūta Starka" />
+<meta name="author" content="Vita Šakele" />
+<meta name="author" content="Vineta Vērpēja" />
+<meta name="author" content="Ivo Vinogradovs" />
+<meta name="author" content="Ainārs Auniņš" />
 
 
-<meta name="date" content="2025-12-02" />
+<meta name="date" content="2025-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2570,203 +2578,238 @@ therefore version 3 is used.</p></li>
 <span id="cb12-11"><a href="Ch04.html#cb12-11" tabindex="-1"></a><span class="fu">table</span>(slani_v4<span class="sc">$</span>geometrijai)</span>
 <span id="cb12-12"><a href="Ch04.html#cb12-12" tabindex="-1"></a></span>
 <span id="cb12-13"><a href="Ch04.html#cb12-13" tabindex="-1"></a>slani_v4<span class="sc">$</span>geometrijai2<span class="ot">=</span><span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,</span>
-<span id="cb12-14"><a href="Ch04.html#cb12-14" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Polygon&quot;</span>,<span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
-<span id="cb12-15"><a href="Ch04.html#cb12-15" tabindex="-1"></a>                                          <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Line String&quot;</span>,<span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
-<span id="cb12-16"><a href="Ch04.html#cb12-16" tabindex="-1"></a>                                                 <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Polygon&quot;</span>,<span class="st">&quot;MULTIPOLYGON&quot;</span>,<span class="cn">NA</span>))))</span>
-<span id="cb12-17"><a href="Ch04.html#cb12-17" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="Ch04.html#cb12-18" tabindex="-1"></a>slani4x<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">name=</span>slani_v4<span class="sc">$</span>name,</span>
-<span id="cb12-19"><a href="Ch04.html#cb12-19" tabindex="-1"></a>                   <span class="at">geometrija=</span>slani_v4<span class="sc">$</span>geometrijai2)</span>
+<span id="cb12-14"><a href="Ch04.html#cb12-14" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Polygon&quot;</span>,</span>
+<span id="cb12-15"><a href="Ch04.html#cb12-15" tabindex="-1"></a>                                          <span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
+<span id="cb12-16"><a href="Ch04.html#cb12-16" tabindex="-1"></a>                                          <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Line String&quot;</span>,</span>
+<span id="cb12-17"><a href="Ch04.html#cb12-17" tabindex="-1"></a>                                                 <span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
+<span id="cb12-18"><a href="Ch04.html#cb12-18" tabindex="-1"></a>                                                 <span class="fu">ifelse</span>(slani_v4<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Polygon&quot;</span>,</span>
+<span id="cb12-19"><a href="Ch04.html#cb12-19" tabindex="-1"></a>                                                        <span class="st">&quot;MULTIPOLYGON&quot;</span>,<span class="cn">NA</span>))))</span>
 <span id="cb12-20"><a href="Ch04.html#cb12-20" tabindex="-1"></a></span>
-<span id="cb12-21"><a href="Ch04.html#cb12-21" tabindex="-1"></a>ciklam4x<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(slani4x<span class="sc">$</span>name))</span>
-<span id="cb12-22"><a href="Ch04.html#cb12-22" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(ciklam4x)){</span>
-<span id="cb12-23"><a href="Ch04.html#cb12-23" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb12-24"><a href="Ch04.html#cb12-24" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
-<span id="cb12-25"><a href="Ch04.html#cb12-25" tabindex="-1"></a>  nosaukums<span class="ot">=</span>ciklam4x[i]</span>
-<span id="cb12-26"><a href="Ch04.html#cb12-26" tabindex="-1"></a>  objekts<span class="ot">=</span>slani4x <span class="sc">%&gt;%</span> </span>
-<span id="cb12-27"><a href="Ch04.html#cb12-27" tabindex="-1"></a>    <span class="fu">filter</span>(name<span class="sc">==</span>nosaukums)</span>
-<span id="cb12-28"><a href="Ch04.html#cb12-28" tabindex="-1"></a>  <span class="fu">print</span>(nosaukums)</span>
-<span id="cb12-29"><a href="Ch04.html#cb12-29" tabindex="-1"></a>  slanis<span class="ot">=</span><span class="fu">read_sf</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/topo10v4/Latvija_LKS92_v4_20250703.gdb/&quot;</span>,<span class="at">layer=</span>nosaukums)</span>
-<span id="cb12-30"><a href="Ch04.html#cb12-30" tabindex="-1"></a>  slanisZM<span class="ot">=</span><span class="fu">st_zm</span>(slanis)</span>
-<span id="cb12-31"><a href="Ch04.html#cb12-31" tabindex="-1"></a>  slanis2<span class="ot">=</span><span class="fu">st_cast</span>(slanisZM,<span class="at">to=</span>objekts<span class="sc">$</span>geometrija)</span>
-<span id="cb12-32"><a href="Ch04.html#cb12-32" tabindex="-1"></a>  <span class="fu">write_sf</span>(slanis2,<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span>nosaukums,<span class="at">append=</span><span class="cn">FALSE</span>)</span>
-<span id="cb12-33"><a href="Ch04.html#cb12-33" tabindex="-1"></a>  ilgums<span class="ot">=</span><span class="fu">Sys.time</span>()<span class="sc">-</span>sakums</span>
-<span id="cb12-34"><a href="Ch04.html#cb12-34" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
-<span id="cb12-35"><a href="Ch04.html#cb12-35" tabindex="-1"></a>}</span>
-<span id="cb12-36"><a href="Ch04.html#cb12-36" tabindex="-1"></a></span>
-<span id="cb12-37"><a href="Ch04.html#cb12-37" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="Ch04.html#cb12-38" tabindex="-1"></a></span>
-<span id="cb12-39"><a href="Ch04.html#cb12-39" tabindex="-1"></a><span class="co"># v3 ----</span></span>
-<span id="cb12-40"><a href="Ch04.html#cb12-40" tabindex="-1"></a>slani_v3<span class="ot">=</span><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/&quot;</span>)</span>
-<span id="cb12-41"><a href="Ch04.html#cb12-41" tabindex="-1"></a><span class="fu">write.xlsx</span>(slani_v3,<span class="st">&quot;./Geodata/2024/TopographicMap/slani_v3.xlsx&quot;</span>)</span>
+<span id="cb12-21"><a href="Ch04.html#cb12-21" tabindex="-1"></a>slani4x<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">name=</span>slani_v4<span class="sc">$</span>name,</span>
+<span id="cb12-22"><a href="Ch04.html#cb12-22" tabindex="-1"></a>                   <span class="at">geometrija=</span>slani_v4<span class="sc">$</span>geometrijai2)</span>
+<span id="cb12-23"><a href="Ch04.html#cb12-23" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="Ch04.html#cb12-24" tabindex="-1"></a>ciklam4x<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(slani4x<span class="sc">$</span>name))</span>
+<span id="cb12-25"><a href="Ch04.html#cb12-25" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(ciklam4x)){</span>
+<span id="cb12-26"><a href="Ch04.html#cb12-26" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb12-27"><a href="Ch04.html#cb12-27" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb12-28"><a href="Ch04.html#cb12-28" tabindex="-1"></a>  nosaukums<span class="ot">=</span>ciklam4x[i]</span>
+<span id="cb12-29"><a href="Ch04.html#cb12-29" tabindex="-1"></a>  objekts<span class="ot">=</span>slani4x <span class="sc">%&gt;%</span> </span>
+<span id="cb12-30"><a href="Ch04.html#cb12-30" tabindex="-1"></a>    <span class="fu">filter</span>(name<span class="sc">==</span>nosaukums)</span>
+<span id="cb12-31"><a href="Ch04.html#cb12-31" tabindex="-1"></a>  <span class="fu">print</span>(nosaukums)</span>
+<span id="cb12-32"><a href="Ch04.html#cb12-32" tabindex="-1"></a>  slanis<span class="ot">=</span><span class="fu">read_sf</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/topo10v4/Latvija_LKS92_v4_20250703.gdb/&quot;</span>,</span>
+<span id="cb12-33"><a href="Ch04.html#cb12-33" tabindex="-1"></a>                 <span class="at">layer=</span>nosaukums)</span>
+<span id="cb12-34"><a href="Ch04.html#cb12-34" tabindex="-1"></a>  slanisZM<span class="ot">=</span><span class="fu">st_zm</span>(slanis)</span>
+<span id="cb12-35"><a href="Ch04.html#cb12-35" tabindex="-1"></a>  slanis2<span class="ot">=</span><span class="fu">st_cast</span>(slanisZM,<span class="at">to=</span>objekts<span class="sc">$</span>geometrija)</span>
+<span id="cb12-36"><a href="Ch04.html#cb12-36" tabindex="-1"></a>  <span class="fu">write_sf</span>(slanis2,<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-37"><a href="Ch04.html#cb12-37" tabindex="-1"></a>           <span class="at">layer=</span>nosaukums,</span>
+<span id="cb12-38"><a href="Ch04.html#cb12-38" tabindex="-1"></a>           <span class="at">append=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-39"><a href="Ch04.html#cb12-39" tabindex="-1"></a>  ilgums<span class="ot">=</span><span class="fu">Sys.time</span>()<span class="sc">-</span>sakums</span>
+<span id="cb12-40"><a href="Ch04.html#cb12-40" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb12-41"><a href="Ch04.html#cb12-41" tabindex="-1"></a>}</span>
 <span id="cb12-42"><a href="Ch04.html#cb12-42" tabindex="-1"></a></span>
-<span id="cb12-43"><a href="Ch04.html#cb12-43" tabindex="-1"></a>slani_v3<span class="sc">$</span>geometrijai<span class="ot">=</span><span class="fu">as.character</span>(slani_v3<span class="sc">$</span>geomtype)</span>
-<span id="cb12-44"><a href="Ch04.html#cb12-44" tabindex="-1"></a><span class="fu">table</span>(slani_v3<span class="sc">$</span>geometrijai)</span>
-<span id="cb12-45"><a href="Ch04.html#cb12-45" tabindex="-1"></a></span>
-<span id="cb12-46"><a href="Ch04.html#cb12-46" tabindex="-1"></a>slani_v3<span class="sc">$</span>geometrijai2<span class="ot">=</span><span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,</span>
-<span id="cb12-47"><a href="Ch04.html#cb12-47" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Polygon&quot;</span>,<span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
-<span id="cb12-48"><a href="Ch04.html#cb12-48" tabindex="-1"></a>                                          <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Line String&quot;</span>,<span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
-<span id="cb12-49"><a href="Ch04.html#cb12-49" tabindex="-1"></a>                                                 <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Polygon&quot;</span>,<span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
-<span id="cb12-50"><a href="Ch04.html#cb12-50" tabindex="-1"></a>                                                        <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,</span>
-<span id="cb12-51"><a href="Ch04.html#cb12-51" tabindex="-1"></a>                                                               <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Line String&quot;</span>,<span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
-<span id="cb12-52"><a href="Ch04.html#cb12-52" tabindex="-1"></a>                                                                      <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Measured Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,<span class="cn">NA</span>)))))))</span>
-<span id="cb12-53"><a href="Ch04.html#cb12-53" tabindex="-1"></a></span>
-<span id="cb12-54"><a href="Ch04.html#cb12-54" tabindex="-1"></a>slani3x<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">name=</span>slani_v3<span class="sc">$</span>name,</span>
-<span id="cb12-55"><a href="Ch04.html#cb12-55" tabindex="-1"></a>                   <span class="at">geometrija=</span>slani_v3<span class="sc">$</span>geometrijai2)</span>
-<span id="cb12-56"><a href="Ch04.html#cb12-56" tabindex="-1"></a></span>
-<span id="cb12-57"><a href="Ch04.html#cb12-57" tabindex="-1"></a>ciklam3x<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(slani3x<span class="sc">$</span>name))</span>
-<span id="cb12-58"><a href="Ch04.html#cb12-58" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(ciklam3x)){</span>
-<span id="cb12-59"><a href="Ch04.html#cb12-59" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb12-60"><a href="Ch04.html#cb12-60" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
-<span id="cb12-61"><a href="Ch04.html#cb12-61" tabindex="-1"></a>  nosaukums<span class="ot">=</span>ciklam3x[i]</span>
-<span id="cb12-62"><a href="Ch04.html#cb12-62" tabindex="-1"></a>  objekts<span class="ot">=</span>slani3x <span class="sc">%&gt;%</span> </span>
-<span id="cb12-63"><a href="Ch04.html#cb12-63" tabindex="-1"></a>    <span class="fu">filter</span>(name<span class="sc">==</span>nosaukums)</span>
-<span id="cb12-64"><a href="Ch04.html#cb12-64" tabindex="-1"></a>  <span class="fu">print</span>(nosaukums)</span>
-<span id="cb12-65"><a href="Ch04.html#cb12-65" tabindex="-1"></a>  slanis<span class="ot">=</span><span class="fu">read_sf</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/&quot;</span>,<span class="at">layer=</span>nosaukums)</span>
-<span id="cb12-66"><a href="Ch04.html#cb12-66" tabindex="-1"></a>  slanisZM<span class="ot">=</span><span class="fu">st_zm</span>(slanis)</span>
-<span id="cb12-67"><a href="Ch04.html#cb12-67" tabindex="-1"></a>  slanis2<span class="ot">=</span><span class="fu">st_cast</span>(slanisZM,<span class="at">to=</span>objekts<span class="sc">$</span>geometrija)</span>
-<span id="cb12-68"><a href="Ch04.html#cb12-68" tabindex="-1"></a>  <span class="fu">write_sf</span>(slanis2,<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span>nosaukums,<span class="at">append=</span><span class="cn">FALSE</span>)</span>
-<span id="cb12-69"><a href="Ch04.html#cb12-69" tabindex="-1"></a>  ilgums<span class="ot">=</span><span class="fu">Sys.time</span>()<span class="sc">-</span>sakums</span>
-<span id="cb12-70"><a href="Ch04.html#cb12-70" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
-<span id="cb12-71"><a href="Ch04.html#cb12-71" tabindex="-1"></a>}</span>
-<span id="cb12-72"><a href="Ch04.html#cb12-72" tabindex="-1"></a></span>
-<span id="cb12-73"><a href="Ch04.html#cb12-73" tabindex="-1"></a></span>
-<span id="cb12-74"><a href="Ch04.html#cb12-74" tabindex="-1"></a><span class="co"># combination ----</span></span>
-<span id="cb12-75"><a href="Ch04.html#cb12-75" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>)</span>
-<span id="cb12-76"><a href="Ch04.html#cb12-76" tabindex="-1"></a></span>
-<span id="cb12-77"><a href="Ch04.html#cb12-77" tabindex="-1"></a>pages4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;Topo10_lapas&quot;</span>)</span>
-<span id="cb12-78"><a href="Ch04.html#cb12-78" tabindex="-1"></a>pages4_united<span class="ot">=</span><span class="fu">st_union</span>(pages4)</span>
-<span id="cb12-79"><a href="Ch04.html#cb12-79" tabindex="-1"></a><span class="fu">ggplot</span>(pages4_united)<span class="sc">+</span><span class="fu">geom_sf</span>()</span>
-<span id="cb12-80"><a href="Ch04.html#cb12-80" tabindex="-1"></a></span>
-<span id="cb12-81"><a href="Ch04.html#cb12-81" tabindex="-1"></a><span class="co"># landus_A</span></span>
-<span id="cb12-82"><a href="Ch04.html#cb12-82" tabindex="-1"></a>landus_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
-<span id="cb12-83"><a href="Ch04.html#cb12-83" tabindex="-1"></a>landus_not4<span class="ot">=</span><span class="fu">st_difference</span>(landus_3,pages4_united)</span>
-<span id="cb12-84"><a href="Ch04.html#cb12-84" tabindex="-1"></a>landus_not4<span class="ot">=</span>landus_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-85"><a href="Ch04.html#cb12-85" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-86"><a href="Ch04.html#cb12-86" tabindex="-1"></a>landus_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
-<span id="cb12-87"><a href="Ch04.html#cb12-87" tabindex="-1"></a>landus_4<span class="ot">=</span>landus_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-88"><a href="Ch04.html#cb12-88" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-89"><a href="Ch04.html#cb12-89" tabindex="-1"></a></span>
-<span id="cb12-90"><a href="Ch04.html#cb12-90" tabindex="-1"></a>landus_new<span class="ot">=</span><span class="fu">rbind</span>(landus_not4,landus_4)</span>
-<span id="cb12-91"><a href="Ch04.html#cb12-91" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus_new,<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
-<span id="cb12-92"><a href="Ch04.html#cb12-92" tabindex="-1"></a></span>
-<span id="cb12-93"><a href="Ch04.html#cb12-93" tabindex="-1"></a><span class="co"># bridge_L</span></span>
-<span id="cb12-94"><a href="Ch04.html#cb12-94" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
-<span id="cb12-95"><a href="Ch04.html#cb12-95" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-96"><a href="Ch04.html#cb12-96" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-97"><a href="Ch04.html#cb12-97" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-98"><a href="Ch04.html#cb12-98" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
-<span id="cb12-99"><a href="Ch04.html#cb12-99" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-100"><a href="Ch04.html#cb12-100" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-101"><a href="Ch04.html#cb12-101" tabindex="-1"></a></span>
-<span id="cb12-102"><a href="Ch04.html#cb12-102" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-103"><a href="Ch04.html#cb12-103" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
-<span id="cb12-104"><a href="Ch04.html#cb12-104" tabindex="-1"></a></span>
-<span id="cb12-105"><a href="Ch04.html#cb12-105" tabindex="-1"></a><span class="co"># bridge_P</span></span>
-<span id="cb12-106"><a href="Ch04.html#cb12-106" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
-<span id="cb12-107"><a href="Ch04.html#cb12-107" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-108"><a href="Ch04.html#cb12-108" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-109"><a href="Ch04.html#cb12-109" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-110"><a href="Ch04.html#cb12-110" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
-<span id="cb12-111"><a href="Ch04.html#cb12-111" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-112"><a href="Ch04.html#cb12-112" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-113"><a href="Ch04.html#cb12-113" tabindex="-1"></a></span>
-<span id="cb12-114"><a href="Ch04.html#cb12-114" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-115"><a href="Ch04.html#cb12-115" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeP_COMB.parquet&quot;</span>)</span>
-<span id="cb12-116"><a href="Ch04.html#cb12-116" tabindex="-1"></a></span>
-<span id="cb12-117"><a href="Ch04.html#cb12-117" tabindex="-1"></a><span class="co"># hidro_A</span></span>
-<span id="cb12-118"><a href="Ch04.html#cb12-118" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
-<span id="cb12-119"><a href="Ch04.html#cb12-119" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-120"><a href="Ch04.html#cb12-120" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-121"><a href="Ch04.html#cb12-121" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-122"><a href="Ch04.html#cb12-122" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
-<span id="cb12-123"><a href="Ch04.html#cb12-123" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-124"><a href="Ch04.html#cb12-124" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-125"><a href="Ch04.html#cb12-125" tabindex="-1"></a></span>
-<span id="cb12-126"><a href="Ch04.html#cb12-126" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-127"><a href="Ch04.html#cb12-127" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
-<span id="cb12-128"><a href="Ch04.html#cb12-128" tabindex="-1"></a></span>
-<span id="cb12-129"><a href="Ch04.html#cb12-129" tabindex="-1"></a><span class="co"># hidro_L</span></span>
-<span id="cb12-130"><a href="Ch04.html#cb12-130" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_L&quot;</span>)</span>
-<span id="cb12-131"><a href="Ch04.html#cb12-131" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-132"><a href="Ch04.html#cb12-132" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-133"><a href="Ch04.html#cb12-133" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-134"><a href="Ch04.html#cb12-134" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_L&quot;</span>)</span>
-<span id="cb12-135"><a href="Ch04.html#cb12-135" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-136"><a href="Ch04.html#cb12-136" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-137"><a href="Ch04.html#cb12-137" tabindex="-1"></a></span>
-<span id="cb12-138"><a href="Ch04.html#cb12-138" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-139"><a href="Ch04.html#cb12-139" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/HidroL_COMB.parquet&quot;</span>)</span>
-<span id="cb12-140"><a href="Ch04.html#cb12-140" tabindex="-1"></a></span>
-<span id="cb12-141"><a href="Ch04.html#cb12-141" tabindex="-1"></a></span>
-<span id="cb12-142"><a href="Ch04.html#cb12-142" tabindex="-1"></a><span class="co"># road_A</span></span>
-<span id="cb12-143"><a href="Ch04.html#cb12-143" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
-<span id="cb12-144"><a href="Ch04.html#cb12-144" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-145"><a href="Ch04.html#cb12-145" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-146"><a href="Ch04.html#cb12-146" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-147"><a href="Ch04.html#cb12-147" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
-<span id="cb12-148"><a href="Ch04.html#cb12-148" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-149"><a href="Ch04.html#cb12-149" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-150"><a href="Ch04.html#cb12-150" tabindex="-1"></a></span>
-<span id="cb12-151"><a href="Ch04.html#cb12-151" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-152"><a href="Ch04.html#cb12-152" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/RoadA_COMB.parquet&quot;</span>)</span>
-<span id="cb12-153"><a href="Ch04.html#cb12-153" tabindex="-1"></a></span>
-<span id="cb12-154"><a href="Ch04.html#cb12-154" tabindex="-1"></a></span>
-<span id="cb12-155"><a href="Ch04.html#cb12-155" tabindex="-1"></a></span>
-<span id="cb12-156"><a href="Ch04.html#cb12-156" tabindex="-1"></a><span class="co"># road_L</span></span>
-<span id="cb12-157"><a href="Ch04.html#cb12-157" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_L&quot;</span>)</span>
-<span id="cb12-158"><a href="Ch04.html#cb12-158" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-159"><a href="Ch04.html#cb12-159" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-160"><a href="Ch04.html#cb12-160" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-161"><a href="Ch04.html#cb12-161" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_L&quot;</span>)</span>
-<span id="cb12-162"><a href="Ch04.html#cb12-162" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-163"><a href="Ch04.html#cb12-163" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-164"><a href="Ch04.html#cb12-164" tabindex="-1"></a></span>
-<span id="cb12-165"><a href="Ch04.html#cb12-165" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-166"><a href="Ch04.html#cb12-166" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/RoadL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-43"><a href="Ch04.html#cb12-43" tabindex="-1"></a></span>
+<span id="cb12-44"><a href="Ch04.html#cb12-44" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="Ch04.html#cb12-45" tabindex="-1"></a><span class="co"># v3 ----</span></span>
+<span id="cb12-46"><a href="Ch04.html#cb12-46" tabindex="-1"></a>slani_v3<span class="ot">=</span><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/&quot;</span>)</span>
+<span id="cb12-47"><a href="Ch04.html#cb12-47" tabindex="-1"></a><span class="fu">write.xlsx</span>(slani_v3,<span class="st">&quot;./Geodata/2024/TopographicMap/slani_v3.xlsx&quot;</span>)</span>
+<span id="cb12-48"><a href="Ch04.html#cb12-48" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="Ch04.html#cb12-49" tabindex="-1"></a>slani_v3<span class="sc">$</span>geometrijai<span class="ot">=</span><span class="fu">as.character</span>(slani_v3<span class="sc">$</span>geomtype)</span>
+<span id="cb12-50"><a href="Ch04.html#cb12-50" tabindex="-1"></a><span class="fu">table</span>(slani_v3<span class="sc">$</span>geometrijai)</span>
+<span id="cb12-51"><a href="Ch04.html#cb12-51" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="Ch04.html#cb12-52" tabindex="-1"></a>slani_v3<span class="sc">$</span>geometrijai2<span class="ot">=</span><span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,</span>
+<span id="cb12-53"><a href="Ch04.html#cb12-53" tabindex="-1"></a>                                   <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Polygon&quot;</span>,</span>
+<span id="cb12-54"><a href="Ch04.html#cb12-54" tabindex="-1"></a>                                          <span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
+<span id="cb12-55"><a href="Ch04.html#cb12-55" tabindex="-1"></a>                                          <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Line String&quot;</span>,</span>
+<span id="cb12-56"><a href="Ch04.html#cb12-56" tabindex="-1"></a>                                                 <span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
+<span id="cb12-57"><a href="Ch04.html#cb12-57" tabindex="-1"></a>                                                 <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Multi Polygon&quot;</span>,</span>
+<span id="cb12-58"><a href="Ch04.html#cb12-58" tabindex="-1"></a>                                                        <span class="st">&quot;MULTIPOLYGON&quot;</span>,</span>
+<span id="cb12-59"><a href="Ch04.html#cb12-59" tabindex="-1"></a>                                                        <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Point&quot;</span>,<span class="st">&quot;POINT&quot;</span>,</span>
+<span id="cb12-60"><a href="Ch04.html#cb12-60" tabindex="-1"></a>                                                               <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;Multi Line String&quot;</span>,</span>
+<span id="cb12-61"><a href="Ch04.html#cb12-61" tabindex="-1"></a>                                                                      <span class="st">&quot;MULTILINESTRING&quot;</span>,</span>
+<span id="cb12-62"><a href="Ch04.html#cb12-62" tabindex="-1"></a>                                                                      <span class="fu">ifelse</span>(slani_v3<span class="sc">$</span>geometrijai<span class="sc">==</span><span class="st">&quot;3D Measured Point&quot;</span>,</span>
+<span id="cb12-63"><a href="Ch04.html#cb12-63" tabindex="-1"></a>                                                                             <span class="st">&quot;POINT&quot;</span>,</span>
+<span id="cb12-64"><a href="Ch04.html#cb12-64" tabindex="-1"></a>                                                                             <span class="cn">NA</span>)))))))</span>
+<span id="cb12-65"><a href="Ch04.html#cb12-65" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="Ch04.html#cb12-66" tabindex="-1"></a>slani3x<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">name=</span>slani_v3<span class="sc">$</span>name,</span>
+<span id="cb12-67"><a href="Ch04.html#cb12-67" tabindex="-1"></a>                   <span class="at">geometrija=</span>slani_v3<span class="sc">$</span>geometrijai2)</span>
+<span id="cb12-68"><a href="Ch04.html#cb12-68" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="Ch04.html#cb12-69" tabindex="-1"></a>ciklam3x<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(slani3x<span class="sc">$</span>name))</span>
+<span id="cb12-70"><a href="Ch04.html#cb12-70" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(ciklam3x)){</span>
+<span id="cb12-71"><a href="Ch04.html#cb12-71" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb12-72"><a href="Ch04.html#cb12-72" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb12-73"><a href="Ch04.html#cb12-73" tabindex="-1"></a>  nosaukums<span class="ot">=</span>ciklam3x[i]</span>
+<span id="cb12-74"><a href="Ch04.html#cb12-74" tabindex="-1"></a>  objekts<span class="ot">=</span>slani3x <span class="sc">%&gt;%</span> </span>
+<span id="cb12-75"><a href="Ch04.html#cb12-75" tabindex="-1"></a>    <span class="fu">filter</span>(name<span class="sc">==</span>nosaukums)</span>
+<span id="cb12-76"><a href="Ch04.html#cb12-76" tabindex="-1"></a>  <span class="fu">print</span>(nosaukums)</span>
+<span id="cb12-77"><a href="Ch04.html#cb12-77" tabindex="-1"></a>  slanis<span class="ot">=</span><span class="fu">read_sf</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/Latvija_LKS92_v3_pilnais.gdb/&quot;</span>,</span>
+<span id="cb12-78"><a href="Ch04.html#cb12-78" tabindex="-1"></a>                 <span class="at">layer=</span>nosaukums)</span>
+<span id="cb12-79"><a href="Ch04.html#cb12-79" tabindex="-1"></a>  slanisZM<span class="ot">=</span><span class="fu">st_zm</span>(slanis)</span>
+<span id="cb12-80"><a href="Ch04.html#cb12-80" tabindex="-1"></a>  slanis2<span class="ot">=</span><span class="fu">st_cast</span>(slanisZM,<span class="at">to=</span>objekts<span class="sc">$</span>geometrija)</span>
+<span id="cb12-81"><a href="Ch04.html#cb12-81" tabindex="-1"></a>  <span class="fu">write_sf</span>(slanis2,<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-82"><a href="Ch04.html#cb12-82" tabindex="-1"></a>           <span class="at">layer=</span>nosaukums,</span>
+<span id="cb12-83"><a href="Ch04.html#cb12-83" tabindex="-1"></a>           <span class="at">append=</span><span class="cn">FALSE</span>)</span>
+<span id="cb12-84"><a href="Ch04.html#cb12-84" tabindex="-1"></a>  ilgums<span class="ot">=</span><span class="fu">Sys.time</span>()<span class="sc">-</span>sakums</span>
+<span id="cb12-85"><a href="Ch04.html#cb12-85" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb12-86"><a href="Ch04.html#cb12-86" tabindex="-1"></a>}</span>
+<span id="cb12-87"><a href="Ch04.html#cb12-87" tabindex="-1"></a></span>
+<span id="cb12-88"><a href="Ch04.html#cb12-88" tabindex="-1"></a></span>
+<span id="cb12-89"><a href="Ch04.html#cb12-89" tabindex="-1"></a><span class="co"># combination ----</span></span>
+<span id="cb12-90"><a href="Ch04.html#cb12-90" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>)</span>
+<span id="cb12-91"><a href="Ch04.html#cb12-91" tabindex="-1"></a></span>
+<span id="cb12-92"><a href="Ch04.html#cb12-92" tabindex="-1"></a>pages4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-93"><a href="Ch04.html#cb12-93" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;Topo10_lapas&quot;</span>)</span>
+<span id="cb12-94"><a href="Ch04.html#cb12-94" tabindex="-1"></a>pages4_united<span class="ot">=</span><span class="fu">st_union</span>(pages4)</span>
+<span id="cb12-95"><a href="Ch04.html#cb12-95" tabindex="-1"></a><span class="fu">ggplot</span>(pages4_united)<span class="sc">+</span><span class="fu">geom_sf</span>()</span>
+<span id="cb12-96"><a href="Ch04.html#cb12-96" tabindex="-1"></a></span>
+<span id="cb12-97"><a href="Ch04.html#cb12-97" tabindex="-1"></a><span class="co"># landus_A</span></span>
+<span id="cb12-98"><a href="Ch04.html#cb12-98" tabindex="-1"></a>landus_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-99"><a href="Ch04.html#cb12-99" tabindex="-1"></a>                 <span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
+<span id="cb12-100"><a href="Ch04.html#cb12-100" tabindex="-1"></a>landus_not4<span class="ot">=</span><span class="fu">st_difference</span>(landus_3,pages4_united)</span>
+<span id="cb12-101"><a href="Ch04.html#cb12-101" tabindex="-1"></a>landus_not4<span class="ot">=</span>landus_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-102"><a href="Ch04.html#cb12-102" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-103"><a href="Ch04.html#cb12-103" tabindex="-1"></a>landus_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-104"><a href="Ch04.html#cb12-104" tabindex="-1"></a>                 <span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
+<span id="cb12-105"><a href="Ch04.html#cb12-105" tabindex="-1"></a>landus_4<span class="ot">=</span>landus_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-106"><a href="Ch04.html#cb12-106" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-107"><a href="Ch04.html#cb12-107" tabindex="-1"></a></span>
+<span id="cb12-108"><a href="Ch04.html#cb12-108" tabindex="-1"></a>landus_new<span class="ot">=</span><span class="fu">rbind</span>(landus_not4,landus_4)</span>
+<span id="cb12-109"><a href="Ch04.html#cb12-109" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus_new,<span class="st">&quot;./Geodata/2024/TopographicMap/LandusA_COMB.parquet&quot;</span>)</span>
+<span id="cb12-110"><a href="Ch04.html#cb12-110" tabindex="-1"></a></span>
+<span id="cb12-111"><a href="Ch04.html#cb12-111" tabindex="-1"></a><span class="co"># bridge_L</span></span>
+<span id="cb12-112"><a href="Ch04.html#cb12-112" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-113"><a href="Ch04.html#cb12-113" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
+<span id="cb12-114"><a href="Ch04.html#cb12-114" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-115"><a href="Ch04.html#cb12-115" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-116"><a href="Ch04.html#cb12-116" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-117"><a href="Ch04.html#cb12-117" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-118"><a href="Ch04.html#cb12-118" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
+<span id="cb12-119"><a href="Ch04.html#cb12-119" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-120"><a href="Ch04.html#cb12-120" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-121"><a href="Ch04.html#cb12-121" tabindex="-1"></a></span>
+<span id="cb12-122"><a href="Ch04.html#cb12-122" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-123"><a href="Ch04.html#cb12-123" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-124"><a href="Ch04.html#cb12-124" tabindex="-1"></a></span>
+<span id="cb12-125"><a href="Ch04.html#cb12-125" tabindex="-1"></a><span class="co"># bridge_P</span></span>
+<span id="cb12-126"><a href="Ch04.html#cb12-126" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-127"><a href="Ch04.html#cb12-127" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
+<span id="cb12-128"><a href="Ch04.html#cb12-128" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-129"><a href="Ch04.html#cb12-129" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-130"><a href="Ch04.html#cb12-130" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-131"><a href="Ch04.html#cb12-131" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-132"><a href="Ch04.html#cb12-132" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
+<span id="cb12-133"><a href="Ch04.html#cb12-133" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-134"><a href="Ch04.html#cb12-134" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-135"><a href="Ch04.html#cb12-135" tabindex="-1"></a></span>
+<span id="cb12-136"><a href="Ch04.html#cb12-136" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-137"><a href="Ch04.html#cb12-137" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/BridgeP_COMB.parquet&quot;</span>)</span>
+<span id="cb12-138"><a href="Ch04.html#cb12-138" tabindex="-1"></a></span>
+<span id="cb12-139"><a href="Ch04.html#cb12-139" tabindex="-1"></a><span class="co"># hidro_A</span></span>
+<span id="cb12-140"><a href="Ch04.html#cb12-140" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-141"><a href="Ch04.html#cb12-141" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
+<span id="cb12-142"><a href="Ch04.html#cb12-142" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-143"><a href="Ch04.html#cb12-143" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-144"><a href="Ch04.html#cb12-144" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-145"><a href="Ch04.html#cb12-145" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-146"><a href="Ch04.html#cb12-146" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
+<span id="cb12-147"><a href="Ch04.html#cb12-147" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-148"><a href="Ch04.html#cb12-148" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-149"><a href="Ch04.html#cb12-149" tabindex="-1"></a></span>
+<span id="cb12-150"><a href="Ch04.html#cb12-150" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-151"><a href="Ch04.html#cb12-151" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/HidroA_COMB.parquet&quot;</span>)</span>
+<span id="cb12-152"><a href="Ch04.html#cb12-152" tabindex="-1"></a></span>
+<span id="cb12-153"><a href="Ch04.html#cb12-153" tabindex="-1"></a><span class="co"># hidro_L</span></span>
+<span id="cb12-154"><a href="Ch04.html#cb12-154" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-155"><a href="Ch04.html#cb12-155" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;hidro_L&quot;</span>)</span>
+<span id="cb12-156"><a href="Ch04.html#cb12-156" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-157"><a href="Ch04.html#cb12-157" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-158"><a href="Ch04.html#cb12-158" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-159"><a href="Ch04.html#cb12-159" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-160"><a href="Ch04.html#cb12-160" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;hidro_L&quot;</span>)</span>
+<span id="cb12-161"><a href="Ch04.html#cb12-161" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-162"><a href="Ch04.html#cb12-162" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-163"><a href="Ch04.html#cb12-163" tabindex="-1"></a></span>
+<span id="cb12-164"><a href="Ch04.html#cb12-164" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-165"><a href="Ch04.html#cb12-165" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/HidroL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-166"><a href="Ch04.html#cb12-166" tabindex="-1"></a></span>
 <span id="cb12-167"><a href="Ch04.html#cb12-167" tabindex="-1"></a></span>
-<span id="cb12-168"><a href="Ch04.html#cb12-168" tabindex="-1"></a></span>
-<span id="cb12-169"><a href="Ch04.html#cb12-169" tabindex="-1"></a></span>
-<span id="cb12-170"><a href="Ch04.html#cb12-170" tabindex="-1"></a><span class="co"># swamp_A</span></span>
-<span id="cb12-171"><a href="Ch04.html#cb12-171" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
-<span id="cb12-172"><a href="Ch04.html#cb12-172" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-173"><a href="Ch04.html#cb12-173" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-174"><a href="Ch04.html#cb12-174" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-175"><a href="Ch04.html#cb12-175" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
+<span id="cb12-168"><a href="Ch04.html#cb12-168" tabindex="-1"></a><span class="co"># road_A</span></span>
+<span id="cb12-169"><a href="Ch04.html#cb12-169" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-170"><a href="Ch04.html#cb12-170" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
+<span id="cb12-171"><a href="Ch04.html#cb12-171" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-172"><a href="Ch04.html#cb12-172" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-173"><a href="Ch04.html#cb12-173" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-174"><a href="Ch04.html#cb12-174" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-175"><a href="Ch04.html#cb12-175" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
 <span id="cb12-176"><a href="Ch04.html#cb12-176" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
 <span id="cb12-177"><a href="Ch04.html#cb12-177" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
 <span id="cb12-178"><a href="Ch04.html#cb12-178" tabindex="-1"></a></span>
 <span id="cb12-179"><a href="Ch04.html#cb12-179" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-180"><a href="Ch04.html#cb12-180" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/SwampA_COMB.parquet&quot;</span>)</span>
+<span id="cb12-180"><a href="Ch04.html#cb12-180" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/RoadA_COMB.parquet&quot;</span>)</span>
 <span id="cb12-181"><a href="Ch04.html#cb12-181" tabindex="-1"></a></span>
 <span id="cb12-182"><a href="Ch04.html#cb12-182" tabindex="-1"></a></span>
 <span id="cb12-183"><a href="Ch04.html#cb12-183" tabindex="-1"></a></span>
-<span id="cb12-184"><a href="Ch04.html#cb12-184" tabindex="-1"></a><span class="co"># flora_L</span></span>
-<span id="cb12-185"><a href="Ch04.html#cb12-185" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;flora_L&quot;</span>)</span>
-<span id="cb12-186"><a href="Ch04.html#cb12-186" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
-<span id="cb12-187"><a href="Ch04.html#cb12-187" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-188"><a href="Ch04.html#cb12-188" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-189"><a href="Ch04.html#cb12-189" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;flora_L&quot;</span>)</span>
-<span id="cb12-190"><a href="Ch04.html#cb12-190" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-191"><a href="Ch04.html#cb12-191" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-192"><a href="Ch04.html#cb12-192" tabindex="-1"></a></span>
-<span id="cb12-193"><a href="Ch04.html#cb12-193" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
-<span id="cb12-194"><a href="Ch04.html#cb12-194" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/FloraL_COMB.parquet&quot;</span>)</span>
-<span id="cb12-195"><a href="Ch04.html#cb12-195" tabindex="-1"></a></span>
-<span id="cb12-196"><a href="Ch04.html#cb12-196" tabindex="-1"></a></span>
-<span id="cb12-197"><a href="Ch04.html#cb12-197" tabindex="-1"></a><span class="co"># build_A</span></span>
-<span id="cb12-198"><a href="Ch04.html#cb12-198" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;build_A&quot;</span>)</span>
-<span id="cb12-199"><a href="Ch04.html#cb12-199" tabindex="-1"></a>data_3<span class="ot">=</span>data_3 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-200"><a href="Ch04.html#cb12-200" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
-<span id="cb12-201"><a href="Ch04.html#cb12-201" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_3,<span class="st">&quot;./Geodata/2024/TopographicMap/BuildA_v3.parquet&quot;</span>)</span></code></pre></div>
+<span id="cb12-184"><a href="Ch04.html#cb12-184" tabindex="-1"></a><span class="co"># road_L</span></span>
+<span id="cb12-185"><a href="Ch04.html#cb12-185" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-186"><a href="Ch04.html#cb12-186" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;road_L&quot;</span>)</span>
+<span id="cb12-187"><a href="Ch04.html#cb12-187" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-188"><a href="Ch04.html#cb12-188" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-189"><a href="Ch04.html#cb12-189" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-190"><a href="Ch04.html#cb12-190" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-191"><a href="Ch04.html#cb12-191" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;road_L&quot;</span>)</span>
+<span id="cb12-192"><a href="Ch04.html#cb12-192" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-193"><a href="Ch04.html#cb12-193" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-194"><a href="Ch04.html#cb12-194" tabindex="-1"></a></span>
+<span id="cb12-195"><a href="Ch04.html#cb12-195" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-196"><a href="Ch04.html#cb12-196" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/RoadL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-197"><a href="Ch04.html#cb12-197" tabindex="-1"></a></span>
+<span id="cb12-198"><a href="Ch04.html#cb12-198" tabindex="-1"></a></span>
+<span id="cb12-199"><a href="Ch04.html#cb12-199" tabindex="-1"></a></span>
+<span id="cb12-200"><a href="Ch04.html#cb12-200" tabindex="-1"></a><span class="co"># swamp_A</span></span>
+<span id="cb12-201"><a href="Ch04.html#cb12-201" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-202"><a href="Ch04.html#cb12-202" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
+<span id="cb12-203"><a href="Ch04.html#cb12-203" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-204"><a href="Ch04.html#cb12-204" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-205"><a href="Ch04.html#cb12-205" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-206"><a href="Ch04.html#cb12-206" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-207"><a href="Ch04.html#cb12-207" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
+<span id="cb12-208"><a href="Ch04.html#cb12-208" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-209"><a href="Ch04.html#cb12-209" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-210"><a href="Ch04.html#cb12-210" tabindex="-1"></a></span>
+<span id="cb12-211"><a href="Ch04.html#cb12-211" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-212"><a href="Ch04.html#cb12-212" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/SwampA_COMB.parquet&quot;</span>)</span>
+<span id="cb12-213"><a href="Ch04.html#cb12-213" tabindex="-1"></a></span>
+<span id="cb12-214"><a href="Ch04.html#cb12-214" tabindex="-1"></a></span>
+<span id="cb12-215"><a href="Ch04.html#cb12-215" tabindex="-1"></a></span>
+<span id="cb12-216"><a href="Ch04.html#cb12-216" tabindex="-1"></a><span class="co"># flora_L</span></span>
+<span id="cb12-217"><a href="Ch04.html#cb12-217" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-218"><a href="Ch04.html#cb12-218" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;flora_L&quot;</span>)</span>
+<span id="cb12-219"><a href="Ch04.html#cb12-219" tabindex="-1"></a>data_not4<span class="ot">=</span><span class="fu">st_difference</span>(data_3,pages4_united)</span>
+<span id="cb12-220"><a href="Ch04.html#cb12-220" tabindex="-1"></a>data_not4<span class="ot">=</span>data_not4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-221"><a href="Ch04.html#cb12-221" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-222"><a href="Ch04.html#cb12-222" tabindex="-1"></a>data_4<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v4partial.gpkg&quot;</span>,</span>
+<span id="cb12-223"><a href="Ch04.html#cb12-223" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;flora_L&quot;</span>)</span>
+<span id="cb12-224"><a href="Ch04.html#cb12-224" tabindex="-1"></a>data_4<span class="ot">=</span>data_4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-225"><a href="Ch04.html#cb12-225" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-226"><a href="Ch04.html#cb12-226" tabindex="-1"></a></span>
+<span id="cb12-227"><a href="Ch04.html#cb12-227" tabindex="-1"></a>data_new<span class="ot">=</span><span class="fu">rbind</span>(data_not4,data_4)</span>
+<span id="cb12-228"><a href="Ch04.html#cb12-228" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_new,<span class="st">&quot;./Geodata/2024/TopographicMap/FloraL_COMB.parquet&quot;</span>)</span>
+<span id="cb12-229"><a href="Ch04.html#cb12-229" tabindex="-1"></a></span>
+<span id="cb12-230"><a href="Ch04.html#cb12-230" tabindex="-1"></a></span>
+<span id="cb12-231"><a href="Ch04.html#cb12-231" tabindex="-1"></a><span class="co"># build_A</span></span>
+<span id="cb12-232"><a href="Ch04.html#cb12-232" tabindex="-1"></a>data_3<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Geodata/2024/TopographicMap/LGIAtopo10K_v3.gpkg&quot;</span>,</span>
+<span id="cb12-233"><a href="Ch04.html#cb12-233" tabindex="-1"></a>               <span class="at">layer=</span><span class="st">&quot;build_A&quot;</span>)</span>
+<span id="cb12-234"><a href="Ch04.html#cb12-234" tabindex="-1"></a>data_3<span class="ot">=</span>data_3 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-235"><a href="Ch04.html#cb12-235" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(FNAME,FCODE)</span>
+<span id="cb12-236"><a href="Ch04.html#cb12-236" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(data_3,<span class="st">&quot;./Geodata/2024/TopographicMap/BuildA_v3.parquet&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch04.05" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Corine Land Cover 2018<a href="Ch04.html#Ch04.05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Corine Land Cover is a publicly available geodata that characterizes land cover
 and land use (LULC) across Europe over a long period of time using a generally
-consistent (comparable) methodology (<a href="https://land.copernicus.eu/content/corine-land" class="uri">https://land.copernicus.eu/content/corine-land</a> -cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf),
-providing results for individual years - 1990, 2000, 2006, 2012,
-2018 (<a href="https://land.copernicus.eu/en/products/corine-land-cover" class="uri">https://land.copernicus.eu/en/products/corine-land-cover</a>).
+consistent (comparable) <a href="https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf">methodology</a>,
+providing results for <a href="https://land.copernicus.eu/en/products/corine-land-cover">individual years</a> - 1990, 2000, 2006, 2012,
+2018.
 Although the dataset has a coarse resolution – the mapping unit is 25 ha areas
 that are at least 100 m wide – it provides sufficient information for general
 use, such as workflow testing and observation filtering. This project uses
@@ -2870,19 +2913,20 @@ Result was saved for further processing.</p>
 <span id="cb14-8"><a href="Ch04.html#cb14-8" tabindex="-1"></a></span>
 <span id="cb14-9"><a href="Ch04.html#cb14-9" tabindex="-1"></a><span class="co"># ESDAC texture ----</span></span>
 <span id="cb14-10"><a href="Ch04.html#cb14-10" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="Ch04.html#cb14-11" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Soils/ESDAC/texture/SoilDatabaseV2_raster/ESDB-Raster-Library-1k-GeoTIFF-20240507/TEXT/TEXT.tif&quot;</span>)</span>
-<span id="cb14-12"><a href="Ch04.html#cb14-12" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
-<span id="cb14-13"><a href="Ch04.html#cb14-13" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="Ch04.html#cb14-14" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">project</span>(sdTEXT,template10,<span class="at">method=</span><span class="st">&quot;near&quot;</span>)</span>
-<span id="cb14-15"><a href="Ch04.html#cb14-15" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
-<span id="cb14-16"><a href="Ch04.html#cb14-16" tabindex="-1"></a></span>
-<span id="cb14-17"><a href="Ch04.html#cb14-17" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">subst</span>(sdTEXT,<span class="dv">0</span>,<span class="cn">NA</span>)</span>
-<span id="cb14-18"><a href="Ch04.html#cb14-18" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
-<span id="cb14-19"><a href="Ch04.html#cb14-19" tabindex="-1"></a></span>
-<span id="cb14-20"><a href="Ch04.html#cb14-20" tabindex="-1"></a>sdTEXT2<span class="ot">=</span><span class="fu">mask</span>(sdTEXT,template10,</span>
-<span id="cb14-21"><a href="Ch04.html#cb14-21" tabindex="-1"></a>             <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>,</span>
-<span id="cb14-22"><a href="Ch04.html#cb14-22" tabindex="-1"></a>             <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-23"><a href="Ch04.html#cb14-23" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT2)</span></code></pre></div>
+<span id="cb14-11"><a href="Ch04.html#cb14-11" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Soils/ESDAC/texture/SoilDatabaseV2_raster/&quot;</span>,</span>
+<span id="cb14-12"><a href="Ch04.html#cb14-12" tabindex="-1"></a>                   <span class="st">&quot;ESDB-Raster-Library-1k-GeoTIFF-20240507/TEXT/TEXT.tif&quot;</span>))</span>
+<span id="cb14-13"><a href="Ch04.html#cb14-13" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
+<span id="cb14-14"><a href="Ch04.html#cb14-14" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="Ch04.html#cb14-15" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">project</span>(sdTEXT,template10,<span class="at">method=</span><span class="st">&quot;near&quot;</span>)</span>
+<span id="cb14-16"><a href="Ch04.html#cb14-16" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
+<span id="cb14-17"><a href="Ch04.html#cb14-17" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="Ch04.html#cb14-18" tabindex="-1"></a>sdTEXT<span class="ot">=</span><span class="fu">subst</span>(sdTEXT,<span class="dv">0</span>,<span class="cn">NA</span>)</span>
+<span id="cb14-19"><a href="Ch04.html#cb14-19" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT)</span>
+<span id="cb14-20"><a href="Ch04.html#cb14-20" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="Ch04.html#cb14-21" tabindex="-1"></a>sdTEXT2<span class="ot">=</span><span class="fu">mask</span>(sdTEXT,template10,</span>
+<span id="cb14-22"><a href="Ch04.html#cb14-22" tabindex="-1"></a>             <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/SoilTXT_ESDAC.tif&quot;</span>,</span>
+<span id="cb14-23"><a href="Ch04.html#cb14-23" tabindex="-1"></a>             <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb14-24"><a href="Ch04.html#cb14-24" tabindex="-1"></a><span class="fu">plot</span>(sdTEXT2)</span></code></pre></div>
 </details>
 </div>
 <div id="Ch04.07.03" class="section level3 hasAnchor" number="4.7.3">
@@ -3632,45 +3676,63 @@ rised bogs.</p></li>
 <span id="cb26-12"><a href="Ch04.html#cb26-12" tabindex="-1"></a></span>
 <span id="cb26-13"><a href="Ch04.html#cb26-13" tabindex="-1"></a></span>
 <span id="cb26-14"><a href="Ch04.html#cb26-14" tabindex="-1"></a><span class="co"># Bogs ----</span></span>
-<span id="cb26-15"><a href="Ch04.html#cb26-15" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif&quot;</span>)</span>
-<span id="cb26-16"><a href="Ch04.html#cb26-16" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">ifel</span>(neatklata71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-17"><a href="Ch04.html#cb26-17" tabindex="-1"></a><span class="fu">plot</span>(neatklata71107120)</span>
-<span id="cb26-18"><a href="Ch04.html#cb26-18" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Neatklata_purviem_raksturiga_zemsedze_7140.tif&quot;</span>)</span>
-<span id="cb26-19"><a href="Ch04.html#cb26-19" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">ifel</span>(neatklata7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-20"><a href="Ch04.html#cb26-20" tabindex="-1"></a></span>
-<span id="cb26-21"><a href="Ch04.html#cb26-21" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7110_7120.tif&quot;</span>)</span>
-<span id="cb26-22"><a href="Ch04.html#cb26-22" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">ifel</span>(raskturiga71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-23"><a href="Ch04.html#cb26-23" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/Purviem_neraksturiga_zemsedze_7140.tif&quot;</span>)</span>
-<span id="cb26-24"><a href="Ch04.html#cb26-24" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">ifel</span>(raksturiga7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-25"><a href="Ch04.html#cb26-25" tabindex="-1"></a></span>
-<span id="cb26-26"><a href="Ch04.html#cb26-26" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7110_7120.tif&quot;</span>)</span>
-<span id="cb26-27"><a href="Ch04.html#cb26-27" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">ifel</span>(labels71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-28"><a href="Ch04.html#cb26-28" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/purvi/!LV_kopa_apv1020_30_05_2022/!LV_kopa_apv1020_30_05_2022/latvija_Labels_B7140.tif&quot;</span>)</span>
-<span id="cb26-29"><a href="Ch04.html#cb26-29" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">ifel</span>(labels7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
-<span id="cb26-30"><a href="Ch04.html#cb26-30" tabindex="-1"></a></span>
-<span id="cb26-31"><a href="Ch04.html#cb26-31" tabindex="-1"></a>augstie<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata71107120,raskturiga71107120),labels71107120)</span>
-<span id="cb26-32"><a href="Ch04.html#cb26-32" tabindex="-1"></a>parejas<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata7140,raksturiga7140),labels7140)</span>
-<span id="cb26-33"><a href="Ch04.html#cb26-33" tabindex="-1"></a>tikai_parejas<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,<span class="cn">NA</span>,parejas)</span>
-<span id="cb26-34"><a href="Ch04.html#cb26-34" tabindex="-1"></a>sunainie<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,parejas,<span class="cn">NA</span>)</span>
-<span id="cb26-35"><a href="Ch04.html#cb26-35" tabindex="-1"></a></span>
-<span id="cb26-36"><a href="Ch04.html#cb26-36" tabindex="-1"></a>sunu_purvi<span class="ot">=</span><span class="fu">cover</span>(augstie,sunainie)</span>
+<span id="cb26-15"><a href="Ch04.html#cb26-15" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-16"><a href="Ch04.html#cb26-16" tabindex="-1"></a>                              <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-17"><a href="Ch04.html#cb26-17" tabindex="-1"></a>                              <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-18"><a href="Ch04.html#cb26-18" tabindex="-1"></a>                              <span class="st">&quot;Neatklata_purviem_raksturiga_zemsedze_7110_7120.tif&quot;</span>))</span>
+<span id="cb26-19"><a href="Ch04.html#cb26-19" tabindex="-1"></a>neatklata71107120<span class="ot">=</span><span class="fu">ifel</span>(neatklata71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-20"><a href="Ch04.html#cb26-20" tabindex="-1"></a><span class="fu">plot</span>(neatklata71107120)</span>
+<span id="cb26-21"><a href="Ch04.html#cb26-21" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-22"><a href="Ch04.html#cb26-22" tabindex="-1"></a>                          <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-23"><a href="Ch04.html#cb26-23" tabindex="-1"></a>                          <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-24"><a href="Ch04.html#cb26-24" tabindex="-1"></a>                          <span class="st">&quot;Neatklata_purviem_raksturiga_zemsedze_7140.tif&quot;</span>))</span>
+<span id="cb26-25"><a href="Ch04.html#cb26-25" tabindex="-1"></a>neatklata7140<span class="ot">=</span><span class="fu">ifel</span>(neatklata7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-26"><a href="Ch04.html#cb26-26" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="Ch04.html#cb26-27" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-28"><a href="Ch04.html#cb26-28" tabindex="-1"></a>                               <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-29"><a href="Ch04.html#cb26-29" tabindex="-1"></a>                               <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-30"><a href="Ch04.html#cb26-30" tabindex="-1"></a>                               <span class="st">&quot;Purviem_neraksturiga_zemsedze_7110_7120.tif&quot;</span>))</span>
+<span id="cb26-31"><a href="Ch04.html#cb26-31" tabindex="-1"></a>raskturiga71107120<span class="ot">=</span><span class="fu">ifel</span>(raskturiga71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-32"><a href="Ch04.html#cb26-32" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-33"><a href="Ch04.html#cb26-33" tabindex="-1"></a>                           <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-34"><a href="Ch04.html#cb26-34" tabindex="-1"></a>                           <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-35"><a href="Ch04.html#cb26-35" tabindex="-1"></a>                           <span class="st">&quot;Purviem_neraksturiga_zemsedze_7140.tif&quot;</span>))</span>
+<span id="cb26-36"><a href="Ch04.html#cb26-36" tabindex="-1"></a>raksturiga7140<span class="ot">=</span><span class="fu">ifel</span>(raksturiga7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
 <span id="cb26-37"><a href="Ch04.html#cb26-37" tabindex="-1"></a></span>
-<span id="cb26-38"><a href="Ch04.html#cb26-38" tabindex="-1"></a>sunu_proj<span class="ot">=</span><span class="fu">project</span>(sunu_purvi,template10)</span>
-<span id="cb26-39"><a href="Ch04.html#cb26-39" tabindex="-1"></a>sunuYN<span class="ot">=</span><span class="fu">cover</span>(sunu_proj,nulles10)</span>
-<span id="cb26-40"><a href="Ch04.html#cb26-40" tabindex="-1"></a><span class="fu">plot</span>(sunuYN)</span>
-<span id="cb26-41"><a href="Ch04.html#cb26-41" tabindex="-1"></a><span class="fu">writeRaster</span>(sunuYN,</span>
-<span id="cb26-42"><a href="Ch04.html#cb26-42" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb26-43"><a href="Ch04.html#cb26-43" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
-<span id="cb26-44"><a href="Ch04.html#cb26-44" tabindex="-1"></a></span>
-<span id="cb26-45"><a href="Ch04.html#cb26-45" tabindex="-1"></a></span>
-<span id="cb26-46"><a href="Ch04.html#cb26-46" tabindex="-1"></a></span>
-<span id="cb26-47"><a href="Ch04.html#cb26-47" tabindex="-1"></a><span class="co"># Transitional mires ----</span></span>
-<span id="cb26-48"><a href="Ch04.html#cb26-48" tabindex="-1"></a>parejas_proj<span class="ot">=</span><span class="fu">project</span>(tikai_parejas,template10)</span>
-<span id="cb26-49"><a href="Ch04.html#cb26-49" tabindex="-1"></a>parejasYN<span class="ot">=</span><span class="fu">cover</span>(parejas_proj,nulles10)</span>
-<span id="cb26-50"><a href="Ch04.html#cb26-50" tabindex="-1"></a><span class="fu">plot</span>(parejasYN)</span>
-<span id="cb26-51"><a href="Ch04.html#cb26-51" tabindex="-1"></a><span class="fu">writeRaster</span>(parejasYN,</span>
-<span id="cb26-52"><a href="Ch04.html#cb26-52" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
-<span id="cb26-53"><a href="Ch04.html#cb26-53" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span></code></pre></div>
+<span id="cb26-38"><a href="Ch04.html#cb26-38" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-39"><a href="Ch04.html#cb26-39" tabindex="-1"></a>                           <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-40"><a href="Ch04.html#cb26-40" tabindex="-1"></a>                           <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-41"><a href="Ch04.html#cb26-41" tabindex="-1"></a>                           <span class="st">&quot;latvija_Labels_B7110_7120.tif&quot;</span>))</span>
+<span id="cb26-42"><a href="Ch04.html#cb26-42" tabindex="-1"></a>labels71107120<span class="ot">=</span><span class="fu">ifel</span>(labels71107120<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-43"><a href="Ch04.html#cb26-43" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">rast</span>(<span class="fu">paste0</span>(<span class="st">&quot;./Geodata/2024/Bogs_EDI/purvi_EDI_projekts/&quot;</span>,</span>
+<span id="cb26-44"><a href="Ch04.html#cb26-44" tabindex="-1"></a>                       <span class="st">&quot;purvi/!LV_kopa_apv1020_30_05_2022/&quot;</span>,</span>
+<span id="cb26-45"><a href="Ch04.html#cb26-45" tabindex="-1"></a>                       <span class="st">&quot;!LV_kopa_apv1020_30_05_2022/&quot;</span>,<span class="st">&quot;</span></span>
+<span id="cb26-46"><a href="Ch04.html#cb26-46" tabindex="-1"></a><span class="st">                       latvija_Labels_B7140.tif&quot;</span>))</span>
+<span id="cb26-47"><a href="Ch04.html#cb26-47" tabindex="-1"></a>labels7140<span class="ot">=</span><span class="fu">ifel</span>(labels7140<span class="sc">&gt;</span><span class="dv">0</span>,<span class="dv">1</span>,<span class="cn">NA</span>)</span>
+<span id="cb26-48"><a href="Ch04.html#cb26-48" tabindex="-1"></a></span>
+<span id="cb26-49"><a href="Ch04.html#cb26-49" tabindex="-1"></a>augstie<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata71107120,raskturiga71107120),labels71107120)</span>
+<span id="cb26-50"><a href="Ch04.html#cb26-50" tabindex="-1"></a>parejas<span class="ot">=</span><span class="fu">cover</span>(<span class="fu">cover</span>(neatklata7140,raksturiga7140),labels7140)</span>
+<span id="cb26-51"><a href="Ch04.html#cb26-51" tabindex="-1"></a>tikai_parejas<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,<span class="cn">NA</span>,parejas)</span>
+<span id="cb26-52"><a href="Ch04.html#cb26-52" tabindex="-1"></a>sunainie<span class="ot">=</span><span class="fu">ifel</span>(parejas<span class="sc">==</span><span class="dv">1</span><span class="sc">&amp;</span>augstie<span class="sc">==</span><span class="dv">1</span>,parejas,<span class="cn">NA</span>)</span>
+<span id="cb26-53"><a href="Ch04.html#cb26-53" tabindex="-1"></a></span>
+<span id="cb26-54"><a href="Ch04.html#cb26-54" tabindex="-1"></a>sunu_purvi<span class="ot">=</span><span class="fu">cover</span>(augstie,sunainie)</span>
+<span id="cb26-55"><a href="Ch04.html#cb26-55" tabindex="-1"></a></span>
+<span id="cb26-56"><a href="Ch04.html#cb26-56" tabindex="-1"></a>sunu_proj<span class="ot">=</span><span class="fu">project</span>(sunu_purvi,template10)</span>
+<span id="cb26-57"><a href="Ch04.html#cb26-57" tabindex="-1"></a>sunuYN<span class="ot">=</span><span class="fu">cover</span>(sunu_proj,nulles10)</span>
+<span id="cb26-58"><a href="Ch04.html#cb26-58" tabindex="-1"></a><span class="fu">plot</span>(sunuYN)</span>
+<span id="cb26-59"><a href="Ch04.html#cb26-59" tabindex="-1"></a><span class="fu">writeRaster</span>(sunuYN,</span>
+<span id="cb26-60"><a href="Ch04.html#cb26-60" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb26-61"><a href="Ch04.html#cb26-61" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_BogsYN.tif&quot;</span>)</span>
+<span id="cb26-62"><a href="Ch04.html#cb26-62" tabindex="-1"></a></span>
+<span id="cb26-63"><a href="Ch04.html#cb26-63" tabindex="-1"></a></span>
+<span id="cb26-64"><a href="Ch04.html#cb26-64" tabindex="-1"></a></span>
+<span id="cb26-65"><a href="Ch04.html#cb26-65" tabindex="-1"></a><span class="co"># Transitional mires ----</span></span>
+<span id="cb26-66"><a href="Ch04.html#cb26-66" tabindex="-1"></a>parejas_proj<span class="ot">=</span><span class="fu">project</span>(tikai_parejas,template10)</span>
+<span id="cb26-67"><a href="Ch04.html#cb26-67" tabindex="-1"></a>parejasYN<span class="ot">=</span><span class="fu">cover</span>(parejas_proj,nulles10)</span>
+<span id="cb26-68"><a href="Ch04.html#cb26-68" tabindex="-1"></a><span class="fu">plot</span>(parejasYN)</span>
+<span id="cb26-69"><a href="Ch04.html#cb26-69" tabindex="-1"></a><span class="fu">writeRaster</span>(parejasYN,</span>
+<span id="cb26-70"><a href="Ch04.html#cb26-70" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
+<span id="cb26-71"><a href="Ch04.html#cb26-71" tabindex="-1"></a>            <span class="at">filename=</span><span class="st">&quot;./RasterGrids_10m/2024/EDI_TransitionalMiresYN.tif&quot;</span>)</span></code></pre></div>
 </details>
 
 </div>
