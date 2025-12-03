@@ -1,16 +1,7 @@
 --- 
 title: "High-resolution ecogeographical variables for species distribution modelling
   describing Latvia, 2024"
-author:
-  - "Andris Avotiņš"
-  - "Jekaterīna Butkeviča"
-  - "Betija Rubene"
-  - "Solvita Rūsiņa"
-  - "Rūta Starka"
-  - "Vita Šakele"
-  - "Vineta Vērpēja"
-  - "Ivo Vinogradovs"
-  - "Ainārs Auniņš"
+author: Andris Avotiņš, Jekaterīna Butkeviča, Betija Rubene, Solvita Rūsiņa, Rūta Starka, Vita Šakele, Vineta Vērpēja, Ivo Vinogradovs, Ainārs Auniņš
 date: "`r Sys.Date()`"
 output:
   pdf_document: default
@@ -33,6 +24,8 @@ site: bookdown::bookdown_site
 ```{r, eval=FALSE, echo=FALSE}
 
 bookdown::serve_book() # apskatei
+
+# html
 setwd("../book/")
 bookdown::render_book() # pirms stumšanas uz GitHub
 #bookdown::render_book(output_format = "bookdown::pdf_book")
